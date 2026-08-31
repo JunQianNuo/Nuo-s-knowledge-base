@@ -1,0 +1,152 @@
+# 习题20.10
+
+---
+title: 习题20.10 - 单位球面上二次型的最大值（Rayleigh商特例）
+subject: 最优化方法
+chapter: 20
+section: 等式约束优化问题
+source: Screenshot_2026-05-26-00-12-10-10_0a79bb7e1b8811a.jpg
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - Lagrange乘子法
+  - Rayleigh商
+  - 特征值问题
+  - 二阶充分条件
+---
+
+# 习题 20.10 — 单位球面上最大化二次型
+
+求解以下优化问题：
+
+$$\max \; x^\top Q x,\quad \text{s.t.}\quad \|x\|^2 = 1$$
+
+其中 $Q = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix} = \operatorname{diag}(2, 3)$。
+
+求该问题的所有解。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 写出 Lagrangian：$\mathcal{L} = x^\top Q x + \lambda(1 - x^\top x)$。注意约束用 $1 - x^\top x = 0$ 可以避免符号混乱（等价于 $\lambda(1 - \|x\|^2)$ 或 $\lambda(\|x\|^2 - 1)$，$\lambda$ 符号会随之改变，不影响结果）。
+> - 驻点条件 $\nabla_x \mathcal{L} = 0$ 给出 $2Qx - 2\lambda x = 0$，即 $Qx = \lambda x$。这说明最优解 $x^*$ 是 $Q$ 的特征向量，$\lambda^*$ 是相应的特征值。
+> - 利用 $x^\top x = 1$ 得 $f(x^*) = (x^*)^\top Q x^* = \lambda^* (x^*)^\top x^* = \lambda^*$——目标值即特征值。
+> - 最大化问题：取最大特征值对应的单位特征向量。注意 $Q$ 是对角阵，特征值直接可读。
+> - 分情况讨论：$x_1 \neq 0$ 时 $\lambda = 2$；$x_2 \neq 0$ 时 $\lambda = 3$；二者皆零不可行（违反约束）。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### 第一步：构造 Lagrangian 与一阶条件
+>
+> $$\mathcal{L}(x, \lambda) = 2x_1^2 + 3x_2^2 + \lambda(1 - x_1^2 - x_2^2)$$
+>
+> （也可写作 $\mathcal{L} = x^\top Q x - \mu(x^\top x - 1)$，最终 $\mu$ 与 $\lambda$ 差一个负号，不影响驻点坐标。）
+>
+> **驻点条件：**
+>
+> $$\begin{aligned}
+> \frac{\partial \mathcal{L}}{\partial x_1} &= 4x_1 - 2\lambda x_1 = 2x_1(2 - \lambda) = 0 \quad &(1) \\
+> \frac{\partial \mathcal{L}}{\partial x_2} &= 6x_2 - 2\lambda x_2 = 2x_2(3 - \lambda) = 0 \quad &(2) \\
+> \frac{\partial \mathcal{L}}{\partial \lambda} &= 1 - x_1^2 - x_2^2 = 0 \quad &(3)
+> \end{aligned}$$
+>
+> 由 (1) 和 (2) 分类讨论：
+>
+> ---
+>
+> **情况 1：** $x_1 \neq 0$
+>
+> 由 (1)：$\lambda = 2$。代入 (2)：$2x_2(3 - 2) = 2x_2 = 0$ $\;\Longrightarrow\;$ $x_2 = 0$。
+>
+> 由 (3)：$x_1^2 = 1$ $\;\Longrightarrow\;$ $x_1 = \pm 1$。
+>
+> 得两个候选点：$x = [1, 0]^\top$ 和 $x = [-1, 0]^\top$，目标值 $f = 2$。
+>
+> ---
+>
+> **情况 2：** $x_2 \neq 0$
+>
+> 由 (2)：$\lambda = 3$。代入 (1)：$2x_1(2 - 3) = -2x_1 = 0$ $\;\Longrightarrow\;$ $x_1 = 0$。
+>
+> 由 (3)：$x_2^2 = 1$ $\;\Longrightarrow\;$ $x_2 = \pm 1$。
+>
+> 得两个候选点：$x = [0, 1]^\top$ 和 $x = [0, -1]^\top$，目标值 $f = 3$。
+>
+> ---
+>
+> **情况 3：** $x_1 = x_2 = 0$
+>
+> 违反约束 (3)，不可行。
+>
+> ---
+>
+> ### 第二步：确定极大点
+>
+> 四个候选点的目标值：
+>
+> | $x^*$ | $f(x^*)$ |
+> |-------|----------|
+> | $[\pm 1, 0]^\top$ | $2$ |
+> | $[0, \pm 1]^\top$ | $3$ |
+>
+> 问题为最大化 $x^\top Q x$，故：
+>
+> $$\boxed{x^* = [0, 1]^\top \;\text{或}\; [0, -1]^\top},\quad f_{\max} = 3$$
+>
+> **这两个解即为该最大化问题的所有解。**
+>
+> （注：$[\pm 1, 0]^\top$ 是最小化问题的解，$f_{\min} = 2$。）
+>
+> ---
+>
+> ### 第三步：二阶充分条件验证
+>
+> **Lagrangian 的 Hessian（关于 $x$）：**
+>
+> $$\nabla_{xx}^2 \mathcal{L}(x, \lambda) = \begin{bmatrix} 4 - 2\lambda & 0 \\ 0 & 6 - 2\lambda \end{bmatrix}$$
+>
+> **在 $x^* = [0, \pm 1]^\top$ 处（$\lambda^* = 3$）：**
+>
+> $$\nabla_{xx}^2 \mathcal{L} = \begin{bmatrix} 4 - 6 & 0 \\ 0 & 6 - 6 \end{bmatrix} = \begin{bmatrix} -2 & 0 \\ 0 & 0 \end{bmatrix}$$
+>
+> 注意：该 Hessian 在 $\mathbb{R}^2$ 上为半负定（特征值 $-2, 0$），非负定。
+>
+> **切空间：** $\nabla h(x^*) = 2x^* = [0, \pm 2]^\top$。切条件 $\nabla h^\top d = 0$ 即 $0 \cdot d_1 + (\pm 2) \cdot d_2 = 0$ $\;\Longrightarrow\;$ $d_2 = 0$。
+>
+> 切空间 $T = \{\, (d_1, 0)^\top \mid d_1 \in \mathbb{R} \,\}$，维数 $= 1$（$n - m = 2 - 1$）。
+>
+> 对 $d \in T$（$d \neq 0$）：
+>
+> $$d^\top (\nabla_{xx}^2 \mathcal{L}) d = \begin{bmatrix} d_1 & 0 \end{bmatrix} \begin{bmatrix} -2 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} d_1 \\ 0 \end{bmatrix} = -2 d_1^2 < 0$$
+>
+> **SOSC 满足**（Hessian 在切空间上负定），确认 $x^* = [0, \pm 1]^\top$ 是严格局部极大点。
+>
+> ---
+>
+> **在 $x^* = [\pm 1, 0]^\top$ 处（$\lambda^* = 2$）：**
+>
+> $$\nabla_{xx}^2 \mathcal{L} = \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix}$$
+>
+> 切空间：$\nabla h(x^*) = [\pm 2, 0]^\top$，$d_1 = 0$，$T = \{\, (0, d_2)^\top \,\}$。
+>
+> $$d^\top \nabla_{xx}^2 \mathcal{L} d = 2 d_2^2 > 0$$
+>
+> SOSC 确认 $[\pm 1, 0]^\top$ 是严格局部极小点。$\square$
+>
+> **点评：** 本题是 Rayleigh 商的二维特例。核心观察：(1) **球面约束下的二次型最优化等价于特征值问题**——驻点条件 $Qx = \lambda x$ 说明最优解是 $Q$ 的特征向量，目标值即特征值；(2) 最大化对应最大特征值及其特征向量，最小化对应最小特征值；(3) 二阶条件中，Hessian 在 $\mathbb{R}^n$ 上不完全正/负定，但在**一维切空间**上仍可判断——这是等式约束优化中二阶条件的关键特征；(4) $Q$ 是对角阵，可直接读出特征值 2 和 3，无需计算。
+
+---
+
+## 相关知识点
+
+- [[20-等式约束优化问题#3.4 拉格朗日乘子法例题|Rayleigh 商例题]]
+- [[20-等式约束优化问题#3. 拉格朗日条件极值|Lagrange 定理]]
+- [[20-等式约束优化问题#4. 二阶条件|二阶条件]]
+- [[20-等式约束优化问题#2.3 等式约束下的切空间|切空间与法空间]]
+- [[../知识点解析梳理/20-等式约束优化问题-知识梳理|第20章 知识梳理]]

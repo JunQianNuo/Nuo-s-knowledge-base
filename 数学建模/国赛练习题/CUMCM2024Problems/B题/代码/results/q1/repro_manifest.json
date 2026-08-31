@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-08-30T06:25:29.755486+00:00",
+  "command": "cd B题/代码 && python -m q1.run_q1",
+  "python": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+  "platform": "Linux-7.1.8-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "versions": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1"
+  },
+  "random_seed": null,
+  "git_commit": "ac9b71e868f2096ccb2c6d75eca13d06cae68d82",
+  "git_dirty": true,
+  "config_sha256": "a368322d47d43e396a23257c26e17e0ae73a3498be85488d434bf9191951e124",
+  "source_sha256": {
+    "run_q1.py": "12c570d05ba133381fac384a94400a3822b4e89c64775d31b47e4ea9e82184f0",
+    "fixed_binomial_plan.py": "ed9430bd5e007cca53584a07026a04f7cbaa5c033eb11fabe07e924e3e0b1d78",
+    "exact_path_dp.py": "722d1c5de17af1228b793b5d13bbfb11994106411d79e501fcdeafac7c28a5f8",
+    "test_q1.py": "4338010f2f14a605469c9584d85ff3e2eadd40a5378d3057b647e78793393d9a",
+    "config.json": "a368322d47d43e396a23257c26e17e0ae73a3498be85488d434bf9191951e124",
+    "requirements-q1.txt": "5b2cb9b4f90d42c6319a111084c13e0e9f6d310863a9633be50af2e8d07a3e95",
+    "README.md": "42936030076861d7d7c9866945ab385e0f73d321b77a8a23282e8b58a69642be"
+  }
+}

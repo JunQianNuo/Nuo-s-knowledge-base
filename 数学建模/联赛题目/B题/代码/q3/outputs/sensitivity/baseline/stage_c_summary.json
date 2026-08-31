@@ -1,0 +1,65 @@
+{
+  "stage": "C",
+  "mode": "quick",
+  "parent_B0": 37066,
+  "fixed_temporary_served": 143,
+  "conditioned_on_uncertified_parent": true,
+  "full_certified": false,
+  "status": "UNKNOWN",
+  "temporary_incumbent": 143,
+  "temporary_best_bound": 160.0,
+  "temporary_gap": 0.11888111888111888,
+  "temporary_certified_optimal": false,
+  "stage_b_solver_status": "FEASIBLE",
+  "stage_b_solver_best_bound": 160.0,
+  "stage_b_solver_wall_time": 173.57918080000002,
+  "time_sampling_density": "baseline",
+  "seed": 20260815,
+  "T_air": 36993,
+  "T_pax": 244345,
+  "fuel": 301164.1000000001,
+  "flights": 223,
+  "PK": 796971.0,
+  "AK": 1808570.0,
+  "utilization": 0.4406636182177079,
+  "selected_flights": 223,
+  "aircraft_used": 22,
+  "stages": {
+    "aircraft_time": {
+      "status": "FEASIBLE",
+      "objective": 36993,
+      "best_bound": 6138.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 48.3585202
+    },
+    "passenger_time": {
+      "status": "FEASIBLE",
+      "objective": 244345,
+      "best_bound": 229599.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 48.3493149
+    },
+    "fuel": {
+      "status": "FEASIBLE",
+      "objective": 3011641,
+      "best_bound": 2451350.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 44.4568439
+    }
+  },
+  "dinkelbach_iterations": 0,
+  "seat_utilization_status": "NOT_RUN",
+  "final_solution_source": "C4 incumbent",
+  "validation": {
+    "independent": true,
+    "solver_equals_delivery": true
+  },
+  "runtime": {
+    "master": 141.164679,
+    "realization_validation": 0.3686269000000095,
+    "total": 203.5551495
+  }
+}

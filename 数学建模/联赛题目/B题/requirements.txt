@@ -1,0 +1,8 @@
+matplotlib>=3.9,<4
+networkx>=3.2,<4
+numpy>=2.0,<3
+ortools>=9.15,<10
+pandas>=2.3,<3
+pytest>=8.4,<9
+ruff>=0.16,<1
+tqdm>=4.67,<5

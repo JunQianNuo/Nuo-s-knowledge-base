@@ -1,0 +1,27 @@
+{
+  "stage": "B",
+  "mode": "formal",
+  "baseline_kind": "formal_best_validated_feasible",
+  "B0": 35114,
+  "mandatory_served": 3840,
+  "temporary_served": 143,
+  "temporary_total": 160,
+  "T_air": 35110,
+  "status": "FEASIBLE",
+  "temporary_groups": 155,
+  "temporary_groups_covered": 155,
+  "temporary_persons_coverable": 160,
+  "zero_option_temporary_groups": 0,
+  "selected_flights": 212,
+  "aircraft_used": 22,
+  "validation": {
+    "independent": true,
+    "solver_equals_delivery": true
+  },
+  "runtime": {
+    "option_generation": 3.442533000000026,
+    "master": 355.3588757,
+    "realization_validation": 0.2702653000000055,
+    "total": 363.2883626
+  }
+}

@@ -1,0 +1,112 @@
+﻿%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif",
+    "fontSize": "17px",
+    "primaryTextColor": "#16324F",
+    "lineColor": "#657487",
+    "clusterBkg": "#FAFBFD",
+    "clusterBorder": "#AEB9C6"
+  },
+  "flowchart": {"curve": "basis", "nodeSpacing": 34, "rankSpacing": 46, "htmlLabels": true}
+}}%%
+flowchart TB
+  TITLE["math-modeling-solver-copy 工作流<br/><small>培训增强版｜从题意理解到论文交接</small>"]:::title
+  U(["用户请求"]):::entry
+  MODE{"选择工作模式"}:::decision
+  TITLE --> U --> MODE
+
+  FULL["全流程模式<br/>完整赛题，从零求解<br/>执行全部阶段与门禁"]:::mode
+  FOCUS["局部协助模式<br/>公式 / 模型 / 代码 / 检验<br/>直达相关阶段"]:::mode
+  REVIEW["方案审查模式<br/>审查已有模型、代码或结果<br/>不无理由推翻方案"]:::mode
+  MODE -->|"完整赛题"| FULL
+  MODE -->|"局部问题"| FOCUS
+  MODE -->|"已有方案"| REVIEW
+  FOCUS -.-> PICK["按请求定位阶段<br/>不强制创建完整目录"]:::note
+  REVIEW -.-> PICK
+
+  subgraph CORE["核心求解流程"]
+    direction TB
+
+    subgraph ROW1["Ⅰ｜理解与设计"]
+      direction LR
+      S0["阶段 0<br/>环境初始化<br/>结构・字典・里程碑"]:::stage
+      S1["阶段 1<br/>问题拆解与数据审计<br/>机制・约束・结构指纹"]:::stage
+      LIT["阶段 1.5<br/>文献检索与精读<br/>公式・参数・适用条件"]:::stage
+      S2["阶段 2<br/>模型阶梯<br/>基线 → 基准 → 升级 → 替代"]:::stage
+      S0 --> S1 --> LIT --> S2
+    end
+
+    subgraph ROW2["Ⅱ｜算法与检验"]
+      direction LR
+      S3["阶段 3<br/>算法设计与<br/>条件化求解工程"]:::stageStrong
+      A1["通用算法契约<br/>输入输出・初始化・预算<br/>停止・状态・日志"]:::contract
+      A2["算法专项检查<br/>统计 / ML / 随机优化<br/>Monte Carlo / ODE-PDE / 聚类"]:::contract
+      SOLVER{"使用数学规划<br/>求解器？"}:::decision
+      A3["求解器专项<br/>状态・incumbent・bound<br/>gap・不可行诊断"]:::solver
+      SKIP["不使用求解器<br/>标明不适用<br/>不得虚构状态或 gap"]:::note
+      S4["阶段 4<br/>检验方案<br/>互补验证・不确定性・回退"]:::stage
+      S3 --> A1 --> A2 --> SOLVER
+      SOLVER -->|"是"| A3 --> S4
+      SOLVER -->|"否"| SKIP --> S4
+    end
+
+    subgraph ROW3["Ⅲ｜实现与交付"]
+      direction LR
+    S5["阶段 5<br/>图表规划<br/>Figure Contract"]:::stage
+      S6["阶段 6<br/>算法实现<br/>公式验证・可复现运行"]:::stage
+      S7["阶段 7<br/>结果分析<br/>基准对比・诊断・现实解释"]:::stage
+      PASS{"核心检验<br/>是否通过？"}:::decision
+      S8["阶段 8<br/>论文衔接<br/>Claim—Evidence 一致性"]:::stage
+      READY(["PAPER_READY<br/>移交 math-modeling-paper"]):::finish
+      BACK["定位原因并回退<br/>模型问题 → 阶段 2<br/>算法问题 → 阶段 3"]:::warning
+      S5 --> S6 --> S7 --> PASS
+      PASS -->|"通过"| S8 --> READY
+    PASS -->|"不通过"| BACK
+  end
+
+  S2 --> S3
+  S4 --> S5
+  BACK -.-> S2
+  BACK -.-> S3
+  PICK -.-> S1
+  PICK -.-> S2
+  PICK -.-> S3
+  PICK -.-> S4
+  PICK -.-> S6
+  PICK -.-> S7
+  PICK -.-> S8
+  end
+
+  FULL --> S0
+
+  subgraph GUARDS["贯穿阶段 0—8 的六项质量门禁"]
+    direction LR
+    G1["数据先于模型<br/>结构、单位、泄漏与清洗有依据"]:::guard
+    G2["基准先于复杂<br/>升级必须有残差、数据或机制证据"]:::guard
+    G3["验证前置<br/>先定义通过标准，再实现"]:::guard
+    G4["可复现<br/>环境、参数、种子、日志、中间结果"]:::guard
+    G5["团队同步<br/>模型—代码—结果—论文共用字典"]:::guard
+    G6["AI 有边界<br/>公式、参数、文献、代码须人工核验"]:::guard
+    G1 --- G2 --- G3 --- G4 --- G5 --- G6
+  end
+  CORE -.-> GUARDS
+
+  classDef title fill:#143A63,color:#FFFFFF,stroke:#143A63,stroke-width:2px,font-size:23px;
+  classDef entry fill:#2D5F91,color:#FFFFFF,stroke:#2D5F91,stroke-width:2px;
+  classDef finish fill:#176B4D,color:#FFFFFF,stroke:#176B4D,stroke-width:2px;
+  classDef decision fill:#FFF0C2,color:#553B00,stroke:#C58A00,stroke-width:2px;
+  classDef mode fill:#E8F1FF,color:#173B67,stroke:#5484BC,stroke-width:2px;
+  classDef stage fill:#F4F7FB,color:#1D3147,stroke:#7590AD,stroke-width:1.5px;
+  classDef stageStrong fill:#DDEBFF,color:#173B67,stroke:#356FAE,stroke-width:3px;
+  classDef contract fill:#E9F8F0,color:#174E39,stroke:#4C9873,stroke-width:1.5px;
+  classDef solver fill:#D9F2E5,color:#154B35,stroke:#25805A,stroke-width:2px;
+  classDef note fill:#F2F3F5,color:#4A515B,stroke:#939AA3,stroke-dasharray:5 4;
+  classDef warning fill:#FFE3E3,color:#782626,stroke:#C65353,stroke-width:2px;
+  classDef guard fill:#F1ECFF,color:#45346E,stroke:#8873BC,stroke-width:1.5px;
+
+  style CORE fill:#FBFCFE,stroke:#91A3B6,stroke-width:2px
+  style ROW1 fill:#F7FAFE,stroke:#C1CCD8,stroke-width:1px
+  style ROW2 fill:#F6FBF8,stroke:#B8CFC2,stroke-width:1px
+  style ROW3 fill:#FBF9FE,stroke:#C9BFDA,stroke-width:1px
+  style GUARDS fill:#FAF8FF,stroke:#A493C8,stroke-width:2px

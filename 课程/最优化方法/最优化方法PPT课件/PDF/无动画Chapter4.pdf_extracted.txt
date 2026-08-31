@@ -1,0 +1,434 @@
+# 无动画Chapter4.pdf
+共 12 页
+
+
+## 第 1 页
+1 4 (cid:217) A(cid:219)Vg
+1. (cid:130)ª
+2. (cid:135)†¡(cid:134)(cid:130)5q
+3. (cid:224)8
+4. (cid:25)(cid:141)
+5. ı¡N(cid:218)ı(cid:156)/
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 1/12
+
+### 表格 1
+
+| 1 4 (cid:217) A(cid:219)Vg
+1. (cid:130)ª
+2. (cid:135)†¡(cid:134)(cid:130)5q
+3. (cid:224)8
+4. (cid:25)(cid:141)
+5. ı¡N(cid:218)ı(cid:156)/ |  |  |
+|---|---|---|
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 1/12 |
+
+## 第 2 页
+(cid:130)ª
+‰´ ((cid:134)(cid:130)(straight line), (cid:130)ª(line segment), (cid:19)(cid:130)(radial line))
+(cid:152)m¥(cid:252): x (cid:218) y (cid:131)m(cid:27)(cid:134)(cid:130): {αx+(1−α)y|α∈R}.
+(cid:152)m¥(cid:252): x (cid:218) y (cid:131)m(cid:27)(cid:130)ª: {αx+(1−α)y|α∈[0,1]}.
+(cid:152)m¥d y u(cid:209)(cid:141)(cid:149) x (cid:27)(cid:19)(cid:130): {αx+(1−α)y|α>0}.
+‰´ ((cid:135)†¡(hyperplane): (cid:149)(cid:254) 0(cid:54)=u∈Rn (cid:218)~Œ v ∈R)
+π={x∈Rn |u(cid:62)x=v} ‰ π={x∈Rn |u(cid:62)(x−a)=0}, a∈π
+u¡(cid:143)(cid:135)†¡(cid:27){(cid:149)(cid:254).
+ev=0, K0∈π=⇒π·f(cid:152)m.
+ev(cid:54)=0, K0∈/ π=⇒π·(cid:152)(cid:135)6/.
+(cid:20)(cid:140)(cid:152)m(positive halfspace): H+ ={x∈Rn |u(cid:62)(x−a)≥0},
+K(cid:140)(cid:152)m(negative halfspace): H− ={x∈Rn |u(cid:62)(x−a)≤0}.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 2/12
+
+### 表格 1
+
+| (cid:130)ª |  |  |
+|---|---|---|
+| ‰´ ((cid:134)(cid:130)(straight line), (cid:130)ª(line segment), (cid:19)(cid:130)(radial line))
+(cid:152)m¥(cid:252): x (cid:218) y (cid:131)m(cid:27)(cid:134)(cid:130): {αx+(1−α)y|α∈R}.
+(cid:152)m¥(cid:252): x (cid:218) y (cid:131)m(cid:27)(cid:130)ª: {αx+(1−α)y|α∈[0,1]}.
+(cid:152)m¥d y u(cid:209)(cid:141)(cid:149) x (cid:27)(cid:19)(cid:130): {αx+(1−α)y|α>0}.
+‰´ ((cid:135)†¡(hyperplane): (cid:149)(cid:254) 0(cid:54)=u∈Rn (cid:218)~Œ v ∈R)
+π={x∈Rn |u(cid:62)x=v} ‰ π={x∈Rn |u(cid:62)(x−a)=0}, a∈π
+u¡(cid:143)(cid:135)†¡(cid:27){(cid:149)(cid:254).
+ev=0, K0∈π=⇒π·f(cid:152)m.
+ev(cid:54)=0, K0∈/ π=⇒π·(cid:152)(cid:135)6/.
+(cid:20)(cid:140)(cid:152)m(positive halfspace): H+ ={x∈Rn |u(cid:62)(x−a)≥0},
+K(cid:140)(cid:152)m(negative halfspace): H− ={x∈Rn |u(cid:62)(x−a)≤0}. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 2/12 |
+
+## 第 3 页
+(cid:130)5q
+‰´ ((cid:130)5q(linear variety))
+(cid:23) A∈Rm×n, b∈Rm. (cid:130)5q(cid:143) L={x∈Rn |Ax=b}. L (cid:27)(cid:145)Œ‰´(cid:143)
+dimN(A). L ·f(cid:152)m ⇐⇒ b=0.
+e A=0, K L=Rn.
+e dimL<n, K L ·k(cid:129)(cid:135)(cid:135)†¡(cid:27)(cid:2).
+‰´ ((cid:224)8(convex set))
+Θ⊂Rn ·(cid:224)8⇐⇒ ∀x,y∈Θ, x (cid:218) y (cid:131)m(cid:27)(cid:130)ª(cid:209)(cid:160)u ΘS.
+Θ⊂Rn·(cid:224)8⇐⇒ αx+(1−α)y∈Θ, ∀x,y∈Θ (cid:218) α∈(0,1).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 3/12
+
+### 表格 1
+
+| (cid:130)5q |  |  |
+|---|---|---|
+| ‰´ ((cid:130)5q(linear variety))
+(cid:23) A∈Rm×n, b∈Rm. (cid:130)5q(cid:143) L={x∈Rn |Ax=b}. L (cid:27)(cid:145)Œ‰´(cid:143)
+dimN(A). L ·f(cid:152)m ⇐⇒ b=0.
+e A=0, K L=Rn.
+e dimL<n, K L ·k(cid:129)(cid:135)(cid:135)†¡(cid:27)(cid:2).
+‰´ ((cid:224)8(convex set))
+Θ⊂Rn ·(cid:224)8⇐⇒ ∀x,y∈Θ, x (cid:218) y (cid:131)m(cid:27)(cid:130)ª(cid:209)(cid:160)u ΘS.
+Θ⊂Rn·(cid:224)8⇐⇒ αx+(1−α)y∈Θ, ∀x,y∈Θ (cid:218) α∈(0,1). |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 3/12 |
+
+## 第 4 页
+(cid:224)8
+(cid:70) (cid:224)8(cid:27)~f: (cid:152)8, (cid:252):8, (cid:134)(cid:130), (cid:130)ª, f(cid:152)m, (cid:135)†¡, (cid:130)5q, (cid:140)(cid:152)m, ı¡N, (cid:19)(cid:30)
+I, (cid:20)(cid:140)‰I, ···
+(cid:7)‰8(cid:220)(cid:27)(cid:224)5 ((cid:134)(cid:214)y†)
+Θ={x∈R2 |x x ≥1,x ≥0,x ≥0}.
+1 2 1 2
+Θ={x∈Rn |x(cid:62)Ax+b(cid:62)x+c≤0,A(cid:31)0}.
+‰n ((cid:2)(cid:224)5(preserving convex))
+e8(cid:220) Θ, Θ (cid:218) Θ · Rn ¥(cid:27)(cid:224)8, Ke(cid:15)$(cid:142)(cid:2)–8(cid:220)(cid:27)(cid:224)5
+1 2
+Œƒ(scaling): rΘ={rx|∀x∈Θ};
+(cid:2)(intersection): Θ ∩Θ ;
+1 2
+Minkowski(cid:218)/(cid:11): Θ ±Θ ={x ±x |∀x ∈Θ ,x ∈Θ };
+1 2 1 2 1 1 2 2
+(cid:130)5C(cid:134): AΘ={Ax|∀x∈Θ}.
+(cid:224)8(cid:220)(cid:27)S(cid:220)(cid:218)4(cid:157): int(Θ) (cid:218) cl(Θ).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 4/12
+
+### 表格 1
+
+| (cid:224)8 |  |  |
+|---|---|---|
+| (cid:70) (cid:224)8(cid:27)~f: (cid:152)8, (cid:252):8, (cid:134)(cid:130), (cid:130)ª, f(cid:152)m, (cid:135)†¡, (cid:130)5q, (cid:140)(cid:152)m, ı¡N, (cid:19)(cid:30)
+I, (cid:20)(cid:140)‰I, ···
+(cid:7)‰8(cid:220)(cid:27)(cid:224)5 ((cid:134)(cid:214)y†)
+Θ={x∈R2 |x x ≥1,x ≥0,x ≥0}.
+1 2 1 2
+Θ={x∈Rn |x(cid:62)Ax+b(cid:62)x+c≤0,A(cid:31)0}.
+‰n ((cid:2)(cid:224)5(preserving convex))
+e8(cid:220) Θ, Θ (cid:218) Θ · Rn ¥(cid:27)(cid:224)8, Ke(cid:15)$(cid:142)(cid:2)–8(cid:220)(cid:27)(cid:224)5
+1 2
+Œƒ(scaling): rΘ={rx|∀x∈Θ};
+(cid:2)(intersection): Θ ∩Θ ;
+1 2
+Minkowski(cid:218)/(cid:11): Θ ±Θ ={x ±x |∀x ∈Θ ,x ∈Θ };
+1 2 1 2 1 1 2 2
+(cid:130)5C(cid:134): AΘ={Ax|∀x∈Θ}.
+(cid:224)8(cid:220)(cid:27)S(cid:220)(cid:218)4(cid:157): int(Θ) (cid:218) cl(Θ). |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 4/12 |
+
+## 第 5 页
+(cid:224)/(cid:11)I/(cid:149)(cid:19)(cid:157)
+(cid:224)(cid:157)(convex hull)
+• l(cid:209)8 C ={x }k :
+i i=1
+conv(C)={
+(cid:80)k
+α x |
+(cid:80)k
+α =1, α ≥0}.
+i=1 i i i=1 i i
+• ºY8 C: conv(C) · C ¥⁄k:(cid:27)(cid:224)|(cid:220).
+I(cid:157)(conic hull)
+(cid:110) (cid:111)
+• l(cid:209)8 C ={x }k : cone(C)= (cid:80)k α x |α ≥0 .
+i i=1 i=1 i i i
+• ºY8 C: cone(C)· C ¥⁄k:(cid:27)I|(cid:220).
+(cid:149)(cid:19)(cid:157)(affine hull)
+(cid:110) (cid:111)
+• l(cid:209)8 C ={x }k : affine(C)= (cid:80)k α x | (cid:80)k α =1 .
+i i=1 i=1 i i i=1 i
+• ºY8C: affine(C)·(cid:157)„C(cid:27)⁄k(cid:149)(cid:19)8(cid:27)(cid:2).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 5/12
+
+### 表格 1
+
+| (cid:224)/(cid:11)I/(cid:149)(cid:19)(cid:157) |  |  |
+|---|---|---|
+| (cid:224)(cid:157)(convex hull)
+• l(cid:209)8 C ={x }k :
+i i=1
+(cid:80)k (cid:80)k
+conv(C)={ α x | α =1, α ≥0}.
+i=1 i i i=1 i i
+• ºY8 C: conv(C) · C ¥⁄k:(cid:27)(cid:224)|(cid:220).
+I(cid:157)(conic hull)
+(cid:110) (cid:111)
+• l(cid:209)8 C ={x }k : cone(C)= (cid:80)k α x |α ≥0 .
+i i=1 i=1 i i i
+• ºY8 C: cone(C)· C ¥⁄k:(cid:27)I|(cid:220).
+(cid:149)(cid:19)(cid:157)(affine hull)
+(cid:110) (cid:111)
+• l(cid:209)8 C ={x }k : affine(C)= (cid:80)k α x | (cid:80)k α =1 .
+i i=1 i=1 i i i=1 i
+• ºY8C: affine(C)·(cid:157)„C(cid:27)⁄k(cid:149)(cid:19)8(cid:27)(cid:2). |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 5/12 |
+
+## 第 6 页
+¥/(cid:253)¥/I
+x (cid:143)¥%(cid:218) r (cid:143)(cid:140)»(cid:27)¥(ball)
+c
+B(x ,r) ={x∈Rn |(cid:107)x−x (cid:107) ≤r}
+c c p
+={x +ru|(cid:107)u(cid:107) ≤1}.
+c p
+›#"(cid:192)“¥”(cid:218)“(cid:229)l”
+x (cid:143)¥%(cid:218) r (cid:143)(cid:140)»(cid:27)(cid:253)¥(ellipsoid)
+c
+• E ={x∈Rn |(cid:107)x−x (cid:107)2 ≤r}, (cid:217)¥ P (cid:31)0 (cid:218) P =P(cid:62).
+c P
+• E ={x +Au|(cid:107)u(cid:107) ≤r}, (cid:217)¥ A ·(cid:154)(cid:219)(cid:201)(cid:221)(cid:10).
+c 2
+(cid:224)I(convex cone)
+• (cid:19)(cid:30)I(second-order cone): K ={(x,t)∈Rn×R|(cid:107)x(cid:107) ≤t}
+2
+• (cid:20)(cid:140)‰I(semidefinite cone):
+Sn ={A∈Rn×n |A=A(cid:62), A(cid:23)0}.
++
+(cid:20) (cid:21)
+x y
+~ ∈S2.
+y z +
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 6/12
+
+### 表格 1
+
+| ¥/(cid:253)¥/I |  |  |
+|---|---|---|
+| x (cid:143)¥%(cid:218) r (cid:143)(cid:140)»(cid:27)¥(ball)
+c
+B(x ,r) ={x∈Rn |(cid:107)x−x (cid:107) ≤r}
+c c p
+={x +ru|(cid:107)u(cid:107) ≤1}.
+c p
+›#"(cid:192)“¥”(cid:218)“(cid:229)l”
+x (cid:143)¥%(cid:218) r (cid:143)(cid:140)»(cid:27)(cid:253)¥(ellipsoid)
+c
+• E ={x∈Rn |(cid:107)x−x (cid:107)2 ≤r}, (cid:217)¥ P (cid:31)0 (cid:218) P =P(cid:62).
+c P
+• E ={x +Au|(cid:107)u(cid:107) ≤r}, (cid:217)¥ A ·(cid:154)(cid:219)(cid:201)(cid:221)(cid:10).
+c 2
+(cid:224)I(convex cone)
+• (cid:19)(cid:30)I(second-order cone): K ={(x,t)∈Rn×R|(cid:107)x(cid:107) ≤t}
+2
+• (cid:20)(cid:140)‰I(semidefinite cone):
+Sn ={A∈Rn×n |A=A(cid:62), A(cid:23)0}.
++
+(cid:20) (cid:21)
+x y
+~ ∈S2.
+y z + |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 6/12 |
+
+## 第 7 页
+(cid:224)8
+‰´ (8(cid:220)(cid:27)4:(extreme point))
+XJ8(cid:220) Θ⊂Rn ¥(cid:216)(cid:127)3(cid:252)p(cid:201): u (cid:218) v, ƒ(cid:26)?¿ α∈(0,1) (cid:247)v
+x=αu+(1−α)v, K¡: x∈Θ ·(cid:152)(cid:135)8(cid:220)(cid:27)4:.
+‰n (8(cid:220)(cid:27)4:(cid:134)8(cid:220)(cid:224)5)
+(cid:23)8(cid:220) Θ⊂Rn ·(cid:224)8. : x∈Θ ·4:⇐⇒ Θ\{x} E·(cid:224)8.
+(cid:70) –: x (cid:143)¥%x(cid:130)ª, evk(cid:130)ªÆu8(cid:220) Θ, K: x ·8(cid:220)(cid:27)4:.
+(cid:70) ~ (cid:11)(cid:3): >.(cid:254)?¿(cid:152):; ı¡N: ”:; (cid:130)ª: (cid:130)ª(cid:27)(cid:224):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 7/12
+
+### 表格 1
+
+| (cid:224)8 |  |  |
+|---|---|---|
+| ‰´ (8(cid:220)(cid:27)4:(extreme point))
+XJ8(cid:220) Θ⊂Rn ¥(cid:216)(cid:127)3(cid:252)p(cid:201): u (cid:218) v, ƒ(cid:26)?¿ α∈(0,1) (cid:247)v
+x=αu+(1−α)v, K¡: x∈Θ ·(cid:152)(cid:135)8(cid:220)(cid:27)4:.
+‰n (8(cid:220)(cid:27)4:(cid:134)8(cid:220)(cid:224)5)
+(cid:23)8(cid:220) Θ⊂Rn ·(cid:224)8. : x∈Θ ·4:⇐⇒ Θ\{x} E·(cid:224)8.
+(cid:70) –: x (cid:143)¥%x(cid:130)ª, evk(cid:130)ªÆu8(cid:220) Θ, K: x ·8(cid:220)(cid:27)4:.
+(cid:70) ~ (cid:11)(cid:3): >.(cid:254)?¿(cid:152):; ı¡N: ”:; (cid:130)ª: (cid:130)ª(cid:27)(cid:224):. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 7/12 |
+
+## 第 8 页
+(cid:224)8(cid:27)4:
+~. Θ={x∈Rn |0≤x≤1,e(cid:62)x=k}, (cid:217)¥ e=(1,··· ,1), n≥k ∈Z
++
+Θ (cid:27)4:(cid:143): 0-1(cid:149)(cid:254)(cid:133)kk(cid:135)'(cid:254)(cid:143) 1.
+• V˙(cid:252)X1(=Θ(cid:27)‰´¥k=1, Xª)(cid:27)4:(cid:143): g,˜.
+~. Θ={x∈Rn |0≤x≤1,e(cid:62)x≤k}, (cid:217)¥ n≥k ∈Z
++
+Θ (cid:27)4:(cid:143): 0-1(cid:149)(cid:254)(cid:133)(cid:150)ıkk(cid:135)'(cid:254)(cid:143) 1.
+• (cid:28)(cid:145)(cid:252)X1(=Θ(cid:27)‰´¥k=1, Xª)(cid:27)4:(cid:143): g,˜(cid:218)(cid:6):.
+~. Θ={x∈Rn |(cid:107)x(cid:107) ≤1,(cid:107)x(cid:107) ≤k}, (cid:217)¥ n≥k ∈Z
+∞ 1 +
+Θ (cid:27)4:(cid:143): kk(cid:135)(cid:154)"'(cid:254)(cid:143) ±1.
+• (cid:96) -(cid:137)Œ(cid:252)(cid:160)¥(=Θ(cid:27)‰´¥k=1, X(cid:134)ª)
+1
+(cid:27)4:(cid:143): ±g,˜.
+• (cid:96) -(cid:137)Œ(cid:252)(cid:160)¥(=Θ(cid:27)‰´¥k=n, Xmª)
+∞
+(cid:27)4:(cid:143): (cid:28)(cid:220)'(cid:254)(cid:143)±1(cid:27)(cid:149)(cid:254)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 8/12
+
+### 表格 1
+
+| (cid:224)8(cid:27)4: |  |  |
+|---|---|---|
+| ~. Θ={x∈Rn |0≤x≤1,e(cid:62)x=k}, (cid:217)¥ e=(1,··· ,1), n≥k ∈Z
++
+Θ (cid:27)4:(cid:143): 0-1(cid:149)(cid:254)(cid:133)kk(cid:135)'(cid:254)(cid:143) 1.
+• V˙(cid:252)X1(=Θ(cid:27)‰´¥k=1, Xª)(cid:27)4:(cid:143): g,˜.
+~. Θ={x∈Rn |0≤x≤1,e(cid:62)x≤k}, (cid:217)¥ n≥k ∈Z
++
+Θ (cid:27)4:(cid:143): 0-1(cid:149)(cid:254)(cid:133)(cid:150)ıkk(cid:135)'(cid:254)(cid:143) 1.
+• (cid:28)(cid:145)(cid:252)X1(=Θ(cid:27)‰´¥k=1, Xª)(cid:27)4:(cid:143): g,˜(cid:218)(cid:6):.
+~. Θ={x∈Rn |(cid:107)x(cid:107) ≤1,(cid:107)x(cid:107) ≤k}, (cid:217)¥ n≥k ∈Z
+∞ 1 +
+Θ (cid:27)4:(cid:143): kk(cid:135)(cid:154)"'(cid:254)(cid:143) ±1.
+• (cid:96) -(cid:137)Œ(cid:252)(cid:160)¥(=Θ(cid:27)‰´¥k=1, X(cid:134)ª)
+1
+(cid:27)4:(cid:143): ±g,˜.
+• (cid:96) -(cid:137)Œ(cid:252)(cid:160)¥(=Θ(cid:27)‰´¥k=n, Xmª)
+∞
+(cid:27)4:(cid:143): (cid:28)(cid:220)'(cid:254)(cid:143)±1(cid:27)(cid:149)(cid:254) |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 8/12 |
+
+## 第 9 页
+(cid:224)8(cid:27)4:
+• V(cid:145)¯(cid:221)(cid:10): 1(cid:218)!(cid:15)(cid:218)(cid:209)(cid:143)1(cid:27)(cid:154)K(cid:144)(cid:10).
+• (cid:23) X ∈Rn×n ·V(cid:145)¯(cid:221)(cid:10). ‰´ı¡N
+P ={X ∈Rn×n |X ≥0,Xe=e,e(cid:62)X =e(cid:62)}
+n
+‰n (Birkhoff’s Theorem)
+P (cid:27)4:(cid:143)(cid:181)(cid:152)(cid:134)(cid:221)(cid:10). ((cid:1)k n! (cid:135))
+n
+y. If is an extreme point of P, then X has an entry equal to 1 =⇒ all other entries in
+therowandthecolumnoftheunitentryarezeros. =⇒ eliminatingfromxtherowand
+the column of the unit entry, we get an (n−1)×(n−1) double-stochastic matrix.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 9/12
+
+### 表格 1
+
+| (cid:224)8(cid:27)4: |  |  |
+|---|---|---|
+| • V(cid:145)¯(cid:221)(cid:10): 1(cid:218)!(cid:15)(cid:218)(cid:209)(cid:143)1(cid:27)(cid:154)K(cid:144)(cid:10).
+• (cid:23) X ∈Rn×n ·V(cid:145)¯(cid:221)(cid:10). ‰´ı¡N
+P ={X ∈Rn×n |X ≥0,Xe=e,e(cid:62)X =e(cid:62)}
+n
+‰n (Birkhoff’s Theorem)
+P (cid:27)4:(cid:143)(cid:181)(cid:152)(cid:134)(cid:221)(cid:10). ((cid:1)k n! (cid:135))
+n
+y. If is an extreme point of P, then X has an entry equal to 1 =⇒ all other entries in
+therowandthecolumnoftheunitentryarezeros. =⇒ eliminatingfromxtherowand
+the column of the unit entry, we get an (n−1)×(n−1) double-stochastic matrix. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 9/12 |
+
+## 第 10 页
+(cid:25)(cid:141)
+‰´ (8(cid:220) S ⊂Rn, x∈Rn)
+• S (cid:27)S:(interior)⇐⇒ ∃N(x)⊆S;
+• S (cid:27)>.:(boundary)⇐⇒ ∀N(x) (cid:157)„ S ¥(cid:27):(cid:218) Rn\S;
+• S (cid:27)(cid:131)ØS:(relative interior)⇐⇒ x · S (cid:131)Øu
+aff(S) (cid:27)S:, = ∃N(x)∩aff(S)⊆S.
+(cid:70) S (cid:27)S:(cid:28)N, P(cid:143) intS ⇐⇒ S (cid:27)⁄kS:.
+(cid:70) S (cid:27)>.:(cid:28)N, P(cid:143) bd(S), ¡(cid:143) S (cid:27)>.. >.:(cid:140)U(cid:216)Æu S.
+‰´ (m8/48/k.8/;8)
+S ⊂Rn ·m8: S (cid:27)⁄k:(cid:209)·S:.
+S ⊂Rn ·48: S (cid:157)„>.: ⇐⇒ 8(cid:220)(cid:27)(cid:214)8·m8.
+S ⊂Rn ·k.8: S (cid:26)k(cid:129)(cid:140)»(cid:27)¥CX, =∃r>0 ƒ(cid:26) (cid:107)x(cid:107)≤r,∀x∈S.
+S ⊂Rn ·;8: S ·k.48.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 10/12
+
+### 表格 1
+
+| (cid:25)(cid:141) |  |  |
+|---|---|---|
+| ‰´ (8(cid:220) S ⊂Rn, x∈Rn)
+• S (cid:27)S:(interior)⇐⇒ ∃N(x)⊆S;
+• S (cid:27)>.:(boundary)⇐⇒ ∀N(x) (cid:157)„ S ¥(cid:27):(cid:218) Rn\S;
+• S (cid:27)(cid:131)ØS:(relative interior)⇐⇒ x · S (cid:131)Øu
+aff(S) (cid:27)S:, = ∃N(x)∩aff(S)⊆S.
+(cid:70) S (cid:27)S:(cid:28)N, P(cid:143) intS ⇐⇒ S (cid:27)⁄kS:.
+(cid:70) S (cid:27)>.:(cid:28)N, P(cid:143) bd(S), ¡(cid:143) S (cid:27)>.. >.:(cid:140)U(cid:216)Æu S.
+‰´ (m8/48/k.8/;8)
+S ⊂Rn ·m8: S (cid:27)⁄k:(cid:209)·S:.
+S ⊂Rn ·48: S (cid:157)„>.: ⇐⇒ 8(cid:220)(cid:27)(cid:214)8·m8.
+S ⊂Rn ·k.8: S (cid:26)k(cid:129)(cid:140)»(cid:27)¥CX, =∃r>0 ƒ(cid:26) (cid:107)x(cid:107)≤r,∀x∈S.
+S ⊂Rn ·;8: S ·k.48. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 10/12 |
+
+## 第 11 页
+(cid:25)(cid:141)
+‰n (Weierstrass‰n)
+(cid:23) Ω⊂Rn ·;8, f :Ω→R ·ºY…Œ. K?¿ x∈Ω, (cid:127)3 x ∈Ω ƒ(cid:26)
+0
+f(x )≤f(x), = f 3 Ω (cid:254)k4(cid:2):.
+0
+(cid:70) Weierstrass‰nL† min f(x) 4(cid:2):(cid:27)(cid:127)35.
+x∈Ω
+(cid:70) …Œ(cid:27)(cid:238)(cid:130)(cid:224)5, e(cid:140)ºY5, r(cid:155)5, U(cid:2)y minf(x) )(cid:27)(cid:141)(cid:152)5.
+x∈Ω
+‰´ (|(cid:160)(cid:135)†¡(support hyperplane))
+(cid:23) Θ⊂Rn (cid:143)(cid:224)8, x∈bd(Θ). L: x (cid:27),(cid:135)(cid:135)†
+¡ π (cid:242) Rn (cid:152)m'(cid:143)(cid:252)(cid:135)(cid:140)(cid:152)m. XJ Θ (cid:17)(cid:28)(cid:160)u
+(cid:217)¥(cid:152)(cid:135)(cid:140)(cid:152)mS, @o¡ π (cid:143) Θ 3 x :(cid:27)|(cid:160)(cid:135)
+†¡.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 11/12
+
+### 表格 1
+
+| (cid:25)(cid:141) |  |  |
+|---|---|---|
+| ‰n (Weierstrass‰n)
+(cid:23) Ω⊂Rn ·;8, f :Ω→R ·ºY…Œ. K?¿ x∈Ω, (cid:127)3 x ∈Ω ƒ(cid:26)
+0
+f(x )≤f(x), = f 3 Ω (cid:254)k4(cid:2):.
+0
+(cid:70) Weierstrass‰nL† min f(x) 4(cid:2):(cid:27)(cid:127)35.
+x∈Ω
+(cid:70) …Œ(cid:27)(cid:238)(cid:130)(cid:224)5, e(cid:140)ºY5, r(cid:155)5, U(cid:2)y minf(x) )(cid:27)(cid:141)(cid:152)5.
+x∈Ω
+‰´ (|(cid:160)(cid:135)†¡(support hyperplane))
+(cid:23) Θ⊂Rn (cid:143)(cid:224)8, x∈bd(Θ). L: x (cid:27),(cid:135)(cid:135)†
+¡ π (cid:242) Rn (cid:152)m'(cid:143)(cid:252)(cid:135)(cid:140)(cid:152)m. XJ Θ (cid:17)(cid:28)(cid:160)u
+(cid:217)¥(cid:152)(cid:135)(cid:140)(cid:152)mS, @o¡ π (cid:143) Θ 3 x :(cid:27)|(cid:160)(cid:135)
+†¡. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 11/12 |
+
+## 第 12 页
+ı¡N(cid:218)ı(cid:156)/
+‰´ (ı¡N(polytopes)(cid:218)ı(cid:156)/(polyhedra))
+ı¡N: k(cid:129)(cid:135)(cid:140)(cid:152)m(cid:27)(cid:2)8, =
+{x∈Rn |a(cid:62)x≤b , i=1,...,m}.
+i i
+ı(cid:156)N: (cid:154)(cid:152)(cid:133)k.(cid:27)ı¡N.
+mª: (cid:252)(cid:246)(cid:209)·(cid:224)ı¡N, 1(cid:152)(cid:135)·ı(cid:156)N.
+‰´ (”:/>/¡)
+P ={x|Ax=b,Cx≤d} ·ı¡N, K
+• P (cid:27)¡(face): (k−1) (cid:145)ı¡N.
+/⁄ k(cid:145)ı¡N(cid:27)>..
+z(cid:135)k(cid:145)ı¡N(cid:209)kk−1, k−2, ···¡.
+• P (cid:27)”:(vertex): ı¡N(cid:27)"(cid:145)¡.
+• P (cid:27)>(edge): ı¡N(cid:27)1(cid:145)¡.
+(cid:138)(cid:146): (cid:145)(cid:0)SK 4.3
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 14(cid:217) A(cid:219)Vg 12/12
+
+### 表格 1
+
+| ı¡N(cid:218)ı(cid:156)/ |  |  |
+|---|---|---|
+| ‰´ (ı¡N(polytopes)(cid:218)ı(cid:156)/(polyhedra))
+ı¡N: k(cid:129)(cid:135)(cid:140)(cid:152)m(cid:27)(cid:2)8, =
+{x∈Rn |a(cid:62)x≤b , i=1,...,m}.
+i i
+ı(cid:156)N: (cid:154)(cid:152)(cid:133)k.(cid:27)ı¡N.
+mª: (cid:252)(cid:246)(cid:209)·(cid:224)ı¡N, 1(cid:152)(cid:135)·ı(cid:156)N.
+‰´ (”:/>/¡)
+P ={x|Ax=b,Cx≤d} ·ı¡N, K
+• P (cid:27)¡(face): (k−1) (cid:145)ı¡N.
+/⁄ k(cid:145)ı¡N(cid:27)>..
+z(cid:135)k(cid:145)ı¡N(cid:209)kk−1, k−2, ···¡.
+• P (cid:27)”:(vertex): ı¡N(cid:27)"(cid:145)¡.
+• P (cid:27)>(edge): ı¡N(cid:27)1(cid:145)¡.
+(cid:138)(cid:146): (cid:145)(cid:0)SK 4.3 |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 14(cid:217) A(cid:219)Vg | 12/12 |

@@ -1,0 +1,601 @@
+# 07-插值法
+
+---
+raw_title: 数值分析07Interpolation
+subject: 数值分析
+source: 数值分析07Interpolation.pptx
+status: PPTX转换（待校对）
+topics:
+  - Lagrange插值
+  - Newton插值
+  - Runge现象
+  - Chebyshev插值
+  - 样条插值
+---
+# 第07章 插值法
+
+插值 插值基本概念 基本的多项式插值： Lagrange 插值、 Newton 插值 龙格现象 / 切比雪夫插值 分段插值 / 样条插值
+2. 未知函数形态
+f(x)
+插值基本概念 计算机如何表达函数？ 已知函数形态
+y=ax+b
+存储系数： $a,b$ 存储点坐标： $\left({x}_{0},{y}_{0}\right), ({x}_{1},{y}_{1})
+\left({x}_{0},{y}_{0}\right)
+({x}_{1},{y}_{1})
+存储其中 $m+1$ 个点坐标 ( 有损压缩 ) ： $\left(\left({x}_{0},{y}_{0}\right), \left({x}_{1},{y}_{1}\right),\dots \left({x}_{m},{y}_{m}\right)\right)
+${x}_{0}$
+${x}_{1}$
+${x}_{3}$
+${x}_{4}$
+${x}_{2}$
+${x}^{∗}$
+如何计算 $f\left({x}^{∗}\right)?$ *
+g(x)
+★ 用已知函数形态 $g(x)$ 去近似 $f\left(x\right): g\left({x}_{i}\right)=f\left({x}_{i}\right),i=0,\dots ,m
+f\left({x}^{∗}\right)\approx g({x}^{∗})
+插值基本概念 插值的应用： 工业设计 排版打印 数值分析 数值分析 数值分析 数值分析 数值分析 Numerical analysis Numerical analysis Numerical analysis Numerical analysis Numerical analysis
+Times-Roman T 16 段 Bézier 曲线 插值基本概念 插值的应用： PDF 文件中的字体
+插值基本概念 插值问题的数学定义： $f(x)$ 为定义在区间 $[a,b]$ 上的函数， ${\left({x}_{i}\right)}_{i=0}^{n}$ 为 $[a,b]$ 上 $m+1$ 个 互不相同 的点， $Φ=span\left({\varphi }_{0}\left(x\right),{\varphi }_{1}\left(x\right),\dots ,{\varphi }_{n}(x)\right)$ ，求 $g\left(x\right)\in Φ$ 满足 : $g\left({x}_{i}\right)=f\left({x}_{i}\right), i=0,\dots ,m \left({\varphi }_{0}\left(x\right),{\varphi }_{1}\left(x\right),\dots ,{\varphi }_{n}(x)\right)$ 称为 基函数。 我们关心的问题：存在性、唯一性、如何构造、误差估计等。
+插值基本概念 插值的构造：
+设 g(x)={a}_{0}{\varphi }_{0}(x)+\cdots +{a}_{n}{\varphi }_{n}(x)
+g\left({x}_{i}\right)=f\left({x}_{i}\right),i=0,1,\dots ,m ⟹\left({a}_{0}{\varphi }_{0}\left({x}_{0}\right)+{a}_{1}{\varphi }_{1}\left({x}_{0}\right)+\cdots +{a}_{n}{\varphi }_{n}\left({x}_{0}\right)=f({x}_{0}) \\ {a}_{0}{\varphi }_{0}\left({x}_{1}\right)+{a}_{1}{\varphi }_{1}\left({x}_{1}\right)+\cdots +{a}_{n}{\varphi }_{n}\left({x}_{1}\right)=f({x}_{1}) \\ \vdots \\ {a}_{0}{\varphi }_{0}\left({x}_{m}\right)+{a}_{1}{\varphi }_{1}\left({x}_{m}\right)+\cdots +{a}_{n}{\varphi }_{n}\left({x}_{m}\right)=f({x}_{n})\right)
+$$
+{M}_{\left(m+1\right)\times \left(n+1\right)}:=\left({\varphi }_{0}\left({x}_{0}\right){\varphi }_{1}\left({x}_{0}\right)\dots {\varphi }_{n}\left({x}_{0}\right){\varphi }_{0}\left({x}_{1}\right){\varphi }_{1}\left({x}_{1}\right)\dots {\varphi }_{n}\left({x}_{1}\right)\vdots \vdots \ddots \vdots {\varphi }_{0}\left({x}_{m}\right){\varphi }_{1}\left({x}_{m}\right)\dots {\varphi }_{n}\left({x}_{m}\right)\right), a:={\left({a}_{0},{a}_{1},\dots ,{a}_{n}\right)}^{T}f≔{\left(f\left({x}_{0}\right),f\left({x}_{1}\right),\dots f\left({x}_{m}\right)\right)}^{T}⟹Ma=f
+$$
+Ma=f$ 存在唯一解的充分条件？
+m=n
+系数矩阵 $M$ 可逆
+基本的多项式插值 多项 式插值： $Φ={P}_{n}\left(x\right)=span\left(1,x,{x}^{2},\cdots {x}^{n}\right)
+M=\left({\varphi }_{0}\left({x}_{0}\right){\varphi }_{1}\left({x}_{0}\right)\dots {\varphi }_{n}\left({x}_{0}\right){\varphi }_{0}\left({x}_{1}\right){\varphi }_{1}\left({x}_{1}\right)\dots {\varphi }_{n}\left({x}_{1}\right)\vdots \vdots \ddots \vdots {\varphi }_{0}\left({x}_{n}\right){\varphi }_{1}\left({x}_{n}\right)\dots {\varphi }_{n}\left({x}_{n}\right)\right)=\left(1{x}_{0}\dots {x}_{0}^{n}1{x}_{1}\dots {x}_{1}^{n}\vdots \vdots \ddots \vdots 1{x}_{n}\dots {x}_{n}^{n}\right)
+\left(M\right)=_{0\le j<i\le n}{({x}_{i}−{x}_{j})}\ne 0
+Vandermonde 矩阵
+基本的多项式插值 例 : 求经过 ${\left(({x}_{i},{y}_{i})\right)}_{i=0}^{2}=\left(\left(1,6\right),\left(2,1\right),\left(3,12\right)\right)$ 的 二次多项式。
+解：设 {P}_{3}\left(x\right)={a}_{0}+{a}_{1}x+{a}_{2}{x}^{2}
+\left({1}^{0}1{1}^{2}{2}^{0}2{2}^{2}{3}^{0}3{3}^{2}\right)\left({a}_{0}{a}_{1}{a}_{2}\right)=\left(6112\right)
+$$
+{\left({a}_{0},{a}_{1},{a}_{2}\right)}^{T}=[27,−29,8]
+$$
+函数图像
+基本的多项式插值 用 Gauss 消元法求解 $Va=b
+V=\left(1{x}_{0}\dots {x}_{0}^{n}1{x}_{1}\dots {x}_{1}^{n}\vdots \vdots \ddots \vdots 1{x}_{n}\dots {x}_{n}^{n}\right), {x}_{n}=n+1, b=V{\left(1,1,\dots ,1 \right)}^{T}
+基本的多项式插值
+n=10
+a=
+n=20
+a=
+基本多项式插值 优点： ${P}_{n}\left(x\right)={a}_{0}+{a}_{1}x+\dots +{a}_{n}{x}^{n}$ 构造好之后计算简单 缺点：系数矩阵是满阵，并且条件数大（病态）
+Lagrange 插值 如何改进？ 优化基函数：设 $g\left(x\right)={a}_{0}{l}_{0}\left(x\right)+{a}_{1}{l}_{1}\left(x\right)+\dots +{a}_{n}{l}_{n}\left(x\right)
+M=\left({l}_{0}\left({x}_{0}\right){l}_{1}\left({x}_{0}\right)\dots {l}_{n}\left({x}_{0}\right){l}_{0}\left({x}_{1}\right){l}_{1}\left({x}_{1}\right)\dots {l}_{n}\left({x}_{1}\right)\vdots \vdots \ddots \vdots {l}_{0}\left({x}_{n}\right){l}_{1}\left({x}_{n}\right)\dots {l}_{n}\left({x}_{n}\right)\right)
+如果 ${l}_{i}\left({x}_{j}\right)={\delta }_{ij}=\left(1,i=j \\ 0, i\ne j\right)
+则 M=\left({\delta }_{ij}\right)=I, Ma=f⟹{a}_{i}=f({x}_{i})
+Lagrange 插值 如何求 ${{{l}_{i}(x)}}_{i=0}^{n}$ ？ 1. 条件 1 ： ${l}_{i}\left({x}_{j}\right)=0 (j=0,..,n;j\ne i)
+⟹{l}_{i}\left(x\right)={C}_{i}\left(x−{x}_{0}\right)\dots \left(x−{x}_{i−1}\right)\left(x−{x}_{i+1}\right)\dots \left(x−{x}_{n}\right)
+2. 条件 2 ： ${l}_{i}\left({x}_{i}\right)=1
+⟹{C}_{i}=\frac{1}{\left({x}_{i}−{x}_{0}\right)\dots \left({x}_{i}−{x}_{i−1}\right)\left({x}_{i}−{x}_{i+1}\right)\dots \left({x}_{i}−{x}_{n}\right)}
+3.
+$$
+{l}_{i}\left(x\right)=\frac{\left(x−{x}_{0}\right)\dots \left(x−{x}_{i−1}\right)\left(x−{x}_{i+1}\right)\dots \left(x−{x}_{n}\right)}{\left({x}_{i}−{x}_{0}\right)\dots \left({x}_{i}−{x}_{i−1}\right)\left({x}_{i}−{x}_{i+1}\right)\dots \left({x}_{i}−{x}_{n}\right)}
+$$
+最终的插值函数：
+g\left(x\right)=_{i=0}^{n}{f\left({x}_{i}\right){l}_{i}(x)}
+Lagrange 插值 具体算法：
+Given n+1 points \left({x}_{0},{y}_{0}\right), \left({x}_{1},{y}_{1}\right),\dots ,\left({x}_{n},{y}_{n}\right)
+g(x)=0
+for i=0 to n$ do
+t=1
+for j=0 to i−1$ do
+t←t∗(x−{x}_{j})/({x}_{i}−{x}_{j})
+end for $for j=i+1 to n$ do
+t←t∗(x−{x}_{j})/({x}_{i}−{x}_{j})
+end for
+g\left(x\right)←g\left(x\right)+t∗{y}_{i}
+end for
+t={l}_{i}\left(x\right)=\frac{\left(x−{x}_{0}\right)\left(x−{x}_{1}\right)\dots \left(x−{x}_{i−1}\right)\left(x−{x}_{i+1}\right)\dots \left(x−{x}_{n}\right)}{\left({x}_{i}−{x}_{0}\right)\left({x}_{i}−{x}_{1}\right)\dots \left({x}_{i}−{x}_{i−1}\right)\left({x}_{i}−{x}_{i+1}\right)\dots \left({x}_{i}−{x}_{n}\right)}
+g\left(x\right)=_{i=0}^{n}{f\left({x}_{i}\right){l}_{i}(x)}
+Lagrange 插值 例：求经过 ${\left(({x}_{i},{y}_{i})\right)}_{i=0}^{2}={\left(1,6\right),\left(2,1\right),\left(3,12\right)}$ 的 二次多项式。
+$$
+{P}_{3}\left(x\right)=
+$$
+=3\left({x}^{2}−5x+6\right)−\left({x}^{2}−4x+3\right)+6({x}^{2}−3x+2)
+=8{x}^{2}−29x+27
+6\frac{(x−2)(x−3)}{(1−2)(1−3)}
++1\frac{(x−1)(x−3)}{(2−1)(2−3)}
++12\frac{(x−1)(x−2)}{(3−1)(3−2)}
+Lagrange 插值 例：已知 $\sin\frac{\pi }{6}=\frac{1}{2} ,  \sin\frac{\pi }{4}=\frac{1}{\sqrt[]{2}} ,  \sin\frac{\pi }{3}=\frac{\sqrt[]{3}}{2}$ 利用多项式插值计算 $\sin{50}^{°}=\sin\frac{5\pi }{18}$ 解： 1. 利用 ${x}_{0}=\frac{\pi }{6} , {x}_{1}=\frac{\pi }{4}$ 做 1 次 Lagrange 插值得：
+$$
+{P}_{1}\left(x\right)=\frac{1}{2}\times \frac{x−\frac{\pi }{4}}{\frac{\pi }{6}−\frac{\pi }{4}}+\frac{1}{\sqrt[]{2}}\times \frac{x−\frac{\pi }{6}}{\frac{\pi }{4}−\frac{\pi }{6}}
+$$
+\sin\frac{5\pi }{18}\approx {P}_{1}\left(\frac{5\pi }{18}\right)\approx 0.77614, error\approx −0.01001
+2. 利用 ${x}_{1}=\frac{\pi }{4} , {x}_{2}=\frac{\pi }{3}$ 做 1 次 Lagrange 插值得：
+$$
+{P}_{1}\left(x\right)=\frac{1}{\sqrt[]{2}}\times \frac{x−\frac{\pi }{3}}{\frac{\pi }{4}−\frac{\pi }{3}}+\frac{\sqrt[]{3}}{2}\times \frac{x−\frac{\pi }{4}}{\frac{\pi }{3}−\frac{\pi }{4}}
+$$
+\sin\frac{5\pi }{18}\approx {P}_{1}\left(\frac{5\pi }{18}\right)\approx 0.76008, error\approx 0.00596
+ sin 50  = 0.7660444…
+Lagrange 插值 3. 利用 ${x}_{0}=\frac{\pi }{6} , {x}_{1}=\frac{\pi }{4} , {x}_{2}=\frac{\pi }{3}$ 做 2 次 Lagrange 插值得：
+$$
+{P}_{2}\left(x\right)=\frac{1}{2}\times \frac{\left(x−\frac{\pi }{4}\right)\left(x−\frac{\pi }{3}\right)}{\left(\frac{\pi }{6}−\frac{\pi }{4}\right)\left(\frac{\pi }{6}−\frac{\pi }{3}\right)}+\frac{1}{\sqrt[]{2}}\times \frac{\left(x−\frac{\pi }{6}\right)\left(x−\frac{\pi }{3}\right)}{\left(\frac{\pi }{4}−\frac{\pi }{6}\right)\left(\frac{\pi }{4}−\frac{\pi }{3}\right)}+\frac{\sqrt[]{3}}{2}\times \frac{\left(x−\frac{\pi }{6}\right)\left(x−\frac{\pi }{4}\right)}{\left(\frac{\pi }{3}−\frac{\pi }{6}\right)\left(\frac{\pi }{3}−\frac{\pi }{4}\right)}
+$$
+\sin\frac{5\pi }{18}\approx {P}_{2}\left(\frac{5\pi }{18}\right)\approx 0.76543, error\approx 0.00061
+Lagrange 插值 $\sinx$ 的对称性与反对称性：
+\sinx=\sin\left(\pi −x\right),\sinx=−\sin\left(2\pi −x\right)
+用 $\sinx$ 在基础域 $x\in \left(0,\frac{\pi }{2}\right)$ 的近似多项式 $P\left(x\right)$ ，可以计算 $\sinx$ 在 $x\in \mathbb{R}$ 的近似值
+y=\sin\left(x\right)
+2\pi
+\pi
+\frac{\pi }{2}
+\frac{3\pi }{2}
+Lagrange 插值 用 3 次多项式 ${P}_{3}\left(x\right)$ 插值近似 $sinx$ 插值节点 ${\left({x}_{i}\right)}_{i=0}^{3}=\left(0,\frac{π}{6},\frac{\pi }{3},\frac{\pi }{2}\right) {P}_{3}(x)$ 在不同点的 近似误差
+Lagrange 插值 例：所有自然数的倒数的平方和 (Basel 问题 , 由皮耶特罗 · 门戈利在 1644 年提出，有欧拉在 1735 年解决 ,Basel 是欧拉的故乡 )
+S=1+\frac{1}{{2}^{2}}+\frac{1}{{3}^{2}}+\dots =?
+## 欧拉 (1707-1783)
+
+Lagrange 插值
+y=\sin\left(x\right)
+3\pi
+4\pi
+−4\pi
+5\pi
+−5\pi
+−3\pi
+2\pi
+−2\pi
+\pi
+−\pi
+插值： $\sin\left(x\right)=Cx\left(x+\pi \right)\left(x−\pi \right)\left(x+2\pi \right)\left(x−2\pi \right)\dots =Cx\left({x}^{2}−{\pi }^{2}\right)\left({x}^{2}−{\left(2\pi \right)}^{2}\right)\dots$ 求导： ${sin}^{′}\left(0\right)=C\left(0−{\pi }^{2}\right)\left(0−{\left(2\pi \right)}^{2}\right)\dots =1
+\sin\left(x\right)=\frac{x\left({x}^{2}−{\pi }^{2}\right)\left({x}^{2}−{\left(2\pi \right)}^{2}\right)\dots }{\left(0−{\pi }^{2}\right)\left(0−{\left(2\pi \right)}^{2}\right)\dots }=x\left(1−\frac{{x}^{2}}{{\pi }^{2}}\right)\left(1−\frac{{x}^{2}}{{\left(2\pi \right)}^{2}}\right)\dots
+$$
+{x}^{3}的系数=−\left(\frac{1}{{\pi }^{2}}+\frac{1}{{\left(2\pi \right)}^{2}}+\frac{1}{{\left(3\pi \right)}^{2}}+\dots \right)
+$$
+=\frac{x}{1!}−\frac{{x}^{3}}{3!}+\frac{{x}^{5}}{5!}−\dots (Maclaurin series)
+=−\frac{1}{3!}⟹S=1+\frac{1}{{2}^{2}}+\frac{1}{{3}^{2}}+\dots =\frac{{\pi }^{2}}{6}
+Newton 插值 已知经过 ${\left({x}_{i}\right)}_{i=0}^{n}$ 的插值多项式为 ${P}_{n}(x)$ , 求经过 ${\left({x}_{i}\right)}_{i=0}^{n}{{x}_{n+1}}$ 的插值多项式 ${P}_{n+1}(x)$ ？
+令 {P}_{n+1}\left(x\right)={P}_{n}\left(x\right)+{Q}_{n+1}(x)
+$$
+{P}_{n}(x)$ 和 ${P}_{n+1}(x)$ 都经过 ${\left({x}_{i}\right)}_{i=0}^{n} ⟹{Q}_{n+1}\left({x}_{i}\right)=0\left(i=0,..,n\right)
+$$
+⟹{Q}_{n+1}\left(x\right)={a}_{n+1}\left(x−{x}_{0}\right)\dots \left(x−{x}_{n}\right)
+递推得到 Newton 插值： ${P}_{n}\left(x\right)={a}_{0}+{a}_{1}\left(x−{x}_{0}\right)+\dots +{a}_{n}\left(x−{x}_{0}\right)\dots \left(x−{x}_{n−1}\right)$ 基函数： ${N}_{0}\left(x\right)=1,{N}_{1}\left(x\right)=x−{x}_{0},\dots ,{N}_{n}\left(x\right)=\left(x−{x}_{0}\right)(x−{x}_{1})\dots \left(x−{x}_{n−1}\right)$
+Newton 插值 基本多项式插值基函数： $\left(1,x,{x}^{2},\dots \right)$ Lagrange 插值基函数： ${l}_{i}\left(x\right)=\frac{\left(x−{x}_{0}\right)\dots \left(x−{x}_{i−1}\right)\left(x−{x}_{i+1}\right)\dots \left(x−{x}_{n}\right)}{\left({x}_{i}−{x}_{0}\right)\dots \left({x}_{i}−{x}_{i−1}\right)\left({x}_{i}−{x}_{i+1}\right)\dots \left({x}_{i}−{x}_{n}\right)}$ Newton 插值基函数： ${N}_{i}\left(x\right)=\left(x−{x}_{0}\right)(x−{x}_{1})\dots \left(x−{x}_{i−1}\right)$ 不同插值方式是否等价？经过相同点的多项式插值是否唯一？ 多项式插值定理：若 ${x}_{0},\dots ,{x}_{n}$ 是不同的实数，则对任意数值 ${y}_{0},\dots ,{y}_{n}$ 存在唯一 的 次数至多是 $n$ 的多项式 ${P}_{n}(x)$ 使得
+$$
+{P}_{n}\left({x}_{i}\right)={y}_{i} \left(0\le i\le n\right)
+$$
+经过 $\left({x}_{0},{y}_{0}\right),\left({x}_{1},{y}_{1}\right),\dots ,({x}_{n},{y}_{n})$ 的 次数是 $n+1$ 的多项式 ${P}_{n+1}(x)$ 有多少个？
+Newton 插值 基函数： ${N}_{0}\left(x\right)=1,{N}_{1}\left(x\right)=x−{x}_{0},{N}_{2}\left(x\right)=\left(x−{x}_{0}\right)\left(x−{x}_{1}\right),\dots ,{N}_{n}\left(x\right)=\left(x−{x}_{0}\right)(x−{x}_{1})\dots \left(x−{x}_{n−1}\right) {N}_{j}\left({x}_{i}\right)=\left({x}_{i}−{x}_{0}\right)({x}_{i}−{x}_{1})\dots \left({x}_{i}−{x}_{j−1}\right)$ , 当 $i<j$ 时 ， ${N}_{j}\left({x}_{i}\right)=0 Ma=f$ 的系数矩阵：
+M=\left({N}_{0}\left({x}_{0}\right){N}_{1}\left({x}_{0}\right){N}_{2}\left({x}_{0}\right)\dots {N}_{n}\left({x}_{0}\right){N}_{0}\left({x}_{1}\right){N}_{1}\left({x}_{1}\right){N}_{2}\left({x}_{1}\right)\dots {N}_{n}\left({x}_{1}\right){N}_{0}\left({x}_{2}\right){N}_{1}\left({x}_{2}\right){N}_{2}\left({x}_{2}\right)\dots {N}_{n}\left({x}_{2}\right)\vdots \vdots \vdots \ddots \vdots {N}_{0}\left({x}_{n}\right){N}_{1}\left({x}_{n}\right){N}_{2}\left({x}_{n}\right)\dots {N}_{n}\left({x}_{n}\right)\right)
+=\left(100\dots 01{x}_{1}−{x}_{0}0\dots 01{x}_{2}−{x}_{0}\left({x}_{2}−{x}_{0}\right)\left({x}_{2}−{x}_{1}\right)\dots 0\vdots \vdots \vdots \ddots \vdots 1{x}_{n}−{x}_{0}\left({x}_{n}−{x}_{0}\right)\left({x}_{n}−{x}_{1}\right)\dots _{j=0}^{n−1}{\left({x}_{n}−{x}_{j}\right)}\right)
+下三角阵
+Newton 插值 求解 $Ma=f$ ：
+\left(100\dots 01{x}_{1}−{x}_{0}0\dots 01{x}_{2}−{x}_{0}\left({x}_{2}−{x}_{0}\right)\left({x}_{2}−{x}_{1}\right)\dots 0\vdots \vdots \vdots \ddots \vdots 1{x}_{n}−{x}_{0}\left({x}_{n}−{x}_{0}\right)\left({x}_{n}−{x}_{1}\right)\dots _{j=0}^{n−1}{\left({x}_{n}−{x}_{j}\right)}\right)\left({a}_{0} \\ {a}_{1} \\ {a}_{2} \\ \vdots \\ {a}_{n}\right)=\left({f}_{0} \\ {f}_{1} \\ {f}_{2} \\ \vdots \\ {f}_{n}\right)
+定义： Newton 插值的系数 ${a}_{n}:=f[{x}_{0},{x}_{1},{x}_{2},\dots ,{x}_{n} ]$ 称为 $n$ 阶 Newton 差商。
+Newton 插值
+例： n=2 时， Ma=f
+\left(1001{x}_{1}−{x}_{0}01{x}_{2}−{x}_{0}\left({x}_{2}−{x}_{0}\right)\left({x}_{2}−{x}_{1}\right)\right)\left({a}_{0} \\ {a}_{1} \\ {a}_{2}\right)=\left(f\left({x}_{0}\right) \\ f\left({x}_{1}\right) \\ f\left({x}_{2}\right)\right)
+$$
+{a}_{0}≔f\left({x}_{0}\right)=f\left({x}_{0}\right)
+$$
+$$
+{a}_{0}+{a}_{1}\left({x}_{1}−{x}_{0}\right)=f\left({x}_{1}\right)⟹{a}_{1}≔f\left({x}_{0},{x}_{1}\right)=\frac{f\left({x}_{1}\right)−{a}_{0}}{{x}_{1}−{x}_{0}}=\frac{f\left({x}_{1}\right)−f\left({x}_{0}\right)}{{x}_{1}−{x}_{0}}
+$$
+$$
+{a}_{0}+{a}_{1}\left({x}_{2}−{x}_{0}\right)+{a}_{2}\left({x}_{2}−{x}_{0}\right)\left({x}_{2}−{x}_{1}\right)=f\left({x}_{2}\right)
+$$
+⟹{a}_{2}≔f\left({x}_{0},{x}_{1},{x}_{2}\right)=\frac{1}{{x}_{2}−{x}_{1}}\left(\frac{f\left({x}_{2}\right)−{a}_{0}}{{x}_{2}−{x}_{0}}−{a}_{1}\right)=\frac{f\left({x}_{0},{x}_{2}\right)−f\left({x}_{0},{x}_{1}\right)}{{x}_{2}−{x}_{1}}
+Newton 插值 Newton 差商性质： 1. 对称性： $f\left({x}_{{i}_{0}}, {x}_{{i}_{1}},{\dots ,x}_{{i}_{n}}\right)=f\left({x}_{0}, {x}_{1},{\dots ,x}_{n}\right), {{i}_{0},{i}_{1},\dots {i}_{n}}$ 关于 ${0,1,\dots ,n}$ 的任意排列。
+例： f\left({x}_{0},{x}_{1}\right)=\frac{f\left({x}_{1}\right)−f\left({x}_{0}\right)}{{x}_{1}−{x}_{0}},f\left({x}_{1},{x}_{0}\right)=\frac{f\left({x}_{0}\right)−f\left({x}_{1}\right)}{{x}_{0}−{x}_{1}}=f\left({x}_{0},{x}_{1}\right)
+2. 递推性： ${{a}_{n}≔f\left({x}_{0}, {x}_{1},\dots ,{x}_{n−1},{x}_{n}\right)}_{n阶差商}=\frac{{f\left({x}_{1},{\dots ,{x}_{n−1},x}_{n}\right)}^{n−1阶差商}−{f\left({x}_{0},{x}_{1},{\dots ,x}_{n−1}\right)}^{n−1阶差商}}{{x}_{n}−{x}_{0}}
+例： f\left({x}_{0},{x}_{1}\right)=\frac{f\left({x}_{1}\right)−f\left({x}_{0}\right)}{{x}_{1}−{x}_{0}}, f\left({x}_{0},{x}_{1},{x}_{2}\right)=f\left({x}_{1},{x}_{0},{x}_{2}\right)=\frac{f\left({x}_{0},{x}_{2}\right)−f\left({x}_{0},{x}_{1}\right)}{{x}_{2}−{x}_{1}}
+Newton 插值 差商计算流程
+$$
+{x}_{0},f\left({x}_{0}\right)
+$$
+$$
+{x}_{1},f\left({x}_{1}\right)
+$$
+$$
+{x}_{2},f\left({x}_{2}\right)
+$$
+$$
+{x}_{3},f\left({x}_{3}\right)
+$$
+f[{x}_{0},{x}_{1}]
+f[{x}_{1},{x}_{2}]
+f[{x}_{2},{x}_{3}]
+f[{x}_{0},{x}_{1},{x}_{2}]
+f[{x}_{1},{x}_{2},{x}_{3}]
+f[{x}_{0},{x}_{1},{x}_{2}{,x}_{3}]
+Newton 插值 例：求经过 ${\left(1,6\right),\left(2,1\right),\left(3,12\right)}$ 的 二次多项式。 解：计算差商
+(1,6)
+(2,1)
+(3,12)
+① + ⑤ \to {P}_{2}\left(x\right)=6−5\left(x−1\right)+8(x−1)(x−2)
+② + ⑤ \to =1−5\left(x−2\right)+8(x−2)(x−1)
+③ + ⑥ \to =1+11\left(x−2\right)+8(x−2)(x−3)
+④ + ⑥ \to =12+11\left(x−3\right)+8\left(x−3\right)\left(x−2\right)
+=8{x}^{2}−29x+27
+−5
+11
+① ② ③ ④ ⑤ ⑥
+Newton 插值 差商算法：记 ${c}_{ij}=f\left({x}_{i},{x}_{i+1},\dots ,{x}_{i+j}\right)$ ，则差商计算表可以表示为 %Initialization $for i=0 to n$ do
+${c}_{i0}←f({x}_{i})$
+end for %Computing Newton difference quotient $for j=1 to n$ do $for i=0 to n−j$ do
+$$
+{c}_{ij}←({c}_{i+1,j−1}−{c}_{i,j−1})/({x}_{i+j}−{x}_{i})
+$$
+end for end for
+${x}_{0}$
+${c}_{00}$
+${c}_{01}$
+${c}_{02}$
+${c}_{03}$
+\cdots
+${c}_{0,n−1}$
+${c}_{0n}$
+${x}_{1}$
+${c}_{10}$
+${c}_{11}$
+${c}_{12}$
+${c}_{13}$
+\cdots
+${c}_{1,n−1}$
+${x}_{2}$
+${c}_{20}$
+${c}_{21}$
+${c}_{22}$
+\cdots
+${c}_{2,n−2}$
+${x}_{3}$
+${c}_{30}$
+${c}_{31}$
+\cdots
+${c}_{3,n−3}$
+\vdots
+\vdots
+\vdots
+\ddots
+${x}_{n−1}$
+${c}_{n−1,0}$
+${c}_{n−1,1}$
+${x}_{n}$
+${c}_{n0}$
+$$
+{c}_{ij}=f\left({x}_{i},{x}_{i+1},\dots ,{x}_{i+j}\right)=\frac{f\left({x}_{i+1},\dots ,{x}_{i+j}\right)−f\left({x}_{i},{x}_{i+1},\dots ,{x}_{i+j−1}\right)}{{x}_{i+j}−{x}_{i}}=\frac{{c}_{i+1,j−1}−{c}_{i,j−1}}{{x}_{i+j}−{x}_{i}}
+$$
+Newton 插值 优化的程序设计方式： %Initialization $for i=0 to n$ do
+${a}_{i}⟵f({x}_{i})$
+end for %Computing Newton difference quotient $for j=1 to n$ do $for i=0 to n−j$ do
+$$
+{a}_{i}←({a}_{i+1}−{a}_{i})/({x}_{i+j}−{x}_{i})
+$$
+end for end for
+$$
+{c}_{ij}=\frac{{c}_{i+1,j−1}−{c}_{i,j−1}}{{x}_{i+j}−{x}_{i}}
+$$
+${a}_{0}$
+${x}_{0}$
+${c}_{00}$
+${c}_{01}$
+${c}_{02}$
+${c}_{03}$
+\cdots
+${c}_{0,n−1}$
+${c}_{0n}$
+${a}_{1}$
+${x}_{1}$
+${c}_{10}$
+${c}_{11}$
+${c}_{12}$
+${c}_{13}$
+\cdots
+${c}_{1,n−1}$
+${a}_{2}$
+${x}_{2}$
+${c}_{20}$
+${c}_{21}$
+${c}_{22}$
+\cdots
+${c}_{2,n−2}$
+${a}_{3}$
+${x}_{3}$
+${c}_{30}$
+${c}_{31}$
+\cdots
+${c}_{3,n−3}$
+\vdots
+\vdots
+\vdots
+\vdots
+\ddots
+${a}_{n−1}$
+${x}_{n−1}$
+${c}_{n−1,0}$
+${c}_{n−1,1}$
+${a}_{n}$
+${x}_{n}$
+${c}_{n0}$
+内存分配
+⟹{a}_{i}⟵\frac{{a}_{i+1}−{a}_{i}}{{x}_{i+j}−{x}_{i}}
+$$
+{P}_{n}\left(x\right)={a}_{n}+{a}_{n−1}\left(x−{x}_{n}\right)+{a}_{n−2}\left(x−{x}_{n}\right)\left(x−{x}_{n−1}\right)+\dots +{a}_{0}\left(x−{x}_{n}\right)\left(x−{x}_{n−1}\right)\dots (x−{x}_{1})
+$$
+插值多项式
+Newton 插值 Newton 插值伪代码 ： %Initialization $for i=0 to n$ do
+${a}_{i}⟵f({x}_{i})$
+end for %Computing Newton difference quotient $for j=1 to n$ do $for i=0 to n−j$ do
+$$
+{a}_{i}←({a}_{i+1}−{a}_{i})/({x}_{i+j}−{x}_{i})
+$$
+end for end for %Computing $f(x)
+f(x)⟵{a}_{0}
+for i=1 to n$ do $f\left(x\right)←{a}_{i}+\left(x−{x}_{i}\right)∗f(x)$ % 秦九韶算法 end for
+i=n,f\left(x\right)={a}_{n}+{a}_{n−1}\left(x−{x}_{n}\right)+{a}_{n−2}\left(x−{x}_{n}\right)\left(x−{x}_{n−1}\right)+\dots +{a}_{0}\left(x−{x}_{n}\right)\left(x−{x}_{n−1}\right)\dots (x−{x}_{1})
+i=2, f\left(x\right)={a}_{2}+{a}_{1}\left(x−{x}_{2}\right)+{a}_{0}\left(x−{x}_{2}\right)\left(x−{x}_{1}\right)
+i=3, f\left(x\right)={a}_{3}+{a}_{2}(x−{x}_{3})+{a}_{1}(x−{x}_{3})\left(x−{x}_{2}\right)+{a}_{0}(x−{x}_{3})\left(x−{x}_{2}\right)\left(x−{x}_{1}\right)
+i=1, f\left(x\right)={a}_{1}+{a}_{0}\left(x−{x}_{1}\right)
+Newton 插值 已知经过 ${\left({x}_{i}\right)}_{i=0}^{n}$ 的插值多项式为 ${P}_{n}(x)$ , 求经过 ${\left({x}_{i}\right)}_{i=0}^{n}{{x}_{n+1}}$ 的插值多项式 ${P}_{n+1}(x)$ ？
+${a}_{0}$
+${x}_{0}$
+${c}_{00}$
+${c}_{01}$
+${c}_{02}$
+${c}_{03}$
+\cdots
+${c}_{0,n−1}$
+${c}_{0n}$
+${c}_{0,n+1}$
+${a}_{1}$
+${x}_{1}$
+${c}_{10}$
+${c}_{11}$
+${c}_{12}$
+${c}_{13}$
+\cdots
+${c}_{1,n−1}$
+${c}_{1,n}$
+${a}_{2}$
+${x}_{2}$
+${c}_{20}$
+${c}_{21}$
+${c}_{22}$
+\cdots
+${c}_{2,n−2}$
+${c}_{2,n−1}$
+${a}_{3}$
+${x}_{3}$
+${c}_{30}$
+${c}_{31}$
+\cdots
+${c}_{3,n−3}$
+${c}_{3,n−2}$
+\vdots
+\vdots
+\vdots
+\vdots
+\ddots
+\ddots
+${a}_{n−1}$
+${x}_{n−1}$
+${c}_{n−1,0}$
+${c}_{n−1,1}$
+${c}_{n−1,2}$
+${a}_{n}$
+${x}_{n}$
+${c}_{n0}$
+${c}_{n1}$
+${a}_{n+1}$
+${x}_{n+1}$
+${c}_{n+1,0}$
+不同插值方法的对比 基本多项式插值 优点：基函数简单、直观 缺点：系数矩阵满阵、条件数大 Lagrange 插值 优点：插值函数构造简单、直接 缺点：基函数相对复杂 Newton 插值 优点： 新增插值点可避免重复 计算 缺点：计算牛顿差商需要递推
+多项式插值的误差 多项式插值误差定理：设函数 $f\in {C}^{n+1}[a,b]$ ， ${P}_{n}(x)$ 是 $f$ 在 区间 $[a,b]$ 的 $n+1$ 个不同点 ${x}_{0},\dots ,{x}_{n}$ 上的次数不超过 $n$ 的插值多项式，则对任意 $x\in [a,b]$ , 都有
+f\left(x\right)−{P}_{n}\left(x\right)=f[{x}_{0},\dots ,{x}_{n},x]_{i=0}^{n}{\left(x−{x}_{i}\right)}
+=\frac{1}{\left(n+1\right)!}{f}^{\left(n+1\right)}\left(c\right)_{i=0}^{n}{\left(x−{x}_{i}\right)},
+其中， $c\in (a,b)$
+多项式插值的误差 例：用 Newton 插值拟合 $\sinx$ , 插值节点为 $0,\frac{\pi }{6},\frac{\pi }{3},\frac{\pi }{2}$ , 估计插值的误差界。
+解： \sinx−{P}_{3}\left(x\right)=\frac{1}{4!}{f}^{′′′′}\left(c\right)x(x−\frac{\pi }{6})(x−\frac{\pi }{3})(x−\frac{\pi }{2})
+\left(\sinx−{P}_{3}\left(x\right)\right)\le \frac{1}{24}\left(x(x−\frac{\pi }{6})(x−\frac{\pi }{3})(x−\frac{\pi }{2})\right)
+\left(\sin1−{P}_{3}\left(1\right)\right)\le \frac{1}{24}\left( \left(1−\frac{\pi }{6}\right)\left(1−\frac{\pi }{3}\right)\left(1−\frac{\pi }{2}\right)\right)\approx 0.0005348
+\left(\sin0.2−{P}_{3}\left(0.2\right)\right)\le \frac{1}{24}\left( 0.2\left(0.2−\frac{\pi }{6}\right)\left(0.2−\frac{\pi }{3}\right)\left(0.2−\frac{\pi }{2}\right)\right)\approx 0.00313
+在 $x=1,0.2$ 处的实际误差分别为 $0.0004$ 和 $0.00189$
+Runge 现象 多项式插值 $\sin\pi x$ ( 等距节点 ) 插值节点越多越好？
+Runge 现象 例：等距插值 Runge 函数（ 1901 年）：
+f\left(x\right)=\frac{1}{1+25{x}^{2}}, x\in [−1,1]
+Runge 现象 插值 误差
+f\left(x\right)−{P}_{n}\left(x\right)=\frac{1}{\left(n+1\right)!}{f}^{\left(n+1\right)}\left(c\right)_{i=0}^{n}{\left(x−{x}_{i}\right)}, c\in \left(−1,1\right)
+${f}^{′′}(x)$
+${f}^{(10)}(x)$
+${f}^{(20)}(x)$
+Runge 现象 例：等距多项式插值三角形突起函数 插值函数在端点附近产生剧烈振荡
+Runge 现象 如何解决？ 振荡发生在端点附近，可在区域外选取额外的插值节点 通过调整插值节点的位置，尽量减小插值误差限
+f\left(x\right)−{P}_{n}\left(x\right)=\frac{1}{\left(n+1\right)!}{f}^{\left(n+1\right)}\left(c\right)_{i=0}^{n}{\left(x−{x}_{i}\right)}
+Chebyshev 多项式 Chebyshev 是俄国现代数学的开创者之一他是优秀的纯粹数学家， 也是名副其实的应用数学家。他创建的彼得堡学派具有鲜明的 理论联系实际 的特色。著名的 Chebyshev 多项式 就是从 连杆设计 中升华出来的理论精华 。（科学源流：切比雪夫和切比雪夫多项式的故事） “ 理论和实践日益相互靠近的观点带来了最有益的结果 ，绝非只是实践一方所取得；在此影响下，科学正在进步，因为这种靠近会 衍生出新的研究对象 或者使早已熟知的学科 产生新的内容 。尽管在过去 3 个世纪以来，由于伟大数学家们的工作，数学取得了长足的进展，但实践清楚地揭示了其在许多方面并不完备；这就为科学 提出了具有本质意义的新课题 ，让人们去挑战，寻找新的方法。而且，如果在新的应用出现或者旧的方法得到发展之时能够取得很多理论成果，那么当有新的方法诞生时这些理论成果就会更加丰硕；这里， 科学在实践中找到了一个可靠指南 ”。（ Chebyshev ， 1856 ） Chebyshev 1821-1894
+Chebyshev 多项式 第一类 $n$ 阶 Chebyshev 多项式的定义 : ${T}_{n}\left(x\right)=cos(n{cos}^{−1}x)$ Chebyshev 多项式的性质： 递推关系： ${T}_{n+1}=2x{T}_{n}−{T}_{n−1} {T}_{n}(x)$ 是 $n$ 次多项式， $n$ 次项系数是 ${2}^{n−1}\left(n\ge 1\right)
+$$
+{T}_{n}\left(1\right)=1,{T}_{n}\left(−1\right)={\left(−1\right)}^{n}
+$$
+$$
+{T}_{n}(x)$ 的最大绝对值是 1 ， $x\in [−1,1] {T}_{n}(x)$ 的零点为 $x=cos\frac{\left(2k+1\right)\pi }{2n}⁡$ , $k=0,1,..,n−1 {T}_{n}\left(\cos\frac{k\pi }{n}\right)={\left(−1\right)}^{k}$ , $k=0,1,..,n.$ 即 ${T}_{n}(x)$ 达到极值点 - 1 和 1 共 $n+1$ 次
+$$
+Chebyshev 多项式 ${T}_{n}\left(x\right)=cos(n{cos}^{−1}x)$ 的图像 ${T}_{n}\left(x\right)=cos(n{cos}^{−1}x)$ 的零点分布 $(n=15)
+$$
+{x}_{k}=cos\frac{\left(2k+1\right)\pi }{2n}, k=0,1,\dots ,n−1
+$$
+Chebyshev 多项式 定义：首一多项式是指最高次项系数是 1 的多项式。 ${q\left(x\right)=2}^{1−n}{T}_{n}(x)$ 是首一多项式 , ${T}_{n}(x)$ 是第一类 $n$ 阶 Chebyshev 多项式。 首一多项式定理：若 $p(x)$ 是一个 $n$ 次首一多项式 , 则
+$$
+{max}_{−1\le x\le 1}\left(p(x)\right)\ge {2}^{1−n}={max}_{−1\le x\le 1}{2}^{1−n}\left({T}_{n}(x)\right)
+$$
+Chebyshev 插值 标准区间 $\left(−1,1\right)$ 的 Chebyshev 插值误差定理：若选取插值节点为 ${T}_{n+1}(x)$ 的根，即 ${x}_{i}=cos\frac{\left(2i+1\right)\pi }{2(n+1)}⁡,i=0,1,..,n$ , 则对 $\left(x\right)\le 1$ , 多项式插值的误差满足：
+\left(f\left(x\right)−{P}_{n}\left(x\right)\right)=\frac{1}{\left(n+1\right)!}\left({f}^{\left(n+1\right)}\left(c\right){_{i=0}^{n}{\left(x−{x}_{i}\right)}}_{{T}_{n+1}\left(x\right)/{2}^{n}}\right)\le \frac{1}{{2}^{n}\left(n+1\right)!}\left({f}^{\left(n+1\right)}\left(c\right)\right), c\in \left(−1,1\right)
+$$
+{T}_{n}\left(x\right)=cos(n{cos}^{−1}x)$ 的零点分布 $(n=15)
+$$
+$$
+{x}_{k}=cos\frac{\left(2k+1\right)\pi }{2n}, k=0,1,\dots ,n−1
+$$
+Chebyshev 插值 区间变换：定义映射 $x=L\left(x\right)=\frac{2(x−\frac{b+a}{2})}{b−a}$ , $L\left(x\right)$ 是 $\left(a,b\right)\to \left(−1,1\right)$ 的满射 ( 一一映射 ) 。 标准的 Chebyshev 插值节点为 ${x}_{i}=cos\frac{\left(2i+1\right)\pi }{2\left(n+1\right)},  i=0,1,..,n.$ 并且有不等式
+\left(\left(x−{x}_{0}\right)\dots (x−{x}_{n})\right)\le \frac{1}{{2}^{n}}
+逆变换： $x={L}^{−1}\left(x\right)=\frac{b−a}{2}x+\frac{b+a}{2}$ , 在任意区间 $[a,b]$ 上的 Chebyshev 插值节点为
+$$
+{x}_{i}=\frac{b−a}{2}cos\frac{\left(2i+1\right)\pi }{2\left(n+1\right)}+\frac{b+a}{2}, i=0,1,..,n
+$$
+且满足不等式
+\left(\left(x−{x}_{0}\right)\dots (x−{x}_{n})\right)={\left(\frac{b−a}{2}\right)}^{n+1}\left(\left(x−{x}_{0}\right)\dots (x−{x}_{n})\right)\le \frac{{\left(\frac{b−a}{2}\right)}^{n+1}}{{2}^{n}}
+Chebyshev 插值 任意区间 $\left(a,b\right)$ 的 Chebyshev 插值误差定理： 若选取插值节点 为 ${x}_{i}=\frac{b−a}{2}cos\frac{\left(2i+1\right)\pi }{2\left(n+1\right)}+\frac{b+a}{2}⁡,i=0,1,..,n$ , 则对 $∀x\in [a,b]$ , 多项式插值的误差满足：
+\left(f\left(x\right)−{P}_{n}\left(x\right)\right)=\frac{1}{\left(n+1\right)!}\left({f}^{\left(n+1\right)}\left(c\right)_{i=0}^{n}{\left(x−{x}_{i}\right)}\right)\le \frac{{\left(\frac{b−a}{2}\right)}^{n+1}}{{2}^{n}\left(n+1\right)!}\left({f}^{\left(n+1\right)}\left(c\right)\right), c\in (a,b)
+Chebyshev 插值 9 次首一多项式 $\left(x−{x}_{0}\right)\dots (x−{x}_{8})$ 在区间 $[−1,1]$ 的 图像 ${x}_{i}$ 均匀分布 ${x}_{i}$ 取 Chebyshev 多项式 ${T}_{9}(x)$ 的根
+Chebyshev 插值 例：对 $\sinx$ 在区间 $[0,\frac{\pi }{2}]$ 进行 Chebyshev 插值的误差估计。 Chebyshev 插值节点：
+$$
+{x}_{i}=\frac{\frac{\pi }{2}−0}{2}cos\frac{\left(2i+1\right)\pi }{2\left(n+1\right)}+\frac{\frac{\pi }{2}+0}{2}, i=0,1,..,n
+$$
+## 误差限：
+
+\left(\sinx−{P}_{n}(x)\right)=\frac{\left(\left(x−{x}_{0}\right)\dots (x−{x}_{n})\right)}{\left(n+1\right)!}\left({f}^{\left(n+1\right)}(c)\right)\le \left(\frac{{\left(\frac{\frac{\pi }{2}−0}{2}\right)}^{n+1}}{{\left(n+1\right)!2}^{n}}\right)
+Chebyshev 插值 $\sinx$ 的 3 次、 9 次多项式 插值误差：实线为均匀插值；虚线为 Chebyshev 插值
+Chebyshev 插值 例： Runge 函数的 Chebyshev 插值：
+f\left(x\right)=\frac{1}{1+25{x}^{2}}, x\in [−1,1]
+样条插值 样条函数是由一些具有某些连续条件的子区间上的分段多项式构成。 结点 ${x}_{0},{x}_{1},\dots ,{x}_{n}$ 上的 $k(k\ge 0)$ 次样条 函数 $S(x)$ 满足： 1 、在每个子区间 $\left({x}_{i−1},{x}_{i}\right)$ 上， $S(x)$ 是一个 次数 $\le k$ 的多项式 2 、在 $[{x}_{0},{x}_{n}]$ 上 $S\left(x\right)k−1$ 阶连续
+## 样条插值 0 次样条（分段常值函数）
+
+S\left(x\right)=\left({S}_{0}\left(x\right)=f\left({x}_{0}\right),x\in \left({x}_{0},{x}_{1}\right) \\ {S}_{1}\left(x\right)=f\left({x}_{1}\right),x\in \left({x}_{1},{x}_{2}\right) \\ \vdots \\ {S}_{n−1}\left(x\right)=f\left({x}_{n−1}\right),x\in [{x}_{n−1},{x}_{n}]\right)
+## 误差
+
+\left(S\left(x\right)−f\left(x\right)\right)=\left({f}^{′}\left({c}_{i}\right)\left(x−{x}_{i}\right)\right)\le \left({f}^{′}\left({c}_{i}\right)\left({x}_{i+1}−{x}_{i}\right)\right), x\in \left({x}_{i},{x}_{i+1}\right), {c}_{i}\in ({x}_{i},x)
+11 个插值节点
+## 样条插值 1 次样条（分段线性函数）
+
+S\left(x\right)=\left({S}_{0}\left(x\right)={a}_{0}x+{b}_{0},x\in \left({x}_{0},{x}_{1}\right) \\ {S}_{1}\left(x\right)={a}_{1}x+{b}_{1},x\in \left({x}_{1},{x}_{2}\right) \\ \vdots \\ {S}_{n−1}\left(x\right)={a}_{n−1}x+{b}_{n−1},x\in [{x}_{n−1},{x}_{n}]\right)
+## 误差
+
+\left(S\left(x\right)−f\left(x\right)\right)=\left(\frac{{f}^{′′}\left({c}_{i}\right)}{2}\right)\left(\left(x−{x}_{i}\right)\left(x−{x}_{i+1}\right)\right)\le \left(\frac{{f}^{′′}\left({c}_{i}\right)}{2}\right){\left(\frac{{x}_{i+1}−{x}_{i}}{2}\right)}^{2}
+x\in \left({x}_{i},{x}_{i+1}\right), {c}_{i}\in ({x}_{i},{x}_{i+1})
+11 个插值节点
+## 样条插值 三次样条
+
+S\left(x\right)=\left({S}_{0}\left(x\right),x\in \left({x}_{0},{x}_{1}\right) \\ {S}_{1}\left(x\right),x\in \left({x}_{1},{x}_{2}\right) \\ \vdots \\ {S}_{n−1}\left(x\right),x\in [{x}_{n−1},{x}_{n}]\right)
+性质 1 ： ${S}_{i}\left({x}_{i}\right)=f\left({x}_{i}\right), {S}_{i}\left({x}_{i+1}\right)=f\left({x}_{i+1}\right) (i=0,\dots ,n−1)$ 性质 2 ： ${S}_{i}^{′}\left({x}_{i+1}\right)={S}_{i+1}^{′}\left({x}_{i+1}\right)(i=0,\dots ,n−2)$ 性质 3 ： ${S}_{i}^{′′}\left({x}_{i+1}\right)={S}_{i+1}^{′′}\left({x}_{i+1}\right)(i=0,\dots ,n−2)
+$$
+{S}_{i}\left(x\right)=f\left({x}_{i}\right)+{b}_{i}\left(x−{x}_{i}\right)+{c}_{i}{\left(x−{x}_{i}\right)}^{2}+{d}_{i}{\left(x−{x}_{i}\right)}^{3} (i=0,\dots ,n−1)
+$$
+$$
+{S}_{i}\left(x\right)=f\left({x}_{i}\right)+{b}_{i}\left(x−{x}_{i}\right)+{c}_{i}{\left(x−{x}_{i}\right)}^{2}+{d}_{i}{\left(x−{x}_{i}\right)}^{3} (i=0,\dots ,n−1)
+$$
+$$
+{S}_{i}\left({x}_{i+1}\right)=f\left({x}_{i}\right)+{b}_{i}{\delta }_{i}+{c}_{i}{\delta }_{i}^{2}+{d}_{i}{\delta }_{i}^{3}=f\left({x}_{i+1}\right) (i=0,\dots ,n−1)
+$$
+性质 2 ， $n−1$ 个方程：
+$$
+{S}_{i}^{′}\left({x}_{i+1}\right)={b}_{i}+{2c}_{i}{\delta }_{i}+3{d}_{i}{\delta }_{i}^{2}={b}_{i+1}={S}_{i+1}^{′}\left({x}_{i+1}\right), (i=0,\dots ,n−2)
+$$
+性质 3 ， $n−1$ 个方程：
+$$
+{S}_{i}^{′′}\left({x}_{i+1}\right)={2c}_{i}+6{d}_{i}{\delta }_{i}={2c}_{i+1}={S}_{i+1}^{′′}\left({x}_{i+1}\right), (i=0,\dots ,n−2)
+$$
+右边界条件， 1 个方程：
+$$
+{S}^{′′}\left({x}_{n}\right)={S}_{n−1}^{′′}\left({x}_{n}\right)={2c}_{n−1}+6{d}_{n−1}{\delta }_{n−1}={2c}_{n}=0 (自然边界)
+$$
+左边界条件， 1 个方程：
+$$
+{S}^{′′}\left({x}_{0}\right)={S}_{0}^{′′}\left({x}_{0}\right)={2c}_{0}=0 (自然边界)
+$$
+性质 3 、右边界 $\to {d}_{i}=\frac{{c}_{i+1}−{c}_{i}}{3{\delta }_{i}} (i=0,\dots ,n−1)            (1)$ 性质 1 $\to {b}_{i}=\frac{{Δ}_{i}}{{\delta }_{i}}−{c}_{i}{\delta }_{i}−{d}_{i}{\delta }_{i}^{2}=\frac{{Δ}_{i}}{{\delta }_{i}}−\frac{{\delta }_{i}}{3}\left(2{c}_{i}+{c}_{i+1}\right)  \left(i=0,\dots ,n−1\right)        (2)$ (1) 、 (2) 、性质 2 $\to {\delta }_{i}{c}_{i}+2\left({\delta }_{i}+{\delta }_{i+1}\right){c}_{i+1}+{δ}_{i+1}{c}_{i+2}=3\left(\frac{{Δ}_{i+1}}{{\delta }_{i+1}}−\frac{{Δ}_{i}}{{\delta }_{i}}\right) \left(i=0,\dots ,n−2\right)$
+需要求解的方程组：
+左边界：{c}_{0}=0
+$$
+{\delta }_{i}{c}_{i}+2\left({\delta }_{i}+{\delta }_{i+1}\right){c}_{i+1}+{δ}_{i+1}{c}_{i+2}=3\left(\frac{{Δ}_{i+1}}{{\delta }_{i+1}}−\frac{{Δ}_{i}}{{\delta }_{i}}\right) \left(i=0,\dots ,n−2\right)
+$$
+右边界：{c}_{n}=0
+矩阵形式： $Mc=\beta
+\left(100{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}001\right)\left({c}_{0}{c}_{1}\vdots \vdots {c}_{n−1}{c}_{n}\right)=\left(03\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right)0\right)
+对角占优
+## 样条插值 自然三次样条插值算法：
+
+Initialize:{x}_{0},\dots ,{x}_{n};{f(x}_{0}),\dots ,{f(x}_{n})
+for i=0 to n−1 do
+$$
+{a}_{i}=f\left({x}_{i}\right)
+$$
+${ \delta }_{i}={x}_{i+1}−{x}_{i}$
+$$
+{ Δ}_{i}=f\left({x}_{i+1}\right)−f\left({x}_{i}\right)
+$$
+end for
+$$
+{u}_{n}=0;{v}_{0}={v}_{n}=1;{w}_{0}=0;{\beta }_{0}={\beta }_{n}=0
+$$
+for i=1 to n−1 do
+$$
+{u}_{i}={\delta }_{i−1};{v}_{i}=2\left({\delta }_{i−1}+{\delta }_{i}\right);{w}_{i}={\delta }_{i}
+$$
+$$
+{\beta }_{i}=3\left(\frac{{Δ}_{i}}{{\delta }_{i}}−\frac{{Δ}_{i−1}}{{\delta }_{i−1}}\right)
+$$
+end for
+solve Mc=\beta
+for i=0 to n−1 do
+$$
+{ d}_{i}=\frac{{c}_{i+1}−{c}_{i}}{3{\delta }_{i}}
+$$
+$$
+{ b}_{i}=\frac{{Δ}_{i}}{{\delta }_{i}}−\frac{{\delta }_{i}}{3}\left(2{c}_{i}+{c}_{i+1}\right)
+$$
+end for
+\beta =\left(03\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right)0\right)
+M=\left(10{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}{\delta }_{1}2{\delta }_{1}+2{\delta }_{2}{\delta }_{2}\ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}01\right)
+w
+样条插值 例：用自然三次样条插值龙格函数 11 个插值节点 7 个插值节点
+## 样条插值 曲率调整三次样条：
+
+$$
+{S}^{′′}\left({x}_{0}\right)={2c}_{0}=2{c}_{L}
+$$
+$$
+{S}^{′′}\left({x}_{n}\right)={2c}_{n}=2{c}_{R}
+$$
+\left(100{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}001\right)\left({c}_{0}{c}_{1}\vdots \vdots {c}_{n−1}{c}_{n}\right)=\left({c}_{L}3\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right){c}_{R}\right)
+对角占优
+钳制三次样条：指定左边界和右边界的斜率
+$$
+{{S}^{′}\left({x}_{0}\right)=S}_{0}^{′}\left({x}_{0}\right)={b}_{0}=\frac{{Δ}_{0}}{{\delta }_{0}}−\frac{{\delta }_{0}}{3}\left(2{c}_{0}+{c}_{1}\right)={s}_{L}
+$$
+$$
+{{S}^{′}\left({x}_{n}\right)=S}_{n−1}^{′}\left({x}_{n}\right)={b}_{n−1}+{2c}_{n−1}{\delta }_{n−1}+3{d}_{n−1}{\delta }_{n−1}^{2}={s}_{R}
+$$
+即：
+2{{\delta }_{0}c}_{0}+{\delta }_{0}{c}_{1}=3\left(\frac{{Δ}_{0}}{{\delta }_{0}}−{s}_{L}\right)
+$$
+{\delta }_{n−1}{c}_{n−1}+2{{\delta }_{n−1}c}_{n}=3\left({s}_{R}−\frac{{Δ}_{n−1}}{{\delta }_{n−1}}\right)
+$$
+\left(2{\delta }_{0}{\delta }_{0}0{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}0{\delta }_{n−1}2{\delta }_{n−1}\right)\left({c}_{0}{c}_{1}\vdots \vdots {c}_{n−1}{c}_{n}\right)=\left(3\left(\frac{{Δ}_{0}}{{\delta }_{0}}−{s}_{L}\right)3\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right)3\left({s}_{R}−\frac{{Δ}_{n−1}}{{\delta }_{n−1}}\right)\right)
+对角占优
+样条插值 抛物线端点的三次样条： ${S}_{0}\left(x\right),{S}_{n−1}(x)$ 至多 2 阶
+$$
+{d}_{0}=\frac{{c}_{1}−{c}_{0}}{3{\delta }_{0}}=0
+$$
+$$
+{d}_{n−1}=\frac{{c}_{n}−{c}_{n−1}}{3{\delta }_{n−1}}=0
+$$
+\left(1−10{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}01−1\right)\left({c}_{0}{c}_{1}\vdots \vdots {c}_{n−1}{c}_{n}\right)=\left(03\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right)0\right)
+非严格对角占优
+M=\left(1−10{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}01−1\right)
+n\ge 2$ 可以转换为对角占优
+$$
+{M}^{′}=\left(1+\frac{{\delta }_{0}}{2{\delta }_{0}+2{\delta }_{1}}0\frac{{\delta }_{1}}{2{\delta }_{0}+2{\delta }_{1}}{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}−\frac{{\delta }_{n−2}}{2{\delta }_{n−2}+2{\delta }_{n−1}}0−1−\frac{{\delta }_{n−1}}{2{\delta }_{n−2}+2{\delta }_{n−1}}\right)
+$$
+用（倒数）第 2 行消除（倒数）第 1 行的非对角元
+样条插值 非纽结三次样条： ${d}_{0}={d}_{1}, {d}_{n−2}={d}_{n−1}
+$$
+{d}_{0}=\frac{{c}_{1}−{c}_{0}}{3{\delta }_{0}}=\frac{{c}_{2}−{c}_{1}}{3{\delta }_{1}}={d}_{1}\to {\delta }_{1}{c}_{0}−\left({\delta }_{0}+{\delta }_{1}\right){c}_{1}+{\delta }_{0}{c}_{2}=0
+$$
+$$
+{d}_{n−2}=\frac{{c}_{n−1}−{c}_{n−2}}{3{\delta }_{n−2}}=\frac{{c}_{n}−{c}_{n−1}}{3{\delta }_{n−1}}={d}_{n−1}\to {\delta }_{n−1}{c}_{n−2}−\left({\delta }_{n−2}+{\delta }_{n−1}\right){c}_{n−1}+{\delta }_{n−2}{c}_{n}=0
+$$
+\left({\delta }_{1}−{\delta }_{0}−{\delta }_{1}{\delta }_{0}{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}\ddots \ddots \ddots \ddots \ddots \ddots {\delta }_{n−2}2{\delta }_{n−2}+2{\delta }_{n−1}{\delta }_{n−1}{\delta }_{n−1}{−{\delta }_{n−2}−\delta }_{n−1}{\delta }_{n−2}\right)\left({c}_{0}{c}_{1}\vdots \vdots {c}_{n−1}{c}_{n}\right)=\left(03\left(\frac{{Δ}_{1}}{{\delta }_{1}}−\frac{{Δ}_{0}}{{\delta }_{0}}\right)\vdots \vdots 3\left(\frac{{Δ}_{n−1}}{{\delta }_{n−1}}−\frac{{Δ}_{n−2}}{{\delta }_{n−2}}\right)0\right)
+非严格 对角占优
+\left({\delta }_{1}−{\delta }_{0}−{\delta }_{1}{\delta }_{0}{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}{\delta }_{1}2{\delta }_{1}+2{\delta }_{2}{\delta }_{2}\ddots \ddots \ddots \right)
+严格 对角占优
+\left({\delta }_{1}+\frac{{\delta }_{0}}{2}0{\delta }_{0}+\frac{{\delta }_{1}}{2}{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}{\delta }_{1}2{\delta }_{1}+2{\delta }_{2}{\delta }_{2}\ddots \ddots \ddots \right)
+用第 2 行对第 1 行消元
+\left({\delta }_{1}+\frac{{\delta }_{0}}{2}−\frac{{\delta }_{1}\left({\delta }_{0}+\frac{{\delta }_{1}}{2}\right)}{2\left({\delta }_{1}+{\delta }_{2}\right)}0−\frac{{\delta }_{2}\left({\delta }_{0}+\frac{{\delta }_{1}}{2}\right)}{2\left({\delta }_{1}+{\delta }_{2}\right)}{\delta }_{0}2{\delta }_{0}+2{\delta }_{1}{\delta }_{1}{\delta }_{1}2{\delta }_{1}+2{\delta }_{2}{\delta }_{2}\ddots \ddots \ddots \right)
+用第 3 行对第 1 行消元
+样条插值 例：通过 $\left(0,3\right),\left(1,1\right),\left(2,4\right),\left(3,1\right),\left(4,2\right),(5,0)$ 的 三次样条 自然样条 非纽结样条 抛物线端点样条 钳制样条（端点斜率为 0 ）
+思考与练习 分别使用 Lagrange 插值和 Newton 插值找出通过点 $\left(\left(−1,0\right),\left(2,1\right),\left(3,1\right),\left(5,2\right)\right)$ 的多项式，并验证两种方法的一致性。 确定通过如下三点的自然三次样条插值： $\left(−1,1\right),\left(1,1\right),\left(2,4\right)$ 编程 : 在区间 $[−2,2]$ 取 11 ， 21 ， 31 个点对 $f\left(x\right)=\frac{1}{1+12{x}^{2}}$ 进行多项式插值，比较采用均匀插值节点与 Chebyshev 插值节点的误差。 编程 : 在区间 $[−2,2]$ 均匀取 11 ， 21 ， 31 个点对 $f\left(x\right)=\frac{1}{1+12{x}^{2}}$ 进行自然三次样条插值 , 并与采用相同插值节点的 Newton 插值进行比较。

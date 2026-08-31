@@ -1,0 +1,62 @@
+{
+  "ankiConnect": {
+    "host": "http://localhost",
+    "port": 8765
+  },
+  "folders": [
+    "闪卡/最优化方法/FONC理论",
+    "闪卡/最优化方法/凸集与凸函数",
+    "闪卡/最优化方法/多目标规划",
+    "闪卡/最优化方法/常考证明",
+    "闪卡/最优化方法/整数规划",
+    "闪卡/最优化方法/无约束优化",
+    "闪卡/最优化方法/约束优化",
+    "闪卡/最优化方法/线性规划",
+    "闪卡/最优化方法/线搜索",
+    "闪卡/最优化方法/预备知识",
+    "闪卡/马克思主义原理/剩余价值分配",
+    "闪卡/马克思主义原理/剩余价值生产",
+    "闪卡/马克思主义原理/历史唯物主义",
+    "闪卡/马克思主义原理/唯物辩证法",
+    "闪卡/马克思主义原理/商品经济理论",
+    "闪卡/马克思主义原理/概念辨析",
+    "闪卡/马克思主义原理/科学社会主义",
+    "闪卡/马克思主义原理/绪论与唯物论",
+    "闪卡/马克思主义原理/认识论",
+    "闪卡/马克思主义原理/资本积累与再生产"
+  ],
+  "ignoreFolderNotes": true,
+  "manageFilenames": {
+    "autoRenameDebounceIntervalMs": 300,
+    "autoRenameTrigger": "off",
+    "maxLength": 60,
+    "mode": "prompt"
+  },
+  "namespace": "Yanki Obsidian - Vault ID c198ad419b33b344",
+  "showAdvancedSettings": true,
+  "stats": {
+    "sync": {
+      "auto": 12,
+      "duration": 2869.191979980616,
+      "errors": 21,
+      "invalid": 0,
+      "manual": 3,
+      "notes": {
+        "ankiUnreachable": 1631,
+        "created": 0,
+        "deleted": 0,
+        "matched": 0,
+        "unchanged": 0,
+        "updated": 0
+      },
+      "latestSyncTime": 1781061947
+    }
+  },
+  "sync": {
+    "autoSyncDebounceIntervalMs": 4000,
+    "autoSyncEnabled": true,
+    "mediaMode": "local",
+    "pushToAnkiWeb": true
+  },
+  "verboseNotices": false
+}

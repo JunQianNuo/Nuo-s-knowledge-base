@@ -1,0 +1,79 @@
+# 习题2.10
+
+---
+title: 习题2.10 - 范数的一致连续性
+subject: 最优化方法
+chapter: 2
+section: 向量空间与矩阵
+source: 第二章习题.jpg
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - 范数
+  - 一致连续性
+  - 三角不等式
+---
+
+# 习题 2.10
+
+用 [[习题2.9]] 的结论证明范数 $\|\cdot\|$ 是一致连续函数，即对所有的 $\varepsilon > 0$，都存在 $\delta > 0$，如果 $\|x - y\| < \delta$，则有：
+
+$$\bigl| \|x\| - \|y\| \bigr| < \varepsilon$$
+
+---
+
+## 前置习题
+
+> **[[习题2.9]]**：试证明，对于任意两个向量 $x, y \in \mathbb{R}^n$，有：
+> $$\bigl| \|x\| - \|y\| \bigr| \leq \|x - y\|$$
+>
+> 提示：可将 $x$ 改写为 $x = (x - y) + y$，利用三角不等式进行证明。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> 习题 2.9 已经给出了核心不等式：
+>
+> $$\bigl| \|x\| - \|y\| \bigr| \leq \|x - y\|$$
+>
+> 要证明一致连续性，只需回答一个问题：**取 $\delta$ 为多少？**
+>
+> 回顾一致连续的定义：$\forall \varepsilon > 0$，$\exists \delta > 0$，使得 $\|x - y\| < \delta \implies \bigl| \|x\| - \|y\| \bigr| < \varepsilon$。
+>
+> 将 2.9 的结论与定义对比，$\delta$ 的选择应当一目了然。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> **证明：**
+>
+> 由习题 2.9 的结论，对任意 $x, y \in \mathbb{R}^n$，有：
+>
+> $$\bigl| \|x\| - \|y\| \bigr| \leq \|x - y\|$$
+>
+> 要证明范数 $\|\cdot\|$ 在 $\mathbb{R}^n$ 上一致连续，即证：
+>
+> $$\forall \varepsilon > 0,\; \exists \delta > 0,\; \forall x, y \in \mathbb{R}^n:\; \|x - y\| < \delta \implies \bigl| \|x\| - \|y\| \bigr| < \varepsilon$$
+>
+> 取 $\delta = \varepsilon$。则当 $\|x - y\| < \delta = \varepsilon$ 时：
+>
+> $$\bigl| \|x\| - \|y\| \bigr| \leq \|x - y\| < \varepsilon$$
+>
+> 故范数 $\|\cdot\|$ 是一致连续函数。$\square$
+>
+> **点评：**
+> - 本题说明范数不仅连续，而且是 **Lipschitz 连续**（Lipschitz 常数 $L = 1$），这比一致连续性更强。
+> - 事实上，习题 2.9 的结论 $\bigl| \|x\| - \|y\| \bigr| \leq \|x - y\|$ 本身就是 Lipschitz 条件的直接体现。
+> - 该性质在后续课程（最优化收敛性分析、稳定性理论）中会被频繁使用。
+
+---
+
+## 相关知识点
+
+- [[02-向量空间与矩阵#2.9 范数|范数的定义与性质]]
+- [[02-向量空间与矩阵#定理（勾股定理）|三角不等式]]
+- [[02-向量空间与矩阵#2.11 连续性与复空间内积|连续性定义]]

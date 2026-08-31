@@ -1,0 +1,69 @@
+# Operating system and editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+~$*
+
+# Python caches and virtual environments
+**/__pycache__/
+*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/venv/
+
+# Node and package caches
+**/node_modules/
+
+# Obsidian per-device state and trash
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+**/.obsidian/cache/
+**/.trash/
+
+# Agent, browser, OCR, and local runtime state
+**/.claudian/sessions/
+**/.playwright/
+**/.playwright-cli/
+**/.codex-tmp/
+**/.superpowers/sdd/
+.tessdata/
+
+# Temporary conversion and generated scratch files
+/tmp/
+/_input.pptx
+/scripts/_temp_cards_output.md
+**/_mineru_temp/
+
+# Logs and common build artifacts
+*.log
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+**/build/
+
+# Generic temporary/backup files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+# Existing independent Git repositories (kept separate from the Vault root)
+/数学建模/Celian-math-modeling/
+/数学建模/第一次训练/
+# Local credentials
+/MinerU-MD工具/config.json

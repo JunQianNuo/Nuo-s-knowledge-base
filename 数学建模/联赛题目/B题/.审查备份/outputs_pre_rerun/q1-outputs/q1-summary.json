@@ -1,0 +1,153 @@
+{
+  "persons": 1600,
+  "groups": 104,
+  "candidate_clusters": 1301,
+  "candidate_columns": 22888,
+  "pool_columns": 1696,
+  "flow_variables": 6873,
+  "T_air": 14886,
+  "T_pax": 124819,
+  "fuel": 119299.40000000001,
+  "flights": 90,
+  "PK": 383956.0,
+  "AK": 776127.0,
+  "seat_utilization": 0.49470769603428305,
+  "greedy_T_air": 16538,
+  "lp_lower_bound": 14250.690270083105,
+  "optimality_gap_vs_pool_lp": 0.04267833735838337,
+  "flight_lower_bound": 85,
+  "solver_metrics": {
+    "T_air": 14886,
+    "T_pax": 124819,
+    "fuel": 119299.4,
+    "flights": 90,
+    "PK": 383956.0,
+    "AK": 776127.0
+  },
+  "delivery_metrics": {
+    "stage": "delivery",
+    "T_air": 14886,
+    "T_pax": 124819,
+    "fuel": 119299.40000000001,
+    "flights": 90,
+    "PK": 383956.0,
+    "AK": 776127.0,
+    "seat_utilization": 0.49470769603428305
+  },
+  "feedback_rounds": 2,
+  "columns_fed_back": 0,
+  "solver_metrics_equal_delivery": true,
+  "stages": [
+    {
+      "name": "aircraft_time",
+      "status": "FEASIBLE",
+      "objective": 14886,
+      "best_bound": 14438.0,
+      "gap": 0.030095391643154643,
+      "wall_time": 10.0804696,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": false
+    },
+    {
+      "name": "passenger_time",
+      "status": "FEASIBLE",
+      "objective": 124819,
+      "best_bound": 111281.0,
+      "gap": 0.10846105160272074,
+      "wall_time": 10.073995100000001,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true
+    },
+    {
+      "name": "fuel",
+      "status": "FEASIBLE",
+      "objective": 1192994,
+      "best_bound": 1162211.0,
+      "gap": 0.02580314737542687,
+      "wall_time": 10.054559300000001,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true
+    },
+    {
+      "name": "flights",
+      "status": "FEASIBLE",
+      "objective": 90,
+      "best_bound": 85.0,
+      "gap": 0.05555555555555555,
+      "wall_time": 10.0498705,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true
+    },
+    {
+      "name": "seat_utilization",
+      "status": "FEASIBLE",
+      "objective": null,
+      "best_bound": null,
+      "gap": null,
+      "wall_time": 20.7107714000158,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true
+    }
+  ],
+  "full_lexicographic_certified": false,
+  "delivery_solution_certified": false,
+  "history": [
+    {
+      "stage": "primary",
+      "T_air": 14939,
+      "T_pax": 125408,
+      "fuel": 119680.3,
+      "flights": 90,
+      "PK": 384676.0,
+      "AK": 778948.0,
+      "seat_utilization": 0.49384041039966725,
+      "pool": 1189,
+      "lp_bound": 14250.58500692521,
+      "cp_sat_bound": 14478.0,
+      "cp_sat_objective": 14966,
+      "status": "FEASIBLE",
+      "seconds": 60.0787028
+    },
+    {
+      "stage": "lns-1",
+      "T_air": 14886,
+      "T_pax": 125205,
+      "fuel": 119299.40000000001,
+      "flights": 90,
+      "PK": 384853.0,
+      "AK": 776127.0,
+      "seat_utilization": 0.49586343472137934,
+      "pool": 1695,
+      "lp_bound": 14250.690270083105,
+      "cp_sat_bound": 14461.0,
+      "cp_sat_objective": 14886,
+      "status": "FEASIBLE",
+      "seconds": 45.10656
+    },
+    {
+      "stage": "lexicographic",
+      "T_air": 14886,
+      "T_pax": 124819,
+      "fuel": 119299.40000000001,
+      "flights": 90,
+      "PK": 383956.0,
+      "AK": 776127.0,
+      "seat_utilization": 0.49470769603428305,
+      "pool": 1696,
+      "lp_bound": 14250.690270083105,
+      "cp_sat_bound": 14438.0,
+      "cp_sat_objective": 14886,
+      "status": "FEASIBLE",
+      "seconds": 60.969665900015805
+    }
+  ],
+  "validator": {
+    "independent_csv": "PASS"
+  },
+  "certified_scope": "restricted-pool",
+  "global_optimum": false,
+  "run_mode": "quick",
+  "seed": 20260815,
+  "workers": 8,
+  "wall_time_total": 237.7892052999814
+}

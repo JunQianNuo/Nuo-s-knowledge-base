@@ -1,0 +1,62 @@
+# 习题2.4
+
+---
+title: 习题2.4 - 非线性方程组牛顿迭代
+subject: 数值分析
+chapter: 2
+section: 非线性方程求根
+source: 课件/MD/02-非线性方程求根.md
+status: 待校对
+type: 习题
+topics:
+  - 牛顿法
+  - 非线性方程组
+  - Jacobi矩阵
+---
+
+## 题目
+
+取初值 $(u_0, v_0) = (1, 1)$，使用牛顿迭代进行两步，迭代求解：
+$$\begin{cases} u^2 + v^2 = 1 \\ (u-1)^2 + v^2 = 1 \end{cases}$$
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> 记 $F(u,v) = \begin{pmatrix} f_1(u,v) \\ f_2(u,v) \end{pmatrix} = \begin{pmatrix} u^2+v^2-1 \\ (u-1)^2+v^2-1 \end{pmatrix}$，Jacobi 矩阵 $J = \begin{pmatrix} 2u & 2v \\ 2(u-1) & 2v \end{pmatrix}$。牛顿迭代：$X_{i+1} = X_i - J^{-1}(X_i)F(X_i)$，等价于解 $J \cdot \Delta X = -F$。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> **第一步**：$X_0 = (1,1)^T$
+>
+> $F(1,1) = \begin{pmatrix} 1+1-1 \\ 0+1-1 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$
+>
+> $J(1,1) = \begin{pmatrix} 2 & 2 \\ 0 & 2 \end{pmatrix}$
+>
+> 解 $J\Delta X = -F$：$\begin{pmatrix} 2 & 2 \\ 0 & 2 \end{pmatrix}\begin{pmatrix} \Delta u \\ \Delta v \end{pmatrix} = \begin{pmatrix} -1 \\ 0 \end{pmatrix}$
+>
+> $\Delta v = 0$，$2\Delta u + 0 = -1 \implies \Delta u = -0.5$
+>
+> $X_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} + \begin{pmatrix} -0.5 \\ 0 \end{pmatrix} = \begin{pmatrix} 0.5 \\ 1 \end{pmatrix}$
+>
+> **第二步**：$X_1 = (0.5, 1)^T$
+>
+> $F(0.5,1) = \begin{pmatrix} 0.25+1-1 \\ 0.25+1-1 \end{pmatrix} = \begin{pmatrix} 0.25 \\ 0.25 \end{pmatrix}$
+>
+> $J(0.5,1) = \begin{pmatrix} 1 & 2 \\ -1 & 2 \end{pmatrix}$
+>
+> 解 $J\Delta X = -F$：
+> $$\begin{cases} \Delta u + 2\Delta v = -0.25 \\ -\Delta u + 2\Delta v = -0.25 \end{cases}$$
+>
+> 相加：$4\Delta v = -0.5 \implies \Delta v = -0.125$
+> 代入：$\Delta u = -0.25 - 2(-0.125) = 0$
+>
+> $X_2 = \begin{pmatrix} 0.5 \\ 1 \end{pmatrix} + \begin{pmatrix} 0 \\ -0.125 \end{pmatrix} = \begin{pmatrix} 0.5 \\ 0.875 \end{pmatrix}$
+>
+> 精确解为 $u=0.5, v=\sqrt{3}/2 \approx 0.866$——两步迭代后已非常接近。
+>
+> $\square$

@@ -1,0 +1,146 @@
+---
+title: 考题-09 - 信赖域Cauchy点计算
+subject: 最优化方法
+chapter: 7
+section: 一维搜索方法
+source: 复习纲要补充
+status: 已校对
+type: 考题
+topics:
+  - 信赖域方法
+  - Cauchy点
+  - 预测下降量
+  - 最速下降方向
+---
+
+# 考题 09
+
+考虑信赖域子问题：
+
+$$\min_{s \in \mathbb{R}^2}\; q(s) = \frac{1}{2}s^T B s + g^T s,\quad \text{s.t. } \|s\| \le \Delta$$
+
+其中
+
+$$g = \begin{bmatrix} 2 \\ 1 \end{bmatrix},\quad B = \begin{bmatrix} 3 & 0 \\ 0 & 1 \end{bmatrix},\quad \Delta = 1$$
+
+**a.** 计算该信赖域子问题的 **Cauchy 点** $s^c$。
+
+**b.** 计算 Cauchy 点对应的**预测下降量** $q(0) - q(s^c)$。
+
+> 注：Cauchy 点是 $q(s)$ 沿负梯度方向（最速下降方向）$s = -\tau g$ 在信任区域内的极小点。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> **Cauchy 点的计算步骤**：
+>
+> 1. 沿负梯度方向参数化：$s(\tau) = -\tau g$，其中 $\tau \ge 0$。
+> 2. 代入 $q(s)$ 得到关于 $\tau$ 的单变量二次函数。
+> 3. 求无约束极小点 $\tau^* = \arg\min_{\tau \ge 0} q(-\tau g)$。
+> 4. 考虑信赖域约束 $\|\tau g\| \le \Delta$，即 $\tau \le \Delta / \|g\|$。
+> 5. 最终的 $\tau^c = \min\left(\tau^*,\ \Delta / \|g\|\right)$，然后 $s^c = -\tau^c g$。
+>
+> 注意区分两种情况：
+> - $\tau^* \le \Delta / \|g\|$：Cauchy 点 = 沿负梯度方向的无约束极小点
+> - $\tau^* > \Delta / \|g\|$：Cauchy 点 = 负梯度方向与信赖域边界的交点
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### 准备工作
+>
+> 梯度范数：
+> $$\|g\| = \sqrt{2^2 + 1^2} = \sqrt{5} \approx 2.23607$$
+>
+> 梯度二次型：
+> $$g^T B g = [2, 1] \begin{bmatrix} 3 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 2 \\ 1 \end{bmatrix} = [2, 1] \begin{bmatrix} 6 \\ 1 \end{bmatrix} = 12 + 1 = 13$$
+>
+> 梯度内积：
+> $$g^T g = \|g\|^2 = 5$$
+>
+> ### a. 计算 Cauchy 点
+>
+> 沿负梯度方向：$s = -\tau g$（$\tau \ge 0$）。
+>
+> 代入目标函数：
+> $$\begin{aligned}
+> q(-\tau g) &= \frac{1}{2}(-\tau g)^T B (-\tau g) + g^T (-\tau g) \\
+> &= \frac{\tau^2}{2} g^T B g - \tau g^T g \\
+> &= \frac{13}{2} \tau^2 - 5 \tau
+> \end{aligned}$$
+>
+> 这是关于 $\tau$ 的二次函数（开口向上，因为 $g^T B g = 13 > 0$）。
+>
+> **无约束极小点**：令 $\frac{d}{d\tau} q(-\tau g) = 13\tau - 5 = 0$，得
+>
+> $$\tau^* = \frac{5}{13} \approx 0.38462$$
+>
+> **信赖域约束**：$\|s\| = \|-\tau g\| = \tau \|g\| \le \Delta = 1$，因此
+>
+> $$\tau \le \frac{\Delta}{\|g\|} = \frac{1}{\sqrt{5}} \approx 0.44721$$
+>
+> **比较**：
+>
+> $$\tau^* = \frac{5}{13} \approx 0.38462\quad < \quad \frac{1}{\sqrt{5}} \approx 0.44721$$
+>
+> 无约束极小点在信赖域内部，因此 Cauchy 点取无约束极小点：
+>
+> $$\tau^c = \tau^* = \frac{5}{13}$$
+>
+> $$s^c = -\tau^c g = -\frac{5}{13} \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} -\dfrac{10}{13} \\[6pt] -\dfrac{5}{13} \end{bmatrix} \approx \begin{bmatrix} -0.76923 \\ -0.38462 \end{bmatrix}$$
+>
+> 验证：$\|s^c\| = \frac{5}{13} \|g\| = \frac{5}{13} \sqrt{5} \approx 0.38462 \times 2.23607 \approx 0.86066 \le 1$ ✔
+>
+> ### b. 计算预测下降量
+>
+> $q(0) = 0$（原点的二次模型值为零）。
+>
+> $$\begin{aligned}
+> q(s^c) &= \frac{13}{2} \left(\frac{5}{13}\right)^2 - 5 \times \frac{5}{13} \\
+> &= \frac{13}{2} \times \frac{25}{169} - \frac{25}{13} \\
+> &= \frac{325}{338} - \frac{25}{13}
+> \end{aligned}$$
+>
+> 通分（分母 $338 = 2 \times 13^2 = 2 \times 169$）：
+>
+> $$\frac{25}{13} = \frac{25 \times 26}{13 \times 26} = \frac{650}{338}$$
+>
+> $$\begin{aligned}
+> q(s^c) &= \frac{325}{338} - \frac{650}{338} = -\frac{325}{338}
+> \end{aligned}$$
+>
+> **预测下降量**：
+>
+> $$q(0) - q(s^c) = 0 - \left(-\frac{325}{338}\right) = \frac{325}{338} \approx 0.96154$$
+>
+> ### 结果总结
+>
+> | 量 | 公式 | 数值 |
+> |:---|:---|:---|
+> | $\|g\|$ | $\sqrt{5}$ | $2.23607$ |
+> | $g^T B g$ | $13$ | $13$ |
+> | $\tau^*$ | $g^T g / g^T B g = 5/13$ | $0.38462$ |
+> | $\Delta / \|g\|$ | $1/\sqrt{5}$ | $0.44721$ |
+> | $\tau^c$ | $\min(5/13,\ 1/\sqrt{5}) = 5/13$ | $0.38462$ |
+> | $s^c$ | $[-\frac{10}{13}, -\frac{5}{13}]^T$ | $[-0.7692, -0.3846]^T$ |
+> | $\|s^c\|$ | $\frac{5}{13}\sqrt{5}$ | $0.86066$ |
+> | $q(s^c)$ | $-\frac{325}{338}$ | $-0.96154$ |
+> | $q(0) - q(s^c)$ | $\frac{325}{338}$ | $0.96154$ |
+>
+> **点评**：Cauchy 点是信赖域算法中最简单也最重要的点——它提供了模型下降量的一个下界，是证明信赖域方法全局收敛性的关键。本例中无约束极小点落在信赖域内部（$\tau^* < \Delta/\|g\|$），说明在当前信赖域半径下，沿负梯度方向可以"自由地"走到该方向上的极小点而不被边界截断。若 $\tau^* > \Delta/\|g\|$（曲线极小点在边界外），Cauchy 点将位于负梯度方向与信赖域边界的交点处，此时预测下降量会小于无约束情况。
+>
+> $\square$
+
+---
+
+## 相关知识点
+
+- [[07-一维搜索方法#9. 信赖域方法初步|信赖域方法简介]]
+- [[考题-精确步长公式|精确步长公式]] — 线搜索沿固定方向找步长 vs 信赖域约束步长范围后找方向
+- [[../知识点解析梳理/07-一维搜索方法-知识梳理|第7章 知识梳理]]
+- [[../知识点解析梳理/25-信赖域方法-知识梳理|第25章 知识梳理]]

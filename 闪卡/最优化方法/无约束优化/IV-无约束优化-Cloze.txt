@@ -1,0 +1,8 @@
+最速下降法在二次函数上的精确步长是 ${{c1::\alpha_k=\frac{g_k^T g_k}{g_k^T Q g_k}}}$。
+${{c1::\text{共轭方向法}}}$ 至多 ${{c2::n}}$ 次迭代获得 $n$ 元二次函数的精确极小点。
+CG方向递推公式: ${{c1::p_k=-g_k+\beta_{k-1}p_{k-1}}}$，初始方向 ${{c2::p_0=-g_0}}$。
+FR公式: ${{c1::\beta_k^{\text{FR}}=\frac{g_{k+1}^T g_{k+1}}{g_k^T g_k}}}$。
+DFP公式近似的是 {{c1::Hessian 逆 ($H_k\approx[\nabla^2 f]^{-1}$)}}，BFGS公式近似的是 {{c2::Hessian ($B_k\approx\nabla^2 f$)}}。
+BFGS是目前公认表现 {{c1::最好}} 的拟牛顿公式，对Rosenbrock只需 {{c2::34}} 步。
+L-M修正中 ${{c1::\lambda\to 0}}$ 趋近牛顿法，${{c2::\lambda\to\infty}}$ 趋近梯度法。
+${{c1::s_k^T y_k>0}}$ 是拟牛顿法的曲率条件，由 {{c2::强Wolfe线搜索}} 保证。

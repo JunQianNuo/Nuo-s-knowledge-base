@@ -1,0 +1,71 @@
+{
+  "mode": "quick",
+  "seed": 20260815,
+  "workers": 8,
+  "time_budget": 60.0,
+  "candidate_pool_scope": "finite physical route pool",
+  "claim": "best validated feasible solution",
+  "data": {
+    "persons": 4000,
+    "groups": 264,
+    "outbound": 1600,
+    "return": 1600,
+    "shuttle": 800
+  },
+  "model": {
+    "physical_routes": 3536,
+    "service_options": 28249,
+    "y_variables": 3536,
+    "z_variables": 28249,
+    "dynamic_capacity_constraints": 14481,
+    "groups_covered": 264,
+    "min_routes_per_group": 6
+  },
+  "baseline_separated": {
+    "T_air": 56515,
+    "T_pax": 237726,
+    "fuel": 470760.40000000014,
+    "flights": 358,
+    "PK": 782355.0,
+    "AK": 2832366.0,
+    "utilization": 0.27621959873829866,
+    "method": "deterministic independent-OD transportation"
+  },
+  "joint_solution": {
+    "T_air": 20154,
+    "T_pax": 270539,
+    "fuel": 158869.89999999997,
+    "flights": 108,
+    "PK": 833288.0,
+    "AK": 982014.0,
+    "utilization": 0.8485500206718031
+  },
+  "improvement": {
+    "T_air": 36361,
+    "T_pax": -32813,
+    "fuel": 311890.5000000002,
+    "flights": 250,
+    "utilization": 0.5723304219335044
+  },
+  "certification": {
+    "aircraft_time": {
+      "status": "FEASIBLE",
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": false,
+      "bound": 16336.0
+    }
+  },
+  "full_lexicographic_certified": false,
+  "validation": {
+    "missing": 0,
+    "duplicates": 0,
+    "extra": 0,
+    "independent_csv": true,
+    "solver_equals_delivery": true
+  },
+  "runtime": {
+    "route_generation": 2.7900154999806546,
+    "master": 59.17641030001687,
+    "total": 62.548476900032256
+  }
+}

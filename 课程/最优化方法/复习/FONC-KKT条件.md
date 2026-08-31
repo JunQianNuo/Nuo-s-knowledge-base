@@ -1,0 +1,271 @@
+---
+title: FONC → KKT 条件 — 最优化方法
+subject: 最优化方法
+type: 复习
+source: 复习纲要-数学.md
+topics:
+  - FONC
+  - KKT条件
+  - Farkas引理
+  - 不等式约束优化
+  - 等式约束优化
+  - 互补松弛
+  - 积极约束集
+  - 线性化切锥
+  - LICQ
+---
+
+# FONC → KKT 条件（Karush-Kuhn-Tucker 条件）
+
+> 本文详细展示从一阶必要条件（FONC）到 KKT 条件的完整推导过程，涵盖等式约束和不等式约束同时存在的情形。
+
+---
+
+## 一、问题设定
+
+考虑含**等式和不等式约束**的优化问题：
+
+$$\min_{x \in \Omega} f(x), \qquad \Omega = \{x \in \mathbb{R}^n \mid h_i(x) = 0,\; i = 1, \ldots, m; \quad g_j(x) \leq 0,\; j = 1, \ldots, p\}$$
+
+其中 $f, h_i, g_j \in C^1$（连续可微）。
+
+**目标**：从 FONC 出发，推导 KKT 条件——即存在乘子 $\lambda_i^*$（等式约束）和 $\mu_j^* \geq 0$（不等式约束）使得：
+
+$$\boxed{\begin{aligned}
+\nabla f(x^*) + \sum_{j=1}^{p} \mu_j^* \nabla g_j(x^*) + \sum_{i=1}^{m} \lambda_i^* \nabla h_i(x^*) &= 0 \\[4pt]
+\mu_j^* &\geq 0, \quad j = 1, \ldots, p \\[4pt]
+\mu_j^* \, g_j(x^*) &= 0, \quad j = 1, \ldots, p
+\end{aligned}}$$
+
+---
+
+## 二、第一步：切锥的表征
+
+### 2.1 积极约束集
+
+在点 $x^*$ 处定义**积极不等式约束集**：
+
+$$\mathcal{J}(x^*) = \{j \in \{1, \ldots, p\} \mid g_j(x^*) = 0\}$$
+
+> [!hint] 为什么只看积极约束
+> 对于非积极约束（$g_j(x^*) < 0$），由于 $g_j$ 连续，在 $x^*$ 的充分小邻域内 $g_j(x) < 0$ 仍然成立——这样的约束对局部可行方向不产生任何限制。因此只有"恰好取等"的约束才影响切锥的形态。
+
+### 2.2 线性化切锥
+
+在 LICQ 等正则性条件下，切锥 $\mathcal{T}_\Omega(x^*)$ 与线性化切锥 $\mathcal{T}_\Omega^{\text{lin}}(x^*)$ 一致：
+
+$$\mathcal{T}_\Omega(x^*) = \mathcal{T}_\Omega^{\text{lin}}(x^*) = \{\, d \in \mathbb{R}^n \mid Dh(x^*) d = 0, \quad Dg_j(x^*) d \leq 0,\; j \in \mathcal{J}(x^*) \,\}$$
+
+其中：
+- $Dh(x^*) \in \mathbb{R}^{m \times n}$ 是等式约束 $h$ 的 Jacobian 矩阵
+- $Dg_j(x^*) = \nabla g_j(x^*)^T$ 是第 $j$ 个不等式约束的梯度（行向量）
+
+**核心区别**：
+- 等式约束给出**子空间条件**：$\nabla h_i(x^*)^T d = 0$（$d$ 必须在所有约束法向量的正交补中）
+- 积极不等式约束给出**半空间条件**：$\nabla g_j(x^*)^T d \leq 0$（$d$ 只能在一侧）
+
+> [!hint] 直观理解
+> 等式约束把可行方向限制在超平面的交集（一个线性子空间）；不等式约束进一步用"墙壁"把这个子空间切出一部分（一个锥）。FONC 说：在极小点处，梯度必须与这个锥内的所有方向成锐角或直角。
+
+---
+
+## 三、第二步：FONC 的几何含义
+
+### 3.1 应用 FONC
+
+由[[常考查的证明#证明 6：约束优化的一阶必要条件（FONC）|FONC]]：
+$$d^T \nabla f(x^*) \geq 0, \quad \forall d \in \mathcal{T}_\Omega(x^*)$$
+
+代入切锥的表征：
+$$\left.\begin{aligned}
+\nabla h_i(x^*)^T d &= 0, \quad i = 1, \ldots, m \\
+\nabla g_j(x^*)^T d &\leq 0, \quad j \in \mathcal{J}(x^*) \\
+\end{aligned}\right\} \;\Longrightarrow\; \nabla f(x^*)^T d \geq 0$$
+
+### 3.2 等价表述：一个线性不等式组无解
+
+上述蕴含关系等价于：如下线性不等式组**关于 $d$ 无解**：
+
+$$(\star) \quad \begin{cases}
+\nabla h_i(x^*)^T d = 0, & i = 1, \ldots, m \\[2pt]
+\nabla g_j(x^*)^T d \leq 0, & j \in \mathcal{J}(x^*) \\[2pt]
+\nabla f(x^*)^T d < 0 &
+\end{cases}$$
+
+> 换句话说：不存在一个可行方向 $d$ 同时满足所有约束条件而且让目标函数下降。这正是局部极小点的几何含义。
+
+---
+
+## 四、第三步：Farkas 引理（关键的"二选一"工具）
+
+### 4.1 Farkas 引理陈述
+
+> **Farkas 引理**：设 $A \in \mathbb{R}^{k \times n}$，$c \in \mathbb{R}^n$。则以下两个系统中恰好有一个有解：
+>
+> $$(\text{I}) \quad A x \leq 0, \quad c^T x > 0$$
+> $$(\text{II}) \quad A^T y = c, \quad y \geq 0$$
+
+**几何含义**：要么存在一个方向 $x$ 与 $A$ 的所有行成钝角且与 $c$ 成锐角（系统 I），要么 $c$ 落在 $A$ 的行的非负线性组合中（系统 II）。两者互斥且必居其一。
+
+> [!hint] 一句话来说
+> Farkas 引理 = 线性不等式版本的"要么存在解，要么存在'证明无解'的证书"。这个证书就是非负乘子 $y \geq 0$。
+
+### 4.2 将等式约束转化为不等式
+
+Farkas 引理处理的是 $A x \leq 0$ 类型的不等式。我们需要把等式 $\nabla h_i(x^*)^T d = 0$ 转化为两个不等式：
+
+$$\nabla h_i(x^*)^T d = 0 \;\Longleftrightarrow\; \nabla h_i(x^*)^T d \leq 0 \;\; \text{且} \;\; -\nabla h_i(x^*)^T d \leq 0$$
+
+### 4.3 构构造矩阵 $A$
+
+将系统 $(\star)$ 中的等式转化为双向不等式后，构造矩阵 $A$：
+
+$$A = \begin{bmatrix}
+\;\;\,\nabla h_1(x^*)^T \;\;\, \\
+\vdots \\
+\;\;\,\nabla h_m(x^*)^T \;\;\, \\ \hline
+-\nabla h_1(x^*)^T \\
+\vdots \\
+-\nabla h_m(x^*)^T \\ \hline
+\;\;\,\nabla g_j(x^*)^T \;\;\, \quad (j \in \mathcal{J}(x^*))
+\end{bmatrix} \;\in\; \mathbb{R}^{(2m + |\mathcal{J}|) \times n}$$
+
+取 $c = -\nabla f(x^*)$，则系统 $(\star)$ 等价于 Farkas 引理中的系统 (I)：
+
+$$A d \leq 0, \quad c^T d = -\nabla f(x^*)^T d > 0 \;\Longleftrightarrow\; \nabla f(x^*)^T d < 0$$
+
+### 4.4 应用 Farkas 引理
+
+系统 $(\star)$ 无解 $\Longrightarrow$ Farkas 系统 (I) 无解 $\Longrightarrow$ Farkas 系统 (II) 有解。
+
+即存在 $y \geq 0$（$y \in \mathbb{R}^{2m + |\mathcal{J}|}$）使得：
+
+$$A^T y = -\nabla f(x^*)$$
+
+展开 $y$ 的分量：记 $y = [\alpha_1^+, \ldots, \alpha_m^+, \alpha_1^-, \ldots, \alpha_m^-, \mu_j \;(j \in \mathcal{J})]^T$，其中每个分量 $\geq 0$。
+
+代入 $A^T$ 得：
+$$\sum_{i=1}^{m} \alpha_i^+ \nabla h_i(x^*) + \sum_{i=1}^{m} \alpha_i^- (-\nabla h_i(x^*)) + \sum_{j \in \mathcal{J}} \mu_j \nabla g_j(x^*) = -\nabla f(x^*)$$
+
+整理：
+$$\nabla f(x^*) + \sum_{j \in \mathcal{J}} \mu_j \nabla g_j(x^*) + \sum_{i=1}^{m} (\alpha_i^+ - \alpha_i^-) \nabla h_i(x^*) = 0$$
+
+---
+
+## 五、第四步：整理为 KKT 标准形式
+
+### 5.1 定义乘子
+
+- **等式约束乘子**：$\lambda_i^* = \alpha_i^+ - \alpha_i^- \in \mathbb{R}$（无符号限制——因为 $\alpha_i^+, \alpha_i^- \geq 0$ 可以各自任意取值，差值的符号不受限）
+- **积极不等式约束乘子**：$\mu_j^* = \mu_j \geq 0$（由 Farkas 引理直接保证非负性）
+- **非积极不等式约束乘子**：对 $j \notin \mathcal{J}(x^*)$（即 $g_j(x^*) < 0$），**设 $\mu_j^* = 0$**
+
+### 5.2 KKT 条件完整表述
+
+将以上定义代入，得到标准的 KKT 一阶必要条件：
+
+**(1) 稳定性（Stationarity）**：
+$$\nabla f(x^*) + \sum_{j=1}^{p} \mu_j^* \nabla g_j(x^*) + \sum_{i=1}^{m} \lambda_i^* \nabla h_i(x^*) = 0$$
+
+**(2) 原始可行性（Primal Feasibility）**：
+$$h_i(x^*) = 0 \quad (i = 1, \ldots, m), \qquad g_j(x^*) \leq 0 \quad (j = 1, \ldots, p)$$
+
+**(3) 对偶可行性（Dual Feasibility）**：
+$$\mu_j^* \geq 0, \quad j = 1, \ldots, p$$
+
+**(4) 互补松弛（Complementary Slackness）**：
+$$\mu_j^* \, g_j(x^*) = 0, \quad j = 1, \ldots, p$$
+
+### 5.3 互补松弛的验证
+
+互补松弛自然成立，原因如下：
+
+- 若 $j \in \mathcal{J}(x^*)$（积极约束）：$g_j(x^*) = 0$ $\Rightarrow$ $\mu_j^* g_j(x^*) = 0$
+- 若 $j \notin \mathcal{J}(x^*)$（非积极约束）：我们设 $\mu_j^* = 0$ $\Rightarrow$ $\mu_j^* g_j(x^*) = 0$
+
+> [!hint] 互补松弛的直觉
+> 互补松弛条件的经济学含义：如果约束是"松"的（$g_j(x^*) < 0$），那么它的"影子价格"为零（$\mu_j^* = 0$）——这个约束对最优解没有约束力。只有在约束"紧"（$g_j(x^*) = 0$）时，乘子才可能为正，表示这个约束正在阻止目标函数进一步下降。
+
+---
+
+## 六、用 Lagrange 函数统一表达
+
+定义 **Lagrange 函数**：
+
+$$L(x, \lambda, \mu) = f(x) + \sum_{j=1}^{p} \mu_j g_j(x) + \sum_{i=1}^{m} \lambda_i h_i(x)$$
+
+则 KKT 条件等价于：
+
+| 条件 | 表达式 |
+|------|--------|
+| 稳定性 | $\nabla_x L(x^*, \lambda^*, \mu^*) = 0$ |
+| 原始可行性 | $h_i(x^*) = 0,\; g_j(x^*) \leq 0$ |
+| 对偶可行性 | $\mu_j^* \geq 0$ |
+| 互补松弛 | $\mu_j^* g_j(x^*) = 0$ |
+
+---
+
+## 七、完整证明流程总结
+
+```
+FONC: d^T ∇f(x*) ≥ 0, ∀d ∈ T_Ω(x*)
+         │
+         ▼ (等价于线性不等式组无解)
+不存在 d 满足: ∇h_i^T d = 0, ∇g_j^T d ≤ 0 (j∈J), ∇f^T d < 0
+         │
+         ▼ (等式转化为双向不等式，应用 Farkas 引理)
+∃ α_i^+, α_i^-, μ_j ≥ 0:
+∇f + Σ_j μ_j ∇g_j + Σ_i (α_i^+ - α_i^-) ∇h_i = 0
+         │
+         ▼ (定义 λ_i = α_i^+ - α_i^-, 对非积极约束设 μ_j = 0)
+KKT 条件: 稳定性 + 原始可行性 + 对偶可行性 + 互补松弛
+```
+
+每一步的逻辑依赖：
+
+| 步骤 | 从 | 到 | 依赖的工具 |
+|------|----|----|-----------|
+| 1 | 局部极小点 $x^*$ | FONC 不等式 | 第 6 章 最优性条件 |
+| 2 | FONC 不等式 | 线性系统无解 | 切锥的表征（LICQ 下成立） |
+| 3 | 线性系统无解 | 非负乘子存在 | **Farkas 引理** |
+| 4 | 非负乘子 | KKT 条件 | 变量重命名 + 补零定义 |
+
+---
+
+## 八、Farkas 引理 vs 其他选代定理
+
+Farkas 引理是推导 KKT 条件的标准工具，但还有其他等价的选择定理可以完成同样的任务：
+
+| 定理 | 处理类型 | 特点 |
+|------|----------|------|
+| **Farkas 引理** | $A x \leq 0$ | 最简单直接（本文使用） |
+| **Gordan 定理** | $A x < 0$ | 处理严格不等式 |
+| **Motzkin 定理** | 混合 $=$, $\leq$, $<$ | 可以直接处理等式约束，无需双向拆分 |
+
+> 使用 Motzkin 定理可以跳过"等式转双向不等式"这一步，但 Farkas 引理更基础且更直观。
+
+---
+
+## 九、KKT 条件的特殊情形
+
+### 9.1 仅含等式约束
+
+退化为 [[FONC-条件极值定理|Lagrange 乘子定理]]：$\mu_j^*$ 全部消失，只剩下等式约束乘子 $\lambda_i^*$（无符号限制）。
+
+### 9.2 仅含不等式约束
+
+$$\nabla f(x^*) + \sum_{j=1}^{p} \mu_j^* \nabla g_j(x^*) = 0, \quad \mu_j^* \geq 0, \quad \mu_j^* g_j(x^*) = 0$$
+
+### 9.3 无约束优化
+
+退化为 $\nabla f(x^*) = 0$（内点的一阶必要条件）。
+
+---
+
+## 十、相关知识点链接
+
+- [[常考查的证明#证明 6：约束优化的一阶必要条件（FONC）|FONC 的证明]]
+- [[FONC-条件极值定理|FONC → 条件极值定理（仅等式约束）]]
+- [[../知识点解析梳理/06-最优性条件-知识梳理|第6章：最优性条件与切锥]]
+- [[../知识点解析梳理/22a-凸优化问题-知识梳理|第22a章：凸优化（KKT充要条件）]]
+- [[../复习纲要-数学#FONC → KKT 条件的证明|复习纲要：KKT 证明要求]]

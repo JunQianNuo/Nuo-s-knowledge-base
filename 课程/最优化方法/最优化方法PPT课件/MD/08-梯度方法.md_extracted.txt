@@ -1,0 +1,262 @@
+# 08-梯度方法
+
+---
+title: 第8章 梯度方法
+subject: 最优化方法
+source: 无动画Chapter8.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 8
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第8章 梯度方法
+## 1．最速下降法
+2．梯度类方法性质分析
+2
+第8章 梯度方法
+1/20
+## 优化问题
+## 无约束优化问题： $\min \left\{f(\boldsymbol {x})|\boldsymbol {x}\in \mathbb {R}^{n}\right\}$ 
+$f:\mathbb {R}^{n}\rightarrow$ R是多元实值函数.
+$\boldsymbol {x}\in \mathbb {R}^{n}$ 是决策变量.
+## 定义（水平集或等值线，法平面，切平面）
+设f: $\mathbb {R}^{n}\rightarrow$ R为多元实值函数， $c\in$ R是给定常数.
+· $f$ 关于定值c的水平集（level set）为：
+$$S_{c}(f)=\{\boldsymbol {x}\in \mathbb {R}|f(\boldsymbol {x})=c\}$$
+若 $f\left(\boldsymbol {x}_{0}\right)=cLongrightarrow\boldsymbol {x}_{0}\in S_{c}(f)$ 
+· $f$ 在 $\boldsymbol {x}_{0}$ 处的切平面（tangent plane）为：
+$$l(\boldsymbol {x})=f\left(\boldsymbol {x}_{0}\right)+\nabla f\left(\boldsymbol {x}_{0}\right)^{\top }\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)$$
+· $f$ 在 $\boldsymbol {x}_{0}$ 处的法平面（normal plane）为： $\nabla f\left(\boldsymbol {x}_{0}\right)$ 
+$z=f\left(x_{1},x_{2}\right)$ Pona Plane 2=0 $x_{2}$ Level set (curve) x $x_{1}$ $\nabla f\left(x_{0}\right)$ V
+![](https://web-api.textin.com/ocr_image/external/8e306e0591f60a00.jpg)
+![](https://web-api.textin.com/ocr_image/external/15663c48be77fb9b.jpg)
+$f$ 沿着 $\nabla f\left(\boldsymbol {x}_{0}\right)$ 的方向函数值上升最快.
+利用Taylor展开讨论一阶展开项 $\left\langle \nabla f\left(\boldsymbol {x}_{0}\right),\boldsymbol {d}\right\rangle$ ，其中 $\|\boldsymbol {d}\|=1$ .再借助 Cauchy 不等式即可.
+![](https://web-api.textin.com/ocr_image/external/7b033a22d3dec847.jpg)
+2
+第8章 梯度方法
+2/20
+## 梯度下降法（gradient descent）
+### 算法动机： $\min \left\{f(\boldsymbol {x})|\boldsymbol {x}\in \mathbb {R}^{n}\right\}$ 
+设初始点为 $\boldsymbol {x}^{(0)}$ ，线搜索的新点为 $\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}-α\nabla f\left(\boldsymbol {x}^{(0)}\right)$ 
+$$\stackrel {\text {Taylor}}{Longrightarrow}f\left(\boldsymbol {x}^{(0)}-α\nabla f\left(\boldsymbol {x}^{(0)}\right)\right)=f\left(\boldsymbol {x}^{(0)}\right)-α\left\|\nabla f\left(\boldsymbol {x}^{(0)}\right)\right\|^{2}+o(α)$$
+若 $\nabla f\left(\boldsymbol {x}^{(0)}\right)\neq 0Longrightarrowf\left(\boldsymbol {x}^{(0)}\right)=f\left(\boldsymbol {x}^{(0)}-α\nabla f\left(\boldsymbol {x}^{(0)}\right)\right)<f\left(\boldsymbol {x}^{(0)}\right)$ $\forall α>0$ $\therefore \boldsymbol {x}^{(1)}$ 比 $\boldsymbol {x}^{(0)}$ 处的函数值更小.
+### 梯度下降法求解无约束优化问题 $\min \left\{f(\boldsymbol {x})|\boldsymbol {x}\in \mathbb {R}^{n}\right\}$ 
+#### ·梯度下降法：
+SO：给定初始点 $\boldsymbol {x}^{(0)}$ 和步长 $α_{k}>0,$ 
+S1: $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\nabla f\left(\boldsymbol {x}^{(k)}\right)$ 
+·最速下降法（steepest descent)：
+S0：给定初始点 $\boldsymbol {x}^{(0)}$ 
+S1: $α_{k}=\arg \min f\left(\boldsymbol {x}^{(k)}-α\nabla f\left(\boldsymbol {x}^{(k)}\right)\right.$ 
+S2: $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\nabla f\left(\boldsymbol {x}^{(k)}\right)$ 
+$\mathrm {f}=\mathrm {c}_{3}$ $x^{(1)}$ x(1) $x^{(3)}$ / $\mathrm {f}=\mathrm {C}_{2}$ $\mathrm {f}=\mathrm {C}_{1}$ $x^{(2)}$ f=00 $\mathrm {f}=\mathrm {C}_{0}$ x(0) $x^{(0)}$ C&gt;c&gt;c&gt;03 $c_{0}&gt;c_{1}&gt;c_{2}&gt;c_{3}$
+![](https://web-api.textin.com/ocr_image/external/0580c5ef429a0777.jpg)
+![](https://web-api.textin.com/ocr_image/external/e96ee2616e547553.jpg)
+![](https://web-api.textin.com/ocr_image/external/e9f61c825faf204a.jpg)
+第8章梯度方法
+# 梯度下降法
+定理（最速下降法的性质-1）
+若 $\left\{\boldsymbol {x}^{(k)}\right\}_{k=0}^{\infty }$ 是最速下降法产生的序列，则 $\nabla f\left(\boldsymbol {x}^{(k+1)}\right)\bot \nabla f\left(\boldsymbol {x}^{(k)}\right)$ 或 $\left(\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)}\right)\bot \left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k-1)}\right)$ 
+证.记 $\varphi (α)=f\left(\boldsymbol {x}^{(k)}-α\nabla f\left(\boldsymbol {x}^{(k)}\right)\right)$ 
+由定义 $α_{k}$ 得 $Longrightarrow\varphi ^{\prime }\left(α_{k}\right)=0Longrightarrow\left\langle \nabla f\left(\boldsymbol {x}^{(k+1)}\right),\nabla f\left(\boldsymbol {x}^{(k)}\right)\right\rangle =0$ 
+由迭代格式知 $Longrightarrow\left\langle \boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)},\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k-1)}\right\rangle =0$ 
+# 定理（最速下降法的性质-II）
+若 $\left\{\boldsymbol {x}^{(k)}\right\}_{k=0}^{\infty }$ 是最速下降法产生的序列，且 $\nabla f\left(\boldsymbol {x}^{(k)}\right)\neq 0$ ，则 $f\left(\boldsymbol {x}^{(k+1)}\right)<f\left(\boldsymbol {x}^{(k)}\right)$ 
+证.由函数 $4$ 的定义和 $Taylor$ 展开得
+$$Longleftrightarrow\varphi \left(α_{k}\right)=\varphi \left(α_{0}\right)+\varphi ^{\prime }\left(α_{0}\right)α_{k}+o\left(α_{k}\right)$$
+$$Longleftrightarrowf\left(\boldsymbol {x}^{(k+1)}\right)=f\left(\boldsymbol {x}^{(k)}\right)-α_{k}\left\|\nabla f\left(\boldsymbol {x}^{(k)}\right)\right\|^{2}+o\left(α_{k}\right)$$
+若 $\nabla f\left(\boldsymbol {x}^{(k)}\right)\neq 0$ ，则 $f\left(\boldsymbol {x}^{(k+1)}\right)<f\left(\boldsymbol {x}^{(k)}\right)$ 
+## 梯度下降法
+![](https://web-api.textin.com/ocr_image/external/073ba0153070821c.jpg)
+最速下降法求解无约束优化问题时的迭代点的轨迹具有“锯齿”（zigzag）现象.
+![](https://web-api.textin.com/ocr_image/external/ca1f8de2253c71ac.jpg)
+★就函数值而言，梯度下降法每次迭代总能使函数值单调下降.
+### 停机准则：给定误差 $\varepsilon >0$ $\left(\text {如}10^{-6}\right)$ 
+·一阶必要条件： $\left\|\nabla f\left(\boldsymbol {x}^{(k)}\right)\right\|<\varepsilon .$ 
+。函数值的变化：
+$$\left|f\left(\boldsymbol {x}^{(k+1)}\right)-f\left(\boldsymbol {x}^{(k)}\right)\right|<\varepsilon\quad \frac {\left|f\left(\boldsymbol {x}^{(k+1)}\right)-f\left(\boldsymbol {x}^{(k)}\right)\right|}{\left|f\left(\boldsymbol {x}^{(k)}\right)\right|}<\varepsilon ,\frac {\left|f\left(\boldsymbol {x}^{(k+1)}\right)-f\left(\boldsymbol {x}^{(k)}\right)\right|}{\max \left\{1,\left|f\left(\boldsymbol {x}^{(k)}\right)\right|\right\}}<\varepsilon .$$
+。迭代点的变化：
+$$\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)}\right\|<\varepsilon ,\frac {\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)}\right\|}{\left\|\boldsymbol {x}^{(k)}\right\|}<\varepsilon ,\frac {\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)}\right\|}{\max \left\{1,\left\|\boldsymbol {x}^{(k)}\right\|\right\}}<\varepsilon .$$
+### 梯度下降法
+例. $\min _{\boldsymbol {x}\in \mathbb {R}^{3}}f(\boldsymbol {x})=\left(x_{1}-4\right)^{4}+\left(x_{2}-3\right)^{2}+4\left(x_{3}+5\right)^{4}$ 
+利用最速下降法求解 $f$ 的极小点，初始点取 $\boldsymbol {x}^{(0)}=[4,2,-1]^{\top }.$ 
+解： $f$ 的梯度为： $\nabla f(\boldsymbol {x})=\left[4\left(x_{1}-4\right)^{3},2\left(x_{2}-3\right),16\left(x_{3}+5\right)^{3}\right]^{\top }$ 
+$\text {S1:}\because \nabla f\left(\boldsymbol {x}^{(0)}\right)=[0,-2,1024]^{\top }$ ，精确步长
+$$\alpha_{0}=\arg \min f\left(\boldsymbol{x}^{(0)}-\alpha \nabla f\left(\boldsymbol{x}^{(0)}\right)\xlongequal{\text {割线法获得}}\alpha_{0}=3.967\times 10^{-3}.\right.$$
+新迭代点 $\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}-α_{0}\nabla f\left(\boldsymbol {x}^{(0)}=[4.000,2.008,-5.062].\right.$ S2: $\because \nabla f\left(\boldsymbol {x}^{(1)}\right)=[0.000,-1.984,-0.003875]^{\top }$ ，精确步长
+$$\alpha_{1}=\arg \min _{\alpha>0}f\left(\boldsymbol{x}^{(1)}-\alpha \nabla f\left(\boldsymbol{x}^{(1)}\right)\xlongequal{\text {割线法获得}}\alpha_{1}=0.500.\right.$$
+新迭代点 $\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}-α_{1}\nabla f\left(\boldsymbol {x}^{(1)}=[4.000,3.000,-5.060]\right.$ 
+S3: $\because \nabla f\left(\boldsymbol {x}^{(2)}\right)=[0.000,0.000,-0.003525]^{\top }$ ，精确步长
+$$\alpha_{2}=\arg \min _{\alpha>0}f\left(\boldsymbol{x}^{(2)}-\alpha \nabla f\left(\boldsymbol{x}^{(2)}\right)\xlongequal{\text {割线法获得}}\alpha_{2}=16.29.\right.$$
+新迭代点 $\boldsymbol {x}^{(3)}=\boldsymbol {x}^{(2)}-α_{2}\nabla f\left(\boldsymbol {x}^{(2)}=[4.000,3.000,-5.002]\right.$ 
+![](https://web-api.textin.com/ocr_image/external/1de2d211a2536aec.jpg)
+f的真实极小点 $\boldsymbol {x}^{*}=[4,3,-5]^{\top }$ .可借助 $C/C++/matlab/...$  等程序实现.
+![](https://web-api.textin.com/ocr_image/external/e67116334059f047.jpg)
+# 最速下降法极小化二次函数
+# 定义（二次函数）
+![](https://web-api.textin.com/ocr_image/external/64aeaed6f8175bb6.jpg)
+$f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {b}^{\top }\boldsymbol {x},$  其中 $Q\in \mathbb {R}^{nxn}$ 是对称正定矩阵， $\boldsymbol {b}\in \mathbb {R}^{n},\boldsymbol {x}\in \mathbb {R}^{n}.$ 
+由一阶必要条件知 $0=\nabla f(\boldsymbol {x})=\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {b}$ .所以， $f$  由唯一极小点 $\boldsymbol {x}^{*}=\boldsymbol {Q}^{-1}\boldsymbol {b}.$ 符号：记 $f$ 在 $\boldsymbol {x}^{(k)}$ 处的梯度为 $\boldsymbol {g}^{(k)}=\nabla f\left(\boldsymbol {x}^{(k)}\right)$ ,f在 $\boldsymbol {x}^{(k)}$ 处的海塞矩阵为 $\boldsymbol {F}(\boldsymbol {x})=\nabla ^{2}f\left(\boldsymbol {x}^{(k)}\right)=\boldsymbol {Q}.$ 
+# 最速下降法极小化二次函数
+$$α_{k}=\frac {\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {g}^{(k)}}{\left(\boldsymbol {g}^{(k)}\right)^{\top }Q\boldsymbol {g}^{(k)}}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}},(\text {why}?)$$
+O $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)}$ 
+证. $α_{k}=\arg \min _{α>0}\varphi (α):=f\left(\boldsymbol {x}^{(k)}-α\boldsymbol {g}^{(k)}\right)$ 
+由上述一元函数优化问题的最优性条件知： $\varphi ^{\prime }(α)=0$ ，即，
+$$0=\varphi ^{\prime }\left(α_{k}\right)=\left(\boldsymbol {g}^{(k)}\right)^{\top }\nabla f\left(\boldsymbol {x}^{(k)}-α\nabla \boldsymbol {g}^{(k)}\right)=\left(\boldsymbol {g}^{(k)}\right)^{\top }\left(\boldsymbol {Q}\boldsymbol {x}^{(k)}-α\boldsymbol {Q}\boldsymbol {g}^{(k)}-b\right)\quad =\left(\boldsymbol {g}^{(k)}\right)^{\top }\left(\boldsymbol {g}^{(k)}-α\boldsymbol {Q}\boldsymbol {g}^{(k)}\right)=\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {g}^{(k)}-α\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {Q}\boldsymbol {g}^{(k)}$$
+# 最速下降法极小化二次函数
+例. $\min _{\boldsymbol {x}\in \mathbb {R}^{2}}f(\boldsymbol {x})=x_{1}^{2}+x_{2}^{2}$ 
+用最速下降法求解 $f$ 的极小点，初始点取任意 $\boldsymbol {x}^{(0)}\in \mathbb {R}^{2}.$ 
+解 $\because f$ 的梯度为 $\nabla f(\boldsymbol {x})=2\boldsymbol {x}$ 
+$f$ 的海塞为 $\nabla ^{2}f(\boldsymbol {x})=Q=2I.$ 
+. $\boldsymbol {g}^{(0)}=2\boldsymbol {x}^{(0)}Longrightarrowα_{0}=\frac {\left(\boldsymbol {g}^{(0)}\right)^{\top }\boldsymbol {g}^{(0)}}{\left(\boldsymbol {g}^{(0)}\right)^{\top }Q\boldsymbol {g}^{(0)}}=\frac {1}{2}$ 
+∴.新迭代点： $\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}-α_{0}\boldsymbol {g}^{(0)}=[0,0]^{\top }.$ 
+$x$ x(0) $x(0)$ $g^{(0)}$
+![](https://web-api.textin.com/ocr_image/external/d94e627de9e399c1.jpg)
+例. $\min _{\boldsymbol {x}\in \mathbb {R}^{2}}f(\boldsymbol {x})=\frac {1}{5}x_{1}^{2}+x_{2}^{2}$ 
+用最速下降法求解 $f$ 的极小点，初始点取任意 $\boldsymbol {x}^{(0)}\in \mathbb {R}^{2}.$ 
+解：给定任意初始点 $\boldsymbol {x}^{(0)}$ ，用最速下降法
+$\left\{\begin{array}{l}α_{k}=\frac {\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {g}^{(k)}}{\left(\boldsymbol {g}^{(k)}\right)^{\top }Q\boldsymbol {g}^{(k)}}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}\\ \boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)},\end{array}\right.$ （可借助Mab $/\mathsf {C}/$  $等)$ 
+$c_{0}&gt;c_{1}$ $\mathrm {f}=\mathrm {c}_{0}$ $\mathrm {f}=\mathrm {c}_{1}$ $\mathbf {x}^{(0)}$ $x^{*}$ x(1) $\mathbf {x}^{(1)}$
+![](https://web-api.textin.com/ocr_image/external/86da58ae1a61c4e1.jpg)
+# 收敛性分析
+目标：梯度法极小化二次函数时的收敛性
+$\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {b}^{\top }\boldsymbol {x},$ ，其中 $\boldsymbol {Q}\succ 0,\boldsymbol {b}\in \mathbb {R}^{n},$ $\boldsymbol {x}\in \mathbb {R}^{n}$ 
+事实： $\boldsymbol {x}^{*}$ 是极小点 $企$ $\boldsymbol {Q}\boldsymbol {x}^{*}=\boldsymbol {b}$ .所以， $f\left(\boldsymbol {x}^{*}\right)=-\frac {1}{2}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{*}$ 
+·符号：记 $V(\boldsymbol {x})=f(\boldsymbol {x})-f\left(\boldsymbol {x}^{*}\right)=\frac {1}{2}\left\|\boldsymbol {x}-\boldsymbol {x}^{*}\right\|_{\boldsymbol {Q}}^{2}=\frac {1}{2}\|\boldsymbol {g}\|_{\boldsymbol {Q}^{-1}}^{2}$ 
+# 引理（梯度法迭代格式 $\left.\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)}\right)$ 
+若 $\left\{\boldsymbol {x}^{(k)}\right\}_{k=0}^{\infty }$ 是最速下降法产生的迭代序列.则
+$$V\left(\boldsymbol {x}^{(k+1)}\right)=\left(1-γ_{k}\right)V\left(\boldsymbol {x}^{(k)}\right)$$
+其中 $\boldsymbol {g}^{(k)}=\boldsymbol {Q}\boldsymbol {x}^{(k)}-\boldsymbol {b},$ 参数 $γ_{k}$ 定义为
+$γ_{k}=\left\{\begin{array}{l}1,\\ \frac {α_{k}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}\left(2\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}-α_{k}\right)\end{array}\right.$  若 $\boldsymbol {g}^{(k)}=0,$ ，若 $\boldsymbol {g}^{(k)}\neq 0.$ 
+![](https://web-api.textin.com/ocr_image/external/4ada75fe03b99e94.jpg)
+# 收敛性分析
+证.假设 $\boldsymbol {g}^{(k)}\neq 0.$ .因此，
+$$V\left(\boldsymbol {x}^{(k+1)}\right)-V\left(\boldsymbol {x}^{(k)}\right)\quad =\frac {1}{2}\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{*}\right\|_{\boldsymbol {Q}}^{2}-\frac {1}{2}\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{\boldsymbol {Q}}^{2}=\frac {1}{2}\left\|\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)}-\boldsymbol {x}^{*}\right\|_{\boldsymbol {Q}}^{2}-\frac {1}{2}\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{\boldsymbol {Q}}^{2}$$
+［.迭代格式］
+$$=-α_{k}\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {Q}\boldsymbol {g}^{(k)}+\frac {α_{k}^{2}}{2}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}$$
+$$=-α_{k}\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {g}^{(k)}+\frac {α_{k}^{2}}{2}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}$$
+$$=\underbrace {\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}{2}}_{V\left(\boldsymbol {x}^{(k)}\right)}\underbrace {\frac {2}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}\left(-α_{k}\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}+\frac {α_{k}^{2}}{2}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}\right)}_{-γ_{k}}$$
+$$\therefore V\left(\boldsymbol {x}^{(k+1)}\right)-V\left(\boldsymbol {x}^{(k)}\right)=-γ_{k}V\left(\boldsymbol {x}^{(k)}\right)LongrightarrowV\left(\boldsymbol {x}^{(k+1)}\right)=\left(1-γ_{k}\right)V\left(\boldsymbol {x}^{(k)}\right)$$
+# 收敛性分析
+问题：如何确保 $\lim _{k\rightarrow \infty }\boldsymbol {x}^{(k)}=\boldsymbol {x}^{*}?$ 
+## 引理
+若 $\left\{\boldsymbol {x}^{k}\right\}_{k=0}^{\infty }$ 是梯度法产生的序列.则 $\lim _{k\rightarrow \infty }\boldsymbol {x}^{(k)}=\boldsymbol {x}^{*}$ 当且仅当 $\sum _{k=0}^{\infty }γ_{k}=\infty$ 
+证. $\because$ $V\left(\boldsymbol {x}^{(k+1)}\right)=\left(1-γ_{k}\right)V\left(\boldsymbol {x}^{(k)}\right)LongrightarrowV\left(\boldsymbol {x}^{(k+1)}\right)=\left(\prod _{i=0}^{k}\left(1-γ_{i}\right)\right)V\left(\boldsymbol {x}^{(0)}\right)$ 
+$\therefore \left[\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}\right]Longleftrightarrow\left[V\left(\boldsymbol {x}^{(k+1)}\right)\rightarrow 0\right]Longleftrightarrow|\prod _{i=0}^{k}\left(1-γ_{i}\right)\rightarrow 0$ ↓
+![](https://web-api.textin.com/ocr_image/external/f047c0b46025a8ed.jpg)
+$\because \left|\sum _{i=0}^{\infty }γ_{i}=\infty \right|Longleftrightarrow\left|\sum _{i=0}^{\infty }-\log \left(1-γ_{i}\right)=\infty \right.$
+![](https://web-api.textin.com/ocr_image/external/06d0ee1d9b38b364.jpg)
+最后一个“”利用了微积分中的结论： $-2x\leq \log (1-x)\leq -x.$
+# 收敛性分析
+![](https://web-api.textin.com/ocr_image/external/bbb96844471eafe6.jpg)
+问题：如何保证 $\sum _{k=0}^{\infty }γ_{k}=\infty ?$ 
+## 引理（Rayleigh 不等式）
+若λmax(Q）和 $λ_{\min }(\boldsymbol {Q})$ ）分别是矩阵 $Q\succ 0$ 的最大和最小特征值.则 $\left\{\begin{array}{l}λ_{\min }(\boldsymbol {Q})\leq \frac {\|\boldsymbol {x}\|_{\boldsymbol {Q}}^{2}}{\|\boldsymbol {x}\|_{2}^{2}}\leq λ_{\max }(\boldsymbol {Q}),\\ \frac {1}{λ_{\max }(\boldsymbol {Q})}\leq \frac {\|\boldsymbol {x}\|_{\boldsymbol {Q}^{-1}}^{2}}{\|\boldsymbol {x}\|_{2}^{2}}\leq \frac {1}{λ_{\min }(\boldsymbol {Q})},\end{array}\right.$  $\forall \boldsymbol {x}\neq 0$  证.利用二次型的标准型即可.
+![](https://web-api.textin.com/ocr_image/external/6190b2757d219a61.jpg)
+## 引理
+![](https://web-api.textin.com/ocr_image/external/c6220ecb76f96abe.jpg)
+![](https://web-api.textin.com/ocr_image/external/b16cc52b1675e6f5.jpg)
+任意 $Q\succ 0$ 和 $\boldsymbol {x}\neq 0,$ 总有 $\frac {λ_{\min }(\boldsymbol {Q})}{λ_{\max }(\boldsymbol {Q})}\leq \frac {\|\boldsymbol {x}\|_{\boldsymbol {Q}}^{2}\|\boldsymbol {x}\|_{\boldsymbol {Q}^{-1}}^{2}}{\|\boldsymbol {x}\|_{2}^{4}}\leq \frac {λ_{\max }(\boldsymbol {Q})}{λ_{\min }(\boldsymbol {Q})}$ 
+![](https://web-api.textin.com/ocr_image/external/f0a7a5e9682fe335.jpg)
+![](https://web-api.textin.com/ocr_image/external/f6506128d9226e7a.jpg)
+更“紧”的结论：借助Cauchy不等式和Kantorovich不等式可得：任意 $Q\succ 0$ 和 $\boldsymbol {x}\neq 0$ ，总有 $1\leq \frac {\|\boldsymbol {x}\|_{\boldsymbol {Q}}^{2}\|\boldsymbol {x}\|_{\boldsymbol {Q}^{-1}}^{2}}{\|\boldsymbol {x}\|_{2}^{4}}\leq \frac {\left[λ_{\max }(\boldsymbol {Q})+λ_{\min }(\boldsymbol {Q})\right]^{2}}{4λ_{\max }(\boldsymbol {Q})λ_{\min }(\boldsymbol {Q})}$ 
+![](https://web-api.textin.com/ocr_image/external/3e44520ab5cab391.jpg)
+# 收敛性分析
+## 定理
+任意初始点 $\boldsymbol {x}^{(0)}$ ，最速下降法极小化二次函数时产生的序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 收敛到二次函数的极小点 $\boldsymbol {x}^{*}$ 
+证.设 $\boldsymbol {g}^{(k)}\neq 0.$ 
+$$\because γ_{k}=\frac {α_{k}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}\left(2\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}-α_{k}\right)$$
+$$\xrightarrow {α_{k}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}}γ_{k}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{4}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}.$$
+$$\therefore \frac {4λ_{\max }(\boldsymbol {Q})λ_{\min }(\boldsymbol {Q})}{\left[λ_{\max }(\boldsymbol {Q})+λ_{\min }(\boldsymbol {Q})\right]^{2}}\leq γ_{k}\leq 1$$
+![](https://web-api.textin.com/ocr_image/external/64bf8bb904c21656.jpg)
+$$Longleftrightarrow\sum _{i=0}^{\infty }γ_{k}=\infty$$
+![](https://web-api.textin.com/ocr_image/external/e67e3781a871ea2c.jpg)
+$$LongleftrightarrowV\left(\boldsymbol {x}^{(k)}\right)\rightarrow 0$$
+$$Longleftrightarrow\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}.$$
+# 收敛性分析
+## 推论（定步长的梯度法： $\left.\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α\boldsymbol {g}^{(k)}\right)$ 
+任意初始点 $\boldsymbol {x}^{(0)}$ ，若定步长 $α\in \left(0,\frac {2}{λ_{\max }(\boldsymbol {Q})}\right)$ ，则定步长的梯度法极小化二次函数产生的序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 收敛到二次函数的极小点 $\boldsymbol {x}^{*}$ 
+证明. $γ_{k}=\frac {α_{k}\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{Q^{-1}}^{2}}\left(2\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}-α_{k}\right)\stackrel {α_{k}=α}{Longrightarrow}γ_{k}=α\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{Q^{-1}}^{2}}\left(2\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}-α\right)$ 
+.. $\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{Q^{-1}}^{2}}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{Q}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}\xrightarrow [\text {不等式}]{\text {Rayleigh}}\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}\geq \left[λ_{\min }(\boldsymbol {Q})\right]^{2}$ 
+$$\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{2}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}}\geq \frac {1}{λ_{\max }(\boldsymbol {Q})}$$
+$$γ_{k}\geq α\left[λ_{\min }(\boldsymbol {Q})\right]^{2}\left(\frac {2}{λ_{\max }(\boldsymbol {Q})}-α\right)\stackrel {α\in \left(0,\frac {2}{λ_{\max }(\boldsymbol {Q})}\right)}{}\text {Const}>0$$
+∴ $\sum _{i=0}^{\infty }γ_{k}=\infty LongleftrightarrowV\left(\boldsymbol {x}^{(k)}\right)\rightarrow 0Longleftrightarrow\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}.$ 
+$α\in \left(0,\frac {2}{λ_{\max }(\boldsymbol {Q})}\right)$ 是个充要条件，即任意不在该区间中的α都不能保证收性（见课本中的反例）.
+![](https://web-api.textin.com/ocr_image/external/d4360442c6c34d35.jpg)
+![](https://web-api.textin.com/ocr_image/external/8264547b27d21a88.jpg)
+# 收敛性分析
+例.固定步长的梯度方法： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α\boldsymbol {g}^{(k)}$ 
+## 用定步长的梯度法极小化 $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\left[\begin{array}{cc}4&2\sqrt {2}\\ 0&5\end{array}\right]\boldsymbol {x}+\boldsymbol {x}^{\top }\left[\begin{array}{c}3\\ 6\end{array}\right]+24.$ 
+解： $\boldsymbol {Q}=\frac {1}{2}\left(\left[\begin{array}{cc}4&2\sqrt {2}\\ 0&5\end{array}\right]+\left[\begin{array}{cc}4&2\sqrt {2}\\ 0&5\end{array}\right]^{\top }\right)=\left[\begin{array}{cc}4&\sqrt {2}\\ \sqrt {2}&5\end{array}\right]$ 
+$$Longrightarrowλ_{\max }(\boldsymbol {Q})=12$$
+∴当 $α\in \left(0,\frac {1}{6}\right)$  时，定步长的梯度法收敛到极小点 $\boldsymbol {x}^{*}$ .
+e
+# 收敛率
+## 定义（设序列 $\left\{\boldsymbol {x}^{k}\right\}_{k=0}^{\infty }$ 收敛到 $\left.\boldsymbol {x}^{*}\right)$ 
+序列 $\left\{\boldsymbol {x}^{k}\right\}_{k=0}^{\infty }$ $\left\{\begin{matrix}p,\\ \infty ,\end{matrix}\right.$ 若 $\lim _{k\rightarrow \infty }\frac {\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{*}\right\|_{2}}{\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{2}^{p}}\in (0,\infty )$ 的收敛率定义为： 若 $\lim _{k\rightarrow \infty }\frac {\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{*}\right\|_{2}}{\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{2}^{p}}=0,\forall p&gt;0$
+![](https://web-api.textin.com/ocr_image/external/8f26f8857d1ad07b.jpg)
+![](https://web-api.textin.com/ocr_image/external/9f3ef4c228dcac11.jpg)
+p越大，序列 $\left\{\boldsymbol {x}^{k}\right\}_{k=0}^{\infty }$ 收敛到极限的速越快.
+### 特别地，若 $\lim _{k\rightarrow \infty }\frac {\left\|x^{(k+1)}-x^{*}\right\|_{2}}{\left\|x^{(k)}-x^{*}\right\|_{2}^{p}}=μ$ 
+·次线性（sublinear)： $p=1,$ $μ=1;$  ·超线性（superlinear)： $p=1,$ $μ=0$ （或 $p>1)$ 
+·线性（linear)： $p=1,μ\in (0,1$  ·二次（quadratic)： $p=2.$ 
+<table border="1" ><tr>
+<td>例.$x^{(k)}=\frac {1}{k}$</td>
+</tr><tr>
+<td>$\because$ $x^{*}=\lim _{k\rightarrow \infty }x^{(k)}=0$ $\therefore \lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}-x^{*}\right|}{\left|x^{(k)}-x^{*}\right|^{p}}=\lim _{k\rightarrow \infty }\frac {k^{p}}{k+1}=\left\{\begin{array}{ll}0,&p<1,\\ 1,&p=1,\\ \infty &p>1,\end{array}\right.\Rightarrow 1\text {阶或次线性}$</td>
+</tr></table>
+第8章 梯度方法
+# 收敛率
+例. $x^{(k)}=γ^{k}$ ，其中 $γ\in (0,1)$ 
+: $x^{*}=\lim _{k\rightarrow \infty }x^{(k)}=0$ 
+$$\lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}-x^{*}\right|}{\left|x^{(k)}-x^{*}\right|^{p}}=\lim _{k\rightarrow \infty }γ^{k(1-p)+1}Longrightarrow\left\{\begin{array}{ll}0,&p<1\\ γ,&p=1\Rightarrow 1\text {阶或线}\\ \infty ,&p>1\end{array}\right.$$
+**例.** $x^{(k)}=γ^{q^{k}}$ ，其中 $q>1,γ\in (0,1)$ 
+∵ $x^{*}=\lim _{k\rightarrow \infty }x^{(k)}=0$ 
+$\lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}-x^{*}\right|}{\left|x^{(k)}-x^{*}\right|^{p}}=\lim _{k\rightarrow \infty }γ^{(q-p)q^{k}}Longrightarrow\left\{\begin{array}{ll}0,&p&lt;q\\ 1,&p=q\Rightarrow q\text {阶}\\ \infty ,&p&gt;1\end{array}\right.$
+![](https://web-api.textin.com/ocr_image/external/418bb5700b3cc075.jpg)
+## 例. $x^{(k)}=1$ 
+$\because$ $x^{*}=\lim _{k\rightarrow \infty }x^{(k)}=1,\therefore \lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}-x^{*}\right|}{\left|x^{(k)}-x^{*}\right|^{p}}=0$ $\forall p>0\Rightarrow \infty$ 阶
+第8章 梯度方法
+# 收敛率
+## 定义
+$a=O(h):\exists c$ 使得 $|a|\leq c|h|$ 对任意小的h成立.
+$a=o(h):$ 当 $h\rightarrow 0$ 时， $\frac {a}{h}\rightarrow 0.$ 
+## 定义
+若 $\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{*}\right\|_{2}=o\left(\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{2}^{p}\right)$ ，则 $\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}$ 是 $>p$ 阶.
+若 $\left\|\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{*}\right\|_{2}=O\left(\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{2}^{p}\right)$ ，则 $\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}$ 是 $\geq p$ 阶.
+例.定步长梯度法极小化 $f(x)=x^{2}-\frac {x^{3}}{3}$ ，其中 $α=\frac {1}{2},x^{(0)}=1$ 
+$$\because x^{(k+1)}=x^{(k)}-\frac {1}{2}f^{\prime }\left(x^{(k)}\right)Longrightarrowx^{(k+1)}=\frac {1}{2}\left(x^{(k)}\right)^{2}Longrightarrowx^{*}=0.$$
+$\therefore \lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}-x^{*}\right|}{\left|x^{(k)}-x^{*}\right|^{2}}=\lim _{k\rightarrow \infty }\frac {\left|x^{(k+1)}\right|}{\left|x^{(k)}\right|^{2}}=\frac {1}{2}Longrightarrow2$ 阶
+![](https://web-api.textin.com/ocr_image/external/c94de66c347e4805.jpg)
+$$x^{(k+1)}=\frac {1}{2}\left(x^{(k)}\right)^{2}\stackrel {\text {why?}}{Longrightarrow}x^{(k+1)}=\left(\frac {1}{2}\right)^{2^{k-1}}$$
+![](https://web-api.textin.com/ocr_image/external/fe214838e5e6a5fd.jpg)
+![](https://web-api.textin.com/ocr_image/external/30d627f2447299e0.jpg)
+![](https://web-api.textin.com/ocr_image/external/bbf13d029883afe4.jpg)
+第8章 梯度方法
+18/20
+# 收敛性分析
+## 定理（最速下降法的收敛率）
+最速下降法极小化二次函数时，总有 $V\left(\boldsymbol {x}^{(k+1)}\right)\leq \left(\frac {κ-1}{κ+1}\right)^{2}V\left(\boldsymbol {x}^{(k)}\right)$ 
+证. $\because V\left(\boldsymbol {x}^{(k+1)}\right)=\left(1-γ_{k}\right)V\left(\boldsymbol {x}^{(k)}\right)$ 和 $\frac {4λ_{\max }(\boldsymbol {Q})λ_{\min }(\boldsymbol {Q})}{\left[λ_{\max }(\boldsymbol {Q})+λ_{\min }(\boldsymbol {Q})\right]^{2}}\leq γ_{k}.$ 
+$$V\left(\boldsymbol {x}^{(k+1)}\right)\leq \frac {\left[λ_{\max }(\boldsymbol {Q})-λ_{\min }(\boldsymbol {Q})\right]^{2}}{\left[λ_{\max }(\boldsymbol {Q})+λ_{\min }(\boldsymbol {Q})\right]^{2}}V\left(\boldsymbol {x}^{(k)}\right)$$
+$$\stackrel {κ=\frac {λ_{\max }(Q)}{λ_{\min }(Q)}}{Longrightarrow}V\left(\boldsymbol {x}^{(k+1)}\right)\leq \frac {[κ-1]^{2}}{[κ+1]^{2}}V\left(\boldsymbol {x}^{(k)}\right).$$
+![](https://web-api.textin.com/ocr_image/external/c1bf7a342bf77da1.jpg)
+$c=\frac {[κ-1]^{2}}{[κ+1]^{2}}$  称为收敛率．［当 $c\downarrow 0$ 时收敛快；反之则慢］
+![](https://web-api.textin.com/ocr_image/external/09ae2544e6b977d0.jpg)
+单步收敛（即当 $c=0)Longleftrightarrowλ_{\max }(\boldsymbol {Q})=λ_{\min }(\boldsymbol {Q})$ 
+# 收敛率
+问题：递推式 $V\left(\boldsymbol {x}^{(k+1)}\right)=\left(1-γ_{k}\right)V\left(\boldsymbol {x}^{(k)}\right)$ ，当 $γ_{k}=1$ 时会有什么情况？
+## 引理
+对于最速下降法， $γ_{k}=1$ 当且仅当 $\boldsymbol {g}^{(k)}$ 是Q的特征向量.
+证明. $(\leftarrow )$ 若 $\boldsymbol {g}^{(k)}$  是矩阵Q的一个特征向量 $Longrightarrowγ_{k}=\frac {\left\|\boldsymbol {g}^{(k)}\right\|_{2}^{4}}{\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}}^{2}\left\|\boldsymbol {g}^{(k)}\right\|_{\boldsymbol {Q}^{-1}}^{2}}=1$ 
+$()$ 若 $γ_{k}=1LongrightarrowV\left(\boldsymbol {x}^{(k+1)}\right)=0Longrightarrow\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{*}$ 
+$\therefore$ $\boldsymbol {x}^{*}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)}$ 
+$\therefore \boldsymbol {Q}\boldsymbol {x}^{*}=\boldsymbol {Q}\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {Q}\boldsymbol {g}^{(k)}$ ，即
+$\frac {1}{α_{k}}\boldsymbol {g}^{(k)}=\boldsymbol {Q}\boldsymbol {g}^{(k)}Longrightarrow\boldsymbol {g}^{(k)}$ 是矩阵Q的特征向量
+![](https://web-api.textin.com/ocr_image/external/6f80c6ce7ac59955.jpg)
+![](https://web-api.textin.com/ocr_image/external/65a2c2292f2cfc92.jpg)
+（逆命题）若 $\boldsymbol {g}^{(k)}$ 不是Q的特征向量，则 $γ_{k}\leq 1.$ 
+### 作业
+课后题：8.4,8.10,8.16

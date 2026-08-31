@@ -1,0 +1,6782 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "最优化建模与求解 (核心基础部分)"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                326,
+                202,
+                671,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "张勇"
+                    }
+                ]
+            },
+            "bbox": [
+                472,
+                524,
+                523,
+                572
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "电子科技大学 数学科学学院"
+                    }
+                ]
+            },
+            "bbox": [
+                333,
+                623,
+                664,
+                675
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026年7月"
+                    }
+                ]
+            },
+            "bbox": [
+                427,
+                726,
+                563,
+                774
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "目录"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                454,
+                67,
+                546,
+                118
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 最优化问题建模的基本过程....1\n1.1. 举例说明：工厂生产优化问题....1\n1.1.1. 问题描述....1\n1.1.2. 建模过程....2\n1.1.3. 数学模型....3\n1.1.4. 总结....4\n2. 优化建模与求解....5\n2.1. 线性规划....5\n2.1.1. 建模案例....5\n2.1.2. MATLAB 优化工具箱求解....6\n2.1.3. 求解实例....7\n2.2. 整数线性规划....8\n2.2.1. 建模案例....8\n2.2.2. MATLAB 优化工具箱求解....8\n2.2.3. 求解实例....9\n2.3. 混合整数线性规划....10"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                147,
+                978,
+                951
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                971,
+                507,
+                993
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3.1. 问题描述：工厂生产计划优化问题....10\n2.3.2. 数学建模....11\n2.3.3. MATLAB 求解程序....12\n2.3.4. 说明....14\n2.4. 非线性规划....15\n2.4.1. 建模案例....15\n2.4.2. MATLAB 优化工具箱求解....16\n2.4.3. 求解实例....16\n2.5. 动态规划....17\n2.5.1. 建模案例....17\n2.5.2. MATLAB 编程求解....18\n多目标规划....20\n3.1. MATLAB 最优化工具箱求解函数....21\n3.1.1. fgoalattain....21\n3.1.2. fminimax....23\n3.1.3. gamultiobj....25\n3.1.4. paretosearch....27\n3.1.5. 总结....29"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                45,
+                978,
+                948
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                967,
+                505,
+                993
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2. 多目标规划案例....30\n3.2.1. 建模案例....30\n3.2.2. MATLAB 优化工具箱求解....31\n3.2.3. 求解实例....32\n4. 遗传算法的基本思想及 MATLAB 求解实例....34\n4.1. 遗传算法的基本思想....34\n4.2. MATLAB 调用 ga 求解最优化模型....35\n4.3. 求解实例....36\n4.3.1. 问题描述....36\n4.3.2. MATLAB 代码....37\n4.3.3. 运行结果....38\n4.3.4. 说明....38"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                48,
+                978,
+                646
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 最优化问题建模的基本过程"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                106,
+                581,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最优化问题建模的关键在于明确目标、决策变量和约束条件三个要素。以下通过一个生产优化问题的案例，说明最优化问题建模的基本过程。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                221,
+                974,
+                315
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1. 举例说明：工厂生产优化问题"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                372,
+                454,
+                430
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1.1. 问题描述"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                485,
+                189,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "假设某工厂生产两种产品   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  的利润为 3 元，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  的利润为 5 元。生产受限于原材料和工时："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                588,
+                974,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 单位原材料，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 单位原材料，总量不超过 100 单位。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                688,
+                794,
+                729
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 小时工时，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 小时工时，总工时不超过 80 小时。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                739,
+                765,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 生产数量不能为负。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                790,
+                252,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标是确定   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  的生产数量，以最大化总利润。"
+                    }
+                ]
+            },
+            "bbox": [
+                59,
+                871,
+                510,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                243,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1.2. 建模过程"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                191,
+                90
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 确定目标"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                147,
+                133,
+                192
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标是最大化工厂的总利润。根据问题描述，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  贡献 3 元利润，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  贡献 5 元利润。假设   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  分别表示   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  的生产数量，则目标函数为："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                228,
+                976,
+                324
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "Z = 3 x _ {1} + 5 x _ {2}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/969f87733e6055916b9d4077a7b06c317cf8e8af8f9347a65e6a5274a1f1fd08.jpg"
+                }
+            },
+            "bbox": [
+                402,
+                360,
+                528,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标是最大化 Z。"
+                    }
+                ]
+            },
+            "bbox": [
+                59,
+                440,
+                207,
+                479
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 确定决策变量"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                517,
+                171,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "决策变量是需要优化的量，即工厂决定生产多少   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。定义："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                598,
+                577,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ": 生产  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的数量（单位：件）。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                675,
+                384,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ": 生产  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的数量（单位：件）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                726,
+                384,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本问题的决策变量是连续的，可以是任意非负实数。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                807,
+                451,
+                848
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                490,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 确定约束条件"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                171,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "约束条件反映了生产中的资源限制和实际要求。根据问题描述，约束条件包括："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                99,
+                680,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 原材料约束：每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 单位原材料，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 单位原材料，总量不超过 100 单位："
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                147,
+                907,
+                192
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x _ {1} + 2 x _ {2} \\leq 1 0 0\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/dde0490af331f925014b0be9b2beffb5d22d8a5ab8923b4749261e8c046f506e.jpg"
+                }
+            },
+            "bbox": [
+                398,
+                209,
+                534,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 工时约束：每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 小时工时，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 小时工时，总工时不超过 80 小时："
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                263,
+                861,
+                305
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "2 x _ {1} + x _ {2} \\leq 8 0\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/7471b7b0c6a5507dba3518c4273969072826962da0b265753225c72194d878a1.jpg"
+                }
+            },
+            "bbox": [
+                404,
+                321,
+                528,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 非负约束：生产数量不能为负："
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                372,
+                346,
+                414
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x _ {1}, x _ {2} \\geq 0\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f4ab11132c412bcfbe660df2255c5294a20b6d0e54eefa892da0cac1318b49c7.jpg"
+                }
+            },
+            "bbox": [
+                422,
+                437,
+                510,
+                475
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1.3. 数学模型"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                530,
+                191,
+                575
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "综合以上要素，本问题抽象为如下的线性规划模型："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                633,
+                451,
+                672
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\max \\quad Z = 3 x _ {1} + 5 x _ {2} \\\\ \\text {s.t.} \\quad x _ {1} + 2 x _ {2} \\leq 1 0 0 \\\\ 2 x _ {1} + x _ {2} \\leq 8 0 \\\\ x _ {1}, x _ {2} \\geq 0 \\end{array}\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/50f20c20b9c614e9bef396ca64ef93faecb191573f30724c95c557cacd67fdbf.jpg"
+                }
+            },
+            "bbox": [
+                377,
+                726,
+                554,
+                900
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1.4. 总结"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                21,
+                48,
+                146,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "建模过程的关键是清晰定义目标函数、决策变量和约束条件："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                147,
+                527,
+                192
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 目标：明确优化方向（最大化利润、最小化成本等）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                228,
+                537,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 决策变量：确定需要调整的量（如生产数量）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                279,
+                480,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 约束条件：列出所有限制（如资源、时间等）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                331,
+                480,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "通过上述步骤，将实际问题转化为数学模型。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                411,
+                393,
+                450
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 优化建模与求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                64,
+                344,
+                141
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1. 线性规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                221,
+                211,
+                273
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1.1. 建模案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                331,
+                189,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "线性规划（Linear Programming，LP）是一种优化方法，用于在线性约束条件下优化线性目标函数。以下是一个简单的生产优化问题案例："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                437,
+                974,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "假设某工厂生产两种产品   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  和   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  利润为 3 元，每单位   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  利润为 5 元。生产受限于原材料和工时，约束条件如下："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                565,
+                974,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 原材料：每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 单位原材料，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 单位原材料，总量不超过 100 单位。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                697,
+                870,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 工时：每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 2 小时，每单位  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 需 1 小时，总工时不超过 80 小时。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                745,
+                747,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 非负约束： "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}, x_{2} \\geq 0"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，其中  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}, x_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 分别为  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{1}, P_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的生产数量。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                797,
+                610,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标：最大化总利润   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Z = 3x_{1} + 5x_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                877,
+                330,
+                919
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                243,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "数学模型:"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                48,
+                110,
+                90
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} & {\\max Z = 3 x _ {1} + 5 x _ {2}} \\\\ & {\\mathrm{s.t.} x _ {1} + 2 x _ {2} \\leq 1 0 0} \\\\ & {\\quad 2 x _ {1} + x _ {2} \\leq 8 0} \\\\ & {\\quad x _ {1}, x _ {2} \\geq 0} \\end{array}\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e508c264804baff3e65c53fad7685079e2b5ff1af2ced5fc26c1f497e201637b.jpg"
+                }
+            },
+            "bbox": [
+                377,
+                144,
+                555,
+                315
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1.2. MATLAB 优化工具箱求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                376,
+                332,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MATLAB 优化工具箱提供 linprog 函数求解线性规划问题。基本语法如下:"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                482,
+                640,
+                524
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = linprog(f, A, b, Aeq, beq, lb, ub)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                562,
+                384,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                639,
+                72,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- f: 目标函数系数向量。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                720,
+                281,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- A, b: 不等式约束  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Ax \\leq b"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的系数矩阵和右端向量。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                771,
+                518,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Aeq, beq: 等式约束  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Aeq \\cdot x = beq"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的系数矩阵和右端向量（无等式约束时置空）。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                819,
+                779,
+                861
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- lb, ub: 变量下界和上界。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                871,
+                308,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1.3. 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                45,
+                191,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "该模型通过 MATLAB 的 linprog 函数求解，求解结果为   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}=20, x_{2}=40"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，最大利润   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Z=3\\times20+5\\times40=260"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  元。验证约束："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                147,
+                976,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 原材料：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20 + 2 \\times 40 = 100 \\leq 100"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，满足。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                279,
+                442,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 工时：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 \\times 20 + 40 = 80 \\leq 80"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，满足。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                331,
+                402,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 非负：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} = 20, x_{2} = 40 \\geq 0"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，满足。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                382,
+                384,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "求解本线性规划问题的 MATLAB 代码:"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                456,
+                375,
+                501
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "求解程序：\n% 定义目标函数\nf = [-3; -5]; % 最大化问题取负值\nA = [1, 2; 2, 1]; % 定义不等式约束\nb = [100; 80];\nlb = [0; 0]; ub = []; % 定义变量界限\n% 调用 linprog 求解\n[x, fval] = linprog(f, A, b, [], [], lb, ub);\n% 输出结果\nfprintf('x1 = %.2f, x2 = %.2f\\n', x(1), x(2));\nfprintf('最大利润 = %.2f\\n', -fval);"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                427,
+                337,
+                960,
+                922
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2. 整数线性规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                48,
+                265,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.1. 建模案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                157,
+                191,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "整数线性规划（Integer Linear Programming, ILP）要求部分或全部变量为整数。以下是一个背包问题案例：假设有 3 件物品，重量分别为 w = [4,5,6]，价值为 v = [10,20,30]，背包容量为 10。目标是选择物品使得总价值最大。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                263,
+                976,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "数学模型:"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                414,
+                148,
+                456
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} \\max & Z = 1 0 x _ {1} + 2 0 x _ {2} + 3 0 x _ {3} \\\\ \\text {s.t.} & 4 x _ {1} + 5 x _ {2} + 6 x _ {3} \\leq 1 0 \\\\ & x _ {1}, x _ {2}, x _ {3} \\in \\{0, 1 \\} \\end{array}\\tag{7}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/db72b715def0dfed65b78f79520d096e227eae0b450b7bac11299c53d9b38901.jpg"
+                }
+            },
+            "bbox": [
+                335,
+                472,
+                595,
+                607
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.2. MATLAB 优化工具箱求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                665,
+                330,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MATLAB 使用 intlinprog 函数求解整数线性规划问题。基本语法:"
+                    }
+                ]
+            },
+            "bbox": [
+                16,
+                768,
+                575,
+                810
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x = \\text { intlinprog } (f, \\text { intcon }, A, b, A e q, b e q, l b, u b)",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/354d40d95168494d34c2cc21382625f99c72393ca0c0b015200d1571512a7e69.jpg"
+                }
+            },
+            "bbox": [
+                19,
+                819,
+                489,
+                861
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中 intcon 指定整数变量的索引。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                868,
+                319,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.3. 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                189,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "运行结果：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}=1,x_{2}=0,x_{3}=1"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，最大价值   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Z=10+30=40"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                151,
+                592,
+                192
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "f = [-10; -20; -30]; % 定义目标函数\nA = [4, 5, 6]; % 定义不等式约束\nb = 10;\nintcon = 1:3; % 定义整数变量\nlb = [0; 0; 0]; % 定义变量界限\nub = [1; 1; 1];\n% 调用 intlinprog 求解\nx = intlinprog(f, intcon, A, b, [], [], lb, ub);\n% 输出结果\nfprintf('x1=%d, x2=%d, x3=%d\\n', x(1), x(2), x(3));\nfprintf('最大价值 = %.2f\\n', -f'*x);"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                326,
+                234,
+                842,
+                855
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                967,
+                505,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3. 混合整数线性规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                319,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3.1. 问题描述：工厂生产计划优化问题"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                160,
+                427,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "某工厂计划生产两种产品：产品 A 和产品 B。每种产品的单位利润分别为 40 元 和 30 元。每生产一单位产品 A 需要消耗 2 小时机器时间和 1 小时人工时间；每生产一单位产品 B 需要消耗 1 小时机器时间和 1 小时人工时间。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                263,
+                976,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "该工厂每周最多可提供:"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                392,
+                223,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 100 小时的机器时间"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                443,
+                261,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 80 小时的人工时间"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                495,
+                252,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "同时，由于设备限制，每周最多只能开机生产产品 A 或产品 B 中的一种（不能同时开机生产两种产品）。即："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                572,
+                944,
+                614
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 如果生产产品 A，则不能生产产品 B，反之亦然。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                652,
+                500,
+                691
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标：最大化总利润，决定每周应生产哪种产品以及生产数量。"
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                733,
+                546,
+                771
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3.2. 数学建模"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                189,
+                90
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "决策变量"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                21,
+                147,
+                140,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ：产品 A 的生产数量（连续变量）"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                199,
+                362,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ：产品 B 的生产数量（连续变量）"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                250,
+                362,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "y_{1}\\in\\{0,1\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ：是否生产产品 A（0-1 整数变量）"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                299,
+                429,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "y_{2}\\in\\{0,1\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ：是否生产产品 B（0-1 整数变量）"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                350,
+                429,
+                395
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "建立最优化模型"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                467,
+                77,
+                642,
+                118
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标函数（最大利润）："
+                    }
+                ]
+            },
+            "bbox": [
+                467,
+                128,
+                669,
+                170
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\max Z = 4 0 x _ {1} + 3 0 x _ {2}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0b8abe85adbc31bff398ab3c754c5ab39a4c39410add9b7f01aebabdc7611432.jpg"
+                }
+            },
+            "bbox": [
+                584,
+                183,
+                768,
+                225
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "约束条件:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                465,
+                228,
+                555,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 机器时间限制："
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                282,
+                658,
+                321
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "2 x _ {1} + x _ {2} \\leq 1 0 0\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c54a9f3eb3b875f3dab5941b2330ad6e3a3ba8c35b0fe117c0dee45939f7c0c0.jpg"
+                }
+            },
+            "bbox": [
+                611,
+                337,
+                743,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 人工时间限制："
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                382,
+                658,
+                421
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x _ {1} + x _ {2} \\leq 8 0\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e2c074689e06440f306301f5a0b1ef80c7e153b8654715c9cfb3d71fe796be80.jpg"
+                }
+            },
+            "bbox": [
+                620,
+                437,
+                732,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 开机选择限制（最多只开一类）："
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                482,
+                810,
+                524
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "y _ {1} + y _ {2} \\leq 1\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/268bed6c281871a9f4b623c974c619217b6185ca04fc9c4bf908365a562e85bf.jpg"
+                }
+            },
+            "bbox": [
+                624,
+                540,
+                729,
+                578
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. 如果未开机，则不生产："
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                581,
+                734,
+                623
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x _ {1} \\leq \\mathrm{My} _ {1}, x _ {2} \\leq \\mathrm{My} _ {2},\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0caadd6bff0711bc11757987ab534ccd039f1cefd9e679bd9ddea9c023d96209.jpg"
+                }
+            },
+            "bbox": [
+                588,
+                639,
+                781,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 是一个足够大的常数，表示最大可能生产数量（如  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M = 100"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）"
+                    }
+                ]
+            },
+            "bbox": [
+                463,
+                684,
+                953,
+                774
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. 非负约束与变量类型:"
+                    }
+                ]
+            },
+            "bbox": [
+                498,
+                784,
+                714,
+                826
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "x _ {1} \\geq 0, x _ {2} \\geq 0, y _ {1}, y _ {2} \\in \\{0, 1 \\},\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ddac9b792d631c77bbcdff9a8b966c210f7209135b4430fbfc685bcfdfd7a708.jpg"
+                }
+            },
+            "bbox": [
+                564,
+                839,
+                803,
+                884
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3.3. MATLAB 求解程序"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                45,
+                265,
+                90
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "% ---- 定义目标函数系数 ----\nf = [-40; -30; 0; 0]; % 最大化 → 转化为最小化目标函数（取负）\n% ---- 定义约束 ----\n% 不等式约束 A * x <= b\nA = [\n    2, 1, 0, 0;    % 机器时间约束\n    1, 1, 0, 0;    % 人工时间约束\n    0, 0, 1, 1;    % 开机限制：y1 + y2 <= 1\n    1, 0, -100, 0;    % x1 <= M * y1\n    0, 1, 0, -100    % x2 <= M * y2\n];\nb = [100; 80; 1; 0; 0];\n% ---- 定义变量类型 ----\nintcon = [3, 4]; % 第3个变量是 y1，第4个变量是 y2 → 整数变量\n% ---- 定义变量上下限 ----"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                14,
+                147,
+                635,
+                906
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                951,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "1b = [0; 0; 0; 0];    % 所有变量下限为 0\nub = [Inf; Inf; 1; 1]; % x1, x2 无上限，y1, y2 最大为 1\n% ---- 求解 ----\n[x_opt, fval, exitflag, output] = intlinprog(f, intcon, A, b, [], [], lb, ub);\n% ---- 结果显示 ----\ndisp('最优解：');\nfprintf('产品 A 的生产量 x1 = %.2f\\n', x_opt(1));\nfprintf('产品 B 的生产量 x2 = %.2f\\n', x_opt(2));\nfprintf('是否生产 A (y1) = %d\\n', x_opt(3));\nfprintf('是否生产 B (y2) = %d\\n', x_opt(4));\nfprintf('最大利润 = %.2f\\n', -fval); % 注意目标函数取过负号\n\n运行结果如下：\n最优解：\n产品 A 的生产量 x1 = 0.00\n产品 B 的生产量 x2 = 80.00\n是否生产 A (y1) = 0\n是否生产 B (y2) = 1\n最大利润 = 2400.00"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                18,
+                41,
+                942,
+                790
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3.4. 说明"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                146,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 使用 intlinprog 求解混合整数线性规划；"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                147,
+                440,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 目标函数转换为最小化形式;"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                199,
+                326,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 引入 y1, y2 控制是否生产某类产品;"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                250,
+                402,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- intcon 指定整数变量索引;"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                302,
+                317,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 结果中 x_opt(3) 和 x_opt(4) 为 0 或 1，控制决策逻辑；"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                350,
+                568,
+                392
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 该问题体现了混合整数线性规划在生产计划、逻辑控制和资源分配中的应用。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                401,
+                727,
+                443
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4. 非线性规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                238,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.1. 建模案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                160,
+                189,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "非线性规划（Nonlinear Programming, NLP）涉及非线性目标函数或约束。以下是一个简单的非线性优化问题：目标：最小化  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f(x) = x_1^2 + x_2^2"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，约束为："
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                263,
+                974,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "•   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} + x_{2} \\geq 1"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                427,
+                187,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "•   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}, x_{2} \\geq 0"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                475,
+                171,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "数学模型:"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                549,
+                148,
+                591
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} \\min & f (x) = x _ {1} ^ {2} + x _ {2} ^ {2} \\\\ \\text {s.t.} & x _ {1} + x _ {2} \\geq 1 \\\\ & x _ {1}, x _ {2} \\geq 0 \\end{array}\\tag{9}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c1f0378bb9ab776ac5c7bb98ca6f0b12ecd491581f3d4b413c4466b08cbda9bb.jpg"
+                }
+            },
+            "bbox": [
+                377,
+                633,
+                555,
+                771
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.2. MATLAB 优化工具箱求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                45,
+                330,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "使用 fmincon 函数求解非线性规划问题。基本语法:"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                147,
+                460,
+                192
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = fmincon(fun, x0, A, b, Aeq, beq, lb, ub, nonlcon)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                228,
+                525,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中 fun 为目标函数，nonlcon 定义非线性约束。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                308,
+                442,
+                350
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.4.3. 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                485,
+                189,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "运行结果可得:"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                588,
+                148,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} = 0.50, x_{2} = 0.50"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，最小值  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f(x) = 0.50"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                668,
+                380,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "问题：如果决策变量有整数约束，还能使用 fmincon 求解非线性规划模型吗？"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                752,
+                422,
+                848
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "本模型的求解程序如下：\nfun = @(x) x(1)^2 + x(2)^2; % 定义目标函数\nx0 = [0; 0]; % 定义初始点\nA = [-1, -1]; b = -1; % 定义线性约束\nlb = [0; 0]; % 定义下界\n% 调用 fmincon 求解\nx = fmincon(fun, x0, A, b, [], [], lb, []);\n% 输出结果\nfprintf('x1 = %.2f, x2 = %.2f\\n', x(1), x(2));\nfprintf('最小值 = %.2f\\n', fun(x));"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                510,
+                356,
+                963,
+                855
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.5. 动态规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                48,
+                212,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.5.1. 建模案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                157,
+                191,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "设国家拨给 60 万元投资，供四个工厂扩建使用，每个工厂扩建后的利润与投资额的大小有关，投资后的利润函数如下表所示。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                263,
+                974,
+                353
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/26d8dd93134cb687200fbdf71bb1ee4cb56b808b17aec156fcd52ccb8c126e5c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>投资利润</td><td>0</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td></tr><tr><td> $g_1(x)$ </td><td>0</td><td>20</td><td>50</td><td>65</td><td>80</td><td>85</td><td>85</td></tr><tr><td> $g_2(x)$ </td><td>0</td><td>20</td><td>40</td><td>50</td><td>55</td><td>60</td><td>65</td></tr><tr><td> $g_3(x)$ </td><td>0</td><td>25</td><td>60</td><td>85</td><td>100</td><td>110</td><td>115</td></tr><tr><td> $g_4(x)$ </td><td>0</td><td>25</td><td>40</td><td>50</td><td>60</td><td>65</td><td>70</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                160,
+                356,
+                835,
+                739
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "模型建立："
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                745,
+                108,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "定义函数   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{k}(u)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  表示第 1 个至第 k 个工厂投资 u 万元产生的最大利润. 依据题意，是要求   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{4}(60)"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                794,
+                633,
+                897
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(1) 第一阶段: 求  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x)"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。显然有  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x) = g_{1}(x)"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", 得到下表"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                48,
+                514,
+                90
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c3ba8d46f173cca76b072e024d5b20e0cff158177401797b5069d4984bb60655.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>投资利润</td><td>0</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td></tr><tr><td> $f_1(x)=g_1(x)$ </td><td>0</td><td>20</td><td>50</td><td>65</td><td>80</td><td>85</td><td>85</td></tr><tr><td>最优策略</td><td>0</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                74,
+                90,
+                638,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(2)   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{k}(u)=\\max_{\\substack{y\\in\\{0,10,\\cdots,60\\} \\\\ \\text{且}y\\leq u}}\\left\\{g_{k}(y)+f_{k-1}(u-y)\\right\\}, k=2,3,4.."
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                430,
+                492,
+                524
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最优策略为  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "(20, 0, 30, 10)"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，最大利润为160万元。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                530,
+                500,
+                572
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.5.2. MATLAB 编程求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                623,
+                267,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "动态规划通常需要自定义实现，MATLAB 可通过矩阵操作实现。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                726,
+                575,
+                765
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "function testmain"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                774,
+                189,
+                813
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "global M v"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                826,
+                122,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "v = [0 10 20 30 40 50 60]; % 决策集合"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                871,
+                424,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "M=[0 20 50 65 80 85 85 %M(i,:)第i个工厂的利润值\n0 20 40 50 55 60 65\n0 25 60 85 100 110 115\n0 25 40 50 60 65 70];\nfun(4,60)\nfunction r= fun(k,s_k)\nglobal M v\nidx = find(v<=s_k);\nt = v(idx);% 决策 u_k 从 v(idx)数组中取值\nif k==1,\n    idx = find(v==s_k);\n    u_k = v(idx);\n    r = M(1,idx);\n    disp(sprintf('f%d(%d)=g(%d)=%d',k,s_k,u_k,r));\n    return\nend\noptvalue = -inf;\n\n程序续:\nfor i=1:length(idx)\n    u_k = t(i);% t(i)=v(idx(i))\n    idx2 = idx(i);\n    value = M(k, idx2)+fun(k-1,s_k-u_k);\n    if value >optvalue,\n    optuk = u_k; % 存储当前搜索到“最优方案”的决策\n    optvalue = value; % 存储当前搜索到的“最优方案”的最优指标。\n    end\nend\nr = optvalue;%%\ndisp(sprintf('f%d(%d)=g(%d)+f%d(%d)=%d',k,s_k,optuk,k-1,s_k-optuk,r));"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                16,
+                45,
+                983,
+                938
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                951,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 多目标规划"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                64,
+                263,
+                141
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "多目标规划："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                221,
+                128,
+                263
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} \\min f _ {1} (X), \\min f _ {2} (X), \\dots , f _ {k} (X), X = \\left(x _ {1}, x _ {2}, \\dots , x _ {n}\\right) ^ {T} \\\\ s. t. \\left\\{ \\begin{array}{l} A X \\leq b \\\\ A _ {e q} X = b _ {e q} \\\\ C (X) \\leq 0 \\\\ C _ {e q} (X) = 0 \\\\ L _ {\\text { bound }} \\leq X \\leq U _ {\\text { bound }} \\end{array} \\right. \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/87ae49ce8662b2286dd1e5dc94a264485a67a8a35c1f6ebc2cc34e8332163d56.jpg"
+                }
+            },
+            "bbox": [
+                19,
+                289,
+                481,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "符号含义:"
+                    }
+                ]
+            },
+            "bbox": [
+                559,
+                212,
+                649,
+                257
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} F (x) = \\left(f _ {1} (X), f _ {2} (X), \\dots , f _ {k} (X)\\right) ^ {T} \\\\ C (X) = \\left(g _ {1} (X), g _ {2} (X), \\dots , g _ {p} (X)\\right) ^ {T} \\\\ C _ {e q} (X) = \\left(h _ {1} (X), h _ {2} (X), \\dots , h _ {q} (X)\\right) ^ {T} \\\\ L _ {b o u n d} = \\left(l _ {1}, l _ {2}, \\dots , l _ {n}\\right) ^ {T} \\\\ U _ {b o u n d} = \\left(u _ {1}, u _ {2}, \\dots , u _ {n}\\right) ^ {T} \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/31a589d015a8d5e09468f6b0d784799455dc29a515af2f2cd346bea5ba2a0ff1.jpg"
+                }
+            },
+            "bbox": [
+                559,
+                273,
+                879,
+                604
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1. MATLAB 最优化工具箱求解函数"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                48,
+                460,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.1. fgoalattain"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                163,
+                223,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "功能描述: fgoalattain 用于求解多目标优化问题，通过设定目标值和权重，寻找使各目标函数尽可能接近指定目标的解。适用于目标函数存在冲突但需要平衡的情况。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                263,
+                976,
+                353
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{c} \\min _ {X, \\gamma} \\gamma \\\\ s. t. \\left\\{ \\begin{array}{l} F (X) - W \\gamma \\leq F _ {\\text { goal }} \\\\ A X \\leq b \\\\ A _ {e q} X = b _ {e q} \\\\ C (X) \\leq 0 \\\\ C _ {e q} (X) = 0 \\\\ L _ {\\text { bound }} \\leq X \\leq U _ {\\text { bound }} \\end{array} \\right. \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/daa9529f1ef079f9400d409aad1bbb89052266ea1a5fc942489e12fbb4cc9efe.jpg"
+                }
+            },
+            "bbox": [
+                397,
+                366,
+                597,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\gamma\\in R,\\quad W=\\left(w_{1},w_{2},\\cdots,w_{K}\\right)^{T},\\quad F_{goal}=\\left(f_{goal,1},f_{goal,2},\\cdots,f_{goal,k}\\right)^{T}."
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                823,
+                611,
+                881
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.1.1. 语法"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                61,
+                146,
+                102
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "[x, fval, exitflag] = fgoalattain(fun, x0, goal, weight, A, b, Aeq, beq, lb, ub, nonlcon)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                21,
+                173,
+                754,
+                215
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.1.2. 参数说明"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                282,
+                189,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- fun: 目标函数（返回向量）"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                395,
+                319,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- x0: 初始解"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                443,
+                187,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- goal: 期望达到的目标值向量"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                495,
+                339,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- weight: 权重向量（控制目标优先级）"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                546,
+                404,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• A, b: 线性不等式约束   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Ax \\leq b"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                598,
+                348,
+                636
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Aeq, beq: 线性等式约束  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "A_{eq}x = b_{eq}"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                646,
+                395,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- lb, ub: 变量上下界"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                697,
+                263,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- nonlcon: 非线性约束函数"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                749,
+                310,
+                787
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.1.3. 编程实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                61,
+                189,
+                106
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "问题描述：最小化两个冲突目标  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x) = x_{1}^{2} + x_{2}^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 和  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{2}(x) = (x_{1} - 1)^{2} + x_{2}^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，目标值设为[0.5,0.5]。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                170,
+                851,
+                218
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "fun = @(x) [x(1) ^2 + x(2) ^2; (x(1)-1) ^2 + x(2) ^2];\nx0 = [0.5, 0.5];\ngoal = [0.5, 0.5];\nweight = [1, 1]; % 等权重\n[x, fval] = fgoalattain(fun, x0, goal, weight);\ndisp(['最优解: x = ['，num2str(x)，']]);\ndisp(['目标值: f1 = ', num2str(fval(1)), ', f2 = ', num2str(fval(2))]);"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                16,
+                250,
+                700,
+                604
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.2. fminimax"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                707,
+                189,
+                749
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "功能描述:fminimax 求解极小极大问题，即最小化一组目标函数中的最大值。适用于需要优化最坏场景的性能。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                807,
+                935,
+                852
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} \\min _ {X} (\\max _ {1 \\leq i \\leq k} f _ {i} (X)) \\\\ s. t. \\left\\{ \\begin{array}{l} A X \\leq b \\\\ A _ {e q} X = b _ {e q} \\\\ C (X) \\leq 0 \\\\ C _ {e q} (X) = 0 \\\\ L _ {\\text { bound }} \\leq X \\leq U _ {\\text { bound }} \\end{array} \\right. \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/201e687efc0849f2e713f7d3d94d82ee440b537fb3004637fe1cde22877af252.jpg"
+                }
+            },
+            "bbox": [
+                397,
+                61,
+                595,
+                430
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.2.1. 语法"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                511,
+                146,
+                553
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "[x, fval] = fminimax(fun, x0, A, b, Aeq, beq, lb, ub, nonlcon)"
+                    }
+                ],
+                "code_language": "javascript"
+            },
+            "bbox": [
+                21,
+                620,
+                525,
+                665
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.2.2. 编程实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                729,
+                189,
+                774
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "问题描述：最小化三个目标的最大值："
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                842,
+                337,
+                884
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                243,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "24"
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "algorithm",
+            "content": {
+                "algorithm_caption": [],
+                "algorithm_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x)=x_{1}^{2}+x_{2}^{2},\\quad f_{2}(x)=(x_{1}-1)^{2}+x_{2}^{2},\\quad f_{3}(x)=(x_{1}-0.5)^{2}+(x_{2}-1)^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " \n\nfun = @(x) [x(1)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  + x(2)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ; (x(1)-1)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  + x(2)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ; (x(1)-0.5)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  + (x(2)-1)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ];\n\nx0 = [0.5, 0.5];\n\n[x, fval] = fminimax(fun, x0);\n\ndisp(['最优解：x = ['，num2str(x)，']');\ndisp(['各目标值：', num2str(fval')]);\ndisp(['最大值：', num2str(max(fval))]);"
+                    }
+                ]
+            },
+            "bbox": [
+                16,
+                41,
+                747,
+                427
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.3. gamultiobj"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                530,
+                209,
+                575
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.3.1. 功能描述"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                643,
+                189,
+                691
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "gamultiobj基于遗传算法求解多目标优化问题，生成Pareto前沿。适用于非线性、非凸或离散问题。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                758,
+                864,
+                803
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "25"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.3.2. 语法"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                61,
+                146,
+                102
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = gamultiobj(fun, nvars)\nx = gamultiobj(fun, nvars, A, b)\nx = gamultiobj(fun, nvars, A, b, Aeq, beq)\nx = gamultiobj(fun, nvars, A, b, Aeq, beq, lb, ub, nonlcon, options)\n[x, fval] = gamultiobj(...)"
+                    }
+                ],
+                "code_language": "julia"
+            },
+            "bbox": [
+                18,
+                173,
+                584,
+                421
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.3.3. 编程实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                482,
+                189,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "问题描述：求解两目标优化问题："
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                594,
+                299,
+                636
+            ]
+        },
+        {
+            "type": "algorithm",
+            "content": {
+                "algorithm_caption": [],
+                "algorithm_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x) = x_{1}^{2} + x_{2}^{2}, \\quad f_{2}(x) = (x_{1} - 1)^{2} + (x_{2} - 1)^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "\n\nfun = @(x) [x(1) ^2 + x(2) ^2; (x(1) - 1) ^2 + (x(2) - 1) ^2];\nnvars = 2;\n\noptions = optimoptions('gamultiobj', 'PopulationSize', 50);\n[x, fval] = gamultiobj(fun, nvars, [], [], [], [], [], options);"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                643,
+                671,
+                922
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "26"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "% 绘制 Pareto 前沿\nscatter(fval(:,1), fval(:,2), 'filled');\nxlabel('f1'); ylabel('f2'); title('Pareto 前沿');"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                19,
+                45,
+                485,
+                196
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.4. paretosearch"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                302,
+                234,
+                344
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.4.1. 功能描述"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                414,
+                189,
+                459
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "paretosearch 使用模式搜索算法寻找 Pareto 最优解集，适合局部精细搜索。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                527,
+                655,
+                569
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.4.2. 语法"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                633,
+                146,
+                681
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = paretosearch(fun, nvars)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                745,
+                279,
+                787
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = paretosearch(fun, nvars, A, b)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                797,
+                317,
+                839
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = paretosearch(fun, nvars, A, b, Aeq, beq)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                848,
+                393,
+                890
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "27"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "x = paretosearch(fun, nvars, A, b, Aeq, beq, lb, ub)\n[x, fval] = paretosearch(...)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                19,
+                51,
+                449,
+                141
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.4.3. 编程实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                205,
+                189,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "问题描述：求解三目标优化问题："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                318,
+                299,
+                360
+            ]
+        },
+        {
+            "type": "algorithm",
+            "content": {
+                "algorithm_caption": [],
+                "algorithm_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}(x)=x_{1}^{2}+x_{2}^{2},\\quad f_{2}(x)=(x_{1}-1)^{2}+x_{2}^{2},\\quad f_{3}(x)=x_{1}^{2}+(x_{2}-1)^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " \n\nfun = @(x) [x(1) ^2 + x(2) ^2; (x(1)-1) ^2 + x(2) ^2; x(1) ^2 + (x(2)-1) ^2];\nnvars = 2;\noptions = optimoptions('paretosearch', 'ParetoSetSize', 50);\n[x, fval] = paretosearch(fun, nvars, [], [], [], [], [], [], options)\n% 可视化\nscatter3(fval(:,1), fval(:,2), fval(:,3), 'filled');\nxlabel('f1'); ylabel('f2'); zlabel('f3'); title('Pareto解集');"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                395,
+                777,
+                826
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "28"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1.5. 总结"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                146,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- fgoalattain: 通过目标值和权重平衡冲突目标。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                151,
+                489,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- fminimax：优化最坏情况下的性能。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                202,
+                384,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- gamultiobj: 生成全局 Pareto 前沿（遗传算法）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                250,
+                509,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- paretosearch: 局部精细搜索 Pareto 解（模式搜索）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                302,
+                546,
+                340
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "29"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2. 多目标规划案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                292,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.1. 建模案例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                160,
+                189,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "多目标规划（Multi-Objective Programming）涉及优化多个目标函数。以下是一个生产优化问题：目标："
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                263,
+                875,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 最大化利润：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{1}=3x_{1}+5x_{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                421,
+                328,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 最小化成本：  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f_{2}=2x_{1}+4x_{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                472,
+                328,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "约束："
+                    }
+                ]
+            },
+            "bbox": [
+                59,
+                549,
+                108,
+                591
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "•   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} + 2x_{2} \\leq 100"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                633,
+                218,
+                675
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2x_{1} + x_{2}\\leq 80"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                684,
+                207,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "•   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}, x_{2} \\geq 0"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                736,
+                171,
+                774
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "30"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.2. MATLAB 优化工具箱求解"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                330,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MATLAB 使用 paretosearch 函数求解多目标规划问题，求解 Pareto 最优解集。基本语法："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                147,
+                783,
+                192
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "[x, fval] = paretosearch(fun, nvars, A, b, Aeq, beq, lb, ub)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                21,
+                228,
+                593,
+                270
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "31"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.3. 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                189,
+                90
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "% 定义目标函数\nfun = @(x) [-3*x(1) - 5*x(2); 2*x(1) + 4*x(2)];\n% 定义约束\nA = [1, 2; 2, 1];\nb = [100; 80];\nlb = [0; 0];\n% 调用 paretosearch 求解\n[x, fval] = paretosearch(fun, 2, A, b, [], [], lb, []);\n% 输出部分 Pareto 解\nfor i = 1:min(5, size(x, 1))\n    fprintf('解 %d: x1 = %.2f, x2 = %.2f, 利润 = %.2f, 成本 = %.2f\\n', i, x(i,1), x(i,2), -fval(i,1), fval(i,2));\nend"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                16,
+                144,
+                983,
+                803
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "32"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "解 1: x1 = 25.38, x2 = 25.38, 利润 = 203.00, 成本 = 152.25\n解 2: x1 = 24.08, x2 = 31.84, 利润 = 231.46, 成本 = 175.53\n解 3: x1 = 22.56, x2 = 0.31, 利润 = 69.25, 成本 = 46.38\n解 4: x1 = 24.38, x2 = 23.38, 利润 = 190.00, 成本 = 142.25\n解 5: x1 = 18.13, x2 = 36.63, 利润 = 237.50, 成本 = 182.75"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                18,
+                125,
+                581,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "运行结果：输出多个 Pareto 最优解。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                48,
+                339,
+                90
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "33"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                510,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4. 遗传算法的基本思想及 MATLAB 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                64,
+                779,
+                141
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.1. 遗传算法的基本思想"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                221,
+                346,
+                276
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "遗传算法（Genetic Algorithm, GA）是一种基于生物进化理论的优化算法，模拟自然选择和遗传机制来搜索最优解。其基本思想包括以下几个核心步骤："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                334,
+                974,
+                427
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 初始化种群：随机生成一组初始解（个体），每个个体表示优化问题的一个可能解，通常编码为二进制或实数向量。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                463,
+                976,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 适应度评价：根据目标函数计算每个个体的适应度（fitness），适应度反映个体解的质量。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                565,
+                850,
+                607
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 选择：根据适应度选择优质个体，适应度高的个体有更大概率被选中（如轮盘赌选择法）。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                617,
+                841,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. 交叉：模拟生物繁殖，通过交换两个个体的部分基因（如单点交叉）生成新个体，增加种群多样性。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                668,
+                915,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. 变异：以小概率随机改变个体的某些基因（如翻转或扰动），避免陷入局部最优。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                717,
+                765,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. 迭代：重复选择、交叉、变异操作，生成新一代种群，直到满足终止条件（如达到最大迭代次数或目标函数收敛）。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                768,
+                976,
+                858
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "34"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "遗传算法适用于复杂、非线性、离散或连续的优化问题，尤其在传统方法难以求解时表现出色。"
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                48,
+                812,
+                90
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.2. MATLAB 调用 ga 求解最优化模型"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                18,
+                147,
+                476,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MATLAB 优化工具箱提供 ga 函数采用遗传算法求解最优化模型。基本语法如下："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                260,
+                673,
+                305
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "[x, fval] = ga(fitnessfcn, nvars, A, b, Aeq, beq, lb, ub, nonlcon, options)"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                21,
+                340,
+                734,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "其中："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                421,
+                72,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- fitnessfcn: 目标函数句柄。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                501,
+                328,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- nvars: 决策变量数量。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                553,
+                281,
+                591
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- A, b: 线性不等式约束  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Ax \\leq b"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                601,
+                357,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Aeq, beq: 线性等式约束  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Aeq \\cdot x = beq"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                655,
+                427,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- lb, ub: 变量下界和上界。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                704,
+                308,
+                742
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- nonlcon: 非线性约束函数句柄。"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                755,
+                355,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- options: 算法参数设置（如种群大小、最大代数等）。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                803,
+                546,
+                845
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "35"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3. 求解实例"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                48,
+                211,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3.1. 问题描述"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                160,
+                189,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "考虑一个非线性优化问题:"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                263,
+                241,
+                302
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目标：最小化   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f(x)=x_{1}^{2}+x_{2}^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                311,
+                276,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "约束："
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                363,
+                72,
+                401
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} \\bullet & x _ {1} + x _ {2} \\geq 1 \\\\ \\bullet & x _ {1}, x _ {2} \\geq 0 \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/048c6ed6a8404531490573d2608e52cd7d304725873e282844a34032addad0ac.jpg"
+                }
+            },
+            "bbox": [
+                52,
+                446,
+                185,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "数学模型:"
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                572,
+                108,
+                610
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} & {\\min f (x) = x _ {1} ^ {2} + x _ {2} ^ {2}} \\\\ & {\\mathrm{s.t.} x _ {1} + x _ {2} \\geq 1} \\\\ & {\\quad x _ {1}, x _ {2} \\geq 0} \\end{array}\\tag{11}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/eaac6acf1e3b51ee4be97055b9414d3f6bfdb68854666c3f8f87cbba79928d46.jpg"
+                }
+            },
+            "bbox": [
+                371,
+                655,
+                550,
+                794
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "36"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3.2. MATLAB 代码"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                216,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "以下是使用 ga 函数求解该问题的 MATLAB 代码:"
+                    }
+                ]
+            },
+            "bbox": [
+                21,
+                147,
+                413,
+                192
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "fitnessfcn = @(x) x(1)^2 + x(2)^2; % 定义目标函数\n% 定义线性约束\nA = [-1, -1]; b = -1; % 对应 x_1 + x_2 >= 1\nlb = [0; 0]; % 下界 x_1, x_2 >= 0\n% 设置遗传算法参数\noptions = optimoptions('ga', ...\n    'PopulationSize', 50, ... % 种群大小\n    'MaxGenerations', 100, ... % 最大代数\n    'Display', 'iter'); % 显示迭代过程\n% 调用 ga 求解\n[x, fval] = ga(fitnessfcn, 2, A, b, [], [], lb, [], [], options);\n% 输出结果\nfprintf('x1 = %.4f, x2 = %.4f\\n', x(1), x(2));\nfprintf('最小值 = %.4f\\n', fval);"
+                    }
+                ],
+                "code_language": "matlab"
+            },
+            "bbox": [
+                19,
+                221,
+                644,
+                929
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "37"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3.3. 运行结果"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                45,
+                189,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "运行上述代码，典型输出如下："
+                    }
+                ]
+            },
+            "bbox": [
+                18,
+                147,
+                281,
+                189
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mathrm{x} 1 = 0. 5 0 0 0, \\mathrm{x} 2 = 0. 5 0 0 0",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f6b6171ad2ef2d59618eee3330b578f3fbdb45fa89c3d2e6889dedda9cd32f23.jpg"
+                }
+            },
+            "bbox": [
+                19,
+                202,
+                254,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最小值 = 0.5000"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                250,
+                171,
+                289
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "结果表明，最优解为  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} \\approx 0.5, x_{2} \\approx 0.5"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，目标函数值  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f(x) \\approx 0.5"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ，满足约束条件  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} + x_{2} \\geq 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 。"
+                    }
+                ]
+            },
+            "bbox": [
+                19,
+                299,
+                803,
+                344
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3.4. 说明"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                19,
+                398,
+                146,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 适应度函数：fitnessfcn 定义了目标函数  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1}^{2} + x_{2}^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，遗传算法通过最小化该函数搜索最优解。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                501,
+                861,
+                546
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 约束处理：线性约束通过 A 和 b 实现，非负约束通过 1b 设置。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                553,
+                633,
+                594
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 参数设置：options 中设置种群大小为 50，最大迭代代数为 100，Display 设置为 'iter' 显示迭代信息，便于观察算法收敛过程。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                601,
+                972,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 结果验证：解  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} = x_{2} = 0.5"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 满足  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x_{1} + x_{2} = 1 \\geq 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，且目标函数值  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f(x) = 0.5"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 是理论最优值（可通过拉格朗日乘子法验证）。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                704,
+                974,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "通过遗传算法，MATLAB能够高效求解此类非线性优化问题，尤其适合全局优化场景。"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                803,
+                788,
+                848
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "数学建模训练：优化建模与求解"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                954,
+                245,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "38"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                967,
+                509,
+                996
+            ]
+        }
+    ]
+]

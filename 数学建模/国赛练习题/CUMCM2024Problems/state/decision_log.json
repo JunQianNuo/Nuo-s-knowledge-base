@@ -1,0 +1,439 @@
+{
+  "_schema_version": "3.1",
+  "_doc": "跨阶段决策日志。每个阶段开头读、结尾写。L2 回检读此文件寻找跨阶段冲突。schema 与 stage_NN.md 实际写入字段一一对齐。v3.1 加入规则核对、AI 使用台账与最终论文元数据。",
+  "competition": "cumcm",
+  "task_type": "B_evaluation",
+  "_competition_doc": "enum: cumcm | mcm | diangong (默认 cumcm 兼容老用户). 由 stage 0 kickoff 第一问填入。score_artifact.py / stage 文件按此字段 dispatch competitions/<comp>/* 加载。",
+  "_task_type_doc": "题型代码 (e.g. cumcm:A_optimization, mcm:A_continuous, diangong:A_engineering). 由 stage 1 选题后填入。score_artifact.py 用此字段查 config/dim_weights.json。null 时使用 default 全 1.0 权重 = 等价老逻辑。",
+  "problem": "B",
+  "problem_meta": {
+    "year": 2024,
+    "letter": "B",
+    "title": "生产过程中的决策问题",
+    "deadline_iso": null,
+    "team_size": null
+  },
+  "paper_metadata": {
+    "_doc": "最终渲染元数据。CUMCM 要求 title/keywords；MCM 要求 mcm_control_number/problem/title/keywords；电工杯要求 diangong_registration_number/problem/title/keywords。CLI 显式参数可覆盖这些值。不得填写 XXXX、X、TITLE OF YOUR PAPER、keyword1、关键词1 等占位符。",
+    "mcm_control_number": null,
+    "diangong_registration_number": null,
+    "problem": null,
+    "title": null,
+    "keywords": []
+  },
+  "mode": "standard",
+  "started_at": "2026-08-27T14:22:05+08:00",
+  "current_stage": 3,
+  "compliance": {
+    "ruleset": {
+      "competition_year": null,
+      "verified_at": null,
+      "official_urls": [],
+      "page_limit": null,
+      "font_requirement": null,
+      "file_limits": {},
+      "anonymity_rules": [],
+      "ai_disclosure_rules": [],
+      "notes": ""
+    },
+    "ai_usage": null,
+    "_ai_usage_doc": "初始化为 null，要求团队核对后显式改为数组。[] 只表示确认未使用 AI；每条记录遵循 templates/shared/ai_usage_ledger.json。null 或缺失字段不得被解释为未使用。"
+  },
+  "budget": {
+    "_token_usage_doc": "仅当 harness/API 暴露可观测、可核验的 token usage 时记录 tokens_used/tokens_cap；不可观测时保持 null，不估算或伪造。",
+    "tokens_used": null,
+    "tokens_cap": null,
+    "stage_durations_h": {}
+  },
+  "stages": {
+    "0": {
+      "_label": "kickoff",
+      "team_roles": {},
+      "tools_ready": [
+        "Python",
+        "SciPy",
+        "statsmodels",
+        "NumPy"
+      ],
+      "checklist_completed": false,
+      "problem_scan": {
+        "problem_id": "2024-CUMCM-B",
+        "domain_keywords": [
+          "抽样检测",
+          "质量控制",
+          "生产决策",
+          "拆解回流",
+          "多级装配"
+        ],
+        "data_attachments": [
+          "国赛练习题/CUMCM2024Problems/B题/B题.pdf"
+        ],
+        "subproblem_count": 4,
+        "primary_problem_type": "统计推断与概率决策",
+        "secondary_types": [
+          "序贯决策",
+          "多级装配树",
+          "参数不确定性"
+        ],
+        "estimated_difficulty": "hard",
+        "data_size_signal": "small_inline_tables"
+      },
+      "time_budget_h": {},
+      "collab_protocol": {},
+      "notes": "练习题流程；团队角色与截止时间未提供，Stage 0 仅完成题面和工具扫描。"
+    },
+    "1": {
+      "_label": "problem_selection",
+      "candidates_assessed": [
+        {
+          "artifact": "国赛练习题/CUMCM2024Problems/2024国赛ABC选题分析.md"
+        }
+      ],
+      "selected": "B",
+      "rationale": "用户在完成 A/B/C 对比后明确要求进入 B 题问题分析。",
+      "rejected_alternatives": [
+        {
+          "题号": "A",
+          "reason": "当前未进入几何运动学路线。"
+        },
+        {
+          "题号": "C",
+          "reason": "当前未进入大规模混合整数规划路线。"
+        }
+      ],
+      "risks_identified": [
+        "Q1 最少抽样口径不唯一",
+        "拆解回流需统一核算单位",
+        "Q4 需传播次品率估计误差"
+      ]
+    },
+    "2": {
+      "_label": "analysis",
+      "decomposition": [
+        {
+          "id": "Q1",
+          "summary": "设计最少检测的接收/拒收/继续抽样规则",
+          "type": "统计推断+序贯决策",
+          "difficulty": "hard"
+        },
+        {
+          "id": "Q2",
+          "summary": "六种两零件情形下的检测、成品检测和拆解决策",
+          "type": "概率决策+循环生产",
+          "difficulty": "hard"
+        },
+        {
+          "id": "Q3",
+          "summary": "推广到m道工序n个零件的多级装配树",
+          "type": "多级装配树决策",
+          "difficulty": "hard"
+        },
+        {
+          "id": "Q4",
+          "summary": "次品率来自有限抽样时重新完成Q2和Q3",
+          "type": "参数不确定决策",
+          "difficulty": "hard"
+        }
+      ],
+      "key_variables": [
+        "p0",
+        "N",
+        "K",
+        "p_i",
+        "p_v",
+        "c_i^b",
+        "c_i^t",
+        "c_v^a",
+        "c_v^t",
+        "c_v^d",
+        "s",
+        "c^r",
+        "x_i",
+        "y_v",
+        "z_v",
+        "pi_i(h)",
+        "V(h)"
+      ],
+      "key_constraints": [
+        "单侧置信要求",
+        "不合格输入必导致不合格输出",
+        "装配次品率为条件概率",
+        "检测拦截",
+        "拆解物料守恒",
+        "退货调换与重生产",
+        "统一核算单位"
+      ],
+      "objective_per_subproblem": {
+        "Q1": "min N or E[N] subject to acceptance/rejection evidence constraints",
+        "Q2": "max long-run expected net profit under two-component production loop",
+        "Q3": "max long-run expected net profit on an assembly tree",
+        "Q4": "max risk-adjusted expected profit under p uncertainty"
+      },
+      "data_schema": {
+        "Q2_table1": "6 scenarios x 13 fields (including scenario_id)",
+        "Q3_graph": "8 parts -> 3 semi-products -> 1 final product",
+        "Q3_table2": "8 leaf parameter rows + 3 semi-product nodes + 1 final node",
+        "external_attachments": false,
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/问题分析/B题问题深度分析.md"
+      },
+      "subproblem_dependency": {
+        "Q1": [],
+        "Q2": [],
+        "Q3": [
+          "Q2"
+        ],
+        "Q4": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ]
+      }
+    },
+    "3": {
+      "_label": "model_selection",
+      "candidate_models": [],
+      "selected_per_subproblem": {},
+      "rejection_log": [],
+      "toy_demos_passed": false,
+      "red_team": [],
+      "model_family_consistency": ""
+    },
+    "4": {
+      "_label": "foundation",
+      "assumptions": [],
+      "symbols": [],
+      "terminology": [],
+      "consistency_check": {}
+    },
+    "5": {
+      "_label": "subproblem_loop",
+      "qi_count": 4,
+      "_qi_count_doc": "题目子问题总数，必须由当前题面实际提取并在 Stage 1 后填入；topic_specs 仅用于题号/task_type 路由，不预设子问数。",
+      "qi_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_qi_weights_doc": "per-Qi 加权聚合权重数组, 长度=qi_count. 默认均匀 [1.0]*qi_count. score_artifact.py compute_stage5_verdict 用此重加权 mean.",
+      "qi_status": {
+        "Q1": "pending",
+        "Q2": "pending",
+        "Q3": "pending",
+        "Q4": "pending"
+      },
+      "_qi_status_doc": "{Q1: pass | mark_for_review | refine | block, ...}. high-severity issue 必须标记 block；mark_for_review = 该 Qi 单独弱但全 stage 仍 pass, L2 必读。",
+      "review_qis": [],
+      "refine_qis": [],
+      "block_qis": [],
+      "aggregate": null,
+      "sub_problems": {
+        "_template": {
+          "model_name": "",
+          "math_formulation_path": "",
+          "code_path": "",
+          "results_path": "",
+          "figures": [],
+          "key_metrics": {},
+          "physical_meaning_summary": "",
+          "scores": {},
+          "issues": [],
+          "iterations": 0
+        }
+      },
+      "cross_reference_chain": {},
+      "assumption_change_history": []
+    },
+    "6": {
+      "_label": "robustness",
+      "params_varied_jointly": [],
+      "method": "",
+      "deltas": [],
+      "robust_intervals": {},
+      "stability_verdict": "",
+      "failure_warning": "",
+      "L2_backtrack": {},
+      "figures": []
+    },
+    "7": {
+      "_label": "evaluation",
+      "strengths": [],
+      "limitations": [],
+      "improvements": [],
+      "generalizations": []
+    },
+    "8": {
+      "_label": "writing",
+      "section_word_counts": {},
+      "figures_per_subproblem": {},
+      "tables_per_subproblem": {},
+      "abstract_drafts": [],
+      "anchor_phrase_hits": {},
+      "danger_phrase_hits": [],
+      "compliance": {
+        "rules_rechecked": false,
+        "paper_profile": null,
+        "ai_ledger_complete": false
+      }
+    },
+    "9": {
+      "_label": "review",
+      "anti_patterns_check": {
+        "total": null,
+        "_total_doc": "由 active competition 的 anti_patterns.md 在 Stage 9 初始化，禁止将任一赛制的条目数硬编码为三赛制通用值。",
+        "passed": 0,
+        "fixed": 0,
+        "deferred": 0,
+        "details": []
+      },
+      "panel_scores": {
+        "panel_v1": {},
+        "aggregate_v1": {},
+        "redo_actions": [],
+        "panel_v2": {}
+      },
+      "weakest_section": null,
+      "redo_log": [],
+      "red_team_record": [],
+      "compliance_checks": {
+        "rules_verified": false,
+        "anonymity_passed": false,
+        "page_limit_passed": false,
+        "ai_disclosure_passed": false,
+        "supporting_materials_passed": false
+      },
+      "final_pdf_path": null,
+      "submission_ready": false
+    }
+  },
+  "scores": {
+    "_doc": "{stage_key: [{iteration, scores:{dim:score}, min, mean, verdict, ts, qi_id?, weighted_mean?, review_qis?, refine_qis?}]}. stage 5 双轨: '5' 存 stage-level, '5_per_qi' 存 per-Qi (entry 含 qi_id). v3.0 verdict 扩展含 'pass_with_review' (任 Qi mark_for_review 但整体 pass) 与 'refine_partial' (仅部分 Qi 需 refine, 其他 Qi 保留). dim key 必须命中 feedback_layer1_critic.md §6 (1_xxx/2_xxx/.../5_xxx) 白名单, 或竞赛 rubric_overlay.json 中 stage_overrides 定义的特化 dim",
+    "0": [],
+    "1": [],
+    "2": [
+      {
+        "iteration": 1,
+        "scores": {
+          "1_subproblem_decomposition": 9,
+          "2_key_variables_count": 9,
+          "3_math_skeleton_present": 8,
+          "4_data_alignment": 9,
+          "5_subproblem_dependency_identified": 9
+        },
+        "min": 8,
+        "mean": 8.8,
+        "verdict": "pass",
+        "issues": [],
+        "ts": "2026-08-27T14:22:58.366156"
+      }
+    ],
+    "3": [],
+    "4": [],
+    "5": [],
+    "5_per_qi": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": []
+  },
+  "iterations": {
+    "_doc": "{stage_key: count_of_iterations}",
+    "0": 0,
+    "1": 0,
+    "2": 2,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "5_per_qi": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0
+  },
+  "events": {
+    "_doc": "时间线事件: backtrack, panel, red_team, calibration, mode_change, problem_scan",
+    "log": [
+      {
+        "ts": "2026-08-27T14:22:05+08:00",
+        "type": "problem_selection",
+        "selected": "B",
+        "evidence": "用户请求对B题进行问题分析"
+      },
+      {
+        "ts": "2026-08-27T14:22:58+08:00",
+        "type": "stage_complete",
+        "stage": 2,
+        "verdict": "pass",
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/问题分析/B题问题深度分析.md",
+        "pending_user_clarifications": [
+          "A4拆解件信息状态",
+          "A5核算单位",
+          "A7抽样规则"
+        ]
+      },
+      {
+        "ts": "2026-08-27T15:14:31+08:00",
+        "type": "literature_search",
+        "stage": "1.5a",
+        "search_calls": 3,
+        "retained_papers": 8,
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/参考文献/B题文献检索结果.md",
+        "status": "awaiting_fulltext_for_stage_1.5b"
+      },
+      {
+        "ts": "2026-08-27T15:35:44+08:00",
+        "type": "literature_download",
+        "stage": "1.5a",
+        "total": 8,
+        "downloaded": 3,
+        "failed_or_blocked": 5,
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/参考文献/论文下载状态.md",
+        "manifest": "国赛练习题/CUMCM2024Problems/B题/参考文献/download_manifest.json",
+        "policy": "public_open_access_only; scihub_disabled; no institutional mode"
+      },
+      {
+        "ts": "2026-08-27T19:32:36+08:00",
+        "type": "literature_corpus_rename",
+        "stage": "1.5b",
+        "pdf_groups": 8,
+        "md_groups": 8,
+        "image_links_checked": 20,
+        "missing_image_links": 0,
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/参考文献/文献语料清单.md",
+        "manifest": "国赛练习题/CUMCM2024Problems/B题/参考文献/rename_manifest.json",
+        "status": "verified"
+      },
+      {
+        "ts": "2026-08-27T19:32:36+08:00",
+        "type": "literature_deep_read",
+        "stage": "1.5b",
+        "converted_groups": 8,
+        "unique_references": 7,
+        "fulltext_unique": 5,
+        "metadata_only": 2,
+        "duplicate_versions": 1,
+        "missing_from_search_list": [
+          "Kakade et al. (2004)"
+        ],
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/问题分析/文献结果报告.md",
+        "corpus_manifest": "国赛练习题/CUMCM2024Problems/B题/参考文献/文献语料清单.md",
+        "status": "complete_awaiting_stage3_confirmation"
+      },
+      {
+        "ts": "2026-08-27T20:44:54+08:00",
+        "type": "literature_coverage_audit",
+        "stage": "1.5b",
+        "coverage_percent_representative": {
+          "Q1": 60,
+          "Q2": 45,
+          "Q3": 40,
+          "Q4": 70,
+          "overall": 54
+        },
+        "artifact": "国赛练习题/CUMCM2024Problems/B题/问题分析/B题文献覆盖度评估.md",
+        "verdict": "all_questions_have_method_components_but_none_end_to_end",
+        "status": "complete"
+      }
+    ]
+  }
+}

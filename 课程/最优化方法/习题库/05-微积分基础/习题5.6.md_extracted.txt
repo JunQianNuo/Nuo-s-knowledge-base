@@ -1,0 +1,69 @@
+# 习题5.6
+
+---
+title: 习题5.6 - 链式法则求全导数
+subject: 最优化方法
+chapter: 5
+section: 微积分基础
+source: Screenshot_2026-05-25-23-59-07.jpg
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - 链式法则
+  - 全导数
+  - 向量值函数
+---
+
+# 习题 5.6
+
+已知：
+
+$$x(t) = \begin{bmatrix} e^t + t^3 \\ t^2 \\ t + 1 \end{bmatrix} \in \mathbb{R}^3, \quad t \in \mathbb{R}$$
+
+$$f(x) = x_1 x_2^2 + 4x_1 + x_3, \quad x = [x_1, x_2, x_3]^\top \in \mathbb{R}^3$$
+
+试计算 $\frac{d}{dt} f(x(t))$，将其写为 $t$ 的函数。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> 链式法则：$\frac{d}{dt} f(x(t)) = \nabla f(x(t))^\top \cdot \dot{x}(t)$
+>
+> 分三步：
+> 1. 求 $\nabla f(x) = \left[\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \frac{\partial f}{\partial x_3}\right]^\top$
+> 2. 求 $\dot{x}(t) = \frac{dx}{dt}$
+> 3. 代入 $x(t)$ 计算内积
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> ### 第一步：计算梯度
+>
+> $$\nabla f(x) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \frac{\partial f}{\partial x_3} \end{bmatrix} = \begin{bmatrix} x_2^2 + 4 \\ 2x_1 x_2 \\ 1 \end{bmatrix}$$
+>
+> ### 第二步：计算 $\dot{x}(t)$
+>
+> $$\dot{x}(t) = \frac{d}{dt} \begin{bmatrix} e^t + t^3 \\ t^2 \\ t + 1 \end{bmatrix} = \begin{bmatrix} e^t + 3t^2 \\ 2t \\ 1 \end{bmatrix}$$
+>
+> ### 第三步：链式法则
+>
+> $$\begin{aligned} \frac{d}{dt} f(x(t)) &= \nabla f(x(t))^\top \dot{x}(t) \\ &= \begin{bmatrix} (t^2)^2 + 4 \\ 2(e^t + t^3)(t^2) \\ 1 \end{bmatrix}^\top \begin{bmatrix} e^t + 3t^2 \\ 2t \\ 1 \end{bmatrix} \\ &= \begin{bmatrix} t^4 + 4 \\ 2t^2 e^t + 2t^5 \\ 1 \end{bmatrix}^\top \begin{bmatrix} e^t + 3t^2 \\ 2t \\ 1 \end{bmatrix} \end{aligned}$$
+>
+> 计算内积：
+>
+> $$\begin{aligned} \frac{df}{dt} &= (t^4 + 4)(e^t + 3t^2) + (2t^2 e^t + 2t^5)(2t) + 1 \cdot 1 \\ &= t^4 e^t + 3t^6 + 4e^t + 12t^2 + 4t^3 e^t + 4t^6 + 1 \\ &= e^t(t^4 + 4t^3 + 4) + 7t^6 + 12t^2 + 1 \end{aligned}$$
+>
+> $\square$
+>
+> **点评：** 链式法则 $\frac{df}{dt} = \nabla f^\top \dot{x}$ 是优化中处理复合函数的核心工具。在最优控制、参数优化和神经网络反向传播中，这一模式（梯度 · 速度）反复出现。
+
+---
+
+## 相关知识点
+
+- [[05-微积分基础]] — 链式法则、梯度
+- [[05-微积分基础#微分法则与链式法则|微分法则]]

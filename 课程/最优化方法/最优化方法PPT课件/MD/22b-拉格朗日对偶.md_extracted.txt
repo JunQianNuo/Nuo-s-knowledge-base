@@ -1,0 +1,192 @@
+# 22b-拉格朗日对偶
+
+---
+title: 第22章 拉格朗日对偶
+subject: 最优化方法
+source: 无动画Chapter22Dual.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 22
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第22章 拉格朗日对偶
+# 1．鞍点问题
+# 2．对偶问题
+![](https://web-api.textin.com/ocr_image/external/2bbde542f2702fbd.jpg)
+第22章 拉格朗日对偶
+1/9
+# 鞍点问题
+设集合XCRn, $\mathcal {Z}\subset \mathbb {R}^{m}$ ，函数 $φ:\mathcal {X}x\mathcal {Z}\rightarrow$ $R.$ 
+$\left(\boldsymbol {x}^{*},\boldsymbol {z}^{*}\right)\in \mathcal {X}x\mathcal {Z}$ 是函数 $Φ$ 的鞍点（saddle point)：
+$$φ\left(\boldsymbol {x}^{*},\boldsymbol {z}\right)\leq φ\left(\boldsymbol {x}^{*},\boldsymbol {z}^{*}\right)\leq φ\left(\boldsymbol {x},\boldsymbol {z}^{*}\right),\forall \boldsymbol {x}\in \mathcal {X},\boldsymbol {z}\in \mathcal {Z}$$
+或等价地，
+$$\left\{\begin{aligned}\boldsymbol {x}^{*}&=\arg \min _{\boldsymbol {x}\in \mathcal {X}}\phi (\boldsymbol {x},\boldsymbol {z}^{*}),\\ \boldsymbol {z}^{*}&=\arg \max _{\boldsymbol {z}\in \mathcal {Z}}\phi (\boldsymbol {x}^{*},\boldsymbol {z}).\end{aligned}\right.$$
+(2) Curve of maxima e(xo) Saddle point ) Curve of minima zz)-
+![](https://web-api.textin.com/ocr_image/external/9b8421e11e5fee55.jpg)
+## 定义（极小极大问题（minimax problem)）
+原始问题 $(primal)$ )： $w^{*}=\min _{\boldsymbol {x}\in \mathcal {X}}\max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z});$ ；对偶问题 $(dual)$ ： $q^{*}=\max \min$ $z\in \mathcal {Z}$ $\boldsymbol {x}\in \mathcal {X}$ $φ(\boldsymbol {x},\boldsymbol {z})$ 
+![](https://web-api.textin.com/ocr_image/external/77de4883154af3cc.jpg)
+worst-case design, zero-sum game theory, equilibrium,...
+## 定理（极小极大不等式）
+设集合 $\mathcal {X}\subset \mathbb {R}^{n},\mathcal {Z}\subset \mathbb {R}^{m}$ ，函数 $ø:$ $:\mathcal {X}x\mathcal {Z}\rightarrow \mathbb {I}$ $R.$ 则 $w^{*}\geq q^{*}$ 
+第22章 拉格朗日对偶
+鞍点问题
+<table border="1" ><tr>
+<td>极小极大不等式： $w^{*}=\min \max$ $φ(\boldsymbol {x},\boldsymbol {z})\geq \max _{\boldsymbol {z}\in \mathcal {Z}}\min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z})=q^{*}$ $x\in \mathcal {X}z\in \mathcal {Z}$</td>
+</tr></table>
+<table border="1" ><tr>
+<td colspan="4">x<br>36  2</td>
+</tr><tr>
+<td rowspan="4">$3$ $13$ $0$</td>
+<td>6</td>
+<td colspan="2">$54$8</td>
+</tr><tr>
+<td>$28$</td>
+<td></td>
+<td>28<br>$\underline {\begin{array}{c}\boldsymbol {z}\\ \end{array}}$</td>
+</tr><tr>
+<td>$\{\}^{2}$</td>
+<td>$\{\}^{\searrow }$</td>
+<td>&gt;</td>
+</tr><tr>
+<td>$nnm$</td>
+<td></td>
+<td></td>
+</tr></table>
+<table border="1" ><tr>
+<td>x</td>
+<td colspan="2"></td>
+<td colspan="2"></td>
+</tr><tr>
+<td>3</td>
+<td>6</td>
+<td>7<br>$26$</td>
+<td>2</td>
+<td></td>
+</tr><tr>
+<td>8</td>
+<td>3</td>
+<td></td>
+<td>$5$</td>
+<td></td>
+</tr><tr>
+<td>5</td>
+<td>13</td>
+<td></td>
+<td>4</td>
+<td></td>
+</tr><tr>
+<td>7</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td></td>
+</tr><tr>
+<td rowspan="2">3</td>
+<td rowspan="2">0</td>
+<td>2</td>
+<td rowspan="2">$φ(\boldsymbol {x},\boldsymbol {z})=3$</td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+</tr></table>
+$证(一)$ .记 $p(\boldsymbol {x})=\max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z})$ 
+$证(二)$ ）.记 $q(\boldsymbol {z})=\min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z})$ 
+$$\therefore p(\boldsymbol {x})\geq φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {z}\in \mathcal {Z}.$$
+$$\therefore q(\boldsymbol {z})\leq φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {x}\in \mathcal {X}.$$
+$$\therefore \min _{\boldsymbol {x}\in \mathcal {X}}p(\boldsymbol {x})\geq \min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {z}\in \mathcal {Z},$$
+$$\therefore \max _{\boldsymbol {z}\in \mathcal {Z}}q(\boldsymbol {z})\leq \max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {x}\in \mathcal {X},$$
+即 $w^{*}\geq \min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {z}\in \mathcal {Z}.$ 
+即 $q^{*}\leq \max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z}),\forall \boldsymbol {x}\in \mathcal {X}.$ 
+$\because \boldsymbol {z}\in \mathcal {Z}$ 是任意的，
+$\because \boldsymbol {x}\in \mathcal {X}$  是任意的，
+$$\therefore w^{*}\geq \max _{\boldsymbol {z}\in \mathcal {Z}}\min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z})=q^{*}$$
+$$z\in \mathcal {Z}$$
+$$\therefore q^{*}\leq \min _{\boldsymbol {x}\in \mathcal {X}}\max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z})=w^{*}$$
+# 鞍点问题
+## 定理
+$φ(\boldsymbol {x},\boldsymbol {z})$ 有鞍点（P）的值、（D）的值、鞍点值三者相等.
+$\left(\boldsymbol {x}^{*},\boldsymbol {z}^{*}\right)\in \mathcal {X}x\mathcal {Z}$ 是鞍点 极小极大不等式成立，其中
+$\boldsymbol {x}^{*}=\arg \min _{\boldsymbol {x}\in \mathcal {X}}\max _{\boldsymbol {z}\in \mathcal {Z}}φ(\boldsymbol {x},\boldsymbol {z}),$ $\boldsymbol {z}^{*}=\arg \max _{\boldsymbol {z}\in \mathcal {Z}}\min _{\boldsymbol {x}\in \mathcal {X}}φ(\boldsymbol {x},\boldsymbol {z}).$ 
+约束优化问题： $\min _{\boldsymbol {x}\in Ω}f(\boldsymbol {x})$ 
+$$Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|h_{i}(\boldsymbol {x})=0,i=1,\cdots ,m;g_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,l\right\}\quad =\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=0,\boldsymbol {g}(\boldsymbol {x})\leq 0\right\}$$
+**拉格朗日函数为**l: $\mathbb {R}^{n}x\mathbb {R}^{m}x\mathbb {R}_{+}^{l}\rightarrow \mathbb {R}$ 
+$$l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})=f(\boldsymbol {x})+\boldsymbol {λ}^{\top }\boldsymbol {h}(\boldsymbol {x})+\boldsymbol {μ}^{\top }\boldsymbol {g}(\boldsymbol {x})=f(\boldsymbol {x})+\sum _{i=1}^{m}λ_{i}h_{i}(\boldsymbol {x})+\sum _{j=1}^{l}μ_{j}g_{j}(\boldsymbol {x})$$
+**由鞍点定理，下述两个极小极大问题如何化简？**
+$\min _{\boldsymbol {x}\in \mathbb {R}^{n}}\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}$ $l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})$ 和 $\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}\underbrace {\min _{\boldsymbol {x}\in \mathbb {R}^{n}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})}_{\boldsymbol {α}(\boldsymbol {λ},\boldsymbol {μ})}$ $p(x)$
+![](https://web-api.textin.com/ocr_image/external/bd6072ca4414984a.jpg)
+第22章 拉格朗日对偶
+## 对偶问题
+$*$ $p(\boldsymbol {x})=\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})\stackrel {\text {why?}}{Longrightarrow}p(\boldsymbol {x})=\left\{\begin{array}{l}f(\boldsymbol {x})\\ +\infty ,\end{array}\right.$  $\boldsymbol {h}(\boldsymbol {x})=0,\boldsymbol {g}(\boldsymbol {x})\leq 0$ 
+$\min _{\boldsymbol {x}\in \mathbb {R}^{n}}\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})Longleftrightarrow\min _{\boldsymbol {x}\in Ω}f(\boldsymbol {x})$  ［原始问题］
+$$q(\boldsymbol {λ},\boldsymbol {μ})=\min _{\boldsymbol {x}\in \mathbb {R}^{n}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})$$
+$\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}\min _{\boldsymbol {x}\in \mathbb {R}^{n}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})Longleftrightarrow\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{l}}q(\boldsymbol {λ},\boldsymbol {μ})$  ［对偶问题］
+**写出对偶问题：** $\min _{x\in \mathbb {R}^{2}}$ $f(\boldsymbol {x})=\frac {1}{2}\left(x_{1}^{2}+x_{2}^{2}\right)$ ,s.t. $g(\boldsymbol {x})=1-x_{1}\leq 0$ 
+**解**：拉格朗日函数l: $\mathbb {R}^{2}x\mathbb {R}_{+}\rightarrow$ R具体为
+$$l(\boldsymbol {x},μ)=f(\boldsymbol {x})+μg(\boldsymbol {x})=\frac {1}{2}\left(x_{1}^{2}+x_{2}^{2}\right)+μ\left(1-x_{1}\right)$$
+$$q(μ)=\min _{\boldsymbol {x}\in \mathbb {R}^{2}}l(\boldsymbol {x},μ)=\min _{\boldsymbol {x}\in \mathbb {R}^{2}}\left\{\frac {x_{1}^{2}+x_{2}^{2}}{2}+μ\left(1-x_{1}\right)\right\}\stackrel {\text {FONC}}{Longrightarrow}\left(x_{1}^{*},x_{2}^{*}\right)=(μ,0)$$
+$..$  $q(μ)=-\frac {μ^{2}}{2}+μ$ with $μ\in \mathbb {R}_{+}$ 
+**（对偶问题）** $\max _{μ\in \mathbb {R}_{+}}q(μ)=-\frac {μ^{2}}{2}+μ\stackrel {KKT}{Longrightarrow}μ^{*}=1\Rightarrow q^{*}=q\left(μ^{*}\right)=\frac {1}{2}$ 
+$$\therefore \boldsymbol {x}^{*}=\arg \min _{\boldsymbol {x}\in \mathbb {R}^{2}}l\left(\boldsymbol {x},μ^{*}\right)\Rightarrow \boldsymbol {x}^{*}=(1,0)\Rightarrow w^{*}=f\left(\boldsymbol {x}^{*}\right)=\frac {1}{2}Longrightarroww^{*}=q^{*}$$
+## 对偶问题
+假设 $\boldsymbol {x}\in \mathbb {R}^{n}$  $\boldsymbol {Q}\succ 0,$  $\boldsymbol {A}\in \mathbb {R}^{m\times n}$  $\boldsymbol {b}\in \mathbb {R}^{m},\boldsymbol {c}\in \mathbb {R}^{n}$ 
+**写出对偶问题**：min $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {c}^{\top }\boldsymbol {x},\text {s.t.}$ $\boldsymbol {A}\boldsymbol {x}\leq \boldsymbol {b}$ 
+**解**：·拉格朗日函数l： $\mathbb {R}^{n}x\mathbb {R}_{+}^{m}\rightarrow$ R具体为
+$$l(\boldsymbol {x},\boldsymbol {μ})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {c}^{\top }\boldsymbol {x}+\boldsymbol {μ}^{\top }(\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b})$$
+$$\therefore q(\boldsymbol {μ})=\min _{\boldsymbol {x}\in \mathbb {R}^{n}}l(\boldsymbol {x},\boldsymbol {μ})=\min _{\boldsymbol {x}\in \mathbb {R}^{n}}\left\{\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {c}^{\top }\boldsymbol {x}+\boldsymbol {μ}^{\top }\boldsymbol {A}\boldsymbol {x}\right\}-\boldsymbol {μ}^{\top }\boldsymbol {b}.$$
+**由最优性条件知** $\boldsymbol {x}^{*}=-\boldsymbol {Q}^{-1}\left(\boldsymbol {c}+\boldsymbol {A}^{\top }\boldsymbol {μ}\right)$ 
+$$\therefore q(\boldsymbol {μ})=-\frac {1}{2}\boldsymbol {μ}^{\top }\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {A}^{\top }\boldsymbol {μ}-\boldsymbol {μ}^{\top }\left(\boldsymbol {b}+\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {c}\right)-\frac {1}{2}\boldsymbol {c}^{\top }\boldsymbol {Q}^{-1}\boldsymbol {c}.$$
+**对偶问题为** $\max _{\boldsymbol {μ}\in \mathbb {R}_{+}^{m}}q(\boldsymbol {μ})=\frac {1}{2}\boldsymbol {μ}^{\top }\boldsymbol {P}\boldsymbol {μ}+\boldsymbol {d}^{\top }\boldsymbol {μ},$ 
+其中 $\boldsymbol {P}=\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {A}^{\top },\boldsymbol {d}=\boldsymbol {b}+\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {c}.$ 
+![](https://web-api.textin.com/ocr_image/external/7724cdfeb31901f3.jpg)
+第22章 拉格朗日对偶
+## 对偶问题
+写出对偶问题：min $f(\boldsymbol {x})=\boldsymbol {c}^{\top }\boldsymbol {x},\text {s.t.}$ $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b},\boldsymbol {x}\geq 0$ 
+解： $\because$ ·拉格朗日函数l： $\mathbb {R}^{n}x\mathbb {R}^{m}x\mathbb {R}_{+}^{n}\rightarrow$ R具体为
+$$l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})=\boldsymbol {c}^{\top }\boldsymbol {x}-\boldsymbol {λ}^{\top }(\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b})-\boldsymbol {μ}^{\top }\boldsymbol {x}$$
+$$\therefore q(\boldsymbol {λ},\boldsymbol {μ})=\min _{\boldsymbol {x}\in \mathbb {R}^{n}}l(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})=\min _{\boldsymbol {x}\in \mathbb {R}^{n}}\left\{\left(\boldsymbol {c}-\boldsymbol {A}^{\top }\boldsymbol {λ}-\boldsymbol {μ}\right)^{\top }\boldsymbol {x}\right\}+\boldsymbol {λ}^{\top }\boldsymbol {b}.$$
+$$\therefore\quad q(\boldsymbol {λ},\boldsymbol {μ})=\left\{\begin{array}{ll}\boldsymbol {λ}^{\top }\boldsymbol {b},&\text {if}\boldsymbol {c}-\boldsymbol {A}^{\top }\boldsymbol {λ}-\boldsymbol {μ}=0\\ -\infty ,&\text {otherwise}\end{array}\right.$$
+**对偶问题为** $\max _{\boldsymbol {λ}\in \mathbb {R}^{m},\boldsymbol {μ}\in \mathbb {R}_{+}^{n}}q(\boldsymbol {λ},\boldsymbol {μ})=\boldsymbol {λ}^{\top }\boldsymbol {b},\text {s.t.}\boldsymbol {c}-\boldsymbol {A}^{\top }\boldsymbol {λ}=\boldsymbol {μ}$ 
+**即** $\max \boldsymbol {λ}^{\top }\boldsymbol {b}\text {,s.t.}$ $\boldsymbol {A}^{\top }\boldsymbol {λ}\leq \boldsymbol {c}.$ 
+![](https://web-api.textin.com/ocr_image/external/9d56a0be58426e01.jpg)
+对偶可以将一个优化问题转换为另一个优化反问题，即使是无约束优化问题（why?).对偶理论为求解优化问题的极小点提供了另一种思路.
+![](https://web-api.textin.com/ocr_image/external/8f3f56694f7212aa.jpg)
+利用对偶理论可以设计相关的对偶类算法求解优化问题.
+### 定理（弱对偶）
+<table border="1" ><tr>
+<td>任意可行点$\overline {\boldsymbol {x}}\in Ω,(\overline {\boldsymbol {λ}},\overline {\boldsymbol {μ}})\in \mathbb {R}^{m}x\mathbb {R}_{+}^{l}$，总有$f(\overline {\boldsymbol {x}})\geq q(\overline {\boldsymbol {λ}},\overline {\boldsymbol {μ}})$</td>
+</tr></table>
+第22章 拉格朗日对偶
+### 对偶问题
+对偶间隙（dual gap)： $\text {gap}(\overline {\boldsymbol {x}},\overline {\boldsymbol {λ}},\overline {\boldsymbol {μ}})=f(\overline {\boldsymbol {x}})-q(\overline {\boldsymbol {λ}},\overline {\boldsymbol {μ}})$ .强对偶：即对偶间隙为零.
+#### 定理（强对偶（strong duality)）
+若强对偶成立，则原始问题（P）和对偶问题（D）均有极值点.
+#### 定理（何时强对偶成立？）
+![](https://web-api.textin.com/ocr_image/external/aa0cfb24db15decf.jpg)
+拉格朗日函数有鞍点 $Longleftrightarrow\boldsymbol {x}^{*}$ 和 $\left(\boldsymbol {λ}^{*},\boldsymbol {μ}^{*}\right)$ 分别是原始问题（P）和对偶问题（D）的极值点，且强对偶成立.
+<table border="1" ><tr>
+<td>凸优化问题：$\min _{\boldsymbol {x}\in Ω}f(\boldsymbol {x})$，其中 $f$是凸函数，Ω是凸集</td>
+</tr><tr>
+<td>稳定点全局极值点局部极值点$\rightleftharpoons KKT$系统的解拉格朗日函数的鞍点</td>
+</tr></table>
+★上述中的“一”处需要满足 Slater 条件.
+![](https://web-api.textin.com/ocr_image/external/8a97bf5bb4d5ecbb.jpg)
+![](https://web-api.textin.com/ocr_image/external/edc8298aa4aa5217.jpg)
+第22章 拉格朗日对偶
+8/9
+### 对偶问题
+#### 定理（何时Slater条件成立？）
+线性约束的凸优化问题，Slater条件恒成立.
+。原始问题（P）是凸优化，约束集Ω有相对内点.
+![](https://web-api.textin.com/ocr_image/external/b01b344040b78770.jpg)
+#### ★非凸优化问题，强对偶也可能成立.但是分析相对比较困难.
+#### 作业：写出如下优化问题的对偶问题
+(1) $\min _{\boldsymbol {x}\in \mathbb {R}^{2}}f(\boldsymbol {x})=x_{1}^{2}+x_{2}^{2},$ ,s.t. $x_{1}+x_{2}-4\geq 0,x_{1}\geq 0,x_{2}\geq 0.$ 
+(2) $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {b}^{\top }\boldsymbol {x},$ s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}.$ 
+(3) $\min _{\boldsymbol {x}\in \mathbb {R}^{2}}f(\boldsymbol {x})=\left|x_{1}\right|+x_{2}\text {,s.t.}$ $x_{1}\leq 0,x_{2}\geq 0.$ 
+(4) $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})=\frac {1}{2}\|\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b}\|_{2}^{2}+τ\|\boldsymbol {x}\|_{1}$ 
+(5) $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})=\|\boldsymbol {x}\|_{p}\text {,s.t.}$ $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}.$ 
+![](https://web-api.textin.com/ocr_image/external/acbfebbbc9f91321.jpg)

@@ -1,0 +1,81 @@
+{
+  "stage": "C",
+  "mode": "formal",
+  "parent_B0": 35114,
+  "fixed_temporary_served": 160,
+  "conditioned_on_uncertified_parent": true,
+  "full_certified": false,
+  "status": "UNKNOWN",
+  "temporary_incumbent": 160,
+  "temporary_best_bound": 160.0,
+  "temporary_gap": 0.0,
+  "temporary_certified_optimal": true,
+  "stage_b_solver_status": "OPTIMAL",
+  "stage_b_solver_best_bound": 160.0,
+  "stage_b_solver_wall_time": 130.9945793,
+  "time_sampling_density": "baseline",
+  "seed": null,
+  "T_air": 34033,
+  "T_pax": 246808,
+  "fuel": 273629.00000000006,
+  "flights": 204,
+  "PK": 799803.0,
+  "AK": 1674375.0,
+  "utilization": 0.47767256438969763,
+  "selected_flights": 204,
+  "aircraft_used": 22,
+  "stages": {
+    "aircraft_time": {
+      "status": "FEASIBLE",
+      "objective": 34033,
+      "best_bound": 5276.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": false,
+      "wall_time": 73.34199860000001
+    },
+    "passenger_time": {
+      "status": "FEASIBLE",
+      "objective": 246808,
+      "best_bound": 225793.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 72.5685203
+    },
+    "fuel": {
+      "status": "FEASIBLE",
+      "objective": 2736290,
+      "best_bound": 2186941.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 66.4106687
+    },
+    "flights": {
+      "status": "FEASIBLE",
+      "objective": 204,
+      "best_bound": 43.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 62.8289259
+    },
+    "seat_utilization": {
+      "status": "UNKNOWN",
+      "objective": null,
+      "best_bound": 0.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 55.130385200000035
+    }
+  },
+  "dinkelbach_iterations": 1,
+  "seat_utilization_status": "UNKNOWN",
+  "final_solution_source": "C4 incumbent",
+  "validation": {
+    "independent": true,
+    "solver_equals_delivery": true
+  },
+  "runtime": {
+    "master": 330.2804987,
+    "realization_validation": 0.3908739999999966,
+    "total": 359.76202820000003
+  }
+}

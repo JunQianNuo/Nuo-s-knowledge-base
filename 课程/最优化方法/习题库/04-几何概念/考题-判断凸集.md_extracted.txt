@@ -1,0 +1,126 @@
+# 考题-判断凸集
+
+---
+title: 考题-01 - 判断集合是否为凸集
+subject: 最优化方法
+chapter: 4
+section: 几何概念
+source: 复习纲要补充
+status: 已校对
+type: 考题
+topics:
+  - 凸集
+  - 半空间
+  - 超平面
+  - 二阶锥
+  - 凸集定义验证
+---
+
+# 考题 01
+
+判断以下集合哪些是凸集。对每个集合，若为凸集请给出证明；若不是凸集，请给出一个具体的反例（两个属于该集合的点，其凸组合不在集合中）。
+
+**(a)** 半空间：$S_1 = \{x \in \mathbb{R}^2 \mid a^\top x \le b\}$，其中 $a = [1, 2]^\top$，$b = 3$。
+
+**(b)** 圆环区域（开环）：$S_2 = \{x \in \mathbb{R}^2 \mid 1 < \|x\|_2 < 2\}$。
+
+**(c)** 超平面：$S_3 = \{x \in \mathbb{R}^3 \mid x_1 + 2x_2 - x_3 = 5\}$。
+
+**(d)** 坐标轴对角区域：$S_4 = \{x \in \mathbb{R}^2 \mid x_1 x_2 \ge 0\}$。
+
+**(e)** 二阶锥（Second-order cone）：$S_5 = \{(x, t) \in \mathbb{R}^2 \times \mathbb{R} \mid \|x\|_2 \le t\}$。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 凸集的定义：对任意 $x, y \in S$ 和任意 $\lambda \in [0, 1]$，有 $\lambda x + (1-\lambda) y \in S$。
+> - 验证凸性时，可从定义出发直接推导，也可借助已知结论（线性/仿射不等式的解集是凸集）。
+> - 否定凸性时，只需找到一对反例点，证明它们连线上某点不在集合中。
+> - (b) 和 (d) 可以画图帮助直观判断。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> ### (a) 半空间 $S_1 = \{x \in \mathbb{R}^2 \mid a^\top x \le b\}$
+>
+> **结论：是凸集。**
+>
+> 证明：任取 $x, y \in S_1$，则 $a^\top x \le b$ 且 $a^\top y \le b$。对任意 $\lambda \in [0, 1]$，令 $z = \lambda x + (1-\lambda)y$，则：
+>
+> $$a^\top z = a^\top(\lambda x + (1-\lambda)y) = \lambda a^\top x + (1-\lambda)a^\top y \le \lambda b + (1-\lambda)b = b$$
+>
+> 故 $z \in S_1$。$S_1$ 是凸集。
+>
+> 事实上，任何形如 $\{x \mid a^\top x \le b\}$ 的半空间都是凸集，这是凸分析的基本结论。
+>
+> ### (b) 圆环区域 $S_2 = \{x \in \mathbb{R}^2 \mid 1 < \|x\|_2 < 2\}$
+>
+> **结论：不是凸集。**
+>
+> 直观上，这是一个开圆环（去掉内圆和外圆的区域），圆环中间是"空的"，连线可能穿过内圆而离开集合。取两个关于原点对称、在圆环外缘附近的点：
+>
+> $$x = \begin{bmatrix} 1.5 \\ 0 \end{bmatrix},\quad y = \begin{bmatrix} -1.5 \\ 0 \end{bmatrix}$$
+>
+> 验证：$\|x\|_2 = \|y\|_2 = 1.5$，满足 $1 < 1.5 < 2$，故 $x, y \in S_2$。
+>
+> 取 $\lambda = \frac{1}{2}$：
+> $$z = \frac{1}{2}x + \frac{1}{2}y = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
+>
+> $\|z\|_2 = 0 < 1$，不满足条件，故 $z \notin S_2$。$S_2$ 不是凸集。
+>
+> ### (c) 超平面 $S_3 = \{x \in \mathbb{R}^3 \mid x_1 + 2x_2 - x_3 = 5\}$
+>
+> **结论：是凸集。**
+>
+> 证明：任取 $x, y \in S_3$，则 $x_1 + 2x_2 - x_3 = 5$ 且 $y_1 + 2y_2 - y_3 = 5$。对任意 $\lambda \in [0, 1]$，令 $z = \lambda x + (1-\lambda)y$：
+>
+> $$\begin{aligned}
+> z_1 + 2z_2 - z_3 &= (\lambda x_1 + (1-\lambda)y_1) + 2(\lambda x_2 + (1-\lambda)y_2) - (\lambda x_3 + (1-\lambda)y_3) \\
+> &= \lambda(x_1 + 2x_2 - x_3) + (1-\lambda)(y_1 + 2y_2 - y_3) \\
+> &= \lambda \cdot 5 + (1-\lambda) \cdot 5 = 5
+> \end{aligned}$$
+>
+> 故 $z \in S_3$。超平面是凸集（且是仿射集）。
+>
+> ### (d) 坐标轴对角区域 $S_4 = \{x \in \mathbb{R}^2 \mid x_1 x_2 \ge 0\}$
+>
+> **结论：不是凸集。**
+>
+> $S_4$ 是由第一象限和第三象限（含坐标轴）构成的集合。直观上看，第一象限的点和第三象限的点连起来会穿过第二或第四象限，而在那里 $x_1 x_2 < 0$。
+>
+> 反例：
+> $$x = \begin{bmatrix} 1 \\ 2 \end{bmatrix},\quad y = \begin{bmatrix} -2 \\ -1 \end{bmatrix}$$
+>
+> 验证：$x_1 x_2 = 2 \ge 0$，$y_1 y_2 = (-2)(-1) = 2 \ge 0$，故 $x, y \in S_4$。
+>
+> 取 $\lambda = \frac{1}{2}$：
+> $$z = \frac{1}{2}x + \frac{1}{2}y = \begin{bmatrix} -0.5 \\ 0.5 \end{bmatrix}$$
+>
+> $z_1 z_2 = (-0.5) \times 0.5 = -0.25 < 0$，故 $z \notin S_4$。$S_4$ 不是凸集。
+>
+> ### (e) 二阶锥 $S_5 = \{(x, t) \in \mathbb{R}^2 \times \mathbb{R} \mid \|x\|_2 \le t\}$
+>
+> **结论：是凸集。**
+>
+> 证明：任取 $(x, t), (y, s) \in S_5$，则 $\|x\|_2 \le t$ 且 $\|y\|_2 \le s$。对任意 $\lambda \in [0, 1]$：
+>
+> $$\begin{aligned}
+> \|\lambda x + (1-\lambda)y\|_2 &\le \lambda\|x\|_2 + (1-\lambda)\|y\|_2 \quad \text{（三角不等式+齐次性）}\\
+> &\le \lambda t + (1-\lambda)s
+> \end{aligned}$$
+>
+> 令 $z' = \lambda x + (1-\lambda)y$，$t' = \lambda t + (1-\lambda)s$，则 $(z', t')$ 是 $(x, t)$ 和 $(y, s)$ 的凸组合，且满足 $\|z'\|_2 \le t'$。故 $(z', t') \in S_5$。$S_5$ 是凸集。
+>
+> **点评：** 二阶锥是凸优化（特别是锥规划）中的核心结构。二阶锥规划的约束就是这种形式的推广：$\|A_i x + b_i\|_2 \le c_i^\top x + d_i$。判断凸性时，半空间和超平面的凸性可引用已知结论；非凸集只需要给出一个明确的反例即可。$\square$
+
+---
+
+## 相关知识点
+
+- [[04-几何概念]] — 凸集的定义、半空间、超平面、凸集的保凸运算
+- [[../知识点解析梳理/04-几何概念-知识梳理|第4章 知识梳理]] — 凸集的性质与判定方法
+- [[习题4.3]] — 线性方程组解集是凸集

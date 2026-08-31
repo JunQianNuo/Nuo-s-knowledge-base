@@ -1,0 +1,287 @@
+# 10-共轭方向法
+
+---
+title: 第10章 共轭方向法
+subject: 最优化方法
+source: 无动画Chapter10.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 10
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第10章 共轭方向法
+1．共轭方向法
+2．共轭梯度法
+## 3．非线性共轭梯度法
+第10章 共轭方向法
+1/22
+# 共轭方向（Conjugate Direction Method）
+,
+![](https://web-api.textin.com/ocr_image/external/14d30632147f0900.jpg)
+当采用坐标轮换的方式极小化一个“简单”的二次函数时，通过n次坐标轮换的极小化运算可以达到问题的极小点.
+,
+![](https://web-api.textin.com/ocr_image/external/9fa8e4761938af30.jpg)
+当采用坐标轮换的方式极小化一个“普通”的二次函数时，可能无法通过有限步的迭代达到问题的极小点（如作图所示）.
+如何修正搜索方向，使采用坐标轮换的方式也能有限步达到一个“普通”的二次函数的极小点？
+## 共轭方向
+无约束优化问题： $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {b}^{\top }\boldsymbol {x},$ ，其中 $\boldsymbol {Q}\succ 0,\boldsymbol {b}\in \mathbb {R}^{n}$ 
+![](https://web-api.textin.com/ocr_image/external/0beaf858d1b3aaf1.jpg)
+极小点 $\boldsymbol {x}^{*}=\boldsymbol {Q}^{-1}b$ ，极小值 $f(x^{*})=-\frac {1}{2}(x^{*})^{\top }Qx^{*}.$ 
+## 回顾：最速下降法和牛顿法
+。最速下降法： $\left\{\begin{matrix}\alpha _{k}=\frac {\|\boldsymbol {g}^{(k)}\|^{2}}{\|\boldsymbol {g}^{(k)}\|_{\boldsymbol {Q}}^{2}}\text {是}\\ \boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}\end{matrix}\right.$ 是精确步长， $\cdot$ $α_{k}\boldsymbol {g}^{(k)}$ 
+牛顿法： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)^{-1}\boldsymbol {g}^{(k)}$ 
+x1 $x_{1}$ $x^{\prime }$ $x_{2}$ $x_{0}$ 8
+![](https://web-api.textin.com/ocr_image/external/5e8e40b93148eaf6.jpg)
+·最速下降法的特点：每次迭代的计算量和存储量都很小（只需计算或存储梯度信息）；但需要较多的迭代次数达到极小点 $\boldsymbol {x}^{*}$ .
+。牛顿法的特点：每次迭代的计算量和存储量大（需计算或存储海塞）；但仅需要几步（通常10步以内）便可以达到较高精度的解 $\boldsymbol {x}^{*}$ .
+![](https://web-api.textin.com/ocr_image/external/b5df93e1a3481242.jpg)
+第10章 共轭方向法
+3/22
+### 共轭方向
+## 思想动机（Motivation）
+<table border="1" ><tr>
+<td>$p_{0}$ $x_{1}$ $p_{1}$ $x_{0}$ $-\nabla f\left(x_{1}\right)$<img src="https://web-api.textin.com/ocr_image/external/dcbc1b386aca277c.jpg"></td>
+<td>$\boldsymbol {x}^{*}=\boldsymbol {x}^{(1)}+t\boldsymbol {p}^{(1)}$ $t\in \mathbb {R}$ $\boldsymbol {Q}\boldsymbol {x}^{*}-\boldsymbol {b}=\boldsymbol {Q}\boldsymbol {x}^{(1)}-\boldsymbol {b}+t\boldsymbol {Q}\boldsymbol {p}^{(1)}$ $\nabla f\left(\boldsymbol {x}^{*}\right)=\nabla f\left(\boldsymbol {x}^{(1)}\right)+t\boldsymbol {Q}\boldsymbol {p}_{1}^{(1)}$ $0=\nabla f\left(\boldsymbol {x}_{1}\right)+t\boldsymbol {Q}\boldsymbol {p}_{1}^{(1)}$ $0=\boldsymbol {p}^{(0)\top }\nabla f\left(\boldsymbol {x}_{1}\right)+t\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}$ $0=\boldsymbol {p}^{(0)^{\top }}\boldsymbol {Q}\boldsymbol {p}^{(1)}$</td>
+</tr></table>
+符号： $\mathbb {S}^{n}$ ：n阶实对称矩阵全体； $\mathbb {S}_{+}^{n}$  n阶实对称半正定矩阵全体； $\mathbb {S}_{++}^{n}$  n阶实对称正定矩阵全体.
+### 定义（共轭方向）
+设 $Q\in \mathbb {S}^{n}$ $\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(m)}$ 是n维非零向量组.如果 $\boldsymbol {p}^{(i)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=0,$ $,\forall i\neq j$ 则称 $\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(m)}$ 为Q-共轭向量组.
+![](https://web-api.textin.com/ocr_image/external/a659ab568b513468.jpg)
+特别地，若 $Q=I$ 则Q-共轭退化为正交.
+![](https://web-api.textin.com/ocr_image/external/de6d5aeb5b11dfec.jpg)
+第10章 共轭方向法
+## 如何获得共轭方向：三种方法
+### 引理
+设 $\boldsymbol {Q}\in \mathbb {S}_{++}^{n}$ **.如果非零向量组** $\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(m)}$ 是Q--共轭的，则该向量组是线性无关组.
+证：提示.类比正交向量组必是线性无关组的证法.
+问题**：**给定矩阵 $\boldsymbol {Q}\in \mathbb {S}_{++}^{n}$ ，如何得到一个Q-共轭向量组？
+### 方法I：待定系数法
+给定矩阵 $\boldsymbol {Q}=\left[\begin{array}{lll}3&0&1\\ 0&4&2\\ 1&2&3\end{array}\right]\in \mathbb {S}_{++}^{3},$ 
+设关于矩阵Q的共轭向量组为 $\left\{\begin{array}{l}\boldsymbol {p}^{(0)}=[1,0,0]^{\top }\\ \boldsymbol {p}^{(1)}=\left[p_{1}^{(1)},p_{2}^{(1)},p_{3}^{(1)}\right]^{\top }\\ \boldsymbol {p}^{(2)}=\left[p_{1}^{(2)},p_{2}^{(2)},p_{3}^{(2)}\right]^{\top }\end{array}\right.$ 
+### 由定义 $\left\{\begin{array}{l}{\boldsymbol {p}^{(0)\top \top }\boldsymbol {Qp}^{(1)}=0}\\
+{\boldsymbol {p}^{(0)\top \top }\boldsymbol {Qp}^{(2)}=0}\\
+{\boldsymbol {p}^{(1)\top \top }\boldsymbol {Qp}^{(2)}=0}\end{array}\Longrightarrow \ldots \Rightarrow \left\{\begin{array}{l}\boldsymbol{p}^{(0)}=[1,0,0]^{\top}\\
+\boldsymbol{p}^{(1)}=[1,0,-3]^{\top}\\
+\boldsymbol{p}^{(2)}=[1,4,-3]^{\top}\end{array}\right.\right.$ 
+第10章 共轭方向法
+### 如何获得共轭方向：三种方法
+<table border="1" ><tr>
+<td>方法II:Gram-Schmidt 共轭化</td>
+</tr><tr>
+<td>给定矩阵$\boldsymbol {Q}\in \mathbb {S}_{++}^{n}$和$\mathbb {R}^{n}$空间中的任意一个线性无关向量组$\left\{\boldsymbol {a}^{(i)}\right\}_{i=0}^{n-1}$Gram-Schmidt 共轭化可将线性无关组$\left\{\boldsymbol {a}^{(i)}\right\}_{i=0}^{n-1}$ 转化为 $Q$-共轭向量组：<br>$\left\{\begin{array}{l}\boldsymbol {p}^{(0)}=\boldsymbol {a}^{(0)}.\\ \boldsymbol {p}^{(k)}=\boldsymbol {a}^{(k)}-\sum _{i=0}^{k-1}\frac {\boldsymbol {a}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(i)}}{\boldsymbol {p}^{(i)\top }\boldsymbol {Q}\boldsymbol {p}^{(i)}}\boldsymbol {p}^{(i)}\end{array}\right.$ $k=1,\cdots ,n-1$ (*)<br>向量组$\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(n-1)}$必是Q--共轭向量组.<br><img src="https://web-api.textin.com/ocr_image/external/cb7998b21d49e0b3.jpg"></td>
+</tr></table>
+即将欧式内积 $\langle \boldsymbol {x},\boldsymbol {y}\rangle =\boldsymbol {x}^{\top }\boldsymbol {y}$ 推广为广义内积 $\langle \boldsymbol {x},\boldsymbol {y}\rangle =\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {y}.$ 
+特别地，若 $\boldsymbol {Q}=\boldsymbol {I},$  Q--共轭退化为正交.因此， $(*)$ 退化为Gram-Schmidt正交化.
+![](https://web-api.textin.com/ocr_image/external/1b9ad91a3143dec3.jpg)
+## 如何获得共轭方向：三种方法
+## 方法III：特征值分解（见课后题10.4）
+给定 $Q\in \mathbb {S}^{n}$ .则存在Q-共轭向量组 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 使得 $\boldsymbol {p}^{(i)}$ $(i=1,\cdots ,n)$ 是Q的特征向量.
+证.利用对称矩阵特征向量的特点：若 $Q\in \mathbb {S}^{n}$ ，则存在Q的特征向量组 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 满足 $\boldsymbol {p}_{i}^{\top }\boldsymbol {p}_{j}=0,\forall i\neq j$ 
+### 定理
+已知 $\boldsymbol {Q}\in \mathbb {S}_{++}^{n}$ .如果非零向量组 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 是Q-共轭的且是正交的，则任意 $\boldsymbol {p}^{(i)},i=1,\cdots ,n$ 是矩阵Q的特征向量.
+![](https://web-api.textin.com/ocr_image/external/7c341606cee8cc12.jpg)
+对称正定矩阵的正交特征向量组是Q-共轭向量组.反之，如果向量组 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 是正交的且Q-共轭的，则它们必是矩阵Q的特征向量.
+e
+## 共轭方向法
+### 共轭方向法迭代格式：min $,$ $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {b}^{\top }\boldsymbol {x},$  其中 $\boldsymbol {Q}\in \mathbb {S}_{++}^{n},\boldsymbol {b}\in \mathbb {R}^{n}.$ 
+**给定初始点** $\boldsymbol {x}^{(0)}$ 和Q-共轭向量组 $\boldsymbol {p}^{(0)},\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n-1)}$ 
+$α_{k}=-\frac {\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}$ ，其中 $\boldsymbol {g}^{(k)}=\nabla f\left(\boldsymbol {x}^{(k)}\right)$ 
+$$\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {p}^{(k)}$$
+**例.用共轭方向法极小化** $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\left[\begin{array}{cc}4&2\\ 2&2\end{array}\right]\boldsymbol {x}-\boldsymbol {x}^{\top }\left[\begin{array}{c}-1\\ 1\end{array}\right]$ 
+给定 $Q$  -共轭向量组 $\boldsymbol {p}^{(0)}=[1,0]^{\top },\boldsymbol {p}^{(1)}=\left[-\frac {3}{8},\frac {3}{4}\right]^{\top }$ ，初始点 $\boldsymbol {x}^{(0)}=[0,0]^{\top }.$ 
+解： $\because$ $\nabla f(\boldsymbol {x})=\left[\begin{array}{ll}4&2\\ 2&2\end{array}\right]\boldsymbol {x}-\left[\begin{array}{c}-1\\ 1\end{array}\right],\nabla ^{2}f(\boldsymbol {x})=\left[\begin{array}{ll}4&2\\ 2&2\end{array}\right]=:\boldsymbol {Q}$ 
+S1. $\boldsymbol {g}^{(0)}=-\boldsymbol {b}=[1,-1]^{\top },α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {p}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}=-\frac {1}{4}$ 
+$$\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {p}^{(0)}=\left[-\frac {1}{4},0\right]^{\top }.$$
+S2. $\boldsymbol {g}^{(1)}=\boldsymbol {Q}\boldsymbol {x}^{(1)}-\boldsymbol {b}=\left[0,-\frac {3}{2}\right]^{\top }$ $α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {p}^{(1)}}{\boldsymbol {p}^{(1)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}}=2,$ $\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {p}^{(1)}=\left[-1,\frac {3}{2}\right]^{\top }.$ 
+f是2维的二次函数，
+$\therefore \boldsymbol {x}^{*}=\boldsymbol {x}^{(2)}$ 是极小点.
+## 共轭方向法
+### 定理（共轭方向法极小化二次函数情形）
+任意初始点 $\boldsymbol {x}^{(0)}$ ，共轭方向法至多迭代n次可获得极小点 $\boldsymbol {x}^{*}$ ，即 $\boldsymbol {x}^{(n)}=\boldsymbol {x}^{*}$ 
+证 $\because$ 向量组 $\left\{\boldsymbol {p}^{(i)}\right\}_{i=0}^{n-1}$ 是Q-共轭的，
+$\therefore \left\{\boldsymbol {p}^{(i)}\right\}_{i=0}^{n-1}$  是线性无关组， $\therefore$ $\left\{\boldsymbol {p}^{(i)}\right\}_{i=0}^{n-1}$  是 $\mathbb {R}^{n}$ 空间的一组基.
+∴向量 $\boldsymbol {x}^{*}-\boldsymbol {x}^{(0)}\in \mathbb {R}^{n}$ 可以有向量组 $\left\{\boldsymbol {p}^{(i)}\right\}_{i=0}^{n-1}$  线性表出，即
+$$\boldsymbol {x}^{*}-\boldsymbol {x}^{(0)}=\beta _{0}\boldsymbol {p}^{(0)}+\cdots +\beta _{n-1}\boldsymbol {p}^{(n-1)}\tag{1}$$
+上述等式两边左乘 $\boldsymbol {p}^{(k)}{}^{\top }\boldsymbol {Q}$ 得
+$$\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\left(\boldsymbol {x}^{*}-\boldsymbol {x}^{(0)}\right)=\beta _{k}\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}Longrightarrow\beta _{k}=\frac {\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\left(\boldsymbol {x}^{*}-\boldsymbol {x}^{(0)}\right)}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}$$
+另一方面，迭代点 $\boldsymbol {x}^{(k)}$ 可以写为
+$$\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(0)}=α_{0}\boldsymbol {p}^{(0)}+\cdots +α_{k-1}\boldsymbol {p}^{(k-1)}\tag{2}$$
+$\therefore \boldsymbol {x}^{(n)}-\boldsymbol {x}^{(0)}=α_{0}\boldsymbol {p}^{(0)}+\cdots +α_{n-1}\boldsymbol {p}^{(n-1)}$ ，其中 $α_{k}=-\frac {\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}$  (3)
+对比（1）和（3）得， $\boldsymbol {x}^{(n)}=\boldsymbol {x}^{(0)}Longleftrightarrow$ $\beta _{k}=α_{k}$ $\forall k=0,\cdots ,n-1$
+![](https://web-api.textin.com/ocr_image/external/b09e8b237e6ca837.jpg)
+![](https://web-api.textin.com/ocr_image/external/c31b50e2f0a34ec3.jpg)
+第10章 共轭方向法
+### 共轭方向法
+实际上， $\beta _{k}$ 和 $α_{k}$ 的分子是相等的.
+$$\because \boldsymbol {p}^{(k)\top }\boldsymbol {Q}\left(\boldsymbol {x}^{*}-\boldsymbol {x}^{(0)}\right)\quad =p^{(k)\top }Q\left(x^{*}-x^{(k)}+x^{(k)}-x^{(0)}\right)=\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\left(\boldsymbol {x}^{*}-\boldsymbol {x}^{(k)}\right)+\underbrace {\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(0)}\right)}_{=0,(\text {why?})}$$
+$$=\boldsymbol {p}^{(k)\top }\left(\boldsymbol {b}-\boldsymbol {Q}\boldsymbol {x}^{(k)}\right)=-\boldsymbol {p}^{(k)\top }\boldsymbol {g}^{(k)}$$
+$\therefore \beta _{k}=-\frac {\boldsymbol {p}^{(k)\top }\boldsymbol {g}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}=α_{k}$ ，从而说明 $\boldsymbol {x}^{*}=\boldsymbol {x}^{(n)}$ 
+#### 引理（精确步长： $α_{k}=\arg \min$ $\left.f\left(\boldsymbol {x}^{(k)}+α\boldsymbol {p}^{(k)}\right)\right)$ 
+采用精确线搜索时，搜索方向和新点处的梯度方向是正交的，即 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(k)}=0.$ （证明过程见第8章）
+![](https://web-api.textin.com/ocr_image/external/f04a6c36772091c8.jpg)
+#### 共轭方向法
+##### 引理
+共轭方向法极小化二次函数时，给定k满足 $0\leq k\leq n-1$ ，则总有 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(i)}=0,$ $\forall 0\leq i\leq k.$ 
+证. $\because \boldsymbol {g}^{(k)}=\boldsymbol {Q}\boldsymbol {x}^{(k)}-\boldsymbol {b}$ 
+$$\therefore\quad \boldsymbol {g}^{(k+1)}-\boldsymbol {g}^{(k)}=\boldsymbol {Q}(\boldsymbol {x}^{(k+1)}-\boldsymbol {x}^{(k)})\stackrel {{\text {迭代格式}}}{{=}}\alpha _{k}\boldsymbol {Q}\boldsymbol {p}^{(k)}.$$
+（数学归纳法）由上述引理知 $\boldsymbol {g}^{(1)\top }\boldsymbol {p}^{(0)}=0$ 
+（归纳假设）假设引理对 $k-1$ 时成立，即 $\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(i)}=0,\forall 0\leq i\leq k-1.$ 
+现在证明引理对k时也成立，即 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(i)}=0,\forall 0\leq i\leq k.$ 
+。由上述引理（即精确步长）知， $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(k)}=0.$ 
+。进一步，只需证 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(i)}=0,\forall 0\leq i\leq k-1.$ 
+$...$ $\begin{array}{l}\boldsymbol {g}^{(k+1)}=\boldsymbol {g}^{(k)}+α_{k}\boldsymbol {Q}\boldsymbol {p}^{(k)}.\\ \boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(i)}=\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(i)}+α_{k}\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(i)}=0,\forall 0\leq i\leq k-1\end{array}$ $(why?)$ 
+所以，给定 $0\leq k\leq n-1$ ，恒有 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(i)}=0,\forall 0\leq i\leq k.$ 
+![](https://web-api.textin.com/ocr_image/external/38f0e635cdc62ad0.jpg)
+新迭代点处的梯度垂直已用过的所有共轭方向，即
+$$\boldsymbol {g}^{(k+1)}\bot \text {span}\left[\boldsymbol {p}^{(0)},\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(k)}\right]$$
+### 扩展子空间定理
+#### 定理共轭方向法产生的迭代点满足
+$f\left(\boldsymbol {x}^{(k+1)}\right)=\min _{α}f\left(\boldsymbol {x}^{(k)}+α\boldsymbol {p}^{(k)}\right)=\min _{a_{0},\cdots ,a_{k}}f\left(\boldsymbol {x}^{(0)}+\sum _{i=0}^{k}a_{i}\boldsymbol {p}^{(i)}\right)$ .换句话说，记
+$\mathcal {V}_{k}=\boldsymbol {x}^{(0)}+\text {span}\left[\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(k)}\right]$ 则 $f\left(\boldsymbol {x}^{(k+1)}\right)=\min _{\boldsymbol {x}\in \mathcal {V}_{k}}f(\boldsymbol {x})$ 
+证.记矩阵 $\boldsymbol {D}^{(k)}=\left[\boldsymbol {p}^{(0)},\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(k)}\right].$ $\therefore \mathcal {V}_{k}=\boldsymbol {x}^{(0)}+\text {span}\left[\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(k)}\right]=\boldsymbol {x}^{(0)}+\mathcal {R}\left(\boldsymbol {D}^{(k)}\right)$ 
+$\therefore$ $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(0)}+\sum _{i=0}^{k}α_{i}\boldsymbol {p}^{(i)}=\boldsymbol {x}^{(0)}+\boldsymbol {D}^{(k)}\boldsymbol {α},$ 其中 $\boldsymbol {α}=\left[α_{0},\cdots ,α_{k}\right]^{\top }$ 
+$\therefore$ $\boldsymbol {x}^{(k+1)}\in \boldsymbol {x}^{(0)}+\mathcal {R}\left(\boldsymbol {D}^{(k)}\right)=\mathcal {V}_{k}$ 
+任意 $\boldsymbol {x}\in \mathcal {V}_{k}$ ，存在 $\boldsymbol {α}\in \mathbb {R}^{k+1}$ 使得 $\boldsymbol {x}=\boldsymbol {x}^{(0)}+\boldsymbol {D}^{(k)}\boldsymbol {a}.$ 
+e
+##### 扩展子空间定理
+###### 定义 $φ_{k}(\boldsymbol {α}):=f\left(\boldsymbol {x}^{(0)}+\boldsymbol {D}^{(\boldsymbol {k})}\boldsymbol {α}\right)$ 
+则 $φ_{k}$ 是二次函数且有唯一极小点.
+借助最优性条件得，
+$$\nabla φ_{k}(\boldsymbol {α})=\nabla f\left(\boldsymbol {x}^{(0)}+\boldsymbol {D}^{(k)}\boldsymbol {α}\right)^{\top }\boldsymbol {D}^{(k)}=\nabla f\left(\boldsymbol {x}^{(k+1)}\right)^{\top }\boldsymbol {D}^{(k)}=\boldsymbol {g}^{(k+1)\top }\boldsymbol {D}^{(k)}\tag{4}$$
+由引理 Lemma 10.2知， $\boldsymbol {g}^{(k+1)\top }\boldsymbol {D}^{(k)}=\mathbf {0}^{\top }$ 
+$\therefore (4)Longrightarrow\nabla φ_{k}(\boldsymbol {α})=0Longrightarrow$ $α$ 是 $φ_{k}$ 的极小点，即
+$$f\left(\boldsymbol {x}^{(k+1)}\right)=\min _{\boldsymbol {α}}f\left(\boldsymbol {x}^{(0)}+\boldsymbol {D}^{(k)}\boldsymbol {α}\right)=\min _{\boldsymbol {x}\in \mathcal {V}_{k}}f(\boldsymbol {x})$$
+随着 $k$ 增大，张成子空间span $\left[\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(k)}\right]$ 的维数持续上升，直到张成整个空间 $\mathbb {R}^{n}$ （此时向量组 $\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(n-1)}$ 是空间 $\mathbb {R}^{n}$ 的一组基）.
+###### 共轭梯度法
+###### 动机
+。不同于共轭方向法（需要准备n个共轭向量），共轭梯度法在执行线搜索时不需要将n个共轭向量事先备好，只需要在算法更新过程中设计／计算共轭向量.在第k次迭代，共轭方向 $\boldsymbol {p}^{(k)}$ 通过 $\boldsymbol {p}^{(k-1)}$ 和当前点的梯度 $\boldsymbol {g}^{(k)}$ 线性组合而成.
+。共轭梯度法利用了如下事实：对于n元二次函数，其极小点可以通过沿着共轭方向做n次线搜索得到.
+分析：给定初始点 $\boldsymbol {x}^{(0)}$ 和精确线搜索准则.
+Po $p_{0}$ x1 $x_{1}$ $x^{*}$ $p_{1}$ P $x_{0}$ $-\nabla f\left(x_{1}\right)$
+![](https://web-api.textin.com/ocr_image/external/906c90aa7224271b.jpg)
+·step 0：利用负梯度作为搜索方向完成第一次线搜索，即 $\boldsymbol {}^{(0)}=-\boldsymbol {g}^{(0)}$ 
+$$α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {p}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}$$
+$$\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {p}^{(0)}$$
+![](https://web-api.textin.com/ocr_image/external/5ff11b056639f6d3.jpg)
+###### 共轭梯度法
+分析：给定初始点 $\boldsymbol {x}^{(0)}$ 和精确步长准则.
+· $step1$ ：取 $\boldsymbol {p}^{(1)}$ 为 $\boldsymbol {g}^{(1)}$ 和 $\boldsymbol {p}^{(0)}$ 的线性组合，即
+$$\boldsymbol {p}^{(1)}=-\boldsymbol {g}^{(1)}+\beta _{0}\boldsymbol {p}^{(\mathbf {0})}$$
+$\underline {\boldsymbol {p}^{(1)}与\boldsymbol {p}^{(0)}}$ 是 $Q-共扼$ $\beta _{0}=\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}$
+![](https://web-api.textin.com/ocr_image/external/96dd40f16073dcba.jpg)
+利用 $\boldsymbol {p}^{(1)}$ 作为搜索方向进行精确线搜索，产生新的迭代点
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {p}^{(1)}}{\boldsymbol {p}^{(1)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}}$$
+$$\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {p}^{(1)}$$
+· $stepk:$ ：计算新的搜索方向
+$\boldsymbol {p}^{(k)}=-\boldsymbol {g}^{(k)}+\beta _{k-1}\boldsymbol {p}^{(k-1)}$ ，其中 $\beta _{k-1}=\frac {\boldsymbol {g}^{(k)\top }\boldsymbol {Q}\boldsymbol {d}^{(k-1)}}{\boldsymbol {p}^{(k-1)\top }\boldsymbol {Q}\boldsymbol {d}^{(k-1)}}$  (5)
+##### 共轭梯度法的性质分析
+###### 定理
+通过公式（5）产生的向量组 $\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(n-1)}$ 是Q-共轭向量组.
+###### 证.（数学归纳法）
+（i）首先，证明 $\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}=0.$ 
+$\because$ $\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}=\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\left(-\boldsymbol {g}^{(1)}+\beta _{0}\boldsymbol {p}^{(0)}\right)\stackrel {\beta _{0}=\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}}0.$ 
+###### （ii）通过归纳假设： $\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(k)}$  是 $Q$ -共轭向量组.
+$$\xrightarrow {\text {引理}10.2}\boldsymbol {g}^{(k+1)}\bot \text {span}\left[\boldsymbol {p}^{(0)},\cdots ,\boldsymbol {p}^{(k)}\right].$$
+我们先证 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(j)}=0,\forall 0\leq j\leq k.$ 
+给定 $0\leq j\leq k,$ 有 $\boldsymbol {p}^{(j)}=-\boldsymbol {g}^{(j)}+\beta _{j-1}\boldsymbol {p}^{(j-1)}$ 
+$$\therefore\quad 0=\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(j)}=-\boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(j)}+\beta _{j-1}\underbrace {\boldsymbol {g}^{(k+1)\top }\boldsymbol {p}^{(j-1)}}_{0(\text {why}?)}$$
+$\therefore \boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(j)}=0$ for all $0\leq j\leq k$ 
+e
+Conjugate Gradient Method
+<table border="1" ><tr>
+<td>我们现在证$\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=0,\quad j=0,\cdots ,k$</td>
+</tr></table>
+$$\because \boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=\left(-\boldsymbol {g}^{(k+1)}+\beta _{k}\boldsymbol {p}^{(k)}\right)^{\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}\quad =-\boldsymbol {g}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}+\beta _{k}\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}$$
+Case 1：当 $j<k$ 时，由归纳假设知 $Longrightarrow\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=0$ 
+$\therefore$ $\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=-\boldsymbol {g}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}$ 
+由于已知
+$\boldsymbol {g}^{(j+1)}=\boldsymbol {g}^{(j)}+α_{j}\boldsymbol {Q}\boldsymbol {p}^{(j)}$ 和 $\boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(i)}=0,i=0,\cdots ,k$ 
+$$\therefore \boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=-\boldsymbol {g}^{(k+1)\top }\frac {\left(\boldsymbol {g}^{(j+1)}-\boldsymbol {g}^{(j)}\right)}{α_{j}}=0.$$
+$$\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=0,j=0,\cdots ,k-1.$$
+Case 2：当 $j=k$ 时，
+$$\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}\stackrel {\cdots j=k}{=}\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}=\left(-\boldsymbol {g}^{(k+1)}+\beta _{k}\boldsymbol {p}^{(k)}\right)^{\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}\stackrel {\cdots \beta _{k}}{=}0.$$
+总之，由上述Cases 1-2知， $\boldsymbol {p}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(j)}=0$ $j=0,\cdots ,k$ 
+###### 共轭梯度法的伪代码
+<table border="1" ><tr>
+<td colspan="2">Require：初始点$\boldsymbol {x}^{(0)}$，停机误差$ε,$，置$k=0$和$\boldsymbol {p}^{(0)}=-\nabla f\left(\boldsymbol {x}^{(0)}\right)$1:repeat<br>$α_{k}=-\frac {\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}};$</td>
+</tr><tr>
+<td>2:</td>
+<td></td>
+</tr><tr>
+<td rowspan="3">3:<br>4:<br>5:<br>6:<br>7:$\text {until}\left\|\boldsymbol {g}^{(k)}\right\|<ε.$</td>
+<td>$\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {p}^{(k)};$ $\boldsymbol {g}^{(k+1)}=\nabla f\left(\boldsymbol {x}^{(k+1)}\right)$</td>
+</tr><tr>
+<td>$\beta _{k}=\frac {\boldsymbol {g}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}};$</td>
+</tr><tr>
+<td>$\boldsymbol {p}^{(k+1)}=-\boldsymbol {g}^{(k+1)}+\beta _{k}\boldsymbol {p}^{(k)}$</td>
+</tr></table>
+<table border="1" ><tr>
+<td>参数$\beta _{k}$的其他形式</td>
+</tr><tr>
+<td>$\beta _{k}=\frac {\boldsymbol {g}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}$ $=\frac {\boldsymbol {g}^{(k+1)\top }\left[\boldsymbol {g}^{(k+1)}-\boldsymbol {g}^{(k)}\right]}{\boldsymbol {p}^{(k)\top }\left[\boldsymbol {g}^{(k+1)}-\boldsymbol {g}^{(k)}\right]}$ (Hestenes-Stiefel)<br>$=\frac {\boldsymbol {g}^{(k+1)\top }\left[\boldsymbol {g}^{(k+1)}-\boldsymbol {g}^{(k)}\right]}{\boldsymbol {g}^{(k)\top }\boldsymbol {g}^{(k)}}$(Polak-Ribiere)<br>$=\frac {\boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(k+1)}}{\boldsymbol {g}^{(k)\top }\boldsymbol {g}^{(k)}}\text {(Fletcher-Reeves)}$ $=\frac {\boldsymbol {g}^{(k+1)\top }\boldsymbol {g}^{(k+1)}}{\boldsymbol {p}^{(k)\top }\left[\boldsymbol {g}^{(k+1)}-\boldsymbol {g}^{(k+1)}\right]}\text {(Dai-Yuan).}$</td>
+</tr></table>
+当目标函数为二次函数时，所有上述 $\beta _{k}$ 的计算公式都是等价的.但是当目标函数不是二次函数时，上述 $\beta _{k}$ 的计算公式不等价.
+![](https://web-api.textin.com/ocr_image/external/4374a76398c82f64.jpg)
+Powell等学者证明了Fletcher-Peeves公式是数值上最稳定的.
+##### 共轭梯度法
+###### 例.用共轭梯度法极小化 $f$ 
+$f\left(x_{1},x_{2}\right)=x_{1}^{2}+2x_{2}^{2}$ ，初始点取 $\boldsymbol {x}^{(0)}=[5,5]^{\top }.$ 
+·Step 1: $\boldsymbol {g}^{(0)}=\nabla f\left(\boldsymbol {x}^{(0)}\right)=[10,20]^{\top },$ $\boldsymbol {p}^{(0)}=-\boldsymbol {g}^{(0)}=[-10,-20]^{\top }$ 
+$$α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {p}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}=\frac {5}{18},$$
+$$\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {p}^{(0)}=\left[\frac {20}{9},\frac {-5}{9}\right]^{\top }.$$
+Step 2: $\boldsymbol {g}^{(1)}=\nabla f\left(\boldsymbol {x}^{(1)}\right)=\left[\frac {-40}{9},\frac {20}{9}\right]^{\top }$ 
+$$\beta _{0}=\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}=\frac {4}{81}$$
+$$\boldsymbol {p}^{(1)}=-\boldsymbol {g}^{(1)}+\beta _{0}\boldsymbol {p}^{(0)}=\left[\frac {400}{81},\frac {100}{81}\right]^{\top }.$$
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {p}^{(1)}}{\boldsymbol {p}^{(1)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}}=\frac {9}{20},$$
+$$\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {p}^{(1)}=[0,0]^{\top }.$$
+$\because \boldsymbol {g}^{(3)}=\nabla f\left(\boldsymbol {x}^{(3)}\right)=\mathbf {0}$ $\therefore \boldsymbol {x}^{*}=\boldsymbol {x}^{(2)}$ 是极小点.
+##### 共轭梯度法
+###### 例.用共轭梯度法极小化 $f$ 
+$f\left(x_{1},x_{2},x_{3}\right)=\frac {3}{2}x_{1}^{2}+2x_{2}^{2}+\frac {3}{2}x_{3}^{2}+x_{1}x_{3}+2x_{2}x_{3}-3x_{1}-x_{3}$ ，初始点取 $\boldsymbol {x}^{(0)}=[0,0,0]^{\top }.$ 
+·Step 1: $\boldsymbol {g}^{(0)}=\nabla f\left(\boldsymbol {x}^{(0)}\right)=[-3,0,-1]^{\top },$ $\boldsymbol {p}^{(0)}=-\boldsymbol {g}^{(0)}$ 
+$α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {p}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {p}^{(0)}}=\frac {10}{36},$ $\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {p}^{(0)}=[0.8333,0,0.2778]^{\top }.$ 
+·Step 2: $\boldsymbol {g}^{(1)}=\nabla f\left(\boldsymbol {x}^{(1)}\right)=[-0.2222,0.5556,0.6667]^{\top }.$ 
+$$\beta _{0}=\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}{\boldsymbol {p}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}=0.08025.$$
+$$\boldsymbol {p}^{(1)}=-\boldsymbol {g}^{(1)}+\beta _{0}\boldsymbol {p}^{(0)}=[0.4630,-0.5556,-0.5864]^{\top }$$
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {p}^{(1)}}{\boldsymbol {p}^{(1)\top }\boldsymbol {Q}\boldsymbol {p}^{(1)}}=0.2187,$$
+$$\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {p}^{(1)}=[0.9346,-0.1215,0.1495]^{\top }.$$
+Step 3: $\boldsymbol {g}^{(2)}=\nabla f\left(\boldsymbol {x}^{(2)}\right)=[-0.04673,-0.1869,0.1402]^{\top }.$ 
+$$\beta _{1}=\frac {\boldsymbol {g}^{(2)\top }\boldsymbol {Q}\boldsymbol {d}^{(1)}}{\boldsymbol {p}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(1)}}=0.07075.$$
+$$\boldsymbol {p}^{(2)}=-\boldsymbol {g}^{(2)}+\beta _{1}\boldsymbol {p}^{(1)}=[0.07948,0.1476,-0.1817]^{\top }.$$
+$α_{2}=-\frac {g^{(2)\top }d^{(2)}}{d^{(2)\top }Qd^{(2)}}=0.8231,$ $\boldsymbol {x}^{(3)}=\boldsymbol {x}^{(2)}+α_{2}\boldsymbol {p}^{(2)}=[1.0,0.0,0.0]^{\top }$ 
+$\because \boldsymbol {g}^{(3)}=\nabla f\left(\boldsymbol {x}^{(3)}\right)=\mathbf {0},$  $\therefore \boldsymbol {x}^{*}=\boldsymbol {x}^{(3)}$ 是极小点.
+e
+20/22
+##### 非线性共轭梯度法
+推广：理论上，共轭梯度法中的Q可以用目标函数的海塞替换.然而，对应一般的非线性规划问题，每次迭代的海塞矩阵都需要被更新，因此，需要大量的数值计算.
+###### 非线性共轭梯度法的伪代码
+1．置 $k=0,$ 取初始点 $\boldsymbol {x}^{(0)}$ 
+2. $\boldsymbol {g}^{(0)}=\nabla f\left(\boldsymbol {x}^{(0)}\right)$ ，如果 $\boldsymbol {g}^{(0)}=\mathbf {0}$  停止；否则，取 $\boldsymbol {p}^{(0)}=-\boldsymbol {g}^{(0)}$ 
+<table border="1" ><tr>
+<td>3.  $α_{k}=-\frac {\boldsymbol {g}^{(k)\top }\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}longrightarrow$</td>
+<td>$α_{k}=\arg \min _{a\geq 0}f\left(\boldsymbol {x}^{(k)}+α\boldsymbol {p}^{(k)}\right)$</td>
+</tr></table>
+4. $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {p}^{(k)}$ 
+5. $\boldsymbol {g}^{(k+1)}=\nabla f\left(\boldsymbol {x}^{(k+1)}\right)$ .如果 $\boldsymbol {g}^{(k+1)}=\mathbf {0},$ 停止.
+6. $\beta _{k}=\frac {\boldsymbol {g}^{(k+1)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}{\boldsymbol {p}^{(k)\top }\boldsymbol {Q}\boldsymbol {p}^{(k)}}.longrightarrow$  HS/PR/FR formula
+7. $\boldsymbol {p}^{(k+1)}=-\boldsymbol {g}^{(k+1)}+\beta _{k}\boldsymbol {p}^{(k)}$ 
+8．令 $k=k+1$ ，并转到step 3．
+对于非线性共轭梯度法，搜索方向的共轭性和正交性全部都消失[why?]
+![](https://web-api.textin.com/ocr_image/external/a3a6fd9c12e65392.jpg)
+非线性共轭梯度法不再具有有限步终止.通常需要进行restrat来获得近似解.
+![](https://web-api.textin.com/ocr_image/external/89a02fd8e8c9dcb3.jpg)
+第10章 共轭方向法
+21/22
+##### 非线性共轭梯度法
+![](https://web-api.textin.com/ocr_image/external/07fb137429a127cd.jpg)
+共轭梯度法与Krylov 子空间法密切相关.Krylov子空间法（最早由Hestenes，Stiefel和Lanczos提出），是20世纪科学计算领域最有影响力的十大算法之一．
+###### ②共轭梯度法的特点.
+❶对n维二次函数而言，共轭梯度法在n步以内可以得到其极小点.
+共轭梯度法不需要计算／存储海塞矩阵.
+共轭梯度法每次迭代的计算量较小，不涉及矩阵的求逆运算.
+###### 从计算效率上看，共轭梯度法的计算量介于梯度类方法和牛顿法之间.因此，共轭梯度法常用于求解大规模的优化问题.
+作业 课后题：10.4,10.10． 注：10.4(b）应该修改为： Q是正定矩阵， $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 是正交向量组.若 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 是Q-共轭的，则 $\left\{\boldsymbol {p}^{(1)},\cdots ,\boldsymbol {p}^{(n)}\right\}$ 是矩阵Q的特征向量.
+![](https://web-api.textin.com/ocr_image/external/5215270c16f374a5.jpg)
+![](https://web-api.textin.com/ocr_image/external/00a24a9886a1892f.jpg)

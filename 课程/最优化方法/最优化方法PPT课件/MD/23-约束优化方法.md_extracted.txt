@@ -1,0 +1,408 @@
+# 23-约束优化方法
+
+---
+title: 第23章 约束优化的数值算法
+subject: 最优化方法
+source: 无动画Chapter23.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 23
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第23章 约束优化的数值算法
+## 1．投影类方法
+2．拉格朗日函数法
+3．罚函数法
+## 4．增广拉格朗日函数法
+![](https://web-api.textin.com/ocr_image/external/4c3f3f58157da522.jpg)
+2
+第23章约束优化的数值算法
+1/32
+### 投影
+### 约束优化问题： $\min _{\boldsymbol {x}\in Ω}f(\boldsymbol {x})$ 
+。目标函数 $f:\mathbb {R}^{n}\rightarrow$ R是多元函数.
+。决策变量 $\boldsymbol {x}\in Ω\subset \mathbb {R}^{n}$ 是n维向量.
+![](https://web-api.textin.com/ocr_image/external/5f019f5855772518.jpg)
+★求解无约束优化问题的线搜索 $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {d}^{(k)}$ ，不能直接用于求解约束优化问题.
+## 定义（投影）
+设 $Ω\subset \mathbb {R}^{n}$ 是非空闭凸集.任意向量 $\boldsymbol {x}\in \mathbb {R}^{n}$ 在Ω上的投影定义为 $\pi _{Ω}[\boldsymbol {x}]:=\arg \min \{\|\boldsymbol {z}-\boldsymbol {x}\||\boldsymbol {z}\in Ω\}$ 
+![](https://web-api.textin.com/ocr_image/external/c6281da94c4c408c.jpg)
+### 投影的性质
+·若Ω是非空闭凸集，则投影存在且唯一.
+· $\boldsymbol {x}^{*}$ 是x在Ω上的投影合 $\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)^{\top }\left(\boldsymbol {z}-\boldsymbol {x}^{*}\right)\leq 0,\forall \boldsymbol {z}\in Ω$ $"="$ 成立Ω是仿射集.
+·投影是非扩张的，即 $\left\|\pi _{Ω}[\boldsymbol {x}]-\pi _{Ω}[\boldsymbol {y}]\right\|\leq \|\boldsymbol {x}-\boldsymbol {y}\|,\forall \boldsymbol {x},\boldsymbol {y}\in \mathbb {R}^{n}$ 
+第23章约束优化的数值算法
+# 投影方法
+## 求解 $\min \{f(\boldsymbol {x})|\boldsymbol {x}\in Ω\}$  的投影梯度法
+（回顾）无约束优化的线搜索： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {d}^{(k)}$ 
+。投影方法： $\boldsymbol {x}^{(k+1)}=\pi \left[\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {d}^{(k)}\right]$ 
+。投影梯度法： $\boldsymbol {x}^{(k+1)}=\pi \left[\boldsymbol {x}^{(k)}-α_{k}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right].$ 
+## 特殊集合上的“投影”
+若 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {a}\leq \boldsymbol {x}\leq \boldsymbol {b}\right\}$ 是“盒子”约束，其中 $\boldsymbol {a}\in \mathbb {R}^{n},\boldsymbol {b}\in \mathbb {R}^{n}$ ，则 $\left[\pi _{Ω}(\boldsymbol {x})\right]_{i}=\text {median}\left\{a_{i},x_{i},b_{i}\right\},i=1,2,\cdots ,n.$ 
+若 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\|\boldsymbol {x}\|_{2}\leq \boldsymbol {a}\right\}$ 是“球”约束，其中 $\boldsymbol {a}>0$ ，则 $\pi _{Ω}(\boldsymbol {x})=\min \left(1,\frac {\boldsymbol {a}}{\|\boldsymbol {x}\|_{2}}\right)\boldsymbol {x}.$ 
+![](https://web-api.textin.com/ocr_image/external/d2334fc9e0b5f577.jpg)
+若 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}\right\}$ 是仿射集，其中 $\boldsymbol {A}\in \mathbb {R}^{mxn},$ $\boldsymbol {b}\in \mathbb {R}^{m}$ ，则 $\pi _{Ω}(\boldsymbol {x})=\boldsymbol {x}-\boldsymbol {A}^{\dagger }(\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b})$ ，其中 $\boldsymbol {A}^{\dagger }$ 是矩阵A的Moore-Penrose广义逆. 特别地，若 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {a}^{\top }\boldsymbol {x}=\boldsymbol {b},\boldsymbol {a}\neq 0\in \mathbb {R}^{n}\right\}$ 是非垂直超平面，则 $\pi _{Ω}(\boldsymbol {x})=\boldsymbol {x}-\frac {\boldsymbol {a}^{\top }\boldsymbol {x}-\boldsymbol {b}}{\|\boldsymbol {a}\|_{2}^{2}}\boldsymbol {a}.$ 
+16
+![](https://web-api.textin.com/ocr_image/external/be142131f0ecab08.jpg)
+3/32
+更多关于投影的计算，见Bauschke,H.H.,Combettes, P.L.: Convex Analysis and Monotone Operator Theory in Hilbert Spaces.Springer,2006．
+# 投影梯度法
+例.min $\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}\text {,s.t.}$ $\|\boldsymbol {x}\|^{2}=1$  其中 $\boldsymbol {Q}=\boldsymbol {Q}^{\top }\succ 0$ 
+![](https://web-api.textin.com/ocr_image/external/cff019fa1cbf03c2.jpg)
+写出投影梯度法求解上述优化问题的迭代格式.
+分析上述迭代格式是否收敛？
+证明当 $0<α<\frac {1}{λ_{\max }}$ （其中 $λ_{\max }$ 是矩阵Q的最大特征值）时，迭代格式收敛到问题的极小点的条件为：初始点 $\boldsymbol {x}^{(0)}$ 不正交与矩阵Q最小特征值所对应的特征向量.
+![](https://web-api.textin.com/ocr_image/external/836edc563af656b6.jpg)
+$\boldsymbol {x}^{(k+1)}=\beta _{k}\left(\boldsymbol {x}^{(k)}-α\boldsymbol {Q}\boldsymbol {x}^{(k)}\right)=\beta _{k}(\boldsymbol {I}-α\boldsymbol {Q})\boldsymbol {x}^{(k)}$ ，其中 $\beta _{k}=\frac {1}{\left\|(\boldsymbol {I}-α\boldsymbol {Q})\boldsymbol {x}^{(k)}\right\|}$ 
+若初始点 $\boldsymbol {x}^{(0)}$ 是矩阵Q的单位特征向量，易证 $\boldsymbol {x}^{(k)}=\boldsymbol {x}^{(0)},\forall k$ ，即迭代格式不收敛.
+设 $\left\{\boldsymbol {v}_{i}\right\}_{i=1}^{n}$ 是线性无关特征向量， $\left\{λ_{i}(\boldsymbol {Q})\right\}_{i=1}^{n}$  是相应的特征值.则 $\left\{\boldsymbol {v}_{i}\right\}_{i=1}^{n}$ 是 $\mathbb {R}^{n}$  的一组基.因此，
+$$\boldsymbol {x}^{(k)}=y_{1}^{(k)}\boldsymbol {v}_{1}+\cdots +y_{n}^{(k)}\boldsymbol {v}_{n},$$
+$$\boldsymbol {x}^{(k+1)}=y_{1}^{(k+1)}\boldsymbol {v}_{1}+\cdots +y_{n}^{(k+1)}\boldsymbol {v}_{n}$$
+![](https://web-api.textin.com/ocr_image/external/189ce1f7ee1804bf.jpg)
+### 投影梯度法
+由❶中的迭代格式知
+$$\boldsymbol {x}^{(k+1)}=\beta _{k}(\boldsymbol {I}-α\boldsymbol {Q})\boldsymbol {x}^{(k)}=\beta _{k}(\boldsymbol {I}-α\boldsymbol {Q})\left(y_{1}^{(k)}\boldsymbol {v}_{1}+\cdots +y_{n}^{(k)}\boldsymbol {v}_{n}\right)$$
+$$=\beta _{k}\left(y_{1}^{(k)}(\boldsymbol {I}-α\boldsymbol {Q})\boldsymbol {v}_{1}+\cdots +y_{n}^{(k)}(\boldsymbol {I}-α\boldsymbol {Q})\boldsymbol {v}_{n}\right)$$
+$$=\beta _{k}\left(y_{1}^{(k)}\left(1-αλ_{1}\right)\boldsymbol {v}_{1}+\cdots +y_{n}^{(k)}\left(1-αλ_{n}\right)\boldsymbol {v}_{n}\right)$$
+与（2）作比较，得 $y_{i}^{(k+1)}=\beta _{k}y_{i}^{(k)}\left(1-αλ_{i}\right)$ 
+$$\therefore y_{i}^{(k)}=\left(\pi _{i=0}^{k-1}\beta _{k}\right)y_{i}^{(0)}\left(1-αλ_{i}\right)^{k}.$$
+由（1）得 $\boldsymbol {x}^{(k)}=\sum _{i=1}^{n}y_{i}^{(k)}\boldsymbol {v}_{i}=y_{1}^{(k)}\left(\boldsymbol {v}_{1}+\sum _{i=2}^{n}\frac {y_{i}^{(k)}}{y_{1}^{(k)}}\boldsymbol {v}_{i}\right)$ 
+假设 $y_{1}^{(0)}\neq 0$ ，我们有 $\frac {y_{i}^{(k)}}{y_{1}^{(k)}}=\frac {y_{i}^{(0)}\left(1-αλ_{i}\right)^{k}}{y_{1}^{(0)}\left(1-αλ_{1}\right)^{k}}=\frac {y_{i}^{(0)}}{y_{1}^{(0)}}\left(\frac {1-αλ_{i}}{1-αλ_{1}}\right)^{k}$ 
+由不等式 $\frac {1-αλ_{i}}{1-αλ_{1}}<1$ ，我们有 $\frac {y_{i}^{(k)}}{y_{1}^{(k)}}\rightarrow 0$ 
+这表明 $\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {v}_{1}$ 
+### 投影梯度法
+### 线性等式约束优化：min $f(x)$ ,s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}$ 
+$f:\mathbb {R}^{n}\rightarrow$ R是多元函数.
+。 $\boldsymbol {x}\in \mathbb {R}^{n}$ 是决策变量.
+矩阵 $\boldsymbol {A}\in \mathbb {R}^{mxn}(m<n)$ $,rank(A)=m,$ ，向量 $\boldsymbol {b}\in \mathbb {R}^{m}$ 
+### Lemma
+设 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}\right\}$ .集合Ω上的投影可由正交矩阵P表示，即
+$$\pi _{Ω}=\boldsymbol {P}=\boldsymbol {I}_{n}-\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}.\tag{3}$$
+证.（提示）利用约束优化问题的KKT条件即可.
+#### 投影梯度法
+#### 引理
+对于（3）中的投影矩阵，有 $\mathcal {N}(\boldsymbol {P})=\mathcal {R}\left(\boldsymbol {A}^{\top }\right),\mathcal {N}(\boldsymbol {A})=\mathcal {R}(\boldsymbol {P})$ 
+证. $($ 任意 $\boldsymbol {v}\in \mathcal {N}(\boldsymbol {P})$  我们有
+$$0=\boldsymbol {P}\boldsymbol {v}=\left(\boldsymbol {I}_{n}-\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}\right)\boldsymbol {v}=\boldsymbol {v}-\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}\boldsymbol {v}$$
+$\therefore \boldsymbol {v}=\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}\boldsymbol {v}$ .因此， $\boldsymbol {v}\in \mathcal {R}\left(\boldsymbol {A}^{\top }\right).$ 
+$\leftarrow )$ 任意 $\boldsymbol {v}\in \mathcal {R}\left(\boldsymbol {A}^{\top }\right)$ ，则 $\exists \boldsymbol {u}\in \mathbb {R}^{m}$ 使得 $\boldsymbol {v}=\boldsymbol {A}^{\top }\boldsymbol {u}$ 
+$$\boldsymbol {P}\boldsymbol {v}=\left(\boldsymbol {I}_{n}-\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}\right)\boldsymbol {A}^{\top }\boldsymbol {u}\quad =\boldsymbol {A}^{\top }\boldsymbol {u}-\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {A}\boldsymbol {A}^{\top }\boldsymbol {u}=0.$$
+因此，我们有 $\mathcal {N}(\boldsymbol {P})=\mathcal {R}\left(\boldsymbol {A}^{\top }\right)$ 
+同理，可以证明 $\mathcal {N}(\boldsymbol {A})=\mathcal {R}(\boldsymbol {P})$ 
+#### 投影梯度法
+回顾：无约束优化问题 $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}$ $f(\boldsymbol {x})$ ，点 $\boldsymbol {x}^{*}$ 是局部极小点的一阶必要条件为 $Longrightarrow\nabla f\left(\boldsymbol {x}^{*}\right)=0.$ 
+#### 定理
+线性等式约束优化问题minæeΩ f(x），其中 $Ω=\{\boldsymbol {x}|\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}\}$ ，则点 $\boldsymbol {x}^{*}$  是局部极小点的一阶必要条件为 $Longrightarrow\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{*}\right)=0.$ 
+证. $\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{*}\right)=0,$ 
+$Longleftrightarrow\nabla f\left(\boldsymbol {x}^{*}\right)\in \mathcal {N}(\boldsymbol {P})$  ［由 $\mathcal {N}(\boldsymbol {P})$ 的定义］
+$Longleftrightarrow\nabla f\left(\boldsymbol {x}^{*}\right)\in \mathcal {R}\left(\boldsymbol {A}^{\top }\right)$  ［由上述引理］
+$\exists \boldsymbol {λ}^{*}\in \mathbb {R}^{m}$ ，使得 $\nabla f\left(\boldsymbol {x}^{*}\right)+\boldsymbol {A}^{\top }\boldsymbol {λ}^{*}=0,$ 
+联系 $\boldsymbol {x}^{*}\in Ω=\{\boldsymbol {x}|\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}\}$ 
+我们得出线性等式约束的KKT条件 $\left\{\begin{array}{l}\nabla f\left(\boldsymbol {x}^{*}\right)+\boldsymbol {A}^{\top }\boldsymbol {λ}^{*}=0,\\ \boldsymbol {A}^{\top }\boldsymbol {x}^{*}=\boldsymbol {b}.\end{array}\right.$ 
+#### 投影梯度法
+#### 投影梯度法求解线性等式约束优化问题
+优化问题 $\min \{f(\boldsymbol {x})|\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}\}$ ，投影梯度法的迭代格式为
+$$\boldsymbol {x}^{(k+1)}=\pi \left[\boldsymbol {x}^{(k)}-α_{k}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right]\stackrel {\text {why?}}{=}\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right).$$
+#### 定理
+若初始点 $\boldsymbol {x}^{(0)}$ 是可行点，则投影梯度法的迭代点总是可行点 $\boldsymbol {x}^{(k)}$ ，即 $\boldsymbol {A}\boldsymbol {x}^{(k)}=\boldsymbol {b},\forall k\geq 0.$ 
+证.（数学归纳法）.
+·显然，结论在 $k=0$ 时成立.
+·假设 $\boldsymbol {A}\boldsymbol {x}^{(k)}=\boldsymbol {b}.$  $\boldsymbol {A}\boldsymbol {x}^{(k+1)}=\boldsymbol {b}$ $\begin{array}{l}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\in \mathcal {R}(\boldsymbol {P})\stackrel {\text {由引理}}{Longrightarrow}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\in \mathcal {N}(\boldsymbol {A}).\\ \boldsymbol {A}\boldsymbol {x}^{(k+1)}=\boldsymbol {A}\left(\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right)\end{array}$ 
+$.$ 
+$$=\boldsymbol {A}\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {A}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)$$
+$=b.$  （why？解： $\left.\boldsymbol {A}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)=0\right)$ 
+e
+![](https://web-api.textin.com/ocr_image/external/5411bb76c17ef42b.jpg)
+第23章 约束优化的数值算法
+9/32
+#### 投影梯度法-线性等式约束优化
+# 定理
+设 $\left\{\boldsymbol {x}^{(k)}\right\}$ 是投影梯度法产生的序列，若 $\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\neq \mathbf {0}$ ，则 $f\left(\boldsymbol {x}^{(k+1)}\right)<f\left(\boldsymbol {x}^{(k)}\right)$ 
+证. $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)$ ，其中 $α_{k}>0$ 是精确步长.
+记 $φ_{k}(α):=f\left(\boldsymbol {x}^{(k)}-α\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right)$ 
+则 $φ_{k}\left(α_{k}\right)\leq φ_{k}(α)$ $\forall α>0.$ 
+由复合函数的链式法则，
+$$φ_{k}^{\prime }(0)=-\nabla f\left(\boldsymbol {x}^{(k)}-0\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right)^{\top }\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)$$
+$$=-\nabla f\left(\boldsymbol {x}^{(k)}\right)^{\top }\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)$$
+$$=-\left\|\boldsymbol {P}\nabla f\left(\boldsymbol {x}^{(k)}\right)\right\|^{2}<0.\quad \left[\because \boldsymbol {P}=\boldsymbol {P}^{2}=\boldsymbol {P}^{\top }\boldsymbol {P}\right]$$
+$\therefore \exists \bar {α}>0$ 使得 $φ_{k}(0)>φ_{k}(α),\forall α\in (0,\bar {α}].$ 
+$$\therefore f\left(\boldsymbol {x}^{(k+1)}\right)=φ_{k}\left(α_{k}\right)\leq φ_{k}(\bar {α})<φ_{k}(0)=f\left(\boldsymbol {x}^{(k)}\right)$$
+e
+# 投影梯度法-线性规划
+线性规划（LP） min $\boldsymbol {c}^{\top }\boldsymbol {x}$  s.t. $\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b},$ 、其中 $\boldsymbol {A}\in \mathbb {R}^{mxn},\boldsymbol {b}\in \mathbb {R}^{m},\boldsymbol {c}\in \mathbb {R}^{n}.$ 
+## Lemma
+设线性规划（LP）的极小点集非空，则对任意 $\boldsymbol {x}_{0}\in \mathbb {R}^{n}$ ，存在 $\varepsilon _{0}>0$ 使得对任意 $\varepsilon \in \left(0,\varepsilon _{0}\right]$ 
+<table border="1" ><tr>
+<td>$(\mathrm {LP})Longleftrightarrow\min \frac {\varepsilon }{2}\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|^{2}+\boldsymbol {c}^{\top }\boldsymbol {x},\text {s.t.}\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b}.$<img src="https://web-api.textin.com/ocr_image/external/c928cfaa2c94391e.jpg"></td>
+<td></td>
+</tr></table>
+证.用不等式约束优化问题的KKT条件即可.
+第23章约束优化的数值算法
+11/32
+# 投影梯度法-线性规划
+# 讨论
+$\min \boldsymbol {c}^{\top }\boldsymbol {x}\text {,s.t.}\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b}$ ↓ $\min \frac {\varepsilon }{2}\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|^{2}+\boldsymbol {c}^{\top }\boldsymbol {x}$ s.t. $\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b}.$ ↓ $\min \frac {\varepsilon }{2}\left\|\boldsymbol {x}-\left(\boldsymbol {x}_{0}-\frac {\boldsymbol {c}}{\varepsilon }\right)\right\|^{2}$ s.t. $\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b}$ ↓ $\left(\boldsymbol {x}_{0}-\frac {\boldsymbol {c}}{\varepsilon }\right)$ 在约束集 $Ω=\{\boldsymbol {x}|\boldsymbol {A}\boldsymbol {x}\geq \boldsymbol {b}\}$ 上的投影.
+![](https://web-api.textin.com/ocr_image/external/b03c522c998356db.jpg)
+$-\frac {c}{\varepsilon }$ $\boldsymbol {x}^{*}$ $x_{0}$ Ω
+![](https://web-api.textin.com/ocr_image/external/848d16163c4586b6.jpg)
+![](https://web-api.textin.com/ocr_image/external/6e50fccc4dfe1423.jpg)
+给定初始点 $\boldsymbol {x}_{0}$ ，只要投影梯度法的步长足够大，线性规划的极值点可以一步迭代实现（Mangasarian,1979)．
+![](https://web-api.textin.com/ocr_image/external/7c1a88c407a86158.jpg)
+## 拉格朗日乘子法-等式约束优化问题
+# 方法思路
+借助梯度类方法分别求解决策变量和拉格朗日乘子的极小和极大点，即梯度类方法获取拉格朗日函数的鞍点.
+## 等式约束优化问题
+<table border="1" ><tr>
+<td>$min$ $f(\boldsymbol {x})$ s.t.  $\boldsymbol {h}(\boldsymbol {x})=0,$ 其中 $\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}.$</td>
+</tr></table>
+(4)
+上述优化问题的拉格朗日函数 $l(\boldsymbol {x},\boldsymbol {λ})=f(\boldsymbol {x})+\boldsymbol {λ}^{\top }\boldsymbol {h}(\boldsymbol {x})$ 
+拉格朗日乘子法求解（4）的迭代格式
+$$\left\{\begin{array}{l}\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\nabla _{\boldsymbol {x}}l\left(\boldsymbol {x}^{(k)},\boldsymbol {λ}^{(k)}\right)=\boldsymbol {x}^{(k)}-α_{k}\left(\nabla f\left(\boldsymbol {x}^{(k)}\right)+\boldsymbol {D}\boldsymbol {h}\left(\boldsymbol {x}^{(k)}\right)^{\top }\boldsymbol {λ}^{(k)}\right),\\ \boldsymbol {λ}^{(k+1)}=\boldsymbol {λ}^{(k)}+\beta _{k}\nabla _{\boldsymbol {λ}}l\left(\boldsymbol {x}^{(k)},\boldsymbol {λ}^{(k)}\right)=\boldsymbol {λ}^{(k)}+\beta _{k}\boldsymbol {h}\left(\boldsymbol {x}^{(k)}\right).\end{array}\right.$$
+(5)
+![](https://web-api.textin.com/ocr_image/external/fd9a28ab6d5eb55f.jpg)
+$\boldsymbol {x}^{(k)}$  本质上是用梯度下降法求解拉格朗日函数关于x的极小点； $\boldsymbol {λ}^{(k)}$ 本质上是用梯度上升法求解拉格朗日函数关于入的极大点.
+![](https://web-api.textin.com/ocr_image/external/40a986896aca1237.jpg)
+第23章约束优化的数值算法
+13/32
+## 拉格朗日乘子法-等式约束优化问题
+### 引理
+拉格朗日乘子法的迭代格式（5)，产生的序列 $\left\{\boldsymbol {x}^{(k)},\boldsymbol {λ}^{(k)}\right\}$ 有不动点 $\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ $企$ $\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ 满足拉格朗日条件.
+### 定理
+拉格朗日乘子法的迭代格式（5)，若步长 $α_{k}$ 和 $\beta _{k}$ 充分小，初始点 $\left(\boldsymbol {x}^{(0)},\boldsymbol {λ}^{(0)}\right)$ 取自 $\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ 的小邻域中，则方法至少以线性收敛率收敛到 $\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ （证：利用压缩不动点理论.）
+![](https://web-api.textin.com/ocr_image/external/677a37d967794105.jpg)
+第23章约束优化的数值算法
+14/32
+## 拉格朗日乘子法-不等式约束优化问题
+# 不等式约束优化问题
+<table border="1" ><tr>
+<td>$minf(x)$ s.t. $\boldsymbol {g}(\boldsymbol {x})\leq 0$ 其中$\boldsymbol {g}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{p}.$</td>
+</tr></table>
+(6)
+上述优化问题的拉格朗日函数为： $l(\boldsymbol {x},\boldsymbol {μ})=f(\boldsymbol {x})+\boldsymbol {μ}^{\top }\boldsymbol {g}(\boldsymbol {x})$ $,μ\geq 0.$ 求解上述优化问题的拉格朗日乘子法的迭代格式：
+$$\left\{\begin{matrix}\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\alpha _{k}(\nabla f(\boldsymbol {x}^{(k)})+\boldsymbol {D}\boldsymbol {g}(\boldsymbol {x}^{(k)})^{\top }\boldsymbol {\mu }^{(k)}),\\ \boldsymbol {\mu }^{(k+1)}=[\boldsymbol {\mu }^{(k)}+\beta _{k}\boldsymbol {g}(\boldsymbol {x}^{(k)})]_{+},\quad \text {其中}[\cdot ]_{+}=\max \end{matrix}\right.\quad [·]_{+}=\max \{·,0\}\tag{7}$$
+![](https://web-api.textin.com/ocr_image/external/fd32ef860fb82e5a.jpg)
+$\boldsymbol {x}^{(k)}$ 本质上是用梯度下降法求解拉格朗日函数关于x的极小点；
+$\boldsymbol {μ}^{(k)}$  本质上是用投影梯度法求解拉格朗日函数关于 $μ$ 的极大点.
+e
+## 拉格朗日乘子法-不等式约束优化问题
+# Lemma
+拉格朗日乘子法的迭代格式(7), $\left(\boldsymbol {x}^{*},\boldsymbol {μ}^{*}\right)$ 是不动点 $企$ $\left(\boldsymbol {x}^{*},\boldsymbol {μ}^{*}\right)$ 满足KKT条件.
+## 定理
+若拉格朗日乘子法的迭代格式（7）中的步长 $α_{k}$ 和 $\beta _{k}$ 充分小，初始点 $\left(\boldsymbol {x}^{(0)},\boldsymbol {μ}^{(0)}\right)$ 取自不动点 $\left(\boldsymbol {x}^{*},\boldsymbol {μ}^{*}\right)$ 的小邻域，则
+![](https://web-api.textin.com/ocr_image/external/2c98653be0275542.jpg)
+非积极约束所对应的乘子有限步迭代到0，且随后一直保持为 $0;$ 
+![](https://web-api.textin.com/ocr_image/external/13b4f2454c05c7c9.jpg)
+迭代格式至少以线性速率收敛到 $\left(\boldsymbol {x}^{*},\boldsymbol {μ}^{*}\right)$ 
+证.利用压缩不动点理论和非扩张理论等.
+![](https://web-api.textin.com/ocr_image/external/dd91a3fb57615e40.jpg)
+![](https://web-api.textin.com/ocr_image/external/781ccc49aa8df022.jpg)
+第23章 约束优化的数值算法
+16/32
+# 罚函数法
+## 思路
+通过求解一系列的无约束优化问题来获得约束优化问题的极值点.
+### 定义（指示函数（indicator function)）
+设 $Ω\subset \mathbb {R}^{n}$ 是非空集合，其指示函数定义为 $ι_{Ω}(\boldsymbol {x}):=\left\{\begin{array}{l}0,\\ +\infty ,\end{array}\right.$  若 $\boldsymbol {x}\in Ω.$ 其它.
+约束优化问题：min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {x}\in Ω.$
+![](https://web-api.textin.com/ocr_image/external/846a5ebe6dc70d87.jpg)
+由指示函数的定义 $ι_{Ω}$ 
+无约束优化问题：min $f(\boldsymbol {x})+ι_{Ω}(\boldsymbol {x}).$
+![](https://web-api.textin.com/ocr_image/external/baf3e628779da3e2.jpg)
+↓用下书优化问题逼近
+<table border="1" ><tr>
+<td>无约束优化问题：min  $f(\boldsymbol {x})+γ\boldsymbol {P}(\boldsymbol {x})$其中$γ>0$是常数；$P:$ $\mathbb {R}^{n}\rightarrow$R 是给定的函数.</td>
+</tr></table>
+μ(x) μ-1 $μ=1$ $μ=0.1$ - $a&lt;x&lt;b$ $μ=0.01$ -
+![](https://web-api.textin.com/ocr_image/external/edb7933112aeab46.jpg)
+## 罚函数法
+<table border="1" ><tr>
+<td>(I)  $f(x),$min<br>$\boldsymbol {x}\in Ω.$s.t.</td>
+</tr></table>
+2
+<table border="1" ><tr>
+<td>min $f(\boldsymbol {x})+γ\boldsymbol {P}(\boldsymbol {x})$（II）其中$γ>0$是常数；<br>P:$\mathbb {R}^{n}\rightarrow$ $R$是给定函数.</td>
+</tr></table>
+![](https://web-api.textin.com/ocr_image/external/d0c300ac432b5144.jpg)
+γ称为罚参数，P称为罚函数.
+## 定义（罚函数）
+罚函数P： $\mathbb {R}^{n}\mapsto$ R的要求有3条：
+P是连续函数.
+![](https://web-api.textin.com/ocr_image/external/95fa0e81087b1274.jpg)
+$\boldsymbol {P}(\boldsymbol {x})\geq 0$ $\forall \boldsymbol {x}\in \mathbb {R}^{n}$ 
+![](https://web-api.textin.com/ocr_image/external/54a9f07a9603b358.jpg)
+![](https://web-api.textin.com/ocr_image/external/6139598e63e73549.jpg)
+$\boldsymbol {P}(\boldsymbol {x})=0$ $企$ x是原约束优化问题的可行点（即 $\boldsymbol {x}\in Ω).$ 
+![](https://web-api.textin.com/ocr_image/external/e32eed981b6b68a2.jpg)
+★无约束优化问题（II）逼近约束优化问题（I）的精度依赖于罚参数γ和罚函数P的选取.
+![](https://web-api.textin.com/ocr_image/external/3686292d1f09edff.jpg)
+罚参数γ越大，逼近程度越好.理想情况下，当 $γ\rightarrow +\infty$ 时，无约束优化问题（II）可以达到与约束优化问题（I）相同的极值点.
+![](https://web-api.textin.com/ocr_image/external/b0f06d94b4fdda32.jpg)
+![](https://web-api.textin.com/ocr_image/external/11fb286e7aca3b3a.jpg)
+# 罚函数法
+## 给定h:Rn→ $\mathbb {R}^{p},\boldsymbol {g}$  Rn→ $\mathbb {R}^{m}$ 
+约束优化问题：min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {h}(\boldsymbol {x})=0,\boldsymbol {g}(\boldsymbol {x})\leq 0.$ 
+$$\min f(\boldsymbol {x})+γ\left(\sum _{i=1}^{p}\left|\boldsymbol {h}_{i}(\boldsymbol {x})\right|+\sum _{i=1}^{m}\left|\boldsymbol {g}_{i}^{+}(\boldsymbol {x})\right|\right)$$
+## 精确罚函数：其中 $\boldsymbol {g}_{i}^{+}(\boldsymbol {x})=\max \left\{0,\boldsymbol {g}_{i}(\boldsymbol {x})\right\}=\left\{\begin{array}{ll}0,&\boldsymbol {g}_{i}(\boldsymbol {x})\leq 0\\ \boldsymbol {g}_{i}(\boldsymbol {x}),&\boldsymbol {g}_{i}(\boldsymbol {x})>0\end{array}\right.$ 
+。二次罚函数： $\min f(\boldsymbol {x})+γ\left(\sum _{i=1}^{p}\left|\boldsymbol {h}_{i}(\boldsymbol {x})\right|^{2}+\sum _{i=1}^{m}\left|\boldsymbol {g}_{i}^{+}(\boldsymbol {x})\right|^{2}\right)$ 
+## 广义罚函数：
+min $f(\boldsymbol {x})+\boldsymbol {P}(\boldsymbol {x})=f(\boldsymbol {x})+γ\left(\|\boldsymbol {h}(\boldsymbol {x})\|_{b}^{a}+\left\|[\boldsymbol {g}(\boldsymbol {x})]^{+}\right\|_{b}^{a}\right)$  $a>0,b>0.$ 
+![](https://web-api.textin.com/ocr_image/external/bba67916fb3edb84.jpg)
+精确罚函数是不可微的无约束优化问题；二次罚函数通常是可微的优化问题.
+![](https://web-api.textin.com/ocr_image/external/b9f39914600ca38e.jpg)
+# 罚函数法的应用
+## 例.约束集 $Ω=\left\{x\in \mathbb {R}|g_{1}(x)=x-2\leq 0,g_{2}(x)=-(x+1)^{3}\leq 0\right\}$ 
+解：事实上， $Ω=[-1,2].$ 
+$$g_{1}^{+}(x)=\max \left\{0,g_{1}(x)\right\}=\left\{\begin{array}{ll}0,&\text {if}x\leq 2\\ x-2,&\text {otherwise.}\end{array}\right.$$
+$g_{2}^{+}(x)=\max \left\{0,g_{2}(x)\right\}=\left\{\begin{array}{l}0,\\ -(x+1)^{3}\end{array}\right.$  F $x\geq -1$ otherwise.
+因此，精确罚函数的罚项为
+$$P(x)=g_{1}^{+}(x)+g_{2}^{+}(x)=\left\{\begin{array}{ll}x-2,&\text {if}x>2\\ 0,&\text {if}-1\leq x\leq 2\\ -(x+1)^{3},&\text {if}x<-1\end{array}\right.$$
+![](https://web-api.textin.com/ocr_image/external/f0cf1d05f2d687bc.jpg)
+第23章约束优化的数值算法
+# 罚函数法的应用
+## 例.用二次罚函数求解优化问题
+min $f(\boldsymbol {x})=-x_{1}x_{2},$  s.t. $g(\boldsymbol {x})=x_{1}+2x_{2}-4=0$ 
+解：约束优化问题所对应的二次罚函数为
+$$\min _{\boldsymbol {x}}q(\boldsymbol {x})=-x_{1}x_{2}+\frac {1}{2}γ\left(x_{1}+2x_{2}-4\right)^{2}\tag{8}$$
+将 $γ$ 视为参数，求解无约束优化问题（8）的极小点为
+$$\left\{\begin{array}{l}{-x_{2}+\gamma (x_{1}+2x_{2}-4)=0}\\
+{-x_{1}+2\gamma (x_{1}+2x_{2}-4)=0}\end{array}\Rightarrow \left\{\begin{array}{l}{x_{1}(\gamma )=\frac {8\gamma }{4\gamma -1}}\\
+{x_{2}(\gamma )=\frac {4\gamma }{4\gamma -1}}\end{array}\xrightarrow {\gamma \rightarrow +\infty }\left\{\begin{array}{l}x_{1}=2\\
+x_{2}=1\end{array}\right.\right.\right.$$
+进一步，通过对比（8）的最优性条件和原约束优化问题的KKT条件，得原优化问题的乘子（即对偶问题的解）为
+$$λ(γ)\stackrel {\text {why?}}{Longrightarrow}-γg(\boldsymbol {x}(γ))=\frac {-4γ}{4γ-1}\xrightarrow {γ\rightarrow +\infty }λ=-1.$$
+21/32
+### 罚函数法的应用
+**例.** $\min \boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}$  s.t. $\|\boldsymbol {x}\|^{2}=1,$  其中 $\boldsymbol {Q}=\boldsymbol {Q}^{\top }$ 
+![](https://web-api.textin.com/ocr_image/external/83a52dae590e9ab6.jpg)
+写出上述优化问题所对应的二次罚函数.
+证明二次罚函数的极小点 $\boldsymbol {x}_{γ}$ 是矩阵Q的特征向量.
+![](https://web-api.textin.com/ocr_image/external/eb57549e6784c4cb.jpg)
+证明二次罚函数的极小点满足原优化问题的可行性的速率为 $\left\|\boldsymbol {x}_{γ}\right\|^{2}-1=O(1/γ),γ\rightarrow +\infty .$ 
+解：二次罚函数：min $q(\boldsymbol {x})=\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+γ\left(\|\boldsymbol {x}\|^{2}-1\right)^{2}.$ 
+因为 $\boldsymbol {x}_{γ}$ 是二次罚函数 $q(\boldsymbol {x})$ 的极小点，由无约束优化问题的最优性条件得 $\nabla q\left(\boldsymbol {x}_{γ}\right)=0Longrightarrow2\boldsymbol {Q}\boldsymbol {x}_{γ}+4γ\left(\left\|\boldsymbol {x}_{γ}\right\|^{2}-1\right)\boldsymbol {x}_{γ}=0,$ 
+即 $\boldsymbol {Q}\boldsymbol {x}_{γ}=\underbrace {2γ\left(1-\left\|\boldsymbol {x}_{γ}\right\|^{2}\right)}_{=:λ_{γ}}\boldsymbol {x}_{γ}=:λ_{γ}\boldsymbol {x}_{γ}$ .所以 $\boldsymbol {x}_{γ}$ 是矩阵Q的特征向量.
+$$λ_{γ}=2γ\left(1-\left\|\boldsymbol {x}_{γ}\right\|^{2}\right)\leq λ_{\max },$$
+∴当 $γ\rightarrow \infty$ ，有 $\left\|\boldsymbol {x}_{γ}\right\|^{2}-1=-\frac {λ_{\max }}{2γ}=O\left(\frac {1}{γ}\right)$ 
+e
+# 罚函数法的应用
+## 例.用二次罚函数求解不等式约束的优化问题
+min $f(\boldsymbol {x})=x_{1}+x_{2}$  s.t $g_{1}(\boldsymbol {x})=-x_{1}^{2}+2x_{2}\geq 0,g_{2}(\boldsymbol {x})=x_{1}\geq 0.$ 
+解：二次罚函数为
+$$\min q(\boldsymbol {x})=f(\boldsymbol {x})+γ\left[\min \left(0,-x_{1}^{2}+x_{2}\right)\right]^{2}+γ\left[\min \left(0,x_{1}\right)\right]^{2}$$
+将 $γ$ 视为参数，由无约束优化的最优性条件得
+$$\left\{\begin{array}{l}1+2γ\left[\min \left(0,-x_{1}^{2}+x_{2}\right)\right]\left(-2x_{1}\right)+2γ\left[\min \left(0,x_{1}\right)\right]=0,\\ 1+2γ\left[\min \left(0,-x_{1}^{2}+x_{2}\right)\right]=0,\end{array}\right.$$
+$$\Rightarrow\left\{\begin{array}{l}{1+4\gamma x_{1}(x_{1}^{2}-x_{2})+2\gamma x_{1}=0}\\
+{1-2\gamma (x_{1}^{2}-x_{2})=0}\end{array}\quad \Rightarrow \left\{\begin{array}{l}x_{1}=-\frac{1}{2+2\gamma}\\
+x_{2}=\frac{1}{(2+2\gamma)^{2}}-\frac{1}{2\gamma}\end{array}\right.\right.$$
+$\xrightarrow {\gamma \rightarrow +\infty }\left\{\begin{array}{l}x_{1}=0\\ x_{2}=0\end{array}\right.$  （验证此解是否满足KKT条件）
+# （内点）罚函数法
+## 仅有不等式约束的优化问题
+min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {g}(\boldsymbol {x})\geq 0,$ 其中 $\boldsymbol {g}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 
+①对数罚函数： $\min q(\boldsymbol {x})=f(\boldsymbol {x})-\frac {1}{γ}\left(\sum _{i=1}^{m}\log \left(\boldsymbol {g}_{i}(\boldsymbol {x})\right)\right)$ 
+②倒数罚函数： $\min q(\boldsymbol {x})=f(\boldsymbol {x})-\frac {1}{γ}\left(\sum _{i=1}^{m}\frac {1}{\boldsymbol {g}_{i}(\boldsymbol {x})}\right)$ 
+### 例.用对数罚函数求解不等式约束优化问题
+min $f(\boldsymbol {x})=x_{1}-2x_{2},$  s.t. $1+x_{1}-x_{2}^{2}\geq 0$ $x_{2}\geq 0$ 
+解：对数罚函数为min $q(\boldsymbol {x})=f(\boldsymbol {x})-\frac {1}{γ}\left[\log \left(1+x_{1}-x_{2}^{2}\right)+\log \left(x_{2}\right)\right].$ 
+将 $γ$ 视为参数，由无约束优化问题的最优性条件得
+$$\left\{\begin{matrix}1-\frac {1}{\gamma (1+x_{1}-x_{2}^{2})}=0\\ -2+\frac {2x_{2}}{\gamma (1+x_{1}-x_{2}^{2})}-\frac {1}{\gamma x_{2}}=0\end{matrix}\right.\Rightarrow \left\{\begin{matrix}x_{1}(\gamma )=\frac {\sqrt {\gamma ^{2}+2\gamma }+3-\gamma }{2\gamma }\\ x_{2}(\gamma )=\frac {\gamma +\sqrt {\gamma ^{2}+2\gamma }}{2\gamma }\end{matrix}\right.\xrightarrow {\gamma \uparrow +\infty }\left\{\begin{matrix}x_{1}=0\\ x_{2}=\end{matrix}\right.$$
+![](https://web-api.textin.com/ocr_image/external/aeac8038395ea37f.jpg)
+第23章 约束优化的数值算法
+24/32
+# 罚函数法的理论分析
+## 定义
+设 $\left\{γ_{k}\right\}_{k=0}^{\infty }$ 为正的罚参数序列.罚项 $q\left(γ_{k},·\right):\mathbb {R}^{n}\rightarrow \mathbb {R}$ 定义为
+$$q\left(γ_{k},\boldsymbol {x}\right)=f(\boldsymbol {x})+γ_{k}P(\boldsymbol {x})\tag{9}$$
+![](https://web-api.textin.com/ocr_image/external/e1a313577a17f194.jpg)
+$γ_{k}$  是动态选取的罚参数.记 $\boldsymbol {x}^{(k)}=\arg$ min $\boldsymbol {x}\in \mathbb {R}^{n}$ $q\left(γ_{k},\boldsymbol {x}\right)$ 
+### 引理
+若 $\left\{γ_{k}\right\}$ 是正的且非减的序列，则
+$$q\left(γ_{k+1},\boldsymbol {x}^{(k+1)}\right)\geq q\left(γ_{k},\boldsymbol {x}^{(k)}\right)$$
+![](https://web-api.textin.com/ocr_image/external/eaab84ed5d1d9030.jpg)
+$$f\left(\boldsymbol {x}^{(k+1)}\right)\geq f\left(\boldsymbol {x}^{(k)}\right)$$
+$$P\left(\boldsymbol {x}^{(k+1)}\right)\leq P\left(\boldsymbol {x}^{(k)}\right)$$
+![](https://web-api.textin.com/ocr_image/external/353c6e6430161968.jpg)
+$$f\left(\boldsymbol {x}^{*}\right)\geq q\left(γ_{k},\boldsymbol {x}^{(k)}\right)\geq f\left(\boldsymbol {x}^{(k)}\right)$$
+![](https://web-api.textin.com/ocr_image/external/f83eb2241871c0fb.jpg)
+$\left\{γ_{k}\right\}$
+![](https://web-api.textin.com/ocr_image/external/737b840ccb685db6.jpg)
+由（9）中 $b$ 的定义，序列 的单调性和 $\boldsymbol {x}^{(k)}=\arg$ min $\boldsymbol {x}\in \mathbb {R}^{n}$ $q\left(γ_{k},\boldsymbol {x}\right)$ 的定义，我们有
+$$q\left(γ_{k+1},\boldsymbol {x}^{(k+1)}\right)=f\left(\boldsymbol {x}^{(k+1)}\right)+γ_{k+1}P\left(\boldsymbol {x}^{(k+1)}\right)\geq f\left(\boldsymbol {x}^{(k+1)}\right)+γ_{k}P\left(\boldsymbol {x}^{(k+1)}\right.$$
+$$\geq f\left(\boldsymbol {x}^{(k+1)}\right)+γ_{k}P\left(\boldsymbol {x}^{(k+1)}\right)=q\left(γ_{k},\boldsymbol {x}^{(k)}\right)$$
+![](https://web-api.textin.com/ocr_image/external/5bab7ce86298f14a.jpg)
+第23章约束优化的数值算法
+25/
+## 罚函数法的理论分析
+2 $..$ $\boldsymbol {x}^{(k)}=\arg$  i $q\left(γ_{k},\boldsymbol {x}\right)$ 和 $\boldsymbol {x}^{(k+1)}=\arg$ min $q\left(γ_{k+1},\boldsymbol {x}\right)$ .因此， $\left\{\begin{array}{l}q\left(\gamma_{k},\boldsymbol{x}^{(k)}\right)=f\left(\boldsymbol{x}^{(k)}\right)+\gamma_{k}P\left(\boldsymbol{x}^{(k)}\right)\leq f\left(\boldsymbol{x}^{(k+1)}\right)+\gamma_{k}P\left(\boldsymbol{x}^{(k+1)}\right)\\
+\left.q\left(\gamma_{k+1},\boldsymbol{x}^{(k+1)}\right)=f\left(\boldsymbol{x}^{(k+1)}\right)+\gamma_{k+1}P\left(\boldsymbol{x}^{(k+1)}\right)\leq f\boldsymbol{x}^{(k)}\right)+\gamma_{k+1}P\left(\boldsymbol{x}^{(k)}\right)\end{array}\right.$ 将上述两式相加得
+$$γ_{k}P\left(\boldsymbol {x}^{(k)}\right)+γ_{k+1}P\left(\boldsymbol {x}^{(k+1)}\right)\leq γ_{k+1}P\left(\boldsymbol {x}^{(k)}\right)+γ_{k}P\left(\boldsymbol {x}^{(k+1)}\right)$$
+经过移项，得 $P\left(\boldsymbol {x}^{(k+1)}\right)\leq P\left(\boldsymbol {x}^{(k)}\right)$ 
+由②得 $f\left(\boldsymbol {x}^{(k+1)}\right)\geq f\left(\boldsymbol {x}^{(k)}\right)$ 
+· $\boldsymbol {x}^{(k)}=\arg \min q\left(γ_{k},\boldsymbol {x}\right)$ $\therefore$ $\begin{array}{c}\boldsymbol {x}\cdots =\arg \min q(\gamma _{k},\boldsymbol {x})\\ q(\gamma _{k},\boldsymbol {x}^{(k)})=f(\boldsymbol {x}^{(k)})+\gamma _{k}P(\boldsymbol {x}^{(k)})\leq f(\boldsymbol {x}^{(k+1)})+\gamma _{k}P(\boldsymbol {x}^{(k+1)}).\\ f(\boldsymbol {x}^{(k+1)})>f(\boldsymbol {x}^{(k)})+\gamma _{L}(P(\boldsymbol {x}^{(k)})-P(\boldsymbol {x}^{(k+1)})).\end{array}$ 
+$\boldsymbol {x}^{(k)}=\arg$ min $q\left(γ_{k},\boldsymbol {x}\right)$ 
+$$f\left(\boldsymbol {x}^{*}\right)+γ_{k}P\left(\boldsymbol {x}^{*}\right)\geq q\left(γ_{k},\boldsymbol {x}^{(k)}\right)=f\left(\boldsymbol {x}^{(k)}\right)+γ_{k}P\left(\boldsymbol {x}^{(k)}\right)$$
+$\because x^{*}$  是约束优化问题的极小点，
+$P\left(x^{*}\right)=0$ 和 $f\left(\boldsymbol {x}^{*}\right)\geq f\left(\boldsymbol {x}^{(k)}\right)+γ_{k}P\left(\boldsymbol {x}^{(k)}\right)$ 
+$P\left(\boldsymbol {x}^{(k)}\right)\geq 0$ 和 $γ_{k}\geq 0$ 
+$$f\left(\boldsymbol {x}^{*}\right)\geq q\left(γ_{k},\boldsymbol {x}^{(k)}\right)\geq f\left(\boldsymbol {x}^{(k)}\right)$$
+## 罚函数法的理论分析
+### 定理
+假设 $f$ 是连续函数， $\lim _{k\rightarrow \infty }γ_{k}=\infty$ .则序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 的任意极限点均是约束优化问题的极小点.
+证：设 $\left\{\boldsymbol {x}^{\left(m_{k}\right)}\right\}$ 是序列 $\left\{\boldsymbol {x}^{(k)}\right\}$  的收敛子列，极限为 $\hat {\boldsymbol {x}}$ .
+由上述引理得， $\left\{q\left(γ_{k},\boldsymbol {x}^{(k)}\right)\right\}$ 是有界不减序列且有上界 $f\left(\boldsymbol {x}^{*}\right)$ 
+$\therefore \left\{q\left(γ_{k},\boldsymbol {x}^{(k)}\right)\right\}$ 有极限，即 $q^{*}=\lim _{k\rightarrow \infty }q\left(γ_{k},\boldsymbol {x}^{(k)}\right)$ 使得 $q^{*}\leq f\left(\boldsymbol {x}^{*}\right)$ 
+$\because f$ 是连续函数，且由上述引理知 $f\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)\leq f\left(\boldsymbol {x}^{*}\right)$ 
+$$\lim _{k\rightarrow \infty }f\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)=f\left(\lim _{k\rightarrow \infty }\boldsymbol {x}^{\left(m_{k}\right)}\right)=f(\hat {\boldsymbol {x}})\leq f\left(\boldsymbol {x}^{*}\right).$$
+$\because \left\{f\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)\right\}$ 和 $\left\{q\left(γ_{m_{k}},\boldsymbol {x}^{\left(m_{k}\right)}\right)\right\}$ 均是收敛数列，
+e
+## 罚函数法的理论分析
+$\therefore \left\{γ_{m_{k}}\boldsymbol {P}\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)\right\}=\left\{q\left(γ_{m_{k}},\boldsymbol {x}^{\left(m_{k}\right)}\right)-f\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)\right\}$ 也是收敛列，且有
+$$\lim _{k\rightarrow \infty }γ_{m_{k}}\boldsymbol {P}\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)=q^{*}-f(\hat {\boldsymbol {x}})$$
+由上述引理得， $\left\{\boldsymbol {P}\left(\boldsymbol {x}^{(k)}\right)\right\}$ 是非增有下界的序列，下界为0．
+$\therefore$ $\left\{\boldsymbol {P}\left(\boldsymbol {x}^{(k)}\right)\right\}$ 收敛.因此， $\left\{\boldsymbol {P}\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)\right\}$ 也收敛.
+$\because γ_{m_{k}}\rightarrow \infty ,\therefore \lim _{k\rightarrow \infty }\boldsymbol {P}\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)=0$ .由函数 $P(x)$ 的连续性，我们有
+$$0=\lim _{k\rightarrow \infty }\boldsymbol {P}\left(\boldsymbol {x}^{\left(m_{k}\right)}\right)=\boldsymbol {P}\left(\lim _{k\rightarrow \infty }\boldsymbol {x}^{\left(m_{k}\right)}\right)=\boldsymbol {P}(\hat {\boldsymbol {x}})$$
+是可行点.
+有上面知 $f\left(\boldsymbol {x}^{*}\right)\geq f(\hat {\boldsymbol {x}})$ 
+必是约束优化问题的极小点.
+结论：若罚参数 $γ\rightarrow \infty$ ，罚函数法产生的迭代序列的任意极限点是原约束优化问题的极值点.
+136e
+![](https://web-api.textin.com/ocr_image/external/ad2bdf9b93868d20.jpg)
+## 罚函数法的理论分析
+精确罚函数：为了找一个无约束优化问题使其极值点完全等价于约束优化问题的极值点（而非通过一系列无约束优化逼近原约束优化）.此类罚函数要求：当罚参数 $γ>0$ 取某个固定值时，罚函数的极值点与原约束优化问题的极值点一样.
+精确罚函数缺点：通常是不可微优化.
+例. $\min f(x)=5-3x$  s.t. $0\leq x\leq 1$ 
+上述优化问题的极小点是 $x^{*}=1.$ 
+假设罚函数P在 $x^{*}=1$ 处是可微的.
+因为 $\because P(x)=0,\forall x\in [0,1]$ $(why?)$ ，所以 $P^{\prime }\left(x^{*}\right)=0.$ 
+若 $g:=f+γP$ ，则
+$$g^{\prime }\left(x^{*}\right)=f^{\prime }\left(x^{*}\right)+γP^{\prime }\left(x^{*}\right)\neq 0,\forall γ>0.$$
+$\therefore$ $x^{*}=1$ 不满足函数g的极小点的最优性条件.
+$\therefore P$  不是精确罚函数.
+## 罚函数法的理论分析
+定理 $\left(\min _{x\in Ω}\right.$ $f(\boldsymbol {x})$ ，其中ΩCR”是凸集）
+设极小点 $\boldsymbol {x}^{*}\in bd(Ω)$ ，且存在 $\boldsymbol {x}^{*}$ 处的可行方向d使得 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)>0.$  若P 是精确罚函数，则P在 $\boldsymbol {x}^{*}$ 处是不可微的.
+证.（反证法）假设P在 $\boldsymbol {x}^{*}$ 处可微.
+: $P(\boldsymbol {x})=0,\forall \boldsymbol {x}\in Ω,$ 
+$$\therefore \nabla P\left(\boldsymbol {x}^{*}\right)=0.$$
+则有 $\boldsymbol {d}^{\top }\nabla P\left(\boldsymbol {x}^{*}\right)=0,$ $,Vd.$ 
+若 $\boldsymbol {g}:=f+γ\boldsymbol {P}$ ，则 $\boldsymbol {d}^{\top }\nabla \boldsymbol {g}\left(\boldsymbol {x}^{*}\right)=\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)>0,\forall γ>0,$ 这意味着 $\nabla \boldsymbol {g}\left(\boldsymbol {x}^{*}\right)\neq \mathbf {0}.$ 
+$\therefore \boldsymbol {x}^{*}$ 不是函数g的局部极小点，
+$\therefore P$ 不是精确罚函数.
+### 增广拉格朗日函数法
+#### 思路
+将拉格朗日函数法和罚函数法结合在一起.理论上避免的罚函数需要动态调整罚参数的缺点，即增广拉格朗日乘子法可以取固定的罚参数.
+##### 已知 $\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{p},\boldsymbol {g}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}.$ 
+约束优化问题：min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {h}(\boldsymbol {x})=0,\boldsymbol {g}(\boldsymbol {x})\leq 0.$ 
+增广拉格朗日函数L： $\mathbb {R}^{n}x\mathbb {R}^{p}x\mathbb {R}_{+}^{m}\rightarrow$ R,
+$$L(\boldsymbol {x},\boldsymbol {λ},\boldsymbol {μ})=f(\boldsymbol {x})+\boldsymbol {λ}^{\top }\boldsymbol {h}(\boldsymbol {x})+\boldsymbol {μ}^{\top }\boldsymbol {g}(\boldsymbol {x})+γ\left(\|\boldsymbol {h}(\boldsymbol {x})\|^{2}+\left\|\boldsymbol {g}^{+}(\boldsymbol {x})\right\|^{2}\right)$$
+$$=f(\boldsymbol {x})+\sum _{i=1}^{p}λ_{i}h_{i}(\boldsymbol {x})+\sum _{i=1}^{m}μ_{i}g_{i}(\boldsymbol {x})$$
+$$+γ\left(\sum _{i=1}^{p}\left|h_{i}(\boldsymbol {x})\right|^{2}+\sum _{i=1}^{m}\left|g_{i}^{+}(\boldsymbol {x})\right|^{2}\right)$$
+![](https://web-api.textin.com/ocr_image/external/a6ecab8a781dcb2e.jpg)
+### 增广拉格朗日函数法
+#### 增广拉格朗日函数法的迭代格式
+<table border="1" ><tr>
+<td><img src="https://web-api.textin.com/ocr_image/external/12e7c94f2c9afbf3.jpg"></td>
+</tr></table>

@@ -1,0 +1,1383 @@
+# 无动画Chapter23.pdf
+共 32 页
+
+
+## 第 1 页
+1 23 (cid:217) (cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){
+1. (cid:221)Ka(cid:144){
+2. .(cid:130)KF…Œ{
+3. v…Œ{
+4. O2.(cid:130)KF…Œ{
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 1/32
+
+### 表格 1
+
+| 1 23 (cid:217) (cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){
+1. (cid:221)Ka(cid:144){
+2. .(cid:130)KF…Œ{
+3. v…Œ{
+4. O2.(cid:130)KF…Œ{ |  |  |
+|---|---|---|
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 1/32 |
+
+## 第 2 页
+(cid:221)K
+(cid:21)(cid:229)‘zflK: min f(x)
+x∈Ω
+8I…Œ f :Rn →R ·ı(cid:3)…Œ.
+ß(cid:252)C(cid:254) x∈Ω⊂Rn · n (cid:145)(cid:149)(cid:254).
+(cid:70) ƒ)ˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:130)|¢ x(k+1) =x(k)+α d(k), (cid:216)U(cid:134)(cid:26)^uƒ)
+k
+(cid:21)(cid:229)‘zflK.
+‰´ ((cid:221)K)
+(cid:23) Ω⊂Rn ·(cid:154)(cid:152)4(cid:224)8. ?¿(cid:149)(cid:254) x∈Rn 3 Ω (cid:254)
+(cid:27)(cid:221)K‰´(cid:143) Π [x]:=argmin{(cid:107)z−x(cid:107)|z ∈Ω}.
+Ω
+(cid:221)K(cid:27)5(cid:159)
+• e Ω ·(cid:154)(cid:152)4(cid:224)8, K(cid:221)K(cid:127)3(cid:133)(cid:141)(cid:152).
+• x∗ · x 3 Ω (cid:254)(cid:27)(cid:221)K ⇔(x−x∗)(cid:62)(z−x∗)≤0, ∀z ∈Ω. “=” ⁄Æ
+⇐⇒ Ω ·(cid:149)(cid:19)8.
+• (cid:221)K·(cid:154)*(cid:220)(cid:27), = (cid:107)Π [x]−Π [y](cid:107)≤(cid:107)x−y(cid:107),∀x,y ∈Rn
+Ω Ω
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 2/32
+
+### 表格 1
+
+|  | (cid:221)K |  |  |
+|---|---|---|---|
+|  | (cid:21)(cid:229)‘zflK: min f(x)
+x∈Ω
+8I…Œ f :Rn →R ·ı(cid:3)…Œ.
+ß(cid:252)C(cid:254) x∈Ω⊂Rn · n (cid:145)(cid:149)(cid:254).
+(cid:70) ƒ)ˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:130)|¢ x(k+1) =x(k)+α d(k), (cid:216)U(cid:134)(cid:26)^uƒ)
+k
+(cid:21)(cid:229)‘zflK.
+‰´ ((cid:221)K)
+(cid:23) Ω⊂Rn ·(cid:154)(cid:152)4(cid:224)8. ?¿(cid:149)(cid:254) x∈Rn 3 Ω (cid:254)
+(cid:27)(cid:221)K‰´(cid:143) Π [x]:=argmin{(cid:107)z−x(cid:107)|z ∈Ω}.
+Ω
+(cid:221)K(cid:27)5(cid:159)
+• e Ω ·(cid:154)(cid:152)4(cid:224)8, K(cid:221)K(cid:127)3(cid:133)(cid:141)(cid:152).
+• x∗ · x 3 Ω (cid:254)(cid:27)(cid:221)K ⇔(x−x∗)(cid:62)(z−x∗)≤0, ∀z ∈Ω. “=” ⁄Æ
+⇐⇒ Ω ·(cid:149)(cid:19)8.
+• (cid:221)K·(cid:154)*(cid:220)(cid:27), = (cid:107)Π [x]−Π [y](cid:107)≤(cid:107)x−y(cid:107),∀x,y ∈Rn
+Ω Ω |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 2/32 |
+
+## 第 3 页
+(cid:221)K(cid:144){
+ƒ) min{f(x) | x ∈ Ω} (cid:27)(cid:221)KF(cid:221){
+(£(cid:26)) ˆ(cid:21)(cid:229)‘z(cid:27)(cid:130)|¢: x(k+1) =x(k)+α d(k).
+k
+(cid:221)K(cid:144){: x(k+1) =Π[x(k)+α d(k)].
+k
+(cid:221)KF(cid:221){: x(k+1) =Π[x(k)−α ∇f(x(k))].
+k
+Aˇ8(cid:220)(cid:254)(cid:27)/(cid:221)K0
+1 e Ω={x∈Rn |a≤x≤b} ·/(cid:221)f0(cid:21)(cid:229), (cid:217)¥ a∈Rn, b∈Rn, K
+[Π (x)] =median{a ,x ,b }, i=1,2,...,n.
+Ω i i i i
+2 e Ω={x∈Rn |(cid:107)x(cid:107) 2 ≤a} ·/¥0(cid:21)(cid:229), (cid:217)¥ a>0, K
+Π (x)=min(1, a )x.
+Ω (cid:107)x(cid:107)2
+3 e Ω={x∈Rn |Ax=b} ·(cid:149)(cid:19)8, (cid:217)¥ A∈Rm×n, b∈Rm, K
+Π (x)=x−A†(Ax−b), (cid:217)¥ A† ·(cid:221)(cid:10) A (cid:27) Moore-Penrose 2´_.
+Ω
+AO/, e Ω={x∈Rn |a(cid:62)x=b,a(cid:54)=0∈Rn} ·(cid:154)R(cid:134)(cid:135)†¡, K
+Π (x)=x− a(cid:62)x−ba.
+Ω (cid:107)a(cid:107)2
+2
+(cid:141)ı’u(cid:221)K(cid:27)O(cid:142),(cid:132)Bauschke,H.H.,Combettes,P.L.:ConvexAnalysisandMonotoneOperatorTheoryinHilbertSpaces.Springer,2006.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 3/32
+
+### 表格 1
+
+|  | (cid:221)K(cid:144){ |  |  |
+|---|---|---|---|
+|  | ƒ) min{f(x) | x ∈ Ω} (cid:27)(cid:221)KF(cid:221){
+(£(cid:26)) ˆ(cid:21)(cid:229)‘z(cid:27)(cid:130)|¢: x(k+1) =x(k)+α d(k).
+k
+(cid:221)K(cid:144){: x(k+1) =Π[x(k)+α d(k)].
+k
+(cid:221)KF(cid:221){: x(k+1) =Π[x(k)−α ∇f(x(k))].
+k
+Aˇ8(cid:220)(cid:254)(cid:27)/(cid:221)K0
+1 e Ω={x∈Rn |a≤x≤b} ·/(cid:221)f0(cid:21)(cid:229), (cid:217)¥ a∈Rn, b∈Rn, K
+[Π (x)] =median{a ,x ,b }, i=1,2,...,n.
+Ω i i i i
+2 e Ω={x∈Rn |(cid:107)x(cid:107) 2 ≤a} ·/¥0(cid:21)(cid:229), (cid:217)¥ a>0, K
+Π (x)=min(1, a )x.
+Ω (cid:107)x(cid:107)2
+3 e Ω={x∈Rn |Ax=b} ·(cid:149)(cid:19)8, (cid:217)¥ A∈Rm×n, b∈Rm, K
+Π (x)=x−A†(Ax−b), (cid:217)¥ A† ·(cid:221)(cid:10) A (cid:27) Moore-Penrose 2´_.
+Ω
+AO/, e Ω={x∈Rn |a(cid:62)x=b,a(cid:54)=0∈Rn} ·(cid:154)R(cid:134)(cid:135)†¡, K
+Π (x)=x− a(cid:62)x−ba.
+Ω (cid:107)a(cid:107)2
+2
+(cid:141)ı’u(cid:221)K(cid:27)O(cid:142),(cid:132)Bauschke,H.H.,Combettes,P.L.:ConvexAnalysisandMonotoneOperatorTheoryinHilbertSpaces.Springer,2006. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 3/32 |
+
+## 第 4 页
+(cid:221)KF(cid:221){
+~. min 1x(cid:62)Qx, s.t. (cid:107)x(cid:107)2 = 1, (cid:217)¥ Q = Q(cid:62) (cid:31) 0
+2
+1 (cid:21)(cid:209)(cid:221)KF(cid:221){ƒ)(cid:254)ª‘zflK(cid:27)S(cid:147)(cid:130)“.
+2 '(cid:219)(cid:254)ªS(cid:147)(cid:130)“·˜´æ?
+3 y†(cid:8) 0<α< λm 1 ax ((cid:217)¥ λ max ·(cid:221)(cid:10) Q (cid:27)(cid:129)(cid:140)A(cid:14)(cid:138))(cid:158), S(cid:147)(cid:130)“´
+æ(cid:20)flK(cid:27)4(cid:2):(cid:27)^(cid:135)(cid:143): —': x(0) (cid:216)(cid:20)(cid:2)(cid:134)(cid:221)(cid:10) Q (cid:129)(cid:2)A(cid:14)(cid:138)⁄
+ØA(cid:27)A(cid:14)(cid:149)(cid:254).
+1 x(k+1) =β k (x(k)−αQx(k))=β k (I−αQ)x(k), (cid:217)¥ β k = (cid:107)(I−αQ 1 )x(k)(cid:107) .
+2 e—': x(0) ·(cid:221)(cid:10) Q (cid:27)(cid:252)(cid:160)A(cid:14)(cid:149)(cid:254), ·y x(k) =x(0),∀k, =S(cid:147)(cid:130)
+“(cid:216)´æ.
+3 (cid:23) {v i }n i=1 ·(cid:130)5ˆ’A(cid:14)(cid:149)(cid:254), {λ i (Q)}n i=1 ·(cid:131)A(cid:27)A(cid:14)(cid:138). K {v i }n i=1
+· Rn (cid:27)(cid:152)|˜. ˇd,
+x(k) =y(k)v +···+y(k)v , (1)
+1 1 n n
+x(k+1) =y(k+1)v +···+y(k+1)v . (2)
+1 1 n n
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 4/32
+
+### 表格 1
+
+| (cid:221)KF(cid:221){ |  |  |
+|---|---|---|
+| ~. min 1x(cid:62)Qx, s.t. (cid:107)x(cid:107)2 = 1, (cid:217)¥ Q = Q(cid:62) (cid:31) 0
+2
+1 (cid:21)(cid:209)(cid:221)KF(cid:221){ƒ)(cid:254)ª‘zflK(cid:27)S(cid:147)(cid:130)“.
+2 '(cid:219)(cid:254)ªS(cid:147)(cid:130)“·˜´æ?
+3 y†(cid:8) 0<α< λm 1 ax ((cid:217)¥ λ max ·(cid:221)(cid:10) Q (cid:27)(cid:129)(cid:140)A(cid:14)(cid:138))(cid:158), S(cid:147)(cid:130)“´
+æ(cid:20)flK(cid:27)4(cid:2):(cid:27)^(cid:135)(cid:143): —': x(0) (cid:216)(cid:20)(cid:2)(cid:134)(cid:221)(cid:10) Q (cid:129)(cid:2)A(cid:14)(cid:138)⁄
+ØA(cid:27)A(cid:14)(cid:149)(cid:254).
+1 x(k+1) =β k (x(k)−αQx(k))=β k (I−αQ)x(k), (cid:217)¥ β k = (cid:107)(I−αQ 1 )x(k)(cid:107) .
+2 e—': x(0) ·(cid:221)(cid:10) Q (cid:27)(cid:252)(cid:160)A(cid:14)(cid:149)(cid:254), ·y x(k) =x(0),∀k, =S(cid:147)(cid:130)
+“(cid:216)´æ.
+3 (cid:23) {v i }n i=1 ·(cid:130)5ˆ’A(cid:14)(cid:149)(cid:254), {λ i (Q)}n i=1 ·(cid:131)A(cid:27)A(cid:14)(cid:138). K {v i }n i=1
+· Rn (cid:27)(cid:152)|˜. ˇd,
+x(k) =y(k)v +···+y(k)v , (1)
+1 1 n n
+x(k+1) =y(k+1)v +···+y(k+1)v . (2)
+1 1 n n |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 4/32 |
+
+## 第 5 页
+(cid:221)KF(cid:221){
+d (cid:182) ¥(cid:27)S(cid:147)(cid:130)“(cid:127)
+(cid:16) (cid:17)
+x(k+1) =β (I−αQ)x(k) =β (I−αQ) y(k)v +···+y(k)v
+k k 1 1 n n
+(cid:16) (cid:17)
+=β y(k)(I−αQ)v +···+y(k)(I−αQ)v
+k 1 1 n n
+(cid:16) (cid:17)
+=β y(k)(1−αλ )v +···+y(k)(1−αλ )v .
+k 1 1 1 n n n
+(cid:134)(2)(cid:138)’(cid:22), (cid:26) y(k+1) =β y(k)(1−αλ ).
+i k i i
+∴ y(k) =(Πk−1β )y(0)(1−αλ )k.
+i i=0 k i i
+d(1)(cid:26) x(k) = (cid:80) n y i (k)v i =y 1 (k) (cid:18) v 1 + (cid:80) n y y i ( ( k k ) ) v i (cid:19) .
+i=1 i=2 1
+b(cid:23) y(0) (cid:54)=0, •(cid:130)k y i (k) = y i (0)(1−αλi)k = y i (0) (cid:16) 1−αλi (cid:17)k .
+1 y
+1
+(k) y
+1
+(0)(1−αλ1)k y
+1
+(0) 1−αλ1
+d(cid:216)(cid:31)“ 1−αλi <1, •(cid:130)k y i (k) →0,
+1−αλ1 y(k)
+1
+øL† x(k) →v .
+1
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 5/32
+
+### 表格 1
+
+| (cid:221)KF(cid:221){ |  |  |
+|---|---|---|
+| d (cid:182) ¥(cid:27)S(cid:147)(cid:130)“(cid:127)
+(cid:16) (cid:17)
+x(k+1) =β (I−αQ)x(k) =β (I−αQ) y(k)v +···+y(k)v
+k k 1 1 n n
+(cid:16) (cid:17)
+=β y(k)(I−αQ)v +···+y(k)(I−αQ)v
+k 1 1 n n
+(cid:16) (cid:17)
+=β y(k)(1−αλ )v +···+y(k)(1−αλ )v .
+k 1 1 1 n n n
+(cid:134)(2)(cid:138)’(cid:22), (cid:26) y(k+1) =β y(k)(1−αλ ).
+i k i i
+∴ y(k) =(Πk−1β )y(0)(1−αλ )k.
+i i=0 k i i
+d(1)(cid:26) x(k) = (cid:80) n y i (k)v i =y 1 (k) (cid:18) v 1 + (cid:80) n y y i ( ( k k ) ) v i (cid:19) .
+i=1 i=2 1
+b(cid:23) y(0) (cid:54)=0, •(cid:130)k y i (k) = y i (0)(1−αλi)k = y i (0) (cid:16) 1−αλi (cid:17)k .
+1 y (k) y (0)(1−αλ1)k y (0) 1−αλ1
+1 1 1
+d(cid:216)(cid:31)“ 1−αλi <1, •(cid:130)k y i (k) →0,
+1−αλ1 y(k)
+1
+øL† x(k) →v .
+1 |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 5/32 |
+
+## 第 6 页
+(cid:221)KF(cid:221){
+(cid:130)5(cid:31)“(cid:21)(cid:229)‘z: minf(x), s.t. Ax = b.
+f :Rn →R ·ı(cid:3)…Œ.
+x∈Rn ·ß(cid:252)C(cid:254).
+(cid:221)(cid:10) A∈Rm×n(m<n), rank(A)=m, (cid:149)(cid:254) b∈Rm.
+Lemma
+(cid:23) Ω={x∈Rn |Ax=b}. 8(cid:220) Ω (cid:254)(cid:27)(cid:221)K(cid:140)d(cid:20)(cid:2)(cid:221)(cid:10) P L«, =
+Π =P =I −A(cid:62)(AA(cid:62))−1A. (3)
+Ω n
+y. (J«) |^(cid:21)(cid:229)‘zflK(cid:27) KKT ^(cid:135)=(cid:140).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 6/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){ |  |  |
+|---|---|---|---|
+|  | (cid:130)5(cid:31)“(cid:21)(cid:229)‘z: minf(x), s.t. Ax = b.
+f :Rn →R ·ı(cid:3)…Œ.
+x∈Rn ·ß(cid:252)C(cid:254).
+(cid:221)(cid:10) A∈Rm×n(m<n), rank(A)=m, (cid:149)(cid:254) b∈Rm.
+Lemma
+(cid:23) Ω={x∈Rn |Ax=b}. 8(cid:220) Ω (cid:254)(cid:27)(cid:221)K(cid:140)d(cid:20)(cid:2)(cid:221)(cid:10) P L«, =
+Π =P =I −A(cid:62)(AA(cid:62))−1A. (3)
+Ω n
+y. (J«) |^(cid:21)(cid:229)‘zflK(cid:27) KKT ^(cid:135)=(cid:140). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 6/32 |
+
+## 第 7 页
+(cid:221)KF(cid:221){
+(cid:218)n
+Øu(3)¥(cid:27)(cid:221)K(cid:221)(cid:10), k N(P)=R
+(cid:0) A(cid:62)(cid:1)
+, N(A)=R(P).
+y. ⇒) ?¿ v ∈N(P), •(cid:130)k
+0=Pv = (cid:0) I −A(cid:62)(AA(cid:62))−1A (cid:1) v =v−A(cid:62)(AA(cid:62))−1Av.
+n
+∴v =A(cid:62)(AA(cid:62))−1Av. ˇd, v ∈R(A(cid:62)).
+⇐) ?¿ v ∈R(A(cid:62)), K ∃u∈Rm ƒ(cid:26) v =A(cid:62)u.
+∴Pv = (cid:0) I −A(cid:62)(AA(cid:62))−1A (cid:1) A(cid:62)u
+n
+=A(cid:62)u−A(cid:62)(AA(cid:62))−1AA(cid:62)u=0.
+ˇd, •(cid:130)k N(P)=R
+(cid:0) A(cid:62)(cid:1)
+.
+(cid:211)n, (cid:140)–y† N(A)=R(P).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 7/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){ |  |  |
+|---|---|---|---|
+|  | (cid:218)n
+(cid:0) A(cid:62)(cid:1)
+Øu(3)¥(cid:27)(cid:221)K(cid:221)(cid:10), k N(P)=R , N(A)=R(P).
+y. ⇒) ?¿ v ∈N(P), •(cid:130)k
+0=Pv = (cid:0) I −A(cid:62)(AA(cid:62))−1A (cid:1) v =v−A(cid:62)(AA(cid:62))−1Av.
+n
+∴v =A(cid:62)(AA(cid:62))−1Av. ˇd, v ∈R(A(cid:62)).
+⇐) ?¿ v ∈R(A(cid:62)), K ∃u∈Rm ƒ(cid:26) v =A(cid:62)u.
+∴Pv = (cid:0) I −A(cid:62)(AA(cid:62))−1A (cid:1) A(cid:62)u
+n
+=A(cid:62)u−A(cid:62)(AA(cid:62))−1AA(cid:62)u=0.
+(cid:0) A(cid:62)(cid:1)
+ˇd, •(cid:130)k N(P)=R .
+(cid:211)n, (cid:140)–y† N(A)=R(P). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 7/32 |
+
+## 第 8 页
+(cid:221)KF(cid:221){
+£(cid:26): ˆ(cid:21)(cid:229)‘zflK min x∈Rn f(x), : x∗ ·(cid:219)(cid:220)4(cid:2):(cid:27)(cid:152)(cid:30)7(cid:135)^(cid:135)(cid:143)
+=⇒ ∇f(x∗)=0.
+‰n
+(cid:130)5(cid:31)“(cid:21)(cid:229)‘zflK min f(x), (cid:217)¥ Ω={x|Ax=b}, K: x∗ ·(cid:219)(cid:220)
+x∈Ω
+4(cid:2):(cid:27)(cid:152)(cid:30)7(cid:135)^(cid:135)(cid:143) =⇒ P∇f(x∗)=0.
+y. P∇f(x∗)=0,
+⇐⇒∇f(x∗)∈N(P), [dN(P)(cid:27)‰´]
+⇐⇒∇f(x∗)∈R(A(cid:62)), [d(cid:254)ª(cid:218)n]
+⇐⇒∃λ∗ ∈Rm, ƒ(cid:26) ∇f(x∗)+A(cid:62)λ∗ =0,
+⇐⇒ØX x∗ ∈Ω={x|Ax=b},
+(cid:40)
+∇f(x∗)+A(cid:62)λ∗ =0,
+•(cid:130)(cid:26)(cid:209)(cid:130)5(cid:31)“(cid:21)(cid:229)(cid:27)KKT^(cid:135)
+A(cid:62)x∗ =b.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 8/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){ |  |  |
+|---|---|---|---|
+|  | £(cid:26): ˆ(cid:21)(cid:229)‘zflK min x∈Rn f(x), : x∗ ·(cid:219)(cid:220)4(cid:2):(cid:27)(cid:152)(cid:30)7(cid:135)^(cid:135)(cid:143)
+=⇒ ∇f(x∗)=0.
+‰n
+(cid:130)5(cid:31)“(cid:21)(cid:229)‘zflK min f(x), (cid:217)¥ Ω={x|Ax=b}, K: x∗ ·(cid:219)(cid:220)
+x∈Ω
+4(cid:2):(cid:27)(cid:152)(cid:30)7(cid:135)^(cid:135)(cid:143) =⇒ P∇f(x∗)=0.
+y. P∇f(x∗)=0,
+⇐⇒∇f(x∗)∈N(P), [dN(P)(cid:27)‰´]
+⇐⇒∇f(x∗)∈R(A(cid:62)), [d(cid:254)ª(cid:218)n]
+⇐⇒∃λ∗ ∈Rm, ƒ(cid:26) ∇f(x∗)+A(cid:62)λ∗ =0,
+⇐⇒ØX x∗ ∈Ω={x|Ax=b},
+(cid:40)
+∇f(x∗)+A(cid:62)λ∗ =0,
+•(cid:130)(cid:26)(cid:209)(cid:130)5(cid:31)“(cid:21)(cid:229)(cid:27)KKT^(cid:135)
+A(cid:62)x∗ =b. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 8/32 |
+
+## 第 9 页
+(cid:221)KF(cid:221){
+(cid:221)KF(cid:221){ƒ)(cid:130)5(cid:31)“(cid:21)(cid:229)‘zflK
+‘zflK min{f(x)|Ax=b}, (cid:221)KF(cid:221){(cid:27)S(cid:147)(cid:130)“(cid:143)
+why?
+x(k+1) =Π[x(k)−α ∇f(x(k))]=====x(k)−α P∇f(x(k)).
+k k
+‰n
+e—': x(0) ·(cid:140)1:, K(cid:221)KF(cid:221){(cid:27)S(cid:147):o·(cid:140)1: x(k), =
+Ax(k) =b, ∀k ≥0.
+y. (Œ˘8B{).
+w,, ((cid:216)3 k =0 (cid:158)⁄Æ.
+b(cid:23) Ax(k) =b. •(cid:130)yy Ax(k+1) =b.
+d(cid:218)n
+∵P∇f(x(k))∈R(P)=====⇒P∇f(x(k))∈N(A).
+∴Ax(k+1) =A(x(k)−α P∇f(x(k)))
+k
+=Ax(k)−α AP∇f(x(k))
+k
+=b. (why? ): AP∇f(x(k))=0)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 9/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){ |  |  |
+|---|---|---|---|
+|  | (cid:221)KF(cid:221){ƒ)(cid:130)5(cid:31)“(cid:21)(cid:229)‘zflK
+‘zflK min{f(x)|Ax=b}, (cid:221)KF(cid:221){(cid:27)S(cid:147)(cid:130)“(cid:143)
+why?
+x(k+1) =Π[x(k)−α ∇f(x(k))]=====x(k)−α P∇f(x(k)).
+k k
+‰n
+e—': x(0) ·(cid:140)1:, K(cid:221)KF(cid:221){(cid:27)S(cid:147):o·(cid:140)1: x(k), =
+Ax(k) =b, ∀k ≥0.
+y. (Œ˘8B{).
+w,, ((cid:216)3 k =0 (cid:158)⁄Æ.
+b(cid:23) Ax(k) =b. •(cid:130)yy Ax(k+1) =b.
+d(cid:218)n
+∵P∇f(x(k))∈R(P)=====⇒P∇f(x(k))∈N(A).
+∴Ax(k+1) =A(x(k)−α P∇f(x(k)))
+k
+=Ax(k)−α AP∇f(x(k))
+k
+=b. (why? ): AP∇f(x(k))=0) |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 9/32 |
+
+## 第 10 页
+(cid:221)KF(cid:221){–(cid:130)5(cid:31)“(cid:21)(cid:229)‘z
+‰n
+(cid:23) (cid:8) x(k)(cid:9) ·(cid:221)KF(cid:221){(cid:23))(cid:27)S(cid:15), e P∇f(x(k))(cid:54)=0, K
+f(x(k+1))<f(x(k)).
+y. x(k+1) =x(k)−α P∇f(x(k)), (cid:217)¥ α >0 ·(cid:176)((cid:218)(cid:127).
+k k
+P φ (α):=f(x(k)−αP∇f(x(k))).
+k
+K φ (α )≤φ (α), ∀α>0.
+k k k
+dE(cid:220)…Œ(cid:27)(cid:243)“{K,
+φ(cid:48)(0)=−∇f(x(k)−0P∇f(x(k)))(cid:62)P∇f(x(k))
+k
+=−∇f(x(k))(cid:62)P∇f(x(k))
+=−(cid:107)P∇f(x(k))(cid:107)2 <0. [∵P =P2 =P(cid:62)P]
+∴∃α¯ >0 ƒ(cid:26) φ (0)>φ (α), ∀α∈(0,α¯].
+k k
+∴f(x(k+1))=φ (α )≤φ (α¯)<φ (0)=f(x(k)).
+k k k k
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 10/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){–(cid:130)5(cid:31)“(cid:21)(cid:229)‘z |  |  |
+|---|---|---|---|
+|  | ‰n
+(cid:23) (cid:8) x(k)(cid:9) ·(cid:221)KF(cid:221){(cid:23))(cid:27)S(cid:15), e P∇f(x(k))(cid:54)=0, K
+f(x(k+1))<f(x(k)).
+y. x(k+1) =x(k)−α P∇f(x(k)), (cid:217)¥ α >0 ·(cid:176)((cid:218)(cid:127).
+k k
+P φ (α):=f(x(k)−αP∇f(x(k))).
+k
+K φ (α )≤φ (α), ∀α>0.
+k k k
+dE(cid:220)…Œ(cid:27)(cid:243)“{K,
+φ(cid:48)(0)=−∇f(x(k)−0P∇f(x(k)))(cid:62)P∇f(x(k))
+k
+=−∇f(x(k))(cid:62)P∇f(x(k))
+=−(cid:107)P∇f(x(k))(cid:107)2 <0. [∵P =P2 =P(cid:62)P]
+∴∃α¯ >0 ƒ(cid:26) φ (0)>φ (α), ∀α∈(0,α¯].
+k k
+∴f(x(k+1))=φ (α )≤φ (α¯)<φ (0)=f(x(k)).
+k k k k |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 10/32 |
+
+## 第 11 页
+(cid:221)KF(cid:221){–(cid:130)55y
+(cid:130)55y(LP) min c(cid:62)x, s.t.Ax≥b, (cid:217)¥ A∈Rm×n, b∈Rm, c∈Rn.
+Lemma
+(cid:23)(cid:130)55y (LP) (cid:27)4(cid:2):8(cid:154)(cid:152), KØ?¿ x ∈Rn, (cid:127)3 ε >0 ƒ(cid:26)Ø?¿
+0 0
+ε∈(0,ε ],
+0
+ε
+(LP) ⇐⇒ min (cid:107)x−x (cid:107)2+c(cid:62)x, s.t.Ax≥b.
+2 0
+y. ^(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK(cid:27) KKT ^(cid:135)=(cid:140).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 11/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){–(cid:130)55y |  |  |
+|---|---|---|---|
+|  | (cid:130)55y(LP) min c(cid:62)x, s.t.Ax≥b, (cid:217)¥ A∈Rm×n, b∈Rm, c∈Rn.
+Lemma
+(cid:23)(cid:130)55y (LP) (cid:27)4(cid:2):8(cid:154)(cid:152), KØ?¿ x ∈Rn, (cid:127)3 ε >0 ƒ(cid:26)Ø?¿
+0 0
+ε∈(0,ε ],
+0
+ε
+(LP) ⇐⇒ min (cid:107)x−x (cid:107)2+c(cid:62)x, s.t.Ax≥b.
+2 0
+y. ^(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK(cid:27) KKT ^(cid:135)=(cid:140). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 11/32 |
+
+## 第 12 页
+(cid:221)KF(cid:221){–(cid:130)55y
+?(cid:216)
+min c(cid:62)x, s.t.Ax≥b.
+(cid:109)
+ε
+min (cid:107)x−x (cid:107)2+c(cid:62)x, s.t.Ax≥b.
+2 0
+(cid:109)
+ε (cid:13) c (cid:13)2
+min (cid:13)x−(x − )(cid:13) , s.t. Ax≥b.
+2(cid:13) 0 ε (cid:13)
+(cid:109)
+c
+(x − ) 3(cid:21)(cid:229)8 Ω={x|Ax≥b} (cid:254)(cid:27)(cid:221)K.
+0 ε
+(cid:70) (cid:137)‰—': x , (cid:144)(cid:135)(cid:221)KF(cid:221){(cid:27)(cid:218)(cid:127)v(cid:10)(cid:140), (cid:130)55y(cid:27)4(cid:138):(cid:140)–(cid:152)
+0
+(cid:218)S(cid:147)¢y (Mangasarian,1979).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 12/32
+
+### 表格 1
+
+|  | (cid:221)KF(cid:221){–(cid:130)55y |  |  |
+|---|---|---|---|
+|  | ?(cid:216)
+min c(cid:62)x, s.t.Ax≥b.
+(cid:109)
+ε
+min (cid:107)x−x (cid:107)2+c(cid:62)x, s.t.Ax≥b.
+2 0
+(cid:109)
+ε (cid:13) c (cid:13)2
+min (cid:13)x−(x − )(cid:13) , s.t. Ax≥b.
+2(cid:13) 0 ε (cid:13)
+(cid:109)
+c
+(x − ) 3(cid:21)(cid:229)8 Ω={x|Ax≥b} (cid:254)(cid:27)(cid:221)K.
+0 ε
+(cid:70) (cid:137)‰—': x , (cid:144)(cid:135)(cid:221)KF(cid:221){(cid:27)(cid:218)(cid:127)v(cid:10)(cid:140), (cid:130)55y(cid:27)4(cid:138):(cid:140)–(cid:152)
+0
+(cid:218)S(cid:147)¢y (Mangasarian,1979). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 12/32 |
+
+## 第 13 页
+.(cid:130)KFƒf{—(cid:31)“(cid:21)(cid:229)‘zflK
+(cid:144){g·
+/ˇF(cid:221)a(cid:144){'Oƒ)ß(cid:252)C(cid:254)(cid:218).(cid:130)KFƒf(cid:27)4(cid:2)(cid:218)4(cid:140):, =F(cid:221)a
+(cid:144){…(cid:18).(cid:130)KF…Œ(cid:27)Q:.
+(cid:31)“(cid:21)(cid:229)‘zflK
+min f(x), s.t. h(x)=0, (cid:217)¥ h:Rn →Rm. (4)
+(cid:254)ª‘zflK(cid:27).(cid:130)KF…Œ l(x,λ)=f(x)+λ(cid:62)h(x).
+.(cid:130)KFƒf{ƒ)(4)(cid:27)S(cid:147)(cid:130)“
+(cid:40)
+x(k+1) =x(k)−α ∇ l(x(k),λ(k))=x(k)−α (∇f(x(k))+Dh(x(k))(cid:62)λ(k)),
+k x k
+λ(k+1) =λ(k)+β ∇ l(x(k),λ(k))=λ(k)+β h(x(k)).
+k λ k
+(5)
+(cid:70) x(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)e(cid:252){ƒ).(cid:130)KF…Œ’u x (cid:27)4(cid:2):;
+λ(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)(cid:254),{ƒ).(cid:130)KF…Œ’u λ (cid:27)4(cid:140):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 13/32
+
+### 表格 1
+
+|  | .(cid:130)KFƒf{—(cid:31)“(cid:21)(cid:229)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:144){g·
+/ˇF(cid:221)a(cid:144){'Oƒ)ß(cid:252)C(cid:254)(cid:218).(cid:130)KFƒf(cid:27)4(cid:2)(cid:218)4(cid:140):, =F(cid:221)a
+(cid:144){…(cid:18).(cid:130)KF…Œ(cid:27)Q:.
+(cid:31)“(cid:21)(cid:229)‘zflK
+min f(x), s.t. h(x)=0, (cid:217)¥ h:Rn →Rm. (4)
+(cid:254)ª‘zflK(cid:27).(cid:130)KF…Œ l(x,λ)=f(x)+λ(cid:62)h(x).
+.(cid:130)KFƒf{ƒ)(4)(cid:27)S(cid:147)(cid:130)“
+(cid:40)
+x(k+1) =x(k)−α ∇ l(x(k),λ(k))=x(k)−α (∇f(x(k))+Dh(x(k))(cid:62)λ(k)),
+k x k
+λ(k+1) =λ(k)+β ∇ l(x(k),λ(k))=λ(k)+β h(x(k)).
+k λ k
+(5)
+(cid:70) x(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)e(cid:252){ƒ).(cid:130)KF…Œ’u x (cid:27)4(cid:2):;
+λ(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)(cid:254),{ƒ).(cid:130)KF…Œ’u λ (cid:27)4(cid:140):. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 13/32 |
+
+## 第 14 页
+.(cid:130)KFƒf{—(cid:31)“(cid:21)(cid:229)‘zflK
+(cid:218)n
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“(5), (cid:23))(cid:27)S(cid:15) {x(k),λ(k)} k(cid:216)˜: (x∗,λ∗)
+⇐⇒ (x∗,λ∗) (cid:247)v.(cid:130)KF^(cid:135).
+‰n
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“(5), e(cid:218)(cid:127) α (cid:218) β ¿'(cid:2), —': (x(0),λ(0)) (cid:18)
+k k
+g (x∗,λ∗) (cid:27)(cid:2)(cid:25)(cid:141)¥, K(cid:144){(cid:150)(cid:8)–(cid:130)5´æ˙´æ(cid:20) (x∗,λ∗).
+(y: |^(cid:216)(cid:160)(cid:216)˜:n(cid:216).)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 14/32
+
+### 表格 1
+
+|  | .(cid:130)KFƒf{—(cid:31)“(cid:21)(cid:229)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:218)n
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“(5), (cid:23))(cid:27)S(cid:15) {x(k),λ(k)} k(cid:216)˜: (x∗,λ∗)
+⇐⇒ (x∗,λ∗) (cid:247)v.(cid:130)KF^(cid:135).
+‰n
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“(5), e(cid:218)(cid:127) α (cid:218) β ¿'(cid:2), —': (x(0),λ(0)) (cid:18)
+k k
+g (x∗,λ∗) (cid:27)(cid:2)(cid:25)(cid:141)¥, K(cid:144){(cid:150)(cid:8)–(cid:130)5´æ˙´æ(cid:20) (x∗,λ∗).
+(y: |^(cid:216)(cid:160)(cid:216)˜:n(cid:216).) |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 14/32 |
+
+## 第 15 页
+.(cid:130)KFƒf{—(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+min f(x), s.t. g(x)≤0, (cid:217)¥ g :Rn →Rp. (6)
+(cid:254)ª‘zflK(cid:27).(cid:130)KF…Œ(cid:143): l(x,µ)=f(x)+µ(cid:62)g(x), µ≥0.
+ƒ)(cid:254)ª‘zflK(cid:27).(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“:
+(cid:40)
+x(k+1) =x(k)−α (∇f(x(k))+Dg(x(k))(cid:62)µ(k)),
+k (7)
+µ(k+1) =[µ(k)+β g(x(k))] , (cid:217)¥ [·] =max{·,0}.
+k + +
+(cid:70) x(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)e(cid:252){ƒ).(cid:130)KF…Œ’u x (cid:27)4(cid:2):;
+µ(k) (cid:29)(cid:159)(cid:254)·^(cid:221)KF(cid:221){ƒ).(cid:130)KF…Œ’u µ (cid:27)4(cid:140):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 15/32
+
+### 表格 1
+
+|  | .(cid:130)KFƒf{—(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+min f(x), s.t. g(x)≤0, (cid:217)¥ g :Rn →Rp. (6)
+(cid:254)ª‘zflK(cid:27).(cid:130)KF…Œ(cid:143): l(x,µ)=f(x)+µ(cid:62)g(x), µ≥0.
+ƒ)(cid:254)ª‘zflK(cid:27).(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“:
+(cid:40)
+x(k+1) =x(k)−α (∇f(x(k))+Dg(x(k))(cid:62)µ(k)),
+k (7)
+µ(k+1) =[µ(k)+β g(x(k))] , (cid:217)¥ [·] =max{·,0}.
+k + +
+(cid:70) x(k) (cid:29)(cid:159)(cid:254)·^F(cid:221)e(cid:252){ƒ).(cid:130)KF…Œ’u x (cid:27)4(cid:2):;
+µ(k) (cid:29)(cid:159)(cid:254)·^(cid:221)KF(cid:221){ƒ).(cid:130)KF…Œ’u µ (cid:27)4(cid:140):. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 15/32 |
+
+## 第 16 页
+.(cid:130)KFƒf{—(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+Lemma
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“ (7), (x∗,µ∗) ·(cid:216)˜:⇐⇒ (x∗,µ∗) (cid:247)vKKT^
+(cid:135).
+‰n
+e.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“ (7) ¥(cid:27)(cid:218)(cid:127) α (cid:218) β ¿'(cid:2), —':
+k k
+(x(0),µ(0)) (cid:18)g(cid:216)˜: (x∗,µ∗) (cid:27)(cid:2)(cid:25)(cid:141), K
+1 (cid:154)¨4(cid:21)(cid:229)⁄ØA(cid:27)ƒfk(cid:129)(cid:218)S(cid:147)(cid:20)0, (cid:133)(cid:145)(cid:0)(cid:152)(cid:134)(cid:2)–(cid:143)0;
+2 S(cid:147)(cid:130)“(cid:150)(cid:8)–(cid:130)5(cid:132)˙´æ(cid:20) (x∗,µ∗).
+y. |^(cid:216)(cid:160)(cid:216)˜:n(cid:216)(cid:218)(cid:154)*(cid:220)n(cid:216)(cid:31).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 16/32
+
+### 表格 1
+
+|  | .(cid:130)KFƒf{—(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK |  |  |
+|---|---|---|---|
+|  | Lemma
+.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“ (7), (x∗,µ∗) ·(cid:216)˜:⇐⇒ (x∗,µ∗) (cid:247)vKKT^
+(cid:135).
+‰n
+e.(cid:130)KFƒf{(cid:27)S(cid:147)(cid:130)“ (7) ¥(cid:27)(cid:218)(cid:127) α (cid:218) β ¿'(cid:2), —':
+k k
+(x(0),µ(0)) (cid:18)g(cid:216)˜: (x∗,µ∗) (cid:27)(cid:2)(cid:25)(cid:141), K
+1 (cid:154)¨4(cid:21)(cid:229)⁄ØA(cid:27)ƒfk(cid:129)(cid:218)S(cid:147)(cid:20)0, (cid:133)(cid:145)(cid:0)(cid:152)(cid:134)(cid:2)–(cid:143)0;
+2 S(cid:147)(cid:130)“(cid:150)(cid:8)–(cid:130)5(cid:132)˙´æ(cid:20) (x∗,µ∗).
+y. |^(cid:216)(cid:160)(cid:216)˜:n(cid:216)(cid:218)(cid:154)*(cid:220)n(cid:216)(cid:31). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 16/32 |
+
+## 第 17 页
+v…Œ{
+g·
+ˇLƒ)(cid:152)X(cid:15)(cid:27)ˆ(cid:21)(cid:229)‘zflK5…(cid:26)(cid:21)(cid:229)‘zflK(cid:27)4(cid:138):.
+‰´ ((cid:141)«…Œ(indicator function))
+(cid:40)
+0, e x∈Ω.
+(cid:23) Ω⊂Rn ·(cid:154)(cid:152)8(cid:220), (cid:217)(cid:141)«…Œ‰´(cid:143) ι (x):=
+Ω
++∞, (cid:217)§.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. x∈Ω.
+(cid:109)d(cid:141)«…Œ(cid:27)‰´ ι
+Ω
+ˆ(cid:21)(cid:229)‘zflK: min f(x)+ι (x).
+Ω
+⇓^e(cid:214)‘zflK%C
+ˆ(cid:21)(cid:229)‘zflK: min f(x)+γP(x),
+(cid:217)¥ γ >0 ·~Œ;P :Rn →R ·(cid:137)‰(cid:27)…Œ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 17/32
+
+### 表格 1
+
+|  | v…Œ{ |  |  |
+|---|---|---|---|
+|  | g·
+ˇLƒ)(cid:152)X(cid:15)(cid:27)ˆ(cid:21)(cid:229)‘zflK5…(cid:26)(cid:21)(cid:229)‘zflK(cid:27)4(cid:138):.
+‰´ ((cid:141)«…Œ(indicator function))
+(cid:40)
+0, e x∈Ω.
+(cid:23) Ω⊂Rn ·(cid:154)(cid:152)8(cid:220), (cid:217)(cid:141)«…Œ‰´(cid:143) ι (x):=
+Ω
++∞, (cid:217)§.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. x∈Ω.
+(cid:109)d(cid:141)«…Œ(cid:27)‰´ ι
+Ω
+ˆ(cid:21)(cid:229)‘zflK: min f(x)+ι (x).
+Ω
+⇓^e(cid:214)‘zflK%C
+ˆ(cid:21)(cid:229)‘zflK: min f(x)+γP(x),
+(cid:217)¥ γ >0 ·~Œ;P :Rn →R ·(cid:137)‰(cid:27)…Œ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 17/32 |
+
+## 第 18 页
+v…Œ{
+min f(x)+γP(x),
+min f(x),
+(I) ≈ (II) (cid:217)¥ γ >0 ·~Œ;
+s.t. x∈Ω.
+P :Rn →R ·(cid:137)‰…Œ.
+(cid:70) γ ¡(cid:143)vºŒ, P ¡(cid:143)v…Œ.
+‰´ (v…Œ)
+v…Œ P :Rn (cid:55)→R (cid:27)(cid:135)ƒk 3 ^:
+1 P ·ºY…Œ.
+2 P(x)≥0, ∀x∈Rn.
+3 P(x)=0 ⇐⇒ x ·(cid:6)(cid:21)(cid:229)‘zflK(cid:27)(cid:140)1: (= x∈Ω).
+(cid:70) ˆ(cid:21)(cid:229)‘zflK (II) %C(cid:21)(cid:229)‘zflK (I) (cid:27)(cid:176)(cid:221)(cid:157)6uvºŒ γ (cid:218)v…
+Œ P (cid:27)(cid:192)(cid:18).
+(cid:70) vºŒ γ (cid:22)(cid:140), %C§(cid:221)(cid:22)—. n(cid:142)(cid:156)„e, (cid:8) γ →+∞ (cid:158), ˆ(cid:21)(cid:229)‘zfl
+K (II) (cid:140)–(cid:136)(cid:20)(cid:134)(cid:21)(cid:229)‘zflK (I) (cid:131)(cid:211)(cid:27)4(cid:138):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 18/32
+
+### 表格 1
+
+|  | v…Œ{ |  |  |
+|---|---|---|---|
+|  | min f(x)+γP(x),
+min f(x),
+(I) ≈ (II) (cid:217)¥ γ >0 ·~Œ;
+s.t. x∈Ω.
+P :Rn →R ·(cid:137)‰…Œ.
+(cid:70) γ ¡(cid:143)vºŒ, P ¡(cid:143)v…Œ.
+‰´ (v…Œ)
+v…Œ P :Rn (cid:55)→R (cid:27)(cid:135)ƒk 3 ^:
+1 P ·ºY…Œ.
+2 P(x)≥0, ∀x∈Rn.
+3 P(x)=0 ⇐⇒ x ·(cid:6)(cid:21)(cid:229)‘zflK(cid:27)(cid:140)1: (= x∈Ω).
+(cid:70) ˆ(cid:21)(cid:229)‘zflK (II) %C(cid:21)(cid:229)‘zflK (I) (cid:27)(cid:176)(cid:221)(cid:157)6uvºŒ γ (cid:218)v…
+Œ P (cid:27)(cid:192)(cid:18).
+(cid:70) vºŒ γ (cid:22)(cid:140), %C§(cid:221)(cid:22)—. n(cid:142)(cid:156)„e, (cid:8) γ →+∞ (cid:158), ˆ(cid:21)(cid:229)‘zfl
+K (II) (cid:140)–(cid:136)(cid:20)(cid:134)(cid:21)(cid:229)‘zflK (I) (cid:131)(cid:211)(cid:27)4(cid:138):. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 18/32 |
+
+## 第 19 页
+v…Œ{
+(cid:137)‰ h : Rn → Rp, g : Rn → Rm.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. h(x)=0, g(x)≤0.
+(cid:18) p m (cid:19)
+minf(x)+γ (cid:80) |h (x)|+ (cid:80) |g+(x)| ,
+i i
+i=1 i=1
+(cid:176)(v…Œ: (cid:40)
+0, g (x)≤0.
+(cid:217)¥ g+(x)=max{0,g (x)}= i
+i i g (x), g (x)>0.
+i i
+(cid:18) p m (cid:19)
+(cid:19)gv…Œ: minf(x)+γ (cid:80) |h (x)|2+ (cid:80) |g+(x)|2 .
+i i
+i=1 i=1
+2´v…Œ:
+minf(x)+P(x)=f(x)+γ (cid:0) (cid:107)h(x)(cid:107)a+(cid:107)[g(x)]+(cid:107) a(cid:1) , a>0,b>0.
+b b
+(cid:70) (cid:176)(v…Œ·(cid:216)(cid:140)(cid:135)(cid:27)ˆ(cid:21)(cid:229)‘zflK; (cid:19)gv…Œˇ~·(cid:140)(cid:135)(cid:27)‘zfl
+K.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 19/32
+
+### 表格 1
+
+|  | v…Œ{ |  |  |
+|---|---|---|---|
+|  | (cid:137)‰ h : Rn → Rp, g : Rn → Rm.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. h(x)=0, g(x)≤0.
+(cid:18) p m (cid:19)
+minf(x)+γ (cid:80) |h (x)|+ (cid:80) |g+(x)| ,
+i i
+i=1 i=1
+(cid:176)(v…Œ: (cid:40)
+0, g (x)≤0.
+(cid:217)¥ g+(x)=max{0,g (x)}= i
+i i g (x), g (x)>0.
+i i
+(cid:18) p m (cid:19)
+(cid:19)gv…Œ: minf(x)+γ (cid:80) |h (x)|2+ (cid:80) |g+(x)|2 .
+i i
+i=1 i=1
+2´v…Œ:
+minf(x)+P(x)=f(x)+γ (cid:0) (cid:107)h(x)(cid:107)a+(cid:107)[g(x)]+(cid:107) a(cid:1) , a>0,b>0.
+b b
+(cid:70) (cid:176)(v…Œ·(cid:216)(cid:140)(cid:135)(cid:27)ˆ(cid:21)(cid:229)‘zflK; (cid:19)gv…Œˇ~·(cid:140)(cid:135)(cid:27)‘zfl
+K. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 19/32 |
+
+## 第 20 页
+v…Œ{(cid:27)A^
+~. (cid:21)(cid:229)8 Ω = {x ∈ R | g (x) = x−2 ≤ 0,g (x) = −(x+1)3 ≤ 0}
+1 2
+): fl¢(cid:254), Ω=[−1,2].
+(cid:40)
+0, if x≤2,
+g+(x)=max{0,g (x)}=
+1 1 x−2, otherwise.
+(cid:40)
+0, if x≥−1,
+g+(x)=max{0,g (x)}=
+2 2 −(x+1)3, otherwise.
+ˇd, (cid:176)(v…Œ(cid:27)v(cid:145)(cid:143)
+
+x−2, if x>2,
+
+P(x)=g+(x)+g+(x)= 0, if −1≤x≤2,
+1 2
+−(x+1)3,
+if x<−1.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 20/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)A^ |  |  |
+|---|---|---|---|
+|  | ~. (cid:21)(cid:229)8 Ω = {x ∈ R | g (x) = x−2 ≤ 0,g (x) = −(x+1)3 ≤ 0}
+1 2
+): fl¢(cid:254), Ω=[−1,2].
+(cid:40)
+0, if x≤2,
+g+(x)=max{0,g (x)}=
+1 1 x−2, otherwise.
+(cid:40)
+0, if x≥−1,
+g+(x)=max{0,g (x)}=
+2 2 −(x+1)3, otherwise.
+ˇd, (cid:176)(v…Œ(cid:27)v(cid:145)(cid:143)
+
+x−2, if x>2,
+
+P(x)=g+(x)+g+(x)= 0, if −1≤x≤2,
+1 2
+−(x+1)3,
+if x<−1. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 20/32 |
+
+## 第 21 页
+v…Œ{(cid:27)A^
+~. ^(cid:19)gv…Œƒ)‘zflK
+min f(x)=−x x , s.t.g(x)=x +2x −4=0.
+1 2 1 2
+): (cid:21)(cid:229)‘zflK⁄ØA(cid:27)(cid:19)gv…Œ(cid:143)
+1
+min q(x)=−x x + γ(x +2x −4)2. (8)
+x 1 2 2 1 2
+(cid:242) γ (cid:192)(cid:143)ºŒ, ƒ)ˆ(cid:21)(cid:229)‘zflK (8) (cid:27)4(cid:2):(cid:143)
+(cid:40) (cid:40) (cid:40)
+−x +γ(x +2x −4)=0 x (γ)= 8γ x =2
+2 1 2 ⇒ 1 4γ−1 −− γ→ −− + − ∞ → 1
+−x +2γ(x +2x −4)=0 x (γ)= 4γ x =1
+1 1 2 2 4γ−1 2
+?(cid:152)(cid:218), ˇLØ’ (8) (cid:27)(cid:129)‘5^(cid:135)(cid:218)(cid:6)(cid:21)(cid:229)‘zflK(cid:27)KKT^(cid:135), (cid:26)(cid:6)‘
+zflK(cid:27)ƒf(=Ø(cid:243)flK(cid:27)))(cid:143)
+why? −4γ γ→+∞
+λ(γ)=====−γg(x(γ))= −−−−−→λ=−1.
+4γ−1
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 21/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)A^ |  |  |
+|---|---|---|---|
+|  | ~. ^(cid:19)gv…Œƒ)‘zflK
+min f(x)=−x x , s.t.g(x)=x +2x −4=0.
+1 2 1 2
+): (cid:21)(cid:229)‘zflK⁄ØA(cid:27)(cid:19)gv…Œ(cid:143)
+1
+min q(x)=−x x + γ(x +2x −4)2. (8)
+x 1 2 2 1 2
+(cid:242) γ (cid:192)(cid:143)ºŒ, ƒ)ˆ(cid:21)(cid:229)‘zflK (8) (cid:27)4(cid:2):(cid:143)
+(cid:40) (cid:40) (cid:40)
+−x +γ(x +2x −4)=0 x (γ)= 8γ x =2
+2 1 2 ⇒ 1 4γ−1 −− γ→ −− + − ∞ → 1
+−x +2γ(x +2x −4)=0 x (γ)= 4γ x =1
+1 1 2 2 4γ−1 2
+?(cid:152)(cid:218), ˇLØ’ (8) (cid:27)(cid:129)‘5^(cid:135)(cid:218)(cid:6)(cid:21)(cid:229)‘zflK(cid:27)KKT^(cid:135), (cid:26)(cid:6)‘
+zflK(cid:27)ƒf(=Ø(cid:243)flK(cid:27)))(cid:143)
+why? −4γ γ→+∞
+λ(γ)=====−γg(x(γ))= −−−−−→λ=−1.
+4γ−1 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 21/32 |
+
+## 第 22 页
+v…Œ{(cid:27)A^
+~. minx(cid:62)Qx, s.t. (cid:107)x(cid:107)2 = 1, (cid:217)¥ Q = Q(cid:62).
+1 (cid:21)(cid:209)(cid:254)ª‘zflK⁄ØA(cid:27)(cid:19)gv…Œ.
+2 y†(cid:19)gv…Œ(cid:27)4(cid:2): x γ ·(cid:221)(cid:10) Q (cid:27)A(cid:14)(cid:149)(cid:254).
+3 y†(cid:19)gv…Œ(cid:27)4(cid:2):(cid:247)v(cid:6)‘zflK(cid:27)(cid:140)15(cid:27)(cid:132)˙(cid:143)
+(cid:107)x (cid:107)2−1=O(1/γ), γ →+∞.
+γ
+): (cid:19)gv…Œ: min q(x)=x(cid:62)Qx+γ (cid:0) (cid:107)x(cid:107)2−1 (cid:1)2 .
+ˇ(cid:143) x ·(cid:19)gv…Œ q(x) (cid:27)4(cid:2):, dˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+γ
+(cid:16) (cid:17)
+∇q(x )=0=⇒2Qx +4γ (cid:107)x (cid:107)2−1 x =0,
+γ γ γ γ
+= Qx =2γ
+(cid:0)
+1−(cid:107)x
+(cid:107)2(cid:1)
+x =:λ x . ⁄– x ·(cid:221)(cid:10) Q (cid:27)A(cid:14)(cid:149)(cid:254).
+γ γ γ γ γ γ
+(cid:124) (cid:123)(cid:122) (cid:125)
+=:λγ
+λ =2γ
+(cid:0)
+1−(cid:107)x
+(cid:107)2(cid:1)
+≤λ ,
+γ γ max
+∴ (cid:8) γ →∞, k (cid:107)x γ (cid:107)2−1=−λ 2 m γ ax =O( γ 1).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 22/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)A^ |  |  |
+|---|---|---|---|
+|  | ~. minx(cid:62)Qx, s.t. (cid:107)x(cid:107)2 = 1, (cid:217)¥ Q = Q(cid:62).
+1 (cid:21)(cid:209)(cid:254)ª‘zflK⁄ØA(cid:27)(cid:19)gv…Œ.
+2 y†(cid:19)gv…Œ(cid:27)4(cid:2): x γ ·(cid:221)(cid:10) Q (cid:27)A(cid:14)(cid:149)(cid:254).
+3 y†(cid:19)gv…Œ(cid:27)4(cid:2):(cid:247)v(cid:6)‘zflK(cid:27)(cid:140)15(cid:27)(cid:132)˙(cid:143)
+(cid:107)x (cid:107)2−1=O(1/γ), γ →+∞.
+γ
+): (cid:19)gv…Œ: min q(x)=x(cid:62)Qx+γ (cid:0) (cid:107)x(cid:107)2−1 (cid:1)2 .
+ˇ(cid:143) x ·(cid:19)gv…Œ q(x) (cid:27)4(cid:2):, dˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+γ
+(cid:16) (cid:17)
+∇q(x )=0=⇒2Qx +4γ (cid:107)x (cid:107)2−1 x =0,
+γ γ γ γ
+(cid:0) (cid:107)2(cid:1)
+= Qx =2γ 1−(cid:107)x x =:λ x . ⁄– x ·(cid:221)(cid:10) Q (cid:27)A(cid:14)(cid:149)(cid:254).
+γ γ γ γ γ γ
+(cid:124) (cid:123)(cid:122) (cid:125)
+=:λγ
+(cid:0) (cid:107)2(cid:1)
+λ =2γ 1−(cid:107)x ≤λ ,
+γ γ max
+∴ (cid:8) γ →∞, k (cid:107)x γ (cid:107)2−1=−λ 2 m γ ax =O( γ 1). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 22/32 |
+
+## 第 23 页
+v…Œ{(cid:27)A^
+~. ^(cid:19)gv…Œƒ)(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK
+min f(x)=x +x , s.t g (x)=−x2+2x ≥0, g (x)=x ≥0.
+1 2 1 1 2 2 1
+): (cid:19)gv…Œ(cid:143)
+min q(x)=f(x)+γ (cid:2) min (cid:0) 0,−x2+x (cid:1)(cid:3)2 +γ[min(0,x )]2.
+1 2 1
+(cid:242) γ (cid:192)(cid:143)ºŒ, dˆ(cid:21)(cid:229)‘z(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+(cid:40)
+1+2γ[min(0,−x2+x )](−2x )+2γ[min(0,x )]=0,
+1 2 1 1
+1+2γ[min(0,−x2+x )]=0,
+1 2
+(cid:40) 1+4γx (cid:0) x2−x (cid:1) +2γx =0 (cid:40) x =− 1
+⇒ 1 1 2 1 ⇒ 1 2+2γ
+1−2γ (cid:0) x2−x (cid:1) =0 x = 1 − 1
+1 2 2 (2+2γ)2 2γ
+(cid:40)
+x =0.
+− γ − → −− + − ∞ → 1 ((cid:8)yd)·˜(cid:247)vKKT^(cid:135))
+x =0.
+2
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 23/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)A^ |  |  |
+|---|---|---|---|
+|  | ~. ^(cid:19)gv…Œƒ)(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK
+min f(x)=x +x , s.t g (x)=−x2+2x ≥0, g (x)=x ≥0.
+1 2 1 1 2 2 1
+): (cid:19)gv…Œ(cid:143)
+min q(x)=f(x)+γ (cid:2) min (cid:0) 0,−x2+x (cid:1)(cid:3)2 +γ[min(0,x )]2.
+1 2 1
+(cid:242) γ (cid:192)(cid:143)ºŒ, dˆ(cid:21)(cid:229)‘z(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+(cid:40)
+1+2γ[min(0,−x2+x )](−2x )+2γ[min(0,x )]=0,
+1 2 1 1
+1+2γ[min(0,−x2+x )]=0,
+1 2
+(cid:40) 1+4γx (cid:0) x2−x (cid:1) +2γx =0 (cid:40) x =− 1
+⇒ 1 1 2 1 ⇒ 1 2+2γ
+1−2γ (cid:0) x2−x (cid:1) =0 x = 1 − 1
+1 2 2 (2+2γ)2 2γ
+(cid:40)
+x =0.
+− γ − → −− + − ∞ → 1 ((cid:8)yd)·˜(cid:247)vKKT^(cid:135))
+x =0.
+2 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 23/32 |
+
+## 第 24 页
+(S:)v…Œ{
+=k(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK
+min f(x), s.t. g(x)≥0, (cid:217)¥ g :Rn →Rm.
+(cid:18)m (cid:19)
+(cid:182) ØŒv…Œ: min q(x)=f(x)− 1 (cid:80) log(g (x)) .
+γ i
+i=1
+(cid:18)m (cid:19)
+(cid:183) (cid:16)Œv…Œ: min q(x)=f(x)− 1 (cid:80) 1 .
+γ
+i=1
+gi(x)
+~. ^ØŒv…Œƒ)(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+minf(x)=x −2x , s.t. 1+x −x2 ≥0, x ≥0.
+1 2 1 2 2
+): ØŒv…Œ(cid:143) min q(x)=f(x)− 1[log(1+x −x2)+log(x )].
+γ 1 2 2
+(cid:242) γ (cid:192)(cid:143)ºŒ, dˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+√
+
+(cid:40) 1− 1 =0 x (γ)= γ2+2γ+3−γ (cid:40) x =0
+γ(1+x1−x2 2 ) ⇒ 1 √2γ − γ − ↑ − + − ∞ → 1
+−2+ γ(1+ 2 x x 1 2 −x2 2 ) − γ 1 x2 =0 x 2 (γ)= γ+ 2 γ γ 2+2γ x 2 =1
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 24/32
+
+### 表格 1
+
+|  | (S:)v…Œ{ |  |  |
+|---|---|---|---|
+|  | =k(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK
+min f(x), s.t. g(x)≥0, (cid:217)¥ g :Rn →Rm.
+(cid:18)m (cid:19)
+(cid:182) ØŒv…Œ: min q(x)=f(x)− 1 (cid:80) log(g (x)) .
+γ i
+i=1
+(cid:18)m (cid:19)
+(cid:183) (cid:16)Œv…Œ: min q(x)=f(x)− 1 (cid:80) 1 .
+γ gi(x)
+i=1
+~. ^ØŒv…Œƒ)(cid:216)(cid:31)“(cid:21)(cid:229)‘zflK
+minf(x)=x −2x , s.t. 1+x −x2 ≥0, x ≥0.
+1 2 1 2 2
+): ØŒv…Œ(cid:143) min q(x)=f(x)− 1[log(1+x −x2)+log(x )].
+γ 1 2 2
+(cid:242) γ (cid:192)(cid:143)ºŒ, dˆ(cid:21)(cid:229)‘zflK(cid:27)(cid:129)‘5^(cid:135)(cid:26)
+√
+
+(cid:40) 1− 1 =0 x (γ)= γ2+2γ+3−γ (cid:40) x =0
+γ(1+x1−x2 2 ) ⇒ 1 √2γ − γ − ↑ − + − ∞ → 1
+−2+ γ(1+ 2 x x 1 2 −x2 2 ) − γ 1 x2 =0 x 2 (γ)= γ+ 2 γ γ 2+2γ x 2 =1 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 24/32 |
+
+## 第 25 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+‰´
+(cid:23) {γ }∞ (cid:143)(cid:20)(cid:27)vºŒS(cid:15). v(cid:145) q(γ ,·):Rn →R ‰´(cid:143)
+k k=0 k
+q(γ ,x)=f(x)+γ P(x). (9)
+k k
+(cid:70) γ k ·˜(cid:21)(cid:192)(cid:18)(cid:27)vºŒ. P x(k) =argmin x∈Rn q(γ k ,x).
+(cid:218)n
+e {γ } ·(cid:20)(cid:27)(cid:133)(cid:154)~(cid:27)S(cid:15), K
+k
+1 q
+(cid:0)
+γ k+1
+,x(k+1)(cid:1)
+≥q
+(cid:0)
+γ k
+,x(k)(cid:1)
+. 3 f
+(cid:0) x(k+1)(cid:1)
+≥f
+(cid:0) x(k)(cid:1)
+.
+2 P (cid:0) x(k+1)(cid:1) ≤P (cid:0) x(k)(cid:1) . 4 f(x∗)≥q (cid:0) γ k ,x(k)(cid:1) ≥f (cid:0) x(k)(cid:1) .
+1 d(9)¥q(cid:27)‰´, S(cid:15) {γ k } (cid:27)(cid:252)N5(cid:218) x(k) =argmin x∈Rn q(γ k ,x)(cid:27)‰
+´, •(cid:130)k
+q(γ ,x(k+1))=f(x(k+1))+γ P(x(k+1))≥f(x(k+1))+γ P(x(k+1))
+k+1 k+1 k
+≥f(x(k+1))+γ P(x(k+1))=q(γ ,x(k)).
+k k
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 25/32
+
+### 表格 1
+
+| v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|
+| ‰´
+(cid:23) {γ }∞ (cid:143)(cid:20)(cid:27)vºŒS(cid:15). v(cid:145) q(γ ,·):Rn →R ‰´(cid:143)
+k k=0 k
+q(γ ,x)=f(x)+γ P(x). (9)
+k k
+(cid:70) γ k ·˜(cid:21)(cid:192)(cid:18)(cid:27)vºŒ. P x(k) =argmin x∈Rn q(γ k ,x).
+(cid:218)n
+e {γ } ·(cid:20)(cid:27)(cid:133)(cid:154)~(cid:27)S(cid:15), K
+k
+(cid:0) ,x(k+1)(cid:1) (cid:0) ,x(k)(cid:1) (cid:0) x(k+1)(cid:1) (cid:0) x(k)(cid:1)
+1 q γ k+1 ≥q γ k . 3 f ≥f .
+2 P (cid:0) x(k+1)(cid:1) ≤P (cid:0) x(k)(cid:1) . 4 f(x∗)≥q (cid:0) γ k ,x(k)(cid:1) ≥f (cid:0) x(k)(cid:1) .
+1 d(9)¥q(cid:27)‰´, S(cid:15) {γ k } (cid:27)(cid:252)N5(cid:218) x(k) =argmin x∈Rn q(γ k ,x)(cid:27)‰
+´, •(cid:130)k
+q(γ ,x(k+1))=f(x(k+1))+γ P(x(k+1))≥f(x(k+1))+γ P(x(k+1))
+k+1 k+1 k
+≥f(x(k+1))+γ P(x(k+1))=q(γ ,x(k)).
+k k |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 25/32 |
+
+## 第 26 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+2 ∵ x(k) =argminq(γ k ,x) (cid:218) x(k+1) =argminq(γ k+1 ,x). ˇd,
+(cid:40)
+q(γ ,x(k))=f(x(k))+γ P(x(k))≤f(x(k+1))+γ P(x(k+1))
+k k k
+q(γ ,x(k+1))=f(x(k+1))+γ P(x(k+1))≤fx(k))+γ P(x(k))
+k+1 k+1 k+1
+(cid:242)(cid:254)ª(cid:252)“(cid:131)\(cid:26)
+γ P(x(k))+γ P(x(k+1))≤γ P(x(k))+γ P(x(k+1)).
+k k+1 k+1 k
+†L£(cid:145), (cid:26) P(x(k+1))≤P(x(k)).
+3 ∵ x(k) =argminq(γ k ,x)
+∴ q(γ ,x(k))=f(x(k))+γ P(x(k))≤f(x(k+1))+γ P(x(k+1)).
+k k k
+∴ f(x(k+1))≥f(x(k))+γ (P(x(k))−P(x(k+1))).
+k
+d (cid:183) (cid:26) f(x(k+1))≥f(x(k)).
+4 ∵ x(k) =argminq(γ k ,x)
+∴ f(x∗)+γ P(x∗)≥q(γ ,x(k))=f(x(k))+γ P(x(k)).
+k k k
+∵ x∗ ·(cid:21)(cid:229)‘zflK(cid:27)4(cid:2):,
+∴ P(x∗)=0 (cid:218) f(x∗)≥f(x(k))+γ P(x(k)).
+k
+∵ P(x(k))≥0 (cid:218) γ ≥0,
+k
+∴ f(x∗)≥q(γ ,x(k))≥f(x(k)).
+k
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 26/32
+
+### 表格 1
+
+| v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|
+| 2 ∵ x(k) =argminq(γ k ,x) (cid:218) x(k+1) =argminq(γ k+1 ,x). ˇd,
+(cid:40)
+q(γ ,x(k))=f(x(k))+γ P(x(k))≤f(x(k+1))+γ P(x(k+1))
+k k k
+q(γ ,x(k+1))=f(x(k+1))+γ P(x(k+1))≤fx(k))+γ P(x(k))
+k+1 k+1 k+1
+(cid:242)(cid:254)ª(cid:252)“(cid:131)\(cid:26)
+γ P(x(k))+γ P(x(k+1))≤γ P(x(k))+γ P(x(k+1)).
+k k+1 k+1 k
+†L£(cid:145), (cid:26) P(x(k+1))≤P(x(k)).
+3 ∵ x(k) =argminq(γ k ,x)
+∴ q(γ ,x(k))=f(x(k))+γ P(x(k))≤f(x(k+1))+γ P(x(k+1)).
+k k k
+∴ f(x(k+1))≥f(x(k))+γ (P(x(k))−P(x(k+1))).
+k
+d (cid:183) (cid:26) f(x(k+1))≥f(x(k)).
+4 ∵ x(k) =argminq(γ k ,x)
+∴ f(x∗)+γ P(x∗)≥q(γ ,x(k))=f(x(k))+γ P(x(k)).
+k k k
+∵ x∗ ·(cid:21)(cid:229)‘zflK(cid:27)4(cid:2):,
+∴ P(x∗)=0 (cid:218) f(x∗)≥f(x(k))+γ P(x(k)).
+k
+∵ P(x(k))≥0 (cid:218) γ ≥0,
+k
+∴ f(x∗)≥q(γ ,x(k))≥f(x(k)).
+k |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 26/32 |
+
+## 第 27 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+‰n
+b(cid:23) f ·ºY…Œ, lim γ =∞. KS(cid:15)
+(cid:8) x(k)(cid:9)
+(cid:27)?¿4(cid:129):(cid:254)·(cid:21)(cid:229)‘
+k→∞ k
+zflK(cid:27)4(cid:2):.
+y: (cid:23)
+(cid:8) x(mk)(cid:9)
+·S(cid:15)
+(cid:8) x(k)(cid:9)
+(cid:27)´æf(cid:15), 4(cid:129)(cid:143) xˆ.
+d(cid:254)ª(cid:218)n(cid:26), (cid:8) q (cid:0) γ ,x(k)(cid:1)(cid:9) ·k.(cid:216)~S(cid:15)(cid:133)k(cid:254). f(x∗).
+k
+∴ (cid:8) q (cid:0) γ ,x(k)(cid:1)(cid:9) k4(cid:129), = q∗ = lim q (cid:0) γ ,x(k)(cid:1) ƒ(cid:26) q∗ ≤f(x∗).
+k k
+k→∞
+∵ f ·ºY…Œ, (cid:133)d(cid:254)ª(cid:218)n(cid:127) f (cid:0) x(mk)(cid:1) ≤f(x∗),
+lim f(x(mk))=f( lim x(mk))=f(xˆ)≤f(x∗).
+k→∞ k→∞
+∵ (cid:8) f(x(mk)) (cid:9) (cid:218) (cid:8) q(γ
+mk
+,x(mk)) (cid:9) (cid:254)·´æŒ(cid:15),
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 27/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|---|
+|  | ‰n
+(cid:8) x(k)(cid:9)
+b(cid:23) f ·ºY…Œ, lim γ =∞. KS(cid:15) (cid:27)?¿4(cid:129):(cid:254)·(cid:21)(cid:229)‘
+k→∞ k
+zflK(cid:27)4(cid:2):.
+(cid:8) x(mk)(cid:9) (cid:8) x(k)(cid:9)
+y: (cid:23) ·S(cid:15) (cid:27)´æf(cid:15), 4(cid:129)(cid:143) xˆ.
+d(cid:254)ª(cid:218)n(cid:26), (cid:8) q (cid:0) γ ,x(k)(cid:1)(cid:9) ·k.(cid:216)~S(cid:15)(cid:133)k(cid:254). f(x∗).
+k
+∴ (cid:8) q (cid:0) γ ,x(k)(cid:1)(cid:9) k4(cid:129), = q∗ = lim q (cid:0) γ ,x(k)(cid:1) ƒ(cid:26) q∗ ≤f(x∗).
+k k
+k→∞
+∵ f ·ºY…Œ, (cid:133)d(cid:254)ª(cid:218)n(cid:127) f (cid:0) x(mk)(cid:1) ≤f(x∗),
+lim f(x(mk))=f( lim x(mk))=f(xˆ)≤f(x∗).
+k→∞ k→∞
+∵ (cid:8) f(x(mk)) (cid:9) (cid:218) (cid:8) q(γ ,x(mk)) (cid:9) (cid:254)·´æŒ(cid:15),
+mk |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 27/32 |
+
+## 第 28 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+∴ (cid:8) γ
+mk
+P (cid:0) x(mk)(cid:1)(cid:9) = (cid:8) q (cid:0) γ
+mk
+,x(mk)(cid:1) −f (cid:0) x(mk)(cid:1)(cid:9) (cid:143)·´æ(cid:15), (cid:133)k
+(cid:16) (cid:17)
+k
+l
+→
+im
+∞
+γ
+mk
+P x(mk) =q∗−f(xˆ).
+d(cid:254)ª(cid:218)n(cid:26),
+(cid:8)
+P
+(cid:0) x(k)(cid:1)(cid:9)
+·(cid:154)Oke.(cid:27)S(cid:15), e.(cid:143) 0.
+∴ (cid:8) P (cid:0) x(k)(cid:1)(cid:9) ´æ. ˇd, (cid:8) P (cid:0) x(mk)(cid:1)(cid:9) (cid:143)´æ.
+∵ γ
+mk
+→∞, ∴ lim
+k→∞
+P (cid:0) x(mk)(cid:1) =0. d…Œ P(x) (cid:27)ºY5, •(cid:130)k
+0= lim P(x(mk))=P( lim x(mk))=P(xˆ),
+k→∞ k→∞
+∴ xˆ ·(cid:140)1:.
+k(cid:254)¡(cid:127) f(x∗)≥f(xˆ),
+∴ xˆ 7·(cid:21)(cid:229)‘zflK(cid:27)4(cid:2):.
+((cid:216): evºŒ γ →∞, v…Œ{(cid:23))(cid:27)S(cid:147)S(cid:15)(cid:27)?¿4(cid:129):·(cid:6)(cid:21)(cid:229)‘z
+flK(cid:27)4(cid:138):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 28/32
+
+### 表格 1
+
+| v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|
+| ∴ (cid:8) γ P (cid:0) x(mk)(cid:1)(cid:9) = (cid:8) q (cid:0) γ ,x(mk)(cid:1) −f (cid:0) x(mk)(cid:1)(cid:9) (cid:143)·´æ(cid:15), (cid:133)k
+mk mk
+(cid:16) (cid:17)
+l im γ P x(mk) =q∗−f(xˆ).
+mk
+k → ∞
+(cid:8) (cid:0) x(k)(cid:1)(cid:9)
+d(cid:254)ª(cid:218)n(cid:26), P ·(cid:154)Oke.(cid:27)S(cid:15), e.(cid:143) 0.
+∴ (cid:8) P (cid:0) x(k)(cid:1)(cid:9) ´æ. ˇd, (cid:8) P (cid:0) x(mk)(cid:1)(cid:9) (cid:143)´æ.
+∵ γ →∞, ∴ lim P (cid:0) x(mk)(cid:1) =0. d…Œ P(x) (cid:27)ºY5, •(cid:130)k
+mk k→∞
+0= lim P(x(mk))=P( lim x(mk))=P(xˆ),
+k→∞ k→∞
+∴ xˆ ·(cid:140)1:.
+k(cid:254)¡(cid:127) f(x∗)≥f(xˆ),
+∴ xˆ 7·(cid:21)(cid:229)‘zflK(cid:27)4(cid:2):.
+((cid:216): evºŒ γ →∞, v…Œ{(cid:23))(cid:27)S(cid:147)S(cid:15)(cid:27)?¿4(cid:129):·(cid:6)(cid:21)(cid:229)‘z
+flK(cid:27)4(cid:138):. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 28/32 |
+
+## 第 29 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+(cid:70) (cid:176)(v…Œ: (cid:143)(cid:10)Ø(cid:152)(cid:135)ˆ(cid:21)(cid:229)‘zflKƒ(cid:217)4(cid:138):(cid:17)(cid:28)(cid:31)du(cid:21)(cid:229)‘z
+flK(cid:27)4(cid:138): ((cid:13)(cid:154)ˇL(cid:152)X(cid:15)ˆ(cid:21)(cid:229)‘z%C(cid:6)(cid:21)(cid:229)‘z). dav…Œ
+(cid:135)ƒ: (cid:8)vºŒ γ >0 (cid:18),(cid:135)(cid:27)‰(cid:138)(cid:158), v…Œ(cid:27)4(cid:138):(cid:134)(cid:6)(cid:21)(cid:229)‘zflK
+(cid:27)4(cid:138):(cid:152)(cid:24).
+(cid:176)(v…Œ":: ˇ~·(cid:216)(cid:140)(cid:135)‘z.
+~. minf(x) = 5−3x, s.t. 0 ≤ x ≤ 1
+(cid:254)ª‘zflK(cid:27)4(cid:2):· x∗ =1.
+b(cid:23)v…Œ P 3 x∗ =1 ?·(cid:140)(cid:135)(cid:27).
+ˇ(cid:143) ∵ P(x)=0, ∀x∈[0,1] (why?), ⁄– P(cid:48)(x∗)=0.
+e g :=f +γP, K
+g(cid:48)(x∗)=f(cid:48)(x∗)+γP(cid:48)(x∗)(cid:54)=0, ∀γ >0.
+∴ x∗ =1 (cid:216)(cid:247)v…Œ g (cid:27)4(cid:2):(cid:27)(cid:129)‘5^(cid:135).
+∴ P (cid:216)·(cid:176)(v…Œ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 29/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|---|
+|  | (cid:70) (cid:176)(v…Œ: (cid:143)(cid:10)Ø(cid:152)(cid:135)ˆ(cid:21)(cid:229)‘zflKƒ(cid:217)4(cid:138):(cid:17)(cid:28)(cid:31)du(cid:21)(cid:229)‘z
+flK(cid:27)4(cid:138): ((cid:13)(cid:154)ˇL(cid:152)X(cid:15)ˆ(cid:21)(cid:229)‘z%C(cid:6)(cid:21)(cid:229)‘z). dav…Œ
+(cid:135)ƒ: (cid:8)vºŒ γ >0 (cid:18),(cid:135)(cid:27)‰(cid:138)(cid:158), v…Œ(cid:27)4(cid:138):(cid:134)(cid:6)(cid:21)(cid:229)‘zflK
+(cid:27)4(cid:138):(cid:152)(cid:24).
+(cid:176)(v…Œ":: ˇ~·(cid:216)(cid:140)(cid:135)‘z.
+~. minf(x) = 5−3x, s.t. 0 ≤ x ≤ 1
+(cid:254)ª‘zflK(cid:27)4(cid:2):· x∗ =1.
+b(cid:23)v…Œ P 3 x∗ =1 ?·(cid:140)(cid:135)(cid:27).
+ˇ(cid:143) ∵ P(x)=0, ∀x∈[0,1] (why?), ⁄– P(cid:48)(x∗)=0.
+e g :=f +γP, K
+g(cid:48)(x∗)=f(cid:48)(x∗)+γP(cid:48)(x∗)(cid:54)=0, ∀γ >0.
+∴ x∗ =1 (cid:216)(cid:247)v…Œ g (cid:27)4(cid:2):(cid:27)(cid:129)‘5^(cid:135).
+∴ P (cid:216)·(cid:176)(v…Œ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 29/32 |
+
+## 第 30 页
+v…Œ{(cid:27)n(cid:216)'(cid:219)
+‰n (min f(x), (cid:217)¥ Ω ⊂ Rn ·(cid:224)8)
+x∈Ω
+(cid:23)4(cid:2): x∗ ∈bd(Ω), (cid:133)(cid:127)3 x∗ ?(cid:27)(cid:140)1(cid:144)(cid:149) d ƒ(cid:26) d(cid:62)∇f(x∗)>0. e P
+·(cid:176)(v…Œ, K P 3 x∗ ?·(cid:216)(cid:140)(cid:135)(cid:27).
+y. ((cid:135)y{) b(cid:23) P 3 x∗ ?(cid:140)(cid:135).
+∵ P(x)=0, ∀x∈Ω,
+∴∇P (x∗)=0.
+Kk d(cid:62)∇P (x∗)=0, ∀d.
+e g :=f +γP, K d(cid:62)∇g(x∗)=d(cid:62)∇f(x∗)>0, ∀γ >0,
+ø¿(cid:155)X ∇g(x∗)(cid:54)=0.
+∴ x∗ (cid:216)·…Œ g (cid:27)(cid:219)(cid:220)4(cid:2):,
+∴P (cid:216)·(cid:176)(v…Œ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 30/32
+
+### 表格 1
+
+|  | v…Œ{(cid:27)n(cid:216)'(cid:219) |  |  |
+|---|---|---|---|
+|  | ‰n (min f(x), (cid:217)¥ Ω ⊂ Rn ·(cid:224)8)
+x∈Ω
+(cid:23)4(cid:2): x∗ ∈bd(Ω), (cid:133)(cid:127)3 x∗ ?(cid:27)(cid:140)1(cid:144)(cid:149) d ƒ(cid:26) d(cid:62)∇f(x∗)>0. e P
+·(cid:176)(v…Œ, K P 3 x∗ ?·(cid:216)(cid:140)(cid:135)(cid:27).
+y. ((cid:135)y{) b(cid:23) P 3 x∗ ?(cid:140)(cid:135).
+∵ P(x)=0, ∀x∈Ω,
+∴∇P (x∗)=0.
+Kk d(cid:62)∇P (x∗)=0, ∀d.
+e g :=f +γP, K d(cid:62)∇g(x∗)=d(cid:62)∇f(x∗)>0, ∀γ >0,
+ø¿(cid:155)X ∇g(x∗)(cid:54)=0.
+∴ x∗ (cid:216)·…Œ g (cid:27)(cid:219)(cid:220)4(cid:2):,
+∴P (cid:216)·(cid:176)(v…Œ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 30/32 |
+
+## 第 31 页
+O2.(cid:130)KF…Œ{
+g·
+(cid:242).(cid:130)KF…Œ{(cid:218)v…Œ{((cid:220)3(cid:152)(cid:229). n(cid:216)(cid:254);(cid:157)(cid:27)v…ŒI(cid:135)˜(cid:21)N(cid:18)
+vºŒ(cid:27)":, =O2.(cid:130)KFƒf{(cid:140)–(cid:18)(cid:27)‰(cid:27)vºŒ.
+fi(cid:127) h : Rn → Rp, g : Rn → Rm.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. h(x)=0, g(x)≤0.
+O2.(cid:130)KF…Œ L:Rn×Rp×Rm →R,
++
+L(x,λ,µ)=f(x)+λ(cid:62)h(x)+µ(cid:62)g(x)+γ((cid:107)h(x)(cid:107)2+(cid:107)g+(x)(cid:107)2)
+p m
+(cid:88) (cid:88)
+=f(x)+ λ h (x)+ µ g (x)
+i i i i
+i=1 i=1
+(cid:32) p m (cid:33)
+(cid:88) (cid:88)
++γ |h (x)|2+ |g+(x)|2 .
+i i
+i=1 i=1
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 31/32
+
+### 表格 1
+
+|  | O2.(cid:130)KF…Œ{ |  |  |
+|---|---|---|---|
+|  | g·
+(cid:242).(cid:130)KF…Œ{(cid:218)v…Œ{((cid:220)3(cid:152)(cid:229). n(cid:216)(cid:254);(cid:157)(cid:27)v…ŒI(cid:135)˜(cid:21)N(cid:18)
+vºŒ(cid:27)":, =O2.(cid:130)KFƒf{(cid:140)–(cid:18)(cid:27)‰(cid:27)vºŒ.
+fi(cid:127) h : Rn → Rp, g : Rn → Rm.
+(cid:21)(cid:229)‘zflK: min f(x), s.t. h(x)=0, g(x)≤0.
+O2.(cid:130)KF…Œ L:Rn×Rp×Rm →R,
++
+L(x,λ,µ)=f(x)+λ(cid:62)h(x)+µ(cid:62)g(x)+γ((cid:107)h(x)(cid:107)2+(cid:107)g+(x)(cid:107)2)
+p m
+(cid:88) (cid:88)
+=f(x)+ λ h (x)+ µ g (x)
+i i i i
+i=1 i=1
+(cid:32) p m (cid:33)
+(cid:88) (cid:88)
++γ |h (x)|2+ |g+(x)|2 .
+i i
+i=1 i=1 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 31/32 |
+
+## 第 32 页
+O2.(cid:130)KF…Œ{
+O2.(cid:130)KF…Œ{(cid:27)S(cid:147)(cid:130)“
+ xk+1 =argminL (cid:0) x,λk,µk(cid:1) ,
+
+λk+1 =λk+γ (cid:80)p h (cid:0) xk+1(cid:1) ,
+i=1 i
+µk+1 = (cid:16) µk+γ (cid:80)m (cid:12) (cid:12)g+(x) (cid:12) (cid:12) 2 (cid:17)+ .
+i=1 i
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ 32/32
+
+### 表格 1
+
+|  | O2.(cid:130)KF…Œ{ |  |  |
+|---|---|---|---|
+|  | O2.(cid:130)KF…Œ{(cid:27)S(cid:147)(cid:130)“
+ xk+1 =argminL (cid:0) x,λk,µk(cid:1) ,
+
+λk+1 =λk+γ (cid:80)p h (cid:0) xk+1(cid:1) ,
+i=1 i
+µk+1 = (cid:16) µk+γ (cid:80)m (cid:12) (cid:12)g+(x) (cid:12) (cid:12) 2 (cid:17)+ .
+i=1 i |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 123(cid:217)(cid:21)(cid:229)‘z(cid:27)Œ(cid:138)(cid:142){ | 32/32 |

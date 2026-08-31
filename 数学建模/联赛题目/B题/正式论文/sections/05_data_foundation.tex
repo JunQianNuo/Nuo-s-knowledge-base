@@ -1,0 +1,119 @@
+% mcm-paper source binding (non-rendering metadata)
+% Repository HEAD checked: 66f49838fe3060c9c0286cb5aa87613ac20b9fc3
+% Section role: shared data preprocessing and unified modeling foundation.
+% 2026-08-17: only Figure 1 / Figure 2 image paths are remapped per user instruction.
+
+\section{数据预处理与统一建模基础}\label{sec:data-foundation}
+
+三问共享地点、机型和基本运行规则，仅需求类型、时间约束与机队限制逐步增加。为避免后文重复，本文先统一数据口径、架次表示、人员容量、燃油传播及评价指标，再分别建立三问模型。
+
+\subsection{数据预处理}
+
+\subsubsection{原始数据检查与标准化}
+
+距离数据包含3座陆地机场和52座海上设施，共55个节点，其中8座海上设施允许加油。经检查，距离矩阵与人员文件中的地点编号一致，未发现缺失距离、非法地点或重复人员编号。问题一含1600名出海人员；问题二扩展为4000人，其中出海、海返和设施间穿梭分别为1600、1600和800人；问题三沿用4000人，并增加时间窗和任务类别。
+
+\subsubsection{人员需求聚合与时间统一}
+
+为压缩变量规模，本文将约束属性完全相同的人员聚合为需求组；原始人员编号仅用于求解后的逐人回填。问题一按起终点聚合为104组，问题二按起终点聚合为264组，问题三进一步区分时间窗和任务类别，共形成1877组。需求中的\texttt{LAND}标记表示可由满足条件的任一陆地机场完成运输，不能与明确指定A01、A02或A03的需求混同。
+
+问题三以2026年8月3日00:00为时间原点，将全部时刻转为整数分钟参与求解，输出时再还原为实际日期和时刻。三问的数据规模及约束递进关系见图~\ref{fig:data-overview}。图中可见，问题一到问题二主要体现运输类型与人员规模的扩展，而问题三在人员总量不变的情况下，需求组数由264组增至1877组，说明时间窗与任务类别细分是后续时空调度规模增长的主要来源。
+
+\begin{figure}[htbp]
+    \centering
+    % 用户指定映射：论文图1“运输网络与三问数据规模概览”
+    % 实际文件名为 05_Fig1_三问统一建模框架与目标层级.png
+    \includegraphics[width=0.96\textwidth]{figures/05_Fig1_三问统一建模框架与目标层级.png}
+    \caption{运输网络与三问数据规模概览}
+    \label{fig:data-overview}
+\end{figure}
+
+\subsection{统一建模基础}
+
+三问均先生成满足公共运行规则的候选架次，再叠加相应人员流、时间和机队约束。问题一为单向出海运输；问题二引入双向取送与动态座位复用；问题三进一步加入带时刻候选列和具体飞机排班。统一框架如图~\ref{fig:unified-framework}所示。该图表明，三问并非彼此独立的模型，而是在同一物理可行性核上逐步增加人员流、时间与具体飞机约束，因此后文只需给出各问新增的模型结构。
+
+\begin{figure}[htbp]
+    \centering
+    % 用户指定映射：论文图2“三问统一建模框架与目标层级”
+    % 实际文件名为 05_Fig2_运输网络与三问数据规模概览.png
+    \includegraphics[width=0.96\textwidth]{figures/05_Fig2_运输网络与三问数据规模概览.png}
+    \caption{三问统一建模框架与目标层级}
+    \label{fig:unified-framework}
+\end{figure}
+
+\subsubsection{架次表示与时间规则}
+
+候选架次$r$由起降机场$b_r$、机型$k_r$、有序停靠序列及加油决策组成。若海上着陆次数为$m_r$，则地点序列满足
+
+\[
+v_{r,0}=v_{r,m_r+1}=b_r,
+\qquad
+1\le m_r\le5.
+\tag{5-1}
+\]
+
+即每个架次从某一机场起飞，经至多5次海上着陆后返回同一机场。机型$k$从$i$到$j$的航段时间按题意逐段向上取整：
+
+\[
+\tau_{ij}^{k}
+=
+\left\lceil
+\frac{60d_{ij}}{v_k}
+\right\rceil .
+\tag{5-2}
+\]
+
+海上设施基础停靠10 min，加油额外增加10 min；问题三再在物理路线基础上附加执行日期和完整到离时刻。
+
+\subsubsection{人员取送与动态容量}
+
+设人员在架次$r$上的上、下机位置为$\mu$和$\nu$，其占座区间定义为半开区间$[\mu,\nu)$。于是第$h$个航段的载客量为
+
+\[
+n_{r,h}
+=
+\sum_{o\in\mathcal O_r}
+z_o\mathbf 1(\mu_o\le h<\nu_o),
+\qquad
+n_{r,h}\le Q_{k_r}.
+\tag{5-3}
+\]
+
+半开区间使同一站点下机人员释放的座位可立即供新人员使用。问题一只有机场上客，容量约束可进一步化简；问题二和问题三保留逐航段动态容量。
+
+\subsubsection{燃油传播与加油规则}
+
+所有架次从机场满油起飞。若机型$k_r$单位距离耗油为$c_{k_r}$，则逐航段燃油传播满足
+
+\[
+f_{r,h+1}^{arr}
+=
+f_{r,h}^{dep}
+-
+c_{k_r}d_{v_{r,h},v_{r,h+1}},
+\qquad
+f_{r,h+1}^{arr}\ge R_{k_r}.
+\tag{5-4}
+\]
+
+仅8座指定海上设施允许加油；发生加油时，离站前燃油恢复至该机型满油状态。燃油受限车辆路径研究通常也需要同时处理续航约束、可加油节点以及从基地出发并返回基地的闭环路线\cite{sundar2017}。因此，本文在候选路线生成阶段对每一航段进行燃油传播与安全余油检查，并同步记录合法加油决策。
+
+\subsubsection{统一评价指标}
+
+三问统一记录总飞机使用时间$T^{air}$、人员总在途时间$T^{pax}$、燃油消耗$F^{fuel}$、架次数$N^{flight}$和距离加权座位利用率$U$。其中
+
+\[
+T^{air}
+=
+\sum_{r\in S}T_r,
+\qquad
+U
+=
+\frac{\sum_{r\in S}PK_r}
+{\sum_{r\in S}AK_r}.
+\tag{5-5}
+\]
+
+问题一、问题二及问题三的阶段C均按
+$T^{air}\rightarrow T^{pax}\rightarrow F^{fuel}\rightarrow N^{flight}\rightarrow -U$
+逐级优化；问题三的阶段B则在固定飞机时间预算下优先处理临时任务接纳。后文各模型均在上述公共规则上增加本问特有约束，不再重复定义。

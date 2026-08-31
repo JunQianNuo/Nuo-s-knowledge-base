@@ -1,0 +1,348 @@
+# 11-拟牛顿法
+
+---
+title: 第11章 拟牛顿法（Quasi-Newton Method）
+subject: 最优化方法
+source: 无动画Chapter11.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 11
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第11章 拟牛顿法（Quasi-Newton Method）
+## 1．黑塞矩阵的近似
+**2．秩1校正公式**
+3.DFP公式
+4.BFGS公式
+5.BB方法
+2
+第11章 拟牛顿法
+1/20
+## 牛顿法与割线法（即拟牛顿法）
+**1维情形：**min $x\in \mathbb {R}$ $f(x)$ 
+### 牛顿法的迭代格式：
+<table border="1" ><tr>
+<td>$x^{(k+1)}=x^{(k)}-\frac {f^{\prime }\left(x^{(k)}\right)}{f^{\prime \prime }\left(x^{(k)}\right)}$</td>
+</tr></table>
+### ·割线法的迭代格式：
+<table border="1" ><tr>
+<td>$x^{(k+1)}=x^{(k)}-\frac {f^{\prime }\left(x^{(k)}\right)}{F\left(x^{(k)}\right)}$</td>
+</tr></table>
+**其中**
+$$F\left(x^{(k)}\right)=\frac {f^{\prime }\left(x^{(k)}\right)-f^{\prime }\left(x^{(k-1)}\right)}{x^{(k)}-x^{(k-1)}}$$
+是 $f^{\prime \prime }\left(x^{(k)}\right)$ 的差分近似.n维情形：
+·牛顿法迭代格式： $\min _{\boldsymbol {x}\in \mathbb {R}^{n}}f(\boldsymbol {x})$ 
+$$\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)^{-1}\boldsymbol {g}^{(k)},$$
+其中 $\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)=\nabla ^{2}f\left(\boldsymbol {x}^{(k)}\right)$ 
+$$\boldsymbol {g}^{(k)}=\nabla f\left(\boldsymbol {x}^{(k)}\right)$$
+割线法迭代格式：
+近似 $\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)$ 或 $\left[\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)\right]^{-1}$ ，即
+$\boldsymbol {B}_{k}\approx \boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)$ $\boldsymbol {H}_{k}\approx \left[\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)\right]^{-1}$ $\therefore$ 
+<table border="1" ><tr>
+<td>版本1 ： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {g}^{(k)}$版本2: $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {B}_{k}^{-1}\boldsymbol {g}^{(k)}$</td>
+</tr></table>
+![](https://web-api.textin.com/ocr_image/external/9cab75c93429444c.jpg)
+第11章 拟牛顿法
+2/20
+版本1： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {g}^{(k)}$ 
+## $\boldsymbol {H}_{k}$ 的相关条件
+$\boldsymbol {H}_{k}\approx \left[\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)\right]^{-1}$ 且 $\boldsymbol {H}_{k}$ 是对称正定矩阵；
+从 $\boldsymbol {H}_{k}$ 到 $\boldsymbol {H}_{k+1}$ 的更新过程，计算量要尽量小，即 $\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\Delta _{k}$ ，其中 $\Delta _{k}$ 是一个“简单”的矩阵.
+### 分析：黑塞矩阵 $\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)$ 的特点：
+·1维情形： $\because$ $f^{\prime }\left(x^{(k)}\right)\approx f^{\prime }\left(x^{(k+1)}\right)+f^{\prime \prime }\left(x^{(k+1)}\right)\left(x^{(k)}-x^{(k+1)}\right)$ 
+$$\left|\;f^{\prime \prime }(x^{(k+1)})\approx \frac {f^{\prime }(x^{(k+1)})-f^{\prime }(x^{(k)})}{x^{(k+1)}-x^{(k)}}\;\right|$$
+n维情形： $\nabla f\left(\boldsymbol {x}^{(k)}\right)\approx \nabla f\left(\boldsymbol {x}^{(k+1)}\right)+\nabla ^{2}f\left(\boldsymbol {x}^{(k+1)}\right)\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right)$ 
+$\underbrace {\nabla f\left(\boldsymbol {x}^{(k)}\right)-\nabla f\left(\boldsymbol {x}^{(k+1)}\right)}_{\boldsymbol {y}^{(k)}}\approx \underbrace {\nabla ^{2}f\left(\boldsymbol {x}^{(k+1)}\right)}_{\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)}\underbrace {\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right)}_{\boldsymbol {s}^{(k)}}.$
+![](https://web-api.textin.com/ocr_image/external/6f174c1e90061537.jpg)
+$\boldsymbol{y}^{(k)}\approx \boldsymbol{F}\left(\boldsymbol{x}^{(k+1)}\right)\boldsymbol{s}^{(k)}\Longleftrightarrow$ $\left[\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\right]^{-1}\boldsymbol {y}^{(k)}\approx \boldsymbol {s}^{(k)}$ 
+替换 $\left[\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\right]^{-1}$ 为 $\boldsymbol {H}_{k+1}$ ，并强制等号成立，得到拟牛顿／割线方程；
+<table border="1" ><tr>
+<td>拟牛顿方程：$\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}$</td>
+</tr></table>
+![](https://web-api.textin.com/ocr_image/external/1d293f9d9c94ed38.jpg)
+第11章 拟牛顿法
+#### 秩1校正公式
+拟牛顿方程： $\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}$  (1)
+![](https://web-api.textin.com/ocr_image/external/631f4800e982011a.jpg)
+方程组（1）的解不唯一（．只有n个方程，但有 $\frac {n(n+1)}{2}$  个自由度）.因此，（1）有无穷多个解 $\boldsymbol {H}_{k+1}$ 
+![](https://web-api.textin.com/ocr_image/external/0d569d547af26a19.jpg)
+★为了保证 $\boldsymbol {H}_{k+1}\succ 0,$ ，只需让曲率条件 $\boldsymbol {s}^{(k)^{\top }}\boldsymbol {y}^{(k)}>0$ （该条件在采用强Wolfe线搜索时恒成立）.
+#### $\boldsymbol {H}_{k+1}$  的秩1校正公式
+给定矩阵 $\boldsymbol {H}_{k},$ 向量 $\boldsymbol {y}^{(k)},\boldsymbol {s}^{(k)}$ ，通过求解如下矩阵方程组来更新 $\boldsymbol {H}_{k+1}$ 
+$$\left\{\begin{array}{l}\boldsymbol{H}_{k+1}\boldsymbol{y}^{(k)}=\boldsymbol{s}^{(k)}\\
+\boldsymbol{H}_{k+1}=\boldsymbol{H}_{k}+a\boldsymbol{u}\boldsymbol{u}^{\top}\quad \Longrightarrow \quad \stackrel{\text {板书}}{\Longrightarrow}\ldots \Longrightarrow \ldots
+\end{array}\right.$$
+![](https://web-api.textin.com/ocr_image/external/73b4630115d480d7.jpg)
+$Longrightarrow\left\{\begin{array}{l}\boldsymbol {u}=\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\\ a=\frac {1}{\boldsymbol {y}^{(k)\top }\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)}\end{array}\right.$  ∴ $\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)^{\top }}{\boldsymbol {y}^{(k)\top }\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)}$ 
+![](https://web-api.textin.com/ocr_image/external/a722bb4ac686571e.jpg)
+上述特解满足关于 $\boldsymbol {H}_{k+1}$  的所有假设条件（check them).
+![](https://web-api.textin.com/ocr_image/external/f2b0bd289a4b21ee.jpg)
+![](https://web-api.textin.com/ocr_image/external/6f0a0be7e455d78a.jpg)
+# 共轭特征
+## 定理（共轭特征）
+用拟牛顿法极小化强凸二次函数时，若对 $0\leq k<n-1$ $\boldsymbol {H}_{k+1}\boldsymbol {y}^{(i)}=\boldsymbol {s}^{(i)},$ $\forall 0\leq i\leq k,$ ，如果线搜索步长非零，则 $\left\{\boldsymbol {d}^{(i)}=\boldsymbol {H}_{i}\boldsymbol {g}^{(i)}\right\}_{i=0}^{k+1}$ 是Q-共轭向量组.
+证.（数学归纳法）：由定义知 $\boldsymbol {s}^{(k)}=\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}$ 
+$$\therefore \boldsymbol {y}^{(k)}=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}={二次函数}\boldsymbol {Q}\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right)=\boldsymbol {Q}\boldsymbol {s}^{(k)}$$
+由线搜索知， $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {H}_{k}\boldsymbol {g}^{(k)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {d}^{(k)}$ 
+（1）当 $k=0$ 时. $\because α_{0}\neq 0,\therefore \boldsymbol {d}^{(0)}=-\frac {\boldsymbol {s}^{(0)}}{α_{0}}$ 
+$$\because \left(\boldsymbol {d}^{(1)}\right)^{\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}=-\left(\boldsymbol {g}^{(1)}\right)^{\top }\boldsymbol {H}_{1}\boldsymbol {Q}\boldsymbol {d}^{(0)}=\frac {\left(\boldsymbol {g}^{(1)}\right)^{\top }\boldsymbol {H}_{1}\boldsymbol {Q}\boldsymbol {s}^{(0)}}{α_{0}}=\frac {\left(\boldsymbol {g}^{(1)}\right)^{\top }\boldsymbol {H}_{1}\boldsymbol {y}^{(0)}}{α_{0}}$$
+$$\xlongequal[\text {方程}]{\text {割线}}\left(\boldsymbol{g}^{(1)}\right)^{\top}\frac{\boldsymbol{s}^{(0)}}{\alpha_{0}}=\left(\boldsymbol{g}^{(1)}\right)^{\top}\boldsymbol{d}^{(0)}\xlongequal{\text {精确步长}\alpha_{k}}0\text {,}$$
+∴ $\boldsymbol {d}^{(0)}$ 和 $\boldsymbol {d}^{(1)}$ 是 $Q$ -共轭的.
+![](https://web-api.textin.com/ocr_image/external/0009979b6d9dbd7c.jpg)
+![](https://web-api.textin.com/ocr_image/external/18dd5e118e8fe9b8.jpg)
+## 共轭特征
+（2)（归纳假设）假设当 $k-1$ 时（其中 $k<n-1)$ ，共轭性质仍然成立.现在证明当k时，共轭性质也成立，即 $\left\{\boldsymbol {d}^{(k+1)}\right\}_{i=0}^{k+1}$ 是Q-共轭的.只需证
+$\left(\boldsymbol {d}^{(k+1)}\right)^{\top }\boldsymbol {Q}\boldsymbol {d}^{(i)}=0$ $0\leq i\leq k$ 
+**给定i** $(0\leq i\leq k)$ ，利用相同的类似 $k=0$ 时的证明过程.假设 $α_{i}\neq 0,$ ，有 $\left(\boldsymbol {d}^{(k+1)}\right)^{\top }\boldsymbol {Q}\boldsymbol {d}^{(i)}=-\left(\boldsymbol {g}^{(k+1)}\right)^{\top }\boldsymbol {H}_{k+1}\boldsymbol {Q}\boldsymbol {d}^{(i)}=\cdots =-\left(\boldsymbol {g}^{(k+1)}\right)^{\top }\boldsymbol {d}^{(i)}$ 
+$\because \boldsymbol {d}^{(0)},\cdots ,\boldsymbol {d}^{(k)}$  是Q-共轭的（归纳假设条件），有
+$$\left(\boldsymbol {g}^{(k+1)}\right)^{\top }\boldsymbol {d}^{(i)}=0.$$
+$\therefore$ $\left(\boldsymbol {d}^{(k+1)}\right)^{\top }\boldsymbol {Q}\boldsymbol {d}^{(i)}=0.$ 
+拟牛顿法求解n元二次函数极小点时，等价与共轭梯度法.因此，也具有至多n步收敛性.
+### 秩1校正的拟牛顿法
+**Require:** $\boldsymbol {x}^{(0)}\in \mathbb {R}^{n}$  $\boldsymbol {H}_{0}\succ 0.$ .置 $k:=0;$ 
+1**:repeat**
+2:
+$\boldsymbol {d}^{(k)}=-\boldsymbol {H}_{k}\boldsymbol {g}^{(k)}$ ，［拟牛顿方向］
+3:
+4:
+$α_{k}=\arg \min f\left(\boldsymbol {x}^{(k)}+α\boldsymbol {d}^{(k)}\right)$ ，［精确步长］ $α\geq 0$ $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}+α_{k}\boldsymbol {d}^{(k)}$ ，［更新迭代点］
+5:
+$$\boldsymbol {s}^{(k)}=\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\quad \boldsymbol {y}^{(k)}=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}$$
+6:
+$\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)^{\top }}{\boldsymbol {y}^{(k)\top }\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)}$  ［更新 $\left.\boldsymbol {H}_{k+1}\right]$ 
+7**:until** $\left\|\boldsymbol {g}^{(k)}\right\|\leq ε$ 
+![](https://web-api.textin.com/ocr_image/external/f324aed396244f77.jpg)
+通过秩1校正得到的 $\boldsymbol {H}_{k+1}$ 可能不满足 $\boldsymbol {H}_{k+1}not\succ 0.$ .因此， $\boldsymbol {d}^{(k+1)}$ 可能不是下降方向.这种现象也可能在极小化二次函数时发生.
+![](https://web-api.textin.com/ocr_image/external/b01b344040b78770.jpg)
+如果分母 $\left(\boldsymbol {y}^{(k)}\right)^{\top }\left(\boldsymbol {s}^{(k)}-\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\right)$ 接近0，则在更新 $\boldsymbol {H}_{\boldsymbol {k}+1}$ 时会出现数值计算上的数据溢出.
+### 用秩1校正时，可能会有 $\boldsymbol {H}_{k+1}not\succ 0:$  见课本11.2中的例子．
+![](https://web-api.textin.com/ocr_image/external/51a225db58d4add4.jpg)
+第11章 拟牛顿法
+7/20
+### 秩1校正的拟牛顿法
+例．用秩1校正的拟牛顿法极小化 $f\left(x_{1},x_{2}\right)=x_{1}^{2}+\frac {1}{2}x_{2}^{2}+3$ 
+初值 $\boldsymbol {x}^{(0)}=[1,2]^{\top }$ ，初始矩阵 $\boldsymbol {H}_{0}=\boldsymbol {I}_{2}.$ 
+解： $\boldsymbol {g}^{(k)}=\left[\begin{array}{ll}2&0\\ 0&1\end{array}\right]\boldsymbol {x}^{(k)}$ 
+S1: $\boldsymbol {d}^{(0)}=-\boldsymbol {g}^{(0)}=[-2,-2]^{\top }$ 
+$$α_{0}=\arg \min _{α\geq 0}f\left(\boldsymbol {x}^{(0)}+α\boldsymbol {d}^{(0)}\right)=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {d}^{(0)}}{\boldsymbol {d}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}=\frac {2}{3},$$
+$$\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {d}^{(0)}=\left[-\frac {1}{3},\frac {2}{3}\right]^{\top }$$
+S2: $\boldsymbol {g}^{(1)}=\boldsymbol {Q}\boldsymbol {x}^{(1)}=\left[-\frac {2}{3},\frac {2}{3}\right]^{\prime }$ 
+$$\boldsymbol {s}^{(0)}=\boldsymbol {x}^{(1)}-\boldsymbol {x}^{(0)}=\left[-\frac {4}{3},-\frac {4}{3}\right]^{\top },\boldsymbol {y}^{(0)}=\boldsymbol {g}^{(1)}-\boldsymbol {g}^{(0)}=\left[-\frac {8}{3},-\frac {4}{3}\right]^{\top }$$
+$$\boldsymbol {H}_{1}=\boldsymbol {H}_{0}+\frac {\left(\boldsymbol {s}^{(0)}-\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\right)\left(\boldsymbol {s}^{(0)}-\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\right)^{\top }}{\boldsymbol {y}^{(0)\top }\left(\boldsymbol {s}^{(0)}-\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\right)}=\left[\begin{array}{cc}\frac {1}{2}&0\\ 0&1\end{array}\right],$$
+$$\boldsymbol {d}^{(1)}=-\boldsymbol {H}_{1}\boldsymbol {g}^{(1)}=\left[\frac {1}{3},-\frac {2}{3}\right]^{\top },$$
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {d}^{(1)}}{\boldsymbol {d}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(1)}}=1,\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {d}^{(1)}=[0,0]^{\top }$$
+$$\because \boldsymbol {g}^{(2)}=\mathbf {0},\therefore \boldsymbol {x}^{*}=\boldsymbol {x}^{(2)}$$
+### DFP公式
+### 拟牛顿方程
+$\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}$ ，其中 $\boldsymbol {s}^{(k)}=\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}$ , $\boldsymbol {y}^{(k)}=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}$ 
+$\boldsymbol {H}_{k+1}$ 的秩2校正公式（即DFP公式）
+给定 $\boldsymbol {H}_{k},\boldsymbol {y}^{(k)},\boldsymbol {s}^{(k)}$ ，通过求解如下线性系统获得 $\boldsymbol {H}_{k+1}$ 
+$$\left\{\begin{array}{ll}\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}&\stackrel {\text {板书}}{Longrightarrow}\\ \boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+a\boldsymbol {u}\boldsymbol {u}^{\top }+b\boldsymbol {v}\boldsymbol {v}^{\top }\end{array}\right.$$
+2
+![](https://web-api.textin.com/ocr_image/external/04713caeeddb0fb1.jpg)
+第11章 拟牛顿法
+9/20
+### DFP公式
+### 拟牛顿方程
+$\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}$ ，其中 $\boldsymbol {s}^{(k)}=\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}$ , $\boldsymbol {y}^{(k)}=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}$ 
+### $\boldsymbol {H}_{k+1}$ 的秩2校正公式（即DFP公式）
+给定 $\boldsymbol {H}_{k},\boldsymbol {y}^{(k)},\boldsymbol {s}^{(k)}$ ，通过求解如下线性系统获得 $\boldsymbol {H}_{k+1}$ 
+$$\left\{\begin{matrix}\boldsymbol {H}_{k+1}\boldsymbol {y}^{(k)}=\boldsymbol {s}^{(k)}\\ \boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+a\boldsymbol {u}\boldsymbol {u}^{\top }+b\boldsymbol {v}\boldsymbol {v}^{\top }\end{matrix}\right.\stackrel {{\text {板书}}}{{=LL}}\left\{\begin{matrix}\boldsymbol {u}\\ \boldsymbol {v}\end{matrix}\right.\quad \left\{\begin{array}{l}u=s^{(k)},\\ v=\boldsymbol {H}_{k}\boldsymbol {y}^{(}\end{array}\right.\quad \begin{array}{l}a=\frac {1}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}},\\ \boldsymbol {l}^{(k)},\quad b=-\frac {1}{\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}\end{array}$$
+∴ $\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}-\frac {\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}}{\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}$ 
+![](https://web-api.textin.com/ocr_image/external/0471bb75d3ad007d.jpg)
+第11章 拟牛顿法
+9/20
+### DFP公式
+### 例.用DFP公式的拟牛顿法极小化 $f$ 
+$f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\left[\begin{array}{ll}4&2\\ 2&2\end{array}\right]\boldsymbol {x}-\boldsymbol {x}^{\top }\left[\begin{array}{c}-1\\ 1\end{array}\right]$ ，其中 $\boldsymbol {x}^{(0)}=[0,0]^{\top },\boldsymbol {H}_{0}=\boldsymbol {I}_{2}$ 
+解： $\boldsymbol {g}^{(k)}=\left[\begin{array}{ll}4&2\\ 2&2\end{array}\right]\boldsymbol {x}^{(k)}-\left[\begin{array}{c}-1\\ 1\end{array}\right].$ 
+S1: $\boldsymbol {g}^{(0)}=[1,-1]^{\top },$ $\boldsymbol {d}^{(0)}=-\boldsymbol {H}_{0}\boldsymbol {g}^{(0)}=[-1,1]^{\top }$ $α_{0}=\arg \min _{α\geq 0}f\left(\boldsymbol {x}^{(0)}+α\boldsymbol {d}^{(0)}\right)=1,\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {d}^{(0)}=[-1,1]^{\top }$ 
+S2: $\boldsymbol {g}^{(1)}=[-1,-1]^{\top }$ $\boldsymbol {y}^{(0)}=\boldsymbol {g}^{(1)}-\boldsymbol {g}^{(0)}=[-2,0]^{\top },$ $\boldsymbol {s}^{(0)}=\boldsymbol {x}^{(1)}-\boldsymbol {x}^{(0)}=[-1,1]^{\top }$ 
+$$\boldsymbol {H}_{1}=\boldsymbol {H}_{0}+\frac {\boldsymbol {s}^{(0)}\boldsymbol {s}^{(0)\top }}{\boldsymbol {s}^{(0)\top }\boldsymbol {y}^{(0)}}-\frac {\left(\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\right)\left(\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\right)^{\top }}{\boldsymbol {y}^{(0)\top }\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}}=\left[\begin{array}{cc}\frac {1}{2}&-\frac {1}{2}\\ -\frac {1}{2}&\frac {3}{2}\end{array}\right],$$
+$$\boldsymbol {d}^{(1)}=-\boldsymbol {H}_{1}\boldsymbol {g}^{(1)}=[0,1]^{\top }$$
+$$α_{1}=\arg \min _{α\geq 0}f\left(\boldsymbol {x}^{(1)}+α\boldsymbol {d}^{(1)}\right)=\frac {1}{2},\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {d}^{(1)}=\left[-1,\frac {3}{2}\right]^{\top }$$
+$\because$ $\boldsymbol {g}^{(2)}=[0,0]^{\top },\therefore \boldsymbol {x}^{(2)}$ 是极小点.
+![](https://web-api.textin.com/ocr_image/external/3fb6299d4192f56f.jpg)
+$\boldsymbol {d}^{(0)}$ 和 $\boldsymbol {d}^{(1)}$ 是Q-共轭的（check it).
+![](https://web-api.textin.com/ocr_image/external/b56152641be631cb.jpg)
+第11章 拟牛顿法
+10/20
+### DFP公式
+**例.用DFP公式的拟牛顿法极小化** $f$ 
+$f(\boldsymbol {x})=2x_{1}^{2}+x_{2}^{2}-4x_{1}+2,$  其中 $\boldsymbol {H}_{0}=\boldsymbol {I}_{2},\boldsymbol {x}^{(0)}=[2,1]^{\top }$ 
+解： $\nabla f(\boldsymbol {x})=\left[\begin{array}{c}4x_{1}-4\\ 2x_{2}\end{array}\right],\nabla ^{2}f(\boldsymbol {x})=\left[\begin{array}{ll}4&0\\ 0&2\end{array}\right]=:\boldsymbol {Q},$ 
+S1: $\boldsymbol {g}^{(0)}=[4,2]^{\top },\boldsymbol {d}_{0}=-\boldsymbol {H}_{0}\boldsymbol {g}^{(0)}=[-4,-2]^{\top },$ 
+$$α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {d}^{(0)}}{\boldsymbol {d}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}=\frac {5}{18},\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {d}^{(0)}=\left[\frac {8}{9},\frac {4}{9}\right]^{\top }$$
+S2: $\boldsymbol {s}^{(0)}=\boldsymbol {x}^{(1)}-\boldsymbol {x}^{(0)}=\left[-\frac {10}{9}0,-\frac {5}{9}\right]^{\top },\boldsymbol {g}^{(1)}=\left[-\frac {4}{9},\frac {8}{9}\right]^{\top }$ 
+$$\boldsymbol {y}^{(0)}=\boldsymbol {g}^{(1)}-\boldsymbol {g}^{(0)}=\left[-\frac {40}{9},-\frac {10}{9}\right]^{\top },$$
+$$\boldsymbol {H}_{1}=\boldsymbol {H}_{0}+\frac {\boldsymbol {s}^{(0)}\boldsymbol {s}^{(0)\top }}{\boldsymbol {s}^{(0)\top }\boldsymbol {y}^{(0)}}-\frac {\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\boldsymbol {y}^{(0)\top }\boldsymbol {H}_{0}}{\boldsymbol {y}^{(0)\top }\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}}=\frac {1}{306}\left[\begin{array}{cc}86&-38\\ -38&305\end{array}\right]$$
+$$\boldsymbol {d}^{(1)}=-\boldsymbol {H}_{1}\boldsymbol {g}^{(1)}=\left[\frac {4}{17},-\frac {16}{17}\right]^{\top },$$
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {d}^{(1)}}{\boldsymbol {d}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(1)}}=\frac {17}{36},$$
+$$\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {d}^{(1)}=[1,0]^{\top }$$
+. $\boldsymbol {g}^{(2)}=\mathbf {0},\therefore \boldsymbol {x}^{(2)}$  是极小点.
+![](https://web-api.textin.com/ocr_image/external/32a390a83b940620.jpg)
+$\boldsymbol {d}^{(0)}$ 和 $\boldsymbol {d}^{(1)}$ 是 $Q-$ 共轭的（checck it
+### DFP公式
+### 定理（DFP公式具有“遗传性”）
+假设 $\boldsymbol {g}^{(k)}\neq \mathbf {0}$ .在DFP公式的拟牛顿法中，如果 $\boldsymbol {H}_{k}\succ 0,$ 则 $\boldsymbol {H}_{k+1}$ 
+![](https://web-api.textin.com/ocr_image/external/000c9b0ede4e7f31.jpg)
+DFP公式最早由Davidon与1959年提出，后来经Fletcher和Powell在1963年进行了修正.
+![](https://web-api.textin.com/ocr_image/external/1249dd58fd78b12d.jpg)
+由于本质上采用的秩2校正，DFP公式的数值表现优于秩1校正公式．并能保证 $\boldsymbol {H}_{k}\succ 0.$ 
+DFP公式在求解大规模优化问题时，仍然可能出现“停滞”的情况（因为 $\boldsymbol {H}_{k}$ 可能接近于奇异矩阵）.
+### BFGS公式
+历史：1970年，另一种拟牛顿法是基于黑塞矩阵的近似，由Broyden,Fletcher，Goldfarb和Shanno分别独立提出，称为BFGS公式.
+### 动机
+牛顿法的迭代格式： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)^{-1}\boldsymbol {g}^{(k)}$ 
+不同于版本1的 $\boldsymbol {H}_{k}\approx \left[\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)\right]^{-1}$ BFGS方法考虑设计 $\boldsymbol {B}_{k}\approx \boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)$ 因此，版本2的拟牛顿法的迭代格式为： $\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-\boldsymbol {B}_{k}^{-1}\boldsymbol {g}^{(k)}.$ 
+### 如何设计 $\boldsymbol {B}_{k}$ （类比1 $\boldsymbol {H}_{k}$ 的设计方式）
+$\because \nabla f\left(\boldsymbol {x}^{(k)}\right)\approx \nabla f\left(\boldsymbol {x}^{(k+1)}\right)+\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right),$ 
+$\therefore \underbrace {\nabla f\left(\boldsymbol {x}^{(k)}\right)-\nabla f\left(\boldsymbol {x}^{(k+1)}\right)}_{\boldsymbol {y}^{(k)}}\approx \boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\underbrace {\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right)}_{\boldsymbol {s}^{(k)}}$
+![](https://web-api.textin.com/ocr_image/external/f0de6caf5dd7b725.jpg)
+$$\therefore \boldsymbol {y}^{(k)}\approx \boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\boldsymbol {s}^{(k)}$$
+$$\therefore \boldsymbol {y}^{(k)}=\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}$$
+UDSTC $uasrc$
+![](https://web-api.textin.com/ocr_image/external/f3da7754b7b6f0be.jpg)
+![](https://web-api.textin.com/ocr_image/external/93a23bf06d0d7671.jpg)
+第11章 拟牛顿法
+拟牛顿方程： $\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}=\boldsymbol {y}^{(k)}$ ，其中 $\boldsymbol {s}^{(k)}=\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}$  $\boldsymbol {y}^{(k)}=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}$
+#### BFGS公式
+<table border="1" ><tr>
+<td>BFGS 公式：即$\boldsymbol {B}_{k+1}$ 的更新公式</td>
+</tr><tr>
+<td>给定$\boldsymbol {B}_{k},\boldsymbol {y}^{(k)},\boldsymbol {s}^{(k)}$，通过求解如下线性系统更新$\boldsymbol {B}_{k+1}$ $\left\{\begin{array}{l}\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}=\boldsymbol {y}^{(k)}\\ \boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+a\boldsymbol {u}\boldsymbol {u}^{\top }+b\boldsymbol {v}\boldsymbol {v}^{\top }\end{array}\stackrel {\text {板书}}{Longrightarrow}$</td>
+</tr></table>
+2
+![](https://web-api.textin.com/ocr_image/external/346c86f44d5b0b69.jpg)
+第11章 拟牛顿法
+14/20
+#### BFGS公式
+#### BFGS公式：即 $\boldsymbol {B}_{k+1}$  的更新公式
+给定 $\boldsymbol {B}_{k},\boldsymbol {y}^{(k)},\boldsymbol {s}^{(k)}$ ，通过求解如下线性系统更新 $\boldsymbol {B}_{k+1}$ 
+$$\left\{\begin{matrix}\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}=\boldsymbol {y}^{(k)}\\ \boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+a\boldsymbol {u}\boldsymbol {u}^{\top }+b\boldsymbol {v}\boldsymbol {v}^{\top }\end{matrix}\right.\stackrel {\text {板书}}{{Longrightarrow}}\left\{\begin{matrix}\boldsymbol {u}=\boldsymbol {y}^{(k)},\\ \boldsymbol {v}=\boldsymbol {B}_{k}\boldsymbol {s}^{(k)},\end{matrix}\right.\quad a=\frac {1}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}\quad b=-\frac {1}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}$$
+$$Longrightarrow\boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+\frac {\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}-\frac {\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}.$$
+![](https://web-api.textin.com/ocr_image/external/1d773e0c5a230179.jpg)
+对比DFP公式 $\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}-\frac {\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}}{\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}$ ，知 $\boldsymbol {H}_{k+1}$ 和 $\boldsymbol {B}_{k+1}$ 具有“对偶”关系.具体地， $\boldsymbol {B}_{k+1}$ 可以通过替换 $\boldsymbol {H}_{k}\leftrightarrow \boldsymbol {B}_{k},\boldsymbol {y}^{(k)}\leftrightarrow \boldsymbol {s}^{(k)}$ 来得到.
+BFGS公式的拟牛顿法： $\left\{\begin{array}{l}\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {B}_{k}^{-1}\boldsymbol {g}^{(k)},\\ \boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+\frac {\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}-\frac {\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}.\end{array}\right.$ 
+问题：如何计算 $\boldsymbol {B}_{k}^{-1}\boldsymbol {g}^{(k)}?$ 是否有快速方法？
+$$\boldsymbol {B}_{k+1}^{-1}=\left(\boldsymbol {B}_{k}+\frac {\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }}{\boldsymbol {y}^{(k)T}\boldsymbol {s}^{(k)}}-\frac {\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}\right)^{-1}=lceil?$$
+![](https://web-api.textin.com/ocr_image/external/9d71c7e15a54c89c.jpg)
+第11章 拟牛顿法
+14/20
+### Sherman-Morrison公式
+#### 引理（Sherman-Morrison公式：设 $\boldsymbol {U}\in \mathbb {R}^{m\times n},$ $\left.\boldsymbol {V}\in \mathbb {R}^{n\times m}\right)$ 
+若 $\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}$ 可逆，则 $\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}$ 也可逆，且 $\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}\right)^{-1}=\boldsymbol {I}_{n}-\boldsymbol {V}\left(\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}\right)^{-1}\boldsymbol {U}$ 
+证. $\boldsymbol {V}+\boldsymbol {V}\boldsymbol {U}\boldsymbol {V}=\boldsymbol {V}\left(\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}\right)=\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}\right)\boldsymbol {V}.$ 
+$$\therefore \boldsymbol {V}=\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}\right)\boldsymbol {V}\left(\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}\right)^{-1}.$$
+$$\because\quad \boldsymbol {I}_{n}=\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}-\boldsymbol {V}\boldsymbol {U}$$
+$$=\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}-\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}\right)\boldsymbol {V}\left(\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}\right)^{-1}\boldsymbol {U}$$
+$$=\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {U}\right)\left[\boldsymbol {I}_{n}-\boldsymbol {V}\left(\boldsymbol {I}_{m}+\boldsymbol {U}\boldsymbol {V}\right)^{-1}\boldsymbol {U}\right]$$
+推论 $\left(\boldsymbol {A}\in \mathbb {R}^{m\times m}\right.$ 可逆， $\boldsymbol {U}\in \mathbb {R}^{m\times n},$ $\boldsymbol {V}\in \mathbb {R}^{nxm}$ ，u和 $\left.\boldsymbol {v}\in \mathbb {R}^{m}\right)$ 
+$$(\boldsymbol {A}+\boldsymbol {U}\boldsymbol {V})^{-1}=\boldsymbol {A}^{-1}-\boldsymbol {A}^{-1}\boldsymbol {U}\left(\boldsymbol {I}_{n}+\boldsymbol {V}\boldsymbol {A}^{-1}\boldsymbol {U}\right)^{-1}\boldsymbol {V}\boldsymbol {A}^{-1}.$$
+$\left(\boldsymbol {A}+\boldsymbol {u}\boldsymbol {v}^{\top }\right)^{-1}=\boldsymbol {A}^{-1}-\frac {\left(\boldsymbol {A}^{-1}\boldsymbol {u}\right)\left(\boldsymbol {v}^{\top }\boldsymbol {A}^{-1}\right)}{1+\boldsymbol {v}^{\top }\boldsymbol {A}^{-1}\boldsymbol {u}}$ .（证.板书）
+#### 推论（秩1校正矩阵的F-范数 $\boldsymbol {A}\in \mathbb {R}^{mxm}$  可逆，u和 $\left.\boldsymbol {v}\in \mathbb {R}^{m}\right)$ 
+$\left\|\boldsymbol {A}+\boldsymbol {u}\boldsymbol {v}^{\top }\right\|_{F}^{2}=\|\boldsymbol {A}\|_{F}^{2}+2\boldsymbol {u}^{\top }A^{\top }\boldsymbol {v}+\|\boldsymbol {u}\|_{2}^{2}\|\boldsymbol {v}\|_{2}^{2}$ .（证.提示 $\left.\|·\|_{F}^{2}=\text {tr}(·,·)\right)$ 
+第11章 拟牛顿法
+#### BFGS公式
+#### $\boldsymbol {B}_{k+1}^{-1}$ 的计算
+假设 $\boldsymbol {B}_{k}^{-1}$ 给定（记作 $\left.\boldsymbol {H}_{k}\right)$ .用两次S-M公式，我们有
+$$\boldsymbol {B}_{k+1}^{-1}=\boldsymbol {H}_{k+1}\quad =\boldsymbol {H}_{k}+\left(1+\frac {\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}\right)\frac {\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}-\frac {\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {s}^{(k)\top }+\left(\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {s}^{(k)\top }\right)^{\top }}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}$$
+##### 讨论：DFP公式和BFGS公式
+两种都属于拟牛顿方程与秩2校正联立矩阵方程获得的．
+DFP: $\boldsymbol {H}_{k+1}\approx \left[\boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right)\right]^{-1},\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}-\frac {\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}}{\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}$ 
+BFGS: $\boldsymbol {B}_{k+1}\approx \boldsymbol {F}\left(\boldsymbol {x}^{(k+1)}\right),$  $\boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+\frac {\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}-\frac {\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}$ 
+问题： $\boldsymbol {H}_{k+1}=\boldsymbol {B}_{k+1}^{-1}?$ 
+·将DFP公式和BFGS公式进行组合，可得出更多的黑塞矩阵／逆的近似： $\widetilde {\boldsymbol {H}}_{k+1}=α\boldsymbol {H}_{k+1}+(1-α)\boldsymbol {B}_{k+1}^{-1}$ or $\widetilde {\boldsymbol {B}}_{k+1}=α\boldsymbol {B}_{k+1}+(1-α)\boldsymbol {H}_{k+1}^{-1}$ 
+![](https://web-api.textin.com/ocr_image/external/ce6463ee877f73fb.jpg)
+BFGS公式得出的 $\boldsymbol {B}_{k+1}$ 满足拟牛顿法的前提要求，例如，正定性，对称性等.
+##### BFGS公式
+##### 例.用BFGS公式的拟牛顿法极小化 $f$ 
+$f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\left[\begin{array}{cc}5&-3\\ -3&2\end{array}\right]\boldsymbol {x}-\boldsymbol {x}^{\top }\left[\begin{array}{l}0\\ 1\end{array}\right]+\log (\pi )$ ，其中 $\boldsymbol {H}_{0}=\boldsymbol {I}_{2},\boldsymbol {x}^{(0)}=[0,0]^{\top }$ 
+S1: $\boldsymbol {d}^{(0)}=-\boldsymbol {g}^{(0)}=-\left(\boldsymbol {Q}\boldsymbol {x}^{(0)}-\boldsymbol {b}\right)$ 
+$$α_{0}=-\frac {\boldsymbol {g}^{(0)\top }\boldsymbol {d}^{(0)}}{\boldsymbol {d}^{(0)\top }\boldsymbol {Q}\boldsymbol {d}^{(0)}}=\frac {1}{2},\boldsymbol {x}^{(1)}=\boldsymbol {x}^{(0)}+α_{0}\boldsymbol {d}^{(0)}=\left[0,\frac {1}{2}\right]^{\top }$$
+S2: $\boldsymbol {s}^{(0)}=\boldsymbol {x}^{(1)}-\boldsymbol {x}^{(0)}=\left[0,\frac {1}{2}\right]^{\top },\boldsymbol {g}^{(1)}=\boldsymbol {Q}\boldsymbol {x}^{(1)}-\boldsymbol {b}=\left[\frac {-3}{2},0\right]^{\top },$ 
+$$\boldsymbol {y}^{(0)}=\boldsymbol {g}^{(1)}-\boldsymbol {g}^{(0)}=\left[\frac {-3}{2},1\right]^{\top },$$
+$$\boldsymbol {H}_{1}=\boldsymbol {H}_{0}+\left(1+\frac {\boldsymbol {y}^{(0)\top }\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}}{\boldsymbol {y}^{(0)\top }\boldsymbol {s}^{(0)}}\right)\frac {\boldsymbol {s}^{(0)}\boldsymbol {s}^{(0)\top }}{\boldsymbol {s}^{(0)\top }\boldsymbol {y}^{(0)}}-\frac {\boldsymbol {s}^{(0)}\boldsymbol {y}^{(0)\top }\boldsymbol {H}_{0}+\boldsymbol {H}_{0}\boldsymbol {y}^{(0)}\boldsymbol {s}^{(0)\top }}{\boldsymbol {y}^{(0)\top }\boldsymbol {s}^{(0)}}=\left[\begin{array}{ll}1&\frac {3}{2}\\ \frac {3}{2}&\frac {11}{4}\end{array}\right],$$
+$$\boldsymbol {d}^{(1)}=-\boldsymbol {H}_{1}\boldsymbol {g}^{(1)}=\left[\frac {3}{2},\frac {9}{4}\right]^{\top }$$
+$$α_{1}=-\frac {\boldsymbol {g}^{(1)\top }\boldsymbol {d}^{(1)}}{\boldsymbol {d}^{(1)\top }\boldsymbol {Q}\boldsymbol {d}^{(1)}}=2,$$
+$$\boldsymbol {x}^{(2)}=\boldsymbol {x}^{(1)}+α_{1}\boldsymbol {d}^{(1)}=[3,5]^{\top },$$
+$\therefore$ $\boldsymbol {g}^{(2)}=\mathbf {0},\therefore \boldsymbol {x}^{(2)}$ 是极小点.
+###### 牛顿法vs拟牛顿法
+<table border="1" ><tr>
+<td>拟牛顿法</td>
+<td>牛顿法</td>
+</tr><tr>
+<td>仅需要 $f$的函数值和梯度</td>
+<td>需要 $f$的函数值，梯度，黑塞</td>
+</tr><tr>
+<td>$\boldsymbol {H}_{k}\succ 0/\boldsymbol {B}_{k}\succ 0$等秩1 或秩2 更新方式</td>
+<td>$\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)$可能非正定</td>
+</tr><tr>
+<td>每次迭代的计算量：$O\left(n^{2}\right)$浮点运算</td>
+<td>每次迭代的计算量：$O\left(n^{3}\right)$浮点运算</td>
+</tr></table>
+##### 例.极小化非二次函数 $f\left(x_{1},x_{2}\right)=100\left(x_{2}-x_{1}^{2}\right)^{2}+\left(1-x_{1}\right)^{2}$ 
+取初值 $\boldsymbol {x}^{(0)}=[-1.2,1]^{\top }$ （注：精确解为 $\left.x^{*}=[1,1]^{\top }\right)$ 
+<table border="1" ><tr>
+<td>最速下降法</td>
+<td>BFGS 拟牛顿法</td>
+<td>牛顿法</td>
+</tr><tr>
+<td>1.827e-4</td>
+<td>1.70e-3</td>
+<td>3.48e-2</td>
+</tr><tr>
+<td>1.826e-4</td>
+<td>1.17e-3</td>
+<td>1.44e-2</td>
+</tr><tr>
+<td>1.824e-4</td>
+<td>1.34e-4</td>
+<td>1.82e-4</td>
+</tr><tr>
+<td>1.823e-4</td>
+<td>1.01e-6</td>
+<td>1.17e-8</td>
+</tr></table>
+通过Matlab程序设计，左表列出了 $\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|_{2}$ 随迭代变化的值.为了 达到精度 $\left\|\boldsymbol {g}^{(k)}\right\|_{2}\leq 10^{-5}$ ，最速下降 法需要5264步，BFGS拟牛顿法需要 34步，牛顿法需要21步．
+![](https://web-api.textin.com/ocr_image/external/c9b854f3817b0a21.jpg)
+![](https://web-api.textin.com/ocr_image/external/fe4397190761fee9.jpg)
+BFGS方法在实际应用中一般具有超线性收敛率.
+![](https://web-api.textin.com/ocr_image/external/f2bf1941e7e4b54e.jpg)
+对非二次函数，拟牛顿法可能不再具有有限步终止.
+![](https://web-api.textin.com/ocr_image/external/15a5a1826f0b880c.jpg)
+重启技术：类似共轭梯度法处理非二次函数时的情形，我们可以若干步后，重新取搜索方向为负梯度方向，然后进行BFGS算法的迭代.
+![](https://web-api.textin.com/ocr_image/external/7a5260ef0bc700f9.jpg)
+18/20
+#### Barzilai-Borwein(BB）方法
+<table border="1" ><tr>
+<td>BFGS 的拟牛顿法： ，其中</td>
+</tr><tr>
+<td>思路：摈弃$\boldsymbol {B}_{k}$秩-1 或-2 校正来近似$\boldsymbol {F}\left(\boldsymbol {x}^{(k)}\right)$，用纯量矩阵$\boldsymbol {B}_{k}=t_{k}\boldsymbol {I}$如何？<br>老思路： $\left\{\begin{matrix}\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}=\boldsymbol {y}^{(k)}\\ \boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+a\boldsymbol {u}\boldsymbol {u}^{\top }+b\boldsymbol {v}\boldsymbol {v}^{\top }\end{matrix}\right.\;\Rightarrow \;$新思路： $\left\{\begin{array}{l}\boldsymbol {B}_{k+1}\boldsymbol {s}^{(k)}=\boldsymbol {y}^{(k)}\\ \boldsymbol {B}_{k+1}=t_{k+1}\boldsymbol {I}\end{array}\right.$ (*)<br>$(*)$无解.<br>$(*)$ $t_{k+1}=\frac {\left(\boldsymbol {y}^{(k)}\right)^{\top }\boldsymbol {s}^{(k)}}{\left(\boldsymbol {s}^{(k)}\right)^{\top }\boldsymbol {s}^{(k)}}$ $(why?)$<img src="https://web-api.textin.com/ocr_image/external/d2000894e69f3fef.jpg"></td>
+</tr></table>
+##### BB方法的迭代格式
+$\boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}^{\mathrm {BB}}\boldsymbol {g}^{(k)}$ ，其中 $α_{k}^{\mathrm {BB}}=\frac {1}{t_{k}}=\frac {\left(s^{(k-1)}\right)^{\top }s^{(k-1)}}{\left(\boldsymbol {y}^{(k-1)}\right)^{\top }s^{(k-1)}}$ 
+问题：BB方法与最速下降法（SD）在极小化二次函数 $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {b}^{\top }\boldsymbol {x}$ 时有哪些区别与联系？
+![](https://web-api.textin.com/ocr_image/external/36544448ed4e386c.jpg)
+第11章 拟牛顿法
+19/20
+#### Barzilai-Borwein(BB) 方法
+##### BB方法和SD方法的联系
+**最速下降法的精确步长**： $α_{k}^{\mathrm {SD}}=\frac {\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {g}^{(k)}}{\left(\boldsymbol {g}^{(k)}\right)^{\top }\boldsymbol {Q}\boldsymbol {g}^{(k)}}$ 
+$$\because \boldsymbol {x}^{(k+1)}=\boldsymbol {x}^{(k)}-α_{k}\boldsymbol {g}^{(k)}$$
+$$\boldsymbol {g}^{(k)}=\frac {\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}}{α_{k}}=\frac {\boldsymbol {s}^{(k)}}{α_{k}}$$
+$$α_{k}^{\mathrm {SD}}=\frac {\left(g^{(k)}\right)^{\top }g^{(k)}}{\left(g^{(k)}\right)^{\top }\boldsymbol {Q}g^{(k)}}=\frac {\left(s^{(k)}\right)^{\top }\boldsymbol {s}^{(k)}}{\left(s^{(k)}\right)^{\top }\boldsymbol {Q}\boldsymbol {s}^{(k)}}$$
+$$\boldsymbol {Q}\boldsymbol {s}^{(k)}=\boldsymbol {Q}\left(\boldsymbol {x}^{(k)}-\boldsymbol {x}^{(k+1)}\right)=\boldsymbol {g}^{(k)}-\boldsymbol {g}^{(k+1)}=\boldsymbol {y}^{(k)}$$
+∴ $α_{k}^{\mathrm {SD}}=\frac {\left(s^{(k)}\right)^{\top }s^{(k)}}{\left(s^{(k)}\right)^{\top }Qs^{(k)}}=\frac {\left(s^{(k)}\right)^{\top }s^{(k)}}{\left(s^{(k)}\right)^{\top }\boldsymbol {y}^{(k)}}=α_{k+1}^{\mathrm {BB}}$ 
+![](https://web-api.textin.com/ocr_image/external/7599b9269891dc9b.jpg)
+##### BB方法在第 $k+1$ 步的步长恰好是SD方法在第k步的步长.
+##### 作业
+推导DFP公式： $\boldsymbol {H}_{k+1}=\boldsymbol {H}_{k}+\frac {\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }}{\boldsymbol {s}^{(k)\top }\boldsymbol {y}^{(k)}}-\frac {\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}}{\boldsymbol {y}^{(k)\top }\boldsymbol {H}_{k}\boldsymbol {y}^{(k)}}$ 
+![](https://web-api.textin.com/ocr_image/external/a520635ce06816db.jpg)
+推导BFGS公式： $\boldsymbol {B}_{k+1}=\boldsymbol {B}_{k}+\frac {\boldsymbol {y}^{(k)}\boldsymbol {y}^{(k)\top }}{\boldsymbol {y}^{(k)\top }\boldsymbol {s}^{(k)}}-\frac {\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}}{\boldsymbol {s}^{(k)\top }\boldsymbol {B}_{k}\boldsymbol {s}^{(k)}}$ 
+<table border="1" ><
+<td>张文星（电子科技大学）</td>
+<td>第11 章 拟牛顿法 20/20</td>
+</tr></table> -->

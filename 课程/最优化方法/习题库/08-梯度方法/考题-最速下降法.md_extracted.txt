@@ -1,0 +1,156 @@
+# 考题-最速下降法
+
+---
+title: 考题-01 - 最速下降法迭代（精确线搜索，2步）
+subject: 最优化方法
+chapter: 8
+section: 梯度方法
+source: 复习纲要补充
+status: 已校对
+type: 考题
+topics:
+  - 最速下降法
+  - 精确线搜索
+  - 二次函数
+  - 梯度正交性
+  - 步长公式
+---
+
+# 考题 01
+
+考虑二次函数
+
+$$f(x_1, x_2) = x_1^2 + 2x_2^2 - 2x_1 x_2 - 2x_2$$
+
+**a.** 将 $f$ 写为 $f(x) = \dfrac{1}{2}x^\top Q x - b^\top x$ 的形式，给出 $Q$ 和 $b$。
+
+**b.** 从初始点 $x^{(0)} = [0, 0]^\top$ 出发，采用**精确线搜索**的最速下降法进行 2 次迭代。要求：
+
+- 写出每次迭代的梯度 $g_k = \nabla f(x^{(k)})$
+- 利用二次函数精确步长公式 $\alpha_k = \dfrac{g_k^\top g_k}{g_k^\top Q g_k}$ 计算步长
+- 给出更新后的点 $x^{(k+1)} = x^{(k)} - \alpha_k g_k$
+
+**c.** 验证连续两次迭代的搜索方向 $g_0$ 与 $g_1$ 正交。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> **(a)** 将原函数展开为 $f(x) = x_1^2 + 2x_2^2 - 2x_1x_2 - 2x_2$。对照 $\frac{1}{2}x^\top Q x$：
+> - $x_1^2$ 项对应 $\frac{1}{2}q_{11} = 1 \Rightarrow q_{11} = 2$
+> - $x_2^2$ 项对应 $\frac{1}{2}q_{22} = 2 \Rightarrow q_{22} = 4$
+> - $x_1 x_2$ 项对应 $\frac{1}{2} \cdot 2q_{12} = -2 \Rightarrow q_{12} = -2$
+>
+> 所以 $Q = \begin{bmatrix} 2 & -2 \\ -2 & 4 \end{bmatrix}$，$b = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$。
+>
+> **(b)** 对于二次函数，精确线搜索的步长公式为：
+>
+> $$\alpha_k = \frac{g_k^\top g_k}{g_k^\top Q g_k}$$
+>
+> 推导：$\phi(\alpha) = f(x - \alpha g)$，令 $\phi'(\alpha) = 0$ 即得。只需求出每次的 $g_k$ 和 $Q g_k$，代入公式即可。
+>
+> **(c)** 精确线搜索的一个关键性质：每次迭代的搜索方向与下一次的梯度方向正交，即 $g_{k+1}^\top g_k = 0$（而非 $g_{k+1}^\top d_k = 0$，两者在负梯度方向下等价）。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### (a) 化为二次型
+>
+> $$
+> f(x) = \frac{1}{2}x^\top \begin{bmatrix} 2 & -2 \\ -2 & 4 \end{bmatrix} x - \begin{bmatrix} 0 \\ 2 \end{bmatrix}^\top x
+> $$
+>
+> 即 $Q = \begin{bmatrix} 2 & -2 \\ -2 & 4 \end{bmatrix}$，$b = \begin{bmatrix} 0 \\ 2 \end{bmatrix}$。
+>
+> 梯度为：
+>
+> $$\nabla f(x) = Qx - b = \begin{bmatrix} 2x_1 - 2x_2 \\ -2x_1 + 4x_2 - 2 \end{bmatrix}$$
+>
+> ---
+>
+> ### (b) 最速下降法两次迭代
+>
+> **初始点：** $x^{(0)} = [0, 0]^\top$
+>
+> ---
+>
+> **第 1 次迭代**
+>
+> 梯度：
+>
+> $$g_0 = \nabla f(x^{(0)}) = \begin{bmatrix} 2 \cdot 0 - 2 \cdot 0 \\ -2 \cdot 0 + 4 \cdot 0 - 2 \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \end{bmatrix}$$
+>
+> 精确步长：
+>
+> $$g_0^\top g_0 = 0^2 + (-2)^2 = 4$$
+>
+> $$Q g_0 = \begin{bmatrix} 2 & -2 \\ -2 & 4 \end{bmatrix} \begin{bmatrix} 0 \\ -2 \end{bmatrix} = \begin{bmatrix} 4 \\ -8 \end{bmatrix}$$
+>
+> $$g_0^\top Q g_0 = \begin{bmatrix} 0 & -2 \end{bmatrix} \begin{bmatrix} 4 \\ -8 \end{bmatrix} = 16$$
+>
+> $$\alpha_0 = \frac{4}{16} = \frac{1}{4}$$
+>
+> 更新：
+>
+> $$x^{(1)} = x^{(0)} - \alpha_0 g_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix} - \frac{1}{4} \begin{bmatrix} 0 \\ -2 \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{1}{2} \end{bmatrix}$$
+>
+> 验证：$f(x^{(1)}) = 0 + 2 \cdot \frac{1}{4} - 0 - 2 \cdot \frac{1}{2} = \frac{1}{2} - 1 = -\frac{1}{2}$
+>
+> ---
+>
+> **第 2 次迭代**
+>
+> 梯度：
+>
+> $$g_1 = \nabla f(x^{(1)}) = \begin{bmatrix} 2 \cdot 0 - 2 \cdot \frac{1}{2} \\[4pt] -2 \cdot 0 + 4 \cdot \frac{1}{2} - 2 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
+>
+> 精确步长：
+>
+> $$g_1^\top g_1 = (-1)^2 + 0^2 = 1$$
+>
+> $$Q g_1 = \begin{bmatrix} 2 & -2 \\ -2 & 4 \end{bmatrix} \begin{bmatrix} -1 \\ 0 \end{bmatrix} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}$$
+>
+> $$g_1^\top Q g_1 = \begin{bmatrix} -1 & 0 \end{bmatrix} \begin{bmatrix} -2 \\ 2 \end{bmatrix} = 2$$
+>
+> $$\alpha_1 = \frac{1}{2}$$
+>
+> 更新：
+>
+> $$x^{(2)} = x^{(1)} - \alpha_1 g_1 = \begin{bmatrix} 0 \\ \frac{1}{2} \end{bmatrix} - \frac{1}{2} \begin{bmatrix} -1 \\ 0 \end{bmatrix} = \begin{bmatrix} \frac{1}{2} \\[4pt] \frac{1}{2} \end{bmatrix}$$
+>
+> 验证：$f(x^{(2)}) = \frac{1}{4} + 2 \cdot \frac{1}{4} - 2 \cdot \frac{1}{4} - 2 \cdot \frac{1}{2} = \frac{1}{4} - 1 = -\frac{3}{4}$
+>
+> ---
+>
+> **迭代汇总**
+>
+> | $k$ | $x^{(k)}$ | $g_k = \nabla f(x^{(k)})$ | $\alpha_k$ | $f(x^{(k)})$ |
+> |:---:|:---|:---|:---:|:---:|
+> | 0 | $(0, 0)^\top$ | $(0, -2)^\top$ | $1/4$ | $0$ |
+> | 1 | $(0, \frac{1}{2})^\top$ | $(-1, 0)^\top$ | $1/2$ | $-\frac{1}{2}$ |
+> | 2 | $(\frac{1}{2}, \frac{1}{2})^\top$ | — | — | $-\frac{3}{4}$ |
+>
+> 注：精确极小点为 $x^* = [1, 1]^\top$（解 $\nabla f(x) = 0$），$f(x^*) = -1$。两次迭代后已向极小点靠近。
+>
+> ---
+>
+> ### (c) 连续梯度正交性验证
+>
+> $$g_1^\top g_0 = \begin{bmatrix} -1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ -2 \end{bmatrix} = 0 + 0 = 0 \quad \checkmark$$
+>
+> **点评：** 精确线搜索下，$g_{k+1} \perp g_k$ 是最速下降法的核心性质——搜索方向 $d_k = -g_k$ 在 $x^{(k+1)}$ 处与 $f$ 的等高线相切，因此下一个梯度方向与当前搜索方向正交。对于二维二次函数，这意味着迭代路径呈"zigzag"锯齿形——交替取正交方向，沿坐标轴方向逼近极小点。事实上，由 $g_1 \perp g_0$ 且均为坐标轴方向，可知两次迭代后已精确到达 $x_1 = x_2$ 的直线上（该问题中 $x_1 = x_2$ 是梯度第一分量为零的条件）。
+>
+> $\square$
+
+---
+
+## 相关知识点
+
+- [[08-梯度方法#5. 二次函数的最速下降法|二次函数的最速下降法]] — 精确步长公式的推导
+- [[08-梯度方法#6. 收敛性分析|最速下降法的收敛性分析]] — 锯齿现象与特征值条件数
+- [[../知识点解析梳理/08-梯度方法-知识梳理|第8章 知识梳理]] — 梯度方法系统梳理
+- [[../复习/IV-无约束优化|IV-无约束优化]] — 无约束优化复习纲要

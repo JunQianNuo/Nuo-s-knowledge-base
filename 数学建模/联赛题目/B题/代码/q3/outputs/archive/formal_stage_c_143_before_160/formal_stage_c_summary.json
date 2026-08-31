@@ -1,0 +1,72 @@
+{
+  "stage": "C",
+  "mode": "formal",
+  "parent_B0": 35114,
+  "fixed_temporary_served": 143,
+  "conditioned_on_uncertified_parent": true,
+  "full_certified": false,
+  "status": "FEASIBLE",
+  "T_air": 35110,
+  "T_pax": 246222,
+  "fuel": 283758.3,
+  "flights": 212,
+  "PK": 795484.0,
+  "AK": 1727502.0,
+  "utilization": 0.4604822454619445,
+  "selected_flights": 212,
+  "aircraft_used": 22,
+  "stages": {
+    "aircraft_time": {
+      "status": "FEASIBLE",
+      "objective": 35110,
+      "best_bound": 0.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 72.40513680000001
+    },
+    "passenger_time": {
+      "status": "FEASIBLE",
+      "objective": 246222,
+      "best_bound": 233080.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 71.9808433
+    },
+    "fuel": {
+      "status": "FEASIBLE",
+      "objective": 2837583,
+      "best_bound": 2469300.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 68.9299969
+    },
+    "flights": {
+      "status": "FEASIBLE",
+      "objective": 212,
+      "best_bound": 2.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 66.1578619
+    },
+    "seat_utilization": {
+      "status": "FEASIBLE",
+      "objective": null,
+      "best_bound": 814501.0,
+      "certified_optimal": false,
+      "conditioned_on_uncertified_parent": true,
+      "wall_time": 61.72691869999994
+    }
+  },
+  "dinkelbach_iterations": 1,
+  "seat_utilization_status": "FEASIBLE",
+  "final_solution_source": "C5 incumbent",
+  "validation": {
+    "independent": true,
+    "solver_equals_delivery": true
+  },
+  "runtime": {
+    "master": 341.2007576,
+    "realization_validation": 0.28864920000000893,
+    "total": 361.79762029999995
+  }
+}

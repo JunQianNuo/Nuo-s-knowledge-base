@@ -1,0 +1,229 @@
+% mcm-paper source binding (non-rendering metadata)
+% Repository HEAD: 66f49838fe3060c9c0286cb5aa87613ac20b9fc3
+% Q3 model reconciliation: 3919ddf34054d88f6f6b262b9a91967397b055d2
+% Q3 formal 阶段B/C update source: 6f0aae699bb2c17d5a58532699313bb8346c8861
+% Q3 figure source: a3970ef9eb51b87bd1c564a98d2cdfef213373a4
+
+\section{问题三模型的建立与求解}\label{sec:q3}
+
+问题三在联合取送基础上进一步加入7日计划周期、24架具体飞机、人员时间窗及30 min周转约束。此时路线不仅要在空间上可行，还必须确定执行日期、起飞时刻和具体飞机。本文建立时间可行架次池--具体飞机排班与人员流选择性服务模型，并按“非临时任务基准--临时任务接纳--次级指标细化”三阶段求解。
+
+\subsection{时间可行架次池--具体飞机排班模型建立}\label{subsec:q3-model}
+
+\subsubsection{带时刻候选列与公共可行域}
+
+记非临时、临时需求组分别为$G_3^M,G_3^T$。一条带时刻候选列$r$固定日期、基地$b_r$、机型$k_r$、停靠与加油方案、起飞时刻$s_r$及返场时刻$e_r$；返场后30 min计入具体飞机占用区间：
+
+\[
+I_r=[s_r,e_r+30).
+\tag{8-1}\label{eq:q3-occupancy-interval}
+\]
+
+对与列$r$基地和机型兼容的具体飞机$\alpha$定义$x_{r,\alpha}\in\{0,1\}$，并令
+$y_r=\sum_{\alpha\in H_r^{comp}}x_{r,\alpha}$。
+服务选项$o=(g,r,\mu_o,\nu_o)$表示需求组$g$在列$r$的$\mu_o$处上机、在首次到达终点的$\nu_o$处下机，变量$z_o\in\mathbb Z_+$表示承运人数。只有满足人员最早上机、最晚到达以及机场兼容条件的选项才进入候选集。
+
+对具体飞机$\alpha$，定义时间冲突列对集合
+\[
+\mathcal C_\alpha=
+\left\{
+(r,r'):
+r\neq r',\ 
+\alpha\in H_r^{comp}\cap H_{r'}^{comp},\
+I_r\cap I_{r'}\neq\varnothing
+\right\}.
+\tag{8-2}\label{eq:q3-conflict-set}
+\]
+
+令$\mathbf{x}=(x,y,z)$，三阶段共享的物理与排班可行域$\mathcal F_3^0$由
+
+\[
+\mathcal F_3^0=
+\left\{
+\begin{aligned}
+y_r&=\sum_{\alpha\in H_r^{comp}}x_{r,\alpha},
+&&r\in\Omega_3,\\
+\sum_{\substack{o\in\mathcal O_r\\ \mu_o\le h<\nu_o}}z_o
+&\le Q_{k_r}y_r,
+&&r\in\Omega_3,\ h\in\mathcal L_r,\\
+x_{r,\alpha}+x_{r',\alpha}&\le1,
+&&(r,r')\in\mathcal C_\alpha,\ \alpha\in H,\\
+\sum_{o\in\mathcal O_r}z_o=0&\Rightarrow y_r=0,
+&&r\in\Omega_3,\\
+x_{r,\alpha}&\in\{0,1\},\quad z_o\in\mathbb Z_+.
+\end{aligned}
+\right.
+\tag{8-3}\label{eq:q3-feasible-set}
+\]
+
+其中动态容量仍采用半开区间$[\mu_o,\nu_o)$；每日06:00--18:00起飞、20:00前返场、同日运行及燃油可行性均已在时间可行架次列生成阶段保证。
+
+\subsubsection{阶段A：非临时任务基准}
+
+阶段A仅服务3840名非临时人员，以总飞机使用时间为目标：
+
+\[
+\begin{array}{@{}l@{\qquad}c@{}}
+\displaystyle \min_{\mathbf{x}}
+&
+\displaystyle
+f_A(\mathbf{x})
+=
+T_A^{air}
+=
+\sum_{r\in\Omega_3}\sum_{\alpha\in H_r^{comp}}T_rx_{r,\alpha}
+\\[1.0em]
+\mathrm{s.t.}
+&
+\left\{
+\begin{aligned}
+\mathbf{x}&\in\mathcal F_3^0,\\
+\sum_{o\in\mathcal O_g}z_o&=q_g,
+&&g\in G_3^M,\\
+z_o&=0,
+&&o\in\mathcal O_g,\ g\in G_3^T.
+\end{aligned}
+\right.
+\end{array}
+\tag{8-4}\label{eq:q3-stage-a}
+\]
+
+正式求解完成全部3840名非临时人员运输，得到当前最好已验证基准
+
+\[
+\widehat T_{0,\Omega}=35114\ \mathrm{min},
+\qquad
+25104\le T_{0,\Omega}^{*}\le35114.
+\tag{8-5}\label{eq:q3-stage-a-bound}
+\]
+
+由于阶段A仅获得经验证的可行解、尚未完成最优性证明，35114 min作为后续阶段的实际预算基准，而不表述为全局最优值。记
+
+\[
+B_0=\widehat T_{0,\Omega}=35114\ \mathrm{min}.
+\tag{8-6}\label{eq:q3-budget}
+\]
+
+\subsubsection{阶段B：临时任务接纳}
+
+阶段B重新允许160名临时人员进入模型，在不突破$B_0$的前提下最大化接纳人数。为统一采用最小化形式，写为
+
+\[
+\begin{array}{@{}l@{\qquad}c@{}}
+\displaystyle \min_{\mathbf{x}}
+&
+\displaystyle
+f_B(\mathbf{x})
+=
+-\sum_{g\in G_3^T}\sum_{o\in\mathcal O_g}z_o
+\\[1.0em]
+\mathrm{s.t.}
+&
+\left\{
+\begin{aligned}
+\mathbf{x}&\in\mathcal F_3^0,\\
+\sum_{o\in\mathcal O_g}z_o&=q_g,
+&&g\in G_3^M,\\
+0\le\sum_{o\in\mathcal O_g}z_o&\le q_g,
+&&g\in G_3^T,\\
+T^{air}(\mathbf{x})&\le B_0.
+\end{aligned}
+\right.
+\end{array}
+\tag{8-7}\label{eq:q3-stage-b}
+\]
+
+最新正式运行得到160/160名临时人员全部接纳，且当前最好可行值与求解器最优界均为160、相对间隙为0，故在固定$B_0$和当前有限时间可行架次列池下
+
+\[
+N_{\mathrm{temp},\Omega}^{*}=160.
+\tag{8-8}\label{eq:q3-temp-optimum}
+\]
+
+对应总飞机使用时间为34668 min，仍比预算保留446 min余量。
+
+\subsubsection{阶段C：固定服务水平后的词典序细化}
+
+阶段C固定4000名人员全部完成运输，并按统一五级指标继续优化。记
+$f_C(\mathbf{x})=\operatorname{lex}
+(T_3^{air},T_3^{pax},F_3^{fuel},N_3^{flight},-U_3)$，则
+
+\[
+\begin{array}{@{}l@{\qquad}c@{}}
+\displaystyle \min_{\mathbf{x}}
+&
+\displaystyle f_C(\mathbf{x})
+\\[1.0em]
+\mathrm{s.t.}
+&
+\left\{
+\begin{aligned}
+\mathbf{x}&\in\mathcal F_3^0,\\
+\sum_{o\in\mathcal O_g}z_o&=q_g,
+&&g\in G_3^M,\\
+\sum_{o\in\mathcal O_g}z_o&=q_g,
+&&g\in G_3^T,\\
+T^{air}(\mathbf{x})&\le B_0.
+\end{aligned}
+\right.
+\end{array}
+\tag{8-9}\label{eq:q3-stage-c}
+\]
+
+前一级取得的当前目标值固定后再进入下一阶段。阶段C的前四级目标均获得可行解，第五级座位利用率优化在共享时间预算内未得到新的有效改进，因此最终正式方案采用第四级架次数优化所得的当前最好可行解，而不宣称获得完整五级词典序最优解。
+
+\subsection{问题三模型求解}\label{subsec:q3-solution}
+
+\subsubsection{时间可行架次池构造}
+
+若逐分钟枚举路线、人员和具体飞机，变量规模将不可接受。海上直升机调度的相关研究曾采用预先生成可行架次、再在扩展模型中进行组合优化的思路，以降低直接刻画完整时空决策的难度\cite{nafstad2021}。与此类似，本文首先从问题二已采用的联合路线及非临时单OD短路线构造178条物理骨架，再将人员时间窗转化为每条路线的可行起飞区间。对每个非空区间仅取最早、中点和最晚三个临界时刻，并与每日运行时段相交，最终生成14634条时间可行架次列和90799个合法服务选项。
+
+在有限列池上采用CP-SAT统一决定带时刻架次、具体飞机和人员流；单机冲突在数学模型中由式~\eqref{eq:q3-feasible-set}的冲突不等式刻画，求解时采用等价的不重叠全局约束提高调度约束的处理效率。阶段A、B、C依次运行，前一阶段的基准或服务水平进入下一阶段；聚合解最终回填到具体人员和飞机，并由独立校验程序重新检查时间窗、容量、燃油、30 min周转和全部评价指标。
+
+\subsection{问题三求解结果及分析}\label{subsec:q3-results}
+
+\subsubsection{三阶段递进结果}
+
+图~\ref{fig:q3-stage-pipeline}集中展示三阶段结果。阶段A以35114 min完成3840名非临时人员；阶段B在不增加该基准的条件下将160名临时人员全部吸收；阶段C固定4000人全部服务后又将总飞机使用时间降至34033 min，并把架次数由阶段A的212次压缩到204次。图底部的独立验证及求解结果—交付方案一致性核对均通过，说明三阶段优化结果不仅在求解器内部可行，而且与最终人员和架次交付文件保持一致。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.96\textwidth]{figures/11三阶段递进.pdf}
+    \caption{问题三三阶段递进结果}
+    \label{fig:q3-stage-pipeline}
+\end{figure}
+
+最终正式方案为
+
+\[
+T_3^{air}=34033\ \mathrm{min},\quad
+T_3^{pax}=246808\ \text{人}\!\cdot\!\mathrm{min},
+\]
+
+总燃油273629.0 kg，共204个架次，使用22架具体飞机，总体座位利用率47.77\%。由于阶段C并未完成第五级认证，这组数值应理解为当前正式交付可行方案。
+
+\subsubsection{具体飞机排班可执行性}
+
+图~\ref{fig:q3-gantt}给出了24架飞机在8月3日至9日的完整甘特排班。204个架次均分配到具体飞机，实际投入22架；同一飞机的任务区间不存在重叠，最小实际周转时间恰为30 min。图右侧可见T2承担的架次数与累计飞机时间最多，T3次之，T1任务量较小，体现了容量、基地兼容和时间窗共同作用下的非均匀机队使用；同时22/24的实际投入规模说明模型保留了少量机队冗余，而不是依赖全部飞机满负荷运行。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/12七天机队排班甘特图.pdf}
+    \caption{问题三七天机队排班甘特图}
+    \label{fig:q3-gantt}
+\end{figure}
+
+\subsubsection{临时任务全接纳与兼容性}
+
+图~\ref{fig:q3-temp-compatibility}进一步解释160名临时人员为何能够全部纳入。所有临时任务时间窗均较宽，多数人员可兼容2--5架具体飞机，并具有一定的机型或基地替代空间；其中T2可服务99人，覆盖范围最大，T3和T1分别为62人和27人。需要注意，同一人员可能兼容多个机型或基地，因此这些数量不是互斥分类。
+
+在$B_0=35114$ min下，阶段B实际仅使用34668 min，保留446 min飞机时间余量；同时临时人员接纳人数的当前最好可行值与最优界均为160，相对间隙为0，求解器完成该目标的最优性证明。因此，临时任务全部接纳并非依赖额外增加阶段A预算，而是通过联合排班与资源重组实现；兼容性分布同时说明，多机型、多基地替代空间是吸收临时需求的重要调度余度。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.96\textwidth]{figures/13临时任务全接纳与兼容性画像.pdf}
+    \caption{问题三临时任务全接纳与兼容性画像}
+    \label{fig:q3-temp-compatibility}
+\end{figure}
+
+综上，问题三通过时间可行架次列、具体飞机区间排班和动态人员流，将问题二扩展到时间窗与有限机队环境。当前方案完成全部4000人运输，并通过独立验证；其中阶段B的临时人员接纳目标已在固定$B_0$和当前有限列池下严格认证，而阶段A及阶段C的完整最优性仍不作扩大解释。

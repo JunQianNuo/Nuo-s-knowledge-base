@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+testpaths = ["代码/tests"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"代码/q1/run_q1_toy.py" = ["E402"]
+"代码/q1/run_q1.py" = ["E402"]
+"scripts/audit_project.py" = ["E402"]

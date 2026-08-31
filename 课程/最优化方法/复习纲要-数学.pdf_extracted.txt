@@ -1,0 +1,160 @@
+# 复习纲要-数学.pdf
+共 3 页
+
+
+## 第 1 页
+1
+5(cid:129)‘z(cid:144){6£Œ˘(cid:137)˘˘(cid:19)⁄(cid:145)§˜(cid:29)(cid:127)£:
+(cid:129)‘z(cid:145)§|
+‘†: (cid:29)j(cid:135)(cid:15)(cid:209)(cid:10)5(cid:129)‘z(cid:144){6(cid:145)§(cid:27)˜(cid:29)(cid:127)£ 1) C = {(x,t) ∈ Rn×R | (cid:107)x(cid:107) ≤ t};
+2
+:§(cid:144)ˇ˘)k8(cid:27)/(cid:221)”(cid:218)ES(cid:29)(cid:145)§(cid:27)(cid:204)(cid:135)S 2) C = {X ∈ Rn×n | X ·Ø¡(cid:20)‰(cid:221)(cid:10)};
+N"(cid:228)N(cid:135)ƒ(cid:143)(cid:181) 3) C = {X ∈ R2 | e−x1−x2 = 0};
+•
+(cid:221)”(cid:29)j(cid:135)¥⁄(cid:15)(cid:209)(cid:27)“‰´”" ‹(cid:7)(cid:228)…Œ·˜(cid:143)(cid:224)…Œ§X
+• (cid:221)”(cid:29)j(cid:135)¥⁄(cid:21)9(cid:27)flK(cid:27)Œ(cid:138)ƒ)((cid:152)‰(cid:252) 1) f(x,y) = x2 , (cid:217)¥x, y ∈ R;
+y
+(cid:218)S(cid:147)(cid:27)O(cid:142)L§)" 2) f(x,y) = log(ex+ey), (cid:217)¥x, y ∈ R;
+√
+3) f(x,y) = − xy, (cid:217)¥x, y ∈ R;
+I. (cid:253)(cid:23)(cid:127)£(cid:181)2-3(cid:217)
+III. (cid:130)|¢(cid:181)7(cid:217)
+(cid:130)5(cid:131)’¶(cid:130)5ˆ’¶(cid:130)5|(cid:220)¶(cid:220)⁄f(cid:152)m¶
+(cid:145)7'(cid:127){(cid:6)n!ƒ^^(cid:135)!(cid:228)N(cid:246)(cid:138)(cid:144)“¶
+˜!(cid:145)Œ¶(cid:2)(cid:157)$(cid:142)¶(cid:130)5(cid:144)§|)(cid:27)(cid:127)35!)(cid:27)
+(cid:220)¯@ŒŒ(cid:15){(cid:134)(cid:145)7'(cid:127){(cid:27)«O¶(cid:19)'{(cid:6)
+L(cid:136)¶(cid:137)Œ¶S¨¶(cid:149)(cid:254)(cid:137)Œ(cid:31)d5¶(cid:130)5C(cid:134)¶(cid:130)
+n!ƒ^^(cid:135)!(cid:228)N(cid:246)(cid:138)(cid:144)“¶(cid:218)(cid:238){ƒ)(cid:152)(cid:3)…Œ
+5C(cid:134)¿´e(cid:27)A(cid:14)(cid:138)¶(cid:131)qC(cid:134)¶(cid:20)(cid:2)(cid:221)(cid:10)!Ø¡
+4(cid:138)!(cid:218)(cid:238){ƒ(cid:138)(cid:27)(cid:6)n!ƒ^^(cid:135)!(cid:228)N(cid:246)(cid:138)(cid:144)
+(cid:221)(cid:10)(cid:27)A:¶(cid:20)(cid:2)(cid:221)K(cid:142)f¶(cid:138)(cid:141)!"(cid:152)m9(cid:217)’
+“¶(cid:127)(cid:130){ƒ)(cid:152)(cid:3)…Œ4(cid:138)!ƒ(cid:138)(cid:27)(cid:6)n!ƒ^^
+X¶(cid:19)g.9(cid:217)5(cid:159)¶(cid:221)(cid:10)(cid:27)(cid:137)Œ¶a|(cid:216)(cid:31)“¶
+(cid:135)!(cid:228)N(cid:246)(cid:138)(cid:144)“¶‹(cid:237)(cid:19)(cid:2)(cid:138)a(cid:144){ƒ)(cid:152)(cid:3)…
+Œ4(cid:138)(cid:27)S(cid:147)œ“¶n)y.E(cid:226)¶ı(cid:3)…Œƒ4
+II. (cid:224)8(cid:134)(cid:224)…Œ(cid:181)4-6(cid:217)
+(cid:138)˜(cid:29)(cid:130)“(=(cid:130)|¢)¶(cid:176)((cid:218)(cid:127)œ“; (cid:154)(cid:176)((cid:218)(cid:127)
+•
+‰´: (cid:134)(cid:130)!(cid:130)ª!(cid:135)†¡!(cid:140)(cid:152)m¶ı¡N¶
+(cid:27)ArmijoOK!GoldsteinOK!WolfeOK¶(cid:176)((cid:130)
+(cid:224)|(cid:220)!I|(cid:220)!(cid:149)(cid:19)|(cid:220)¶Y†8¶4:¶4
+|¢´æ5‰n¶&6(cid:141){˜(cid:29)g(cid:142)¶&6(cid:141)ffl
+(cid:138)(cid:127)35‰n¶(cid:219)(cid:220)!(cid:28)(cid:219)4(cid:2)¶(cid:140)1(cid:144)(cid:149)¶(cid:221)
+K(cid:27)(cid:129)‘5^(cid:135)!fflKƒ)(cid:144){!(cid:133)(cid:220):"
+K(cid:27)‰´9(cid:217)A:¶|(cid:160)(cid:135)†¡¶(cid:224)£(cid:238)(cid:130)(cid:224)!
+r(cid:224)![(cid:224)⁄…Œ¶e(cid:252)(cid:144)(cid:149)" IV. ˆ(cid:21)(cid:229)‘z:8-11(cid:217)
+• n(cid:216): (cid:224)|(cid:220)(cid:134)(cid:224)8(cid:220)‰n¶8(cid:220)(cid:27)(cid:2)(cid:224)$(cid:142)¶ • n(cid:216): (cid:221)”F(cid:221)e(cid:252){S(cid:147)(cid:130)“§(cid:10))(cid:217)´æ
+(cid:224)8(cid:220)'l‰n¶(cid:224)…Œ(cid:27)(cid:2)(cid:224)$(cid:142)¶(cid:224)‘z 5'(cid:219)¶(cid:221)”(cid:218)(cid:238){S(cid:147)(cid:130)“§(cid:221)”(cid:217)´æ5
+(cid:27)(cid:219)(cid:220)(cid:129)‘7·(cid:28)(cid:219)(cid:129)‘¶(cid:224)…Œ(cid:152)(cid:30)(cid:140)(cid:135)A '(cid:219)¶(cid:221)”(cid:1)(cid:221)F(cid:221){S(cid:147)(cid:130)“!k(cid:129)(cid:218)“(cid:142)
+(cid:14)¶(cid:224)…Œ(cid:19)(cid:30)(cid:140)(cid:135)5(cid:159)¶(cid:221)(cid:10)S(cid:15)´æ5¶(cid:221) (cid:6)ˇ¶(cid:10))*(cid:220)f(cid:152)m‰n!(cid:154)(cid:130)5(cid:1)(cid:221)F(cid:221)
+(cid:10)(cid:138)…ŒºY5¶(cid:149)(cid:254)(cid:138)…Œ(cid:140)(cid:135)'5¶F(cid:221)! {¶(cid:221)”[(cid:218)(cid:238){S(cid:147)(cid:130)“![(cid:218)(cid:238)(cid:144)§(cid:27)5
+(cid:228)(cid:142)’!(cid:176)l(cid:221)(cid:10)(cid:27)5(cid:159)!ØX¶ı(cid:3)…Œ(cid:135)¨ {¶‹(cid:237)(cid:19)(cid:157)1(cid:4)(cid:20)œ“!DFP!BFGSœ“(cid:27)(cid:237)
+'(cid:243)“{K¶Y†8(cid:134)F(cid:221)’X (cid:19)¶Sherman-Morrisonœ“¶(cid:10))(cid:154)(cid:130)5(cid:129)(cid:2)(cid:19)
+• O(cid:142): ‹O(cid:142)ı(cid:3)…Œ(cid:27)F(cid:221)!(cid:228)(cid:142)’!(cid:176)l(cid:221) ƒ(cid:27)(cid:129)‘5^(cid:135)"(cid:221)”´æ(cid:30)!(cid:130)5!g(cid:130)5!
+(cid:10)!(cid:144)(cid:149)(cid:19)Œ¶‹O(cid:142)ı(cid:3)…Œ(cid:27)Taylor—m¶ (cid:135)(cid:130)5´æ˙"
+‹(cid:7)(cid:228)8(cid:220)·˜(cid:143)(cid:224)8§X
+•
+O(cid:142):‹^(cid:129)(cid:132)e(cid:252){!(cid:218)(cid:238){!(cid:1)(cid:221)F(cid:221){ƒ
+)$(cid:145)(cid:27)‘zflK; (cid:218)(cid:238){ƒ)(cid:154)(cid:130)5(cid:129)(cid:2)(cid:19)ƒ
+(cid:220) ' (: > f (cid:137) E (cid:140) ˘ Œ ˘ (cid:137) ˘ ˘ (cid:19)§ (Email:
+flK(cid:158)(cid:27)?n(cid:144){
+wxzh1984@126.com).
+
+## 第 2 页
+2
+V. (cid:130)55y(cid:181)15-17(cid:217) ‹^Lagrange…Œƒ)(cid:152)(cid:135)(cid:21)(cid:229)‘zflK§X
+
+• ‰´: (cid:130)55y(cid:27)IO.¶˜(cid:221)(cid:10)¶˜C(cid:254)¶(cid:154)  min f(x) = 1(x2+x2)
+  2 1 2
+˜C(cid:254)¶˜(cid:29))¶(cid:140)1)¶˜(cid:29)(cid:140)1)¶”:¶ 1) s.t. g(x) = x −1 ≤ 0
+1
+
+• n(cid:216):(cid:130)55y)(cid:134)8(cid:220)”:’X¶Ø(cid:243)‰n!   x ∈ X = R2
+rØ(cid:243)‰n" 
+  min f(x) = −x 1 x 2
+
+•
+O(cid:142): ‹ƒ(cid:152)(cid:135)(cid:130)55yflK(cid:27)˜(cid:29))!˜(cid:29)(cid:140)
+2) s.t. g(x) = x +x2−2 ≤ 0
+1 2
+1),~ƒ(cid:21)(cid:229)8  
+ x ∈ X = {(x ,x ) | x ≥ 0,x ≥ 0}
+1 2 1 2
+
+s.t. 2x −x = 1  min f(x) = cTx
+1 2 
+
+x +x = 1 3) s.t. g(x) = (x−x¯)TA(x−x¯) ≤ b
+1 3
+
+x ≥ 0   (cid:217)¥c ∈ Rn,x¯ ∈ Rn,b ∈ R, A ∈ Sn .
+++
+‹^(cid:252)X/{{ƒ)(cid:130)55yflK¶‹(cid:21)(cid:130)5 (cid:221)”(cid:221)Ka(cid:144){!.(cid:130)KF{!v…Œ{!O2
+5y(cid:27)Ø(cid:243)flK¶‹^(cid:252)(cid:30)ª{!(cid:140)M{ƒ)(cid:130) .(cid:130)KF…Œ{(cid:27)S(cid:147)(cid:130)“!ƒ^^(cid:135)¶‹^
+55y¶‹3(cid:129)(cid:0)(cid:152)(cid:220)(cid:252)X/L¥/(cid:1)(cid:247)0(cid:209)Ø v…Œ{ƒ)(cid:21)(cid:229)‘zflK¶‹(cid:21)(cid:21)(cid:229)‘zfl
+(cid:243))¶(cid:10))Ø(cid:243)(cid:252)X/{ƒ)(cid:130)55yflK" K(cid:27)Ø(cid:243)flK§¿'(cid:219)(cid:6)'!Ø(cid:243))"‹{(cid:252)8
+(cid:220)(X(cid:221)f!¥!(cid:149)(cid:19)8)(cid:254)(cid:27)(cid:221)K(cid:27)O(cid:142)¶
+VI. (cid:18)Œ5y(cid:181)19(cid:217)
+VIII. ı8I5y: 24(cid:217)
+(cid:10))ƒ)(cid:130)5(cid:18)Œ5y(cid:27)(cid:252)aƒ)(cid:144){¶(cid:10))
+(cid:127)†¡{(cid:27)(cid:6)n‰(cid:246)(cid:138)(cid:218)‰¶(cid:10))'|‰.{(cid:27)(cid:6) (cid:10))ı8I5y(cid:134)(cid:252)8I5y(cid:27)«O¶(cid:10))ł
+n‰(cid:246)(cid:138)(cid:218)‰ \(cid:247)(cid:129)‘)¶(cid:10))ı8I5y(cid:27)ƒ)(cid:144){
+VII. (cid:21)(cid:229)‘z9ƒ)(cid:144){(cid:181)20-23(cid:217) ~(cid:127)(cid:6)(cid:27)y†
+•
+n(cid:216):‹(cid:21)Lagrange…Œ¶(cid:130)5z(cid:140)1(cid:144)(cid:149)!S 1) (cid:129)(cid:132)e(cid:252){(cid:27)S(cid:147);,k(cid:231)‚y(cid:150). =
+(cid:15)z(cid:140)1(cid:144)(cid:149)¶(cid:221)”(cid:21)(cid:229)‘z(cid:27)(cid:129)‘5^(cid:135)(= e{xk}∞ · (cid:129) (cid:132) e (cid:252) { (cid:23) ) (cid:27) S (cid:15), K
+k=0
+^(cid:135)4(cid:138)n(cid:216)!KKTn(cid:216))¶(cid:221)”(cid:21)(cid:229)‘zØ(cid:243)! ∇f(xk+1) ⊥ ∇f(xk).
+f!rØ(cid:243)‰n¶Q:(cid:27)‰´¶(cid:221)”(cid:21)(cid:229)‘z(cid:27) 2) (cid:237)(cid:19)[(cid:218)(cid:238){(cid:27)BFGSœ“(cid:218)DFGœ“
+(cid:19)(cid:30)^(cid:135)" 3) y†(cid:224)…Œ(cid:27)(cid:219)(cid:220)4(cid:2):7·(cid:28)(cid:219)4(cid:2):.
+•
+O(cid:142)(cid:181)‹ƒ(cid:21)(cid:229)‘z(cid:27)KKT^(cid:135)§X 4) y†(cid:218)(cid:238){(cid:27)´æ5"=(cid:181)e f ∈ C3, x∗ ∈ Rn
+(cid:133)(cid:247)v ∇f(x∗) = 0, ∇2f(x∗) ·(cid:140)_(cid:221)(cid:10). KØ
+
+  min f(x) = |x 1 |+x 2 ?¿ x0 ¿'(cid:130)C x∗, (cid:218)(cid:238){k¿´(cid:133)S(cid:147)S
+
+1) s.t. g(x) = x ≤ 0
+1 (cid:15)–(cid:150)(cid:8)2(cid:30)´æ˙´æ(cid:20) x∗.
+
+
+ x ∈ X = {(x ,x ) | x ≥ 0}
+1 2 2 5) y†(cid:1)(cid:221)(cid:144)(cid:149){(cid:27)k(cid:129)(cid:218)“(cid:142)5"=: Øu
+
+ min cTx min 1x(cid:62)Qx+bTx, (cid:217)¥ Q ∈ Rn×n ·Ø¡(cid:20)
+  x∈Rn 2
+2) s.t. Ex = d ‰(cid:221)(cid:10). KØ?¿(cid:27)—':x0, (cid:1)(cid:221)(cid:144)(cid:149){(cid:150)
+
+
+ x ≥ 0 ıngS(cid:147)(cid:136)(cid:20)4(cid:2):, =xn = x∗.
+(cid:40)
+min 1xTQx+cTx 6) (cid:21)(cid:229)‘z(cid:27)(cid:152)(cid:30)7(cid:135)^(cid:135)(FONC)(cid:143):
+3) 2 ;
+s.t. Ax ≤ b x∗ = argmin f(x) =⇒ d(cid:62)∇f(x∗) ≥ 0, ∀d ∈ T (x∗).
+Ω
+x∈Ω
+
+## 第 3 页
+3
+(cid:8)Ω = {x ∈ Rn | h (x) = 0,i = 1,...,m}(cid:158), (cid:158)
+i
+(cid:141)[zXelFONC(cid:20)^(cid:135)4(cid:138)(cid:27)y†.
+m
+d(cid:62)∇f(x∗)≥0
+⇒ ··· ⇒
+∇f(x∗)− (cid:80) λ∗
+i
+∇h
+i
+(x∗)=0
+i=1
+∀d∈T Ω (x∗) h (x∗)=0, i=1,...,m
+i
+(cid:8)Ω = {x ∈ Rn | h (x) = 0,i =
+i
+1,...,m;g (x) = 0,j = 1,...,p}(cid:158), (cid:158)(cid:141)[z
+j
+XelFONC(cid:20)KKT^(cid:135)(cid:27)y†.
+d(cid:62)∇f(x∗)≥0
+⇒ ··· ⇒ KKT^(cid:135)
+∀d∈T (x∗)
+Ω

@@ -1,0 +1,16 @@
+{
+  "summary_shape": [
+    49,
+    13
+  ],
+  "cycle_shape": [
+    9350,
+    9
+  ],
+  "batteries": 49,
+  "policies": 9,
+  "prediction_test": 9,
+  "eol_events": 0,
+  "best_150_policy": "4_8C_80PER_4_8C_NEWSTRUCTURE",
+  "worst_150_policy": "3_7C_31PER_5_9C_NEWSTRUCTURE"
+}

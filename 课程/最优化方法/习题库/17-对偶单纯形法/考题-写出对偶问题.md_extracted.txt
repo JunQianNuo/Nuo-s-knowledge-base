@@ -1,0 +1,113 @@
+# 考题-写出对偶问题
+
+---
+title: 考题-01 - 写出对偶问题
+subject: 最优化方法
+chapter: 17
+section: 对偶单纯形法
+source: 复习纲要补充
+status: 已校对
+type: 考题
+topics:
+  - 对偶问题
+  - 线性规划对偶
+  - 弱对偶引理
+---
+
+# 考题 01
+
+给定原始线性规划问题：
+
+$$\begin{aligned}
+\min \quad & 5x_1 + 4x_2 + 3x_3 \\
+\text{s.t.} \quad & 2x_1 + 3x_2 + x_3 \geq 5 \\
+& 4x_1 + x_2 + 2x_3 \geq 11 \\
+& 3x_1 + 4x_2 + 2x_3 \geq 8 \\
+& x_1, x_2, x_3 \geq 0
+\end{aligned}$$
+
+**a.** 写出它的对偶问题。
+
+**b.** 验证弱对偶引理：分别取一个可行的原始解和一个可行的对偶解，验证 $c^\top x \geq b^\top \lambda$。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> **(a)** 对偶关系：原始为 $\min c^\top x$，s.t. $Ax \geq b$，$x \geq 0$ 时，对偶为 $\max b^\top \lambda$，s.t. $A^\top \lambda \leq c$，$\lambda \geq 0$。
+>
+> 记住口诀：
+> - 原始 $\min$ $\longleftrightarrow$ 对偶 $\max$
+> - 约束 $\geq$（原始）$\longleftrightarrow$ 变量 $\geq 0$（对偶）
+> - 变量 $\geq 0$（原始）$\longleftrightarrow$ 约束 $\leq$（对偶）
+> - 目标系数与约束右端互换
+>
+> **(b)** 弱对偶引理：若 $x$ 原始可行，$\lambda$ 对偶可行，则 $c^\top x \geq b^\top \lambda$（$\min$ 原始时）。任选一个简单的可行点验证——不必是最优解。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### (a) 对偶问题
+>
+> 原始问题为 $\min$ 形式，约束均为 $\geq$，变量 $\geq 0$。
+>
+> 引入对偶变量 $\lambda_1, \lambda_2, \lambda_3 \geq 0$（每个原始约束对应一个对偶变量）。
+>
+> **对偶问题：**
+>
+> $$\begin{aligned}
+> \max \quad & 5\lambda_1 + 11\lambda_2 + 8\lambda_3 \\
+> \text{s.t.} \quad & 2\lambda_1 + 4\lambda_2 + 3\lambda_3 \leq 5 \quad &\text{(对应 }x_1\text{)} \\
+> & 3\lambda_1 + \lambda_2 + 4\lambda_3 \leq 4 \quad &\text{(对应 }x_2\text{)} \\
+> & \lambda_1 + 2\lambda_2 + 2\lambda_3 \leq 3 \quad &\text{(对应 }x_3\text{)} \\
+> & \lambda_1, \lambda_2, \lambda_3 \geq 0
+> \end{aligned}$$
+>
+> **转换规则验证：**
+> | 原始 ($\min$) | 对偶 ($\max$) |
+> |:---|:---|
+> | 目标系数 $(5, 4, 3)$ | 约束右端 $(5, 4, 3)$ 的转置 |
+> | 约束右端 $(5, 11, 8)$ | 目标系数 $(5, 11, 8)$ |
+> | 系数矩阵 $A_{3 \times 3}$ | 系数矩阵 $A^\top_{3 \times 3}$ |
+> | 约束 $\geq$ | 变量 $\geq 0$ |
+> | 变量 $\geq 0$ | 约束 $\leq$ |
+>
+> ---
+>
+> ### (b) 弱对偶引理验证
+>
+> **取原始可行点：** 令 $x = (0, 11, 0)^\top$。
+>
+> 约束检验：
+> - $2 \times 0 + 3 \times 11 + 0 = 33 \geq 5$ ✓
+> - $4 \times 0 + 11 + 0 = 11 \geq 11$ ✓
+> - $3 \times 0 + 4 \times 11 + 0 = 44 \geq 8$ ✓
+>
+> 原始目标值：$c^\top x = 5 \times 0 + 4 \times 11 + 3 \times 0 = 44$。
+>
+> **取对偶可行点：** 令 $\lambda = (0, 0, 1)^\top$。
+>
+> 约束检验：
+> - $2 \times 0 + 4 \times 0 + 3 \times 1 = 3 \leq 5$ ✓
+> - $3 \times 0 + 0 + 4 \times 1 = 4 \leq 4$ ✓
+> - $0 + 0 + 2 \times 1 = 2 \leq 3$ ✓
+>
+> 对偶目标值：$b^\top \lambda = 5 \times 0 + 11 \times 0 + 8 \times 1 = 8$。
+>
+> **验证：** $44 = c^\top x \geq b^\top \lambda = 8$。弱对偶引理成立。
+>
+> > **点评：** 任取一对可行解即能验证不等式方向。弱对偶引理的含义是：对偶问题的任何可行解给出的目标值绝不会超过原始问题任何可行解的目标值（在“原始 min、对偶 max”约定下）。这是整个对偶理论的出发点——原始给上界，对偶给下界，二者之间的 gap 在最优时消失（强对偶定理）。
+>
+> $\square$
+
+---
+
+## 相关知识点
+
+- [[17-对偶单纯形法#对偶问题的构造|线性规划对偶的构造]]
+- [[17-对偶单纯形法#弱对偶引理|弱对偶引理]]
+- [[../知识点解析梳理/17-对偶单纯形法-知识梳理|第17章 知识梳理]]

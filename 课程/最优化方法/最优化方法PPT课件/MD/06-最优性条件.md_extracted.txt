@@ -1,0 +1,181 @@
+# 06-最优性条件
+
+---
+title: 第6章 优化问题基础知识
+subject: 最优化方法
+source: 无动画Chapter6.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 6
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第6章 优化问题基础知识
+## 1．引言
+### 2．最优性条件
+第6章优化问题基础知识
+1/14
+#### 优化问题
+#### 优化问题： $\min f(\boldsymbol {x})$  s.t. $\boldsymbol {x}\in Ω$ 
+。 $f:\mathbb {R}^{n}\rightarrow$ R称为目标函数或价值函数（objective function)；
+。 $\boldsymbol {x}=\left[x_{1},x_{2},\cdots ,x_{n}\right]^{\top }\in \mathbb {R}^{n}$ 称为决策变量（decision variable)；
+$Ω\subseteq \mathbb {R}^{n}$ 称为约束集或可行集（constraint/feasible set).
+![](https://web-api.textin.com/ocr_image/external/9946eb331a45ec35.jpg)
+$f$ 可能有多个极小点，只要找到一个即可.
+![](https://web-api.textin.com/ocr_image/external/8017727ba6976e96.jpg)
+$\max f(\boldsymbol {x})\text {,s.t.}\boldsymbol {x}\in Ω$
+![](https://web-api.textin.com/ocr_image/external/836762df904e26c0.jpg)
+$企$
+![](https://web-api.textin.com/ocr_image/external/fe09b06e86c29fed.jpg)
+$-\min -f(\boldsymbol {x})$ .s.t. $\boldsymbol {x}\in Ω$ 
+##### 定义（无约束优化（unconstrained optimization)）
+若 $Ω=\mathbb {R}^{n}$ ，则 $\min f(\boldsymbol {x})$ $\text {s.t.}\boldsymbol {x}\in \mathbb {R}^{n}$ 称为无约束优化.
+![](https://web-api.textin.com/ocr_image/external/18e722f932269518.jpg)
+##### 约束优化问题的约束集Ω
+$$Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|h_{i}(\boldsymbol {x})=0,i=1,\cdots ,m;\right.\quad =\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=0,\right.\boldsymbol {g}(\boldsymbol {x})\leq 0\}\quad \left.g_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$$
+其中 $\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 和 $\boldsymbol {g}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{p}$ 是由 $h_{i}:\mathbb {R}^{n}\rightarrow \mathbb {R}$ 和 $g_{j}:\mathbb {R}^{n}\rightarrow \mathbb {R}$ 的向量值函数.
+![](https://web-api.textin.com/ocr_image/external/1d13d505fdf61b54.jpg)
+##### 优化问题
+##### 定义（极小点min $f(\boldsymbol {x})$  $\text {s.t.}\boldsymbol {x}\in Ω)$ 
+$\boldsymbol {x}^{*}\in Ω$ 是局部极小点（local minimum)： $\exists \varepsilon >0$ 使得对任意 $\boldsymbol {x}\in Ω\backslash \left\{\boldsymbol {x}^{*}\right\}$ 和 $\left\|\boldsymbol {x}-\boldsymbol {x}^{*}\right\|<\varepsilon$ ，有 $f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)$ 
+$\boldsymbol {x}^{*}\in Ω$  是全局极小点 $(globalminimum)$ )：任意 $\boldsymbol {x}\in Ω\backslash \left\{\boldsymbol {x}^{*}\right\}$ ，有 $f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)$ 
+![](https://web-api.textin.com/ocr_image/external/6b976523b599878f.jpg)
+★若上述定义中的“≥”替换为“＞”，则局部／全局极小点变为严格局部／全局极小点.
+SeLacal Loca Wia Sect Gtal Wn Wern
+![](https://web-api.textin.com/ocr_image/external/e4fed8a18cd28180.jpg)
+定义（优化问题 $\min f(\boldsymbol {x})$ ,s.t. $\boldsymbol {x}\in Ω$ 极小点的表示） $\boldsymbol {x}^{*}\in Ω$ 是全局极小点 $Longrightarrow\left\{\begin{array}{l}f\left(\boldsymbol {x}^{*}\right)=\min _{\boldsymbol {x}\in Ω}f(\boldsymbol {x}),\\ \boldsymbol {x}^{*}=\text {argmin}_{\boldsymbol {x}\in Ω}f(\boldsymbol {x}).\end{array}\right.$ 特别地，当 $Ω=\mathbb {R}^{n}$ 时， $Longrightarrowf\left(\boldsymbol {x}^{*}\right)=\min _{\boldsymbol {x}}f(\boldsymbol {x})$ 或 $\boldsymbol {x}^{*}=\text {argmin}_{\boldsymbol {x}}f(\boldsymbol {x})$
+![](https://web-api.textin.com/ocr_image/external/3ed3dead5e64d243.jpg)
+第6章 优化问题基础知识
+###### 优化问题
+例. $f(x)=(x+1)^{2}+3$ ，则 $\text {argmin}_{x}f(x)=-1$ $\text {argmin}_{x\geq 0}f(x)=0$ 
+优化问题的极小点 $\boldsymbol {x}^{*}$  可能在约束集的内部 $int(Ω)$  或边界 $bd(Ω)$  上.
+###### 定义（可行方向（feasible direction)）
+若 $\exists α_{0}>0,$ ，对任意 $α\in \left[0,α_{0}\right],$ 都有 $\boldsymbol {x}+α\boldsymbol {d}\in Ω,$ 则 $0\neq \boldsymbol {d}\in \mathbb {R}^{n}$ 称为 $\boldsymbol {x}\in Ω$ 处的可行方向.
+0 x $\mathrm {d}_{2}$ $\text {cod}_{1}$ ad $α_{0}d_{1}$ $d_{1}$
+![](https://web-api.textin.com/ocr_image/external/d89abb0847f5e895.jpg)
+![](https://web-api.textin.com/ocr_image/external/fe4397190761fee9.jpg)
+若 $\boldsymbol {x}\in \text {int}(Ω)$  ，则x处的可行方向全体为 $\mathbb {R}^{n}$ ；
+![](https://web-api.textin.com/ocr_image/external/a7ef6883a6d5a723.jpg)
+若 $\boldsymbol {x}\in \text {bd}(Ω)$ ，则x处的可行方向是锥、超平面、半空间、空集...
+定义（“线性化”可行方向）
+若 $\boldsymbol {x}\in \text {bd}(Ω)$ ，则x处的线性化可行方向定义为 $0\neq \boldsymbol {d}=\lim _{\boldsymbol {x}^{\prime }\rightarrow \boldsymbol {x},\boldsymbol {x}^{\prime }\in Ω}\left(\boldsymbol {x}^{\prime }-\boldsymbol {x}\right)$ .点x处的线性化可行方向全体用 $T_{Ω}(\boldsymbol {x})$ 或 $T(x)$ 表示.［通常， $T(x)$  是 $\mathbb {R}^{n}$  中的锥］
+###### 可行方向
+###### 等式约束（equality constraint）
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}_{i}(\boldsymbol {x})=0,i=1,\cdots ,m\right\}$ ，其中 $\boldsymbol {h}_{i}:\mathbb {R}^{n}\rightarrow$ R是可微的，则 $T(x)$ $=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\right.$ $\boldsymbol {D}\boldsymbol {h}_{i}(\boldsymbol {x})\boldsymbol {d}=0$  $2$ $=$ $1,\cdots ,m\}$ 是一个子空间.
+- $x_{2}$ TP() 0 T(x)
+![](https://web-api.textin.com/ocr_image/external/5b75c2adbe0ce4b8.jpg)
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{3}|h_{1}(\boldsymbol {x})=x_{1}=0,h_{2}(\boldsymbol {x})=x_{1}-x_{2}=0\right\}$ 
+$D\boldsymbol {h}(\boldsymbol {x})=\left[\begin{array}{ccc}\nabla h_{1}(\boldsymbol {x})^{\top }\\ \nabla h_{2}(\boldsymbol {x})^{\top }\end{array}\right]=\left[\begin{array}{ccc}1&0&0\\ 1&-1&0\end{array}\right]$  ∴ $\boldsymbol {x}\in S$ 处的切空间为：
+$T(\boldsymbol {x})=\{\boldsymbol {y}|D\boldsymbol {h}(\boldsymbol {x})\boldsymbol {y}=0\}=\left\{\boldsymbol {y}|\left[\begin{array}{l}1\\ 1\end{array}\right.\right.$ 0 $\uparrow$  $\left.\left.\begin{array}{l}0\\ 0\end{array}\right]\boldsymbol {y}=\mathbf {0}\right\}=\left\{[0,0,a]^{\top }|a\in \mathbb {R}\right\}$ 即 $\mathbb {R}^{3}$  空间中的 $x_{3}-$ 轴.
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}_{i}(\boldsymbol {x})=\boldsymbol {a}_{i}^{\top }\boldsymbol {x}-b_{i}=0\right\},T(\boldsymbol {x})=?$ 
+$T(\boldsymbol {x})=\left\{d\in \mathbb {R}^{n}|\boldsymbol {A}d=0\right\}$ ,A是 $\boldsymbol {a}_{i}^{\top }$ 为行向量构成的矩阵.
+![](https://web-api.textin.com/ocr_image/external/c0904ed38be0eeed.jpg)
+第6章 优化问题基础知识
+5/
+###### 可行方向
+###### 不等式约束（inequality constraint）
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {g}_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$ ，其中 $\boldsymbol {g}_{j}:$ $\mathbb {R}^{n}\rightarrow$ R 是可微的，则 $T(\boldsymbol {x})=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\right.$ $\left.\boldsymbol {D}\boldsymbol {g}_{j}(\boldsymbol {x})\boldsymbol {d}\leq 0,j\in J(\boldsymbol {x})\right\}$ 是个锥，其中 $J(\boldsymbol {x})=\left\{j|\boldsymbol {g}_{j}(\boldsymbol {x})=0,j=1,\cdots ,p\right\}$ 称为x 处的积极约束.
+$x_{0},x^{\prime }$ - $0=0$ $50$ $viori$ $\mathrm {f}_{\mathrm {e}_{2}}$ $0$ $Ng_{2}(\mathrm {\;W})$ $\mathrm {f}=\mathrm {f}_{2}$ $\text {Lpaly}$ 0 $0.40$ $q_{2}=0$
+![](https://web-api.textin.com/ocr_image/external/676edd255432c500.jpg)
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{2}|x_{1}\geq 0,x_{2}\geq 0\right\},T(\boldsymbol {x})=?$ 
+(A). $\boldsymbol {x}=[1,3]^{\top };$ 
+(B). $\boldsymbol {x}=[0,3]^{\top };$ 
+(C). $\boldsymbol {x}=[1,0]^{\top };$ 
+$$(D).\quad \boldsymbol {x}=[0,0]^{\top }$$
+$0$ $2$
+![](https://web-api.textin.com/ocr_image/external/cfe5fbb97f222db2.jpg)
+![](https://web-api.textin.com/ocr_image/external/ff30577cce1a1d6f.jpg)
+第6章优化问题基础知识
+###### 可行方向
+###### 例. $等式+不等式约束$ 
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}_{i}(\boldsymbol {x})=0,i=1,\cdots ,m;\boldsymbol {g}_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$ ，其中 $\boldsymbol {h}_{i}:\mathbb {R}^{n}\rightarrow$ R, $\boldsymbol {g}_{j}:\mathbb {R}^{n}\rightarrow$ R均是可微的，则
+$T(\boldsymbol {x})=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\boldsymbol {D}\boldsymbol {h}_{i}(\boldsymbol {x})\boldsymbol {d}=0,\right.$ $\left.i=1,\cdots ,m;\boldsymbol {D}\boldsymbol {g}_{j}(\boldsymbol {x})\boldsymbol {d}\leq 0,j\in J(\boldsymbol {x})\right\}$ 是个锥，其中 $J(\boldsymbol {x})=\left\{j|\boldsymbol {g}_{j}(\boldsymbol {x})=0,j=1,\cdots ,p\right\}$ 称为x处的积极约束.
+###### 定义（方向导数（directional derivative)）
+设 $f:\mathbb {R}^{n}\rightarrow \mathbb {R},0\neq \boldsymbol {d}\in \mathbb {R}^{n}$  为非零向量.则 $f$ 关于方向d的方向导数定义为 $\frac {\partial f}{\partial \boldsymbol {d}}=\lim _{α\rightarrow 0}\frac {f(\boldsymbol {x}+α\boldsymbol {d})-f(\boldsymbol {x})}{α}$ 
+若 $f$ 是可微的，则 $\frac {\partial f}{\partial \boldsymbol {d}}=\nabla f(\boldsymbol {x})^{\top }\boldsymbol {d}$ 
+![](https://web-api.textin.com/ocr_image/external/310c97a2a1e26003.jpg)
+★若d是单位向量，则 $\frac {\partial f}{\partial \boldsymbol {d}}$ 是 $f(x)$ 沿d方向的上升速率.
+例. $f(\boldsymbol {x})=x_{1}x_{2}x_{3},$ $\boldsymbol {d}=\left[\frac {1}{2},\frac {1}{2},\frac {1}{\sqrt {2}}\right]^{\top }.$ $.\frac {\partial f}{\partial d}=?$ 
+解.∵ $\nabla f(\boldsymbol {x})=\left[x_{2}x_{3},x_{1}x_{3},x_{1}x_{2}\right]Longrightarrow\frac {\partial f}{\partial \boldsymbol {d}}=\frac {x_{2}x_{3}+x_{1}x_{3}+\sqrt {2}x_{1}x_{2}}{2}$ 
+第6章 优化问题基础知识
+## 最优性条件（optimality condition）
+## 定理（一阶必要条件，FONC）
+设 $Ω\subseteq \mathbb {R}^{n}$ 和 $f\in \mathcal {C}^{1}(Ω)$ .若 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的局部极小值点，则对任意 $\boldsymbol {x}^{*}$ 处的可行方向 $d,$ 都有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)\geq 0$ 
+证.由一阶Taylor展开得： $f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}+o(α)$ 
+$$\therefore \nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}=\frac {f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)-f\left(\boldsymbol {x}^{*}\right)}{α}-\frac {o(α)}{α}\geq 0.$$
+### 推论（特殊情况： $\boldsymbol {x}^{*}$  是内点或 $\left.Ω=\mathbb {R}^{n}\right)$ 
+设 $f\in \mathcal {C}^{1}(Ω),\boldsymbol {x}^{*}$ 是局部极小点.若 $Ω=\mathbb {R}^{n}$ 或 $\boldsymbol {x}^{*}\in \text {int}(Ω)$ ，则 $\nabla f\left(\boldsymbol {x}^{*}\right)=0.$ 证（提示）.d是 $\mathbb {R}^{n}$ 中的所有向量.
+### 定理（一阶充分条件， $FOSC)$ 
+设 $Ω\subseteq \mathbb {R}^{n}$ 和 $f\in \mathcal {C}^{1}(Ω)$ .若对 $\boldsymbol {x}^{*}$  处的任意可行方向 $d,$  都有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)>0,$ 则 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的严格局部极小值点
+![](https://web-api.textin.com/ocr_image/external/51a225db58d4add4.jpg)
+第6章优化问题基础知识
+## 二阶条件
+## 定理（二阶必要条件，SONC）
+设 $Ω\subseteq \mathbb {R}^{n}$ 和 $f\in \mathcal {C}^{2}(Ω),\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的局部极小值点，d是 $\boldsymbol {x}^{*}$  处的可行方向.若 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)=0,$ ，则 $\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}\geq 0.$ 
+证.根据二阶 $Taylor$ 展开得
+$$\therefore f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\underbrace {\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}}_{=0}+\frac {α^{2}}{2}\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+o\left(α^{2}\right)$$
+### 推论（特殊情况： $Ω=\mathbb {R}^{n}$ 或 $\boldsymbol {x}^{*}$  是内点）
+设 $f\in \mathcal {C}^{2}(Ω),\boldsymbol {x}^{*}$ 是局部极小值点.若 $Ω=\mathbb {R}^{n}$ 或 $\boldsymbol {x}^{*}\in \text {int}(Ω),$ $\nabla f\left(\boldsymbol {x}^{*}\right)=0$ 则 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\succeq 0.$ 
+![](https://web-api.textin.com/ocr_image/external/2300d97679138d91.jpg)
+### 最优性条件-I: 可微函数f:R→R在R上的极值
+![](https://web-api.textin.com/ocr_image/external/4f396b2af7744f3b.jpg)
+### $f^{\prime }\left(x^{*}\right)\neq 0Longrightarrowx^{*}$ 不是极值点
+是严格局部极小点 $f^{\prime }(x^{*})=0\Rightarrow$  $\left\{\begin{array}{l}f^{\prime \prime }\left(x^{*}\right)>0:x^{*}\\ f^{\prime \prime }\left(x^{*}\right)<0:x^{*}\\ f^{\prime \prime }\left(x^{*}\right)=0:x^{*}\end{array}\right.$ 是严格局部极大点不确定（继续用下述高价条件）
+#### 更高阶条件：
+A个 是偶数： $x^{*}$ 是严格局部极小点 $\begin{array}{c}f^{(i)}\left(x^{*}\right)=0\\ i=1,\cdots ,k-1\end{array}$  $\xrightarrow {且}$ $\left\{\begin{array}{l}f^{(k)}\left(x^{*}\right)>0\\ f^{(k)}\left(x^{*}\right)<0\\ f^{(k)}\left(x^{*}\right)\neq 0\end{array}\right.$ $且k$ 是偶数： $x^{*}$ 是严格局部极大点是奇数： $x^{*}$ 不是极值点
+例. $\min _{x\in \mathbb {R}}f(x)=\frac {1+(2-x)^{2}}{1+x^{2}}$ 
+证 $\because$  由无约束优化的一阶必要条件得 $0=f^{\prime }(x)=\frac {4\left(x^{2}-2x-1\right)}{\left(1+x^{2}\right)^{2}}$ 
+$\therefore x_{1}^{*}=1-\sqrt {2}$ 或 $x_{2}^{*}=1+\sqrt {2}.$ 
+$$\because f^{\prime \prime }\left(x_{1}^{*}\right)=-8.24<0,f^{\prime \prime }\left(x_{2}^{*}\right)=0.242.$$
+$\therefore x_{1}^{*}$ 是严格局部极大点， $x_{2}^{*}$ 是严格局部极小点.
+#### 最优性条件-II: 可微函数f:R＂→R在R”上的极值
+$\nabla f\left(\boldsymbol {x}^{*}\right)\neq 0|Longrightarrow\boldsymbol {x}^{*}$ 不是极值点 正定 $\boldsymbol {x}^{*}$ 是严格局部极小点 负定 $\boldsymbol {x}^{*}$ 是严格局部极大点 $)=0且$ $\nabla ^{2}f\left(\boldsymbol {x}^{*}\right)$ 不定 $\boldsymbol {x}^{*}$ 是鞍点 半正定 $\rightarrow$ x＊一定不是极大点 半负定 $Longrightarrow\boldsymbol {x}^{*}$ 一定不是极小点
+![](https://web-api.textin.com/ocr_image/external/059fe38622855e78.jpg)
+例. $f(\boldsymbol {x})=x_{1}^{2}-x_{2}^{2}$ 
+∵ $\nabla f(\boldsymbol {x})=\left[2x_{1},-2x_{2}\right]^{\top }=0,\therefore \boldsymbol {x}^{*}=[0,0]^{\top }$ 满足一阶必要条件.
+然而， $\nabla ^{2}f\left(\boldsymbol {x}^{*}\right)=\left[\begin{array}{cc}2&0\\ 0&-2\end{array}\right]nright0$ .因此， $x^{*}=0$ 不是极小点.
+![](https://web-api.textin.com/ocr_image/external/0aca0c6727daee54.jpg)
+例. $f(\boldsymbol {x})=x_{1}^{2}+x_{2}^{2}$ 
+$\because \nabla f(\boldsymbol {x})=\left[2x_{1},2x_{2}\right]^{\top }=0,\therefore \boldsymbol {x}^{*}=[0,0]^{\top }$  满足一阶必要条件.
+$\nabla ^{2}f\left(\boldsymbol {x}^{*}\right)=\left[\begin{array}{ll}2&0\\ 0&2\end{array}\right]\succ 0.$ $\boldsymbol {x}^{*}=0$ 是严格局部极小点.
+![](https://web-api.textin.com/ocr_image/external/7f795837afdad87b.jpg)
+第6章 优化问题基础知识
+#### 最优性条件（III）
+<table border="1" ><tr>
+<td>多元可微函数f:$Ω\subset \mathbb {R}^{n}\rightarrow$R 在Ω上的极值</td>
+</tr></table>
+记可行方向集为 $\mathcal {F}\left(\boldsymbol {x}^{*}\right)^{1}$ 
+一阶条件：
+极小点 $\left.\left[\forall 0\neq \boldsymbol {d}\in \mathcal {F}\left(\boldsymbol {x}^{*}\right),\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)\right]\right\}$ $\left\{\begin{matrix}&gt;0\Rightarrow \text {严格局部极小}\\ &lt;0\Rightarrow \text {严格局部极大}\\ &gt;0\&&lt;0\Rightarrow \text {既非极}\\ \geq 0\Rightarrow \text {非极大点}(\text {继}\\ \leq 0\Rightarrow \text {非极小点}(\text {继}\end{matrix}\right.$ 局部极大点 既非极小点，也非极大点 （续用下列二阶条件） （续用下列二阶条件）
+![](https://web-api.textin.com/ocr_image/external/80198bd83c8d1dd1.jpg)
+二阶条件：
+局部极小点 $\left.\left.\forall 0\neq \boldsymbol {d}\in \mathcal {F}\left(\boldsymbol {x}^{*}\right),\boldsymbol {d}^{\top }F\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}\right]\right\}\left\{\begin{array}{l}&gt;\\ &lt;\\ &gt;\\ &gt;\\ \leq \end{array}\right.$ $\underline {\boldsymbol {d}}\left\{\begin{matrix}&gt;0\;\Rightarrow \;\text {严}\\ &lt;0\;\Rightarrow \;\text {严}\\ &gt;0\&&lt;0\;=\\ \geq 0\;\Rightarrow \;\text {非}\\ \leq 0\;\Rightarrow \;\text {非}\end{matrix}\right.$ 格局部极大点 既非极小点，也非极大点 极大点 小点
+![](https://web-api.textin.com/ocr_image/external/8f0ff74a9273f7d7.jpg)
+注：若 $\boldsymbol {x}^{*}\in \text {int}(Ω)$ ，上述结论等同于（II）
+$$\{\}^{1}\mathcal {F}\left(\boldsymbol {x}^{*}\right)\approx T\left(\boldsymbol {x}^{*}\right)$$
+e
+## 最优性条件的应用
+### 例.优化问题 $\min x_{1}^{2}+0.5x_{2}^{2}+3x_{2}+4.5,$ ,s.t. $x_{1}\geq 0,x_{2}\geq 0$ 
+### 下列各点是否满足一阶必要条件？
+(A). $\boldsymbol {x}=[1,3]^{\top }$  $(B)$ (C). $\boldsymbol {x}=[1,0]^{\top }$ $\begin{array}{rl}{}^{\top };&{(D)}\cdot \\ {}^{\top };&{(D)}\cdot \end{array}$ $\boldsymbol {x}=[0,3]^{\top }$ $\boldsymbol {x}=[0,0]^{\top }$ 
+![](https://web-api.textin.com/ocr_image/external/8993f019884987e6.jpg)
+### 例.极小点在哪里？
+(14)-0 $\left(\text {TH}x_{1}|d_{1}\right)&lt;0$ $\text {PTO}$ P $d_{1}$ T $TT(x_{2})$ 0 12
+![](https://web-api.textin.com/ocr_image/external/d1af7c666a8c81b2.jpg)
+![](https://web-api.textin.com/ocr_image/external/3f6b813d3717859a.jpg)
+P $x^{*}$
+![](https://web-api.textin.com/ocr_image/external/ed035e164ceb047e.jpg)
+![](https://web-api.textin.com/ocr_image/external/b26f35bdc3386413.jpg)
+![](https://web-api.textin.com/ocr_image/external/4f7b6f6acb62dfa4.jpg)
+必要条件并不充分.
+例. $f(x)=x^{3}$ 
+因为 $f^{\prime }(0)=0$ 和 $f^{\prime \prime }(0)=0,x^{*}=0$ 满足一阶和二阶必要条件.然而， $x^{*}=0$ 不是极小点.
+#### 最优性条件
+### 定理（二阶充分条件（内点情形））
+设 $Ω\subseteq \mathbb {R}^{n},f\in \mathcal {C}^{2}(Ω),\boldsymbol {x}^{*}\in \text {int}(Ω)$ .若 $\nabla f\left(\boldsymbol {x}^{*}\right)=0$ 且 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\succ 0,$ ，则 $\boldsymbol {x}^{*}$ 是严格局部极小点.
+证.记 $\boldsymbol {x}(α)=\boldsymbol {x}^{*}+α\boldsymbol {d},\varphi (α)=f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)$ 
+. $0=\arg \min _{\boldsymbol {x}\in Ω}\varphi (α)$ 
+$$\therefore \varphi (α)=\varphi (0)+α\varphi ^{\prime }(0)+\frac {α^{2}}{2}\varphi ^{\prime }(0)+o\left(α^{2}\right)$$
+$$\therefore f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\underbrace {\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}}_{=0}+\frac {α^{2}}{2}\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+o\left(α^{2}\right)$$
+作业：课后习题6.2,6.10,6.16,6.19

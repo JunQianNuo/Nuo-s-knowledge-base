@@ -1,0 +1,153 @@
+% mcm-paper source binding (non-rendering metadata)
+% Repository HEAD: 66f49838fe3060c9c0286cb5aa87613ac20b9fc3
+% Q2 model reconciliation: 3919ddf34054d88f6f6b262b9a91967397b055d2
+% Q2 formal result source: c9ae677177845579364c9b245554db79a3492d4a
+% Q2 figure source: 5def82abd520b763732631fa1474ab83c202a273
+
+\section{问题二模型的建立与求解}\label{sec:q2}
+
+问题二同时包含出海、海返和设施间穿梭需求，人员可在同一架次不同停靠点上下机。与问题一相比，核心变化是座位需求不再沿航程单调下降，因此必须显式描述人员在各航段的占座区间。取送类车辆路径问题的相关研究表明，取送先后关系、车辆容量以及时间或同步条件往往需要联合考虑\cite{ghilas2016alns}。结合本题的多类运输需求，本文进一步建立有限物理路线池与动态人员流联合取送模型。
+
+\subsection{物理路线池--动态人员流联合取送模型建立}\label{subsec:q2-model}
+
+\subsubsection{服务选项与动态容量}
+
+记需求组集合为$G_2$，有限物理路线池为$\Omega$。对需求组$g$和路线$r$，若路线依次经过其起点和终点，则构造服务选项
+$o=(g,r,\mu_o,\nu_o)$，其中$\mu_o$、$\nu_o$分别为上、下机位置，且终点取上机后首次到达的位置。定义
+
+\[
+y_r\in\mathbb Z_+,\qquad z_o\in\mathbb Z_+,
+\]
+
+分别表示路线$r$的执行架次数和服务选项$o$承运的人数。人员仅在半开区间$[\mu_o,\nu_o)$内占座，因此路线$r$第$h$个航段的载客量为
+
+\[
+n_{r,h}
+=
+\sum_{\substack{o\in\mathcal O_r\\ \mu_o\le h<\nu_o}}z_o.
+\tag{7-1}\label{eq:q2-leg-load}
+\]
+
+半开区间使同一停靠点下机释放的座位可立即供新人员使用。如图~\ref{fig:q2-dynamic-capacity}所示，真实T2-21架次累计运输59人，而机型容量仅16人；由于人员在不同停靠点先后下机、上机，各航段最大在机人数始终不超过16。该例说明，问题二的容量可行性应由逐航段同时占座人数判断，而不能用单架次累计服务人数直接与机型容量比较。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.94\textwidth]{figures/10半开区间动态容量与座位即时复用.pdf}
+    \caption{问题二半开区间动态容量与座位即时复用}
+    \label{fig:q2-dynamic-capacity}
+\end{figure}
+
+\subsubsection{正式优化模型}
+
+记服务选项$o$的人员在途时间和客公里为$P_o,K_o$，路线$r$的飞机使用时间、燃油和可用座公里为$T_r,F_r,AK_r$。五项评价指标为
+
+\[
+\begin{aligned}
+T_2^{air}&=\sum_{r\in\Omega}T_ry_r, &
+T_2^{pax}&=\sum_{o\in\mathcal O}P_oz_o,\\
+F_2^{fuel}&=\sum_{r\in\Omega}F_ry_r, &
+N_2^{flight}&=\sum_{r\in\Omega}y_r,\\
+U_2&=\frac{\sum_{o\in\mathcal O}K_oz_o}
+{\sum_{r\in\Omega}AK_ry_r}.
+\end{aligned}
+\tag{7-2}\label{eq:q2-metrics}
+\]
+
+令$\mathbf{x}=(y,z)$，问题二按统一五级词典序求解，其正式模型写为
+
+\[
+\begin{array}{@{}l@{\qquad}c@{}}
+\displaystyle \min_{\mathbf{x}}
+&
+\displaystyle
+f_2(\mathbf{x})
+=
+\operatorname{lex}\!\left(
+T_2^{air},T_2^{pax},F_2^{fuel},N_2^{flight},-U_2
+\right)
+\\[1.0em]
+\mathrm{s.t.}
+&
+\left\{
+\begin{aligned}
+\sum_{o\in\mathcal O_g}z_o &= q_g,
+&& g\in G_2,\\
+\sum_{\substack{o\in\mathcal O_r\\ \mu_o\le h<\nu_o}}z_o
+&\le Q_{k_r}y_r,
+&& r\in\Omega,\ h\in\mathcal L_r,\\
+\sum_{o\in\mathcal O_r}z_o=0
+&\Rightarrow y_r=0,
+&& r\in\Omega,\\
+y_r&\in\mathbb Z_+,
+&& r\in\Omega,\\
+z_o&\in\mathbb Z_+,
+&& o\in\mathcal O.
+\end{aligned}
+\right.
+\end{array}
+\tag{7-3}\label{eq:q2-model}
+\]
+
+式~\eqref{eq:q2-model}中，第一条保证4000名人员均被准确运输，第二条为逐航段动态容量约束，第三条排除无人员流的空架次。更高优先级目标固定当前取得值后再进入下一阶段，利用率仍采用Dinkelbach迭代。
+
+\subsection{问题二模型求解}\label{subsec:q2-solution}
+
+\subsubsection{候选路线池构造}
+
+初始路线池由确定性规则生成：除每个OD的单组可行路线外，还加入共享起点、共享终点、前一需求终点与后一需求起点衔接以及出海--海返成对插入路线。固定访问顺序后，通过燃油标号同时决定合法加油位置，并使用全部8座可加油设施；所有路线均再次通过第~\ref{sec:data-foundation}节的统一可行性检查。
+
+在当前解基础上继续进行解引导路线池扩展，定向补充有潜力的联合运输路线并重新求解。具体采用确定性成对插入与基于当前解的定向扩池方式构造新的联合运输候选。正式主问题包含10565条物理路线、87977个服务选项和44330组动态容量约束。
+
+\subsubsection{词典序求解与回填}
+
+整数主问题采用CP-SAT按既定优先级逐级求解。整数人员流求得后，将$[\mu_o,\nu_o)$区间展开并分配至具体架次，从而形成可执行运输方案；同站下机与上机可在同一位置完成座位复用。最终4000名人员按原始编号回填，并由独立校验程序重新检查需求、逐航段容量、燃油和全部指标。
+
+如图~\ref{fig:q2-lex-status}所示，五级目标均获得可行解，但尚未完成完整最优性证明。主目标和人员在途时间的当前可行值与求解界差距分别为28.6\%和7.1\%，表明主目标仍存在较大的认证空间；后续目标又建立在未认证的上一级当前解上，因此图中各阶段反映的是逐级获得并稳定改进可行方案的计算过程，而非完整词典序最优性证明。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.84\textwidth]{figures/09五级词典序求解状态与计算代价.pdf}
+    \caption{问题二五级词典序求解状态与计算代价}
+    \label{fig:q2-lex-status}
+\end{figure}
+
+\subsection{问题二求解结果及分析}\label{subsec:q2-results}
+
+\subsubsection{联合运输总体效果}
+
+当前有限路线池下得到的最好已验证可行方案为
+
+\[
+T_2^{air}=18963\ \mathrm{min},\quad
+T_2^{pax}=241751\ \text{人}\!\cdot\!\mathrm{min},
+\]
+
+总燃油150491.1 kg，共111个架次，总体座位利用率84.95\%。主目标求解器下界为13548 min，故
+
+\[
+13548\le T_{2,\Omega}^{*}
+\le \widehat T_{2,\Omega}=18963.
+\tag{7-4}\label{eq:q2-bound}
+\]
+
+如图~\ref{fig:q2-baseline}所示，与独立OD运输基准相比，联合方案将飞机使用时间、燃油和架次数分别降低66.4\%、68.0\%和69.0\%，座位利用率提高57.5个百分点；代价是人员总在途时间增加4.5\%。架次数大幅下降与座位利用率显著提高同时出现，说明联合运输的主要收益来自跨OD需求共享同一物理架次和航段座位，而不是简单缩短某一条路线。这里的独立OD方案仅作为可复现对照，不是理论下界或“分离运输最优方案”。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\textwidth]{figures/07Q2联合运输与独立OD运输基线对比.pdf}
+    \caption{问题二联合运输与独立OD运输基线对比}
+    \label{fig:q2-baseline}
+\end{figure}
+
+\subsubsection{人员时间的结构性权衡}
+
+图~\ref{fig:q2-pax-tradeoff}进一步表明，人员时间增加并非三类需求普遍恶化。联合运输后，出海和海返人员平均在途时间分别由69.77、67.39 min升至71.44、72.46 min，而设施间穿梭由14.92 min降至14.39 min；对应总在途时间变化为$+2665$、$+8123$和$-426$人$\cdot$min。约16.6\%的人员发生额外经停，主要来自出海与海返需求为提高航段复用而合并运输。由此可见，人员时间成本的增加集中在少数合并运输路径，而穿梭任务反而因航段复用获得一定时间收益。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\textwidth]{figures/08人员在途时间的结构性权衡.pdf}
+    \caption{问题二人员在途时间的结构性权衡}
+    \label{fig:q2-pax-tradeoff}
+\end{figure}
+
+因此，问题二的主要收益并非“五项指标同时改善”，而是利用跨OD合乘和座位即时复用显著减少飞机运行资源，以少量人员时间成本换取更高的整体运营效率。最终联合方案全部通过独立验证，但由于有限路线池及各阶段均未获得完整最优性认证，18963 min仍作为当前最好已验证可行值。

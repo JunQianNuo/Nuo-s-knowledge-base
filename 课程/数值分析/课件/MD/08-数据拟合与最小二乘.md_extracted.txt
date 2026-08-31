@@ -1,0 +1,180 @@
+# 08-数据拟合与最小二乘
+
+---
+raw_title: 数值分析08Fitting
+subject: 数值分析
+source: 数值分析08Fitting.pptx
+status: PPTX转换（待校对）
+topics:
+  - 最小二乘法
+  - 法方程
+  - QR分解
+  - 数据拟合
+---
+# 第08章 数据拟合与最小二乘
+
+数据拟合与最小二乘 数据拟合的基本概念与用途 最小二乘法 QR 分解与最小二乘
+数据拟合的基本概念 真实世界的数据特征：零散、数据量巨大 定义：给定一组数据点 $\left({t}_{0},{y}_{0}\right), \dots ,({t}_{m},{y}_{m})$ ，确定函数 $y=\varphi \left(t\right)，$ 使对应的曲线使其对应 的曲线能 反映 给定数据点的 数据变换规律 ( 与给定数据点的 距离最小 ) ，则函数 $y=\varphi (t)$ 称为拟合函数。 拟合函数 $\varphi \left(t\right)={a}_{0}{\varphi }_{0}\left(t\right)+\cdots +{a}_{n}{\varphi }_{n}\left(t\right) ，\left({\varphi }_{0}\left(t\right),{\varphi }_{1}\left(t\right),\dots ,{\varphi }_{n}\left(t\right)\right)$ 为 基函数。
+数据拟合的用途 开普勒范式：从大量的观测数据中总结规律（数据驱动） 开普勒 第三定律： ${\left(\frac{{P}_{1}}{{P}_{2}}\right)}^{2}={\left(\frac{{r}_{1}}{{r}_{2}}\right)}^{3} P:$ 行星公转周期， $r:$ 椭圆轨道的半长轴。 开普勒 (1571-1630)
+数据拟合的用途 牛顿范式：先“猜测”某种规律（第一性原理），再通过实验数据去拟合待定参数
+P=f\left(r,m,F\right)=?
+P:$ 行星公转周期， $r:$ 椭圆轨道的半长轴， $m:$ 行星质量， $F:$ 引力。 牛顿 (1643-1727) 量纲分析： $X={T}^{a}{L}^{b}{M}^{c}(T:时间，L:长度，M:质量)
+P
+r
+m
+F
+−2
+等式两边量纲相等 $\to P=C{\left(\frac{mr}{F}\right)}^{\frac{1}{2}}$ 令 $P=C{r}^{x}{m}^{y}{F}^{z}$ , $C$ 是无量纲的常数
+## 数据拟合的用途
+
+F=GMm{r}^{\alpha }, \alpha =?,G=?
+\left({\left(\frac{{P}_{1}}{{P}_{2}}\right)}^{2}={\left(\frac{{r}_{1}}{{r}_{2}}\right)}^{3} \\ P=C{\left(\frac{mr}{F}\right)}^{\frac{1}{2}}\right)⟹{\left(\frac{{P}_{1}}{{P}_{2}}\right)}^{2}=\frac{\left(\frac{{m}_{1}{r}_{1}}{{F}_{1}}\right)}{\left(\frac{{m}_{2}{r}_{2}}{{F}_{2}}\right)}=\frac{\left(\frac{{m}_{1}{r}_{1}}{GM{m}_{1}{r}_{1}^{\alpha }}\right)}{\left(\frac{{m}_{2}{r}_{2}}{GM{m}_{2}{r}_{2}^{\alpha }}\right)}={\left(\frac{{r}_{1}}{{r}_{2}}\right)}^{1−\alpha }⟹\alpha =−2
+卡文迪许 (1731-1810) 1797-1798 年通过实验测定了 $G$
+数据拟合的用途 1945 年 7 月 16 日上午 5:30 ，美国的第一颗原子弹在新墨西哥州的沙漠中试爆成功 G.I. Taylor(1886-1975)
+E=Cf\left(\rho ,R,t\right)=C\frac{{R}^{5}\rho }{{t}^{2}}(E:能量,\rho :空气密度,R:爆炸半径,t:时间)
+估算当量为 2 万吨 TNT ，与官方公布的 2.1 万吨 TNT 仅 相差 5% ！！
+最小二乘 核心思想：在数据点上通过平方误差度量拟合的余项，并找出模型的参数 ${{a}_{0},\dots ,{a}_{n}}$ 使得该误差最小 ( 与给定数据点的 2 范数距离最小 ) 。 例：最小二乘法拟合数据点： $\left({t}_{0},{y}_{0}\right), \dots ,({t}_{m},{y}_{m})$ 1 、选定拟合函数 $\varphi \left(t\right)={a}_{0}{\varphi }_{0}\left(t\right)+\cdots +{a}_{n}{\varphi }_{n}\left(t\right)$ 2 、残差向量 ( 余项 ) ： $r={\left(\varphi \left({t}_{0}\right)−{y}_{0},\dots ,\varphi \left({t}_{m}\right)−{y}_{m}\right)}^{T}$ 3 、平方误差：
+SE\left({a}_{0},\dots ,{a}_{n}\right):={\left(r\right)}_{2}^{2}=_{i=0}^{m}{{\left(\varphi \left({t}_{i}\right)−{y}_{i}\right)}^{2}}=_{i=0}^{m}{{\left(_{j=0}^{n}{{a}_{j}{\varphi }_{j}\left({t}_{i}\right)}−{y}_{i}\right)}^{2}}
+4 、最小化平方误差：
+\frac{𝜕SE}{𝜕{a}_{k}}=2_{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right)\left(_{j=0}^{n}{{a}_{j}{\varphi }_{j}\left({t}_{i}\right)}−{y}_{i}\right) }=0 \left(k=0,\dots ,n\right)
+\varphi \left(t\right)
+${r}_{1}$
+${r}_{2}$
+${r}_{3}$
+_{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right)\left(_{j=0}^{n}{{a}_{j}{\varphi }_{j}\left({t}_{i}\right)}−{y}_{i}\right) }=0\left(k=0,\dots ,n\right)
+移项、交换求和顺序：
+_{j=0}^{n}{\left(_{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right){\varphi }_{j}\left({t}_{i}\right)}\right){a}_{j} }=_{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right){y}_{i} }\left(k=0,\dots ,n\right)
+定义 $：{\phi }_{s}≔{\left({\varphi }_{s}\left({t}_{0}\right),\dots ,{\varphi }_{s}\left({t}_{m}\right)\right)}^{T}, f≔{\left({y}_{0},\dots ,{y}_{m}\right)}^{T}
+_{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right){\varphi }_{j}\left({t}_{i}\right)}=\left({\phi }_{k},{\phi }_{j}\right) _{i=0}^{m}{{\varphi }_{k}\left({t}_{i}\right){y}_{i} }=\left({\phi }_{k},f\right)
+矩阵形式： $\left(\left({\phi }_{0},{\phi }_{0}\right)\left({\phi }_{0},{\phi }_{1}\right)\cdots \left({\phi }_{0},{\phi }_{n}\right)\left({\phi }_{1},{\phi }_{0}\right)\left({\phi }_{1},{\phi }_{1}\right)\vdots \left({\phi }_{1},{\phi }_{n}\right)\vdots \vdots \ddots \vdots \left({\phi }_{n},{\phi }_{0}\right)\left({\phi }_{n},{\phi }_{1}\right)\cdots \left({\phi }_{n},{\phi }_{n}\right)\right)\left({a}_{0}{a}_{1}\vdots {a}_{n}\right)=\left(\left({\phi }_{0},f\right)\left({\phi }_{1},f\right)\vdots \left({\phi }_{n},f\right)\right)$
+最小二乘 多项式拟合： $\varphi \left(t\right)=span\left({\varphi }_{0}\left(t\right),{\varphi }_{1}\left(t\right), \cdots ,{\varphi }_{n}\left(t\right)\right)=span\left(1,t, \cdots ,{t}^{n}\right)
+$$
+{\phi }_{s}≔{\left({\varphi }_{s}\left({t}_{0}\right),{\varphi }_{s}\left({t}_{1}\right),\dots ,{\varphi }_{s}\left({t}_{m}\right)\right)}^{T}={\left({t}_{0}^{s},{t}_{1}^{s},\dots ,{t}_{m}^{s}\right)}^{T}
+$$
+\left(m+1_{i=0}^{m}{{t}_{i}}\cdots _{i=0}^{m}{{t}_{i}^{n}}_{i=0}^{m}{{t}_{i}}_{i=0}^{m}{{t}_{i}^{2}}\vdots _{i=0}^{m}{{t}_{i}^{n+1}}\vdots \vdots \ddots \vdots _{i=0}^{m}{{t}_{i}^{n}}_{i=0}^{m}{{t}_{i}^{n+1}}\cdots _{i=0}^{m}{{t}_{i}^{2n}}\right)\left({a}_{0}{a}_{1}\vdots {a}_{n}\right)=\left(_{i=0}^{m}{{y}_{i}}_{i=0}^{m}{{{t}_{i}y}_{i}}\vdots _{i=0}^{m}{{{t}_{i}^{n}y}_{i}}\right)
+超定线性方程组的最小二乘法 例：最小二乘法拟合数据点 $\left({t}_{0},{y}_{0}\right), \dots ,({t}_{m},{y}_{m})$ 选定拟合函数 $\varphi \left(t\right)={a}_{0}{\varphi }_{0}\left(t\right)+\cdots +{a}_{n}{\varphi }_{n}\left(t\right)$ ，代入各数据点条件得到：
+\left({\varphi }_{0}\left({t}_{0}\right){\varphi }_{1}\left({t}_{0}\right)\cdots {\varphi }_{n}\left({t}_{0}\right){\varphi }_{0}\left({t}_{1}\right){\varphi }_{1}\left({t}_{1}\right)\vdots {\varphi }_{n}\left({t}_{1}\right)\vdots \vdots \ddots \vdots {\varphi }_{0}\left({t}_{m}\right){\varphi }_{1}\left({t}_{m}\right)\cdots {\varphi }_{n}\left({t}_{m}\right)\right)\left({a}_{0}{a}_{1}\vdots {a}_{n}\right)=\left({y}_{0}{y}_{1}\vdots {y}_{m}\right), m>n时超定
+误差： ${\left(r\right)}_{2}={\left(b−Ax\right)}_{2}$ 最小化误差： ${A}^{T}Ax={A}^{T}b$ 定义： ${\phi }_{s}≔{A}_{s}={\left({\varphi }_{s}\left({t}_{0}\right),\dots ,{\varphi }_{s}\left({t}_{m}\right)\right)}^{T}, f≔b={\left({y}_{0},\dots ,{y}_{m}\right)}^{T}$ 得：
+\left(\left({\phi }_{0},{\phi }_{0}\right)\left({\phi }_{0},{\phi }_{1}\right)\cdots \left({\phi }_{0},{\phi }_{n}\right)\left({\phi }_{1},{\phi }_{0}\right)\left({\phi }_{1},{\phi }_{1}\right)\vdots \left({\phi }_{1},{\phi }_{n}\right)\vdots \vdots \ddots \vdots \left({\phi }_{n},{\phi }_{0}\right)\left({\phi }_{n},{\phi }_{1}\right)\cdots \left({\phi }_{n},{\phi }_{n}\right)\right)\left({a}_{0}{a}_{1}\vdots {a}_{n}\right)=\left(\left({\phi }_{0},f\right)\left({\phi }_{1},f\right)\vdots \left({\phi }_{n},f\right)\right)
+A
+最小二乘 最小二乘的几何解释 例： $Ax=b$ 的具体形式为
+\left(111−111\right)\left({x}_{1}{x}_{2}\right)=\left(213\right)
+方程等价于 ${x}_{1}\left(111\right)+{x}_{2}\left(1−11\right)=\left(213\right)$ 一般地，任何 $m\times n$ 方程组 $Ax=b$ 都能写成 ${x}_{1}{A}_{1}+\dots +{x}_{n}{A}_{n}=b, {A}_{i}\in {\mathbb{R} }^{m}$ 是矩阵 $A$ 的列
+${v}_{1}$
+${v}_{2}$
+Ax
+b−Ax
+最优解 $x$ 满足 ：
+\left(b−Ax\right)⊥\left(Ax\right)
+即： {\left(Ax\right)}^{T}\left(b−Ax\right)=0
+⟹{A}^{T}Ax={A}^{T}b$ ( 法线方程 )
+例 : 找出拟合 $\left(1,2\right), \left(−1,1\right), (1,3)$ 的最优直线（线性回归）
+解： 令： y={a}_{0}+{a}_{1}t
+代入数据点得：
+\left(111−111\right)\left({a}_{0}{a}_{1}\right)=\left(213\right)
+法线方程：
+\left(1111−11\right)\left(111−111\right)\left({a}_{0}{a}_{1}\right)=\left(1111−11\right)\left(213\right)⟹\left(3113\right)\left({a}_{0}{a}_{1}\right)=\left(64\right)
+最终模型：
+y=\frac{7}{4}+\frac{3}{4}t
+拟合误差
+line error
+2.5
+−0.5
+−1
+1.0
+0.0
+2.5
+0.5
+line error 拟合图像
+t
+例 : 找出拟合 $\left(−1,1\right), \left(0,0\right), \left(1,0\right),(2,−2)$ 的最优直线和最优抛物线 解：直线拟合令： $y={a}_{0}+{a}_{1}t$ 拟合 条件 $：
+\left(1−1101112\right)\left({a}_{0}{a}_{1}\right)=\left(100−2\right)
+法线 方程 $：
+\left(1111−1012\right)\left(1−1101112\right)\left({a}_{0}{a}_{1}\right)=\left(1111−1012\right)\left(100−2\right)⟹\left(4226\right)\left({a}_{0}{a}_{1}\right)=\left(−1−5\right)
+最终模型： $y=0.2−0.9t$ 最小二乘
+最小二乘 抛物线拟合令： $y={a}_{0}+{a}_{1}t+{a}_{2}{t}^{2}$ 拟合点 $：\left(−1,1\right), \left(0,0\right), \left(1,0\right),(2,−2)
+\left(1−11100111124\right)\left({a}_{0}{a}_{1}{a}_{2}\right)=\left(100−2\right)
+法线 方程 $：
+\left(1111−10121014\right)\left(1−11100111124\right)\left({a}_{0}{a}_{1}{a}_{2}\right)=\left(1111−10121014\right)\left(100−2\right)⟹\left(4262686818\right)\left({a}_{0}{a}_{1}{a}_{2}\right)=\left(−1−5−7\right)
+最终模型： $y=0.45−0.65t−0.25{t}^{2}$
+直线拟合平方误差 ${\left(r\right)}_{2}^{2}=0.7$ 抛物线拟合平方误差 ${\left(r\right)}_{2}^{2}=0.45
+line error
+−1
+1.1
+−0.1
+0.2
+−0.2
+−0.7
+0.7
+−2
+−1.6
+−0.4
+line error
+parabola error
+−1
+0.85
+0.15
+0.45
+−0.45
+−0.45
+0.45
+−2
+−1.85
+−0.15
+parabola error 直线拟合
+t
+抛物线拟合
+t
+非线性模型的最小二乘拟合： 例：给定 数据点： $\left({t}_{0},{y}_{0}\right),\left({t}_{1},{y}_{1}\right),\dots ,\left({t}_{m},{y}_{m}\right),$ 拟合模型为： $y={c}_{1}{e}^{{c}_{2}t}$ 拟合的平方误差：
+$$
+{SE({c}_{1},{c}_{2})=\left({c}_{1}{e}^{{c}_{2}{t}_{0}}−{y}_{0}\right)}^{2}+\dots +{\left({c}_{1}{e}^{{c}_{2}{t}_{m}}−{y}_{m}\right)}^{2}
+$$
+极小化平方误差：
+\frac{𝜕SE}{𝜕{c}_{1}}=2{e}^{{c}_{2}{t}_{0}}\left({c}_{1}{e}^{{c}_{2}{t}_{0}}−{y}_{0}\right)+\dots +2{e}^{{c}_{2}{t}_{m}}\left({c}_{1}{e}^{{c}_{2}{t}_{m}}−{y}_{m}\right)=0
+\frac{𝜕SE}{𝜕{c}_{2}}=2{c}_{1}{t}_{0}{e}^{{c}_{2}{t}_{0}}\left({c}_{1}{e}^{{c}_{2}{t}_{0}}−{y}_{0}\right)+\dots +2{c}_{1}{t}_{m}{e}^{{c}_{2}{t}_{m}}\left({c}_{1}{e}^{{c}_{2}{t}_{m}}−{y}_{m}\right)=0
+将上述模型两边取对数将问题线性化
+y≔\lny=\ln{c}_{1}+{c}_{2}t=k+{c}_{2}t
+线性化问题的平方误差 :
+SE={\left(k+{c}_{2}{t}_{0}−\ln{y}_{0}\right)}^{2}+\dots +{\left(k+{c}_{2}{t}_{m}−\ln{y}_{m}\right)}^{2}
+最小二乘 使用模型 $y={c}_{1}{e}^{{c}_{2}t}$ 拟合 Intel CPU 单元中的晶体管数量随年份的变化：
+最小二乘 解： 1 、线性化模型： $y≔\lny=\ln{c}_{1}+{c}_{2}t=k+{c}_{2}t$ ( $t=0$ 对应于 1970 年 ) 代入数据得到 $Ax=b, x={\left(k,{c}_{2}\right)}^{T}
+A=\left(11121418\vdots \vdots 133\right), b=\left(\ln2250 \\ \ln2500 \\ \ln5000 \\ \ln29000 \\ \vdots \\ \ln410000000\right)
+法线方程 ${A}^{T}Ax={A}^{T}b$ 为：
+\left(132352355927\right)\left(k{c}_{2}\right)=\left(176.903793.23\right)
+解得 ${\left(k,{c}_{2}\right)}^{T}={\left(7.197,0.3546\right)}^{T}⟶{\left({c}_{1},{c}_{2}\right)}^{T}={\left(1335.3,0.3546\right)}^{T}.$
+最小二乘 最终模型 $y=1335.3{e}^{0.3546t}$ 单个 CPU 单元晶体管个数翻倍时间
+\frac{{y}_{2}}{{y}_{1}}={e}^{0.3546({t}_{2}−{t}_{1})}=2\to {t}_{2}−{t}_{1}=\frac{\ln2}{0.3546}\approx 1.95年（Moore定律）
+题中的数据 直到近年的数据
+最小二乘 例：令 $\left({x}_{0},\dots ,{x}_{10}\right)$ 为 区间 $[2,4]$ 上 间隔均匀的点，并设 ${y}_{i}=_{n=0}^{7}{{x}_{i}^{n}} (0\le i\le 10)$ . 使用法线方程找出拟合 ${\left(\left({x}_{i},{y}_{i}\right)\right)}_{i=0}^{10}$ 的最小二乘多项式 $P\left(x\right)=_{n=0}^{7}{{c}_{n}{x}^{n}}$ 解：将数据条件代入模型多项式得到：
+\left(1{x}_{0}\cdots {x}_{0}^{7}1{x}_{1}\vdots {x}_{1}^{7}\vdots \vdots \ddots \vdots 1{x}_{10}\cdots {x}_{10}^{7}\right)\left({c}_{0}{c}_{1}\vdots {c}_{7}\right)=\left({y}_{0}{y}_{1}\vdots {y}_{10}\right)
+使用 MATLAB 求解： 与精确解相差很大 ${A}^{T}A条件$ 数太大 属于病态问题！
+QR 分解与最小二乘 实现 QR 分解的方法 Gram-Schmidt 正交 Householder 变换 $QR$ 分解的应用 求解 $n\times n$ 线性方程组： $Ax=b\to QRx=b\to Rx={Q}^{T}b$ . 求 $A$ 的特征值的 QR 算法 求解 $m\times n(m>n超定)$ 线性方程组的最小二乘解
+$QR$ 分解求解超定线性方程组 $Ax=b$ 的最小二乘解：最小化 ${\left(b−Ax\right)}_{2}$ 正交矩阵保持向量的欧几里得长度不变： ${\left(b−Ax\right)}_{2}={\left(b−QRx\right)}_{2}={\left({Q}^{T}b−Rx\right)}_{2}$ 最小二乘解相当于最小化 ${\left({Q}^{T}b−Rx\right)}_{2}$ ，令 $d≔{Q}^{T}b$ ，则
+Rx−d=\left({r}_{11}{r}_{12}\cdots {r}_{1n}{r}_{22}\cdots {r}_{2n}\ddots \vdots {r}_{nn}0\cdots \cdots 0\vdots \vdots 0\cdots \cdots 0\right)\left({x}_{1} \\ \vdots \\ {x}_{n}\right)−\left({d}_{1} \\ \vdots \\ {d}_{n} \\ {d}_{n+1} \\ \vdots \\ {d}_{m}\right)=\left({e}_{1} \\ \vdots \\ {e}_{n} \\ {e}_{n+1} \\ \vdots \\ {e}_{m}\right)
+当 $e=Rx−d=0$ 时， ${\left({Q}^{T}b−Rx\right)}_{2}={\left(d−Rx\right)}_{2}$ 取得最小值 即最小二乘解为 $Rx=d$ ( 避免了求解法向方程 ${A}^{T}Ax={A}^{T}b$ )
+R
+d
+e
+=\left(−{d}_{n+1} \\ \vdots \\ −{d}_{m}\right)
+QR 分解与最小二乘
+例：求解方程组的最小二乘解
+\left(1−42322\right)\left({x}_{1} \\ {x}_{2}\right)=\left(−3 \\ 15 \\ 9\right)
+解：法线方程为 ${A}^{T}Ax={A}^{T}b$ :
+\left(122−432\right)\left(1−42322\right)\left({x}_{1} \\ {x}_{2}\right)=\left(122−432\right)\left(−3 \\ 15 \\ 9\right)
+即：
+\left(96629\right)\left({x}_{1} \\ {x}_{2}\right)=\left(45 \\ 75\right)\Rightarrow \left({x}_{1} \\ {x}_{2}\right)=\left(3.8 \\ 1.8\right)
+误差 ： $r=b−Ax=\left(−3 \\ 15 \\ 9\right)−\left(1−42322\right)\left(3.8 \\ 1.8\right)=\left(0.4 \\ 2 \\ −2.2\right), {\left(r\right)}_{2}=\sqrt[]{{\left(0.4\right)}^{2}+{2}^{2}+{\left(−2.2\right)}^{2}}=3$
+QR 分解法求解 1. 对系数矩阵做 QR 分解
+A=\left(\frac{1}{3}−\frac{14}{15}\frac{2}{15}\frac{2}{3}\frac{1}{3}\frac{2}{3}\frac{2}{3}\frac{2}{15}−\frac{11}{15}\right)\left(320500\right)=QR
+2. 求解 $Rx={Q}^{T}b
+\left(320500\right)\left({x}_{1} \\ {x}_{2}\right)=\left(\frac{1}{3}\frac{2}{3}\frac{2}{3}−\frac{14}{15}\frac{1}{3}\frac{2}{15}\frac{2}{15}\frac{2}{3}−\frac{11}{15}\right)\left(−3 \\ 15 \\ 9\right)=\left(15 \\ 9 \\ 3\right)
+最小二乘解： ${\left({x}_{1},{x}_{2}\right)}^{T}={\left(3.8,1.8\right)}^{T}$ 误差： $r={\left({Q}^{T}b−Rx\right)}_{2}=3$
+例：令 $\left({x}_{0},\dots ,{x}_{10}\right)$ 为区间 $[2,4]$ 上间隔均匀的点，并设 ${y}_{i}=_{n=0}^{7}{{x}_{i}^{n}} (0\le i\le 10)$ . 使用法线方程找出拟合 ${\left(\left({x}_{i},{y}_{i}\right)\right)}_{i=0}^{10}$ 的最小二乘多项式 $P\left(x\right)=_{n=0}^{7}{{c}_{n}{x}^{n}}$ 解：将数据条件代入模型多项式得到：
+\left(1{x}_{0}\cdots {x}_{0}^{7}1{x}_{1}\vdots {x}_{1}^{7}\vdots \vdots \ddots \vdots 1{x}_{10}\cdots {x}_{10}^{7}\right)\left({c}_{0}{c}_{1}\vdots {c}_{7}\right)=\left({y}_{0}{y}_{1}\vdots {y}_{10}\right)
+\left({c}_{0}{c}_{1}\vdots {c}_{7}\right)=
+QR 分解得到的解
+思考与练习 用周期模型 ${F}_{3}\left(t\right)={c}_{1}+{c}_{2}\cos2\pi t+{c}_{3}\sin2\pi t$ 拟合以下数据：
+\left(0,0\right),\left(\frac{1}{6},2\right),\left(\frac{1}{3},0\right),\left(\frac{1}{2},−1\right),\left(\frac{2}{3},1\right),\left(\frac{5}{6},1\right)
+分别使用法线方程和 QR 分解求解方程的最小二乘解，并求出二范数误差
+\left(−4−4−274−5\right)\left({x}_{1} \\ {x}_{2}\right)=\left(3 \\ 9 \\ 0\right)
+编程：令 $\left({x}_{0},\dots ,{x}_{20}\right)$ 为 区间 $[2,4]$ 上 间隔均匀的点，并设 ${y}_{i}=_{n=0}^{10}{{x}_{i}^{n}} (0\le i\le 20)$ . 使用法线方程和 QR 分解找出拟合 ${\left(\left({x}_{i},{y}_{i}\right)\right)}_{i=0}^{20}$ 的最小二乘多项式 $P\left(x\right)=_{n=0}^{10}{{c}_{n}{x}^{n}}$

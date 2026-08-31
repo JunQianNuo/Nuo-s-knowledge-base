@@ -1,0 +1,31 @@
+{
+  "schema_version": "q4-results-v3",
+  "model_ids": ["Q4-M4", "Q4-M2", "Q4-M3"],
+  "algorithm_ids": ["Q4-A3", "Q4-A1", "Q4-A2"],
+  "priors": {
+    "uniform": [1.0, 1.0],
+    "jeffreys": [0.5, 0.5]
+  },
+  "main_prior": "uniform",
+  "q2_voi": {
+    "horizon": 4,
+    "quick_horizon": 2,
+    "quadrature_orders": [8, 12, 16, 24, 32, 48],
+    "quick_quadrature_orders": [6, 8, 12, 16],
+    "value_tolerance": 1e-5,
+    "exact_dp_max_states": 200000
+  },
+  "q3_voi": {
+    "draws_per_scramble": 16,
+    "scrambles": 8,
+    "quick_draws_per_scramble": 4,
+    "quick_scrambles": 2,
+    "seed": 2024,
+    "confirm_seed": 12024,
+    "confidence": 0.95,
+    "value_tolerance": 0.01,
+    "rollout_depth": 2,
+    "rollout_paths": 8
+  },
+  "robust_coverages": [90, 95]
+}

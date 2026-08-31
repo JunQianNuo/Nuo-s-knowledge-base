@@ -1,0 +1,292 @@
+# 07-一维搜索方法
+
+---
+title: 第7章 一维搜索方法
+subject: 最优化方法
+source: 无动画Chapter7.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 7
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第7章 一维搜索方法
+## 1．黄金分割法
+2．斐波那契数列法
+3．二分法
+4．牛顿法
+5．割线法
+6．插值类方法
+7．多维优化的线搜索
+![](https://web-api.textin.com/ocr_image/external/7de737c71a4137ac.jpg)
+![](https://web-api.textin.com/ocr_image/external/3e3b6715ce5ba189.jpg)
+![](https://web-api.textin.com/ocr_image/external/ed7b38bec89a2f58.jpg)
+![](https://web-api.textin.com/ocr_image/external/423d0c9f3d0e7c07.jpg)
+### 优化问题
+一维优化问题： $\min _{x\in Ω}f(x)$ ，其中f: $:\mathbb {R}\rightarrow \mathbb {R}$ $x\in \mathbb {R};$ $Ω=\left[a_{0},b_{0}\right]\subset \mathbb {R}.$ 
+![](https://web-api.textin.com/ocr_image/external/ee7678a1e3db01de.jpg)
+从初始搜索点 $x^{(0)}$ 出发，产生迭代序列 $\left\{x^{(k)}\right\}_{k=1}^{\infty }$ 
+要求： $f:\left[a_{0},b_{0}\right]\rightarrow \mathbb {R}$ 是单峰的，即f在 $\left[a_{0},b_{0}\right]$ 上有唯一极小点 $x^{*}$ ，且 $f$ 在 $\left[a_{0},x^{*}\right]$ 单增，在 $\left[x^{*},b_{0}\right]$ 上单减.
+f(x) $a_{0}$ o $x_{2}$ bo $b_{0}$ x $x_{1^{v}}$
+![](https://web-api.textin.com/ocr_image/external/4b3e719903a8ec42.jpg)
+### 单峰函数特点：若 $f$ 是 $\left[a_{0},b_{0}\right]$ 上的单峰函数
+设 $a_{0}<x_{1}<x_{2}<b_{0}$ ，则
+$\left\{\begin{array}{l}x^{*}\in \left[a_{0},x_{2}\right]\\ x^{*}\in \left[x_{1},b_{0}\right]\end{array}\right.$  若 $f\left(x_{2}\right)\geq f\left(x_{1}\right)$ 若 (*) $f\left(x_{2}\right)\leq f\left(x_{1}\right)$ 
+## 三等分方法
+S1：将 $\left[a_{0},b_{0}\right]$ 三等分，即 $x_{1}=\frac {1}{3}\left(b_{0}-a_{0}\right)$  $x_{2}=\frac {2}{3}\left(b_{0}-a_{0}\right)$ 
+S2：计算 $f\left(x_{1}\right)$ 和 $f\left(x_{2}\right)$ ，利用（*）式判定 $x^{*}$ 所在区间.
+![](https://web-api.textin.com/ocr_image/external/6b218f169b0ba068.jpg)
+特点：(i）新区间总含有 $x^{*}$ ，且长度是老区间的 $\frac {2}{3}$  （.停机准则： $L\left(\frac {2}{3}\right)^{N}<ε$ ，其中L是初始区间长度）.(ii）每次计算2个节点和2个函数值．
+### 优化问题
+### 黄金分割法（golden section search）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数（不失一般性，设 $Ω=[0,1])$ 
+![](https://web-api.textin.com/ocr_image/external/c8ba67667e2d3b66.jpg)
+在区间［0,1］中插入中间点λ和 $μ;$ 
+![](https://web-api.textin.com/ocr_image/external/bc78e35ee6fef6fb.jpg)
+边际区间是对称的，即 $λ=1-μ;$ 
+入在新区间中“扮演” $μ$ ,或 $μ$ 在新区间中“扮演”入.
+#### 优化问题
+#### 黄金分割法（golden section search）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数（不失一般性，设 $Ω=[0,1])$ 
+在区间［0,1］中插入中间点λ和 $μ;$ 
+边际区间是对称的，即 $λ=1-μ;$ 
+入在新区间中“扮演” $μ$ ，或 $μ$ 在新区间中“扮演”入.
+0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/81021140d9df2692.jpg)
+0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/52d860bfd78f726e.jpg)
+##### 优化问题
+#### 黄金分割法（golden section search）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数（不失一般性，设 $Ω=[0,1])$ 
+在区间［0,1］中插入中间点λ和 $μ;$ 
+边际区间是对称的，即 $λ=1-μ;$ 
+入在新区间中“扮演” $μ$ ，或 $μ$ 在新区间中“扮演”λ.
+0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/185b82e2fbc5a8a6.jpg)
+如何推导出入和 $μ?$ 
+0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/df8ace47865ae3f4.jpg)
+![](https://web-api.textin.com/ocr_image/external/d57ac5a55fa71abb.jpg)
+第7章一维搜索方法
+##### 优化问题
+##### 黄金分割法（golden section search）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数（不失一般性，设 $Ω=[0,1])$ 
+在区间［0,1］中插入中间点λ和 $μ;$ 
+边际区间是对称的，即 $λ=1-μ;$ 
+入在新区间中“扮演” $μ$ ，或 $μ$ 在新区间中“扮演”λ.
+0 入 μ 1
+![](https://web-api.textin.com/ocr_image/external/d86dcafe953245c0.jpg)
+0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/f841d85178dc5965.jpg)
+如何推导出入和 $μ?$ 
+$$\left\{\begin{array}{l}λ=1-μ\\ \frac {μ}{1}=\frac {λ}{μ}\end{array}\right.$$
+2
+第7章一维搜索方法
+##### 优化问题
+#### 黄金分割法（golden section search）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数（不失一般性，设 $Ω=[0,1])$ 
+在区间［0,1］中插入中间点λ和 $μ;$ 
+边际区间是对称的，即 $λ=1-μ;$ 
+入在新区间中“扮演” $μ$ ，或 $μ$ 在新区间中“扮演”λ.
+0 λ μ 1 0 λ μ 1
+![](https://web-api.textin.com/ocr_image/external/5be760dba65b067d.jpg)
+##### 问题：
+![](https://web-api.textin.com/ocr_image/external/798838fa305672cf.jpg)
+如何在 $\left[a_{0},b_{0}\right]$ 区间插入节点？如何推导出入和 $μ?$ 
+$\left\{\begin{array}{l}λ=1-μ\\ \frac {μ}{1}=\frac {λ}{μ}\end{array}\right.$ $\Rightarrow \left\{\begin{array}{l}λ=\frac {3-\sqrt {5}}{2}\approx 0.382\\ μ=\frac {\sqrt {5}-1}{2}\approx 0.618\end{array}\right.$ 
+$a_{1}-a_{0}$ $b_{0}-b_{1}$ $a_{0}$ $a_{1}$ $b_{1}$ bo $b_{0}$
+![](https://web-api.textin.com/ocr_image/external/925c1f436189fb71.jpg)
+#### 黄金分割法
+##### 边际区间如何取舍？
+(x) $f(x)$ $f\left(b_{1}\right)$ 1b) fa) $f(a_{1})$ $80$ a $x^{*}a_{1}$ $b_{1}$ y o $b_{0}$
+![](https://web-api.textin.com/ocr_image/external/465cb2cf8b3042f6.jpg)
+。若 $f\left(a_{1}\right)<f\left(b_{1}\right)$ ，那么 $x^{*}\in \left[a_{0},b_{1}\right]$ 因此，删除右区间 $\left[b_{1},b_{0}\right]$ 
+。若 $f\left(a_{1}\right)\geq f\left(b_{1}\right)$ ，那么 $x^{*}\in \left[a_{1},b_{0}\right]$ 因此，删除左区间 $\left[a_{0},a_{1}\right]$ 
+###### 黄金分割法的性质：
+·每次只计算一个函数值；
+·每次区间都会以 $μ\approx 0.618$ 的比率缩小，也就是说，经过N步骤后，区间的长度以 $μ^{N}$ 的比例缩小.停机准则： $Lμ^{N}<ε,$ $、$  其中L是初始区间长度.
+##### 黄金分割法
+###### 例. $f(x)=x^{4}-14x^{3}+60x^{2}-70x$ 
+用黄金分割法求 $f$ 在［0,2］的极小点．至少需要多少次迭代才将极小点限制在长度为0.3的区间内？
+解：. $2μ^{N}<0.3LongrightarrowN\geq \log _{μ}\left(\frac {0.3}{2}\right)\approx 4.$  ．经过4步迭代即可达到要求．
+S1: $\left\{\begin{array}{l}a_{1}=a_{0}+λ\left(b_{0}-a_{0}\right)=0.763\\ b_{1}=a_{0}+μ\left(b_{0}-a_{0}\right)=1.236\end{array}\right.$ $\Rightarrow \left\{\begin{array}{l}f\left(a_{1}\right)=-24.36\\ f\left(b_{1}\right)=-18.96\end{array}\right.$ 
+新区间为 $\left[a_{0},b_{1}\right]=[0,1.236].$ 
+S2：令
+$$\left\{\begin{array}{l}b_{2}=a_{1},a_{1}=a_{0},\text {且}\\ \left\{\begin{array}{l}a_{2}=a_{1}+\lambda (b_{1}-a_{1})=0.472\\ f(a_{2})=-21.10\end{array}\right.\end{array}\right.\quad \Rightarrow \left\{\begin{array}{l}f\left(a_{2}\right)=-21.10\\ f\left(b_{2}\right)=-24.36\end{array}\right.$$
+.新区间为 $\left[a_{2},b_{1}\right]=[0.472,1.236].$ 
+S3：通过 $\mathrm {C}/\mathrm {C}++/\mathrm {r}$ $matlab/...$ 程序实现.
+在区间［0,2］上，f的极小点为 $x^{*}\approx 0.780884.$ 
+###### 黄金分割法的改进
+###### 斐波那契数列法
+思路：用动态的 $\left(λ_{k},μ_{k}\right)$ 代替固定的 $(λ,μ)$ ，从而提高黄金分割法的效率，其中数列 $\left\{λ_{k}\right\},\left\{μ_{k}\right\}$ 满足以下条件： $\lim _{k\rightarrow \infty }λ_{k}=λ$ 和 $\lim _{k\rightarrow \infty }μ_{k}=μ.$ 
+![](https://web-api.textin.com/ocr_image/external/5f019f5855772518.jpg)
+例： $λ_{k}=1-\frac {F_{k}}{F_{k+1}}$ ，其中 $F_{k}$ 为斐波那契数列.
+##### 二分法
+###### 二分法（bisection）
+设 $f:Ω\rightarrow \mathbb {R}$ 是单峰函数在 $Ω=\left[a_{0},b_{0}\right]$ 上有极小点.且 $f\in \mathcal {C}^{1}(Ω)$ 
+思路：通过一阶必要条件，即 $f^{\prime }\left(x^{*}\right)=0$ ，求得 $x^{*}=\arg \min _{x\in Ω}f.$ 
+###### 二分法的操作
+$f(x)$ $f^{\prime }(x)$ $a_{0}$ x $x^{*}$ bo $b_{0}$ x
+![](https://web-api.textin.com/ocr_image/external/0736f8f88849dd27.jpg)
+![](https://web-api.textin.com/ocr_image/external/ddb31e81e273bc0b.jpg)
+计算初始区间的中点： $x^{(0)}=\frac {a_{0}+b_{0}}{2}$ 
+计算 $f^{\prime }\left(x^{0}\right)$ 
+若 $f^{\prime }\left(x^{(0)}\right)>0,$ $x^{*}\in \left\{\begin{matrix}\left[a_{0},x^{(0)}\right],\\ \left[x^{(0)},b_{0}\right],\\ \text {是极小点,}\end{matrix}\right.$  若 $f^{\prime }\left(x^{(0)}\right)<0,$ 若 $f^{\prime }\left(x^{(0)}\right)=0.$ 
+###### 二分法与黄金分割法的区别
+·二分法使用函数的导数 $f^{\prime }$ '，黄金分割法仅使用函数值；
+。二分法的区间压缩比为 $\frac {1}{2}$ ，而黄金分割法的区间压缩比为 $μ=0.618.$ 
+##### 二分法
+例. $f(x)=x^{4}-14x^{3}+60x^{2}-70x$ 
+用二分法求 $f$ 在［0,2］的极小点．至少需要多少次迭代才能将极小点所在区间限制在0.3以内？
+解： $\because 2\left(\frac {1}{2}\right)^{N}<0.3LongrightarrowN\geq \log _{2}\left(\frac {0.3}{2}\right)\approx 3.$ 
+．经过3步压缩即可达到目的．
+S1: $x^{(0)}=\frac {a_{0}+b_{0}}{2}=1Longrightarrowf^{\prime }\left(x^{(0)}\right)=12$ 
+.新区间为 $\left[a_{0},x^{(0)}\right]=[0,1].$ 
+S2：令 $a_{1}=a_{0},b_{1}=x^{(0)}$ 
+$$x^{(1)}=\frac {a_{1}+b_{1}}{2}=0.5Longrightarrowf^{\prime }\left(x^{(1)}\right)=-20$$
+.新区间为 $\left[x^{(1)},b_{1}\right]=[0.5,1].$ 
+S3：令 $a_{2}=x^{(1)},b_{2}=b_{1},$ 
+$$x^{(2)}=\frac {a_{2}+b_{2}}{2}=0.75Longrightarrowf^{\prime }\left(x^{(2)}\right)=-1.937$$
+.新区间为 $\left[x^{(2)},b_{2}\right]=[0.75,1].$ 
+在［0,2］上，f的极小点 $x^{*}\approx 0.780884$ 
+###### 牛顿法
+#### 牛顿法（Newton method）
+设 $f:Ω\rightarrow \mathbb {R}$ 为单峰函数， $Ω=\left[a_{0},b_{0}\right]$ .且 $f\in \mathcal {C}^{2}(Ω).$ 
+思路：通过在某点处构造 $f$  的二次逼近函数，得到 $x^{*}=\arg \min _{x\in Ω}f$ 
+给定当前迭代点 $x^{(k)}$ ，设 $q(x)$ 为 $f$ 在点 $x^{(k)}$ 处的二次逼近函数，即
+$$f(x)\approx q(x)=f\left(x^{(k)}\right)+f^{\prime }\left(x^{(k)}\right)\left(x-x^{(k)}\right)+\frac {f^{\prime \prime }\left(x^{(k)}\right)}{2}\left(x-x^{(k)}\right)^{2},$$
+将 $q(x)$ 的极小点定义为新的迭代点 $x^{(k+1)}$ 
+由一阶必要条件得
+$$0=q^{\prime }(x)=f^{\prime }\left(x^{(k)}\right)+f^{\prime \prime }\left(x^{(k)}\right)\left(x-x^{(k)}\right)Longrightarrowx=x^{(k)}-\frac {f^{\prime }\left(x^{(k)}\right)}{f^{\prime \prime }\left(x^{(k)}\right)}$$
+牛顿法的迭代格式为： $x^{(k+1)}=x^{(k)}-\frac {f^{\prime }\left(x^{(k)}\right)}{f^{\prime \prime }\left(x^{(k)}\right)}$  $k=0,1,\cdots$ 
+##### 牛顿法
+例. $f(x)=\frac {1}{2}x^{2}-\sin x$ 
+初始点取 $x^{(0)}=0.5$ ，用牛顿法求 $f$  的极小点，精度要求 $\left|x^{(k+1)}-x^{(k)}\right|<10^{-5}.$ 
+解： $\because f^{\prime }(x)=x-\cos x,$ $f^{\prime \prime }(x)=1+\sin x$  初始点为 $x^{(0)}=0.5$ 
+S1: $x^{(1)}=x^{(0)}-\frac {f^{\prime }\left(x^{(0)}\right)}{f^{\prime \prime }\left(x^{(0)}\right)}=0.5-\frac {0.5-\cos 0.5}{1+\sin 0.5}=0.7552$ 
+S2: $x^{(2)}=x^{(1)}-\frac {f^{\prime }\left(x^{(1)}\right)}{f^{\prime \prime }\left(x^{(1)}\right)}=0.7391.$ 
+S3: $x^{(3)}=x^{(2)}-\frac {f^{\prime }\left(x^{(2)}\right)}{f^{\prime \prime }\left(x^{(2)}\right)}=0.7390.$ 
+S4: $x^{(4)}=x^{(3)}-\frac {f^{\prime }\left(x^{(3)}\right)}{f^{\prime \prime }\left(x^{(3)}\right)}=0.7390.$ 
+: $\left|x^{(4)}-x^{(3)}\right|<10^{-5}$ ，迭代结束.
+此外，由于 $f^{\prime }\left(x^{(4)}\right)=-8.6\times 10^{-6}\approx 0$ 且 $f^{\prime \prime }\left(x^{(4)}\right)=1.673>0,$ 
+$\therefore$ $x^{(4)}$  是一个“较好的”严格极小点的近似.
+![](https://web-api.textin.com/ocr_image/external/e837a3d9202d2fa6.jpg)
+牛顿法特点： $f^{\prime \prime }(x)>0$ 对于区间内所有的x都成立时，牛顿法能够正常运行；如果在某些点处，有 $f^{\prime \prime }(x)<0$ ，牛顿法可能失效.
+##### 牛顿法
+#### 牛顿法求解非线性方程 $g(x)=0$ 
+给定迭代点 $x^{(k)}$ ，设l为g在点 $x^{(k)}$ 处的线性逼近，即 $g(x)\approx l(x)=g\left(x^{(k)}\right)+g^{\prime }\left(x^{(k)}\right)\left(x-x^{(k)}\right)$ 将l的零点定义为新的迭代点 $x^{(k+1)}$ 
+因此，
+<table border="1" ><tr>
+<td>$x^{(k+1)}=x^{(k)}-\frac {g\left(x^{(k)}\right)}{g^{\prime }\left(x^{(k)}\right)}$ ［切线法］<img src="https://web-api.textin.com/ocr_image/external/c8e568670b32f0d2.jpg"></td>
+</tr></table>
+900 000 00) $g(x^{(k)})$ g(1 $g(x(k+1))$ $x^{(k+2)}$ $x^{(k+1)}$ x() $x^{(k)}$
+![](https://web-api.textin.com/ocr_image/external/ac7d599025cf2325.jpg)
+##### 割线法／拟牛顿法
+牛顿法解方程： $x^{(k+1)}=x^{(k)}-\frac {g\left(x^{(k)}\right)}{g^{\prime }\left(x^{(k)}\right)}$ ，借助差分 $g^{\prime }\left(x^{(k)}\right)\approx \frac {g\left(x^{(k)}\right)-g\left(x^{(k-1)}\right)}{x^{(k)}-x^{(k-1)}}$ 割线法解方程： $x^{(k+1)}=x^{(k)}-\frac {g\left(x^{(k)}\right)}{\frac {g\left(x^{(k)}\right)-g\left(x^{(k-1)}\right)}{x^{(k)}-x^{(k-1)}}}$ 
+牛顿法求极值： $x^{(k+1)}=x^{(k)}-\frac {f^{\prime }\left(x^{(k)}\right)}{f^{\prime \prime }\left(x^{(k)}\right)}$ ，借助 $f^{\prime \prime }\left(x^{(k)}\right)\approx \frac {f^{\prime }\left(x^{(k)}\right)-f^{\prime }\left(x^{(k-1)}\right)}{x^{(k)}-x^{(k-1)}}$ 
+割线法求极值： $x^{(k+1)}=x^{(k)}$  $-$ $\frac {f^{\prime }\left(x^{(k)}\right)}{\frac {f^{\prime }\left(x^{(k)}\right)-f^{\prime }(x^{(k-1)})}{x^{(k)}-x^{(k-1)}}}$ 
+##### 插值类方法
+###### 思路：在有解区间设计节点，用低次 $(\leq 3)$ ）插值多项式近似目标函数
+。三点二次插值：取 $\left[a_{0},b_{0}\right]$ 区间中三点 $x_{1}<x_{2}<x_{3}$ 满足 $f\left(x_{1}\right)>f\left(x_{2}\right)<f\left(x_{3}\right)$ ，构造二次函数 $q(x)$ ，将q的极小点作为 $x_{4}$ ，在 $x_{i}{}_{i=1}^{4}$ 取满足条件的节点，构造二次多项式，···
+。两点二次插值I：取 $x_{1},x_{2}$ ，计算函数值 $f\left(x_{1}\right)$ 和 $f\left(x_{2}\right)$ ，导数值 $f^{\prime }\left(x_{1}\right)$ 或 $f^{\prime }\left(x_{2}\right)$ ，构造2次多项式
+。两点二次插值II（等价于割线法）：取 $x_{1},x_{2}$  计算函数值 $f\left(x_{1}\right)$ ，导数值 $f^{\prime }\left(x_{1}\right)$ 和 $f^{\prime }\left(x_{2}\right)$ ，构造2次多项式
+。两点三次插值：取 $x_{1},x_{2}$ .计算函数值 $f\left(x_{1}\right)$ 和 $f\left(x_{2}\right)$ ，导数值 $f^{\prime }\left(x_{1}\right)$ 和 $f^{\prime }\left(x_{2}\right)$ ，构造3次多项式
+###### 无约束优化
+###### 寻找单峰函数f极小点所在的区间 $[a,b]$ 
+目标：找到3个点 $a<c<b,$  使得函数值满足 $f(c)<f(a)$ 和 $f(c)<f(b)$ 
+###### SO：任选3个点 $x_{0}<x_{1}<x_{2}$ 
+S1.1如果 $f\left(x_{1}\right)<f\left(x_{0}\right)$ 且 $f\left(x_{1}\right)<f\left(x_{2}\right)$ 
+则 $[a,b]=\left[x_{0},x_{2}\right];$ 
+S1.2否则，如果 $f\left(x_{0}\right)>f\left(x_{1}\right)>f\left(x_{2}\right)$ 
+则选择一个点 $x_{3}>x_{2}$ 
+S1.2.1如果 $f\left(x_{2}\right)<f\left(x_{3}\right)$ 
+则 $[a,b]=\left[x_{1},x_{3}\right];$ 
+S1.2.2否则，重复该过程，直到能够
+找到一个 $x_{3}$ ，使得 $f\left(x_{2}\right)<f\left(x_{3}\right)$ 
+$f(x)$ f(x) $2E$ $4E$ e $x_{0}$ Xo x1 $x_{1}$ X $x_{2}$ $x_{3}$
+![](https://web-api.textin.com/ocr_image/external/39860d580a516bfe.jpg)
+###### ★新的点扩大了连续测试点之间的距离.
+![](https://web-api.textin.com/ocr_image/external/77b31eea23d2c321.jpg)
+###### 线搜索
+无约束优化：minæeRn $\{\}_{n}f(\boldsymbol {x})$ 
+其中 $f:$ $\mathbb {R}^{n}\rightarrow$ R为n元函数； $\boldsymbol {x}\in \mathbb {R}^{n}$ 为n维决策变量.（要求： $f$  连续可微）
+陆高（） 중증총증
+![](https://web-api.textin.com/ocr_image/external/e0c34ea669c5fa27.jpg)
+###### 最优性条件
+$\min _{x\in \mathbb {R}^{n}}f(\boldsymbol {x})\Rightarrow \nabla f(\boldsymbol {x})=0.$ .若 $f$ 在极小点附近是凸函数，则上述条件是充要条件.
+###### 线搜索（line search)： $\boldsymbol {x}_{k+1}=\boldsymbol {x}_{k}+α_{k}\boldsymbol {p}_{k}$ 产生序列 $\left\{\boldsymbol {x}_{k}\right\}_{k=1}^{\infty }\subset \mathbb {R}^{n}$ 
+其中 $α_{k}$ 称为步长， $\boldsymbol {p}_{k}$ 称为搜索方向.
+如果 $\boldsymbol {p}_{k}$ 和 $α_{k}$ 是选择或设计的“比较合适”，那么可以使得 $\lim _{k\rightarrow \infty }\boldsymbol {x}_{k}=\boldsymbol {x}^{*}$ ，即序列的极限是优化问题的极小点.
+线搜索基本步骤：
+![](https://web-api.textin.com/ocr_image/external/c52403c58ed4d0a8.jpg)
+确定搜索方向 $\boldsymbol {p}_{k};$ 
+![](https://web-api.textin.com/ocr_image/external/389b2ad4f40e5dd8.jpg)
+确定最优步长 $α_{k}$  使得目标函数沿着搜索方向 $\boldsymbol {p}_{k}$ 函数值达到最小.
+$x_{1}$ $v_{x^{\prime }}$ $x_{2}$ $N_{0}$
+![](https://web-api.textin.com/ocr_image/external/0a0dc18208ff74bf.jpg)
+第7章一维搜索方法
+14/
+![](https://web-api.textin.com/ocr_image/external/995d2c062a1d1b92.jpg)
+###### 搜索方向 $\boldsymbol {p}_{k}$ 的选取
+###### 下降性质（descent property）
+若 $\boldsymbol {p}_{k}$ 和 $\nabla f\left(\boldsymbol {x}_{k}\right)$ 之间的夹角在 $\left(\frac {\pi }{2},\pi \right)$ 区间内，即 $\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)<0$ ，则 $\boldsymbol {p}_{k}$ 是 $f$ 在 $\boldsymbol {x}_{k}$ 处的下降方向.
+证.由于 $f$ 是可微的，根于Taylor展式，得到
+$$f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)=f\left(\boldsymbol {x}_{k}\right)+α\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)+o\left(\left\|α\boldsymbol {p}_{k}\right\|\right)$$
+###### 常用下降方向
+·梯度方向（gradient)： $\boldsymbol {p}_{k}=-\nabla f\left(\boldsymbol {x}_{k}\right);$ 
+。共轭梯度方向（conjugate gradient)： $\boldsymbol {p}_{k}=-\nabla f\left(\boldsymbol {x}_{k}\right)+\beta _{k}\boldsymbol {p}_{k-1};$ 
+###### 牛顿方向 $(Newton):$  $\boldsymbol {p}_{k}=-\left(\nabla ^{2}f\left(\boldsymbol {x}_{k}\right)\right)^{-1}\nabla f\left(\boldsymbol {x}_{k}\right);$ 
+·拟牛顿方向（quasi-Newton)： $\boldsymbol {p}_{k}=-\left(\boldsymbol {B}_{k}\right)^{-1}\nabla f\left(\boldsymbol {x}_{k}\right)$ ，其中 $\boldsymbol {B}_{k}\approx \nabla ^{2}f\left(\boldsymbol {x}_{k}\right);$ 
+###### 步长 $α_{k}$ k的选取
+$x^{2}$ $p_{k}$ $x_{k}$
+![](https://web-api.textin.com/ocr_image/external/77b4471509aca5bf.jpg)
+###### 步长选取
+精确步长 $(exact$ stepsize):
+$α_{k}=\arg \min$ $α>0$ $f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ 
+其中 $φ(α):=f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ 
+例.二次函数时的精确步长公式
+若 $f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {A}\boldsymbol {x}+\boldsymbol {b}^{\top }\boldsymbol {x}+c$ 其中 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ 是对称正定阵.
+给定迭代点 $\boldsymbol {x}_{k}$ 和下降方向 $\boldsymbol {p}_{k}$  则精确步长 $α_{k}$ 为？
+解. $\because \nabla f(\boldsymbol {x})=\boldsymbol {A}\boldsymbol {x}+\boldsymbol {b}$ ，由于 $φ(α):=f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ 
+$$\therefore φ^{\prime }(α)=\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)=\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)+α\boldsymbol {p}_{k}^{\top }\boldsymbol {A}\boldsymbol {p}_{k}=0,$$
+$$\therefore α=-\frac {\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)}{\boldsymbol {p}_{k}^{\top }\boldsymbol {A}\boldsymbol {p}_{k}}$$
+###### 步长 $α_{k}$  的选取
+精确步长： $α_{k}=\arg$ min $φ(α):=f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ 
+·非精确步长（inexact stepsize)：
+$φ(α)=f\left(x_{k}+αp_{k}\right)$ $l(α)$ α acceptable acceptable -1
+![](https://web-api.textin.com/ocr_image/external/08d7dacff36f5d2e.jpg)
+#### Armijo 准则
+$$f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)\leq f\left(\boldsymbol {x}_{k}\right)+cα\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right),c\in (0,1).$$
+步长 $α_{k}$  的选取
+·精确步长： $α_{k}=\arg$ min $φ(α):=f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ $α>0$ 
+·非精确步长 $(inexactstepsize)$ )：
+$\phi (\alpha )=f(x_{k}+\alpha p_{k})$ $αc\nabla f_{k}^{T}$ $p$ $α(I-c)\nabla f_{k}^{T}p_{k}$ α
+![](https://web-api.textin.com/ocr_image/external/9bacbe2697999eb7.jpg)
+##### Goldstein 准则
+$$f\left(x_{k}+αp_{k}\right)\leq f\left(x_{k}\right)+cαp_{k}^{\top }\nabla f\left(x_{k}\right)$$
+![](https://web-api.textin.com/ocr_image/external/09cf495cbfa476be.jpg)
+$$f\left(x_{k}+αp_{k}\right)\geq f\left(x_{k}\right)+(1-c)αp_{k}^{\top }\nabla f\left(x_{k}\right),c\in (0,0.5).$$
+###### 步长 $α_{k}$  的选取
+·精确步长： $α_{k}=\arg$ min $α>0$  $φ(α):=f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)$ 
+·非精确步长（inexact stepsize)：
+$\phi (\alpha )=f(x_{k}+\alpha p_{k})$ line of sufficient decrease $l(α)$ desired $slope$ α
+![](https://web-api.textin.com/ocr_image/external/4e0e1484a396333a.jpg)
+##### Wolfe 准则
+$$f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)\leq f\left(\boldsymbol {x}_{k}\right)+c_{1}α\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)$$
+![](https://web-api.textin.com/ocr_image/external/5200087b11dde329.jpg)
+$$\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k+1}\right)\geq c_{2}\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right),0<c_{1}<c_{2}<1.$$
+#### 回溯（Backtracking）技术
+##### $α_{k}$ 的回溯
+**Require：**给定初值 $\bar {α}>0,ρ\in (0,1),c\in (0,1)$ .置 $α=\bar {α}.$ 
+1**:while** $f\left(\boldsymbol {x}_{k}+α\boldsymbol {p}_{k}\right)>f\left(\boldsymbol {x}_{k}\right)+cα\boldsymbol {p}_{k}^{\top }\nabla f\left(\boldsymbol {x}_{k}\right)$ **do**
+2:
+$$α\leftarrow ρα;$$
+3**: end while**
+4: $α_{k}\leftarrow α$ 
+#### 定理（收敛分析）
+假设目标函数 $f:\mathbb {R}^{n}$ $个$ R连续可微，且梯度Lipschitz连续.对于线搜索迭代格 式 $\boldsymbol {x}_{k+1}=\boldsymbol {x}_{k}+α_{k}\boldsymbol {p}_{k}$ 若 $\boldsymbol {p}_{k}$ 是下降方向， $α_{k}$ 满足 Wolfe 准则，那么 $\sum _{k=1}^{\infty }\cos ^{2}\theta _{k}\left\|\nabla f\left(\boldsymbol {x}_{k}\right)\right\|^{2}&lt;+\infty$ ，其中 $\theta _{k}$ 是 $\boldsymbol {p}_{k}$ 和 $\nabla f\left(\boldsymbol {x}_{k}\right)$ 之间的夹角.
+![](https://web-api.textin.com/ocr_image/external/a3a438088883b2db.jpg)
+##### 作业
+课后习题：7.10,7.12
+2

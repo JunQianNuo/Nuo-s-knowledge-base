@@ -1,0 +1,77 @@
+# 习题3.22
+
+---
+title: 习题3.22 - 由 ∞-范数导出的矩阵范数
+subject: 最优化方法
+chapter: 3
+section: 线性代数基础
+source: Screenshot_2026-05-25-23-58-26.jpg
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - 矩阵范数
+  - 诱导范数
+  - ∞-范数
+---
+
+# 习题 3.22
+
+考虑 $\mathbb{R}^n$ 上的向量范数 $\|\cdot\|_\infty$，定义为 $\|x\|_\infty = \max_i |x_i|$，其中 $x = [x_1, \ldots, x_n]^\top$。类似地，可以定义 $\mathbb{R}^m$ 上的向量范数 $\|\cdot\|_\infty$。
+
+试证明，由这些向量范数导出的矩阵范数为：
+
+$$\|A\|_\infty = \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}|$$
+
+其中 $a_{ij}$ 为矩阵 $A \in \mathbb{R}^{m \times n}$ 的第 $i$ 行第 $j$ 列元素。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> 诱导范数的定义：$\|A\|_\infty = \sup_{x \neq 0} \frac{\|Ax\|_\infty}{\|x\|_\infty} = \max_{\|x\|_\infty = 1} \|Ax\|_\infty$
+>
+> - **上界方向：** 利用 $\|Ax\|_\infty = \max_i |\sum_j a_{ij}x_j| \leq \max_i \sum_j |a_{ij}| |x_j| \leq \max_i \sum_j |a_{ij}| \cdot \|x\|_\infty$
+> - **紧性方向：** 构造一个 $x$（各分量取 $\pm 1$）使等号成立。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> **定义：** 由向量范数诱导的矩阵范数为：
+>
+> $$\|A\|_\infty = \max_{\|x\|_\infty = 1} \|Ax\|_\infty$$
+>
+> ### 第一步：证明上界
+>
+> 对任意满足 $\|x\|_\infty = 1$ 的 $x$（即 $\max_j |x_j| = 1$）：
+>
+> $$\begin{aligned} \|Ax\|_\infty &= \max_{1 \leq i \leq m} \left| \sum_{j=1}^{n} a_{ij} x_j \right| \\ &\leq \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}| |x_j| \\ &\leq \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}| \cdot \max_{1 \leq j \leq n} |x_j| \\ &= \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}| \cdot \|x\|_\infty \\ &= \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}| \qquad (\text{因 } \|x\|_\infty = 1) \end{aligned}$$
+>
+> 故 $\|A\|_\infty \leq \max_i \sum_j |a_{ij}|$。
+>
+> ### 第二步：构造等号成立的 $x$
+>
+> 设第 $k$ 行使得 $\sum_{j=1}^{n} |a_{kj}| = \max_i \sum_j |a_{ij}|$。构造 $x$：
+>
+> $$x_j = \begin{cases} \operatorname{sgn}(a_{kj}), & \text{若 } a_{kj} \neq 0 \\ 1, & \text{若 } a_{kj} = 0 \end{cases}$$
+>
+> 则 $\|x\|_\infty = 1$，且：
+>
+> $$\|Ax\|_\infty \geq \left| \sum_{j=1}^{n} a_{kj} x_j \right| = \sum_{j=1}^{n} |a_{kj}| = \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}|$$
+>
+> 因此上界可达。综合两步：
+> 
+> $$\max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}| \;\leq\; \max_{\|x\|_\infty = 1} \|Ax\|_\infty \;\leq\; \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}|$$
+> 
+> 由夹逼即得 $\displaystyle\|A\|_\infty = \max_{\|x\|_\infty = 1} \|Ax\|_\infty = \max_{1 \leq i \leq m} \sum_{j=1}^{n} |a_{ij}|$。$\square$
+>
+> **点评：** $\infty$-范数诱导的矩阵范数即「最大行和范数」。同理可证 $\|A\|_1 = \max_j \sum_i |a_{ij}|$（最大列和范数，见习题 3.23）。这两个范数因计算简便，在数值分析和矩阵扰动分析中广泛应用。
+
+---
+
+## 相关知识点
+
+- [[03-线性代数基础]] — 矩阵范数、诱导范数
+- [[02-向量空间与矩阵#2.10 p-范数与范数等价性|p-范数]]

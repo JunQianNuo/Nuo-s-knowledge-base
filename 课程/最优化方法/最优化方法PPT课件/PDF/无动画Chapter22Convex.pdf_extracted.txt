@@ -1,0 +1,1230 @@
+# 无动画Chapter22Convex.pdf
+共 31 页
+
+
+## 第 1 页
+1 22 (cid:217) (cid:224)‘zflK
+1. (cid:224)…Œ
+2. (cid:224)‘zflK
+3. (cid:140)‰5y
+4. (cid:221)(cid:10)‘z
+5. (cid:130)5(cid:221)(cid:10)(cid:216)(cid:31)“
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 1/31
+
+### 表格 1
+
+| 1 22 (cid:217) (cid:224)‘zflK
+1. (cid:224)…Œ
+2. (cid:224)‘zflK
+3. (cid:140)‰5y
+4. (cid:221)(cid:10)‘z
+5. (cid:130)5(cid:221)(cid:10)(cid:216)(cid:31)“ |  |  |
+|---|---|---|
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 1/31 |
+
+## 第 2 页
+(cid:21)(cid:229)‘zflK
+(cid:70) du8I…Œ!(cid:21)(cid:229)…Œ(cid:27)(cid:154)(cid:130)55, ‘zflKˇ~(cid:216)·ƒ). =ƒ8I…Œ
+’(cid:22)/{(cid:252)0, (cid:140)(cid:220)'‘zflK(cid:27)J:3u?n/'(cid:219)(cid:21)(cid:229)8.
+min x2+x2, s.t. x −x −2≤0, x2−x −4≤0.
+1 2 2 1 1 2
+mª: ⁄k(cid:21)(cid:229)34(cid:2):(=(cid:6):)?·(cid:154)¨4(cid:27). ˇd, ƒ)(cid:254)
+ª(cid:21)(cid:229)‘zflK(cid:134)ƒ)ˆ(cid:21)(cid:229)‘zflK(cid:31)d.
+min x2+x2, s.t. x −10≤0, x −x2−4≥0.
+1 2 1 1 2
+mª: 34(cid:2):?, (cid:144)k(cid:152)(cid:135)(cid:21)(cid:229)·¨4(cid:27). eflkfi(cid:127)
+x −x2−4≥0 ·¨4(cid:21)(cid:229), K(cid:254)ª(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘z
+1 2
+flK(cid:140)–{z(cid:143)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK.
+min x2+x2, s.t. 4−x −x2 ≤0,
+1 2 1 2
+3x −x ≤0,−3x −x ≤0.
+2 1 2 1
+mª: ‘zflKk(cid:141)(cid:152)4(cid:2)(cid:138), (cid:2)·k(cid:252)(cid:135)4(cid:2):.
+(cid:70) e‘zflK(cid:27)(cid:21)(cid:229)8·(cid:224)8, K'(cid:219)/ƒ)‘zflK(cid:27)J(cid:221)‹(cid:140)(cid:140)(cid:252)$. ˇ
+d, ?n(cid:21)(cid:229)‘zflK(cid:27)J:3u/flK·˜·(cid:224)‘zflK0.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 2/31
+
+### 表格 1
+
+|  | (cid:21)(cid:229)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:70) du8I…Œ!(cid:21)(cid:229)…Œ(cid:27)(cid:154)(cid:130)55, ‘zflKˇ~(cid:216)·ƒ). =ƒ8I…Œ
+’(cid:22)/{(cid:252)0, (cid:140)(cid:220)'‘zflK(cid:27)J:3u?n/'(cid:219)(cid:21)(cid:229)8.
+min x2+x2, s.t. x −x −2≤0, x2−x −4≤0.
+1 2 2 1 1 2
+mª: ⁄k(cid:21)(cid:229)34(cid:2):(=(cid:6):)?·(cid:154)¨4(cid:27). ˇd, ƒ)(cid:254)
+ª(cid:21)(cid:229)‘zflK(cid:134)ƒ)ˆ(cid:21)(cid:229)‘zflK(cid:31)d.
+min x2+x2, s.t. x −10≤0, x −x2−4≥0.
+1 2 1 1 2
+mª: 34(cid:2):?, (cid:144)k(cid:152)(cid:135)(cid:21)(cid:229)·¨4(cid:27). eflkfi(cid:127)
+x −x2−4≥0 ·¨4(cid:21)(cid:229), K(cid:254)ª(cid:216)(cid:31)“(cid:21)(cid:229)(cid:27)‘z
+1 2
+flK(cid:140)–{z(cid:143)(cid:31)“(cid:21)(cid:229)(cid:27)‘zflK.
+min x2+x2, s.t. 4−x −x2 ≤0,
+1 2 1 2
+3x −x ≤0,−3x −x ≤0.
+2 1 2 1
+mª: ‘zflKk(cid:141)(cid:152)4(cid:2)(cid:138), (cid:2)·k(cid:252)(cid:135)4(cid:2):.
+(cid:70) e‘zflK(cid:27)(cid:21)(cid:229)8·(cid:224)8, K'(cid:219)/ƒ)‘zflK(cid:27)J(cid:221)‹(cid:140)(cid:140)(cid:252)$. ˇ
+d, ?n(cid:21)(cid:229)‘zflK(cid:27)J:3u/flK·˜·(cid:224)‘zflK0. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 2/31 |
+
+## 第 3 页
+(cid:224)…Œ
+‰´ (…Œª(cid:148)(graph)(cid:218)(cid:254)ª(epigraph))
+8(cid:220) Ω⊂Rn, …Œ f :Ω→R.
+• f (cid:27)ª‰´(cid:143) Ω×R ¥(cid:27):8:
+gph(f)= (cid:8) (x,β)∈Rn+1 |β =f(x), x∈Ω (cid:9) .
+• f (cid:27)(cid:254)ª‰´(cid:143) Ω×R ¥(cid:27):8(cid:220)
+epi(f)= (cid:8) (x,β)∈⊂Rn+1 |β ≥f(x), x∈Ω (cid:9) .
+8(cid:220) Ω⊂Rn, …Œ f :Ω→R.
+‰´ ((cid:224)…Œ)
+f · Ω (cid:254)(cid:27)(cid:224)…Œ ⇐⇒ epi(f) · Rn+1 ¥(cid:27)(cid:224)8.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 3/31
+
+### 表格 1
+
+|  | (cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ‰´ (…Œª(cid:148)(graph)(cid:218)(cid:254)ª(epigraph))
+8(cid:220) Ω⊂Rn, …Œ f :Ω→R.
+• f (cid:27)ª‰´(cid:143) Ω×R ¥(cid:27):8:
+gph(f)= (cid:8) (x,β)∈Rn+1 |β =f(x), x∈Ω (cid:9) .
+• f (cid:27)(cid:254)ª‰´(cid:143) Ω×R ¥(cid:27):8(cid:220)
+epi(f)= (cid:8) (x,β)∈⊂Rn+1 |β ≥f(x), x∈Ω (cid:9) .
+8(cid:220) Ω⊂Rn, …Œ f :Ω→R.
+‰´ ((cid:224)…Œ)
+f · Ω (cid:254)(cid:27)(cid:224)…Œ ⇐⇒ epi(f) · Rn+1 ¥(cid:27)(cid:224)8. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 3/31 |
+
+## 第 4 页
+(cid:224)…Œ
+‰n
+e f :Ω→R ·(cid:224)…Œ, K‰´(cid:141) Ω ·(cid:224)8(cid:220).
+y. ((cid:135)y) b(cid:23) Ω (cid:216)·(cid:224)8.
+K ∃y , y ∈Ω (cid:218) α∈ (0,1) ƒ(cid:26) z =αy +(1−α)y ∈/ Ω.
+1 2 1 2
+P β =f(y ), β =f(y ).
+1 1 2 2
+(cid:20) (cid:21) (cid:20) (cid:21)
+y y
+K 1 (cid:218) 2 Æu(cid:254)ª epi(f).
+β β
+1 2
+(cid:20) (cid:21) (cid:20) (cid:21) (cid:20) (cid:21)
+y y z
+(cid:23) w =α 1 +(1−α) 2 = .
+β β αβ +(1−α)β
+1 2 1 2
+∵ z ∈/ Ω, ∴ w ∈/ epi(f), ∴ epi(f) (cid:216)·(cid:224)8.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 4/31
+
+### 表格 1
+
+|  | (cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ‰n
+e f :Ω→R ·(cid:224)…Œ, K‰´(cid:141) Ω ·(cid:224)8(cid:220).
+y. ((cid:135)y) b(cid:23) Ω (cid:216)·(cid:224)8.
+K ∃y , y ∈Ω (cid:218) α∈ (0,1) ƒ(cid:26) z =αy +(1−α)y ∈/ Ω.
+1 2 1 2
+P β =f(y ), β =f(y ).
+1 1 2 2
+(cid:20) (cid:21) (cid:20) (cid:21)
+y y
+K 1 (cid:218) 2 Æu(cid:254)ª epi(f).
+β β
+1 2
+(cid:20) (cid:21) (cid:20) (cid:21) (cid:20) (cid:21)
+y y z
+(cid:23) w =α 1 +(1−α) 2 = .
+β β αβ +(1−α)β
+1 2 1 2
+∵ z ∈/ Ω, ∴ w ∈/ epi(f), ∴ epi(f) (cid:216)·(cid:224)8. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 4/31 |
+
+## 第 5 页
+(cid:224)…Œ
+‰´ ((cid:224)…Œ)
+e f :Ω⊂Rn →R ·(cid:224)…Œ, K
+• f(αx+(1−α)y)≤αf(x)+(1−α)f(y), ∀x,y ∈Ω, α∈(0,1),
+s s s
+• f( (cid:80) α x )≤ (cid:80) α f(x ), ∀x ∈Ω, α ∈(0,1), (cid:80) α =1. (Jensen(cid:216)(cid:31)“)
+i i i i i i i
+i=1 i=1 i=1
+(cid:224)…ŒA(cid:219))”
+º(cid:26)…Œª(cid:148)(cid:254)?¿(cid:252):(cid:27)/u03/l0(cid:27)(cid:254)(cid:144); ‰(cid:246)º(cid:26)…Œ
+ª(cid:148)(cid:254)?¿(cid:252):(cid:27)/u0Æu…Œ(cid:27)(cid:254)ª, = epi(f) ·(cid:224)8.
+f (cid:238)(cid:130)(cid:224)⇐⇒ f(αx+(1−α)y)<αf(x)+(1−α)f(y), ∀x(cid:54)=y.
+f r(cid:224)⇐⇒ f(αx+(1−α)y)≤αf(x)+(1−α)f(y)− α(1−α)c(cid:107)x−y(cid:107)2.
+2
+(cid:70) A^: {p }m , {q }m ·l(cid:209)V˙'(cid:217), y D (p,q)= (cid:80)m p lnpi ≥0.
+i i=1 i i=1 KL i=1 i qi
+(cid:23) f(·)=ln(·), x =q /p , |^Jensen(cid:216)(cid:31)“:
+i i i
+∴ D (p,q)= (cid:80)m p f(x )≥f( (cid:80)m p x )=f( (cid:80)m q )=ln(1)=0
+KL i=1 i i i=1 i i i=1 i
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 5/31
+
+### 表格 1
+
+|  | (cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ‰´ ((cid:224)…Œ)
+e f :Ω⊂Rn →R ·(cid:224)…Œ, K
+• f(αx+(1−α)y)≤αf(x)+(1−α)f(y), ∀x,y ∈Ω, α∈(0,1),
+s s s
+• f( (cid:80) α x )≤ (cid:80) α f(x ), ∀x ∈Ω, α ∈(0,1), (cid:80) α =1. (Jensen(cid:216)(cid:31)“)
+i i i i i i i
+i=1 i=1 i=1
+(cid:224)…ŒA(cid:219))”
+º(cid:26)…Œª(cid:148)(cid:254)?¿(cid:252):(cid:27)/u03/l0(cid:27)(cid:254)(cid:144); ‰(cid:246)º(cid:26)…Œ
+ª(cid:148)(cid:254)?¿(cid:252):(cid:27)/u0Æu…Œ(cid:27)(cid:254)ª, = epi(f) ·(cid:224)8.
+f (cid:238)(cid:130)(cid:224)⇐⇒ f(αx+(1−α)y)<αf(x)+(1−α)f(y), ∀x(cid:54)=y.
+f r(cid:224)⇐⇒ f(αx+(1−α)y)≤αf(x)+(1−α)f(y)− α(1−α)c(cid:107)x−y(cid:107)2.
+2
+(cid:70) A^: {p }m , {q }m ·l(cid:209)V˙'(cid:217), y D (p,q)= (cid:80)m p lnpi ≥0.
+i i=1 i i=1 KL i=1 i qi
+(cid:23) f(·)=ln(·), x =q /p , |^Jensen(cid:216)(cid:31)“:
+i i i
+∴ D (p,q)= (cid:80)m p f(x )≥f( (cid:80)m p x )=f( (cid:80)m q )=ln(1)=0
+KL i=1 i i i=1 i i i=1 i |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 5/31 |
+
+## 第 6 页
+(cid:224)…Œ
+~. f(x)=x x 3 Ω={x|x ≥0,x ≥0} (cid:254)·(cid:224)…Œ(cid:237)?
+1 2 1 2
+(cid:20) (cid:21)
+2−α
+): (cid:18) x=[1,2](cid:62) ∈Ω, y =[2,1](cid:62) ∈Ω. K αx+(1−α)y = .
+1+α
+(cid:40)
+f(αx+(1−α)y)=(2−α)(1+α)=2+α−α2,
+∴
+αf(x)+(1−α)f(y)=2.
+(cid:18) α= 1 ∈(0,1), K f (cid:0)1x+ 1y (cid:1) = 9 > 1f(x)+ 1f(y),
+2 2 2 4 2 2
+∴ f (cid:216)· Ω (cid:254)(cid:27)(cid:224)…Œ.
+~. f(x)= (cid:80)n x ln(x ) 3 ∆={x|x ≥0, (cid:80)n x ≤1} (cid:254)·r(cid:224)…Œ.
+i=1 i i i i=1 i
+(cid:144)Iy: ∇2f(x)=diag( 1 ,··· , 1 )(cid:31)0. 3 ∆ (cid:254), ·y ∇2f(x)(cid:31)I
+x1 xn n
+‰n ((cid:140)(cid:135)(cid:224)…Œ(cid:27)A:)
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R Æu C1. e f · Ω (cid:254)(cid:27)(cid:224)…Œ
+⇔f(y)≥f(x)+Df(x)(y−x), ∀x,y ∈Ω. = epi(f) o(cid:26)(cid:131)†
+¡|(cid:160). eØ?¿x(cid:54)=y, />0⁄Æ⇐⇒ f ·(cid:238)(cid:130)(cid:224)(cid:27)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 6/31
+
+### 表格 1
+
+|  | (cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ~. f(x)=x x 3 Ω={x|x ≥0,x ≥0} (cid:254)·(cid:224)…Œ(cid:237)?
+1 2 1 2
+(cid:20) (cid:21)
+2−α
+): (cid:18) x=[1,2](cid:62) ∈Ω, y =[2,1](cid:62) ∈Ω. K αx+(1−α)y = .
+1+α
+(cid:40)
+f(αx+(1−α)y)=(2−α)(1+α)=2+α−α2,
+∴
+αf(x)+(1−α)f(y)=2.
+(cid:18) α= 1 ∈(0,1), K f (cid:0)1x+ 1y (cid:1) = 9 > 1f(x)+ 1f(y),
+2 2 2 4 2 2
+∴ f (cid:216)· Ω (cid:254)(cid:27)(cid:224)…Œ.
+~. f(x)= (cid:80)n x ln(x ) 3 ∆={x|x ≥0, (cid:80)n x ≤1} (cid:254)·r(cid:224)…Œ.
+i=1 i i i i=1 i
+(cid:144)Iy: ∇2f(x)=diag( 1 ,··· , 1 )(cid:31)0. 3 ∆ (cid:254), ·y ∇2f(x)(cid:31)I
+x1 xn n
+‰n ((cid:140)(cid:135)(cid:224)…Œ(cid:27)A:)
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R Æu C1. e f · Ω (cid:254)(cid:27)(cid:224)…Œ
+⇔f(y)≥f(x)+Df(x)(y−x), ∀x,y ∈Ω. = epi(f) o(cid:26)(cid:131)†
+¡|(cid:160). eØ?¿x(cid:54)=y, />0⁄Æ⇐⇒ f ·(cid:238)(cid:130)(cid:224)(cid:27) |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 6/31 |
+
+## 第 7 页
+(cid:216)(cid:140)(cid:135)(cid:224)…Œ
+‰´ ((cid:216)(cid:140)(cid:135)'(cid:224)…Œ(cid:27)A:)
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R.
+(cid:149)(cid:254) g ∈Rn ¡(cid:143) f 3 x∈Ω ?(cid:27)gF(cid:221):
+f(y)≥f(x)+g(cid:62)(y−x), ∀y ∈Ω.
+‰n
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R (cid:133) f ∈C2. K f · Ω (cid:254)(cid:27)(cid:224)…Œ
+⇐⇒ F(x)(cid:23)0, ∀x∈Ω, (cid:217)¥ F(x) · f 3 x ?(cid:27)(cid:231)l(cid:221)(cid:10).
+y. ⇐) (cid:23) x,y ∈Ω.
+∵ f ∈C2, dTaylor—m(cid:127): ∃ α∈(0,1) ƒ(cid:26)
+f(y)=f(x)+Df(x)(y−x)+ 1(y−x)(cid:62)F(x+α(y−x))(y−x).
+2
+∵ F(x+α(y−x))(cid:23)0 ⇐⇒ (y−x)(cid:62)F(αy+(1−α)x)(y−x)≥0.
+∴ f(y)≥f(x)+Df(x)(y−x). ∴ f ·(cid:224)…Œ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 7/31
+
+### 表格 1
+
+|  | (cid:216)(cid:140)(cid:135)(cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ‰´ ((cid:216)(cid:140)(cid:135)'(cid:224)…Œ(cid:27)A:)
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R.
+(cid:149)(cid:254) g ∈Rn ¡(cid:143) f 3 x∈Ω ?(cid:27)gF(cid:221):
+f(y)≥f(x)+g(cid:62)(y−x), ∀y ∈Ω.
+‰n
+(cid:23) Ω⊂Rn ·m(cid:224)8, f :Ω→R (cid:133) f ∈C2. K f · Ω (cid:254)(cid:27)(cid:224)…Œ
+⇐⇒ F(x)(cid:23)0, ∀x∈Ω, (cid:217)¥ F(x) · f 3 x ?(cid:27)(cid:231)l(cid:221)(cid:10).
+y. ⇐) (cid:23) x,y ∈Ω.
+∵ f ∈C2, dTaylor—m(cid:127): ∃ α∈(0,1) ƒ(cid:26)
+f(y)=f(x)+Df(x)(y−x)+ 1(y−x)(cid:62)F(x+α(y−x))(y−x).
+2
+∵ F(x+α(y−x))(cid:23)0 ⇐⇒ (y−x)(cid:62)F(αy+(1−α)x)(y−x)≥0.
+∴ f(y)≥f(x)+Df(x)(y−x). ∴ f ·(cid:224)…Œ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 7/31 |
+
+## 第 8 页
+(cid:140)(cid:135)(cid:224)…Œ
+⇒) e ∃x∈Ω ƒ(cid:26) F(x)(cid:15)0 ⇐⇒ ∃d∈Rn ƒ(cid:26) d(cid:62)F(x)d<0.
+(cid:231)l(cid:27)ºY5
+===========⇒F(x+sd)(cid:15)0.
+P y =x+sd. dTaylor—m(cid:26) ∃ α∈(0,1) ƒ(cid:26)
+1
+f(y)=f(x)+Df(x)(y−x)+ (y−x)(cid:62)F(x+α(y−x))(y−x)
+2
+1
+=f(x)+Df(x)(y−x)+ s2d(cid:62)F(x+αsd)d.
+2
+∵ d(cid:62)F(x+αsd)d<0 =⇒ f(y)<f(x)+Df(x)(y−x). ∴ f (cid:216)·(cid:224)…Œ.
+f(x) = 4x2 +3x2 +5x2 +6x x +x x −3x −2x +15
+1 2 3 1 2 1 3 1 2
+ 
+8 6 1
+∴ ∀ x∈R3, F(x)(cid:31)0,
+∵ f (cid:27)(cid:231)l(cid:221)(cid:10)(cid:143) F(x)=6 6 0,
+∴ f · R3 (cid:254)(cid:27)(cid:224)…Œ.
+1 0 10
+f(x) = 2x x −x2 −x2
+1 2 1 2
+(cid:20) −2 2 (cid:21) ∴ ∀x∈R2, F(x)(cid:22)0,
+∵ f (cid:27)(cid:231)l(cid:221)(cid:10)(cid:143) F(x)= ,
+2 −2 ∴ f · R2 (cid:254)(cid:27)]…Œ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 8/31
+
+### 表格 1
+
+|  | (cid:140)(cid:135)(cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ⇒) e ∃x∈Ω ƒ(cid:26) F(x)(cid:15)0 ⇐⇒ ∃d∈Rn ƒ(cid:26) d(cid:62)F(x)d<0.
+(cid:231)l(cid:27)ºY5
+===========⇒F(x+sd)(cid:15)0.
+P y =x+sd. dTaylor—m(cid:26) ∃ α∈(0,1) ƒ(cid:26)
+1
+f(y)=f(x)+Df(x)(y−x)+ (y−x)(cid:62)F(x+α(y−x))(y−x)
+2
+1
+=f(x)+Df(x)(y−x)+ s2d(cid:62)F(x+αsd)d.
+2
+∵ d(cid:62)F(x+αsd)d<0 =⇒ f(y)<f(x)+Df(x)(y−x). ∴ f (cid:216)·(cid:224)…Œ.
+f(x) = 4x2 +3x2 +5x2 +6x x +x x −3x −2x +15
+1 2 3 1 2 1 3 1 2
+ 
+8 6 1
+∴ ∀ x∈R3, F(x)(cid:31)0,
+∵ f (cid:27)(cid:231)l(cid:221)(cid:10)(cid:143) F(x)=6 6 0,
+∴ f · R3 (cid:254)(cid:27)(cid:224)…Œ.
+1 0 10
+f(x) = 2x x −x2 −x2
+1 2 1 2
+(cid:20) −2 2 (cid:21) ∴ ∀x∈R2, F(x)(cid:22)0,
+∵ f (cid:27)(cid:231)l(cid:221)(cid:10)(cid:143) F(x)= ,
+2 −2 ∴ f · R2 (cid:254)(cid:27)]…Œ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 8/31 |
+
+## 第 9 页
+(cid:2)(cid:224)$(cid:142)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 9/31
+
+### 表格 1
+
+| (cid:2)(cid:224)$(cid:142) |  |  |
+|---|---|---|
+|  |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 9/31 |
+
+## 第 10 页
+(cid:224)…Œ
+~:
+(cid:152)(cid:3)(cid:224)…Œ:
+f(x)=ex, f(x)=|x|p (p>1); f(x)= x2 ; f(x)=|x|−ln(1+|x|)
+1−|x|
+ı(cid:3)(cid:224)…Œ:
+f(x)=a(cid:62)x−α, (cid:217)¥ a∈Rn, α∈R
+f(x)= 1x(cid:62)Ax+a(cid:62)x−α, (cid:217)¥ A∈Sn, a∈Rn, α∈R
+2 +
+m m m
+f(x)= (cid:80) ea(cid:62) i x+αi; f(x)= (cid:80) |a(cid:62) i x+α i |p; f(x)=ln( (cid:80) exi)
+i=1 i=1 i=1
+m
+y†((cid:129)(cid:0)(cid:152)~): P g(x)= (cid:80) exi, K f(x)=ln(g(x)),
+i=1
+∇f(x)= ∇g(x), ∇2f(x)= ∇2g(x)g(x)−∇g(x)∇g(x)(cid:62) ,
+g(x) (g(x))2
+
+
+g(x)=ex1 +...+exm
+∵ ∇g(x)=[ex1,...,exm](cid:62) ⇒∇2f(x)(cid:23)0 (why?)
+∇2g(x)=diag{ex1,...,exm}
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 10/31
+
+### 表格 1
+
+|  | (cid:224)…Œ |  |  |
+|---|---|---|---|
+|  | ~:
+(cid:152)(cid:3)(cid:224)…Œ:
+f(x)=ex, f(x)=|x|p (p>1); f(x)= x2 ; f(x)=|x|−ln(1+|x|)
+1−|x|
+ı(cid:3)(cid:224)…Œ:
+f(x)=a(cid:62)x−α, (cid:217)¥ a∈Rn, α∈R
+f(x)= 1x(cid:62)Ax+a(cid:62)x−α, (cid:217)¥ A∈Sn, a∈Rn, α∈R
+2 +
+m m m
+f(x)= (cid:80) ea(cid:62) i x+αi; f(x)= (cid:80) |a(cid:62) i x+α i |p; f(x)=ln( (cid:80) exi)
+i=1 i=1 i=1
+m
+y†((cid:129)(cid:0)(cid:152)~): P g(x)= (cid:80) exi, K f(x)=ln(g(x)),
+i=1
+∇f(x)= ∇g(x), ∇2f(x)= ∇2g(x)g(x)−∇g(x)∇g(x)(cid:62) ,
+g(x) (g(x))2
+
+g(x)=ex1 +...+exm
+
+∵ ∇g(x)=[ex1,...,exm](cid:62) ⇒∇2f(x)(cid:23)0 (why?)
+∇2g(x)=diag{ex1,...,exm} |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 10/31 |
+
+## 第 11 页
+(cid:224)…Œ(cid:19)(cid:30)5(cid:159)
+(Nesterov ‰n2.1.5) ∀x,y ∈ Rn, α ∈ [0,1], LI (cid:23) ∇2f(x) (cid:23) µI
+(cid:40)
+µ(cid:107)x−y(cid:107)2
+f(y)−f(x)−∇f(x)(cid:62)(y−x)≥ 2
+1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+2L
+(cid:40)
+L(cid:107)x−y(cid:107)2
+f(y)−f(x)−∇f(x)(cid:62)(y−x)≤ 2
+1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+2µ
+‰(cid:246)
+(cid:40)
+µ(cid:107)x−y(cid:107)2
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≥
+1(cid:107)∇f(x)−∇f(y)(cid:107)2
+L
+(cid:40)
+L(cid:107)x−y(cid:107)2
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≤
+1(cid:107)∇f(x)−∇f(y)(cid:107)2
+µ
+?(cid:152)(cid:218)
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≥ µL (cid:107)x−y(cid:107)2+ 1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+µ+L µ+L
+5. (cid:254)ª(cid:216)(cid:31)“¥(cid:27)(cid:137)Œ(cid:140)–(cid:216)(cid:152)(cid:24).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 11/31
+
+### 表格 1
+
+|  | (cid:224)…Œ(cid:19)(cid:30)5(cid:159) |  |  |
+|---|---|---|---|
+|  | (Nesterov ‰n2.1.5) ∀x,y ∈ Rn, α ∈ [0,1], LI (cid:23) ∇2f(x) (cid:23) µI
+(cid:40)
+µ(cid:107)x−y(cid:107)2
+f(y)−f(x)−∇f(x)(cid:62)(y−x)≥ 2
+1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+2L
+(cid:40)
+L(cid:107)x−y(cid:107)2
+f(y)−f(x)−∇f(x)(cid:62)(y−x)≤ 2
+1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+2µ
+‰(cid:246)
+(cid:40)
+µ(cid:107)x−y(cid:107)2
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≥
+1(cid:107)∇f(x)−∇f(y)(cid:107)2
+L
+(cid:40)
+L(cid:107)x−y(cid:107)2
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≤
+1(cid:107)∇f(x)−∇f(y)(cid:107)2
+µ
+?(cid:152)(cid:218)
+(cid:104)∇f(y)−∇f(x),y−x(cid:105)≥ µL (cid:107)x−y(cid:107)2+ 1 (cid:107)∇f(x)−∇f(y)(cid:107)2
+µ+L µ+L
+5. (cid:254)ª(cid:216)(cid:31)“¥(cid:27)(cid:137)Œ(cid:140)–(cid:216)(cid:152)(cid:24). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 11/31 |
+
+## 第 12 页
+(cid:224)‘zflK
+‰n ((cid:219)(cid:220)4(cid:2): ⇐⇒ (cid:28)(cid:219)4(cid:2):)
+f :Ω⊂Rn →R ·(cid:224)…Œ. f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):⇔f 3 Ω (cid:254)(cid:27)(cid:219)(cid:220)4(cid:2):.
+y. ⇒) w,.
+(cid:135)y{ ⇐) b(cid:23) x∗ · f 3 Ω (cid:254)(cid:27)(cid:219)(cid:220)4(cid:2):, (cid:2)(cid:216)·(cid:28)(cid:219)4(cid:2):.
+K ∃ y ∈Ω, ƒ(cid:26) f(y)<f(x∗).
+∵ f ·(cid:224)…Œ,
+∴ f(αy+(1−α)x∗)≤αf(y)+(1−α)f(x∗), ∀α∈(0,1).
+∵ f(y)<f(x∗),
+∴ αf(y)+(1−α)f(x∗)=α(f(y)−f(x∗))+f(x∗)<f(x∗).
+∴ ∀α∈(0,1), f(αy+(1−α)x∗)<f(x∗).
+∴ x∗ (cid:216)·(cid:219)(cid:220)4(cid:2):, gæ.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 12/31
+
+### 表格 1
+
+|  | (cid:224)‘zflK |  |  |
+|---|---|---|---|
+|  | ‰n ((cid:219)(cid:220)4(cid:2): ⇐⇒ (cid:28)(cid:219)4(cid:2):)
+f :Ω⊂Rn →R ·(cid:224)…Œ. f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):⇔f 3 Ω (cid:254)(cid:27)(cid:219)(cid:220)4(cid:2):.
+y. ⇒) w,.
+(cid:135)y{ ⇐) b(cid:23) x∗ · f 3 Ω (cid:254)(cid:27)(cid:219)(cid:220)4(cid:2):, (cid:2)(cid:216)·(cid:28)(cid:219)4(cid:2):.
+K ∃ y ∈Ω, ƒ(cid:26) f(y)<f(x∗).
+∵ f ·(cid:224)…Œ,
+∴ f(αy+(1−α)x∗)≤αf(y)+(1−α)f(x∗), ∀α∈(0,1).
+∵ f(y)<f(x∗),
+∴ αf(y)+(1−α)f(x∗)=α(f(y)−f(x∗))+f(x∗)<f(x∗).
+∴ ∀α∈(0,1), f(αy+(1−α)x∗)<f(x∗).
+∴ x∗ (cid:216)·(cid:219)(cid:220)4(cid:2):, gæ. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 12/31 |
+
+## 第 13 页
+(cid:224)‘zflK
+(cid:218)n ((cid:224)…Œ(cid:27)eY†8)
+f :Ω⊂Rn →R ·(cid:224)…Œ. K f ’u?¿~Œ c (cid:27)eY†8
+S (c)={x∈Ω|f(x)≤c} ·(cid:224)8.
+f
+(cid:70) (cid:254)ª(cid:218)n·7(cid:135)^(cid:135), (cid:154)¿'^(cid:135) (why?).
+(cid:218)n ((cid:28)(cid:219)4(cid:2):^(cid:135))
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈Ω, e
+Df(x∗)(x−x∗)≥0, ∀x∈Ω, x(cid:54)=x∗, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+‰n
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈Ω, e x∗ ?(cid:27)?¿(cid:140)1(cid:144)(cid:149) d,
+k d(cid:62)∇f(x∗)≥0, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 13/31
+
+### 表格 1
+
+|  | (cid:224)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:218)n ((cid:224)…Œ(cid:27)eY†8)
+f :Ω⊂Rn →R ·(cid:224)…Œ. K f ’u?¿~Œ c (cid:27)eY†8
+S (c)={x∈Ω|f(x)≤c} ·(cid:224)8.
+f
+(cid:70) (cid:254)ª(cid:218)n·7(cid:135)^(cid:135), (cid:154)¿'^(cid:135) (why?).
+(cid:218)n ((cid:28)(cid:219)4(cid:2):^(cid:135))
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈Ω, e
+Df(x∗)(x−x∗)≥0, ∀x∈Ω, x(cid:54)=x∗, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+‰n
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈Ω, e x∗ ?(cid:27)?¿(cid:140)1(cid:144)(cid:149) d,
+k d(cid:62)∇f(x∗)≥0, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 13/31 |
+
+## 第 14 页
+(cid:224)‘zflK
+(cid:237)(cid:216)
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈int(Ω), e ∇f(x∗)=0, K
+x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+(cid:237)(cid:216)
+f :Ω⊂Rn →R ·µ-r(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈int(Ω), e
+f(x)≥f(x∗)+ µ(cid:107)x−x∗(cid:107)2, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:141)(cid:152)(cid:28)(cid:219)4(cid:2):.
+2
+(cid:237)(cid:216) ((cid:31)“(cid:21)(cid:229)‘zflK)
+(cid:23) Ω={x∈Rn |h(x)=0}, (cid:217)¥ h:Rn →Rm, h∈C1, Ω ·(cid:224)8,
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. e
+∃x∗ ∈Ω, λ∗ ∈Rm ƒ(cid:26) Df(x∗)+λ∗(cid:62)Dh(x∗)=0(cid:62), ((cid:63))
+K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+(cid:70) ø¿(cid:155)X8I…Œ·(cid:224)…Œ(cid:133)(cid:21)(cid:229)8(cid:143)(cid:224)8(cid:158), .(cid:130)KF^(cid:135)·4(cid:2):(cid:27)
+¿'^(cid:135).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 14/31
+
+### 表格 1
+
+|  | (cid:224)‘zflK |  |  |
+|---|---|---|---|
+|  | (cid:237)(cid:216)
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈int(Ω), e ∇f(x∗)=0, K
+x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+(cid:237)(cid:216)
+f :Ω⊂Rn →R ·µ-r(cid:224)…Œ(cid:133) f ∈C1. ?¿ x∗ ∈int(Ω), e
+f(x)≥f(x∗)+ µ(cid:107)x−x∗(cid:107)2, K x∗ · f 3 Ω (cid:254)(cid:27)(cid:141)(cid:152)(cid:28)(cid:219)4(cid:2):.
+2
+(cid:237)(cid:216) ((cid:31)“(cid:21)(cid:229)‘zflK)
+(cid:23) Ω={x∈Rn |h(x)=0}, (cid:217)¥ h:Rn →Rm, h∈C1, Ω ·(cid:224)8,
+f :Ω⊂Rn →R ·(cid:224)…Œ(cid:133) f ∈C1. e
+∃x∗ ∈Ω, λ∗ ∈Rm ƒ(cid:26) Df(x∗)+λ∗(cid:62)Dh(x∗)=0(cid:62), ((cid:63))
+K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+(cid:70) ø¿(cid:155)X8I…Œ·(cid:224)…Œ(cid:133)(cid:21)(cid:229)8(cid:143)(cid:224)8(cid:158), .(cid:130)KF^(cid:135)·4(cid:2):(cid:27)
+¿'^(cid:135). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 14/31 |
+
+## 第 15 页
+(cid:224)‘zflK
+y. ∵ f ·(cid:224)…Œ,
+∴ ∀x∈Ω, f(x)≥f(x∗)+Df(x∗)(x−x∗)= ( = (cid:63) = )
+f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗),
+∵ Ω ·(cid:224)8, ∴ ∀α∈(0,1), (1−α)x∗+αx∈Ω.
+∴ h(x∗+α(x−x∗))=h((1−α)x∗+αx)=0.
+(cid:134)ƒ λ∗(cid:62), ¿~(cid:22) λ∗(cid:62)h(x∗)=0, •(cid:130)(cid:26)
+λ∗(cid:62)h(x∗+α(x−x∗))−λ∗(cid:62)h(x∗)
+=0.
+α
+- α→0, •(cid:130)k
+λ∗(cid:62)Dh(x∗)(x−x∗)=0.
+∴ f(x)≥f(x∗).
+∴ x∗ · f 3 Ω (cid:254)(cid:27)4(cid:2):.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 15/31
+
+### 表格 1
+
+| (cid:224)‘zflK |  |  |
+|---|---|---|
+| y. ∵ f ·(cid:224)…Œ,
+∴ ∀x∈Ω, f(x)≥f(x∗)+Df(x∗)(x−x∗)= ( = (cid:63) = )
+f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗),
+∵ Ω ·(cid:224)8, ∴ ∀α∈(0,1), (1−α)x∗+αx∈Ω.
+∴ h(x∗+α(x−x∗))=h((1−α)x∗+αx)=0.
+(cid:134)ƒ λ∗(cid:62), ¿~(cid:22) λ∗(cid:62)h(x∗)=0, •(cid:130)(cid:26)
+λ∗(cid:62)h(x∗+α(x−x∗))−λ∗(cid:62)h(x∗)
+=0.
+α
+- α→0, •(cid:130)k
+λ∗(cid:62)Dh(x∗)(x−x∗)=0.
+∴ f(x)≥f(x∗).
+∴ x∗ · f 3 Ω (cid:254)(cid:27)4(cid:2):. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 15/31 |
+
+## 第 16 页
+(cid:224)‘zflK
+‰n ((cid:216)(cid:31)“(cid:21)(cid:229)‘zflK)
+f :Rn →R (cid:218) f ∈C1 ·(cid:224)…Œ, (cid:21)(cid:229)8(cid:143)
+Ω={x∈Rn |h(x)=0, g(x)≤0},
+(cid:217)¥ h:Rn →Rm,g :Rn →Rp, (cid:133) h,g ∈C1, Ω ·(cid:224)8. e(cid:127)3 x∗ ∈Ω,
+λ∗ ∈Rm, µ∗ ∈Rp ƒ(cid:26)
+(cid:182) µ∗ ≥0.
+(cid:183) Df(x∗)+λ∗(cid:62)Dh(x∗)+µ∗(cid:62)Dg(x∗)=0(cid:62).
+(cid:184) µ∗(cid:62)g(x∗)=0.
+K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+y. (cid:18) x∈Ω. ∵ f ·(cid:224)…Œ =⇒ f(x)≥f(x∗)+Df(x∗)(x−x∗).
+d^(cid:135) (cid:183) (cid:26)
+f(x)≥f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗)−µ∗(cid:62)Dg(x∗)(x−x∗).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 16/31
+
+### 表格 1
+
+|  | (cid:224)‘zflK |  |  |
+|---|---|---|---|
+|  | ‰n ((cid:216)(cid:31)“(cid:21)(cid:229)‘zflK)
+f :Rn →R (cid:218) f ∈C1 ·(cid:224)…Œ, (cid:21)(cid:229)8(cid:143)
+Ω={x∈Rn |h(x)=0, g(x)≤0},
+(cid:217)¥ h:Rn →Rm,g :Rn →Rp, (cid:133) h,g ∈C1, Ω ·(cid:224)8. e(cid:127)3 x∗ ∈Ω,
+λ∗ ∈Rm, µ∗ ∈Rp ƒ(cid:26)
+(cid:182) µ∗ ≥0.
+(cid:183) Df(x∗)+λ∗(cid:62)Dh(x∗)+µ∗(cid:62)Dg(x∗)=0(cid:62).
+(cid:184) µ∗(cid:62)g(x∗)=0.
+K x∗ · f 3 Ω (cid:254)(cid:27)(cid:28)(cid:219)4(cid:2):.
+y. (cid:18) x∈Ω. ∵ f ·(cid:224)…Œ =⇒ f(x)≥f(x∗)+Df(x∗)(x−x∗).
+d^(cid:135) (cid:183) (cid:26)
+f(x)≥f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗)−µ∗(cid:62)Dg(x∗)(x−x∗). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 16/31 |
+
+## 第 17 页
+(cid:224)‘zflK
+d‰n 22.8 (cid:127)
+λ∗(cid:62)Dh(x∗)(x−x∗)=0.
+yy µ∗(cid:62)Dg(x∗)(x−x∗)≤0.
+∵ Ω ·(cid:224)8, ∴ (1−α)x∗+αx∈Ω, ∀α∈(0,1).
+∴ g(x∗+α(x−x∗))=g((1−α)x∗+αx)≤0.
+(cid:134)ƒ µ∗(cid:62) ≥0(cid:62) (/ˇ^(cid:135)(cid:182)), ~(cid:22) µ∗(cid:62)g(x∗)=0 (/ˇ&(cid:255)(cid:184)), •(cid:130)k
+µ∗(cid:62)g(x∗+α(x−x∗))−µ∗(cid:62)g(x∗)
+≤0.
+α
+- α→0, (cid:26) µ∗(cid:62)Dg(x∗)(x−x∗)≤0.
+∴ f(x)≥f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗)−µ∗(cid:62)Dg(x∗)(x−x∗)≥f(x∗).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 17/31
+
+### 表格 1
+
+| (cid:224)‘zflK |  |  |
+|---|---|---|
+| d‰n 22.8 (cid:127)
+λ∗(cid:62)Dh(x∗)(x−x∗)=0.
+yy µ∗(cid:62)Dg(x∗)(x−x∗)≤0.
+∵ Ω ·(cid:224)8, ∴ (1−α)x∗+αx∈Ω, ∀α∈(0,1).
+∴ g(x∗+α(x−x∗))=g((1−α)x∗+αx)≤0.
+(cid:134)ƒ µ∗(cid:62) ≥0(cid:62) (/ˇ^(cid:135)(cid:182)), ~(cid:22) µ∗(cid:62)g(x∗)=0 (/ˇ&(cid:255)(cid:184)), •(cid:130)k
+µ∗(cid:62)g(x∗+α(x−x∗))−µ∗(cid:62)g(x∗)
+≤0.
+α
+- α→0, (cid:26) µ∗(cid:62)Dg(x∗)(x−x∗)≤0.
+∴ f(x)≥f(x∗)−λ∗(cid:62)Dh(x∗)(x−x∗)−µ∗(cid:62)Dg(x∗)(x−x∗)≥f(x∗). |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 17/31 |
+
+## 第 18 页
+]‘z
+‰n
+XJ]…Œ f :Rn →R 3(cid:224)8 X (cid:27)S: x∗ ∈ri(X) (cid:18)(cid:26)4(cid:2):, K f 3 X
+(cid:254)7·~(cid:138)…Œ.
+y. ((cid:135)y{)
+(cid:23) x∈X (cid:247)v f(x)>f(x∗).
+º(cid:26)(cid:130)ª [x,x∗] ¿(cid:247)X x-to-x∗ (cid:27)(cid:144)(cid:149)(cid:242)(cid:27)(cid:20) x(cid:48) ∈X.
+du f ·]…Œ, K(cid:127)3 α∈(0,1) ƒ(cid:26)
+f(x∗)≥αf(x)+(1−α)f(x(cid:48)),
+du f(x(cid:48))>f(x∗), •(cid:130)k f(x∗)>f(x) (gæ).
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 18/31
+
+### 表格 1
+
+|  | ]‘z |  |  |
+|---|---|---|---|
+|  | ‰n
+XJ]…Œ f :Rn →R 3(cid:224)8 X (cid:27)S: x∗ ∈ri(X) (cid:18)(cid:26)4(cid:2):, K f 3 X
+(cid:254)7·~(cid:138)…Œ.
+y. ((cid:135)y{)
+(cid:23) x∈X (cid:247)v f(x)>f(x∗).
+º(cid:26)(cid:130)ª [x,x∗] ¿(cid:247)X x-to-x∗ (cid:27)(cid:144)(cid:149)(cid:242)(cid:27)(cid:20) x(cid:48) ∈X.
+du f ·]…Œ, K(cid:127)3 α∈(0,1) ƒ(cid:26)
+f(x∗)≥αf(x)+(1−α)f(x(cid:48)),
+du f(x(cid:48))>f(x∗), •(cid:130)k f(x∗)>f(x) (gæ). |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 18/31 |
+
+## 第 19 页
+Semi-definite Programming
+‰´ (semi-definite programming)
+minimizing linear function subject to linear matrix inequalities
+min c(cid:62)x, s.t.F(x)(cid:23)0,
+n
+(cid:80)
+where F(x)=F +x F +···+x F =F + x F is called an affine
+0 1 1 n n 0 i i
+i=1
+function of x, and F =F(cid:62) ∈Rm×m for i=0,1,...,n.
+i i
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 19/31
+
+### 表格 1
+
+|  | Semi-definite Programming |  |  |
+|---|---|---|---|
+|  | ‰´ (semi-definite programming)
+minimizing linear function subject to linear matrix inequalities
+min c(cid:62)x, s.t.F(x)(cid:23)0,
+n
+(cid:80)
+where F(x)=F +x F +···+x F =F + x F is called an affine
+0 1 1 n n 0 i i
+i=1
+function of x, and F =F(cid:62) ∈Rm×m for i=0,1,...,n.
+i i |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 19/31 |
+
+## 第 20 页
+Semi-definite Programming
+(cid:70) The inequality constraint of the form (positive semidefinite):
+F(x)=F +x F +···+x F (cid:23)0.
+0 1 1 n n
+(cid:70) {x|F(x)(cid:23)0} is convex.
+‰´ (systems of multiple linear matrix inequalities)
+ 
+F (x)
+1
+ F 2 (x) 
+F 1 (x)(cid:23)0,··· ,F k (x)(cid:23)0 ⇐⇒ F(x)= 
+
+...  
+
+(cid:23)0.
+F (x)
+k
+‰´ (block matrix contract transformation)
+(cid:20)
+A B
+(cid:21) (cid:20)
+D
+B(cid:62)(cid:21)
+(cid:23)0 ⇐⇒ (cid:23)0.
+B(cid:62) D B A
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 20/31
+
+### 表格 1
+
+|  | Semi-definite Programming |  |  |
+|---|---|---|---|
+|  | (cid:70) The inequality constraint of the form (positive semidefinite):
+F(x)=F +x F +···+x F (cid:23)0.
+0 1 1 n n
+(cid:70) {x|F(x)(cid:23)0} is convex.
+‰´ (systems of multiple linear matrix inequalities)
+ 
+F (x)
+1
+ F 2 (x) 
+F 1 (x)(cid:23)0,··· ,F k (x)(cid:23)0 ⇐⇒ F(x)=  ...   (cid:23)0.
+ 
+F (x)
+k
+‰´ (block matrix contract transformation)
+(cid:20) (cid:21) (cid:20) B(cid:62)(cid:21)
+A B D
+(cid:23)0 ⇐⇒ (cid:23)0.
+B(cid:62) D B A |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 20/31 |
+
+## 第 21 页
+Properties of Matrices
+‰´ (Schur complement)
+(cid:20) (cid:21)
+A A
+A blocky matrix A= 11 12 , where A and A are square submatrices.
+A A 11 22
+21 22
+1 If A 11 is invertible, then the Schur complement of A 11 is
+∆ =A −A A−1A .
+11 22 21 11 12
+2 If A 22 is invertible, then the Schur complement of A 22 is
+∆ =A −A A−1A .
+22 11 12 22 21
+‰n
+A(cid:31)0 ⇐⇒ A (cid:31)0 and ∆ (cid:31)0 ⇐⇒ A (cid:31)0, and ∆ (cid:31)0.
+11 11 22 22
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 21/31
+
+### 表格 1
+
+|  | Properties of Matrices |  |  |
+|---|---|---|---|
+|  | ‰´ (Schur complement)
+(cid:20) (cid:21)
+A A
+A blocky matrix A= 11 12 , where A and A are square submatrices.
+A A 11 22
+21 22
+1 If A 11 is invertible, then the Schur complement of A 11 is
+∆ =A −A A−1A .
+11 22 21 11 12
+2 If A 22 is invertible, then the Schur complement of A 22 is
+∆ =A −A A−1A .
+22 11 12 22 21
+‰n
+A(cid:31)0 ⇐⇒ A (cid:31)0 and ∆ (cid:31)0 ⇐⇒ A (cid:31)0, and ∆ (cid:31)0.
+11 11 22 22 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 21/31 |
+
+## 第 22 页
+Properties of Matrices
+~.
+Does A∈Rm×m have all its eigenvalues in the open left half-complex plane?
+Ans: If this condition is true ⇐⇒ ∃ a symmetric positive definite matrix
+P ∈Rm×m such that (Lyapunov inequality)
+(cid:20) (cid:21)
+P O
+A(cid:62)P +PA≺0 ⇐⇒ (cid:31)0.
+O −A(cid:62)P −PA
+ 
+x x ··· x
+1 2 m
+Let P =   x . 2 x m+1 ··· x 2m . −1 , n= m(m+1).
+ . .  2
+ . . 
+x x ··· x
+m 2m−1 n
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 22/31
+
+### 表格 1
+
+|  | Properties of Matrices |  |  |
+|---|---|---|---|
+|  | ~.
+Does A∈Rm×m have all its eigenvalues in the open left half-complex plane?
+Ans: If this condition is true ⇐⇒ ∃ a symmetric positive definite matrix
+P ∈Rm×m such that (Lyapunov inequality)
+(cid:20) (cid:21)
+P O
+A(cid:62)P +PA≺0 ⇐⇒ (cid:31)0.
+O −A(cid:62)P −PA
+ 
+x x ··· x
+1 2 m
+Let P =   x . 2 x m+1 ··· x 2m . −1 , n= m(m+1).
+ . .  2
+ . . 
+x x ··· x
+m 2m−1 n |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 22/31 |
+
+## 第 23 页
+Properties of Matrices
+1 0 0 ··· 0 0 1 0 ··· 0 0 0 0 ··· 0
+0 0 0 ··· 0 1 0 0 ··· 0 0 0 0 ··· 0
+P1=  
+
+0
+.
+0 0 ··· 0
+.
+ 
+
+,P2=  
+
+0
+.
+0 0 ··· 0
+.
+ 
+
+,···,Pn=  
+
+0
+.
+0 0 ··· 0
+.
+ 
+
+. . . . . .
+. . . . . .
+0 0 0 ··· 0 0 0 0 ··· 0 0 0 0 ··· 1
+(cid:70) P has only nonzero elements corresponding to x in P.
+i i
+Let F =−A(cid:62)P −P A, i=1,2,...,n.
+i i i
+=⇒ A(cid:62)P +PA=x (cid:0) A(cid:62)P +P A (cid:1) +···+x (cid:0) A(cid:62)P +P A (cid:1)
+1 1 1 n n n
+=−x F −x F −···−x F ≺0.
+1 1 2 2 n n
+Let F(x)=x F +x F +···+x F .
+1 1 2 2 n n
+Then, P =P(cid:62) (cid:31)0,A(cid:62)P +PA≺0 ⇐⇒ F(x)(cid:31)0.
+Thus, the problem is equivalent to feasibility of the above matrix inequality.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 23/31
+
+### 表格 1
+
+| Properties of Matrices |  |  |
+|---|---|---|
+| 1 0 0 ··· 0 0 1 0 ··· 0 0 0 0 ··· 0
+0 0 0 ··· 0 1 0 0 ··· 0 0 0 0 ··· 0
+P1=   0 0 0 ··· 0   ,P2=   0 0 0 ··· 0   ,···,Pn=   0 0 0 ··· 0  
+ . .   . .   . . 
+. . . . . .
+. . . . . .
+0 0 0 ··· 0 0 0 0 ··· 0 0 0 0 ··· 1
+(cid:70) P has only nonzero elements corresponding to x in P.
+i i
+Let F =−A(cid:62)P −P A, i=1,2,...,n.
+i i i
+=⇒ A(cid:62)P +PA=x (cid:0) A(cid:62)P +P A (cid:1) +···+x (cid:0) A(cid:62)P +P A (cid:1)
+1 1 1 n n n
+=−x F −x F −···−x F ≺0.
+1 1 2 2 n n
+Let F(x)=x F +x F +···+x F .
+1 1 2 2 n n
+Then, P =P(cid:62) (cid:31)0,A(cid:62)P +PA≺0 ⇐⇒ F(x)(cid:31)0.
+Thus, the problem is equivalent to feasibility of the above matrix inequality. |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 23/31 |
+
+## 第 24 页
+Linear Matrix Inequality (LMI) Solvers
+‰´ (canonical representation of LMI)
+F(x)=F +x F +···+x F (cid:23)0.
+0 1 1 n n
+Matlab Solver (I): Consider the form
+N(cid:62)L(X ,...,X )N (cid:22)M(cid:62)R(X ,...,X )M,
+1 k 1 k
+• X ,...,X : matrix variables;
+1 k
+• N: left outer factor; M: right outer factor.
+• L(X ,...,X ): left inner factor; R(X ,...,X ): right one.
+1 k 1 k
+The matrices L(·) and R(·) are, in general, symmetric block matrices.
+~.
+(cid:20) (cid:21) (cid:20) (cid:21)
+−1 0 −2 0
+A = , A = .
+1 0 −1 2 1 −1
+Find P such that P (cid:23)0.5I , A(cid:62)P +PA (cid:22)0 and A(cid:62)P +PA (cid:22)0.
+2 1 1 2 2
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 24/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | ‰´ (canonical representation of LMI)
+F(x)=F +x F +···+x F (cid:23)0.
+0 1 1 n n
+Matlab Solver (I): Consider the form
+N(cid:62)L(X ,...,X )N (cid:22)M(cid:62)R(X ,...,X )M,
+1 k 1 k
+• X ,...,X : matrix variables;
+1 k
+• N: left outer factor; M: right outer factor.
+• L(X ,...,X ): left inner factor; R(X ,...,X ): right one.
+1 k 1 k
+The matrices L(·) and R(·) are, in general, symmetric block matrices.
+~.
+(cid:20) (cid:21) (cid:20) (cid:21)
+−1 0 −2 0
+A = , A = .
+1 0 −1 2 1 −1
+Find P such that P (cid:23)0.5I , A(cid:62)P +PA (cid:22)0 and A(cid:62)P +PA (cid:22)0.
+2 1 1 2 2 |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 24/31 |
+
+## 第 25 页
+Linear Matrix Inequality (LMI) Solvers
+Matlab Syntax:
+A 1=[-1 0 ; 0 -1];
+−
+A 2=[-2 0 ; 1 -1];
+−
+setlmis([ ])
+P=lmivar(1,[2,1])
+Imiterm([1 1 1 P],A 1’,1,’s’)
+−
+Imiterm([2 1 1 P],A 2’,1,’s’)
+−
+Imiterm([3 1 1 0],.5)
+Imiterm([-3 1 1 P],1,1)
+Imis=getlmis;
+[tmin, xfeas] = feasp(lmis);
+P=dec2mat(lmis,xfeas,P)
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 25/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | Matlab Syntax:
+A 1=[-1 0 ; 0 -1];
+−
+A 2=[-2 0 ; 1 -1];
+−
+setlmis([ ])
+P=lmivar(1,[2,1])
+Imiterm([1 1 1 P],A 1’,1,’s’)
+−
+Imiterm([2 1 1 P],A 2’,1,’s’)
+−
+Imiterm([3 1 1 0],.5)
+Imiterm([-3 1 1 P],1,1)
+Imis=getlmis;
+[tmin, xfeas] = feasp(lmis);
+P=dec2mat(lmis,xfeas,P) |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 25/31 |
+
+## 第 26 页
+Linear Matrix Inequality (LMI) Solvers
+Matlab Solver (II) for problem in the form: min c(cid:62)x, s.t. A(x)(cid:23)B(x).
+~.
+   
+(cid:20) (cid:21) 1 1 8
+4
+min c(cid:62)x, s.t. Ax≤b, where c= , A=1 3, b=18.
+5
+2 1 14
+We first use the feasp solver to find a feasible point. Then, using the mincx
+solver to solve the optimization problem.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 26/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | Matlab Solver (II) for problem in the form: min c(cid:62)x, s.t. A(x)(cid:23)B(x).
+~.
+   
+(cid:20) (cid:21) 1 1 8
+4
+min c(cid:62)x, s.t. Ax≤b, where c= , A=1 3, b=18.
+5
+2 1 14
+We first use the feasp solver to find a feasible point. Then, using the mincx
+solver to solve the optimization problem. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 26/31 |
+
+## 第 27 页
+Linear Matrix Inequality (LMI) Solvers
+Matlab Syntax:
+A=[1 1;1 3;2 1];
+b=[8 18 14]’; [tmin, xfeas] = feasp(lmis);
+c=[-4 -5]’; x feasp=dec2mat(lmis,xfeas,X);
+−
+setlmis([ ]); [objective,x mincx]
+−
+X=lmivar(2,[2 1]); =mincx(lmis,c,[0.0001 1000 0 0 1])
+lmiterm([1 1 1 X],A(1,:),1); The feasp function produces
+(cid:20) (cid:21)
+lmiterm([1 1 1 0],-b(1)); −64.3996
+x = ,
+lmiterm([1 2 2 X],A(2,:),1); feasp −25.1712
+lmiterm([1 2 2 0],-b(2)); The mincx function produces
+(cid:20) (cid:21)
+lmiterm([1 3 3 X],A(3,:),1); 3.0000
+x = .
+lmiterm([1 3 3 0],-b(3)); mincx 5.0000
+lmis=getlmis;
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 27/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | Matlab Syntax:
+A=[1 1;1 3;2 1];
+b=[8 18 14]’; [tmin, xfeas] = feasp(lmis);
+c=[-4 -5]’; x feasp=dec2mat(lmis,xfeas,X);
+−
+setlmis([ ]); [objective,x mincx]
+−
+X=lmivar(2,[2 1]); =mincx(lmis,c,[0.0001 1000 0 0 1])
+lmiterm([1 1 1 X],A(1,:),1); The feasp function produces
+(cid:20) (cid:21)
+lmiterm([1 1 1 0],-b(1)); −64.3996
+x = ,
+lmiterm([1 2 2 X],A(2,:),1); feasp −25.1712
+lmiterm([1 2 2 0],-b(2)); The mincx function produces
+(cid:20) (cid:21)
+lmiterm([1 3 3 X],A(3,:),1); 3.0000
+x = .
+lmiterm([1 3 3 0],-b(3)); mincx 5.0000
+lmis=getlmis; |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 27/31 |
+
+## 第 28 页
+Linear Matrix Inequality (LMI) Solvers
+Matlab Solver(II) for the form: min trace(P), s.t.A(cid:62)P +PA(cid:22)0, P (cid:23)0. To
+use mincx, we need a vector c such that
+c(cid:62)x=trace(P).
+We can obtain the desired c with the following Matlab Syntax:
+q= decnbr(lmisys);
+c = zeros(q,1);
+for j = 1:q
+Pj = defcx(lmisys,j,P);
+c(j) = trace(Pj);
+end
+Having obtained the vector c, we can use mincx to solve the optimization problem.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 28/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | Matlab Solver(II) for the form: min trace(P), s.t.A(cid:62)P +PA(cid:22)0, P (cid:23)0. To
+use mincx, we need a vector c such that
+c(cid:62)x=trace(P).
+We can obtain the desired c with the following Matlab Syntax:
+q= decnbr(lmisys);
+c = zeros(q,1);
+for j = 1:q
+Pj = defcx(lmisys,j,P);
+c(j) = trace(Pj);
+end
+Having obtained the vector c, we can use mincx to solve the optimization problem. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 28/31 |
+
+## 第 29 页
+Linear Matrix Inequality (LMI) Solvers
+~.
+[minimize generalized eigenvalue under LMI constraints]
+min λ, s.t. C(x)(cid:22)D(x), 0(cid:22)B(x), A(x)(cid:22)λB(x).
+• C(x)(cid:22)D(x): standard LMI constraints.
+• A(x)(cid:22)λB(x): linear-fractional LMIs.
+Matlab Solver (II): gevp
+[lopt,xopt]=gep{lmisys,nflc}
+lopt: global minimum of the generalized eigenvalue.
+xopt: optimal decision vector variable.
+Imisys: system of LMIs
+C(x)(cid:22)D(x),C(x)(cid:22)D(x), and A(x)(cid:22)λB(x) for λ=1.
+nflc: the number of linear-fractional constraints.
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 29/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | ~.
+[minimize generalized eigenvalue under LMI constraints]
+min λ, s.t. C(x)(cid:22)D(x), 0(cid:22)B(x), A(x)(cid:22)λB(x).
+• C(x)(cid:22)D(x): standard LMI constraints.
+• A(x)(cid:22)λB(x): linear-fractional LMIs.
+Matlab Solver (II): gevp
+[lopt,xopt]=gep{lmisys,nflc}
+lopt: global minimum of the generalized eigenvalue.
+xopt: optimal decision vector variable.
+Imisys: system of LMIs
+C(x)(cid:22)D(x),C(x)(cid:22)D(x), and A(x)(cid:22)λB(x) for λ=1.
+nflc: the number of linear-fractional constraints. |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 29/31 |
+
+## 第 30 页
+Linear Matrix Inequality (LMI) Solvers
+~.
+Find the smallest α such that
+ 
+−1.1853 0.9134 0.2785
+P (cid:31)0, A(cid:62)P +PA(cid:22)−αP, where A= 0.9058 −1.3676 0.5469 .
+0.1270 0.0975 −3.0000
+Matlab Syntax
+A = [-1.1853 0.9134 0.2785; 0.9058 -1.3676 0.5469; 0.1270 0.0975 -3.0000];
+setlmis([ ]) ;
+P = lmivar(1,[3 1])
+lmiterm([-1 1 1 P], 1,1) % P
+lmiterm([1 1 1 0],.01) % P >= 0.01*I
+lmiterm([2 1 1 P],1,A,’s’) % linear fractional constraint −−− LHS
+lmiterm( [-2 1 1 P] ,1,1) % linear fractional constraint −−− RHS
+lmis = getlmis; [gamma,P opt]=gevp(lmis,1);
+−
+P=dec2mat(lmis,P opt)
+−
+alpha=-gamma
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 30/31
+
+### 表格 1
+
+|  | Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|---|
+|  | ~.
+Find the smallest α such that
+ 
+−1.1853 0.9134 0.2785
+P (cid:31)0, A(cid:62)P +PA(cid:22)−αP, where A= 0.9058 −1.3676 0.5469 .
+0.1270 0.0975 −3.0000
+Matlab Syntax
+A = [-1.1853 0.9134 0.2785; 0.9058 -1.3676 0.5469; 0.1270 0.0975 -3.0000];
+setlmis([ ]) ;
+P = lmivar(1,[3 1])
+lmiterm([-1 1 1 P], 1,1) % P
+lmiterm([1 1 1 0],.01) % P >= 0.01*I
+lmiterm([2 1 1 P],1,A,’s’) % linear fractional constraint −−− LHS
+lmiterm( [-2 1 1 P] ,1,1) % linear fractional constraint −−− RHS
+lmis = getlmis; [gamma,P opt]=gevp(lmis,1);
+−
+P=dec2mat(lmis,P opt)
+−
+alpha=-gamma |  |  |
+|  | (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 30/31 |
+
+## 第 31 页
+Linear Matrix Inequality (LMI) Solvers
+ 
+0.6996 −0.7466 −0.0296
+The result is α=0.6561, P =−0.7466 0.8537 −0.2488.
+−0.0296 −0.2488 3.2307
+(cid:220)'( (>f(cid:137)E(cid:140)˘) 122(cid:217)(cid:224)‘zflK 31/31
+
+### 表格 1
+
+| Linear Matrix Inequality (LMI) Solvers |  |  |
+|---|---|---|
+|  
+0.6996 −0.7466 −0.0296
+The result is α=0.6561, P =−0.7466 0.8537 −0.2488.
+−0.0296 −0.2488 3.2307 |  |  |
+| (cid:220)'( (>f(cid:137)E(cid:140)˘) | 122(cid:217)(cid:224)‘zflK | 31/31 |

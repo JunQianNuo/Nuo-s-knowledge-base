@@ -1,0 +1,614 @@
+# 17-对偶单纯形法
+
+---
+title: 第17章 对偶单纯形法
+subject: 最优化方法
+source: 无动画Chapter17.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 17
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第17章 对偶单纯形法
+## 1．线性规划的对偶
+## 2．对偶单纯形法
+第17章 对偶单纯形法
+1/13
+### LP 的对偶
+## 原始 LP 和对偶 LP
+<table border="1" ><tr>
+<td>原始问题（P ）<br>min $\boldsymbol {c}^{\top }\boldsymbol {x}$s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b},\boldsymbol {x}\geq \mathbf {0}$<img src="https://web-api.textin.com/ocr_image/external/3517eb82d048e058.jpg"></td>
+<td>写对偶</td>
+</tr></table>
+### LP 的对偶
+### 原始LP 和对偶LP
+原始问题（P） 写对偶 对偶问题（D） min $\boldsymbol {c}^{\top }\boldsymbol {x}$ s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b},\boldsymbol {x}\geq \mathbf {0}$ min $\boldsymbol {λ}^{\top }\boldsymbol {b}$ s.t. $\boldsymbol {A}^{\top }\boldsymbol {λ}\leq \boldsymbol {c}$
+![](https://web-api.textin.com/ocr_image/external/1c13ccdae4f62845.jpg)
+![](https://web-api.textin.com/ocr_image/external/0e431fe2bf263f7d.jpg)
+对偶问题总可以通过Lagrange函数的最优性条件获得.
+### 例.写出下列LP的对偶问题
+min $8x_{1}+6x_{2}+3x_{3}+6x_{4}$ 
+s.t. $x_{1}+2x_{2}$ $+x_{4}\geq 3$ 
+$$3x_{1}+x_{2}+x_{3}+x_{4}\geq 6$$
+$$x_{3}+x_{4}\geq 2$$
+$$x_{j}\geq 0,j=1,\cdots ,4.$$
+### LP的对偶
+## 原始 LP 和对偶 LP
+原始问题（P） 写对偶 对偶问题（D） min $\boldsymbol {c}^{\top }\boldsymbol {x}$ s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b}$ $\boldsymbol {x}\geq \mathbf {0}$ min $\boldsymbol {λ}^{\top }\boldsymbol {b}$ $s.t.$ $\boldsymbol {A}^{\top }\boldsymbol {λ}\leq \boldsymbol {c}$
+![](https://web-api.textin.com/ocr_image/external/0068fdf3485af2c8.jpg)
+![](https://web-api.textin.com/ocr_image/external/7ce26eabc06d5c9b.jpg)
+对偶问题总可以通过Lagrange函数的最优性条件获得.
+### 例.写出下列LP的对偶问题
+min $8x_{1}+6x_{2}+3x_{3}+6x_{4}$ 
+$$\min 3w_{1}+6w_{2}+2w_{3}$$
+s.t.
+$$x_{1}+2x_{2}\quad +x_{4}\geq 3$$
+s.t. $w_{1}+3w_{2}\quad \leq 8$ 
+$$3x_{1}+x_{2}+x_{3}+x_{4}\geq 6Longrightarrow$$
+$$2w_{1}+w_{2}\quad \leq 6$$
+$$x_{3}+x_{4}\geq 2$$
+$$w_{2}+w_{3}\leq 3$$
+$$x_{j}\geq 0,j=1,\cdots ,4.$$
+$$w_{1}+w_{2}+w_{3}\leq 6$$
+$$w_{j}\geq 0,j=1,2,3.$$
+### 引理（弱对偶（weak duality)）
+若 $x,$ 1分别是(P)和（D）的可行解，则 $\boldsymbol {c}^{\top }\boldsymbol {x}\geq \boldsymbol {λ}^{\top }\boldsymbol {b}.$ （证.板书）
+第17章 对偶单纯形法
+# LP 的对偶定理（强对偶（strong duality)）
+若 $x,λ$ 分别是（P）和（D）的可行解.如果 $\boldsymbol {c}^{\top }\boldsymbol {x}_{0}=\boldsymbol {λ}_{0}^{\top }\boldsymbol {b}$ ，则 $\boldsymbol {x}_{0}$ 和 $\boldsymbol {λ}_{0}$ 分别是(P)和(D)的最优解.（证.板书）
+# 定理
+若(P)有最优解，则（D）必有最优解（反之亦然），且(P)和（D）的最优值相等.
+证．Case 1．设（D）有可行解入．现在分析（P）的初始和最终单纯形表：
+（P）的初始单纯形表
+（P）的最终单纯形表
+$$\left[\begin{array}{ccc}\boldsymbol {A}&\boldsymbol {b}\\ \boldsymbol {c}^{\top }&\mathbf {0}\end{array}\right]=\left[\begin{array}{ccc}\boldsymbol {B}&\boldsymbol {D}&\boldsymbol {b}\\ \boldsymbol {c}_{\boldsymbol {B}}^{\top }&\boldsymbol {c}_{\boldsymbol {D}}^{\top }&\boldsymbol {0}\end{array}\right]Longrightarrow\left[\begin{array}{ccc}\boldsymbol {I}&\boldsymbol {B}^{-1}\boldsymbol {D}&\boldsymbol {B}^{-1}\boldsymbol {b}\\ \mathbf {0}^{\top }&\boldsymbol {c}_{\boldsymbol {D}}^{\top }-\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {D}&-\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {b}\end{array}\right]$$
+我们可得出：
+$$\boldsymbol {r}_{D}^{\top }=\boldsymbol {c}_{D}^{\top }-\boldsymbol {c}_{B}^{\top }\boldsymbol {B}^{-1}\boldsymbol {D}\geq 0Longrightarrowc_{B}^{\top }\boldsymbol {B}^{-1}\boldsymbol {D}\leq \boldsymbol {c}_{D}^{\top }$$
+若记 $\boldsymbol {λ}^{\top }:=c_{B}^{\top }\boldsymbol {B}^{-1}$ ，则 $\boldsymbol {λ}^{\top }\boldsymbol {D}\leq \boldsymbol {c}_{\boldsymbol {D}}^{\top }.$ 
+$:$ $\boldsymbol {λ}^{\top }\boldsymbol {A}=\boldsymbol {λ}^{\top }[\boldsymbol {B},\boldsymbol {D}]=\left[\boldsymbol {λ}^{\top }\boldsymbol {B},\boldsymbol {λ}^{\top }\boldsymbol {D}\right]=\left[\boldsymbol {c}_{\boldsymbol {B}}^{\top }\right.$ $\boldsymbol {λ}^{\top }\boldsymbol {D}]\leq \left[\boldsymbol {c}_{\boldsymbol {B}}^{\top }\right.$ $\left.\boldsymbol {c}_{D}^{\top }\right]=\boldsymbol {c}^{\top }$ 
+$\therefore \boldsymbol {A}^{\top }\boldsymbol {λ}\leq \boldsymbol {c},$ 这表明 $\boldsymbol {λ}=\boldsymbol {B}^{-\top }\boldsymbol {c}_{\boldsymbol {B}}$ 是(D)的可行解（即满足（D）的约束）.
+## LP的对偶
+![](https://web-api.textin.com/ocr_image/external/ae7d5279782e0b99.jpg)
+现证 $\boldsymbol {λ}=\boldsymbol {B}^{-\top }\boldsymbol {c}_{\boldsymbol {B}}$ 是（D）的最优解.
+$\because \boldsymbol {λ}^{\top }\boldsymbol {b}=\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {b}=(\mathrm {P})$ 的最优值 $=(D)$ 的最优值，
+$\therefore \boldsymbol {λ}$ 是（D）的最优解.
+# 如何从最后一张单纯形表中获取（D）的最优解？
+（P）的初始单纯形表
+（P）的最终单纯形表
+$\left[\begin{array}{ccc}\boldsymbol {A}&\boldsymbol {b}\\ \boldsymbol {c}^{\top }&\mathbf {0}\end{array}\right]=\left[\begin{array}{ccc}\boldsymbol {B}&\boldsymbol {D}&\boldsymbol {b}\\ \boldsymbol {c}_{\boldsymbol {B}}^{\top }&\boldsymbol {c}_{\boldsymbol {D}}^{\top }&\mathbf {0}\end{array}\right]Longrightarrow\left[\begin{array}{ccc}\boldsymbol {I}&\boldsymbol {B}^{-1}\boldsymbol {D}&\boldsymbol {B}^{-1}\boldsymbol {b}\\ \mathbf {0}^{\top }&\boldsymbol {c}_{\boldsymbol {D}}^{\top }-\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {D}&-\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {b}\end{array}\right]$
+![](https://web-api.textin.com/ocr_image/external/334120d0c3c683b6.jpg)
+case 1: rank( $(\boldsymbol {D})=m$ .求解线性方程组
+$$\boldsymbol {λ}^{\top }\boldsymbol {D}=\boldsymbol {c}_{\boldsymbol {B}}^{\top }\boldsymbol {B}^{-1}\boldsymbol {D}=\boldsymbol {c}_{\boldsymbol {D}}^{\top }-\boldsymbol {r}_{\boldsymbol {D}}^{\top }$$
+case 2: $\text {rank}(\boldsymbol {D})<m$ .求解线性方程组
+$$\left\{\begin{array}{l}\boldsymbol{\lambda}^{\top}\boldsymbol{B}=\boldsymbol{c}_{\boldsymbol{B}}^{\top}\\
+\boldsymbol{\lambda}^{\top}\boldsymbol{D}=\boldsymbol{c}_{\boldsymbol{B}}^{\top}-\boldsymbol{r}_{\boldsymbol{D}}^{\top}\end{array}\Leftrightarrow \boldsymbol{\lambda}^{\top}\left[\begin{array}{c}\boldsymbol{B}\\
+\boldsymbol{D}\end{array}\right]=\left[\begin{array}{c}\boldsymbol{c}_{\boldsymbol{B}}^{\top}\\
+\boldsymbol{c}_{\boldsymbol{B}}^{\top}-\boldsymbol{r}_{\boldsymbol{D}}^{\top}\end{array}\right]\Longleftrightarrow \boldsymbol{\lambda}^{\top}\boldsymbol{A}=\boldsymbol{c}^{\top}-\boldsymbol{r}^{\top}\right.$$
+## LP 的对偶
+## 例.写出如下问题的对偶，并用单纯形表获得对偶问题的最优解
+max $2x_{1}+5x_{2}+x_{3}$ 
+s.t. $2x_{1}-x_{2}+7x_{3}\leq 6$ 
+$$x_{1}+3x_{2}+4x_{3}\leq 9$$
+$$3x_{1}+6x_{2}+x_{3}\leq 3$$
+$$x_{i}\geq 0,i=1,2,3$$
+LP 的对偶
+例.写出如下问题的对偶，并用单纯形表获得对偶问题的最优解
+max $2x_{1}+5x_{2}+x_{3}$ 
+min $-2x_{1}-5x_{2}-x_{3}$ 
+s.t. $2x_{1}-x_{2}+7x_{3}\leq 6$ 
+标准形
+![](https://web-api.textin.com/ocr_image/external/9c14c33e021087ad.jpg)
+s.t. $2x_{1}$ $-x_{2}+7x_{3}+x_{4}$ $,$ 
+$$=6$$
+$$x_{1}+3x_{2}+4x_{3}\leq 9$$
+$$x_{1}+3x_{2}+4x_{3}\quad +6x_{2}+x_{3}\quad 3$$
+$$+x_{5}$$
+$$=9$$
+$$3x_{1}+6x_{2}+x_{3}\leq 3$$
+$$+x_{6}=3$$
+$$x_{i}\geq 0,i=1,2,3$$
+$x_{2}$ $0$ $.$ $i=1,\cdots ,6$ 
+## 初始单纯形表
+最终单纯形表
+<table border="1" ><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr></table>
+<table border="1" ><tr>
+<td colspan="2" rowspan="2"></td>
+<td colspan="2"></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="3"></td>
+<td rowspan="4">b $5$ $\{\}_{\text {心}}$ $0$</td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td rowspan="2"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td colspan="4"></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"></td>
+<td></td>
+<td></td>
+</tr></table>
+$$\therefore \boldsymbol {λ}^{\top }\boldsymbol {D}=\boldsymbol {c}_{\boldsymbol {D}}^{\top }-\boldsymbol {r}_{\boldsymbol {D}}^{\top }\Rightarrow \left[λ_{1},λ_{2},λ_{3}\right]\left[\begin{array}{lll}2&1&0\\ 1&0&0\\ 3&0&1\end{array}\right]=[-2,0,0]-\left[\frac {24}{43},\frac {1}{43},\frac {36}{43}\right]\quad \therefore \boldsymbol {λ}^{\top }=\left[-\frac {1}{43},0,-\frac {36}{43}\right]$$
+![](https://web-api.textin.com/ocr_image/external/292de80c7643bb4c.jpg)
+LP 的对偶
+# 定理（互补松弛条件）
+若x和 $λ$ 分别是 $(P)$ 和（D）的最优解 $企$  $(\boldsymbol {c}^{\top }-\boldsymbol {\lambda }^{\top }\boldsymbol {A})\boldsymbol {x}=0\text {且}\boldsymbol {\lambda }^{\top }(\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b})=0.$ 
+证.利用约束优化问题的KKT条件即可.
+## 例.写出如下LP的对偶问题，并求对偶问题的最优解
+min $-\left(2x_{1}+x_{2}+7x_{3}+4x_{4}\right)$  $对偶$ $max$ $26入$ 
+s.t. $x_{1}+x_{2}+x_{3}$ $+x_{4}=26$ 
+$x_{i}\geq 0,$ $,$ $i=1,\cdots ,4$ 
+$$s.t.\quad λ\leq -2,\quad ,λ\leq -1,λ\leq -7,\quad λ\leq -4$$
+解.显然，(D）的最优解为 $λ=-7.$ 
+利用互补松弛条件获得（P）的最优解（本质上是用KKT条件）
+（P）的最优解x应满足
+$$\left\{\begin{array}{l}{(\boldsymbol {c}^{\top }-\boldsymbol {\lambda }^{\top }\boldsymbol {A})\boldsymbol {x}=0}\\
+{\boldsymbol {\lambda }^{\top }(\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b})=0}\end{array}\xlongequal {\text {即}}\left\{\begin{array}{l}(-[2,1,7,4]-(-7)[1,1,1,1])\boldsymbol{x}=0\\
+{[1,1,1,1]\boldsymbol{x}-26=0}\end{array}\right.\right.$$
+$$\therefore \boldsymbol {x}=[0,0,26,0]^{\top }.$$
+## LP 的对偶
+## 例.写出如下LP的对偶问题，并求对偶问题的最优解
+max $2x_{1}+5x_{2}+x_{3}$ 
+$min$ $-2x_{1}-5x_{2}-x_{3}$ 
+s.t. $2x_{1}-x_{2}+7x_{3}\leq 6$ 
+对偶
+![](https://web-api.textin.com/ocr_image/external/004195091bdfb9c2.jpg)
+s.t. $2x_{1}$ $-x_{2}+7x_{3}+x_{4}$ 
+$$=6$$
+$$x_{1}+3x_{2}+4x_{3}\leq 9$$
+$$x_{1}+3x_{2}+4x_{3}$$
+$$+x$$
+$$=9$$
+$$3x_{1}+6x_{2}+x_{3}\leq 3$$
+$$3x_{1}+6x_{2}+x_{3}$$
+$$+x_{6}=3$$
+$$x_{i}\geq 0,\quad i=1,\cdots ,3$$
+$$x_{i}\geq 0,i=1,\cdots ,6$$
+.
+<table border="1" ><tr>
+<td>min  $\left[\boldsymbol {c}^{\top },\mathbf {0}^{\top }\right]\boldsymbol {x}$s.t.  $[\boldsymbol {A},\boldsymbol {I}]\boldsymbol {x}=\boldsymbol {b}$ $x\geq 0$</td>
+<td>对偶</td>
+<td>max  $\boldsymbol {λ}^{\top }\boldsymbol {b}$s.t.  $\boldsymbol {λ}^{\top }[\boldsymbol {A},\boldsymbol {I}]\leq \left[\boldsymbol {c}^{\top },\mathbf {0}^{\top }\right]$ $λ\geq 0$</td>
+</tr></table>
+记 $\boldsymbol {A}=\left[\begin{array}{lll}2&-1&7\\ 1&3&4\\ 3&6&1\end{array}\right]$ , $\boldsymbol {b}=\left[\begin{array}{l}6\\ 9\\ 3\end{array}\right]$ , $\boldsymbol {c}=\left[\begin{array}{l}-2\\ -5\\ -1\end{array}\right]$ 
+用两阶段法求解（D）问题.
+# 对偶单纯形法
+动机：针对原始单纯形法的“苛刻”要求（例如A中要有自然基， $b\geq 0)$ .能否充分利用A中的负自然基，或者允许 $b<0?$ 这样就可以避免两阶段法、大M 法等寻找初始基本可行解的过程.
+标准LP min $\boldsymbol {c}^{\top }\boldsymbol {x}$ s.t. $\boldsymbol {A}\boldsymbol {x}=\boldsymbol {b},\boldsymbol {x}\geq \mathbf {0}.$  初始单纯形表（ $\left(b_{i}\right.$ 可以有负分量）
+<table border="1" ><tr>
+<td colspan="3" rowspan="5">$x_{1}$1<br>1</td>
+<td>$x_{m+1}$</td>
+<td></td>
+<td>$\begin{array}{c}x_{l}\\ a_{1l}\end{array}$</td>
+<td></td>
+<td>$\begin{array}{c}x_{n}\\ a_{1n}\end{array}$</td>
+<td>b $b_{1}$</td>
+</tr><tr>
+<td>$a_{1,m+1}$</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td>·.</td>
+<td>··</td>
+<td>..</td>
+<td></td>
+</tr><tr>
+<td>$a_{k,m+1}$</td>
+<td></td>
+<td>$a_{kl}$l</td>
+<td></td>
+<td>$a_{kn}$</td>
+<td>$b_{k}$</td>
+</tr><tr>
+<td>·.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>·<br>.<br>.</td>
+<td></td>
+</tr><tr>
+<td></td>
+<td colspan="2">1</td>
+<td>$a_{m,m+1}$</td>
+<td></td>
+<td>$a_{ml}$</td>
+<td></td>
+<td>$a_{mn}$</td>
+<td>$b_{m}$</td>
+</tr><tr>
+<td>0</td>
+<td>$...$0</td>
+<td>0</td>
+<td>$σ_{m+1}$</td>
+<td></td>
+<td>$σ_{l}$</td>
+<td></td>
+<td>$σ_{n}$</td>
+<td>$f_{0}$</td>
+</tr></table>
+若 $b_{k}<0$ ，则选择 $b_{k}$ 所在行的某个 $a_{kl}$ 为转轴元素，作矩阵行初等变换.我们有
+$b_{k}^{\prime }=\frac {b_{k}}{a_{kl}}$  且 $σ_{j}^{\prime }=σ_{j}-\frac {a_{kj}}{a_{kl}}σ_{l},j=m+1,\cdots ,n.$  (1)
+所以，转轴元素 $a_{kl}$ 应满足： $a_{kl}<0$  且 $\frac {σ_{l}}{a_{kl}}=\max \left\{\frac {σ_{j}}{a_{kj}}|a_{kj}<0\right\}$ 
+![](https://web-api.textin.com/ocr_image/external/559ee83cabfb9cce.jpg)
+# 对偶单纯形法
+## 例.用对偶单纯形法求解LP
+<table border="1" ><tr>
+<td>original LP<br>min  $x_{1}+2x_{2}$s.t.  $x_{1}+2x_{2}\geq 4$ $x_{1}$ $\leq 5$ $3x_{1}+x_{2}\geq 6$ $x_{i}\geq 0,i=1,2$</td>
+</tr></table>
+第17章 对偶单纯形法
+9/13
+# 对偶单纯形法
+## 例.用对偶单纯形法求解 LP
+<table border="1" ><tr>
+<td>original LP<br>min  $x_{1}+2x_{2}$s.t.  $x_{1}+2x_{2}\geq 4$ $x_{1}$ $\leq 5$ $-$ $3x_{1}$ $\{\}_{\text {卜}x_{2}>}$ $x_{i}\geq 0,i=1,2$</td>
+<td>标准化</td>
+<td>(PO)<br>min  $x_{1}+2x_{2}$s.t.  $-x_{3}$ $=4$ $+x$ $=5$ $3$ $\cdot$ $x_{1}$ $x_{5}=6$ $i=1$</td>
+</tr></table>
+分析：显然，(PO）的A中没有自然基，不能直接用单纯性，需要用两阶段、大M方法等.现在我们用对偶单纯形法直接求解.
+（PO）的初始表
+解.
+<table border="1" ><tr>
+<td rowspan="3"></td>
+<td>$\{\}^{2}$ $。$</td>
+<td>$>$</td>
+<td>$\{\}^{\diamond }$</td>
+<td>$c$</td>
+<td>b 4</td>
+</tr><tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>$0$ $-$</td>
+<td>0</td>
+</tr><tr>
+<td>/</td>
+<td>$\{\}^{\diamond }$</td>
+<td>0</td>
+<td>$-1$</td>
+<td>6</td>
+</tr><tr>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr></table>
+# 对偶单纯形法
+## 例.用对偶单纯形法求解LP
+original LP (PO) min $x_{1}+2x_{2}$ min $x_{1}+2x_{2}$ s.t. $x_{1}+2x_{2}\geq 4$ 标准化 s.t. $-x_{3}$ $=4$ $x_{1}$ $-$ $\leq 5$ $3$ $\cdot$ $+x$ $=5$ $3x_{1}$ $+x_{2}&gt;$ $x_{1}$ $x_{5}=6$ $x_{i}\geq 0,i=1,2$ $i=1$
+![](https://web-api.textin.com/ocr_image/external/af48722bc8ef0ed5.jpg)
+分析：显然，(PO）的A中没有自然基，不能直接用单纯性，需要用两阶段、大M方法等.现在我们用对偶单纯形法直接求解.
+（PO）的初始表
+解.
+<table border="1" ><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"></td>
+</tr></table>
+对1,3两行作负数乘
+<table border="1" ><tr>
+<td>$x_{1}$ $x_{4}$ $x_{5}$</td>
+<td>b</td>
+</tr></table>
+![](https://web-api.textin.com/ocr_image/external/89a02fd8e8c9dcb3.jpg)
+第17章 对偶单纯形法
+# 对偶单纯形法
+$\boldsymbol {r}_{D}\geq 0$ 且 $b\geq 0,$ 
+<table border="1" ><tr>
+<td rowspan="5"><img src="https://web-api.textin.com/ocr_image/external/0ec720e32835a3b1.jpg"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>$-4$</td>
+</tr></table>
+∴∴（PO）求解完毕.
+最优解为 $\left(x_{1},x_{2}\right)=(4,0)$ 
+## 例.用对偶单纯形法求解LP
+<table border="1" ><tr>
+<td>original LP<br>min<br>$\begin{array}{}12x_{1}+8x_{2}+16x_{3}\\ 2x_{1}+x_{2}+4x_{3}\\ 2x_{1}+2x_{2}\quad \quad +4\end{array}$s.t.<br>$x_{i}\geq 0,i=1,\cdots ,4$</td>
+<td>$\Rightarrow \left|\begin{array}{c}\text {(PU)}\\ \text {min}12x_{1}+8x_{2}+16x_{3}+12\\ \text {s.t.}2x_{1}+x_{2}+4x_{3}\quad \quad -\\ 2x_{1}+2x_{2}\quad \quad +4x_{4}\\ x_{i}\geq 0,\;i=1,\cdots ,6\\ \end{array}\right.$<img src="https://web-api.textin.com/ocr_image/external/25af01744616c5bd.jpg"></td>
+<td>$8x_{2}+16x_{3}+12x_{4}$ $-x_{5}$ $=2$ $-x_{6}=3$</td>
+</tr></table>
+10/
+对偶单纯形法
+### （PO）的初始表
+<table border="1" ><tr>
+<td>$x_{1}$</td>
+<td>x2</td>
+<td>$x_{3}$</td>
+<td>x4</td>
+<td>x5</td>
+<td>x6</td>
+<td>b</td>
+</tr><tr>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>-1</td>
+<td>0</td>
+<td>2</td>
+</tr><tr>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>-1</td>
+<td>3</td>
+</tr><tr>
+<td>12</td>
+<td> 8</td>
+<td> 16</td>
+<td> 12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr></table>
+对1,2两行作负数乘 $\because$ $\boldsymbol {r}_{D}\geq 0$ 且存在 $b_{i}<0$ 
+<table border="1" ><tr>
+<td rowspan="4">→</td>
+<td>$x_{1}$ $x_{2}$</td>
+<td></td>
+<td>$x_{3}$</td>
+<td>$x_{4}$</td>
+<td>$x_{5}$</td>
+<td>$x_{6}$</td>
+<td>b</td>
+</tr><tr>
+<td>$-2-1-4$</td>
+<td></td>
+<td>$0$</td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>$-2$</td>
+</tr><tr>
+<td>$-2-2$</td>
+<td></td>
+<td>0</td>
+<td>$-4$</td>
+<td>0</td>
+<td>1</td>
+<td>$-3$</td>
+</tr><tr>
+<td>$12$</td>
+<td>8</td>
+<td>16</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr></table>
+<table border="1" ><tr>
+<td rowspan="4">→</td>
+<td></td>
+<td>$x_{2}$</td>
+<td>$x_{3}$</td>
+<td>$x_{4}$</td>
+<td>$x_{5}$</td>
+<td>$x_{6}$</td>
+<td>b</td>
+</tr><tr>
+<td>$-2$</td>
+<td>$-1$</td>
+<td>$-4$</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>$-2$</td>
+</tr><tr>
+<td></td>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>$-\frac {1}{4}$</td>
+<td>$\frac {3}{4}$</td>
+</tr><tr>
+<td></td>
+<td>2</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>-9</td>
+</tr></table>
+∴.选择 $b_{i}<0$ 
+所在的行作转轴，例如第2行．
+. $\boldsymbol {r}_{D}\geq 0$ 且存在 $b_{i}<0$ 
+选择 $b_{i}<0.$ 
+所在的行作转轴，例如第1行． $2$ 
+对偶单纯形法
+<table border="1" ><tr>
+<td>$x_{1}$ $2$</td>
+<td>$x_{2}$1</td>
+<td>$x_{3}$</td>
+<td>$x_{4}$0 $-1$</td>
+<td>$x_{5}$</td>
+<td>$x_{6}$0</td>
+<td>b2</td>
+</tr><tr>
+<td>$-\frac {1}{2}$</td>
+<td>0</td>
+<td>$-2$</td>
+<td>1</td>
+<td>$\frac {1}{2}$</td>
+<td>$-\frac {1}{4}$</td>
+<td>$-\frac {1}{4}$</td>
+</tr><tr>
+<td>2</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>2</td>
+<td>3</td>
+<td>-13</td>
+</tr></table>
+: $\boldsymbol {r}_{\boldsymbol {D}}\geq 0$ 且存在 $b_{i}<0$ 
+选择 $b_{i}<0.$ 
+所在的行作转轴，例如第2行．
+<table border="1" ><tr>
+<td rowspan="2">$0$</td>
+<td>$x_{2}$</td>
+<td>$x_{3}$ $-4$</td>
+<td>$x_{4}$</td>
+<td>$x_{5}$</td>
+<td rowspan="2">x6 $-1$ $\frac {1}{2}$</td>
+<td rowspan="2">b<br>1</td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1<br>$-1$</td>
+</tr><tr>
+<td>1</td>
+<td>0</td>
+<td>A</td>
+<td>$-2$</td>
+<td></td>
+<td></td>
+<td>$\frac {1}{2}$</td>
+</tr><tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>$-14$</td>
+</tr></table>
+$\because$ $\boldsymbol {r}_{D}\geq 0$ 且 $b>0$ 
+∴(PO)求解完毕.
+所以，(PO）的最优解为 $\left(x_{1},x_{2},x_{3},x_{4}\right)=(1/2,1,0,0)$ 
+注：我们可以利用互补松弛条件，获得对偶问题的最优解 $\left(λ_{1},λ_{2}\right)=(4,2).$ 
+## Homework
+### 课后作业：17.5,17.10,17.15,17.24．
+第17章 对偶单纯形法
+13/13

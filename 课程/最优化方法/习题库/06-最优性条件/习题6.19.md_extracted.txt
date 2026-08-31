@@ -1,0 +1,117 @@
+# 习题6.19
+
+---
+title: 习题6.19 - 最优视角问题（艺术品观赏距离）
+subject: 最优化方法
+chapter: 6
+section: 最优性条件
+source: 无动画Chapter6.pdf
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - 一元优化
+  - 导数应用
+  - 极值问题
+  - 几何建模
+---
+
+# 习题 6.19
+
+一位收藏家站在距离墙为 $x$ 英尺的地方，墙上挂着一幅长度为 $a$ 英尺的艺术作品，该作品的下缘距离收藏家眼睛的垂直距离为 $b$ 英尺。试确定合适的距离 $x$，使得收藏家的视角 $\theta$ 达到最大。
+
+> **提示：**
+> (1) 最大化 $\theta$ 相当于最大化 $\tan(\theta)$；
+> (2) 令 $\theta = \theta_1 - \theta_2$，则 $\displaystyle \tan(\theta) = \frac{\tan(\theta_1) - \tan(\theta_2)}{1 + \tan(\theta_1)\tan(\theta_2)}$。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 以眼睛为原点 $(0, 0)$，墙壁为竖直线 $x$ 英尺处。艺术品从高度 $b$ 延伸到 $b + a$。
+> - 视角 $\theta$ 是两条视线（到艺术品下缘和上缘）之间的夹角：$\theta = \theta_1 - \theta_2$。
+> - 利用正切差角公式，将 $\tan(\theta)$ 表示为 $x$ 的函数。
+> - 由于 $\theta \in (0, \pi/2)$，$\tan(\theta)$ 严格单调递增，故最大化 $\tan(\theta)$ 等价于最大化 $\theta$。
+> - 求导、令 $f'(x) = 0$，解出最优距离 $x^*$。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> ### 第一步：几何建模
+>
+> 建立二维坐标系：将收藏家的眼睛置于原点 $O = (0, 0)$，墙壁为距眼睛 $x$ 英尺处的竖直线。
+>
+> 艺术品在墙壁上从高度 $b$ 延伸到 $b + a$（单位：英尺）：
+> - 下缘 $P_{\text{bottom}} = (x,\; b)$
+> - 上缘 $P_{\text{top}} = (x,\; b + a)$
+>
+> 定义视线与水平线的夹角：
+> - $\theta_2 = \arctan\left(\frac{b}{x}\right)$（下缘视线与水平线的夹角）
+> - $\theta_1 = \arctan\left(\frac{b + a}{x}\right)$（上缘视线与水平线的夹角）
+>
+> 视角 $\theta$ 是两者之差：
+>
+> $$\theta = \theta_1 - \theta_2 = \arctan\left(\frac{b + a}{x}\right) - \arctan\left(\frac{b}{x}\right)$$
+>
+> ### 第二步：构造目标函数
+>
+> 利用正切差角公式：
+>
+> $$\tan(\theta) = \tan(\theta_1 - \theta_2) = \frac{\tan(\theta_1) - \tan(\theta_2)}{1 + \tan(\theta_1) \tan(\theta_2)}$$
+>
+> 代入 $\tan(\theta_1) = \frac{b + a}{x}$，$\tan(\theta_2) = \frac{b}{x}$：
+>
+> $$\begin{aligned} \tan(\theta) &= \frac{\frac{b + a}{x} - \frac{b}{x}}{1 + \frac{b + a}{x} \cdot \frac{b}{x}} = \frac{\frac{a}{x}}{1 + \frac{b(b + a)}{x^2}} \\ &= \frac{\frac{a}{x}}{\frac{x^2 + b(b + a)}{x^2}} = \frac{a}{x} \cdot \frac{x^2}{x^2 + b(b + a)} \\ &= \frac{a x}{x^2 + b(b + a)} \end{aligned}$$
+>
+> 记 $c = b(b + a) > 0$，则：
+>
+> $$f(x) = \tan(\theta) = \frac{a x}{x^2 + c},\quad x > 0$$
+>
+> 由于 $\theta \in (0, \pi/2)$ 且 $\tan(\cdot)$ 在该区间上严格递增，最大化 $\theta$ 等价于最大化 $f(x)$。
+>
+> ### 第三步：求导与极值
+>
+> 对 $f(x)$ 求导：
+>
+> $$f'(x) = \frac{a (x^2 + c) - a x \cdot 2x}{(x^2 + c)^2} = \frac{a(x^2 + c - 2x^2)}{(x^2 + c)^2} = \frac{a(c - x^2)}{(x^2 + c)^2}$$
+>
+> 令 $f'(x) = 0$：
+>
+> $$c - x^2 = 0 \implies x = \sqrt{c} = \sqrt{b(b + a)} \quad (\text{舍去负根 } x = -\sqrt{c} \text{，因为 } x > 0)$$
+>
+> ### 第四步：验证最大性
+>
+> 考察 $f'(x)$ 的符号：
+>
+> - 当 $0 < x < \sqrt{c}$ 时，$c - x^2 > 0$，$\implies f'(x) > 0$，$\implies f(x)$ 严格递增；
+> - 当 $x > \sqrt{c}$ 时，$c - x^2 < 0$，$\implies f'(x) < 0$，$\implies f(x)$ 严格递减。
+>
+> 由一阶导数符号变换可知，$x^* = \sqrt{c} = \sqrt{b(b + a)}$ 是 $f(x)$ 的**全局最大值**点。
+>
+> 因此视角 $\theta$ 在 $x^* = \sqrt{b(b + a)}$ 处达到最大。
+>
+> ### 第五步：结果与几何解释
+>
+> **答案：** 最优观赏距离为
+>
+> $$x^* = \sqrt{b(b + a)}$$
+>
+> **几何解释：** 最优距离等于下缘高度 $b$ 与上缘高度 $b + a$ 的**几何平均值**。当 $x = \sqrt{b(b + a)}$ 时，从眼睛到艺术品两端的两条视线与水平线构成的直角三角形满足某种对称性。
+>
+> **特例验证：**
+> - 若 $b = 0$（艺术品从眼高开始挂），则 $x^* = 0$——站得越近视角越大，这与直觉一致（视线角从水平线起始）。
+> - 若 $a$ 极小（一幅小画），$x^* \approx \sqrt{b^2} = b$——最佳距离约等于眼与下缘的高差。
+>
+> $$
+> \square
+> $$
+
+---
+
+## 相关知识点
+
+- [[06-最优性条件]] — 极值的一阶必要条件（$f'(x^*) = 0$）
+- [[06-最优性条件#6.6 一元可微函数在 R 上的极值|一元函数极值判据]] — 一阶导数符号变换验证最大性
+- [[05-微积分基础]] — 反三角函数、导数与极值

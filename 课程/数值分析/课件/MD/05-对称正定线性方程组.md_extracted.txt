@@ -1,0 +1,266 @@
+# 05-对称正定线性方程组
+
+---
+raw_title: 数值分析05SymmetricPositiveDefiniteLinearSystem
+subject: 数值分析
+source: 数值分析05SymmetricPositiveDefiniteLinearSystem.pptx
+status: PPTX转换（待校对）
+topics:
+  - Cholesky分解
+  - 梯度下降法
+  - 共轭梯度法
+  - 共轭方向
+---
+# 第05章 对称正定线性方程组
+
+对称正定线性方程组的解法 对称正定矩阵的定义和性质 Cholesky 分解 梯度 （最速）下降法 共轭方向法：共轭梯度法
+对称正定矩阵 定义：如果 ${A}^{T}=A$ ，则 $n\times n$ 矩阵 $A$ 是对称矩阵。 定义： $A$ 是 $n$ 阶方阵，如果 $∀x\in {\mathbb{R} }^{n},x\ne 0,$ 有 ${x}^{T}Ax>0,$ 则 $A$ 是正定矩阵。 例：
+A=\left(2225\right)
+A=\left(2445\right)
+正定 非正定
+对称正定矩阵 性质 1 ：对称正定矩阵非奇异 ( 可逆 ) 性质 2 ：任何对称正定矩阵的 主子式 也是对称正定矩阵。 性质 3 ：如果 $A$ 是对称矩阵，则 $A$ 是正定矩阵的 充要条件 是其所有 特征值是正数 。 性质 4 ：如果 $A$ 是 $n\times n$ 对称正定矩阵 , $P$ 是一个 满秩 的 $n\times m$ 矩阵（ $n\ge m$ ），则 ${P}^{T}AP$ 是 $m\times m$ 对称正定矩阵。
+Cholesky 分解 引理 1 ：两个上（下）三角阵相乘是上（下）三角阵。 引理 2 ：上（下）三角阵的逆是上（下）三角阵。
+$$
+{{L}^{−1}=\left({l}_{11}00\dots 0{l}_{21}{l}_{22}0\dots 0{l}_{31}{l}_{32}{l}_{33}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}{l}_{n2}{l}_{n3}\dots {l}_{nn}\right)}^{−1}={L}^{∗}?
+$$
+Cholesky 分解 $LD{L}^{T}$ 分解 定理： $A$ 是 实对称非奇异 矩阵，并 存在 $LU$ 分解 ，则它可以分解为 $A=LD{L}^{T}$ ，其中 $L$ 是下三角阵。 André-Louis Cholesky,1875-1918 Cholesky 分解定理： $A$ 是 实对称正定 矩阵，则它可以分解为 $A=L{L}^{T}$ , 其中 $L$ 是下三角阵。
+## Cholesky 分解 怎么分解？
+
+\left({a}_{11}{a}_{21}{a}_{31}\dots {a}_{n1}{a}_{21}{a}_{22}{a}_{32}\dots {a}_{n2}{a}_{31}{a}_{32}{a}_{33}\dots {a}_{n3}\vdots \vdots \vdots \vdots \vdots {a}_{n1}{a}_{n2}{a}_{n3}\dots {a}_{nn}\right)=\left({l}_{11}00\dots 0{l}_{21}{l}_{22}0\dots 0{l}_{31}{l}_{32}{l}_{33}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}{l}_{n2}{l}_{n3}\dots {l}_{nn}\right)∙\left({l}_{11}{l}_{21}{l}_{31}\dots {l}_{n1}0{l}_{22}{l}_{32}\dots {l}_{n2}00{l}_{33}\dots {l}_{n3}\vdots \vdots \vdots \ddots \vdots 000\dots {u}_{nn}\right)
+$$
+{a}_{ij}=_{s=1}^{s=n}{{l}_{is}{u}_{sj}}=_{s=1}^{s=min⁡(i,j)}{{l}_{is}{l}_{js}}
+$$
+({n}^{2}+n)/2$ 个方程， $({n}^{2}+n)/2$ 个未知数
+## Cholesky 分解
+
+\left({a}_{11}{a}_{21}{a}_{31}\dots {a}_{n1}{a}_{21}{a}_{22}{a}_{32}\dots {a}_{n2}{a}_{31}{a}_{32}{a}_{33}\dots {a}_{n3}\vdots \vdots \vdots \vdots \vdots {a}_{n1}{a}_{n2}{a}_{n3}\dots {a}_{nn}\right)=\left({l}_{11}00\dots 0{l}_{21}{l}_{22}0\dots 0{l}_{31}{l}_{32}{l}_{33}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}{l}_{n2}{l}_{n3}\dots {l}_{nn}\right)∙\left({l}_{11}{l}_{21}{l}_{31}\dots {l}_{n1}0{l}_{22}{l}_{32}\dots {l}_{n2}00{l}_{33}\dots {l}_{n3}\vdots \vdots \vdots \ddots \vdots 000\dots {u}_{nn}\right)
+$$
+{a}_{11}=_{s=1}^{s=min⁡(1,1)}{{l}_{1s}{l}_{s1}}={l}_{11}^{2}\to {l}_{11}
+$$
+$$
+{a}_{i1}=_{s=1}^{s=min⁡(i,1)}{{l}_{is}{l}_{1s}}={l}_{i1}{l}_{11}\to {l}_{i1} \left(2\le i\le n\right)
+$$
+## Cholesky 分解
+
+\left({a}_{11}{a}_{21}{a}_{31}\dots {a}_{n1}{a}_{21}{a}_{22}{a}_{32}\dots {a}_{n2}{a}_{31}{a}_{32}{a}_{33}\dots {a}_{n3}\vdots \vdots \vdots \vdots \vdots {a}_{n1}{a}_{n2}{a}_{n3}\dots {a}_{nn}\right)=\left({l}_{11}00\dots 0{l}_{21}{l}_{22}0\dots 0{l}_{31}{l}_{32}{l}_{33}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}{l}_{n2}{l}_{n3}\dots {l}_{nn}\right)∙\left({l}_{11}{l}_{21}{l}_{31}\dots {l}_{n1}0{l}_{22}{l}_{32}\dots {l}_{n2}00{l}_{33}\dots {l}_{n3}\vdots \vdots \vdots \ddots \vdots 000\dots {u}_{nn}\right)
+$$
+{a}_{22}=_{s=1}^{s=min⁡(2,2)}{{l}_{2s}{l}_{2s}}={l}_{21}^{2}+{l}_{22}^{2}\to {l}_{22}
+$$
+$$
+{a}_{i2}=_{s=1}^{s=min⁡(i,2)}{{l}_{is}{l}_{2s}}={l}_{i1}{l}_{21}+{l}_{i2}{l}_{22}\to {l}_{i2} \left(3\le i\le n\right)
+$$
+## Cholesky 分解
+
+\left({a}_{11}{a}_{21}{a}_{31}\dots {a}_{n1}{a}_{21}{a}_{22}{a}_{32}\dots {a}_{n2}{a}_{31}{a}_{32}{a}_{33}\dots {a}_{n3}\vdots \vdots \vdots \vdots \vdots {a}_{n1}{a}_{n2}{a}_{n3}\dots {a}_{nn}\right)=\left({l}_{11}00\dots 0\vdots \ddots 0\dots 0{l}_{k−1,1}\dots {l}_{k−1,k−1}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}\dots {l}_{n,k−1}\dots {l}_{nn}\right)∙\left({l}_{11}\dots {l}_{k−1,1}\dots {l}_{n1}0\ddots \vdots \dots \vdots 00{l}_{k−1,k−1}\dots {l}_{n,k−1}\vdots \vdots \vdots \ddots \vdots 000\dots {l}_{nn}\right)
+$$
+{a}_{kk}=_{s=1}^{s=min⁡(k,k)}{{l}_{ks}{l}_{ks}}=_{s=1}^{k−1}{{l}_{ks}^{2}}+{l}_{kk}^{2}\to {l}_{kk}
+$$
+$$
+{a}_{ik}=_{s=1}^{s=min⁡(i,k)}{{l}_{is}{l}_{ks}}=_{s=1}^{k−1}{{l}_{is}{l}_{ks}}+{l}_{ik}{l}_{kk}\to {l}_{ik} (k<i\le n)
+$$
+Cholesky 分解 $A=L{L}^{T}$ 分解过程 ( $A$ 对称正定 )
+\left({a}_{11}{a}_{21}{a}_{31}\dots {a}_{n1}{a}_{21}{a}_{22}{a}_{32}\dots {a}_{n2}{a}_{31}{a}_{32}{a}_{33}\dots {a}_{n3}\vdots \vdots \vdots \vdots \vdots {a}_{n1}{a}_{n2}{a}_{n3}\dots {a}_{nn}\right)=\left({l}_{11}00\dots 0{l}_{21}{l}_{22}0\dots 0{l}_{31}{l}_{32}{l}_{33}\dots 0\vdots \vdots \vdots \ddots \vdots {l}_{n1}{l}_{n2}{l}_{n3}\dots {l}_{nn}\right)∙\left({l}_{11}{l}_{21}{l}_{31}\dots {l}_{n1}0{l}_{22}{l}_{32}\dots {l}_{n2}00{l}_{33}\dots {l}_{n3}\vdots \vdots \vdots \ddots \vdots 000\dots {u}_{nn}\right)
+求解顺序 : ${l}_{11}\to {l}_{i1}\to {l}_{22}\to {l}_{i2}\to \dots \to {l}_{nn}$ 显式求解：
+$$
+{l}_{kk}={\left({a}_{kk}−_{s=1}^{k−1}{{l}_{ks}^{2}}\right)}^{1/2}
+$$
+$$
+{l}_{ik}=\left({a}_{ik}−_{s=1}^{k−1}{{l}_{is}{l}_{ks}}\right)/{l}_{kk}
+$$
+## Cholesky 分解 例：
+
+A=\left(4−22−22−42−411\right)=L{L}^{T}=\left({l}_{11}00{l}_{21}{l}_{22}0{l}_{31}{l}_{32}{l}_{33}\right)\left({l}_{11}{l}_{21}{l}_{31}0{l}_{22}{l}_{32}00{l}_{33}\right)
+=\left({l}_{11}^{2}{l}_{11}{l}_{21}{l}_{11}{l}_{31}{l}_{21}{l}_{11}{{l}_{21}^{2}+l}_{22}^{2}{l}_{21}{l}_{31}+{l}_{22}{l}_{32}{l}_{31}{l}_{11}{{l}_{31}l}_{21}+{{l}_{32}l}_{22}{l}_{31}^{2}+{l}_{32}^{2}+{l}_{33}^{2}\right)
+L=\left(200−1101−31\right)
+Cholesky 分解 直接 Cholesky 分解的伪代码 求解顺序 : ${l}_{11}\to {l}_{i1}\to {l}_{22}\to {l}_{i2}\to \dots \to {l}_{nn} k−1次$ 乘法， $k−1次$ 减法， 1 次除法 $k−1次$ 乘法， $k−1次$ 减法， 1 次开方 总计算量 =
+_{k=1}^{n}{\left(\left(2k−1\right)\left(n−k+1\right)\right)}=\frac{1}{3}{n}^{3}+\frac{1}{2}{n}^{2}+\frac{1}{6}n
+Cholesky 分解 例 ： $A=\left(4−22−22−42−411\right)$ 的 Cholesky 分解？
+梯度下降法 二次型引理：若 $A$ 是 $n$ 阶 对称正定 方阵，则求解 $Ax=b$ 等价于极小化二次型问题（优化问题）
+arg{min}_{x\in {\mathbb{R} }^{n}}q\left(x\right)=\frac{1}{2}\left(x,Ax\right)−\left(x,b\right)
+其中 $\left(x,y\right)={x}^{T}y.$
+梯度下降法 二次型引理引出的一类迭代法：在第 $k$ 步确定合适的搜索方向 ${v}_{k}$ , 进行一次迭代
+${x}_{k+1}={x}_{k}+{t}_{k}{v}_{k}$
+$$
+{t}_{k}=\frac{\left({{r}_{k},v}_{k}\right)}{\left({v}_{k},A{v}_{k}\right)},$ 残差向量： ${r}_{k}=b−A{x}_{k}$ 迭代的性质： $\left({r}_{k+1},{v}_{k}\right)=0$ 梯度（最速）下降法，取负梯度方向
+$$
+$$
+{v}_{k}=−\nabla q\left({x}_{k}\right)=b−A{x}_{k}
+$$
+## 梯度下降法 梯度下降法的几何解释
+
+${x}_{0}$
+${x}_{3}$
+${x}_{4}$
+${x}_{2}$
+${x}_{1}$
+## 梯度下降法 梯度下降法伪代码：
+
+integer k,{k}_{max}; real t
+real array {\left({a}_{ij}\right)}_{1:n\times 1:n},{b}_{1:n},{x}_{1:n},{y}_{1:n}, {x}_{1:n}^{\left(0\right)},{v}_{1:n},{w}_{1:n}
+x←{x}^{(0)}
+v=b−Ax
+for k=1 to {k}_{max} do
+w←Av
+t=\left(v,v\right)/\left(v,w\right)
+x←x+tv
+v←v−tw
+if \left(v\right)<TOL then
+output ′convergence′
+stop
+end if
+end for
+迭代法则 收敛判别 梯度 下降算法
+${x}_{k+1}={x}_{k}+{t}_{k}{v}_{k}$
+$$
+{t}_{k}=\frac{\left({{r}_{k},v}_{k}\right)}{\left({v}_{k},A{v}_{k}\right)}
+$$
+${v}_{k}={r}_{k}=b−A{x}_{k}$
+## 梯度下降法 例：
+
+\left(2225\right)\left(u \\ v\right)=\left(6 \\ 3\right), u=4,v=−1
+$$
+{x}_{0}={\left(0,0\right)}^{T},{v}_{0}=b−A{x}_{0}={\left(6,3\right)}^{T},A{v}_{0}={\left(18,27\right)}^{T}
+$$
+$$
+{t}_{0}=\frac{\left({v}_{0},{v}_{0}\right)}{\left({v}_{0},A{v}_{0}\right)}=\frac{45}{189}=\frac{5}{21}
+$$
+$$
+{x}_{1}={x}_{0}+{t}_{0}{v}_{0}={\left(\frac{10}{7},\frac{5}{7}\right)}^{T}
+$$
+$$
+{v}_{1}={v}_{0}−tA{v}_{0}={\left(\frac{12}{7},−\frac{24}{7}\right)}^{T}
+$$
+## 梯度下降法
+
+k
+k
+## 梯度下降法 Gauss-Seidel
+
+k
+梯度下降法 迭代收敛路径 $q\left(u,v\right)$ 的等值线及梯度下降的路径
+共轭方向法 $A$ 共轭 （ $A$ 正交）的定义：A是n阶 对称正定 方阵，对两个 $n$ 维向量定义内积
+$$
+{\left(v,w\right)}_{A}={v}^{T}Aw
+$$
+当 ${\left(v,w\right)}_{A}=0$ 时， $v$ 和 $w$ 为 $A$ 共轭。 $A$ 正交系 的定义： $A$ 是 $n$ 阶 对称正定 方阵， 如果向量组 ${{u}_{1},{u}_{2},\dots ,{u}_{n}}$ 满足 ${\left({u}_{i}, {u}_{j}\right)}_{A}=\left(0,          i\ne j \\ {d}_{i}>0, i=j\right) \left(1\le i,j\le n\right)$ ，则称 ${{u}_{1},{u}_{2},\dots ,{u}_{n}}$ 为 $A$ - 正交系 $。 A$ 标准正交系 的定义： $A$ 是 $n$ 阶 对称正定 方阵，如果向量组 ${{v}_{1},{v}_{2},\dots ,{v}_{n}}$ 满足 ${\left({v}_{i}, {v}_{j}\right)}_{A}={\delta }_{ij} \left(0\le i,j\le n\right)$ ，则称 ${{v}_{1},{v}_{2},\dots ,{v}_{n}}$ 为 $A$ - 标准正交系 $。 {{u}_{1},{u}_{2},\dots ,{u}_{n}}$ 和 ${{v}_{1},{v}_{2},\dots ,{v}_{n}}$ 均是 ${\mathbb{R} }^{n}$ 的线性无关向量组。
+共轭方向法 $A$ - 正交系 迭代定理：假设 $A$ 是 $n$ 阶对称正定方阵， ${{u}_{1},{u}_{2},\dots ,{u}_{n}}$ 是 一组 $A$ - 正交系，即 ${\left({u}_{i}, {u}_{j}\right)}_{A}={{d}_{i}\delta }_{ij} \left(1\le i,j\le n\right)。$ 定义 迭代： ${x}_{k}={x}_{k−1}+\left(\frac{\left(b−A{x}_{k−1},{u}_{k}\right)}{{\left({u}_{k},{u}_{k}\right)}_{A}}\right){u}_{k}\left(1\le k\le n\right)$ , 对于任意初始向量 ${x}_{0}\in {R}^{n}$ , 通过迭代可以得到 $A{x}_{n}=b$ . $A$ - 标准正交系 迭代定理：假设 $A$ 是 $n$ 阶对称正定方阵， ${{v}_{1},{v}_{2},\dots ,{v}_{n}}$ 是 一组 $A$ - 标准正交系， $即{\left({v}_{i},{v}_{j}\right)}_{A}={\delta }_{ij} \left(1\le i,j\le n\right)。$ 定义 迭代： ${x}_{k}={x}_{k−1}+\left(b−A{x}_{k−1},{v}_{k}\right){v}_{k}\left(1\le k\le n\right)$ , 对于任意初始向量 ${x}_{0}\in {R}^{n}$ , 通过迭代可以得到 $A{x}_{n}=b$ .
+共轭方向法 格拉姆 - 施密特正交化构造 $A$ 正交系： 取标准单位向量组 ${{e}_{1},\dots ,{e}_{n}}
+取 {u}_{1}={e}_{1}
+令 {u}_{2}={e}_{2}−{\beta }_{21}{u}_{1}, {\beta }_{21}=\frac{{\left({e}_{2},{u}_{1}\right)}_{A}}{{\left({u}_{1}, {u}_{1}\right)}_{A}}
+令 {u}_{k}={e}_{k}−{\beta }_{k1}{u}_{1}\dots −{\beta }_{k,k−1}{u}_{k−1} (2\le k\le n)
+$$
+{\beta }_{km}=\frac{{\left({e}_{k},{u}_{m}\right)}_{A}}{{\left({u}_{m},{u}_{m}\right)}_{A}} (1\le i\le k−1)
+$$
+格拉姆 - 施密特正交化构造 $A$ 标准 正交系： 取标准单位向量组 ${{e}_{1},\dots ,{e}_{n}}
+取 {v}_{1}=\frac{{e}_{1}}{\sqrt[]{{\left({e}_{1}, {e}_{1}\right)}_{A}}}
+令 {u}_{2}={e}_{2}−{\beta }_{21}{v}_{1}, {\beta }_{21}={\left({e}_{2},{v}_{1}\right)}_{A},{v}_{2}=\frac{{u}_{2}}{\sqrt[]{{\left({u}_{2}, {u}_{2}\right)}_{A}}}
+令 {u}_{k}={e}_{k}−{\beta }_{k1}{v}_{1}\dots −{\beta }_{k,k−1}{v}_{k−1} (2\le k\le n)
+$$
+{\beta }_{km}={\left({e}_{k},{v}_{m}\right)}_{A}(1\le i\le k−1)
+$$
+$$
+{v}_{k}=\frac{{u}_{k}}{\sqrt[]{{\left({u}_{k},{u}_{k}\right)}_{A}}}
+$$
+共轭方向法 例：使用共轭方向法求解 $\left(2225\right)\left(u \\ v\right)=\left(6 \\ 3\right)$ 1 、构造 A 正交系 ${u}_{1}={e}_{1}=\left(1 \\ 0\right)$ , ${u}_{2}={e}_{2}−\frac{{\left({e}_{2},{u}_{1}\right)}_{A}}{{\left({u}_{1},{u}_{1}\right)}_{A}}{u}_{1}=\left(0 \\ 1\right)−\left(1 \\ 0\right)=\left(−1 \\ 1\right)$ 2 、迭代 ${x}_{0}=\left(0 \\ 0\right)
+$$
+{x}_{1}={x}_{0}+\frac{\left(b−A{x}_{0},{u}_{1}\right)}{{\left({u}_{1},{u}_{1}\right)}_{A}}{u}_{1}=\left(0 \\ 0\right)+3\left(1 \\ 0\right)=\left(3 \\ 0\right)
+$$
+$$
+{x}_{2}={x}_{1}+\frac{\left(b−A{x}_{1},{u}_{2}\right)}{{\left({u}_{2},{u}_{2}\right)}_{A}}{u}_{2}=\left(3 \\ 0\right)−\left(−1 \\ 1\right)=\left(4 \\ −1\right)
+$$
+共轭方向法 梯度下降的路径
+共轭方向的路径
+共轭方向法具体算法：
+integer k,m,n; real t
+real array {\left({a}_{ij}\right)}_{1:n\times 1:n},{\left({v}_{ij}\right)}_{1:n\times 1:n},
+$$
+{\left({w}_{ij}\right)}_{1:n\times 1:n},{b}_{1:n},{x}_{1:n}, {x}_{1:n}^{\left(0\right)},{r}_{1:n}
+$$
+for k=1 to n do
+${v}_{k}←{e}_{k}$
+for m=1 to k−1 do
+t=\left({e}_{k},{w}_{m}\right)
+${v}_{k}←{v}_{k}−t{v}_{m}$
+end for
+${w}_{k}←A{v}_{k}$
+t=\sqrt[]{\left({v}_{k},{w}_{k}\right)}
+${v}_{k}←{v}_{k}/t$
+${w}_{k}←{w}_{k}/t$
+end for
+x←{x}^{(0)}
+r=b−Ax
+for k=1 to n do
+t=\left(r,{v}_{k}\right)
+x←x+t{v}_{k}
+r←r−t{w}_{k}
+if \left(r\right)<TOL then
+output ′convergence′
+stop
+end if
+end for
+施密特正交化 优化迭代法则 不追求精确解
+共轭 梯度 算法：
+${x}_{0}=initial guess$
+${v}_{0}={r}_{0}=b−A{x}_{0}$
+for k=0 to n−1 do
+if {r}_{k}=0, stop, end if
+$$
+{t}_{k}=\frac{\left({r}_{k},{v}_{k}\right)}{{\left({v}_{k}, {v}_{k}\right)}_{A}}= \frac{\left({r}_{k},{r}_{k}\right)}{{\left({v}_{k}, {v}_{k}\right)}_{A}}
+$$
+${x}_{k+1}={x}_{k}+{t}_{k}{v}_{k}$
+${r}_{k+1}={r}_{k}−{t}_{k}{Av}_{k}$
+$$
+{s}_{k}=−\frac{{\left({v}_{k},{r}_{k+1}\right)}_{A}}{{\left({v}_{k}, {v}_{k}\right)}_{A}}=\frac{\left({r}_{k+1},{r}_{k+1}\right)}{\left({r}_{k},{r}_{k}\right)}
+$$
+${v}_{k+1}={r}_{k+1}+{s}_{k}{v}_{k}$
+end for
+极小化 $q$ 搜索方向共轭：
+$$
+{\left({v}_{k}, {v}_{k+1}\right)}_{A}=0
+$$
+定理 ：令 $A$ 为 $n\times n$ 的 对称正定 矩阵， $b$ 是非零向量。在求解 $Ax=b$ 的共轭梯度法中，假设 ${r}_{k}\ne 0$ , 其中 $k<n$ ( 如果 ${r}_{k}=0，$ 方程已求解 ) 。则对于每个 $1\le k\le n$ 有： （ a ） ${\mathbb{R} }^{n}$ 的两个子空间等价 ( 相互线性表示 ) ：
+\left({r}_{0},\dots ,{r}_{k−1}\right)⟺\left({v}_{0},\dots ,{v}_{k−1}\right)
+（ b ）余项 ${r}_{k}$ 两两正交 $\left({r}_{k},{r}_{j}\right)=0$ ，其中 $j<k$ （ c ）搜索方向 ${v}_{k}$ 两两 $A$ 共轭 ${\left({v}_{k},{v}_{j}\right)}_{A}=0$ ，其中 $j<k$
+共轭梯度法 例：使用共轭梯度法求解 $\left(2225\right)\left(u \\ v\right)=\left(6 \\ 3\right)
+1 、 {x}_{0}=\left(0 \\ 0\right) , {r}_{0}={v}_{0}=\left(6 \\ 3\right)
+2 、 {t}_{0}=\frac{\left({r}_{0},{r}_{0}\right)}{\left({v}_{0},A{v}_{0}\right)}=\frac{5}{21}, {x}_{1}={x}_{0}+{t}_{0}{v}_{0}=\left(0 \\ 0\right)+\frac{5}{21}\left(6 \\ 3\right)=\left(\frac{10}{7} \\ \frac{5}{7}\right)
+$$
+{r}_{1}={r}_{0}−{t}_{0}{Av}_{0}=\left(6 \\ 3\right)−\frac{5}{21}\left(2225\right)\left(6 \\ 3\right)=\left(\frac{12}{7} \\ −\frac{24}{7}\right)
+$$
+## 共轭梯度法
+
+$$
+{s}_{0}=\frac{\left({r}_{1},{r}_{1}\right)}{\left({r}_{0},{r}_{0}\right)}=\frac{16}{49}
+$$
+$$
+{v}_{1}={r}_{1}+{s}_{0}{v}_{0}=\left(\frac{12}{7} \\ −\frac{24}{7}\right)+\frac{16}{49}\left(6 \\ 3\right)=\left(\frac{180}{49} \\ −\frac{120}{49}\right)
+$$
+3 、 {x}_{2}={x}_{1}+\frac{\left({r}_{1},{r}_{1}\right)}{\left({v}_{1},A{v}_{1}\right)}{v}_{1}=\left(\frac{10}{7} \\ \frac{5}{7}\right)+\frac{7}{10}\left(\frac{180}{49} \\ −\frac{120}{49}\right)=\left(4 \\ −1\right)
+## 共轭梯度法 梯度下降的路径
+
+共轭方向的路径
+## 共轭梯度的路径
+
+共轭梯度法 稀疏矩阵求解，精确解为 $\left(0,1,2,\dots ,n−1\right)$
+共轭梯度法 稀疏矩阵求解： Gauss 消元与 Gauss-Seidel 、共轭梯度对比
+10
+${10}^{𝟐}$
+${10}^{𝟑}$
+${10}^{𝟒}$
+${10}^{𝟓}$
+${10}^{𝟔}$
+${10}^{𝟕}$
+## Gauss−Seidel
+
+28 56 64 71 78 84 91 共轭梯度 11 34 38 42 45 49 53 10 28 56 64 71 78 84 91 共轭梯度 11 34 38 42 45 49 53 迭代次数 ${N}_{iter}$ 随矩阵维度 $n$ 的变化 $\left(TOL={10}^{−7}\right)
+10
+${10}^{𝟐}$
+${10}^{𝟑}$
+${10}^{𝟒}$
+${10}^{𝟓}$
+${10}^{𝟔}$
+${10}^{𝟕}$
+Gauss$ 消元 0s 0.001s 1.02s 1483.46s - - - Gauss-Seidel 迭代 0s 0s 0.002s 0.02s 0.20s 2.73s 22.65s 共轭梯度 0s 0s 0.002s 0.0019s 0.18s 1.91s 19.94s 10 0s 0.001s 1.02s 1483.46s - - - Gauss-Seidel 迭代 0s 0s 0.002s 0.02s 0.20s 2.73s 22.65s 共轭梯度 0s 0s 0.002s 0.0019s 0.18s 1.91s 19.94s 计算时间随矩阵维度 $n$ 的变化 $\left(迭代取TOL={10}^{−7}\right)$
+思考与练习 判断下列矩阵是否正定，如果正定请给出 Cholesky 分解，否则给出 $LD{L}^{T}$ 分解，并进行回代求解：
+\left(4−20−22−10−15\right)\left({x}_{1} \\ {x}_{2} \\ {x}_{3}\right)=\left(0 \\ 3 \\ −7\right)
+使用共轭方向法手动 求解： $\left(2226\right)\left(u \\ v\right)=\left(6 \\ 10\right)$ 编程实现梯度下降法及共轭梯度法，用程序求解第 1 题中的方程并对两种方法进行比较。

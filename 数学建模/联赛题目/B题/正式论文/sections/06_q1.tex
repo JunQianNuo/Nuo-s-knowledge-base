@@ -1,0 +1,154 @@
+% mcm-paper source binding (non-rendering metadata)
+% Repository HEAD: 66f49838fe3060c9c0286cb5aa87613ac20b9fc3
+% Q1 model reconciliation: 3919ddf34054d88f6f6b262b9a91967397b055d2
+% Q1 formal result source: c9ae677177845579364c9b245554db79a3492d4a
+% Q1 figure source: 6f0aae699bb2c17d5a58532699313bb8346c8861
+
+\section{问题一模型的建立与求解}\label{sec:q1}
+
+问题一仅含由陆地机场至海上设施的单向运输，无海上上客、人员时间窗和具体飞机排班。基于第~\ref{sec:data-foundation}节的统一可行性核，本文建立有限物理路线池--人员流整数规划模型：候选路线只确定机场、机型、停靠顺序和加油方案，人员配置由整数流变量在主问题中统一决定。
+
+\subsection{有限物理路线池--人员流整数规划模型建立}\label{subsec:q1-model}
+
+\subsubsection{决策变量与需求平衡约束}
+
+记需求组集合为$G_1$，组$g$人数为$q_g$；当前有限合法物理路线池为$\Omega$，可服务组$g$的路线集合为$\Omega(g)$。定义
+\[
+y_r\in\mathbb Z_+,\qquad
+z_{g,r}\in\mathbb Z_+,
+\]
+其中$y_r$表示路线$r$的执行架次数，$z_{g,r}$表示需求组$g$由路线$r$承运的人数。
+
+问题一所有人员均在机场上机、途中只下不上，因此任一路线的载客量随航段单调不增，最大值出现在首航段。故逐航段容量约束可等价简化为首航段的聚合容量约束；这一性质仅适用于问题一。
+
+\subsubsection{目标函数与优化层级}
+
+记路线$r$的飞机使用时间、燃油消耗和可用座公里分别为$T_r,F_r,AK_r$，组$g$由路线$r$运输时的在途时间和客公里为$A_{g,r},K_{g,r}$。五项指标写为
+
+\[
+\begin{aligned}
+T_1^{air}&=\sum_{r\in\Omega}T_ry_r, &
+T_1^{pax}&=\sum_{g}\sum_{r\in\Omega(g)}A_{g,r}z_{g,r},\\
+F_1^{fuel}&=\sum_{r\in\Omega}F_ry_r, &
+N_1^{flight}&=\sum_{r\in\Omega}y_r,\\
+U_1&=
+\frac{\sum_g\sum_{r\in\Omega(g)}K_{g,r}z_{g,r}}
+{\sum_{r\in\Omega}AK_ry_r}.
+\end{aligned}
+\tag{6-1}\label{eq:q1-metrics}
+\]
+
+令$\mathbf{x}=(y,z)$，并按
+$T_1^{air}\rightarrow T_1^{pax}\rightarrow F_1^{fuel}\rightarrow N_1^{flight}\rightarrow -U_1$
+进行词典序优化，则问题一正式模型统一写为
+
+\[
+\begin{array}{@{}l@{\qquad}c@{}}
+\displaystyle \min_{\mathbf{x}}
+&
+\displaystyle
+f_1(\mathbf{x})
+=
+\operatorname{lex}\!\left(
+T_1^{air},T_1^{pax},F_1^{fuel},N_1^{flight},-U_1
+\right)
+\\[1.0em]
+\mathrm{s.t.}
+&
+\left\{
+\begin{aligned}
+\sum_{r\in\Omega(g)} z_{g,r} &= q_g,
+&& g\in G_1,\\
+\sum_{g:\,r\in\Omega(g)} z_{g,r} &\le Q_{k_r}y_r,
+&& r\in\Omega,\\
+y_r &\in\mathbb Z_+,
+&& r\in\Omega,\\
+z_{g,r} &\in\mathbb Z_+,
+&& g\in G_1,\ r\in\Omega(g).
+\end{aligned}
+\right.
+\end{array}
+\tag{6-2}\label{eq:q1-model}
+\]
+
+式~\eqref{eq:q1-model}中第一条保证需求完整运输，第二条为问题一特有的聚合容量约束。更高优先级目标取得当前最好值后固定，再继续优化下一目标；分式利用率采用Dinkelbach迭代处理。
+
+\subsection{问题一模型求解}\label{subsec:q1-solution}
+
+\subsubsection{候选物理路线生成}
+
+完全枚举52座海上设施的1--5元组合规模过大，因此首先采用“种子设施+地理近邻”的方式生成候选设施簇。对每个种子设施，仅从其若干最近邻中组合其余成员，从而将候选规模控制在可求解范围内；该步骤属于启发式构池，也是当前有限路线池与完整可行空间之间的主要差别之一。
+
+固定机场$b$、机型$k$及候选设施簇$S$后，对$m=|S|\le5$个必访设施的访问顺序进行完整枚举，最多需要考察$5!=120$种排列。对于每一种访问顺序，内层采用Dijkstra式燃油标号搜索决定是否插入额外加油停靠以及具体加油位置。搜索状态可表示为
+\[
+(v,\,p,\,n_{\mathrm{ref}}),
+\]
+其中$v$为当前位置，$p$为已经完成的必访设施数，$n_{\mathrm{ref}}$为已插入的额外加油停靠数；每个状态对应的标号记录累计飞机使用时间和当前剩余燃油。由当前位置向下一必访设施或候选加油设施扩展时，按航段距离扣除燃油并累加逐段向上取整后的飞行时间；若到达后的剩余燃油低于安全余油，或累计海上着陆次数超过5次，则直接舍弃该标号。若在合法加油设施执行加油，则额外计入加油停靠时间，并将离站燃油恢复至该机型满油状态。由此可在给定访问顺序和加油候选集合内搜索得到飞机使用时间最小的合法加油方案。
+
+为控制内层搜索规模，正式运行并未将8座合法加油设施全部作为额外插入候选，而是默认保留与当前机场和任务设施最相关的4座加油设施。因此，上述标号搜索应理解为在给定必访设施集合、访问顺序及所选加油候选子集内的精确搜索，而不等同于完整路线空间上的全局最优搜索。所有生成路线随后通过第~\ref{sec:data-foundation}节的统一物理可行性检查和支配筛选后进入主问题。正式运行由3200个候选设施簇生成31257条物理路线，并进一步筛选得到初始主问题路线池。
+
+\subsubsection{整数主问题与解引导扩池}
+
+首先用贪心方案为CP-SAT提供初始可行解，再求解式~\eqref{eq:q1-model}。随后依据当前已选路线的设施组合构造子集、并集和单点替换邻域，重新生成有潜力的路线并回灌主问题。正式运行进行了4轮解引导扩池，路线池由2220条扩展至2490条。如图~\ref{fig:q1-process}所示，扩池第1轮至第4轮对应4次定向候选池补充；每轮均依据当前已选路线构造邻域并重新生成候选路线，以逐步扩大高质量组合空间。
+
+主目标稳定后依次进行人员在途时间、燃油、架次数和利用率优化。最终聚合人员流被拆分为具体架次并按原始人员编号回填，再由独立校验程序重新检查人员完整性、容量、燃油和全部评价指标。
+
+\subsection{问题一求解结果及分析}\label{subsec:q1-results}
+
+\subsubsection{总体结果与求解过程}
+
+正式求解得到当前有限路线池下的最好已验证可行方案，主要指标汇总于表~\ref{tab:q1-summary}。
+
+\begin{table}[htbp]
+\centering
+\caption{问题一当前正式方案主要指标}
+\label{tab:q1-summary}
+\small
+\begin{tabular}{c c c c c}
+\toprule
+$T_1^{air}$/min & $T_1^{pax}$/人$\cdot$min & 燃油/kg & 架次数 & $U_1$\\
+\midrule
+14759 & 126288 & 118693.0 & 88 & 49.64\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+如图~\ref{fig:q1-process}所示，正式求解链条从贪心可行解16318 min出发，经主问题初次求解降至14886 min，并在4轮解引导扩池后进一步降至14759 min。主目标在后续扩池中仍持续改善，说明围绕当前解补充候选路线能够有效扩大高质量组合空间。LP松弛参考下界为14247.6 min，当前CP-SAT最好界为14470 min，因此
+
+\[
+14470\le T_{1,\Omega}^{*}\le\widehat T_{1,\Omega}=14759,
+\tag{6-3}\label{eq:q1-bound}
+\]
+
+当前可行值与求解器界相差1.96\%。结合图~\ref{fig:q1-process}中的单调改进过程可知，当前路线池已经获得较稳定的高质量解，但尚不能据此宣称池内或原问题全局最优。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.90\textwidth]{figures/04求解过程及飞机使用时间变化.pdf}
+    \caption{问题一求解过程及飞机使用时间变化}
+    \label{fig:q1-process}
+\end{figure}
+
+图~\ref{fig:q1-lex-status}给出了五级目标的求解状态、相对差距与计算代价。各阶段均获得可行解但未完成完整词典序最优性认证，其中人员在途时间阶段的相对差距约为8.73\%，明显高于主目标和燃油阶段，是当前词典序链中最主要的未收敛环节；利用率采用Dinkelbach迭代处理，其计算时间也明显高于前四级目标。因此，最终方案应理解为在既定优先级下逐级改进得到的经验证可行方案。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.90\textwidth]{figures/05五级目标的求解状态与相对差距.pdf}
+    \caption{问题一五级目标的求解状态与相对差距}
+    \label{fig:q1-lex-status}
+\end{figure}
+
+\subsubsection{运输方案结构分析}
+
+最终88个架次中，较大容量的T2和T3承担全部运输任务，其中83个架次满载起飞，占全部架次的94.3\%；全部架次首航段共提供1609个座位，其中1600个被占用，因此整体起飞座位装载率达到99.44\%。但总体距离加权座位利用率仅为49.64\%，原因是人员沿多设施路线逐站下机，返场及后续航段仍产生可用座公里。
+
+如图~\ref{fig:q1-leg-utilization}所示，真实T3-48架次对此给出直观解释：飞机由A03满载19人起飞，经F036、F031、F023和F046后返场，并在F031完成加油；机上人数随各站下客由19依次降至15、10、1和0，因此该架次虽然满载起飞，距离加权利用率仍为47.25\%。这既验证了问题一中聚合容量约束的合理性，也说明“起飞满载”与“全航程高利用率”并不等价；提高总体座位利用率的关键不仅是首航段装满，还在于减少后续低载客航段和空返距离。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.92\textwidth]{figures/06逐航段载客量与距离加权座位利用率.pdf}
+    \caption{问题一逐航段载客量与距离加权座位利用率}
+    \label{fig:q1-leg-utilization}
+\end{figure}
+
+综上，有限物理路线池与人员流联合优化能够完整运输1600名人员，并通过解引导扩池持续改善主目标；最终方案已通过独立验证。由于候选池采用启发式构造且各词典序阶段均只获得可行解、尚未完成最优性证明，14759 min仅作为当前有限路线池下的最好已验证可行值。

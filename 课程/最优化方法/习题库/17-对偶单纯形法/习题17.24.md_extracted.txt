@@ -1,0 +1,143 @@
+# 习题17.24
+
+---
+title: 习题17.24 - 二次规划的对偶与弱对偶引理
+subject: 最优化方法
+chapter: 17
+section: 对偶单纯形法
+source: Screenshot_2026-05-26-00-11-23-03_0a79bb7e1b8811a.txt
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - 二次规划对偶
+  - 弱对偶引理
+  - 对偶定理
+  - Lagrange对偶
+  - 最优性条件
+---
+
+# 习题 17.24
+
+给定二次规划问题（作为原问题）：
+
+$$\begin{aligned}
+\text{minimize} \quad & \frac{1}{2}\|x\|^2 = \frac{1}{2}x^\top x \\
+\text{subject to} \quad & Ax \geq b
+\end{aligned}$$
+
+其中 $A \in \mathbb{R}^{m \times n}$，$b \in \mathbb{R}^m$。
+
+考虑相应的**对偶二次规划问题**：
+
+$$\begin{aligned}
+\text{maximize} \quad & -\frac{1}{2}\lambda^\top(AA^\top)\lambda - \lambda^\top b \\
+\text{subject to} \quad & \lambda \geq 0
+\end{aligned}$$
+
+令 $\phi$ 和 $\psi$ 分别表示原问题与对偶问题的目标函数。
+
+**a.** 写出这种情况下的**弱对偶引理**，并对其进行证明；
+
+**b.** 试证明：如果 $x_0$ 和 $\lambda_0$ 分别是原问题和对偶问题的可行解，并有 $\phi(x_0) = \psi(\lambda_0)$，那么 $x_0$ 和 $\lambda_0$ 分别是原问题和对偶问题的**最优解**。
+
+> 提示：可以运用线性规划对偶问题的一些结论。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> **(a)** 弱对偶引理：对任意原可行解 $x$（$Ax \geq b$）和对偶可行解 $\lambda$（$\lambda \geq 0$），有：
+>
+> $$\phi(x) \geq \psi(\lambda)$$
+>
+> 即 $\dfrac{1}{2}x^\top x \geq -\dfrac{1}{2}\lambda^\top(AA^\top)\lambda - \lambda^\top b$。
+>
+> **证明思路**：构造一个与 $x$ 和 $\lambda$ 都相关的量，利用基本不等式 $(u - v)^\top(u - v) \geq 0$ 即 $\|u\|^2 + \|v\|^2 \geq 2u^\top v$。
+>
+> 具体地，展开 $\|x - A^\top\lambda\|^2 \geq 0$：
+>
+> $$x^\top x - 2\lambda^\top A x + \lambda^\top AA^\top \lambda \geq 0$$
+>
+> 利用 $Ax \geq b$ 和 $\lambda \geq 0$ 有 $\lambda^\top A x \geq \lambda^\top b$（因为 $\lambda \geq 0$ 保序）。
+>
+> 代入得弱对偶不等式。
+>
+> **(b)** 由弱对偶引理：对所有可行 $x, \lambda$，$\phi(x) \geq \psi(\lambda)$。若存在 $x_0, \lambda_0$ 使 $\phi(x_0) = \psi(\lambda_0)$，则：
+> - $\phi(x) \geq \psi(\lambda_0) = \phi(x_0)$ 对所有可行 $x$ → $x_0$ 是原问题最优解
+> - $\psi(\lambda) \leq \phi(x_0) = \psi(\lambda_0)$ 对所有可行 $\lambda$ → $\lambda_0$ 是对偶问题最优解
+>
+> 这与线性规划的弱对偶引理和最优性充分条件的逻辑完全一致。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### (a) 弱对偶引理
+>
+> **引理：** 设 $x \in \mathbb{R}^n$ 满足 $Ax \geq b$（原问题可行），$\lambda \in \mathbb{R}^m$ 满足 $\lambda \geq 0$（对偶问题可行），则：
+>
+> $$\frac{1}{2}\|x\|^2 \geq -\frac{1}{2}\lambda^\top(AA^\top)\lambda - \lambda^\top b$$
+>
+> 即 $\phi(x) \geq \psi(\lambda)$。
+>
+> **证明：**
+>
+> 考虑 $\|x - A^\top\lambda\|^2 \geq 0$ 恒成立：
+>
+> $$\begin{aligned}
+> \|x - A^\top\lambda\|^2 &= (x - A^\top\lambda)^\top(x - A^\top\lambda) \\
+> &= x^\top x - x^\top A^\top\lambda - \lambda^\top A x + \lambda^\top A A^\top \lambda \\
+> &= x^\top x - 2\lambda^\top A x + \lambda^\top A A^\top \lambda \geq 0
+> \end{aligned}$$
+>
+> 因此：
+>
+> $$x^\top x \geq 2\lambda^\top A x - \lambda^\top A A^\top \lambda$$
+>
+> 两边除以 2：
+>
+> $$\frac{1}{2}x^\top x \geq \lambda^\top A x - \frac{1}{2}\lambda^\top A A^\top \lambda$$
+>
+> 由于 $\lambda \geq 0$ 且 $Ax \geq b$，有 $\lambda^\top A x \geq \lambda^\top b$（不等式被非负乘子保持方向）：
+>
+> $$\frac{1}{2}x^\top x \geq \lambda^\top b - \frac{1}{2}\lambda^\top A A^\top \lambda = -\frac{1}{2}\lambda^\top(AA^\top)\lambda - \lambda^\top b$$
+>
+> 整理即得 $\phi(x) \geq \psi(\lambda)$。$\blacksquare$
+>
+> ---
+>
+> ### (b) 最优性充分条件
+>
+> **命题：** 若 $x_0$ 原可行（$Ax_0 \geq b$），$\lambda_0$ 对偶可行（$\lambda_0 \geq 0$），且 $\phi(x_0) = \psi(\lambda_0)$，则 $x_0$ 和 $\lambda_0$ 分别是原问题和对偶问题的最优解。
+>
+> **证明：**
+>
+> 对任意原可行解 $x$（$Ax \geq b$），由弱对偶引理：
+>
+> $$\phi(x) \geq \psi(\lambda_0) = \phi(x_0)$$
+>
+> 这表明 $\phi(x_0)$ 是原问题所有可行解中的最小值，故 $x_0$ 是原问题的**最优解**。
+>
+> 对任意对偶可行解 $\lambda$（$\lambda \geq 0$），同理：
+>
+> $$\psi(\lambda) \leq \phi(x_0) = \psi(\lambda_0)$$
+>
+> 这表明 $\psi(\lambda_0)$ 是对偶问题所有可行解中的最大值，故 $\lambda_0$ 是对偶问题的**最优解**。
+>
+> $\blacksquare$
+>
+> ---
+>
+> **注：** 这个证明结构完全平行于线性规划中"若 $c^\top x = \lambda^\top b$ 则两者最优"的论证——弱对偶提供不等式方向，等号提供最优性。区别在于二次规划的目标函数是非线性的，但弱对偶引理依然给出了 $\phi(x) \geq \psi(\lambda)$ 的保序关系。
+
+---
+
+## 相关知识点
+
+- [[17-对偶单纯形法#1.2 弱对偶引理 (Weak Duality)|弱对偶引理]]
+- [[17-对偶单纯形法#1.3 强对偶定理 (Strong Duality)|对偶定理（强对偶）]]
+- Lagrange 对偶在二次规划中的推广
+- 凸二次规划的对偶性

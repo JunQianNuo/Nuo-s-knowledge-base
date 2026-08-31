@@ -1,0 +1,22 @@
+flowchart TD
+    AU["f_k → f 几乎一致收敛 a.u."]
+    AU --> DEF["∀n ∈ ℕ，∃ E_n ⊂ E：<br/>① m(E∖E_n) ＜ 1/n<br/>② 在 E_n 上 f_k ⇉ f 一致收敛"]
+
+    DEF --> GOOD["好集 E_n（n=1,2,3,…）"]
+
+    GOOD --> UNION["取并：F = E₁ ∪ E₂ ∪ E₃ ∪ …"]
+
+    UNION --> WHY1["为什么取并？<br/>x ∈ F ⇔ x 属于某个 E_n<br/>在那个 E_n 上一致收敛 ⇒ 逐点收敛<br/>x 只需要一个 E_n 就足够"]
+    WHY1 --> CONV["在 F 上：f_k 逐点收敛到 f ✓"]
+
+    GOOD --> BAD["坏集 E∖E_n<br/>每个测度 ＜ 1/n"]
+
+    BAD --> INTER["取交：E∖F = ∩(E∖E_n)"]
+
+    INTER --> WHY2["为什么取交？<br/>x ∈ E∖F ⇔ x 不在任何 E_n<br/>⇔ x 属于每个坏集"]
+    WHY2 --> ZERO["m(E∖F) ≤ m(E∖E_n) ＜ 1/n，∀n<br/>令 n→∞ ⇒ m(E∖F) = 0"]
+
+    CONV --> RESULT["f_k 在 F 上逐点收敛<br/>m(E∖F) = 0"]
+    ZERO --> RESULT
+
+    RESULT --> DONE["⇒ f_k → f 几乎处处收敛 a.e. ✓"]

@@ -1,0 +1,328 @@
+# 05-微积分基础
+
+---
+title: 第5章 微积分基础
+subject: 最优化方法
+source: 无动画Chapter5.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 5
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第5章 微积分基础
+## 1．序列和极限
+2．微分
+3．微分法则
+4．水平集和梯度
+5. Taylor 展开
+2
+第5章 微积分基础
+1/21
+## 序列和极限
+### 定义（R中的数列）
+集合 $\left\{x_{1},x_{2},\cdots ,x_{k},\cdots \right\}$ ，记为 $\left\{x_{k}\right\}$ 或 $\left\{x_{k}\right\}_{k=1}^{\infty }$ 或 $\left\{x_{k}\right\}_{k\in \mathbb {N}}$ 
+★数列 $\left\{x_{k}\right\}$ 是 $\left\{\begin{matrix}递增的\\ 非减的\end{matrix}\right.$ 递增的，如果 $x_{k}&lt;x_{k+1},\forall k$ ，如果 $x_{k}\leq x_{k+1},\forall k$
+![](https://web-api.textin.com/ocr_image/external/e8a9b184c271db00.jpg)
+![](https://web-api.textin.com/ocr_image/external/b4f414319c753c61.jpg)
+同理可定义，递减／非增的数列 $\left\{x_{k}\right\}$ 
+★非增／减数统一称单调数列.
+![](https://web-api.textin.com/ocr_image/external/9897034344d8a166.jpg)
+#### 定义（R中数列极限）
+任意 $\varepsilon >0$  若存在 $K>0$ （可能依赖于 $\varepsilon )$ 使得当 $k>K$ 时，有 $\left|x_{k}-x^{*}\right|<\varepsilon$ 则称 $x^{*}\in \mathbb {R}$ 是数列 $\left\{x_{k}\right\}$ 的极限.记为 $x_{k}\rightarrow x^{*}$ 或 $x^{*}=\lim _{k\rightarrow \infty }x_{k}$ 
+#### 定义 $\left(\mathbb {R}^{n}\right.$ 中序列（sequence)）
+集合 $\left\{\boldsymbol {x}^{(1)},\boldsymbol {x}^{(2)},\cdots ,\boldsymbol {x}^{(k)},\cdots \right\}$ ，记为 $\left\{\boldsymbol {x}^{(k)}\right\}$ 或 $\left\{\boldsymbol {x}^{(k)}\right\}_{k=1}^{\infty }$ 等.
+![](https://web-api.textin.com/ocr_image/external/a006604e8ce97ec5.jpg)
+对于 $\mathbb {R}^{n}$ $(n\geq 2)$ 中的序列，不存在递增／非增 $/\cdots \left(\because \mathbb {R}^{n}\right.$  中没有“序”）
+![](https://web-api.textin.com/ocr_image/external/dc9f903a2c3c6f76.jpg)
+第5章 微积分基础
+# 序列和极限
+## 定义（R”中序列极限）
+任意 $\varepsilon >0$  若存在 $K>0$ 可能依赖于 $\left.=_{\varepsilon }\right)$ 使得当 $k>K$ 时，有 $\left\|\boldsymbol {x}^{(k)}-\boldsymbol {x}^{*}\right\|<\varepsilon ,$ 则称 $\boldsymbol {x}^{*}\in \mathbb {R}^{n}$ 是序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 的极限.记为 $\boldsymbol {x}^{(k)}\rightarrow \boldsymbol {x}^{*}$ 或 $\boldsymbol {x}^{*}=\lim _{k\rightarrow \infty }\boldsymbol {x}^{(k)}$ 
+## 定理（设 $\left\{\boldsymbol {x}^{(k)}\right\}$ 是 $\mathbb {R}^{n}$ 中序列）
+$\left\{\boldsymbol {x}^{(k)}\right\}$ 是有界序列：存在 $r>0,$ 对于任意 $k$  有 $\left\|\boldsymbol {x}^{(k)}\right\|\leq r$ 
+$\left\{\boldsymbol {x}^{(k)}\right\}$ 是收敛序列： $\left\{\boldsymbol {x}^{(k)}\right\}$ 是有极限且唯一.
+## 定义（R中数列 $\left\{x_{k}\right\}$ 的上／下确界）
+。若 $\left\{x_{k}\right\}$ 有上（下）界 $Longrightarrow\left\{x_{k}\right\}$ 必有最小（大）上（下）界，称为上（下）确界.
+定理：R中单调有界数列必收敛.
+## 定义（序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 的子列）
+对于递增的自然数列 $\left\{m_{k}\right\}$ .序列 $\left\{\boldsymbol {x}^{\left(m_{k}\right)}\right\}=\left\{\boldsymbol {x}^{\left(m_{1}\right)},\boldsymbol {x}^{\left(m_{2}\right)},\cdots \right\}$ 称为 $\left\{\boldsymbol {x}^{(k)}\right\}$ 的子列，即 $\left\{\boldsymbol {x}^{\left(m_{k}\right)}\right\}$ 是通过略去 $\left\{\boldsymbol {x}^{(k)}\right\}$ 中的某些项得到的.
+![](https://web-api.textin.com/ocr_image/external/d15fa1714db5bb81.jpg)
+![](https://web-api.textin.com/ocr_image/external/9766f92c414bf670.jpg)
+![](https://web-api.textin.com/ocr_image/external/cf668608b570d1bc.jpg)
+![](https://web-api.textin.com/ocr_image/external/5365591c56f149bc.jpg)
+![](https://web-api.textin.com/ocr_image/external/7e052c1516000006.jpg)
+![](https://web-api.textin.com/ocr_image/external/9b5e347a050b7aa1.jpg)
+![](https://web-api.textin.com/ocr_image/external/53c52f09cc1daa2a.jpg)
+![](https://web-api.textin.com/ocr_image/external/60b010f3285dcee9.jpg)
+![](https://web-api.textin.com/ocr_image/external/b1e3f56b48fe30b3.jpg)
+第5章 微积分基础
+# 序列和极限
+# 定理（子列收敛性）
+如果序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ 收敛到 $\boldsymbol {x}^{*}$ ，则序列 $\left\{\boldsymbol {x}^{(k)}\right\}$  的任意子列也收敛到 $\boldsymbol {x}^{*}$ .
+定理（Bolzano-Weierstrass定理）
+有界序列必有收敛子列.
+定义（向量值函数 $\boldsymbol {f}:\mathbb {R}^{n}\rightarrow$ Rm的连续性）
+设 $\boldsymbol {f}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 是向量值函数³.如果对任意 $\varepsilon >0,$ 总存在 $δ>0$ 使得当 $\|\boldsymbol {y}-\boldsymbol {x}\|<δ$ 时，有 $\|\boldsymbol {f}(\boldsymbol {y})-\boldsymbol {f}(\boldsymbol {x})\|<\varepsilon ,$ 则称 $f$ 在点 $\boldsymbol {x}\in \mathbb {R}^{n}$ 处是连续的.
+$f$ 在点 $\boldsymbol {x}_{0}\in \mathbb {R}^{n}$ 连续 $Longleftrightarrow\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right).$ 
+![](https://web-api.textin.com/ocr_image/external/ec66101d10f16d92.jpg)
+对于任意收敛到 $\boldsymbol {x}_{0}$ 的序列 $\left\{\boldsymbol {x}^{(k)}\right\}$ $\lim _{k\rightarrow \infty }\boldsymbol {f}\left(\boldsymbol {x}^{(k)}\right)=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$ 
+<table border="1" ><tr>
+<td>向量值函数可简写为$\boldsymbol {f}(\boldsymbol {x})=\left[\begin{array}{c}\boldsymbol {f}_{1}(\boldsymbol {x})\\ :\\ \boldsymbol {f}_{m}(\boldsymbol {x})\end{array}\right]$</td>
+<td></td>
+</tr></table>
+## 连续性
+## 定义（下半连续（lower semicontinuous)）
+**设实值函数** $f:$ $\mathbb {R}^{n}\rightarrow$ R.任意 $\left\{\boldsymbol {x}_{k}\right\}\subset \mathbb {R}^{n}$ 满足 $\lim _{k\rightarrow \infty }\boldsymbol {x}_{k}=\boldsymbol {x}_{0}$ ，如果
+$\liminf _{k\rightarrow \infty }f\left(\boldsymbol {x}_{k}\right)\geq f\left(\boldsymbol {x}_{0}\right)$  ，则称 $f$ 在点 $\boldsymbol {x}_{0}\in \mathbb {R}^{n}$ 处下半连续.
+![](https://web-api.textin.com/ocr_image/external/4a25cc82d550a683.jpg)
+例 $f(\boldsymbol {x})=\|\boldsymbol {x}\|$ 是连续函数.
+## 定义（函数的闭性（closedness)）
+![](https://web-api.textin.com/ocr_image/external/237ff0c2db6b0f20.jpg)
+函数 $f:\mathbb {R}^{n}\rightarrow \mathbb {R}$ 是闭的 $Longleftrightarrow$ $dom(f)$ )是闭集且 $f$ 在 $dom(f)$  下半连续.
+## 定理
+函数 $f:$ $\mathbb {R}^{n}\rightarrow \mathbb {R},$ ，下列性质等价：
+·任意常数γ，水平集 $\{\boldsymbol {x}|f(\boldsymbol {x})\leq γ\}$ 是闭集.
+·任意 $\boldsymbol {x}\in \mathbb {R}^{n},f$ 在x处下半连续.
+·函数 $f$ 是闭的.
+Epaphep 01
+![](https://web-api.textin.com/ocr_image/external/f0bf1b41f31af729.jpg)
+# 序列和极限
+## 定义 $\left(\mathbb {R}^{n\times m}\right.$ 中的序列）
+**矩阵序列** $\left\{\boldsymbol {A}_{k}\right\}\subset \mathbb {R}^{nxm}$ ，若 $\lim _{k\rightarrow \infty }\left\|\boldsymbol {A}_{k}-\boldsymbol {A}\right\|=0$ ，则称 $\left\{\boldsymbol {A}_{k}\right\}\subset \mathbb {R}^{nxm}$ 收敛到矩阵 $\boldsymbol {A}\in \mathbb {R}^{n\times m}$ 
+## 引理（设方阵 $\left.\boldsymbol {A}\in \mathbb {R}^{nxn}\right)$ 
+$\lim _{k\rightarrow \infty }\boldsymbol {A}^{k}=0Longleftrightarrowρ(\boldsymbol {A})=\max _{1\leq i\leq n}\left|λ_{i}(\boldsymbol {A})\right|<1(ρ(\boldsymbol {A})$ 称为矩阵A的谱半径）
+**证.（利用矩阵的Jordan形）：**任意方阵A与Jordan形是相似，即
+存在 $\boldsymbol {T}\in \mathbb {R}^{n\times n},$ ，使得 $\boldsymbol {T}\boldsymbol {A}\boldsymbol {T}^{-1}=\text {diag}\left[\boldsymbol {J}_{1}\left(λ_{1}\right),\boldsymbol {J}_{2}\left(λ_{2}\right),\cdots ,\boldsymbol {J}_{t}\left(λ_{t}\right)\right]=\boldsymbol {J}$ 
+其中J为矩阵A的Jordan形.具体地
+$λ^{k}$ $λ_{r}$ $\boldsymbol {J}_{r}\left(λ_{r}\right)=\left[\begin{array}{cccc}λ_{r}&1&&\\ &·&·&\\ &·&·&\\ &&λ_{r}&1\\ &&&λ_{r}\end{array}\right],\because \left[\boldsymbol {J}_{r}(λ)\right]^{k}=\left[\begin{array}{cccc}λ^{k}&C_{k}^{1}λ^{k-1}&\cdots &C_{k}^{k-r+1}λ^{k-r+1}\\ &·&·&\\ &·&·&&\\ &&λ^{k}&C_{k}^{1}λ^{k-1}\\ &&&λ^{k}\end{array}\right.$ $λ^{k}$ $λ^{k}$ $\therefore \boldsymbol {T}\boldsymbol {A}^{k}\boldsymbol {T}^{-1}=\text {diag}\left[\left[\boldsymbol {J}_{1}\left(λ_{1}\right)\right]^{k},\cdots ,\left[\boldsymbol {J}_{t}\left(λ_{t}\right)\right]^{k}\right]=\boldsymbol {J}^{k}(*)$
+![](https://web-api.textin.com/ocr_image/external/fc378749971276ba.jpg)
+e
+![](https://web-api.textin.com/ocr_image/external/0e48cad8e6ed9846.jpg)
+![](https://web-api.textin.com/ocr_image/external/fb7c181e28f56b3f.jpg)
+2
+# 序列和极限
+$(*)$ 两边令 $k\rightarrow \infty Longrightarrow\lim _{k\rightarrow \infty }\boldsymbol {A}^{k}=\boldsymbol {T}^{-1}\left(\lim _{k\rightarrow \infty }\boldsymbol {J}^{k}\right)\boldsymbol {T}=0Longleftrightarrow\left|λ_{i}\right|<1.$ 
+## 引理（von Neumann引理）
+设方阵 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ .矩阵级数 $\sum _{k=0}^{\infty }\boldsymbol {A}^{k}$ 收敛 $企$ $\lim _{k\rightarrow \infty }\boldsymbol {A}^{k}=0$  且有 $\sum _{k=0}^{\infty }\boldsymbol {A}^{k}=(I-\boldsymbol {A})^{-1}$ 和 $\left\|(I-\boldsymbol {A})^{-1}\right\|\leq \frac {1}{1-\|\boldsymbol {A}\|}$ ·（板书证明）
+## 推论（若B充分接近可逆阵 $A,$  ，则B也可逆）
+设方阵A可逆.若 $\left\|\boldsymbol {A}^{-1}\boldsymbol {B}-I\right\|\leq 1$ （暗示 $\boldsymbol {B}\approx \boldsymbol {A})$ ，则B也可逆，且 $\boldsymbol {B}^{-1}=\sum _{k=0}^{\infty }\left(I-\boldsymbol {A}^{-1}\boldsymbol {B}\right)^{k}\boldsymbol {A}^{-1}$ 和 $\left\|\boldsymbol {B}^{-1}\right\|\leq \frac {\left\|\boldsymbol {A}^{-1}\right\|}{1-\left\|\boldsymbol {A}^{-1}(\boldsymbol {B}-\boldsymbol {A})\right\|}$ 
+证明提示：将 $I-\boldsymbol {A}^{-1}\boldsymbol {B}$ 代入Neumann引理中的A即可.
+## 推论
+设方阵A可逆且 $\left\|\boldsymbol {A}^{-1}\right\|\leq α$  若 $\|\boldsymbol {A}-\boldsymbol {B}\|\leq \beta$ 且 $α\beta <1,$ ，则B也可逆，且 $\left\|\boldsymbol {B}^{-1}\right\|\leq \frac {α}{1-α\beta }.$ 
+证明提示：将 $α,\beta$ 代入上述推论即可.
+![](https://web-api.textin.com/ocr_image/external/02ed49cf5f61f552.jpg)
+![](https://web-api.textin.com/ocr_image/external/e074b7c59fc14c63.jpg)
+![](https://web-api.textin.com/ocr_image/external/f50b1ac408866af8.jpg)
+第5章 微积分基础
+# 序列和极限
+定义（矩阵值函数F::R→ $\mathbb {R}^{n\times n}$ 的连续性）
+若 $\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}\left\|F(\boldsymbol {x})-F\left(\boldsymbol {x}_{0}\right)\right\|=0,$ 则称F在点 $\boldsymbol {x}_{0}\in \mathbb {R}^{r}$ 处连续.
+# 引理（矩阵值函数的连续性）
+设 $F:\mathbb {R}^{r}\rightarrow \mathbb {R}^{nxn}$ 在 $\boldsymbol {x}_{0}\in \mathbb {R}^{r}$ 处连续.若 $F\left(\boldsymbol {x}_{0}\right)$ 可逆，则存在 $\varepsilon >0$ ，使得对任意 $\boldsymbol {x}\in N\left(\boldsymbol {x}_{0}\right),F(\boldsymbol {x})$ 是可逆的.进一步， $[F(·)]^{-1}$ 在 $\boldsymbol {x}_{0}$ 处也连续.
+证.由定义知 $K(\boldsymbol {x})=F\left(\boldsymbol {x}_{0}\right)^{-1}\left[F\left(\boldsymbol {x}_{0}\right)-F(\boldsymbol {x})\right]$ .我们有
+$$F(\boldsymbol {x})=F\left(\boldsymbol {x}_{0}\right)-F\left(\boldsymbol {x}_{0}\right)+F(\boldsymbol {x})=F\left(\boldsymbol {x}_{0}\right)[I-K(\boldsymbol {x})]\tag{1}$$
+因此， $\|K(\boldsymbol {x})\|\leq \underbrace {\left\|F\left(\boldsymbol {x}_{0}\right)^{-1}\right\|}·\underbrace {\left\|F\left(\boldsymbol {x}_{0}\right)-F(\boldsymbol {x})\right\|}$ 有界 连续
+. $\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}\|K(\boldsymbol {x})\|=0LongrightarrowK(\boldsymbol {x})$ 连续 $\stackrel {\cdots (1)}{Longrightarrow}F$ 连续.
+$\because$ $\|K(\boldsymbol {x})\|<\theta <1$ ，当 $\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|<\varepsilon \stackrel {\text {由引理}}{{Longrightarrow}}I-K(\boldsymbol {x})$ 可逆
+$\therefore \stackrel {(1)}{Longrightarrow}F(\boldsymbol {x})$ 可逆.
+## 微分
+## 定义（仿射（affine)）
+线性函数l： $\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 和向量 $\boldsymbol {b}\in \mathbb {R}^{m}$ .任意 $\boldsymbol {x}\in \mathbb {R}^{n}$ ，都有函数 $\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}(\boldsymbol {x})+\boldsymbol {b},$ 则 $\boldsymbol {a}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 称为仿射函数.
+用仿射函数 $\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}(\boldsymbol {x})+\boldsymbol {b}$ 在 $\boldsymbol {x}_{0}\in \mathbb {R}^{n}$ 处逼近向量值函数f: $\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}?$ 
+条件：仿射函数过 $\left(\boldsymbol {x}_{0},\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\right)$ ，即 $\boldsymbol {a}\left(\boldsymbol {x}_{0}\right)=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$  (2)
+$\because$ $\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}(\boldsymbol {x})+\boldsymbol {b}Longrightarrow\boldsymbol {b}=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)-\boldsymbol {l}\left(\boldsymbol {x}_{0}\right).$  (3)
+$$\therefore \boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}(\boldsymbol {x})+\boldsymbol {b}\stackrel {(3)}{Longrightarrow}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {l}(\boldsymbol {x})-\boldsymbol {l}\left(\boldsymbol {x}_{0}\right)=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {l}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)$$
+## 微分
+# 定义（向量值函数的可微性）
+向量值函数 $\boldsymbol {f}:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 在 $\boldsymbol {x}_{0}\in Ω$ 处可微：
+**存在仿射函数** $\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {l}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)$ 使得
+$$\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0},\boldsymbol {x}\in Ω}\frac {\|\boldsymbol {f}(\boldsymbol {x})-\boldsymbol {a}(\boldsymbol {x})\|}{\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|}=\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0},\boldsymbol {x}\in Ω}\frac {\left\|\boldsymbol {f}(\boldsymbol {x})-\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)-\boldsymbol {l}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)\right\|}{\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|}=0.\tag{4}$$
+**若线性函数l是唯一的，则称为** $f$ **在** $\boldsymbol {x}_{0}$ 处的导数.
+例 $(f:\mathbb {R}\rightarrow \mathbb {R}$ , $a(x)=lx+b,$ 其中l, $b\in \mathbb {R})$ 
+$$\stackrel {\cdots (4)}{Longrightarrow}\lim _{x\rightarrow x_{0}}\frac {\left|f(x)-f\left(x_{0}\right)-l\left(x-x_{0}\right)\right|}{\left|x-x_{0}\right|}=0\stackrel {\text {why?}}{Longleftrightarrow}\lim _{x\rightarrow x_{0}}\frac {f(x)-f\left(x_{0}\right)}{x-x_{0}}=l.$$
+**标量l称为** $f$ **在** $x_{0}$ **处的导数，记为** $f^{\prime }\left(x_{0}\right)$ 
+![](https://web-api.textin.com/ocr_image/external/30b84b80278e20d5.jpg)
+## 微分
+例 $\left(f:\mathbb {R}^{n}\rightarrow \mathbb {R},\right.$ $\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}^{\top }\boldsymbol {x}+b,$ 其中 $\left.l\in \mathbb {R}^{n},b\in \mathbb {R}\right)$ 
+![](https://web-api.textin.com/ocr_image/external/d5cccbf0be3ab694.jpg)
+<table border="1" ><tr>
+<td>$Longrightarrow\underset {\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}{longrightarrow}\frac {\left|\boldsymbol {f}(\boldsymbol {x})-\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)-\boldsymbol {l}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)\right|}{\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|}=0.$向量$\boldsymbol {l}^{\top }$称为 $f$在$\boldsymbol {x}_{0}$处的导数／梯度，记为$\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$</td>
+<td>$\boldsymbol {D}\boldsymbol {f}=\left[\frac {\partial \boldsymbol {f}}{\partial x_{1}}\right.$ $\left.\left.\cdots \quad \frac {\partial \boldsymbol {f}}{\partial x_{n}}\right]=(\nabla \boldsymbol {f})^{\top }.$</td>
+</tr></table>
+例 $\left(\boldsymbol {f}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m},\boldsymbol {a}(\boldsymbol {x})=\boldsymbol {l}\boldsymbol {x}+\boldsymbol {b},\right.$  其中 $\left.l\in \mathbb {R}^{mxn},b\in \mathbb {R}^{m}\right)$ 
+<table border="1" ><tr>
+<td rowspan="2">$\stackrel {\cdots (4)}{Longrightarrow}\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}\frac {\left\|\boldsymbol {f}(\boldsymbol {x})-\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)-\boldsymbol {l}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)\right\|}{\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|}=0.$矩阵$l\in \mathbb {R}^{mxn}$ 称为 $f$ 在 $\boldsymbol {x}_{0}$处的导数或者Jacobian，记为$\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$</td>
+<td rowspan="2">$\boldsymbol {D}\boldsymbol {f}=\begin{bmatrix}\frac {\partial \boldsymbol {f}_{1}}{\partial x_{1}}&\cdots &\frac {\partial \boldsymbol {f}_{1}}{\partial x_{n}}\\ \frac {\partial \boldsymbol {f}_{2}}{\partial x_{1}}&\cdots &\frac {\partial \boldsymbol {f}_{2}}{\partial x_{n}}\\ :&:&:\\ \frac {\partial \boldsymbol {f}_{m}}{\partial x_{1}}&\cdots &\frac {\partial \boldsymbol {f}_{m}}{\partial x_{n}}\end{bmatrix}=\begin{bmatrix}\boldsymbol {D}\boldsymbol {f}_{1}\\ :\\ \boldsymbol {D}\boldsymbol {f}_{m}\end{bmatrix}$</td>
+<td rowspan="2"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr></table>
+## 微分
+定义（f:Rn→R的黑塞（Hessian）矩阵）
+<table border="1" ><tr>
+<td rowspan="5">函数f:I$\mathbb {R}^{n}$→R .若对$\nabla f$再求Jacobian，则得f 的二阶微分，称为f 的二阶导数／黑塞矩阵</td>
+<td rowspan="5">$\boldsymbol {D^{2}f}=\begin{bmatrix}\frac {\partial ^{2}f}{\partial x_{1}^{2}}&\frac {\partial ^{2}f}{\partial x_{1}x_{2}}&\cdots &\frac {\partial ^{2}f}{\partial x_{1}x_{n}}\\ \frac {\partial ^{2}f}{\partial x_{2}x_{1}}&\frac {\partial ^{2}f}{\partial x_{2}^{2}}&\cdots &\frac {\partial ^{2}f}{\partial x_{2}x_{n}}\\ :&:&\cdot &:\\ \frac {\partial ^{2}f}{\partial x_{n}x_{1}}&\frac {\partial ^{2}f}{\partial x_{n}x_{2}}&\cdots &\frac {\partial ^{2}f}{\partial x_{n}^{2}}\end{bmatrix}$</td>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td rowspan="2"></td>
+<td></td>
+<td></td>
+</tr><tr>
+<td></td>
+<td></td>
+</tr></table>
+定义（连续可微函数／光滑函数）
+函数 $\boldsymbol {D}\boldsymbol {f}:Ω\rightarrow \mathbb {R}^{mxn}$ .若f的各分量是可微的，且 $\boldsymbol {D}\boldsymbol {f}:Ω\rightarrow \mathbb {R}^{mxn}$ 连续，则称函数f 连续可微.
+$\mathcal {C}^{p}:$ ：f中的各元素具有p阶连续偏导数.
+定理（Schwarz定理：Hessian矩阵的对称性）
+若f在x处二阶连续可微→ $D^{2}f(x)$ 是对称矩阵.
+![](https://web-api.textin.com/ocr_image/external/7a407ffb72827a46.jpg)
+第5章 微积分基础
+## 微分
+例 $\left(\boldsymbol {f}(\boldsymbol {x})=5x_{1}+8x_{2}+x_{1}x_{2}-x_{1}^{2}-2x_{2}^{2},\boldsymbol {D}\boldsymbol {f}(\boldsymbol {x})=?\boldsymbol {D}^{2}\boldsymbol {f}(\boldsymbol {x})=?\right)$ 
+解： $\boldsymbol {D}\boldsymbol {f}(\boldsymbol {x})=\left[5+x_{2}-2x_{1},8+x_{1}-4x_{2}\right],\boldsymbol {D}^{2}\boldsymbol {f}(\boldsymbol {x})=\left[\begin{array}{cc}-2&1\\ 1&-4\end{array}\right]$ 
+例 $\left(f(\boldsymbol {x})=2x_{1}^{4}+3x_{1}^{2}x_{2}+2x_{1}x_{2}^{3}+4x_{2}^{2},\boldsymbol {D}\boldsymbol {f}(\boldsymbol {x})=?\boldsymbol {D}^{2}\boldsymbol {f}(\boldsymbol {x})=?\right)$ 
+解： $\boldsymbol {D}\boldsymbol {f}(\boldsymbol {x})=\left[\frac {\partial f(x)}{\partial x_{1}},\frac {\partial f(x)}{\partial x_{2}}\right]=\left[8x_{1}^{3}+6x_{1}x_{2}+2x_{2}^{3},3x_{1}^{2}+6x_{1}x_{2}^{2}+8x_{2}\right]$ 
+$$\boldsymbol {D}^{2}\boldsymbol {f}(\boldsymbol {x})=\left[\begin{array}{cc}\frac {\partial ^{2}f(x)}{\partial x_{1}^{2}}&\frac {\partial ^{2}f(x)}{\partial x_{1}\partial x_{2}}\\ \frac {\partial ^{2}f(x)}{\partial x_{2}\partial x_{1}}&\frac {\partial ^{2}f(x)}{\partial x_{2}^{2}}\end{array}\right]=\left[\begin{array}{cc}24x_{1}^{2}+6x_{2}&6x_{1}+6x_{2}^{2}\\ 6x_{1}+6x_{2}^{2}&12x_{1}x_{2}+8\end{array}\right]$$
+设 $\boldsymbol {x}_{0}=[-2,3]^{\top },\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)=?\boldsymbol {D}^{2}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)=?$ 
+则 $\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)=[-46,-72],$ $\boldsymbol {D}^{2}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)=\left[\begin{array}{cc}114&42\\ 42&-64\end{array}\right]$ 
+## 作业
+# 计算梯度和黑塞
+(1) $f(\boldsymbol {x})=f\left(x_{1},x_{2}\right)=\ln \left(e^{x_{1}}+e^{x_{2}}\right)$ 
+(2) $f(\boldsymbol {x})=f\left(x_{1},x_{2}\right)=\frac {x_{1}^{2}}{x_{2}}$ 
+(3) $f(\boldsymbol {x})=f\left(x_{1},x_{2}\right)=-\sqrt {x_{1}x_{2}}$ 
+(4) $f(\boldsymbol {x})=f\left(x_{1},x_{2}\right)=x_{1}^{2}-2x_{1}+3x_{1}x_{2}^{2}+4x_{2}^{3}$  $x_{0}=(1,1)^{T},p=(-2,1)^{T}·f\left(x_{0}\right)=?$ 
+$$f\left(x_{0}+p\right)=?\nabla f\left(x_{0}\right)=?\nabla ^{2}f\left(x_{0}\right)=?$$
+观察 $Df(x)$ 和 $D^{2}f(x)$ 的特殊结构.
+$$\boldsymbol {f}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{n},\boldsymbol {f}(\boldsymbol {x})=\left[\begin{array}{ccc}2\left(x_{2}^{3}-x_{1}^{2}\right)\\ 3\left(x_{2}^{3}-x_{1}^{2}\right)+2\left(x_{3}^{3}-x_{2}^{2}\right)\\ 3\left(x_{3}^{3}-x_{2}^{2}\right)+2\left(x_{4}^{3}-x_{3}^{2}\right)\\ \cdots \\ 3\left(x_{n}^{3}-x_{n-1}^{2}\right)\end{array}\right],\boldsymbol {D}\boldsymbol {f}(\boldsymbol {x})=\left[\begin{array}{cccc}*&*&&\\ *&*&*&\\ &*&*&*\\ &&*&*\end{array}\right]$$
+$f(\boldsymbol {x})=x_{1}\sum _{i=1}^{n}i^{2}x_{i}^{2},\boldsymbol {D}$ $\{\}^{2}x_{i}^{2},\boldsymbol {D}^{2}f(\boldsymbol {x})=\left[\begin{array}{l}*\\ *\\ *\\ *\\ *\end{array}\right.$ $\cdot$  $\cdot$ $*$ 
+微分法则
+<table border="1" ><tr>
+<td>函数 $f$</td>
+<td>导数 $Df$</td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {a},\boldsymbol {a}\in \mathbb {R}^{n}$</td>
+<td></td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {a}^{\top }\boldsymbol {x},\boldsymbol {a}\in \mathbb {R}^{n}$</td>
+<td>$\boldsymbol {a}^{\top }$</td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {x})=\|\boldsymbol {x}\|_{2}^{2}=\boldsymbol {x}^{\top }\boldsymbol {x}$</td>
+<td>$2\boldsymbol {x}$ $\boldsymbol {x}^{\top }\left(\boldsymbol {A}+\boldsymbol {A}^{\top }\right)$</td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {x}^{\top }\boldsymbol {A}\boldsymbol {x},\boldsymbol {A}\in \mathbb {R}^{nxn}$</td>
+<td></td>
+</tr><tr>
+<td>$f(x)=x$</td>
+<td>$I_{n}$</td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {A}\boldsymbol {x},\boldsymbol {A}\in \mathbb {R}^{mxn}$</td>
+<td>A</td>
+</tr><tr>
+<td>$\boldsymbol {f}(x)=x\boldsymbol {a},x\in \mathbb {R},\boldsymbol {a}\in \mathbb {R}^{n}$</td>
+<td>a</td>
+</tr><tr>
+<td>$\boldsymbol {f}(\boldsymbol {X})=\text {tr}\left(\boldsymbol {A}^{\top }\boldsymbol {X}\right),\boldsymbol {A}\in \mathbb {R}^{m\times n},\boldsymbol {X}\in \mathbb {R}^{m\times n}$</td>
+<td>A</td>
+</tr></table>
+定理（链式法则（chain rule)）
+设 $f:$ $\mathbb {R}^{n}\rightarrow \mathbb {R}^{m},\boldsymbol {g}:\mathbb {R}^{m}\rightarrow \mathbb {R}^{p},\boldsymbol {h}(\boldsymbol {x})=\boldsymbol {g}(\boldsymbol {f}(\boldsymbol {x}))$ .则 $Dh=?$ 
+解：根据 $\boldsymbol {D}\boldsymbol {f}\in \mathbb {R}^{m\times n}$ 和 $\boldsymbol {D}\boldsymbol {g}\in \mathbb {R}^{p\times m}$ **的定义.**
+$\because h:$ $\mathbb {R}^{n}\rightarrow \mathbb {R}^{p}Longrightarrow\boldsymbol {D}\boldsymbol {h}\in \mathbb {R}^{p\times n}$ 
+借助矩阵乘法兼容性
+$$\therefore \boldsymbol {Dh}(\boldsymbol {x})=\boldsymbol {Dg}(\boldsymbol {f}(\boldsymbol {x}))\boldsymbol {Df}(\boldsymbol {x})$$
+# 微分法则
+# 例（板书提示）
+1. $\boldsymbol {f}(\boldsymbol {x})=\frac {1}{2}\|\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b}\|^{2};$ 
+2. $\varphi (t)=\boldsymbol {f}\left(\boldsymbol {x}_{0}+t\boldsymbol {d}\right)$ 
+3. $\boldsymbol {f}(\boldsymbol {x})=\left(\boldsymbol {a}^{\top }\boldsymbol {x}\right)\left(\boldsymbol {b}^{\top }\boldsymbol {x}\right);$  4. $\boldsymbol {f}(\boldsymbol {x})=e^{\boldsymbol {x}^{\top }\boldsymbol {A}\boldsymbol {x}}.$ 
+## 定义（水平集（contour/level set)）
+函数 $f:$ $\mathbb {R}^{n}\rightarrow$ R关于常数c的水平集定义为 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {f}(\boldsymbol {x})=c\right\}.$ 
+## ★例：函数f: $\mathbb {R}^{2}\rightarrow \mathbb {R}$ ，S是一条曲线；函数f: $\mathbb {R}^{3}\rightarrow$ $\mathbb {R}$ ，S是曲面.
+![](https://web-api.textin.com/ocr_image/external/0691ff80fb1f148a.jpg)
+20 君0
+![](https://web-api.textin.com/ocr_image/external/7b9e2fde05af8f39.jpg)
+![](https://web-api.textin.com/ocr_image/external/4b855ccd48784901.jpg)
+## 水平集的性质：
+1. $S_{1}\cap S_{2}=\emptyset$ 
+2．分布暗示着函数值变化；
+3. $S\bot \nabla f;$ 
+4．极值点附近为椭圆／球
+# 水平集和梯度
+## 定理
+函数f: $\mathbb {R}^{n}$ $\rightarrow$ R, $\boldsymbol {x}_{0}\in \mathbb {R}^{n}.$ $\nabla f\left(x_{0}\right)$ 是水平集 $S=\left\{\boldsymbol {x}|\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\right\}$ 上过 $\boldsymbol {x}_{0}$ 点的任意光滑曲线的切向量的法向量.证明（提示）：链式法则
+$x_{2}$ $\mathbf {v}=Dg\left(\mathrm {\;J}_{0}\right)$ $\text {VI}\left(x_{0}\right)$ $f\left(x_{1},x_{2}\right)=0$ 2 $x_{02}$ l $x_{0}=900$ $x_{01}$ $x_{1}$
+![](https://web-api.textin.com/ocr_image/external/583fdda85f45b99d.jpg)
+![](https://web-api.textin.com/ocr_image/external/5d7f7c9bfb61af94.jpg)
+$\nabla \boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$  是函数 $f$ 在点 $\boldsymbol {x}_{0}$ 处函数值增长最快的方向.
+★可微函数在某点处增长最快的方向可以通过该点处的水平集的法线来确定.
+![](https://web-api.textin.com/ocr_image/external/a45b71ad76a6be06.jpg)
+$λ^{t}\left(x_{1},x_{2}\right)$ 2 $x_{2}$ $x_{1}$
+![](https://web-api.textin.com/ocr_image/external/bbe8bc7568af6966.jpg)
+$A^{x_{2}}$ x1 $x_{1}$
+![](https://web-api.textin.com/ocr_image/external/6fa4a5080e639905.jpg)
+水平集的法线，被称为最速上升路径.
+$it$ e
+# 水平集和梯度
+## 定义（函数的图（graph)）
+函数 $f:$ $:\mathbb {R}^{n}\rightarrow \mathbb {R}$ 的图定义为集合 $\text {gph}(\boldsymbol {f})=\left\{(\boldsymbol {x},\boldsymbol {f}(\boldsymbol {x}))|\boldsymbol {x}\in \mathbb {R}^{n}\right\}\subset \mathbb {R}^{n+1}.$ 
+## 定义（切平面（tangent hyperplane)）
+若f: $\mathbb {R}^{n}\rightarrow$ R在点 $\boldsymbol {x}_{0}$ 处可微，则它在 $\boldsymbol {x}_{0}$ 处的切平面定义为
+$$\boldsymbol {z}=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)^{\top }\nabla \boldsymbol {f}\left(\boldsymbol {x}_{0}\right)$$
+### 定义（Taylor展开）
+若一元函数 $f:$ $(a,b)\rightarrow$ $R$ 是m阶连续可微的.任意 $x,$ $x_{0}\in (a,b)$ , $f$ 在 $x_{0}$ 处的 $Taylor$ 展开为
+$f(x)=f\left(x_{0}\right)+\frac {f^{\prime }\left(x_{0}\right)}{1!}\left(x-x_{0}\right)+\frac {f^{\prime \prime }\left(x_{0}\right)}{2!}\left(x-x_{0}\right)^{2}+\cdots +\frac {f^{(n)}\left(x_{0}\right)}{n!}\left(x-x_{0}\right)^{n}+R_{m}$ ，其中
+$R_{m}=\frac {h^{m}(1-\theta )^{m-1}}{(m-1)!}f^{(m)}(ξ),ξ\in \left(x-x_{0},x+x_{0}\right)$ 称为残差 $(residue)$ .
+![](https://web-api.textin.com/ocr_image/external/4ba21caa12e81300.jpg)
+### 残差可以是变量形式，也可以使用同阶符号O或高阶符号 o.
+第5章 微积分基础
+18/21
+## Taylor展开
+## 定义（符号O和o）
+设 $\boldsymbol {g}:\mathbb {R}^{n}\rightarrow$ R在原点的某个邻域N(0）中有定义．对任意 $\boldsymbol {x}\neq 0,$ $\boldsymbol {g}(\boldsymbol {x})\neq 0$ .令 $\boldsymbol {f}:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 和 $0\in Ω.$ 
+。 $\boldsymbol {f}(\boldsymbol {x})=O(\boldsymbol {g}(\boldsymbol {x}))Longleftrightarrow\exists K>0,δ>0$ 使得 $\frac {\|\boldsymbol {f}(\boldsymbol {x})\|}{|\boldsymbol {g}(\boldsymbol {x})|}\leq K$ $\forall \|\boldsymbol {x}\|\leq δ.$ 
+。 $\boldsymbol {f}(\boldsymbol {x})=o(\boldsymbol {g}(\boldsymbol {x}))Longleftrightarrow\lim _{\boldsymbol {x}\rightarrow \boldsymbol {x}_{0}}\frac {\|\boldsymbol {f}(\boldsymbol {x})\|}{|\boldsymbol {g}(\boldsymbol {x})|}=0.$ 
+# 定义（多元函数的Taylor展开）
+设函数 $\boldsymbol {f}:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}$ 是m阶连续可微的.任意 $\boldsymbol {x},\boldsymbol {x}_{0}\in Ω,$ 
+$$\boldsymbol {f}(\boldsymbol {x})=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)+\frac {1}{2}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)^{\top }\boldsymbol {D}^{2}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)+R_{m},$$
+其中 $R_{m}=o\left(\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|^{2}\right)$ 或 $R_{m}=O\left(\left\|\boldsymbol {x}-\boldsymbol {x}_{0}\right\|^{3}\right)$ 为残量.
+![](https://web-api.textin.com/ocr_image/external/bd9998c8a749e392.jpg)
+第5章 微积分基础
+19/21
+## Taylor展开
+注：用Taylor展开逼近 $\boldsymbol {f}:Ω\subset \mathbb {R}^{n}\rightarrow$ R
+线性逼近：记 $\boldsymbol {g}(\boldsymbol {x})=\nabla \boldsymbol {f}(\boldsymbol {x})$ 
+$$\boldsymbol {l}(\boldsymbol {x})=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\boldsymbol {D}\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\left[\boldsymbol {g}\left(\boldsymbol {x}_{0}\right)\right]^{\top }\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)$$
+二次逼近：记 $\boldsymbol {F}(\boldsymbol {x})=\boldsymbol {D}^{2}\boldsymbol {f}(\boldsymbol {x})$ 
+$=\boldsymbol {f}\left(\boldsymbol {x}_{0}\right)+\left[\boldsymbol {g}\left(\boldsymbol {x}_{0}\right)\right]^{\top }\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)+\frac {1}{2}\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)^{\top }\boldsymbol {F}\left(\boldsymbol {x}_{0}\right)\left(\boldsymbol {x}-\boldsymbol {x}_{0}\right)$ $T$ 
+## 定理（中值定理（mean value theory)）
+若向量值函数 $\boldsymbol {f}:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 在开集Ω上可微，则对任意 $\boldsymbol {x}_{\prime }$ $\boldsymbol {y}\in Ω,$ ，存在矩阵 $M\in \mathbb {R}^{mxn}$ ，使得 $\boldsymbol {f}(\boldsymbol {x})-\boldsymbol {f}(\boldsymbol {y})=M(\boldsymbol {x}-\boldsymbol {y})$ 
+## ★若ΩCR是1维的开区间，
+且 $f:Ω\rightarrow \mathbb {R}$ 可微，则存在 $M\in$ R使得 $f(a)-f(b)=M(a-b),$  $\forall a,b\in Ω.$ 
+★若 $Ω\subset \mathbb {R}^{n}$ 是n维的集合，
+且 $f:Ω\rightarrow$ $P$ 可微，则存在 $\boldsymbol {ξ}\in Ω$ 使得 $f(\boldsymbol {a})-f(\boldsymbol {b})=\int _{\boldsymbol {a}}^{\boldsymbol {b}}\nabla f(\boldsymbol {ξ})d\boldsymbol {ξ},$  $\forall \boldsymbol {a},\boldsymbol {b}\in Ω.$ 
+tangent $(b,f(b))$ $(a,f(a))$ a c
+![](https://web-api.textin.com/ocr_image/external/19cfb6484f6ebd7e.jpg)
+2
+## 作业
+**课后习题**：5.3,5.6
+2
+第5章 微积分基础
+21/21

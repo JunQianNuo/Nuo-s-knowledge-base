@@ -1,0 +1,9 @@
+{
+  "id": "flashcard-sync",
+  "name": "Flashcard Sync",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "一键同步闪卡到 Anki。运行 python scripts/sync_flashcards.py",
+  "author": "Claudian",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,139 @@
+# 考题-外罚函数法
+
+---
+title: 考题-01 - 外罚函数法求解等式约束优化
+subject: 最优化方法
+chapter: 23
+section: 约束优化方法
+source: 复习纲要补充
+status: 已校对
+type: 考题
+topics:
+  - 外罚函数法
+  - 二次罚函数
+  - 罚参数序列
+---
+
+# 考题 01 — 外罚函数法（Quadratic Penalty Method）
+
+用二次罚函数法求解：
+
+$$\begin{aligned}
+\min \quad & f(x_1, x_2) = x_1^2 + 2x_2^2 \\
+\text{s.t.} \quad & x_1 + x_2 - 1 = 0
+\end{aligned}$$
+
+**a.** 写出惩罚目标函数 $F(x, \gamma) = f(x) + \frac{\gamma}{2}(x_1 + x_2 - 1)^2$。
+
+**b.** 对固定的 $\gamma$，求 $x^*(\gamma)$（$F$ 的无约束极小点）作为 $\gamma$ 的函数。
+
+**c.** 计算 $\gamma = 1, 10, 100$ 时的 $x^*(\gamma)$，观察其向真解的收敛趋势。
+
+**d.** 用 Lagrange 乘子法求原问题的精确解，与外罚函数法的近似解对比。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 外罚函数法的核心思想：将约束违反量以二次惩罚项加入目标，罚参数 $\gamma$ 越大惩罚越重。
+> - $F(x, \gamma)$ 是 $x$ 的无约束二次函数，可直接求导得解析解。
+> - 理论保证：当 $\gamma \to \infty$，$x^*(\gamma) \to x^*$（真解）。实际计算中取有限 $\gamma$ 即得近似解。
+> - 本题中 $F$ 是凸二次函数，极小点由 $\nabla_x F = 0$ 的线性方程组唯一确定。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> ### (a) 惩罚目标函数
+>
+> $$F(x, \gamma) = x_1^2 + 2x_2^2 + \frac{\gamma}{2}(x_1 + x_2 - 1)^2$$
+>
+> ---
+>
+> ### (b) 求 $x^*(\gamma)$
+>
+> 无约束极小化 $\min_x F(x, \gamma)$。求梯度并置零：
+>
+> $$\begin{aligned}
+> \frac{\partial F}{\partial x_1} &= 2x_1 + \gamma(x_1 + x_2 - 1) = 0 \qquad\text{(1)}\\[4pt]
+> \frac{\partial F}{\partial x_2} &= 4x_2 + \gamma(x_1 + x_2 - 1) = 0 \qquad\text{(2)}
+> \end{aligned}$$
+>
+> 由 (1) 和 (2) 的 $\gamma(x_1 + x_2 - 1)$ 项相等：
+>
+> $$2x_1 = 4x_2 \;\Longrightarrow\; x_1 = 2x_2$$
+>
+> 将 $x_1 = 2x_2$ 代入 (1)：
+>
+> $$\begin{aligned}
+> 2(2x_2) + \gamma(2x_2 + x_2 - 1) &= 0 \\
+> 4x_2 + \gamma(3x_2 - 1) &= 0 \\
+> (4 + 3\gamma)x_2 &= \gamma \\[4pt]
+> x_2^*(\gamma) &= \frac{\gamma}{4 + 3\gamma}
+> \end{aligned}$$
+>
+> $$x_1^*(\gamma) = 2x_2^*(\gamma) = \frac{2\gamma}{4 + 3\gamma}$$
+>
+> 可以验证：当 $\gamma \to \infty$，$x_2^*(\gamma) \to \frac{\gamma}{3\gamma} = \frac{1}{3}$，$x_1^*(\gamma) \to \frac{2}{3}$，$x_1^* + x_2^* \to 1$。
+>
+> ---
+>
+> ### (c) 不同 $\gamma$ 的近似解
+>
+> | $\gamma$ | $x_1^*(\gamma)$ | $x_2^*(\gamma)$ | $x_1 + x_2 - 1$（约束违反） | $f(x^*(\gamma))$ |
+> |----------|-----------------|-----------------|----------------------------|-------------------|
+> | $1$ | $\frac{2}{7} \approx 0.2857$ | $\frac{1}{7} \approx 0.1429$ | $-\frac{4}{7} \approx -0.5714$ | $\frac{6}{49} \approx 0.1224$ |
+> | $10$ | $\frac{20}{34} = \frac{10}{17} \approx 0.5882$ | $\frac{10}{34} = \frac{5}{17} \approx 0.2941$ | $-\frac{2}{17} \approx -0.1176$ | $\frac{150}{289} \approx 0.5190$ |
+> | $100$ | $\frac{200}{304} = \frac{50}{76} = \frac{25}{38} \approx 0.6579$ | $\frac{100}{304} = \frac{25}{76} \approx 0.3289$ | $-\frac{1}{76} \approx -0.0132$ | $\frac{1875}{2888} \approx 0.6494$ |
+>
+> **收敛趋势：**
+> - $\gamma=1$：约束违反约 $-0.571$，离可行域很远。
+> - $\gamma=10$：约束违反约 $-0.118$，明显改善。
+> - $\gamma=100$：约束违反约 $-0.013$，几乎可行。
+> - $\gamma \to \infty$ 时 $x^*(\gamma) \to (\frac{2}{3}, \frac{1}{3})^\top$，约束完全满足。
+>
+> ---
+>
+> ### (d) Lagrange 乘子法求精确解
+>
+> **Lagrangian：** $\mathcal{L}(x, \lambda) = x_1^2 + 2x_2^2 + \lambda(x_1 + x_2 - 1)$
+>
+> **一阶必要条件：**
+>
+> $$\begin{aligned}
+> \frac{\partial \mathcal{L}}{\partial x_1} &= 2x_1 + \lambda = 0 \;\Longrightarrow\; x_1 = -\frac{\lambda}{2} \\[4pt]
+> \frac{\partial \mathcal{L}}{\partial x_2} &= 4x_2 + \lambda = 0 \;\Longrightarrow\; x_2 = -\frac{\lambda}{4} \\[4pt]
+> \frac{\partial \mathcal{L}}{\partial \lambda} &= x_1 + x_2 - 1 = 0
+> \end{aligned}$$
+>
+> 代入约束：$-\frac{\lambda}{2} - \frac{\lambda}{4} = 1 \;\Longrightarrow\; -\frac{3\lambda}{4} = 1 \;\Longrightarrow\; \lambda = -\frac{4}{3}$
+>
+> **精确解：**
+>
+> $$x_1^* = -\frac{-4/3}{2} = \frac{2}{3},\qquad x_2^* = -\frac{-4/3}{4} = \frac{1}{3}$$
+>
+> **精确最优值：** $f(x^*) = \left(\frac{2}{3}\right)^2 + 2\left(\frac{1}{3}\right)^2 = \frac{4}{9} + \frac{2}{9} = \frac{6}{9} = \frac{2}{3} \approx 0.6667$
+>
+> ---
+>
+> ### 对比表
+>
+> | | 精确解 | $\gamma=100$ 罚函数近似 |
+> |---|---:|---:|
+> | $x_1$ | $\frac{2}{3} \approx 0.6667$ | $\frac{25}{38} \approx 0.6579$ |
+> | $x_2$ | $\frac{1}{3} \approx 0.3333$ | $\frac{25}{76} \approx 0.3289$ |
+> | $f(x)$ | $\frac{2}{3} \approx 0.6667$ | $\frac{1875}{2888} \approx 0.6494$ |
+> | 约束违反 | $0$ | $-0.0132$ |
+>
+> 罚函数法在 $\gamma=100$ 时已非常接近精确解，但目标函数值略低于精确解——这是因为罚函数法的解**不满足约束**，约束违反给予了"折扣"。随着 $\gamma \to \infty$，此折扣消失，$x^*(\gamma)$ 和 $f(x^*(\gamma))$ 均从下方向上收敛至真解。$\square$
+>
+> **点评：** 外罚函数法将约束问题转化为一系列无约束问题。本题展示的关键性质：(1) $x^*(\gamma)$ 有解析表达式，可以直接观察 $\gamma \to \infty$ 的极限行为；(2) 有限 $\gamma$ 的近似解总是**外点**（即从可行域外逼近），因为惩罚只是"软化"约束而非强制执行；(3) 实际计算中 $\gamma$ 不宜过大——$\gamma$ 过大导致 $F$ 的 Hessian 条件数恶化，数值求解困难。本题因 $F$ 为二次函数可解析求解故不受此限制。
+
+---
+
+## 相关知识点
+
+- [[23-约束优化方法]] — 约束优化算法概览
+- [[../知识点解析梳理/23-约束优化方法-知识梳理|第23章 知识梳理]] — 外罚函数法的理论与收敛性

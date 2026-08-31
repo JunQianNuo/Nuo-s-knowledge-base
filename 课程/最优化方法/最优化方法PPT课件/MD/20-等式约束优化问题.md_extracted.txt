@@ -1,0 +1,483 @@
+# 20-等式约束优化问题
+
+---
+title: 第20章 等式约束优化问题
+subject: 最优化方法
+source: 无动画Chapter20.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 20
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第20章 等式约束优化问题
+## 1．问题描述
+2．切空间与法空间
+3．拉格朗日条件极值
+4．二阶条件
+5．等式约束的二次规划
+## 约束优化问题
+min $f(\boldsymbol {x})$  s.t. $\boldsymbol {x}\in Ω$ 
+· $f:\mathbb {R}^{n}\rightarrow$ R称为目标／价值函数.
+· $\boldsymbol {x}=\left[x_{1},\cdots ,x_{n}\right]^{\top }\in \mathbb {R}^{n}$ 称为优化／决策变量.
+### · $Ω\subseteq \mathbb {R}^{n}$ 称为约束集／可行域.具体地，
+<table border="1" ><tr>
+<td>$Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|h_{i}(\boldsymbol {x})=0,i=1,\cdots ,m;g_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$ $=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=0,\right.$ $\boldsymbol {g}(\boldsymbol {x})\leq 0\}$</td>
+</tr></table>
+**其中** $\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 和 $\boldsymbol {g}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{p}$ 是分别由 $h_{i}$ 和 $g_{i}$ 构成的向量值函数.
+· $h_{i}:\mathbb {R}^{n}\rightarrow$ R, $i=1,\cdots ,m$ ，称为等式约束.
+$g_{j}:\mathbb {R}^{n}\rightarrow \mathbb {R}$ $j=1,\cdots ,p,$  称为不等式约束.
+## 例.若干“奇怪”的情形
+<table border="1" ><tr>
+<td>$\min _{x\in \mathbb {R}_{++}}f(x)=\frac {1}{x}$ 则$f^{*}=0$，但无极小点$\left(x^{*}=\infty \right)$ $\min _{x\in \mathbb {R}_{++}}f(x)=-\log x$则<br>$f^{*}=-\infty$，但无极小点$\left(x^{*}=\infty \right)$</td>
+<td>。$\min _{x\in \mathbb {R}_{++}}f(x)=x\log x$，则<br>$f^{*}=-\frac {1}{e},x^{*}=\frac {1}{e}$ $\min _{x\in \mathbb {R}}f(x)=x^{3}-3x$，则<br>$f^{*}=-\infty ,x^{*}=1$是局部极小点</td>
+</tr></table>
+第20章 等式约束优化问题
+## 优化问题
+## 定理（Weierstrass 定理）
+## 函数 $f$ 在Ω上的全部极小点是非空紧集的条件：Ω是闭集，f在Ω上是下半连续的，且下述任意一条成立
+Ω是有界集合.
+![](https://web-api.textin.com/ocr_image/external/f95c228ff4114eb4.jpg)
+存在水平集 $\{\boldsymbol {x}\in Ω|f(\boldsymbol {x})\leq c\}$ 是非空有界集.
+![](https://web-api.textin.com/ocr_image/external/aa4f82944144b2ed.jpg)
+$f$ 是强制的（coercivity)，即l $\lim _{\|x\|\rightarrow \infty }f(\boldsymbol {x})=\infty$ 
+## 例.约束优化与无约束优化极小点的数量
+min $f(x)=0.01x_{1}^{2}+\left(x_{2}+100\right)^{2}\text {,s.t.}\boldsymbol {x}\in Ω$ 
+<table border="1" ><tr>
+<td>contours of f<br>$x^{(1)}$ $x^{(2)}$ $\boldsymbol {x}^{(3)}$ $x^{(4)}$ $x^{(5)}$feasible region</td>
+</tr></table>
+$Ω=\mathbb {R}^{n}$ **时：优化问题有唯一极小**点 $[0,-100];$ 
+· $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{2}|\cos \left(x_{1}\right)\leq x_{2}\right\}$ 时：优化问题有无穷个极小点 $[k\pi ,$ $,-1]$ $\forall k=\pm 1,\pm 3,\cdots$ 
+![](https://web-api.textin.com/ocr_image/external/e31d66344fe929bd.jpg)
+第20章 等式约束优化问题
+# 优化问题
+# 定义（可行方向）
+向量 $0\neq \boldsymbol {d}\in \mathbb {R}^{n}$  是 $\boldsymbol {x}\in Ω$ 处的可行方向： $\exists α_{0}>0$ 使得 $\boldsymbol {x}+α\boldsymbol {d}\in Ω,$ $\forall α\in \left[0,α_{0}\right]$ $.x$ 处的可行方向全体记为 $\mathcal {F}_{Ω}(\boldsymbol {x})$ 或 $\mathcal {F}(\boldsymbol {x})$ 
+$d_{2}$ $\mathrm {B}_{1}$ $a_{0}d_{1}$ $\mathbf {d}_{1}$
+![](https://web-api.textin.com/ocr_image/external/cbc763d46fd9a60b.jpg)
+·若 $\boldsymbol {x}\in \text {int}(Ω)$  ，则所有 $\mathbb {R}^{n}$  中的向量均是x处的可行方向.
+·若 $\boldsymbol {x}\in \text {bd}(Ω)$ ，则x处的可行方向可能是锥，子空间，还可能是空集...
+# 定义（线性化可行方向）
+若 $\boldsymbol {x}\in \text {bd}(Ω)$ ，则x处的线性化可行方向为 $0\neq \boldsymbol {d}=\lim _{\boldsymbol {x}^{\prime }\rightarrow \boldsymbol {x},\boldsymbol {x}^{\prime }\in Ω}\left(\boldsymbol {x}^{\prime }-\boldsymbol {x}\right).$ x处的线性化可行方向全体记为 $T_{Ω}(\boldsymbol {x})$ 或 $T(\boldsymbol {x})$ 
+![](https://web-api.textin.com/ocr_image/external/32a390a83b940620.jpg)
+$\mathcal {F}(x)\subseteq \mathcal {T}(x)$ .例， $\mathrm {ri}(Ω)=\emptyset$ 时，“ $"C"$ 成立.
+![](https://web-api.textin.com/ocr_image/external/951195a5381020e1.jpg)
+第20章 等式约束优化问题
+# 线性化可行方向
+## 等式约束（equality constraint）
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}_{i}(\boldsymbol {x})=0,i=1,\cdots ,m\right\}$ ，其中 $\boldsymbol {h}_{i}:\mathbb {R}^{n}\rightarrow$ R 是可微的，则 $T(\boldsymbol {x})=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\boldsymbol {D}\boldsymbol {h}_{i}(\boldsymbol {x})\boldsymbol {d}=0,\right.$ $i=1,\cdots ,m\}$ 是个子空间.
+TP(x) T()
+![](https://web-api.textin.com/ocr_image/external/e6e721149a15a596.jpg)
+### 不等式约束（inequality constraint）
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {g}_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$ ，其中 $\boldsymbol {g}_{j}:\mathbb {R}^{n}\rightarrow$ R 是可微的，则 $T(\boldsymbol {x})=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\boldsymbol {D}\boldsymbol {g}_{j}(\boldsymbol {x})\boldsymbol {d}\leq 0,j\in J(\boldsymbol {x})\right\}$ 是个锥，其中 $J(\boldsymbol {x})=\left\{j|\boldsymbol {g}_{j}(\boldsymbol {x})=0,j=1,\cdots ,p\right\}$ 称为x 处的积极约束.
+T หท์ $nori$ $\mathrm {Q}_{2}=0$ 0 $-$ 1 $0.10$ 0 $0$
+![](https://web-api.textin.com/ocr_image/external/1a7168eddee6ce38.jpg)
+$$等式+不等式约束$$
+设 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}_{i}(\boldsymbol {x})=0,i=1,\cdots ,m;\boldsymbol {g}_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p\right\}$ ，其中 $\boldsymbol {h}_{i}:\mathbb {R}^{n}\rightarrow$ R, $\boldsymbol {g}_{j}:\mathbb {R}^{n}\rightarrow$ R均是可微的，则
+$T($ $(x$ $\boldsymbol {x})=\left\{\boldsymbol {d}\in \mathbb {R}^{n}\right.$ $-$ $\boldsymbol {D}\boldsymbol {h}_{i}(\boldsymbol {x})\boldsymbol {d}=0,$ $i=1,\cdots ,m$ $\left.\boldsymbol {D}\boldsymbol {g}_{j}(\boldsymbol {x})\boldsymbol {d}\leq 0,j\in J(\boldsymbol {x})\right\}$ 是个锥，其中 $J(\boldsymbol {x})=\left\{j|\boldsymbol {g}_{j}(\boldsymbol {x})=0,j=1,\cdots ,p\right\}$ 称为x处的积极约束.
+# 切空间
+# 切平面与切空间
+x* $x^{\prime }$ $x_{2}$ $\text {TP}\left(\mathbf {x}^{*}\right)$ S 0 x1 $x_{1}$ $T(x^{*})$
+![](https://web-api.textin.com/ocr_image/external/7070e24479577053.jpg)
+TPI $1\times$ $k^{\prime \prime }$ T
+![](https://web-api.textin.com/ocr_image/external/54a18c434a844bbc.jpg)
+x+Tc(x) $x+T_{C}(x)$ x+td $x+1d$ $x+N_{C}(x)$ x
+![](https://web-api.textin.com/ocr_image/external/70f37d5f1f66ef39.jpg)
+若 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\right\}$ 
+$\boldsymbol {x}^{*}\in S$ 处的切空间： $T\left(\boldsymbol {x}^{*}\right)=\left\{\boldsymbol {d}\in \mathbb {R}^{n}|\left[D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\right]\boldsymbol {d}=\mathbf {0}\right\}$ 
+$\boldsymbol {x}^{*}\in S$ 处的切平面： $\text {TP}\left(\boldsymbol {x}^{*}\right)=T\left(\boldsymbol {x}^{*}\right)+\boldsymbol {x}^{*}=\left\{\boldsymbol {x}+\boldsymbol {x}^{*}|\boldsymbol {x}\in T\left(\boldsymbol {x}^{*}\right)\right\}$ 
+切空间是矩阵 $D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)$ 的零空间，即 $T\left(\boldsymbol {x}^{*}\right)=\mathcal {N}\left(D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\right)$ 
+![](https://web-api.textin.com/ocr_image/external/fd9a28ab6d5eb55f.jpg)
+若 $\boldsymbol {x}^{*}$ 是正则点，则 $\text {dim}\left(T\left(\boldsymbol {x}^{*}\right)\right)=n-m$ 其中m是等式约束的个数.
+![](https://web-api.textin.com/ocr_image/external/e34f24c94820791f.jpg)
+## 切空间
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{3}|h_{1}(\boldsymbol {x})=x_{1}=0,h_{2}(\boldsymbol {x})=x_{1}-x_{2}=0\right\}$ 
+∵ $D\boldsymbol {h}(\boldsymbol {x})=\left[\begin{array}{ccc}\nabla h_{1}(\boldsymbol {x})^{\top }\\ \nabla h_{2}(\boldsymbol {x})^{\top }\end{array}\right]=\left[\begin{array}{ccc}1&0&0\\ 1&-1&0\end{array}\right].$ 
+$\therefore \left\{\nabla h_{1},\nabla h_{2}\right\}$ 是线性无关组，.. $\forall \boldsymbol {x}\in S$ 是正则点.
+$\therefore$ $\boldsymbol {x}\in S$ 处的切空间为
+$$T(\boldsymbol{x})=\left\{\boldsymbol{d}\left\lvert\,\left[\begin{array}{ccc}1&0&0\\
+1&-1&0\end{array}\right]\left[\begin{array}{l}d_{1}\\
+d_{2}\\
+d_{3}\end{array}\right]=\mathbf{0}\right.\right\}=\left\{\left.\left[\begin{array}{l}0\\
+0\\
+a\end{array}\right]\right\rvert\,a\in \mathbb{R}\right\}$$
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{2}|x_{1}\geq 0,x_{2}\geq 0\right\}$ 
+(A). $\boldsymbol {x}=[1,3]^{\top };$ 
+(B). $\boldsymbol {x}=[0,3]^{\top };$ 
+(C). $\boldsymbol {x}=[1,0]^{\top };$ 
+$$\text {(D).}\boldsymbol {x}=[0,0]^{\top }$$
+![](https://web-api.textin.com/ocr_image/external/96562f3e911bb4c3.jpg)
+# 局部极小点的条件
+## 定义（方向导数）
+设 $f:\mathbb {R}^{n}\rightarrow$ $R,$ ，d是 $\boldsymbol {x}\in Ω$ 处的可行方向，则 $f$ 关于d的方向导数定义为 $\frac {\partial f}{\partial \boldsymbol {d}}=\lim _{α\rightarrow 0}\frac {f(\boldsymbol {x}+α\boldsymbol {d})-f(\boldsymbol {x})}{α}$ .特别地，若 $f$ 是可微的，则 $\frac {\partial f}{\partial \boldsymbol {d}}=\nabla f(\boldsymbol {x})^{\top }\boldsymbol {d}.$ 
+# 定理（一阶必要条件，FONC）
+设Ω $\subseteq \mathbb {R}^{n},f\in \mathcal {C}^{1}(Ω)$ .若 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的局部极小点，则对任意 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right),$ 都有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)\geq 0$ .（证. $\left.f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}+o(α)\right)$ 
+## 定理（一阶充分条件，FOSC）
+设 $Ω\subseteq \mathbb {R}^{n},$ $f\in \mathcal {C}^{1}(Ω)$ .若对任意 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ ，都有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)>0,$ ，则 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的一个严格局部极小点.
+## 推论（当 $Ω=\mathbb {R}^{n}$  或 $\boldsymbol {x}^{*}$ ＊是 $Ω\subset \mathbb {R}^{n}$  的内点）
+设 $f\in \mathcal {C}^{1}(Ω)$ .若 $\boldsymbol {x}^{*}\in \text {int}(Ω)$ 是局部极小点，则 $\nabla f\left(\boldsymbol {x}^{*}\right)=0.$ 
+（证： $T\left(\boldsymbol {x}^{*}\right)=\mathbb {R}^{n}$ ，即任意 $\mathbb {R}^{n}$  中的向量都是可行方向d.）
+第20章 等式约束优化问题
+# 局部极小点的条件
+# 定理（二阶必要条件，SONC）
+设 $Ω\subseteq \mathbb {R}^{n},f\in \mathcal {C}^{2}(Ω).$ $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的局部极小点.若对任意 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ ，都有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)=0,$ 则 $\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}\geq 0$ 
+证. $f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\underbrace {\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}}_{=0}+\frac {α^{2}}{2}\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+o\left(α^{2}\right)$ 
+## 推论 $\left(Ω=\mathbb {R}^{n}\right.$  或 $\boldsymbol {x}^{*}$  是 $Ω\subset \mathbb {R}^{n}$ 的内点）设 $f\in \mathcal {C}^{2}(Ω)$ $\boldsymbol {x}^{*}\in \text {int}(Ω)$ 是局部极小点.若 $\nabla f\left(\boldsymbol {x}^{*}\right)=0,$ 则 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\succeq 0.$ 
+![](https://web-api.textin.com/ocr_image/external/0426f608ceb92388.jpg)
+## 必要条件不一定是充分条件.可能存在一些点 $\boldsymbol {x}^{*}$ 满足FONC和／或SONC，但 $\boldsymbol {x}^{*}$ 不是局部极小点.
+例. $f(x)=x^{3}$ 
+由 $f^{\prime }(0)=0$ 和 $f^{\prime \prime }(0)=0$ 知， $x^{*}=0满足FONC和SONC.但$ $x^{*}=0$ 不是极小点.
+第20章 等式约束优化问题
+# 局部极小点的条件
+**例.** $f(\boldsymbol {x})=x_{1}^{2}-x_{2}^{2}$ 
+$\because \nabla f(\boldsymbol {x})=\left[2x_{1},-2x_{2}\right]^{\top }=0,\therefore \boldsymbol {x}^{*}=[0,0]^{\top }$ 满足 FONC.
+但是，黑塞矩阵 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)=\left[\begin{array}{cc}2&0\\ 0&-2\end{array}\right]neq0.$ 
+$\therefore$ $x^{*}=0$ **不是局部极小点.**
+![](https://web-api.textin.com/ocr_image/external/49717f8fbda0fb77.jpg)
+## 定理（二阶充分条件，SOSC）
+设 $Ω\subseteq \mathbb {R}^{n},f\in \mathcal {C}^{2}(Ω)$ .若 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)=0$ 且 $\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}>0,$ 则 $\boldsymbol {x}^{*}$ 是严格局部极小点.
+证. $f\left(\boldsymbol {x}^{*}+α\boldsymbol {d}\right)=f\left(\boldsymbol {x}^{*}\right)+α\underbrace {\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}}_{=0}+\frac {α^{2}}{2}\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+o\left(α^{2}\right)$ 
+## 推论（当 $Ω=\mathbb {R}^{n}$ 或 $\boldsymbol {x}^{*}\in Ω\subset \mathbb {R}^{n}$ 是内点时）
+设 $f\in \mathcal {C}^{2}(Ω),\boldsymbol {x}^{*}\in \text {int}(Ω)$ .若 $\nabla f\left(\boldsymbol {x}^{*}\right)=0$ 且 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\succ 0,$ 则 $\boldsymbol {x}^{*}$ 是严格局部极小点.
+## 约束优化问题
+**例.** $f(\boldsymbol {x})=x_{1}^{2}+x_{2}^{2}$ 
+$\because \nabla f(\boldsymbol {x})=\left[2x_{1},2x_{2}\right]^{\top }=0,\therefore \boldsymbol {x}^{*}=[0,0]^{\top }$ 满足 FONC.
+# 黑塞矩阵 $\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)=\left[\begin{array}{ll}2&0\\ 0&2\end{array}\right]\succ 0.$ 
+$\therefore \boldsymbol {x}^{*}=[0,0]^{\top }$ **满足** $\text {SOSC.}\therefore \boldsymbol {x}^{*}=0$ 是严格局部极小点.
+![](https://web-api.textin.com/ocr_image/external/e720693106970753.jpg)
+## 约束凸优化问题
+min $f(x),$  s.t. $h_{i}(\boldsymbol {x})=0$ $i=1,\cdots ,m$ $g_{j}(\boldsymbol {x})\leq 0,j=1,\cdots ,p.$ 
+。 $h_{i}:\mathbb {R}^{n}\rightarrow$ R(Vi)是仿射函数，即 $h_{i}(\boldsymbol {x})=\boldsymbol {a}_{i}^{\top }\boldsymbol {x}-b_{i}$ 
+f $f$ 和 $g_{j}:\mathbb {R}^{n}\rightarrow$ R $(\forall j)$ 是凸函数.
+## 数值优化方法的动机
+设计具有收敛性的算法，在可行域中找目标函数的一个全局极小点 $\boldsymbol {x}^{*}$ 
+![](https://web-api.textin.com/ocr_image/external/3cfb11b20342f46d.jpg)
+第20章 等式约束优化问题
+## 等式约束优化问题
+等式约束优化问题：min $f(\boldsymbol {x})$  s.t. $\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}$ 
+其中 $f:\mathbb {R}^{n}\rightarrow \mathbb {R},\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m},$ $\boldsymbol {h}=\left[h_{1},\cdots ,h_{m}\right]^{\top },m\leq n.$ 
+假设： $f,$ $h_{i}:\mathbb {R}^{n}\rightarrow$ R都是连续可微函数.
+约束集： $S:=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=0\right\}=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|h_{1}(\boldsymbol {x})=0,\cdots ,h_{m}(\boldsymbol {x})=0\right\}$ 
+### 定义（集合S的正则点）
+给定 $\boldsymbol {x}^{*}\in S$ ，若向量组 $\nabla h_{1}\left(\boldsymbol {x}^{*}\right),\cdots ,\nabla h_{m}\left(\boldsymbol {x}^{*}\right)$ 线性无关，则 $\boldsymbol {x}^{*}$ 称为S的正则点，或S在 $\boldsymbol {x}^{*}$ 点有正则性.
+### 定理（正则点的判定）
+记 $D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)=\left[\begin{array}{c}\nabla h_{1}\left(\boldsymbol {x}^{*}\right)^{\top }\\ :\\ \nabla h_{m}\left(\boldsymbol {x}^{*}\right)^{\top }\end{array}\right]$ 是向量值函数 $\boldsymbol {h}=\left[h_{1},\cdots ,h_{m}\right]^{\top }$ 在 $\boldsymbol {x}^{*}$ 的Jacobian 矩阵.若 $\boldsymbol {x}^{*}$ 是正则点
+←rank $\left(D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\right)=m$ （即Jacobian矩阵是行满秩的）.
+第20章 等式约束优化问题
+# 约束集的维数
+## 约束集的维数
+$S:=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=0\right\}=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|h_{1}(\boldsymbol {x})=0,\cdots ,h_{m}(\boldsymbol {x})=0\right\}$ 本质上是空间中的曲面的交集.若任意 $\boldsymbol {x}\in S$ 都是正则点，则集合S的维数定义为 $n-m$ 
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{3}|h_{1}(\boldsymbol {x})=x_{2}-x_{3}^{2}=0\right\}$
+![](https://web-api.textin.com/ocr_image/external/9b52e1f7e2b4ae31.jpg)
+$$\because \nabla h_{1}(\boldsymbol {x})=\left[0,1,-2x_{3}\right]^{\top },$$
+$\therefore$ $\forall \boldsymbol {x}\in \mathbb {R}^{3},\nabla h_{1}(\boldsymbol {x})\neq \mathbf {0}.$ 
+. $\text {dim}S=\text {dim}\left\{\boldsymbol {x}|h_{1}(\boldsymbol {x})=0\right\}=n-m=2$ 
+$\xrightarrow {x_{1}}x_{2}$ S: $\mathrm {G}=[x_{1},x_{2},x_{3}]^{T}:x_{2},x_{3}^{2}]=0\}$
+![](https://web-api.textin.com/ocr_image/external/4886132aaeaa9e50.jpg)
+例. $S=\left\{\boldsymbol {x}\in \mathbb {R}^{3}|h_{1}(\boldsymbol {x})=x_{1},h_{2}(\boldsymbol {x})=x_{2}-x_{3}^{2}\right\}$ 
+$\because \nabla h_{1}(\boldsymbol {x})=[1,0,0]^{\top },$  $\nabla h_{2}(\boldsymbol {x})=\left[0,1,-2x_{3}\right]^{\top }.$ 
+$\therefore$ $\left\{\nabla h_{1}(\boldsymbol {x}),\nabla h_{2}(\boldsymbol {x})\right\}$ 是线性无关组.
+$$\therefore \text {dim}S=n-m=1$$
+0 By $8=\left(1x_{1},x_{2},x_{3}\right)^{\top}:x_{2}=x_{3}^{2}=0,x_{1}=0$ xy0 $x_{3}$ -
+![](https://web-api.textin.com/ocr_image/external/4ced087aec158665.jpg)
+### 曲线
+# 定义（集合／曲面S上的曲线）
+C $:=\{\boldsymbol {x}(t)\in S|t\in (a,b)\}$ 是依赖于参数 $t\in (a,b)$ 的连续曲线，即x: $(a,b)\rightarrow S$ 是关于t的连续函数.
+![](https://web-api.textin.com/ocr_image/external/5a9acc6107c6b2af.jpg)
+![](https://web-api.textin.com/ocr_image/external/1d77384d3e9003d3.jpg)
+曲线C上的所有点均满足曲面方程.曲线C过点 $x^{*}$  当且仅当存在 $t^{*}\in (a,b)$ 使得 $\boldsymbol {x}\left(t^{*}\right)=\boldsymbol {x}^{*}.$ 
+# 定义（可微曲线）
+曲线 $C=\{\boldsymbol {x}(t)|t\in (a,b)\}$ 是
+。可微的：对任意 $t\in (a,b)$ ，导数 $\dot {\boldsymbol {x}}(t)=\frac {d\boldsymbol {x}}{dt}(t)=\left[\dot {x}_{1}(t),\cdots ,\dot {x}_{n}(t)\right]^{\top }$ 总存在.
+。二次可微的：对任意 $t\in (a,b)$ ，二阶导数
+$\overrightarrow {\boldsymbol {x}}(t)=\frac {d^{2}\boldsymbol {x}}{dt^{2}}(t)=\left[\overrightarrow {x}_{1}(t),\cdots ,\overrightarrow {x}_{n}(t)\right]^{\top }$ 总存在.
+# 定义（轨迹速度和加速度）
+$\dot {\boldsymbol {x}}(t)$ ）和 $\overrightarrow {\boldsymbol {x}}(t)$ ）是n维向量，可以分别理解为轨迹C在坐标分量方向上的速度和加速度C.
+Snc
+![](https://web-api.textin.com/ocr_image/external/46b77684cae890f7.jpg)
+第20章 等式约束优化问题
+# 切空间
+# 定理
+若 $\boldsymbol {x}^{*}\in S$ 是正则点，则 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ 当且仅当3可微曲线 $\{\boldsymbol {x}(t)|t\in (a,b)\}\subset S$ 使得 $\exists t^{*}\in (a,b),$ $,\boldsymbol {x}\left(t^{*}\right)=\boldsymbol {x}^{*}$ $.$ $\dot {\boldsymbol {x}}\left(t^{*}\right)=\boldsymbol {d}$ 
+证. $(\Leftarrow )\because \forall t\in (a,b)$ $,\boldsymbol {h}(\boldsymbol {x}(t))=\mathbf {0}.$ 
+$$\therefore \frac {d}{dt}\boldsymbol {h}(\boldsymbol {x}(t))=D\boldsymbol {h}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)=\mathbf {0}.$$
+$$\therefore D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}=D\boldsymbol {h}\left(\boldsymbol {x}\left(t^{*}\right)\right)\dot {\boldsymbol {x}}\left(t^{*}\right)=\mathbf {0}.$$
+$$\therefore \quad \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$$
+（→）借助隐函数定理.
+## 法空间
+## 定义（设 $\left.S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\right\}\right)$ 
+$\boldsymbol {x}^{*}\in S$ 处的法平面： $NP\left(\boldsymbol {x}^{*}\right)=N\left(\boldsymbol {x}^{*}\right)+\boldsymbol {x}^{*}=\left\{\boldsymbol {x}+\boldsymbol {x}^{*}\in \mathbb {R}^{n}|\boldsymbol {x}\in N\left(\boldsymbol {x}^{*}\right)\right\}$ 
+$\boldsymbol {x}^{*}\in S$ 处的法空间： $N\left(\boldsymbol {x}^{*}\right)=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {x}=D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {z},\boldsymbol {z}\in \mathbb {R}^{m}\right\}$ 
+$\mathrm {NP}\left(\mathrm {x}^{*}\right)$ $TP(x^{*})$ $x^{\prime }$ 3 $x_{3}$ $N\left(x^{*}\right)$ $T(x^{*})$ S 0 x2 $x_{2}$ $x_{1}$ X
+![](https://web-api.textin.com/ocr_image/external/03a5f3499311c477.jpg)
+## 法空间的特点：
+$$N\left(\boldsymbol {x}^{*}\right)=\mathcal {R}\left(D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\right)\quad =\text {span}\left[\nabla h_{1}\left(\boldsymbol {x}^{*}\right),\cdots ,\nabla h_{m}\left(\boldsymbol {x}^{*}\right)\right]$$
+若 $x^{*}$ 是正则点，法空间 $N\left(\boldsymbol {x}^{*}\right)$ 的维数为m.
+### 引理（切空间 $T\left(\boldsymbol {x}^{*}\right)$ 与法空间 $N\left(\boldsymbol {x}^{*}\right)$  的关系）
+$$T\left(\boldsymbol {x}^{*}\right)=N\left(\boldsymbol {x}^{*}\right)^{\bot },$$
+$$T\left(\boldsymbol {x}^{*}\right)^{\bot }=N\left(\boldsymbol {x}^{*}\right)$$
+$$\mathbb {R}^{n}=N\left(\boldsymbol {x}^{*}\right)\oplus T\left(\boldsymbol {x}^{*}\right)$$
+![](https://web-api.textin.com/ocr_image/external/f6548c1350249791.jpg)
+![](https://web-api.textin.com/ocr_image/external/361ca52705c263c8.jpg)
+16/
+### 拉格朗日条件（2维）： $\min _{\boldsymbol {x}\in \mathbb {R}^{2}}f(\boldsymbol {x})$  s.t. $h(\boldsymbol {x})=0$ 
+分析：若 $\boldsymbol {x}^{*}$ 满足约束（即 $\left.h\left(\boldsymbol {x}^{*}\right)=0\right)$ 和正则性（即 $\left.\nabla h\left(\boldsymbol {x}^{*}\right)\neq 0\right)$ 
+记曲线 $\left\{\boldsymbol {x}\in \mathbb {R}^{2}|h(\boldsymbol {x})=0\right\}$ 的参数方程为
+$$\boldsymbol {x}(t)=\left[\begin{array}{l}x_{1}(t)\\ x_{2}(t)\end{array}\right],t\in (a,b)\quad \boldsymbol {x}^{*}=\boldsymbol {x}\left(t^{*}\right),\dot {\boldsymbol {x}}\left(t^{*}\right)\neq \mathbf {0},t^{*}\in (a,b)$$
+$\therefore h$ 在曲线 $\{\boldsymbol {x}(t)|t\in (a,b)\}$ 上是常数，即 $\forall t\in (a,b)$ $h(\boldsymbol {x}(t))=0.$ 
+$$\therefore\quad \frac {\mathrm {d}}{\mathrm {\;d}t}h(\boldsymbol {x}(t))=\nabla h(\boldsymbol {x}(t))^{\top }\dot {\boldsymbol {x}}(t)=0.$$
+$\therefore \nabla h\left(\boldsymbol {x}^{*}\right)$ 与 $\dot {\boldsymbol {x}}\left(t^{*}\right)$ 正交.
+另一方面，若 $\boldsymbol {x}^{*}$ 是极小点.记 $φ(t)=f(\boldsymbol {x}(t))$ 在 $t=t^{*}$ 处达到极小.
+$$\therefore\quad \frac {\mathrm {d}}{\mathrm {\;d}t}φ\left(t^{*}\right)=\nabla f\left(\boldsymbol {x}\left(t^{*}\right)\right)^{\top }\dot {\boldsymbol {x}}\left(t^{*}\right)=\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\dot {\boldsymbol {x}}\left(t^{*}\right)=0.$$
+$\therefore \nabla f\left(\boldsymbol {x}^{*}\right)$ 与 $\dot {\boldsymbol {x}}\left(t^{*}\right)$ 正交.
+$\dot {\mathbf {x}}\left(\mathrm {t}^{*}\right)$ x(b) $\nabla f(x^{*})$ x $x^{*}$ x(a) f=1 $f=1$ - $1=2$ h=0 $h=0$ 1=3 $f=3$ 1360
+![](https://web-api.textin.com/ocr_image/external/ffa586ed29f165eb.jpg)
+# 拉格朗日条件（2维）
+$f(x^{*})$ $\text {Vh}\left(x^{*}\right)$ x $x^{*}$ $h=0$
+![](https://web-api.textin.com/ocr_image/external/c4f0c40bbe824ade.jpg)
+(a)
+$\text {Vf}\left(x^{*}\right)$ $\nabla h\left(x^{*}\right)$ x* $h=0$ $x^{\prime }$
+![](https://web-api.textin.com/ocr_image/external/73bffb9ef62def7e.jpg)
+(b) (c)
+$\nabla h\left(x^{*}\right)$ $x^{*}$ $\nabla f(x^{*})$ $h=0$
+![](https://web-api.textin.com/ocr_image/external/2480d9bb5f55de83.jpg)
+$\text {A}\nabla h\left(x^{*}\right)$ h=0 $h=0$ $x^{*}$ $\nabla f(x^{*})$
+![](https://web-api.textin.com/ocr_image/external/2d4d86ed09093f81.jpg)
+(d)
+![](https://web-api.textin.com/ocr_image/external/6faa5bc75f28a9de.jpg)
+![](https://web-api.textin.com/ocr_image/external/292de80c7643bb4c.jpg)
+![](https://web-api.textin.com/ocr_image/external/8a54d6064961751e.jpg)
+![](https://web-api.textin.com/ocr_image/external/14f8fd8aff177012.jpg)
+![](https://web-api.textin.com/ocr_image/external/346c86f44d5b0b69.jpg)
+第20章 等式约束优化问题
+18/37
+## 拉格朗日条件（n维）： $\min _{x\in \mathbb {R}^{n}}$ $f(x)$  s.t. $\boldsymbol {h}(\boldsymbol {x})=0$ 
+# 定理（拉格朗日定理）
+若 $\boldsymbol {x}^{*}$ 是极小点且 $\boldsymbol {x}^{*}$ 是正则点，则 $\exists \boldsymbol {λ}^{*}\in \mathbb {R}^{m}\text {使得}$ 
+$$\left\{\begin{array}{l}\nabla f\left(\boldsymbol {x}^{*}\right)+D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {λ}^{*}=\mathbf {0},\\ \boldsymbol {h}\left(\boldsymbol {x}^{*}\right)=\mathbf {0},\end{array}\right.$$
+或 $\left\{\begin{array}{l}\nabla f\left(\boldsymbol {x}^{*}\right)+\sum _{i=1}^{m}λ_{i}^{*}\nabla h\left(x^{*}\right)=0,\\ h_{i}\left(\boldsymbol {x}^{*}\right)=0,\quad i=1,\cdots ,m.\end{array}\right.$ 
+证法（一）.令 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ 
+$\therefore \exists \{\boldsymbol {x}(t)|t\in (a,b)\}$ 使得 $\boldsymbol {h}(\boldsymbol {x}(t))=\mathbf {0}$ 和 $φ(t)=f(\boldsymbol {x}(t)),\forall t.$ 
+$$\therefore \exists t^{*}\in (a,b)\text {s.t.}\quad \boldsymbol {x}\left(t^{*}\right)=\boldsymbol {x}^{*},\dot {\boldsymbol {x}}\left(t^{*}\right)=\boldsymbol {d}.$$
+$t^{*}$ 是极小点 $φ$ .
+$$\frac {dφ}{dt}\left(t^{*}\right)=Df\left(\boldsymbol {x}^{*}\right)\dot {\boldsymbol {x}}\left(t^{*}\right)=Df\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}=\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {d}=0,$$
+$$\nabla f\left(\boldsymbol {x}^{*}\right)\in T\left(\boldsymbol {x}^{*}\right)^{\bot }=N\left(\boldsymbol {x}^{*}\right)=\mathcal {R}\left(D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\right)$$
+证法（二）. $\because T\left(\boldsymbol {x}^{*}\right)$ 是子空间，
+$$\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)\geq 0,\forall \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)\Leftrightarrow \boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)=0,\forall \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right).\quad (why?)$$
+$$\therefore \nabla f\left(\boldsymbol {x}^{*}\right)\in T\left(\boldsymbol {x}^{*}\right)^{\bot }=N\left(\boldsymbol {x}^{*}\right)=\mathcal {R}\left(D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\right)$$
+![](https://web-api.textin.com/ocr_image/external/51076838b36b597a.jpg)
+# 拉格朗日函数
+![](https://web-api.textin.com/ocr_image/external/70d2622ac147f53a.jpg)
+$λ^{*}\in$ $R$ 称为拉格朗日乘子（(Lagrange multiplier).
+![](https://web-api.textin.com/ocr_image/external/f82091b1c0d2ef91.jpg)
+若 $\boldsymbol {x}^{*}$ 是极小点，则 $\nabla f\left(\boldsymbol {x}^{*}\right)$ 可由向量组 $\left\{\nabla h_{i}\left(\boldsymbol {x}^{*}\right)\right\}_{i=1}^{m}$ 线性表出.
+$k^{2}$
+![](https://web-api.textin.com/ocr_image/external/8f9514c5fa8d4530.jpg)
+等式约束优化：min $f(x)$ s.t. $\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}$ 
+拉格朗日函数 $l:\mathbb {R}^{n}x\mathbb {R}^{m}\rightarrow$ R定义为
+$$l(\boldsymbol {x},\boldsymbol {λ}):=f(\boldsymbol {x})\pm \boldsymbol {λ}^{\top }\boldsymbol {h}(\boldsymbol {x})=f(\boldsymbol {x})\pm \sum _{i=1}^{m}λ_{i}h_{i}(\boldsymbol {x}).$$
+若 $\boldsymbol {x}^{*}$ 是极小点，则存在乘子 $\boldsymbol {λ}^{*}$ 使得 $\nabla l\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)=\mathbf {0}.$ 
+$\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ 也称为l的稳定点，或拉格朗日点.
+本质：将无约束优化问题的一阶必要条件（FONC）应用于拉格朗日函数，即
+$$\mathbf {0}=\nabla l(\boldsymbol {x},\boldsymbol {λ})=\left[\begin{array}{l}\nabla _{\boldsymbol {x}}l(\boldsymbol {x},\boldsymbol {λ})\\ \nabla _{\boldsymbol {λ}}l(\boldsymbol {x},\boldsymbol {λ})\end{array}\right]Longleftrightarrow\left\{\begin{array}{l}\nabla f(\boldsymbol {x})+D\boldsymbol {h}(\boldsymbol {x})^{\top }\boldsymbol {λ}=\mathbf {0},\\ \boldsymbol {h}(\boldsymbol {x})=\mathbf {0}.\end{array}\right.\tag{1}$$
+![](https://web-api.textin.com/ocr_image/external/4a926ba490672a37.jpg)
+非线性方程组（1）有 $n+m$ 个方程， $n+m$ 个变量（可能无解）.
+![](https://web-api.textin.com/ocr_image/external/7ee7d40556304026.jpg)
+★拉格朗日定理刻画了 $\boldsymbol {x}^{*}$  为极小点的一阶必要条件 $(FONC)$ )，而非充分条件即，满足（1）的解 $\boldsymbol {x}^{*}$ 仅仅是优化问题的“候选”极小点.
+![](https://web-api.textin.com/ocr_image/external/1df44a47db48c4ad.jpg)
+20/37
+# 拉格朗日函数
+**例.**min $f(\boldsymbol {x})=x_{1}^{2}+x_{2}^{2}$ ,s.t. $\boldsymbol {h}(\boldsymbol {x})=x_{1}^{2}+2x_{2}^{2}-1=0$ 
+**拉格朗日函数为** $l(\boldsymbol {x},λ)=f(\boldsymbol {x})+λ\boldsymbol {h}(\boldsymbol {x})$ 
+∴ $\left\{\begin{array}{l}\nabla _{\boldsymbol {x}}l(\boldsymbol {x},λ)=\nabla _{\boldsymbol {x}}[f(\boldsymbol {x})+λ\boldsymbol {h}(\boldsymbol {x})]=\left[\begin{array}{l}2x_{1}+2λx_{1}\\ 2x_{2}+4λx_{2}\end{array}\right],\\ \nabla _{λ}l(\boldsymbol {x},λ)=\boldsymbol {h}(\boldsymbol {x})=x_{1}^{2}+2x_{2}^{2}-1.\end{array}\right.$ 
+**由拉格朗日定理（即条件极值），即** $\nabla l(\boldsymbol {x},λ)=\mathbf {0}$ 得：
+∴ $\left\{\begin{matrix}2x_{1}+2\lambda x_{1}=0\\ 2x_{2}+4\lambda x_{2}=0\\ x_{1}^{2}+2x_{2}^{2}=1\end{matrix}\right.\Rightarrow \cdots \Rightarrow \left\{\begin{matrix}\boldsymbol {x}^{(1)}=[0,\frac {1}{\sqrt {2}}]^{\top },&\boldsymbol {x}^{(2)}=[0,\frac {-1}{\sqrt {2}}]^{\top },\\ \boldsymbol {x}^{(3)}=[1,0]^{\top },&\boldsymbol {x}^{(4)}=[-1,0]^{\top }.\end{matrix}\right.$ 
+: $f\left(\boldsymbol {x}^{(1)}\right)=f\left(\boldsymbol {x}^{(2)}\right)=\frac {1}{2},f\left(\boldsymbol {x}^{(3)}\right)=f\left(\boldsymbol {x}^{(4)}\right)=1$ 
+**.若优化问题有局部极小点，则是** $\boldsymbol {x}^{(1)}$ 和 $\boldsymbol {x}^{(2)};$ 若优化问题有局部极大点，则是 $\boldsymbol {x}^{(3)}$ 和 $\boldsymbol {x}^{(4)}$ 
+![](https://web-api.textin.com/ocr_image/external/7331a783a377a4c5.jpg)
+# 拉格朗日函数
+## 练习
+min $x_{1}+x_{2}$ ,s.t., $x_{1}^{2}+x_{2}^{2}-2=0$  $\left(\boldsymbol {x}^{*}=[-1,-1]^{\top }\right)$ 
+min $2\left(x_{1}^{2}+x_{2}^{2}-1\right)-x_{1}\text {,s.t.}$ $x_{1}^{2}+x_{2}^{2}=1,$  $\left(\boldsymbol {x}^{*}=[1,0]^{\top }\right)$ 
+例.max $\frac {x^{\top }Qx}{x^{\top }Px}$ ，其中 $\boldsymbol {Q}=\boldsymbol {Q}^{\top }\succeq 0,\boldsymbol {P}=\boldsymbol {P}^{\top }\succ 0$
+![](https://web-api.textin.com/ocr_image/external/680a9539528653af.jpg)
+$\because$  目标函数是度为0的齐次函数，即 $f(t\boldsymbol {x})=f(\boldsymbol {x})$ $,\forall t\in \mathbb {R}.$ 
+若x是优化问题的极大点，则任意tx $(t\neq 0)$ 也是极大点.
+∴max $\frac {\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}}{\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}}Longleftrightarrow\max \left\{\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}|\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}=1\right\}.$ 
+$\because$  约束集满足正则性（why?）
+.拉格朗日函数为 $l(\boldsymbol {x},λ)=\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+λ\left(1-\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}\right)$ 
+$$\left\{\begin{array}{l}{\nabla _{\boldsymbol {x}}l(\boldsymbol {x},\lambda )=2\boldsymbol {Q}\boldsymbol {x}-2\lambda \boldsymbol {P}\boldsymbol {x}=\mathbf {0}}\\
+{\nabla _{\lambda }l(\boldsymbol {x},\lambda )=1-\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}=0}\end{array}\Longrightarrow \left\{\begin{array}{l}\boldsymbol{Q}\boldsymbol{x}=\lambda \boldsymbol{P}\boldsymbol{x}\\
+\boldsymbol{x}^{\top}\boldsymbol{P}\boldsymbol{x}=1\end{array}\right.\right.$$
+∴ $\boldsymbol {x}^{*}$ 是矩阵 $P^{-1}Q$ 的特征向量， $λ^{*}$ 是相应的特征值.
+$\because \left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {P}\boldsymbol {x}^{*}=1$ 和 $\boldsymbol {Q}\boldsymbol {x}^{*}=λ^{*}\boldsymbol {P}\boldsymbol {x}^{*}\Rightarrow \mathrm {obj}=\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{*}=λ^{*}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {P}\boldsymbol {x}^{*}=λ^{*}$ 
+$\because λ^{*}$ 是极大值，即 $λ^{*}$ 是矩阵 $P^{-1}Q$ 的最大特征值.
+第20章 等式约束优化问题
+# 拉格朗日条件（n维）
+![](https://web-api.textin.com/ocr_image/external/575c549c9f334b68.jpg)
+约束集的正则性（regularity）非常重要.没有正则性会如何？
+## 反例：优化问题 $\min \{f(x)|h(x)=0\}$ 
+$$f(x)=x,h(x)=\left\{\begin{array}{ll}x^{2}&\text {if}x<0\\ 0&\text {if}0\leq x\leq 1\\ (x-1)^{2}&\text {if}x>1\end{array}\right.$$
+本质上，约束集为区间［0,1]．所以， $x^{*}=0$ 是极小点.
+然而， $f^{\prime }\left(x^{*}\right)=1$ 和 $h^{\prime }\left(x^{*}\right)=0.$ 
+$\therefore x^{*}$ 不满足拉格朗日条件 $f^{\prime }\left(x^{*}\right)=λ^{*}h^{\prime }\left(x^{*}\right)$ 
+## 二阶条件
+![](https://web-api.textin.com/ocr_image/external/02c1c68b2d7332b8.jpg)
+★拉格朗日条件仅仅是极值点的必要条件．因此，满足（1）的解仅仅是“候选”极小点.为了明确其是否为极小点，需要用二阶条件来验证.
+★符号：设f： $\mathbb {R}^{n}\rightarrow$ R, $h_{i}:$ $\mathbb {R}^{n}\rightarrow$ $R$ $(i=1,\cdots ,m)$ 均是二次连续可微的.记 $\boldsymbol {L}(\boldsymbol {x},\boldsymbol {λ})$ 为拉格朗日函数 $l(\boldsymbol {x},\boldsymbol {λ})$ **关于x的黑塞矩阵：**
+$\boldsymbol {L}(\boldsymbol {x},\boldsymbol {λ})=\underbrace {\nabla ^{2}f(\boldsymbol {x})}_{\boldsymbol {F}(\boldsymbol {x})}+\underbrace {λ_{1}\nabla ^{2}h_{1}(\boldsymbol {x})+\cdots +λ_{1}\nabla ^{2}h_{1}(\boldsymbol {x})}_{[\boldsymbol {λ}\boldsymbol {H}(\boldsymbol {x})]}=\boldsymbol {F}(\boldsymbol {x})+[\boldsymbol {λ}\boldsymbol {H}(\boldsymbol {x})].$
+![](https://web-api.textin.com/ocr_image/external/db771a5d4c0fb837.jpg)
+# 二阶条件
+## 定理（二阶必要条件（SONC)）
+设 $\boldsymbol {x}^{*}$  是优化问题 $\min \{f(\boldsymbol {x})|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\}$ 的局部极小点.若 $\boldsymbol {x}^{*}$ 是正则点，则存在 $\boldsymbol {λ}^{*}\in \mathbb {R}^{m}$ 使得：
+1 $\nabla f\left(\boldsymbol {x}^{*}\right)+D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {λ}^{*}=\mathbf {0}.$  2 $\boldsymbol {h}(\boldsymbol {x})=0.$  3 $\boldsymbol {d}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)\boldsymbol {d}\geq 0,\forall \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right).$ 
+证.①❷是拉格朗日定理.我们现在证明❸
+记 $S=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\right\}$ 和 $\boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ 
+$\because$ $\boldsymbol {h}\in \mathcal {C}^{2}Longrightarrow\exists =$ 次可微曲线 $\{\boldsymbol {x}(t)|t\in (a,b)\}\subset S$ 使得
+$$\exists t^{*}\in (a,b)\quad \boldsymbol {x}\left(t^{*}\right)=\boldsymbol {x}^{*}\quad \dot {\boldsymbol {x}}\left(t^{*}\right)=\boldsymbol {d}.$$
+. $\boldsymbol {x}^{*}$ 是极小点 $Longrightarrowt^{*}$ 是一元函数 $φ(t)=f(\boldsymbol {x}(t))$ 的极小点.
+由无约束优化问题的SONC得： $φ^{\prime \prime }\left(t^{*}\right)\geq 0.$ 
+$$\therefore \quad φ^{\prime \prime }\left(t^{*}\right)=\frac {d}{dt}\left[Df\left(\boldsymbol {x}\left(t^{*}\right)\right)\dot {\boldsymbol {x}}\left(t^{*}\right)\right]=\dot {\boldsymbol {x}}\left(t^{*}\right)^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\dot {\boldsymbol {x}}\left(t^{*}\right)+Df\left(\boldsymbol {x}^{*}\right)\dot {\boldsymbol {x}}\left(t^{*}\right)$$
+$$=\boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+Df\left(\boldsymbol {x}^{*}\right)\overrightarrow {\boldsymbol {x}}\left(t^{*}\right)\geq 0.$$
+(2)
+![](https://web-api.textin.com/ocr_image/external/2ea4ef1aa9ccfd0a.jpg)
+$\because \boldsymbol {h}(\boldsymbol {x}(t))=\mathbf {0}$  $\forall t\in (a,b)$ ，有 $\frac {d^{2}}{dt^{2}}\boldsymbol {λ}^{*\top }\boldsymbol {h}(\boldsymbol {x}(t))=0.$
+# 二阶条件
+$$\therefore \frac {d^{2}}{dt^{2}}\boldsymbol {λ}^{*\top }\boldsymbol {h}(\boldsymbol {x}(t))=\frac {d}{dt}\left[\boldsymbol {λ}^{*\top }\frac {d}{dt}\boldsymbol {h}(\boldsymbol {x}(t))\right]=\frac {d}{dt}\left[\sum _{k=1}^{m}λ_{k}^{*}\frac {d}{dt}h_{k}(\boldsymbol {x}(t))\right]$$
+$$=\frac {d}{dt}\left[\sum _{k=1}^{m}λ_{k}^{*}Dh_{k}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)\right]=\sum _{k=1}^{m}λ_{k}^{*}\frac {d}{dt}\left(Dh_{k}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)\right)$$
+$$=\sum _{k=1}^{m}λ_{k}^{*}\left[\dot {\boldsymbol {x}}(t)^{\top }\boldsymbol {H}_{k}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)+Dh_{k}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)\right]$$
+$$=\dot {\boldsymbol {x}}^{\top }(t)\left[\boldsymbol {λ}^{*}\boldsymbol {H}(\boldsymbol {x}(t))\right]\dot {\boldsymbol {x}}(t)+\boldsymbol {λ}^{*\top }D\boldsymbol {h}(\boldsymbol {x}(t))\dot {\boldsymbol {x}}(t)=0.$$
+在上述等式中令 $t=t^{*}$ ，并与（2）联立，有
+$$\left\{\begin{array}{l}\boldsymbol {d}^{\top }\left[\boldsymbol {λ}^{*}\boldsymbol {H}\left(\boldsymbol {x}^{*}\right)\right]\boldsymbol {d}+\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\dot {\boldsymbol {x}}\left(t^{*}\right)=0,\\ \boldsymbol {d}^{\top }\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}+Df\left(\boldsymbol {x}^{*}\right)\dot {\boldsymbol {x}}\left(\boldsymbol {t}^{*}\right)\geq 0.\end{array}\right.$$
+将上述两个等式相加得
+$$\boldsymbol {d}^{\top }\left[\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*}\boldsymbol {H}\left(\boldsymbol {x}^{*}\right)\right]\boldsymbol {d}+\left[Df\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\right]\dot {\boldsymbol {x}}\left(t^{*}\right)\geq 0.$$
+但是，由拉格朗日定理知： $Df\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)=\mathbf {0}^{\top }.$ 
+$$\therefore \boldsymbol {d}^{\top }\left[\boldsymbol {F}\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*}\boldsymbol {H}\left(\boldsymbol {x}^{*}\right)\right]\boldsymbol {d}=\boldsymbol {d}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)\boldsymbol {d}\geq 0.$$
+# 二阶条件
+# 定理（二阶充分条件）
+设 $f,h_{i}\in \mathcal {C}^{2}$ .若 $\boldsymbol {x}^{*}\in \mathbb {R}^{n},\boldsymbol {λ}^{*}\in \mathbb {R}^{m}$ 满足：
+① $\nabla f\left(\boldsymbol {x}^{*}\right)+D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)^{\top }\boldsymbol {λ}^{*}=\mathbf {0}$ .② $\boldsymbol {h}(\boldsymbol {x})=0.$ ③ $\boldsymbol {d}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)\boldsymbol {d}>0$ $\forall \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ 则 $\boldsymbol {x}^{*}$ 是优化问题min $\{f(\boldsymbol {x})|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\}$ 的严格局部极小点.（证．文献［88,p.334])．
+若 $\boldsymbol {x}^{*}$ 满足拉格朗日条件，且 $\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)\succ 0$ 在 $T\left(\boldsymbol {x}^{*}\right)$ 上成立，则 $\boldsymbol {x}^{*}$ 是严格局部极小点.
+反之，若 $\boldsymbol {x}^{*}$ 满足拉格朗日条件，且 $\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)prec0$ 在 $T\left(\boldsymbol {x}^{*}\right)$ 上，则 $\boldsymbol {x}^{*}$ 是严格极大点.
+$L(x,λ)$ ）在二阶条件中的角色类似黑塞矩阵 $F(x)$ 在无约束优化中的角色.然而，对于约束优化问题，我们需要 $\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)\succeq 0$ 在 $T\left(\boldsymbol {x}^{*}\right)$ 成立（对比 $F(x)$ 在 $\mathbb {R}^{n}$  上成立）.
+# 二阶条件的应用
+例.min $f(\boldsymbol {x})=\frac {1}{2}\left(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)$  s.t. $h(\boldsymbol {x})=x_{1}+x_{2}+x_{3}=3$ 
+$\because$  **拉格朗日函数为：** $l(\boldsymbol {x},λ)=\frac {1}{2}\left(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)+λ\left(x_{1}+x_{2}+x_{3}-3\right)$ 
+$\because$  **由拉格朗日定理知**： $\text {Dl}(\boldsymbol {x},λ)=\left[\nabla _{\boldsymbol {x}}l(\boldsymbol {x},λ),\nabla _{λ}l(\boldsymbol {x},λ)\right]=\mathbf {0}.$ 
+∴ $\left\{\begin{array}{l}x_{1}+λ=0,\quad x_{2}+λ=0\\ x_{3}+λ=0,\quad x_{1}+x_{2}+x_{3}=3\end{array}\right.$ 
+∴ $\boldsymbol {x}^{*}=[1,1,1]^{\top },$ $λ^{*}=-1$ 
+**现在用二阶充分条件验证** $\boldsymbol {x}^{*}$ 是否是优化问题的真正极小点？
+$\because$  拉格朗日函数 $l(\boldsymbol {x},λ)$ 关于x的黑塞矩阵为 $\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)=\boldsymbol {I}\succ 0.$ 
+由二阶充分条件知， $\boldsymbol {x}^{*}=[1,1,1]^{\top }$ 是优化问题的严格局部极小点.
+![](https://web-api.textin.com/ocr_image/external/0471bb75d3ad007d.jpg)
+第20章 等式约束优化问题
+# 二阶条件的应用
+## 例.min $f(\boldsymbol {x})=-\left(x_{1}x_{2}+x_{2}x_{3}+x_{3}x_{1}\right)\text {,s.t.}$ $h(\boldsymbol {x})=x_{1}+x_{2}+x_{3}=3$ 
+$\because$  **拉格朗日函数为：** $l(\boldsymbol {x},λ)=-\left(x_{1}x_{2}+x_{2}x_{3}+x_{3}x_{1}\right)+λ\left(x_{1}+x_{2}+x_{3}-3\right)$ 
+$\because$  **由拉格朗日定理知**： $\text {Dl}(\boldsymbol {x},λ)=\left[\nabla _{\boldsymbol {x}}l(\boldsymbol {x},λ),\nabla _{λ}l(\boldsymbol {x},λ)\right]=\mathbf {0}.$ 
+∴ $\left\{\begin{array}{ll}-x_{2}-x_{3}+λ=0,&-x_{1}-x_{3}+λ=0\\ -x_{1}-x_{2}+λ=0,&x_{1}+x_{2}+x_{3}=3\end{array}Longrightarrow\boldsymbol {x}^{*}=[1,1,1]^{\top },λ^{*}=2\right.$ 
+现在用二阶充分条件验证 $\boldsymbol {x}^{*}$ 是否是优化问题的真正极小点？
+$\because$  拉格朗日函数关于x的黑塞矩阵为 $\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)=\left[\begin{array}{ccc}0&-1&-1\\ -1&0&-1\\ -1&-1&0\end{array}\right]ner0.$ 
+**但是，约束集** $\left\{\boldsymbol {x}\in \mathbb {R}^{3}|x_{1}+x_{2}+x_{3}-3=0\right\}$ 在 $\boldsymbol {x}^{*}$ 处的切空间为 $T\left(\boldsymbol {x}^{*}\right)=\left\{\boldsymbol {d}\in \mathbb {R}^{3}|\boldsymbol {D}\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\boldsymbol {d}=0\right\}=\left\{\boldsymbol {d}\in \mathbb {R}^{3}|[1,1,1]\boldsymbol {d}=0\right\}$ 
+$$=\left\{\boldsymbol {d}\in \mathbb {R}^{3}|\boldsymbol {d}=\left[\begin{array}{cc}-1&-1\\ 1&0\\ 0&1\end{array}\right]\left[\begin{array}{c}k_{1}\\ k_{2}\end{array}\right],\forall k_{1},k_{2}\in \mathbb {R}\right\}$$
+$$=\left\{\boldsymbol {d}\in \mathbb {R}^{3}|\boldsymbol {d}=\boldsymbol {P}\boldsymbol {k},\right.\quad \left.\forall \boldsymbol {k}\in \mathbb {R}^{2}\right\}$$
+# 二阶条件的应用
+$\boldsymbol {d}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)\boldsymbol {d}=\boldsymbol {k}^{\top }\boldsymbol {P}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)\boldsymbol {P}\boldsymbol {k}=\boldsymbol {k}^{\top }$ $入$ .. $\left[\begin{array}{ll}2&1\\ 1&2\end{array}\right]\boldsymbol {k}>0,$ $\forall 0\neq \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right)$ 
+在切空间 $T\left(\boldsymbol {x}^{*}\right)$ 上， $\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)\succ 0.$ 
+$\boldsymbol {x}^{*}=[1,1,1]^{\top }$ 是严格局部极小点.
+## 例.
+$max$ $\frac {\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}}{\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}}$ ，其中 $\boldsymbol {Q}=\left[\begin{array}{ll}4&0\\ 0&1\end{array}\right]$ , $\boldsymbol {P}=\left[\begin{array}{ll}2&0\\ 0&1\end{array}\right]$  （提示：转化为 $\left.\max _{\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}=1}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}\right)$ 
+解：拉格朗日函数为： $l(\boldsymbol {x},λ)=\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+λ\left(1-\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}\right)$ 
+由前述讨论知，拉格朗日条件为： $\left\{\begin{array}{l}\boldsymbol {P}^{-1}\boldsymbol {Q}\boldsymbol {x}=λ\boldsymbol {x},\\ \boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}=1\end{array}\right.$ 
+求解得： $\boldsymbol {x}^{*}=\pm \left[\frac {1}{\sqrt {2}},0\right]^{\top },λ^{*}=2$ 
+现在用二阶充分条件验证 $\pm \boldsymbol {x}^{*}$ 是否是优化问题的真正极小点？
+$\because l(x,λ)$ 的黑塞矩阵是： $\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)=2\boldsymbol {Q}-2λ\boldsymbol {P}=\left[\begin{array}{cc}0&0\\ 0&-2\end{array}\right]$ 
+![](https://web-api.textin.com/ocr_image/external/65a773d3d7065ab3.jpg)
+第20章 等式约束优化问题
+# 二阶条件的应用
+约束集 $\left\{\boldsymbol {x}\in \mathbb {R}^{2}|1-\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}=0\right\}$ 在 $\boldsymbol {x}^{*}$ 处的切空间为：
+$$T\left(\boldsymbol {x}^{*}\right)=\left\{\boldsymbol {d}\in \mathbb {R}^{2}|\boldsymbol {x}^{*\top }\boldsymbol {P}\boldsymbol {d}=0\right\}=\left\{\boldsymbol {d}\in \mathbb {R}^{2}|[\sqrt {2},0]\boldsymbol {d}=0\right\}\quad =\left\{\boldsymbol {d}\in \mathbb {R}^{2}|\boldsymbol {d}=[0,a]^{\top }\right.,\forall a\in \mathbb {R}\}$$
+$\because \quad \forall \boldsymbol {d}\in T\left(\boldsymbol {x}^{*}\right),\boldsymbol {d}\neq 0$ ，我们有
+$$\boldsymbol {d}^{\top }\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)\boldsymbol {d}=[0,a]\left[\begin{array}{cc}0&0\\ 0&-2\end{array}\right]\left[\begin{array}{c}0\\ a\end{array}\right]=-2a^{2}<0.$$
+∴在 $T\left(\boldsymbol {x}^{*}\right)$ 上， $\boldsymbol {L}\left(\boldsymbol {x}^{*},λ^{*}\right)prec0$ 
+由二阶充分条件知， $\boldsymbol {x}^{*}=\left[\frac {1}{\sqrt {2}},0\right]^{\top }$ 是严格局部极大点.
+同理，可以验证 $-\boldsymbol {x}^{*}$  是否是极值点.
+# 二阶条件应用
+## 引理
+已知P和Q为对称矩阵.若 $\boldsymbol {Q}\succeq 0$ ，且在 $\mathcal {N}(\boldsymbol {Q})$ 上， $\boldsymbol {P}\succ 0$ （即 $\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}>0,\forall \boldsymbol {x}\neq 0$ 且 $Qx=0)$ .则存在 $c\in \mathbb {R}$ 使得
+$$\boldsymbol {P}+c\boldsymbol {Q}\succ 0,\forall c>\bar {c}.$$
+证.（反证法）若 $\exists \boldsymbol {x}^{k}\in \mathbb {R}^{n}$ 满足 $\left\|\boldsymbol {x}^{k}\right\|=1$ 使得
+$\left(\boldsymbol {x}^{k}\right)^{\top }\boldsymbol {P}\boldsymbol {x}^{k}+k\left(\boldsymbol {x}^{k}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{k}<0,$ $\forall k.$ 
+记 $\left\{\boldsymbol {x}^{k_{j}}\right\}$ 是收敛子列，极限点为x且满足 $\|\boldsymbol {x}\|=1.$ 
+对指标 $j$  求上极限得
+$$\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}+\limsup _{j\rightarrow \infty }\left(j\left(\boldsymbol {x}^{k_{j}}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{k_{j}}\right)\leq 0Longrightarrow\left(\boldsymbol {x}^{k_{j}}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{k_{j}}\leq 0.$$
+. $\boldsymbol {Q}\succeq 0Longrightarrow$  $\lim _{j\rightarrow \infty }\left(\boldsymbol {x}^{k_{j}}\right)^{\top }\boldsymbol {Q}\boldsymbol {x}^{k_{j}}=0Longrightarrow\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}=0.$ 
+由假设知， $\boldsymbol {x}^{\top }\boldsymbol {P}\boldsymbol {x}>0$ ，从而得出了矛盾.
+## 二次规划
+# 二次规划（Quadratic Programming,QP）
+![](https://web-api.textin.com/ocr_image/external/6507e0a5ccddcfbe.jpg)
+min $\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}$ s.t. $\boldsymbol {A}\boldsymbol {x}\leq \boldsymbol {b},$ 其中 $Q\in \mathbb {R}^{n\times n},$ $\boldsymbol {A}\in \mathbb {R}^{mxn},m<n$ rank $\boldsymbol {A}=m.$ 
+## 二次规划的特点：
+·本质：在多面体集上找二次函数的极小／极大点.
+![](https://web-api.textin.com/ocr_image/external/bd3d82bd756163b3.jpg)
+·若 $\boldsymbol {Q}\succeq 0$ ，则二次规划是凸优化问题.
+![](https://web-api.textin.com/ocr_image/external/e343ebfb8a8ccd53.jpg)
+### 等式约束二次规划的拉格朗日条件
+拉格朗日函数： $l(\boldsymbol {x},\boldsymbol {λ})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}+\boldsymbol {λ}^{\top }(\boldsymbol {b}-\boldsymbol {A}\boldsymbol {x})$ 
+拉格朗日条件：
+$\left\{\begin{array}{l}\nabla _{\boldsymbol {x}}l(\boldsymbol {x},\boldsymbol {λ})=\boldsymbol {Q}\boldsymbol {x}-\boldsymbol {A}^{\top }\boldsymbol {λ}=\mathbf {0}\\ \nabla _{\boldsymbol {λ}}l(\boldsymbol {x},\boldsymbol {λ})=\boldsymbol {A}\boldsymbol {x}-\boldsymbol {b}=\mathbf {0}\end{array}\right.$  $\xrightarrow {\text {若}_{Q\succ 0}}$ $\left\{\begin{array}{l}\boldsymbol {x}^{*}=\boldsymbol {Q}^{-1}\boldsymbol {A}^{\top }\left(\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {b}\\ \boldsymbol {λ}^{*}=\left(\boldsymbol {A}\boldsymbol {Q}^{-1}\boldsymbol {A}^{\top }\right)^{-1}\boldsymbol {b}\end{array}\right.$ 
+![](https://web-api.textin.com/ocr_image/external/95b755f91635bee1.jpg)
+### $\boldsymbol {x}^{*}$ 是否是二次规划的真正极小点？
+事实上，∵ $\boldsymbol {L}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)=\boldsymbol {Q},\therefore \boldsymbol {x}^{*}$ 是严格极小点当且仅当 $\boldsymbol {Q}\succ 0.$ 
+![](https://web-api.textin.com/ocr_image/external/8359c010e590b7e8.jpg)
+# 灵敏性分析（Sensitivity Analysis）
+## 例.单个等式约束的优化问题：给定 $\boldsymbol {a}\in \mathbb {R}^{n},b\in \mathbb {R}$ 
+**优化问题：**min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {a}^{\top }\boldsymbol {x}=b,$ 极小点记为 $x^{*}$ 
+**扰动问题**：min $f(\boldsymbol {x})$ ,s.t. $\boldsymbol {a}^{\top }\boldsymbol {x}=b+δ_{b}$ ，极小点记为 $\tilde {\boldsymbol {x}}$ .
+问题：记 $δ_{x}=\tilde {\boldsymbol {x}}-\boldsymbol {x}^{*}$ .当 $δ_{b}$ 变化时， $δ_{x}$ 如何变化？
+![](https://web-api.textin.com/ocr_image/external/1548aeab1f001834.jpg)
+![](https://web-api.textin.com/ocr_image/external/873947d5452d22db.jpg)
+## 分析
+$$b+δ_{b}=\boldsymbol {a}^{\top }\tilde {\boldsymbol {x}}=\boldsymbol {a}^{\top }\left(\boldsymbol {x}^{*}+δ_{x}\right)=\boldsymbol {a}^{\top }\boldsymbol {x}^{*}+\boldsymbol {a}^{\top }δ_{x}=b+\boldsymbol {a}^{\top }δ_{x}$$
+$\therefore$ $\boldsymbol {a}^{\top }δ_{x}=δ_{b}.$ 
+**由拉格朗日条件知**： $\nabla f\left(\boldsymbol {x}^{*}\right)+λ^{*}\boldsymbol {a}=0,$ 
+∴. $δ_{f}=f\left(\boldsymbol {x}^{*}+δ_{x}\right)-f\left(\boldsymbol {x}^{*}\right)=\nabla f\left(\boldsymbol {x}^{*}\right)^{\top }δ_{x}+o\left(\left\|δ_{x}\right\|\right)$ $=-λ^{*}\boldsymbol {a}^{\top }δ_{x}+o\left(\left\|δ_{x}\right\|\right)=-λ^{*}δ_{b}+o\left(\left\|δ_{x}\right\|\right).$ 
+∴ $λ^{*}\approx -\frac {δ_{f}}{δ_{b}}$ .所以，拉格朗日乘子 $λ^{*}$  **反映了极值随扰动** $δ_{b}$ **的变化**
+![](https://web-api.textin.com/ocr_image/external/6c12623b9dd091e8.jpg)
+对于多个等式约束的优化问题，即 $\boldsymbol {a}_{i}^{\top }\boldsymbol {x}=b_{i},(i=1,\cdots ,m)$ ，可得 $δ_{f}=-\sum _{i=1}^{m}λ_{i}^{*}δ_{b_{i}}+o\left(\left\|δ_{x}\right\|\right)$ 
+![](https://web-api.textin.com/ocr_image/external/d663262b298fb4a6.jpg)
+第20章 等式约束优化问题
+## 灵敏性定理
+## 等式约束优化问题：min $f(\boldsymbol {x})$  s.t. $\boldsymbol {h}(\boldsymbol {x})=0$ 
+扰动问题：min $f(\boldsymbol {x})$  s.t. $\boldsymbol {h}(\boldsymbol {x})=\boldsymbol {u}$ ,其中 $\boldsymbol {u}\in \mathbb {R}^{m}$  是扰动项. (3)
+记问题（3）的极小点为 $x(u)$  ，拉格朗日乘子为 $\boldsymbol {λ}(\boldsymbol {u})$ ，则 $\boldsymbol {x}^{*}=\boldsymbol {x}(\mathbf {0}),\boldsymbol {λ}^{*}=\boldsymbol {λ}(\mathbf {0})$ 是无扰动时的极小点和相应的乘子.
+## 定理
+假设 $\boldsymbol {x}^{*}$ 是正则点且拉格朗日乘子 $λ^{*}$ 是唯一的.则存在 $γ>0$ 使得
+。（3）有解 $(\boldsymbol {x}(\boldsymbol {u}),\boldsymbol {λ}(\boldsymbol {u})),$ $\forall \boldsymbol {u}\in \mathcal {B}(0,γ)$ 
+$\boldsymbol {x}(·)$ )和 $\boldsymbol {λ}(·)$ 在 $\mathcal {B}(0,γ)$ 是连续可微的.
+。 $\boldsymbol {x}(0)=\boldsymbol {x}^{*},\boldsymbol {λ}(0)=\boldsymbol {λ}^{*},$ ，和 $\nabla p(\boldsymbol {u})=-\boldsymbol {λ}(\boldsymbol {u})$ $\forall \boldsymbol {u}\in \mathcal {B}(0,γ)$ 
+其中 $p(\boldsymbol {u})$ 称为原始函数，定义为
+$$p(u):=f(\boldsymbol {x}(u))=\min \{f(\boldsymbol {x})|\boldsymbol {h}(\boldsymbol {x})=\boldsymbol {u}\}$$
+证.将隐函数定理用于等式系统
+$$\nabla f(\boldsymbol {x})+\nabla \boldsymbol {h}(\boldsymbol {x})^{\top }\boldsymbol {λ}=0\quad \boldsymbol {h}(\boldsymbol {x})=\boldsymbol {u}.$$
+![](https://web-api.textin.com/ocr_image/external/d0282b75f9fb8127.jpg)
+![](https://web-api.textin.com/ocr_image/external/ffa270f4766cf8cb.jpg)
+第20章 等式约束优化问题
+## 灵敏性定理
+·当 $\boldsymbol {u}=0$ 时，系统（4）有解 $\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ ，且系统的Jacobian是 $\boldsymbol {J}(\boldsymbol {x}^{*},\boldsymbol {\lambda }^{*})=\begin{bmatrix}\nabla ^{2}f(\boldsymbol {x}^{*})+\sum \limits _{i=1}^{m}\lambda _{i}^{*}\nabla ^{2}h_{i}(\boldsymbol {x})&\nabla \boldsymbol {h}(\boldsymbol {x}^{*})\\ \nabla \boldsymbol {h}(\boldsymbol {x}^{*})^{\top }&0\end{bmatrix}\in \mathbb {S}^{(n+m)}.$ 
+由充分条件知， $\boldsymbol {J}\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ 是非奇异矩阵.
+$\therefore \forall \boldsymbol {u}\in \mathcal {B}(0,γ),\exists (\boldsymbol {x}(\boldsymbol {u}),\boldsymbol {λ}(\boldsymbol {u}))$ 使得 $(\boldsymbol {x}(0),\boldsymbol {λ}(0))=\left(\boldsymbol {x}^{*},\boldsymbol {λ}^{*}\right)$ .向量值函数 $\boldsymbol {x}(·)$ ）和 $\boldsymbol {λ}(·)$ ）是连续可微的，且
+$$\nabla f(\boldsymbol {x}(\boldsymbol {u}))+\nabla \boldsymbol {h}(\boldsymbol {x}(\boldsymbol {u}))\boldsymbol {λ}(\boldsymbol {u})=0,\quad \boldsymbol {h}(\boldsymbol {x}(\boldsymbol {u}))=\boldsymbol {u}$$
+·当 $\boldsymbol {u}\rightarrow 0$ 时，由充分条件知， $(\boldsymbol {x}(\boldsymbol {u}),\boldsymbol {λ}(\boldsymbol {u}))$ 是系统（3）的解．
+·要计算 $\nabla p(\boldsymbol {u})$ ，只需对 $\boldsymbol {h}(\boldsymbol {x}(\boldsymbol {u}))=\boldsymbol {u}$ 两边关于u微分，我们得
+$$\nabla \boldsymbol {x}(\boldsymbol {u})\nabla \boldsymbol {h}(\boldsymbol {x}(\boldsymbol {u}))=\boldsymbol {I}.$$
+进一步借助关系式 $\nabla \boldsymbol {x}(\boldsymbol {u})\nabla f(\boldsymbol {x}(\boldsymbol {u}))+\nabla \boldsymbol {x}(\boldsymbol {u})\nabla \boldsymbol {h}(\boldsymbol {x}(\boldsymbol {u}))λ(\boldsymbol {u})=0$ 
+$$\therefore \nabla p(\boldsymbol {u})=\nabla _{\boldsymbol {u}}\{f(\boldsymbol {x}(\boldsymbol {u}))\}=\nabla \boldsymbol {x}(\boldsymbol {u})\nabla f(\boldsymbol {x}(\boldsymbol {u}))$$
+## 灵敏性定理
+例.min $f(\boldsymbol {x})=\frac {1}{2}\left(x_{1}^{2}-x_{2}^{2}\right)-x_{2},$ s.t. $h(\boldsymbol {x})=x_{2}=0.$ 原始函数为： $p(u)=\min _{h(\boldsymbol {x})=u}f(\boldsymbol {x})=-\frac {1}{2}u^{2}-u$ 和 $λ^{*}=-\nabla p(0)=1.$ 上述结果与灵敏性定理的结论一致.
+![](https://web-api.textin.com/ocr_image/external/fe7c177f1d44e5d7.jpg)
+### 条件 $\boldsymbol {x}^{*}$  是正则点不可缺.
+若将等式约束换为 $h(\boldsymbol {x})=x_{2}^{2}=0$ ，则 $p(u)=\left\{\begin{array}{l}-\frac {u}{2}-\sqrt {u}\\ +\infty \end{array}\right.$ $\begin{array}{l}\text {if}u\geq 0\\ \text {if}u<0\end{array}$ 
+### 作业课后题：20.3,20.8,20.10,20.15
+![](https://web-api.textin.com/ocr_image/external/6773d923d6d23c2c.jpg)

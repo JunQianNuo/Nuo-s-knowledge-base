@@ -1,0 +1,5604 @@
+[
+    {
+        "type": "text",
+        "text": "遗传算法：从自然进化到智能优化",
+        "text_level": 1,
+        "bbox": [
+            163,
+            385,
+            833,
+            446
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "数学科学学院 张勇",
+        "bbox": [
+            377,
+            574,
+            616,
+            614
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "日期：2026.07.16",
+        "bbox": [
+            58,
+            940,
+            188,
+            964
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            927,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "目录",
+        "text_level": 2,
+        "bbox": [
+            459,
+            31,
+            544,
+            88
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "遗传算法（Genetic Algorithm）教学讲稿\n- 遗传算法的核心思想\n- 遗传算法流程图\n- 二进制编码\n- 二进制编码精度\n- 四种编码方式对比\n- 适应度函数\n- 约束处理方法\n- 选择算子——轮盘赌\n- 选择算子——锦标赛选择\n- 选择算子——排序选择\n- 精英保留策略\n- 交叉算子概述\n- 变异算子概述\n- 关键参数一览\n- 收敛判断与终止条件\n- MATLAB GA 工具箱简介\n- 算例1：函数优化（Rastrigin函数）\n- 课程总结",
+        "bbox": [
+            95,
+            100,
+            595,
+            992
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            927,
+            942,
+            941,
+            962
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "课程导引",
+        "text_level": 2,
+        "bbox": [
+            409,
+            31,
+            583,
+            88
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "本课程将带领大家从自然界的进化现象出发，理解遗传算法的核心思想。",
+        "bbox": [
+            56,
+            124,
+            934,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "学习目标:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            170,
+            183,
+            207
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- 掌握遗传算法的基本原理与流程",
+        "bbox": [
+            56,
+            216,
+            466,
+            255
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- 理解四种主要编码方式及其适用场景",
+        "bbox": [
+            55,
+            264,
+            520,
+            301
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- 能够使用 MATLAB 实现遗传算法解决优化问题",
+        "bbox": [
+            56,
+            311,
+            650,
+            350
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- 具备分析算法性能和调参的基本能力",
+        "bbox": [
+            56,
+            357,
+            519,
+            396
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "课程安排：理论讲解 → 核心算子 → 完整案例 → 实践练习",
+        "bbox": [
+            56,
+            405,
+            766,
+            444
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            927,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "为什么需要遗传算法？",
+        "text_level": 2,
+        "bbox": [
+            277,
+            29,
+            704,
+            90
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "传统优化方法（如梯度下降）要求：",
+        "bbox": [
+            55,
+            122,
+            491,
+            164
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 目标函数连续可微",
+        "bbox": [
+            52,
+            170,
+            336,
+            209
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 搜索空间规则",
+        "bbox": [
+            54,
+            216,
+            279,
+            255
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "但现实问题往往:",
+        "bbox": [
+            54,
+            264,
+            270,
+            303
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 目标函数不可导、不连续",
+        "bbox": [
+            52,
+            309,
+            416,
+            350
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 搜索空间复杂、高维",
+        "bbox": [
+            52,
+            357,
+            363,
+            398
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 存在大量局部最优解",
+        "bbox": [
+            54,
+            403,
+            363,
+            444
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "提问：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            451,
+            131,
+            492
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "面对一个包含离散变量和复杂约束的优化问题，传统方法遇到了困难，我们该如何解决？",
+        "bbox": [
+            55,
+            496,
+            906,
+            583
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            927,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "从达尔文到算法",
+        "text_level": 2,
+        "bbox": [
+            341,
+            29,
+            656,
+            88
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1859年，达尔文发表《物种起源》，提出自然选择理论：",
+        "bbox": [
+            56,
+            122,
+            741,
+            164
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- 变异：生物个体之间存在差异",
+        "bbox": [
+            52,
+            170,
+            475,
+            209
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- 遗传：亲代特征可以传递给子代",
+        "bbox": [
+            52,
+            216,
+            502,
+            255
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- 选择：适应环境的个体更容易生存和繁衍",
+        "bbox": [
+            52,
+            264,
+            612,
+            303
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- 进化：经过多代积累，种群逐渐适应环境",
+        "bbox": [
+            55,
+            311,
+            613,
+            350
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "遗传算法正是模拟这一过程，将“进化”搬到计算机中！",
+        "bbox": [
+            56,
+            355,
+            712,
+            398
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            927,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/28e8ac99950a1c5871193b018d92d6923235b5b52d14b70394f34950d76f3654.jpg",
+        "table_caption": [
+            "生物与算法的类比"
+        ],
+        "table_footnote": [
+            "提问：在这个类比中，什么是“环境”？在算法中如何体现？"
+        ],
+        "table_body": "<table><tr><td>生物进化</td><td>遗传算法</td></tr><tr><td>染色体</td><td>解的编码（个体）</td></tr><tr><td>基因</td><td>决策变量</td></tr><tr><td>等位基因</td><td>变量的取值</td></tr><tr><td>个体</td><td>一个候选解</td></tr><tr><td>种群</td><td>候选解集合</td></tr><tr><td>适应度</td><td>目标函数值</td></tr><tr><td>选择</td><td>保留优质解</td></tr><tr><td>交叉</td><td>产生新解</td></tr><tr><td>变异</td><td>引入新特性</td></tr></table>",
+        "bbox": [
+            170,
+            111,
+            950,
+            646
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            927,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "遗传算法发展简史",
+        "text_level": 2,
+        "bbox": [
+            319,
+            29,
+            675,
+            90
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 1975年：John Holland 出版《Adaptation in Natural and Artificial Systems》，奠定理论基础",
+        "bbox": [
+            52,
+            122,
+            859,
+            209
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 1980年代：Goldberg 将 GA 推广到工程优化领域",
+        "bbox": [
+            52,
+            214,
+            693,
+            255
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 1990年代：GA成为智能计算的核心方法之一",
+        "bbox": [
+            52,
+            261,
+            659,
+            301
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 至今：GA 已被广泛应用于函数优化、组合优化、机器学习、工程设计等领域",
+        "bbox": [
+            52,
+            307,
+            934,
+            392
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            927,
+            942,
+            941,
+            962
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "遗传算法的核心思想",
+        "text_level": 2,
+        "bbox": [
+            297,
+            29,
+            698,
+            88
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "遗传算法的本质是群体搜索策略：",
+        "bbox": [
+            56,
+            122,
+            463,
+            162
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1. 维护一组候选解（种群）",
+        "bbox": [
+            56,
+            170,
+            402,
+            207
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "2. 通过“优胜劣汰”机制逐步改讲解的质量",
+        "bbox": [
+            54,
+            216,
+            581,
+            255
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3. 搜索过程具有隐式并行性——同时探索解空间的多个区域",
+        "bbox": [
+            55,
+            264,
+            806,
+            303
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4. 不依赖于梯度信息，具有全局搜索能力",
+        "bbox": [
+            52,
+            311,
+            584,
+            350
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "提问：为什么群体搜索比单点搜索更有优势？",
+        "bbox": [
+            55,
+            357,
+            606,
+            398
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            927,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "基本概念正式定义",
+        "text_level": 2,
+        "bbox": [
+            319,
+            29,
+            676,
+            90
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "个体（Individual）：问题的一个候选解，编码后的数据结构。",
+        "bbox": [
+            52,
+            122,
+            809,
+            164
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "染色体（Chromosome）：个体的编码表示。",
+        "bbox": [
+            55,
+            168,
+            597,
+            209
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "基因（Gene）：编码的基本单元，对应一个决策变量。",
+        "bbox": [
+            55,
+            216,
+            720,
+            257
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "种群（Population）：所有个体的集合，大小为 N。",
+        "bbox": [
+            52,
+            262,
+            677,
+            305
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "代（Generation）：种群的一次迭代更新。",
+        "bbox": [
+            52,
+            309,
+            573,
+            351
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "适应度（Fitness）：衡量个体优劣的指标，由适应度函数计算。",
+        "bbox": [
+            52,
+            355,
+            826,
+            400
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            927,
+            942,
+            941,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "基因型与表现型",
+        "text_level": 1,
+        "bbox": [
+            341,
+            29,
+            655,
+            90
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "在遗传算法中，存在两重空间：",
+        "bbox": [
+            55,
+            122,
+            434,
+            164
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/872ced43a498b8f2e152c55cf16aa96092132d2b6f3db21700fc71730a3cd40e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            227,
+            890,
+            557
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "编码：将问题的解表示为染色体（如二进制串）",
+        "bbox": [
+            54,
+            638,
+            631,
+            679
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "解码：将染色体还原为实际问题的解",
+        "bbox": [
+            54,
+            685,
+            509,
+            725
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "提问：为什么需要区分基因型和表现型？直接操作表现型不行吗？",
+        "bbox": [
+            52,
+            731,
+            856,
+            774
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "遗传算法流程图",
+        "text_level": 2,
+        "bbox": [
+            341,
+            29,
+            652,
+            90
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/3207bb22f6a886ebce5d23f14fc5e95e55b9efa98d7016fa0545795d2a8d2c34.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            351,
+            116,
+            665,
+            983
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            920,
+            944,
+            940,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "算法伪代码",
+        "text_level": 2,
+        "bbox": [
+            386,
+            29,
+            612,
+            90
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "算法：遗传算法（Genetic Algorithm）",
+        "text_level": 2,
+        "bbox": [
+            104,
+            120,
+            631,
+            164
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "输入：问题定义，算法参数（种群大小N，交叉率pc，变异率pm，最大代数Gmax）",
+        "bbox": [
+            104,
+            209,
+            900,
+            294
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "输出：最优解和最优适应度",
+        "bbox": [
+            104,
+            298,
+            445,
+            338
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "1. 初始化种群 P(0) ← 随机生成 N 个个体",
+        "bbox": [
+            102,
+            388,
+            698,
+            427
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2. 评估种群适应度 $F(0) \\leftarrow$ 计算每个个体的适应度",
+        "bbox": [
+            102,
+            431,
+            783,
+            472
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "3. FOR t ← 1 TO Gmax:",
+        "bbox": [
+            104,
+            481,
+            477,
+            516
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "4. 选择操作：从 $P(t - 1)$ 中选择父代个体",
+        "bbox": [
+            105,
+            520,
+            741,
+            561
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5. 交叉操作：以概率 pc 对父代进行交叉，产生子代",
+        "bbox": [
+            105,
+            566,
+            869,
+            605
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "6. 变异操作：以概率 pm 对子代进行变异",
+        "bbox": [
+            106,
+            609,
+            731,
+            650
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "7. 评估子代适应度",
+        "bbox": [
+            105,
+            655,
+            441,
+            694
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "8. 替换操作：由子代形成新种群 P(t)",
+        "bbox": [
+            105,
+            700,
+            684,
+            738
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "9. 精英保留：保留最优个体，防止退化",
+        "bbox": [
+            105,
+            744,
+            690,
+            783
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "10. END FOR",
+        "bbox": [
+            105,
+            792,
+            300,
+            825
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "11. 返回最优解",
+        "bbox": [
+            105,
+            833,
+            319,
+            872
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "一个直观的比喻",
+        "text_level": 2,
+        "bbox": [
+            341,
+            29,
+            655,
+            88
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "想象有一群动物在寻找食物最丰富的区域：",
+        "bbox": [
+            56,
+            122,
+            573,
+            162
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. 初始化：动物随机分布在各个位置",
+        "bbox": [
+            55,
+            170,
+            527,
+            209
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 评估：每个动物评估当前位置的食物量",
+        "bbox": [
+            52,
+            216,
+            584,
+            255
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3. 选择：食物量多的动物有更多繁殖机会",
+        "bbox": [
+            52,
+            264,
+            584,
+            303
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "4. 交叉：两个动物的“觅食策略”结合，产生后代",
+        "bbox": [
+            52,
+            309,
+            663,
+            350
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5. 变异：后代的策略发生微小随机变化",
+        "bbox": [
+            52,
+            357,
+            556,
+            396
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "6. 迭代：重复上述过程，种群逐渐向食物丰富区域集中这就是遗传算法在解空间中的搜索过程！",
+        "bbox": [
+            54,
+            403,
+            748,
+            492
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "编码的重要性",
+        "text_level": 2,
+        "bbox": [
+            363,
+            31,
+            631,
+            88
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "编码是遗传算法设计的第一步，也是最关键的一步。",
+        "bbox": [
+            56,
+            122,
+            684,
+            164
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "好的编码应具备：",
+        "bbox": [
+            55,
+            172,
+            268,
+            207
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1. 完整性：解空间中的所有点都能被表示",
+        "bbox": [
+            55,
+            216,
+            584,
+            255
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "2. 遗传性：编码结构适合交叉和变异操作",
+        "bbox": [
+            54,
+            264,
+            584,
+            303
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "3. 合法性：任意编码都能对应一个合法解",
+        "bbox": [
+            54,
+            312,
+            584,
+            350
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "提问：如果编码设计不当，会产生什么问题？",
+        "bbox": [
+            55,
+            357,
+            606,
+            398
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            920,
+            944,
+            941,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "二进制编码",
+        "text_level": 2,
+        "bbox": [
+            386,
+            31,
+            611,
+            88
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "原理：将决策变量映射为二进制串",
+        "text_level": 2,
+        "bbox": [
+            55,
+            122,
+            477,
+            162
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "变量 x ∈ [L, U] → 二进制串 b = [b1, b2, ..., bm]",
+        "bbox": [
+            105,
+            168,
+            884,
+            209
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "解码： $x = L + (U - L) \\times (\\text{二进制值}) / (2^{m} - 1)$",
+        "bbox": [
+            102,
+            255,
+            813,
+            298
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "优点：",
+        "bbox": [
+            55,
+            305,
+            130,
+            344
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- 简单直观",
+        "bbox": [
+            52,
+            351,
+            225,
+            390
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- 便于理论分析（模式定理）",
+        "bbox": [
+            52,
+            400,
+            430,
+            438
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- 算子设计简单",
+        "bbox": [
+            54,
+            446,
+            277,
+            485
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "缺点：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            494,
+            130,
+            531
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- 连续变量需要离散化，存在精度损失",
+        "bbox": [
+            52,
+            540,
+            555,
+            579
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- 二进制 Hamming 距离与实数距离不一致",
+        "bbox": [
+            52,
+            587,
+            598,
+            627
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "二进制编码精度",
+        "text_level": 2,
+        "bbox": [
+            340,
+            29,
+            654,
+            90
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "设编码长度为 $m$ ，则精度为：",
+        "bbox": [
+            54,
+            122,
+            411,
+            162
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta = \\frac {U - L}{2 ^ {m} - 1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            425,
+            164,
+            572,
+            251
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "示例： $x\\in [-10,10]$ ， $m = 10$",
+        "bbox": [
+            55,
+            251,
+            420,
+            294
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta = \\frac {2 0}{2 ^ {1 0} - 1} \\approx 0. 0 1 9 5\n$$",
+        "text_format": "latex",
+        "bbox": [
+            359,
+            296,
+            631,
+            381
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "增加 $m$ 可提高精度，但增加计算代价。",
+        "bbox": [
+            54,
+            381,
+            529,
+            422
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MATLAB 实现:",
+        "bbox": [
+            52,
+            429,
+            256,
+            468
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "% 解码",
+        "bbox": [
+            106,
+            475,
+            205,
+            514
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nx = L + (U - L) ^ {*} \\text {bin2dec(num2str(b))} / (2 ^ {\\wedge} m - 1);\n$$",
+        "text_format": "latex",
+        "bbox": [
+            101,
+            522,
+            909,
+            562
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "% 编码",
+        "bbox": [
+            106,
+            607,
+            205,
+            646
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nb = \\text { de2bi(round((x - L) / (U - L)   *   (2^m - 1)) , m) ; }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            101,
+            653,
+            826,
+            696
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "实数编码",
+        "text_level": 2,
+        "bbox": [
+            408,
+            31,
+            588,
+            90
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "原理：直接使用实数向量表示个体",
+        "bbox": [
+            55,
+            122,
+            479,
+            162
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{个体} = [ x _ {1}, x _ {2}, \\ldots , x _ {n} ], \\quad x _ {i} \\in [ L _ {i}, U _ {i} ]\n$$",
+        "text_format": "latex",
+        "bbox": [
+            279,
+            170,
+            716,
+            216
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "优点：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            216,
+            130,
+            253
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 无需编码/解码，直接对应问题变量",
+        "bbox": [
+            52,
+            262,
+            534,
+            301
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 精度高，无量化误差",
+        "bbox": [
+            52,
+            307,
+            359,
+            350
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 适合连续优化问题",
+        "bbox": [
+            52,
+            355,
+            334,
+            394
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "缺点：",
+        "bbox": [
+            55,
+            403,
+            130,
+            442
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 需要设计专门的交叉和变异算子",
+        "bbox": [
+            52,
+            450,
+            500,
+            490
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 理论分析较复杂",
+        "bbox": [
+            52,
+            496,
+            306,
+            535
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "提问：实数编码的个体如何保证变量始终在边界内？",
+        "bbox": [
+            52,
+            542,
+            690,
+            583
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "MATLAB 实数编码示例",
+        "text_level": 2,
+        "bbox": [
+            263,
+            31,
+            730,
+            92
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n% 问题定义\nnvars = 5; % 变量个数\nlb = [0, 0, 0, 0, 0]; % 下界\nub = [10, 10, 10, 10, 10]; % 上界\n% 随机初始化一个个体\nchrom = lb + (ub - lb) .* rand(1, nvars);\n% 种群初始化（N个个体）\nN = 50;\npopulation = zeros(N, nvars);\nfor i = 1:N\n    population(i,:) = lb + (ub - lb) .* rand(1, nvars);\nend\n```",
+        "bbox": [
+            16,
+            116,
+            944,
+            750
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "整数编码",
+        "text_level": 2,
+        "bbox": [
+            408,
+            29,
+            588,
+            90
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "原理：决策变量为整数，个体为整数向量",
+        "bbox": [
+            52,
+            122,
+            563,
+            162
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{个体} = [ x _ {1}, x _ {2}, \\ldots , x _ {n} ], \\quad x _ {i} \\in \\mathbb {Z} \\cap [ L _ {i}, U _ {i} ]\n$$",
+        "text_format": "latex",
+        "bbox": [
+            254,
+            170,
+            741,
+            216
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "适用场景：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            214,
+            184,
+            255
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- 整数规划问题",
+        "bbox": [
+            52,
+            262,
+            277,
+            301
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- 离散优化问题（如设施选址）",
+        "bbox": [
+            52,
+            309,
+            456,
+            348
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- 包含整数变量的工程问题",
+        "bbox": [
+            52,
+            355,
+            416,
+            394
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "MATLAB 实现:",
+        "text_level": 2,
+        "bbox": [
+            52,
+            403,
+            256,
+            442
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "% 整数编码初始化",
+        "bbox": [
+            106,
+            448,
+            341,
+            485
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```javascript\nchrom = randi([lb_i, ub_i], 1, nvars);\n```",
+        "bbox": [
+            104,
+            496,
+            741,
+            538
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "% 实数编码+取整（简化方案）",
+        "bbox": [
+            106,
+            581,
+            484,
+            620
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```javascript\nchrom = round(lb + (ub - lb) .* rand(1, nvars));\n```",
+        "bbox": [
+            104,
+            627,
+            908,
+            668
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "排列编码",
+        "text_level": 2,
+        "bbox": [
+            406,
+            31,
+            588,
+            88
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "原理：个体是一个排列，每个元素出现且仅出现一次",
+        "bbox": [
+            55,
+            122,
+            700,
+            162
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{个体} = [ \\pi_ {1}, \\pi_ {2}, \\ldots , \\pi_ {n} ], \\quad \\{\\pi_ {1}, \\ldots , \\pi_ {n} \\} = \\{1, 2, \\ldots , n \\}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            197,
+            170,
+            800,
+            214
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "适用场景：",
+        "bbox": [
+            56,
+            216,
+            184,
+            253
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "\\- 旅行商问题（TSP）",
+        "bbox": [
+            52,
+            262,
+            338,
+            300
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "\\- 作业调度问题",
+        "bbox": [
+            54,
+            309,
+            277,
+            346
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "\\- 车辆路径问题（VRP）",
+        "bbox": [
+            54,
+            355,
+            372,
+            394
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "\\- 任何需要“访问所有元素一次”的问题",
+        "bbox": [
+            54,
+            403,
+            552,
+            442
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "提问：排列编码为什么不能使用普通的算术交叉？",
+        "bbox": [
+            54,
+            450,
+            661,
+            490
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "排列编码的特点",
+        "text_level": 2,
+        "bbox": [
+            340,
+            29,
+            654,
+            90
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "排列编码的特殊性：",
+        "bbox": [
+            55,
+            124,
+            295,
+            162
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "1. 唯一性约束：每个元素只能出现一次",
+        "bbox": [
+            54,
+            170,
+            556,
+            209
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "2. 交叉操作的挑战：简单交叉会破坏排列性质",
+        "bbox": [
+            52,
+            216,
+            638,
+            257
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "3. 变异操作的特殊性：交换、插入、倒置",
+        "bbox": [
+            52,
+            264,
+            584,
+            303
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "% 排列编码初始化",
+        "bbox": [
+            108,
+            309,
+            343,
+            348
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\nn = 8;\nchrom = randperm(n);\n```",
+        "bbox": [
+            102,
+            357,
+            441,
+            440
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "示例：城市访问顺序",
+        "bbox": [
+            55,
+            446,
+            313,
+            485
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- 个体：[3, 1, 4, 2, 5] 表示先访问城市3，再访问城市1，依此类推\n- 每个城市恰好访问一次",
+        "bbox": [
+            52,
+            492,
+            838,
+            581
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/62ee7261bc6b1800fb5c68b86cf200945d065d3709a485aa14cf632386e34926.jpg",
+        "table_caption": [
+            "四种编码方式对比"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>编码方式</td><td>适用问题</td><td>典型交叉</td><td>典型变异</td><td>MATLAB函数</td></tr><tr><td>二进制</td><td>离散/简单连续</td><td>单点/多点/均匀</td><td>位翻转</td><td>自定义</td></tr><tr><td>实数</td><td>连续优化</td><td>算术/SBX</td><td>高斯/均匀</td><td>ga</td></tr><tr><td>整数</td><td>整数规划</td><td>算术取整</td><td>随机取整</td><td>ga + IntCon</td></tr><tr><td>排列</td><td>组合优化</td><td>PMX/OX/CX</td><td>交换/插入/倒置</td><td>自定义算子</td></tr></table>",
+        "bbox": [
+            12,
+            111,
+            959,
+            377
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "编码选择指南",
+        "text_level": 2,
+        "bbox": [
+            363,
+            29,
+            631,
+            92
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/900564bef9dd1033226e2b152b0e367d2acdccc3fbea211f67ba52fbf0dae206.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            111,
+            114,
+            900,
+            920
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            920,
+            942,
+            940,
+            964
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "适应度函数",
+        "text_level": 2,
+        "bbox": [
+            56,
+            77,
+            284,
+            138
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "适应度函数是评价个体优劣的唯一标准：",
+        "bbox": [
+            79,
+            205,
+            666,
+            253
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{适应度} = f (\\mathrm{个体})\n$$",
+        "text_format": "latex",
+        "bbox": [
+            377,
+            259,
+            638,
+            312
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "设计原则：",
+        "bbox": [
+            79,
+            318,
+            234,
+            366
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "适应度值越大，个体越优",
+        "bbox": [
+            80,
+            374,
+            452,
+            422
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "计算效率要高",
+        "bbox": [
+            81,
+            429,
+            284,
+            477
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "应能有效区分不同个体",
+        "bbox": [
+            80,
+            485,
+            419,
+            533
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "最大化与最小化：",
+        "bbox": [
+            80,
+            542,
+            334,
+            590
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/e027ace5eca7be8b33f74334d9629f5fbd9d1d6d7e3d43ab8cdedc3684c4814c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>原问题</td><td>适应度转换</td></tr><tr><td>最大化</td><td>F=f</td></tr><tr><td>最小化</td><td>F=1/(1+f) 或 F=-f</td></tr></table>",
+        "bbox": [
+            266,
+            650,
+            825,
+            812
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "适应度缩放",
+        "text_level": 2,
+        "bbox": [
+            384,
+            29,
+            613,
+            88
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "当适应度差异过大时，可能导致早熟收敛。缩放可以调节选择压力：线性缩放：",
+        "bbox": [
+            56,
+            122,
+            880,
+            209
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF ^ {\\prime} = a \\cdot F + b\n$$",
+        "text_format": "latex",
+        "bbox": [
+            411,
+            218,
+            586,
+            257
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "幂律缩放：",
+        "bbox": [
+            56,
+            266,
+            184,
+            305
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF ^ {\\prime} = F ^ {k}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            447,
+            311,
+            548,
+            350
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "指数缩放：",
+        "bbox": [
+            55,
+            362,
+            184,
+            401
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF ^ {\\prime} = e ^ {\\beta F}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            441,
+            405,
+            554,
+            446
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "提问：什么情况下适应度差异过大会成为问题？",
+        "bbox": [
+            52,
+            457,
+            634,
+            500
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "约束处理方法",
+        "text_level": 2,
+        "bbox": [
+            388,
+            66,
+            627,
+            120
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "遗传算法天然适合处理有约束的问题：",
+        "bbox": [
+            56,
+            218,
+            701,
+            272
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/5116a72f9ca23e765e1edda2e218ae7a4ae53d6505f36558090e850172ad68de.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>方法</td><td>原理</td><td>适用场景</td></tr><tr><td>惩罚函数</td><td>对不可行解施加惩罚</td><td>约束松弛</td></tr><tr><td>修复法</td><td>将不可行解修复为可行</td><td>约束可修复</td></tr><tr><td>拒绝法</td><td>丢弃不可行解</td><td>约束严格</td></tr><tr><td>多目标法</td><td>约束作为额外目标</td><td>复杂约束</td></tr></table>",
+        "bbox": [
+            102,
+            353,
+            836,
+            644
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "惩罚函数公式：",
+        "bbox": [
+            47,
+            714,
+            233,
+            755
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF (x) = f (x) - \\lambda \\cdot \\sum_ {i} \\max {(0, g _ {i} (x))}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            279,
+            753,
+            698,
+            800
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            918,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "选择算子——轮盘赌",
+        "text_level": 2,
+        "bbox": [
+            295,
+            29,
+            701,
+            88
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "轮盘赌选择：适应度越高的个体被选中的概率越大",
+        "bbox": [
+            55,
+            122,
+            672,
+            162
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "$$\np _ {i} = \\frac {F _ {i}}{\\sum_ {j = 1} ^ {N} F _ {j}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            419,
+            166,
+            576,
+            275
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/7e4bfafbb8ed83d5df2d42c26842e48cbc323f1fd752f0b649683dcc783ea1a1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            190,
+            316,
+            763,
+            872
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "轮盘赌 MATLAB 代码",
+        "text_level": 2,
+        "bbox": [
+            281,
+            29,
+            713,
+            90
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\nfunction idx = roulette_selection(fitness)\n    % 轮盘赌选择\n    % 输入：fitness - 适应度向量（越大越好）\n    % 输出：idx - 选中个体的索引\n\n    N = length(fitness);\n    p = fitness / sum(fitness);    % 选择概率\n    c = cumsum(p);    % 累积概率\n\n    r = rand();    % 随机数 [0,1]\n    idx = find(r <= c, 1, 'first');    % 选择\nend\n```",
+        "bbox": [
+            56,
+            122,
+            895,
+            653
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "选择算子——锦标赛选择",
+        "text_level": 2,
+        "bbox": [
+            252,
+            29,
+            744,
+            90
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "锦标赛选择：随机抽取 k 个个体，选择最优者",
+        "bbox": [
+            56,
+            122,
+            616,
+            164
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/37b62f5a4061b64c08a7e48ca11ea6eb98d8cca9197aefd61612544930e899fa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            102,
+            214,
+            875,
+            333
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "参数 $k$ 的作用：",
+        "bbox": [
+            56,
+            403,
+            241,
+            444
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "<div class=\"mineru-algorithm\" style=\"white-space: pre-wrap; font-family:monospace;\">\n- $k = 2$：选择压力小，多样性好\n- $k$ 增大：选择压力增大，收敛加快\nfunction idx = tournament_selection(fitness, k)\n    N = length(fitness);\n    candidates = randi(N, 1, k);\n    [~, best] = max(fitness(candidates));\n    idx = candidates(best);\nend\n</div>",
+        "bbox": [
+            55,
+            450,
+            843,
+            807
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "选择算子——排序选择",
+        "text_level": 2,
+        "bbox": [
+            275,
+            29,
+            722,
+            90
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "排序选择：按适应度排序后分配选择概率",
+        "text_level": 2,
+        "bbox": [
+            55,
+            122,
+            561,
+            162
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "1. 将个体按适应度从高到低排序",
+        "bbox": [
+            56,
+            170,
+            472,
+            209
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "2. 根据排名分配概率:",
+        "bbox": [
+            54,
+            216,
+            345,
+            255
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "3. $p_{i}=\\frac{2(N-i+1)}{N(N+1)}$",
+        "bbox": [
+            55,
+            262,
+            263,
+            331
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "优点：不受适应度绝对大小影响，避免适应度差异过大导致的问题  \n适用场景：适应度值集中在相近区间时",
+        "bbox": [
+            52,
+            335,
+            866,
+            424
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "精英保留策略",
+        "text_level": 2,
+        "bbox": [
+            363,
+            29,
+            633,
+            90
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "精英保留：",
+        "text_level": 2,
+        "bbox": [
+            56,
+            122,
+            184,
+            162
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "将当前种群的最优个体直接保留到下一代",
+        "bbox": [
+            55,
+            170,
+            562,
+            209
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "1. 找出当前种群的最优个体",
+        "bbox": [
+            105,
+            214,
+            469,
+            253
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "2. 将其直接复制到下一代",
+        "bbox": [
+            104,
+            259,
+            441,
+            298
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "3. 其余个体通过选择、交叉、变异产生",
+        "bbox": [
+            105,
+            303,
+            605,
+            344
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "重要性:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            353,
+            156,
+            392
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "\\- 保证算法单调收敛（最优适应度不下降）",
+        "bbox": [
+            52,
+            400,
+            597,
+            438
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "\\- 防止优良基因丢失",
+        "bbox": [
+            55,
+            446,
+            334,
+            485
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "\\- 实践中几乎必须使用",
+        "bbox": [
+            55,
+            494,
+            362,
+            533
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "提问：如果没有精英保留，算法会出现什么问题？",
+        "bbox": [
+            54,
+            540,
+            661,
+            581
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "交叉算子概述",
+        "text_level": 2,
+        "bbox": [
+            365,
+            29,
+            631,
+            90
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "交叉是遗传算法的核心探索算子：",
+        "bbox": [
+            56,
+            122,
+            465,
+            162
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 模拟生物繁殖过程中的基因重组",
+        "bbox": [
+            52,
+            170,
+            500,
+            209
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 在父代之间交换信息，产生新个体",
+        "bbox": [
+            52,
+            216,
+            527,
+            255
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 作用是探索解空间的新区域",
+        "bbox": [
+            54,
+            264,
+            448,
+            303
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "交叉率 $p_{c}$ :",
+        "bbox": [
+            56,
+            312,
+            190,
+            355
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 通常设为 $0.6 \\sim 0.95$",
+        "bbox": [
+            54,
+            362,
+            343,
+            400
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 控制交叉操作的使用频率",
+        "bbox": [
+            54,
+            409,
+            416,
+            448
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "重要原则：交叉算子必须与编码方式匹配！",
+        "bbox": [
+            56,
+            455,
+            576,
+            496
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "二进制编码交叉——单点交叉",
+        "text_level": 2,
+        "bbox": [
+            209,
+            29,
+            790,
+            90
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "单点交叉：选择一个交叉点，交换交叉点后的基因",
+        "bbox": [
+            56,
+            122,
+            673,
+            164
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n父代1: [1 0 1 1 | 0 1 0]\n父代2: [0 1 1 0 | 1 0 1]\n↑ 交叉点\n子代1: [1 0 1 1 | 1 0 1]\n子代2: [0 1 1 0 | 0 1 0]\nfunction [c1, c2] = single_point_crossover(p1, p2)\nn = length(p1);\npoint = randi(n-1);\nc1 = [p1(1:point), p2(point+1:end)];\nc2 = [p2(1:point), p1(point+1:end)];\nend\n```",
+        "bbox": [
+            58,
+            170,
+            890,
+            655
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "二进制编码交叉——多点与均匀",
+        "text_level": 2,
+        "bbox": [
+            186,
+            29,
+            805,
+            90
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "多点交叉：选择多个交叉点，交替交换基因片段",
+        "text_level": 2,
+        "bbox": [
+            56,
+            122,
+            645,
+            162
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "父代1：[1 0 | 1 1 0 | 1 0]",
+        "bbox": [
+            105,
+            170,
+            530,
+            209
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "父代2：[0 1 | 1 0 1 | 0 1]",
+        "bbox": [
+            105,
+            214,
+            530,
+            253
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "子代1：[1 0 | 1 0 1 | 1 0]",
+        "bbox": [
+            102,
+            268,
+            530,
+            342
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "均匀交叉：每个基因位独立决定是否交换",
+        "bbox": [
+            55,
+            350,
+            563,
+            388
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "父代1：[1，0，1，1，0，1，0]",
+        "bbox": [
+            105,
+            396,
+            563,
+            437
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "父代2：[0，1，1，0，1，0，1]",
+        "bbox": [
+            105,
+            440,
+            563,
+            481
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "掩码：[1，0，1，0，1，0，0]",
+        "bbox": [
+            102,
+            485,
+            563,
+            525
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "子代1：[1，1，1，0，0，1，1]",
+        "bbox": [
+            104,
+            529,
+            563,
+            570
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "子代2：[0，0，1，1，1，0，0]",
+        "bbox": [
+            105,
+            574,
+            563,
+            614
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            919,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "实数编码交叉——算术交叉",
+        "text_level": 2,
+        "bbox": [
+            231,
+            29,
+            768,
+            90
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "算术交叉：子代是父代的线性组合",
+        "bbox": [
+            54,
+            122,
+            479,
+            162
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r} \\pmb {c} _ {1} = \\alpha \\pmb {p} _ {1} + (1 - \\alpha) \\pmb {p} _ {2} \\\\ \\pmb {c} _ {2} = (1 - \\alpha) \\pmb {p} _ {1} + \\alpha \\pmb {p} _ {2} \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            359,
+            174,
+            634,
+            264
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "其中 $\\alpha \\in [0,1]$ 是随机数。",
+        "bbox": [
+            55,
+            268,
+            361,
+            311
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\nfunction [c1, c2] = arithmetic_crossover(p1, p2)\nalpha = rand;\nc1 = alpha * p1 + (1 - alpha) * p2;\nc2 = (1 - alpha) * p1 + alpha * p2;\nend\n```",
+        "bbox": [
+            52,
+            314,
+            856,
+            531
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "35",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "实数编码交叉——模拟二进制交叉（SBX）",
+        "text_level": 2,
+        "bbox": [
+            76,
+            29,
+            897,
+            90
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "<div class=\"mineru-algorithm\" style=\"white-space: pre-wrap; font-family:monospace;\">\nSBX: 模拟二进制编码的单点交叉效果，适用于实数编码\n特点：\n- 子代与父代的“距离”可控\n- 保持变量边界约束\n- 分布指数 $\\eta_c$ 控制子代分布\nfunction child = sbx_crossover(p1, p2, eta_c, lb, ub)\n    u = rand;\n    if u &lt;= 0.5\n    beta = (2*u)^(1/(eta_c+1));\n    else\n    beta = (1/(2*(1-u)))^(1/(eta_c+1));\n    end\n    child = 0.5*((1+beta)*p1 + (1-beta)*p2);\n    child = max(min(child, ub), lb); % 边界约束\nend\n</div>",
+        "bbox": [
+            55,
+            120,
+            938,
+            805
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "page_number",
+        "text": "36",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "排列编码交叉——部分映射交叉（PMX）",
+        "text_level": 2,
+        "bbox": [
+            91,
+            27,
+            880,
+            90
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "PMX: Partially Mapped Crossover",
+        "text_level": 2,
+        "bbox": [
+            52,
+            124,
+            466,
+            166
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "步骤:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            170,
+            130,
+            209
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "1. 随机选择两个交叉点",
+        "bbox": [
+            55,
+            216,
+            363,
+            257
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "2. 交换两个交叉点之间的基因片段",
+        "bbox": [
+            52,
+            262,
+            501,
+            303
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "3. 建立映射关系",
+        "bbox": [
+            52,
+            309,
+            277,
+            351
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "4. 修复冲突",
+        "bbox": [
+            52,
+            355,
+            225,
+            398
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "父代1：[1 2 | 3 4 5 | 6 7]",
+        "bbox": [
+            105,
+            401,
+            530,
+            444
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "父代2：[3 5 | 1 2 6 | 4 7]",
+        "bbox": [
+            106,
+            446,
+            531,
+            490
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "子代1：[ ? | 1 2 6 | ? ] → 修复 → [3, 2, 1, 2, 6, 5, 7] → [3, 4, 1, 2, 6, 5, 7]",
+        "bbox": [
+            102,
+            501,
+            919,
+            625
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "37",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "PMX MATLAB 代码",
+        "text_level": 2,
+        "bbox": [
+            300,
+            33,
+            695,
+            90
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\nfunction [c1, c2] = pmx_crossover(p1, p2)\n    n = length(p1);\n    % 选择两个交叉点\n    pos1 = randi(n-1);\n    pos2 = randi([pos1+1, n]);\n    c1 = zeros(1, n);\n    c2 = zeros(1, n);\n    % 复制中间片段\n    c1(pos1:pos2) = p1(pos1:pos2);\n    c2(pos1:pos2) = p2(pos1:pos2);\n    % 建立映射并修复\n    for i = pos1:pos2\n    % 修复c1\n    if ~ismember(p2(i), c1)\n    % 找到p2(i)在p1中的位置\n    idx = find(p1 == p2(i));\n    % 追踪映射链\n    while c1(idx) ~= 0\n    idx = find(p1 == p2(idx));\n    end\n    c1(idx) = p2(i);\n    end\n    % 类似修复c2\nend\n% 填入剩余位置\n% ...（完整实现略）\nend\n```",
+        "bbox": [
+            56,
+            116,
+            550,
+            964
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "38",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "排列编码交叉——OX 与 CX",
+        "text_level": 2,
+        "bbox": [
+            220,
+            31,
+            777,
+            90
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "顺序交叉（OX）：",
+        "bbox": [
+            55,
+            122,
+            283,
+            162
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- 保留一个父代的相对顺序",
+        "bbox": [
+            52,
+            170,
+            416,
+            209
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- 适合需要保持顺序的问题",
+        "bbox": [
+            54,
+            216,
+            416,
+            257
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "循环交叉（CX）：",
+        "bbox": [
+            55,
+            262,
+            281,
+            303
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- 基于循环结构交换基因",
+        "bbox": [
+            52,
+            309,
+            388,
+            350
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- 保持绝对位置不变",
+        "bbox": [
+            54,
+            357,
+            334,
+            398
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "table",
+        "img_path": "images/abe770beca3f95759e9d5ee484b93f5ecf40a7aa43e08c4ee0f27c610650d56d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>交叉方式</td><td>特点</td><td>适用场景</td></tr><tr><td>PMX</td><td>保持绝对位置</td><td>路径问题</td></tr><tr><td>OX</td><td>保持相对顺序</td><td>顺序依赖问题</td></tr><tr><td>CX</td><td>保持循环结构</td><td>循环调度</td></tr></table>",
+        "bbox": [
+            190,
+            444,
+            783,
+            657
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "page_number",
+        "text": "39",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "变异算子概述",
+        "text_level": 2,
+        "bbox": [
+            366,
+            29,
+            631,
+            90
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "变异是遗传算法的开发算子：",
+        "bbox": [
+            56,
+            122,
+            408,
+            162
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 模拟生物繁殖过程中的基因突变",
+        "bbox": [
+            54,
+            170,
+            500,
+            209
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 在个体上产生微小随机变化",
+        "bbox": [
+            54,
+            216,
+            445,
+            255
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 作用是维持种群多样性，避免陷入局部最优",
+        "bbox": [
+            54,
+            262,
+            638,
+            303
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "变异率 $p_{m}$ :",
+        "bbox": [
+            56,
+            312,
+            200,
+            355
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 通常设为 $0.01 \\sim 0.1$",
+        "bbox": [
+            54,
+            362,
+            341,
+            400
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 控制变异操作的使用频率",
+        "bbox": [
+            55,
+            409,
+            416,
+            448
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "提问：变异率过大或过小会分别导致什么问题？",
+        "bbox": [
+            55,
+            455,
+            633,
+            496
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "page_number",
+        "text": "40",
+        "bbox": [
+            920,
+            944,
+            941,
+            964
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "table",
+        "img_path": "images/27e48b280bac944fec7b07a0b182ccd0d5aefd838235ee2328f6a813b088a95f.jpg",
+        "table_caption": [
+            "各种变异算子"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>编码方式</td><td>变异算子</td><td>操作</td></tr><tr><td>二进制</td><td>位翻转</td><td>以概率 翻转每一位</td></tr><tr><td>实数</td><td>高斯变异</td><td> $x' = x + N(0, \\sigma)$ </td></tr><tr><td>实数</td><td>均匀变异</td><td> $x' \\sim U(L, U)$ </td></tr><tr><td>排列</td><td>交换变异</td><td>随机交换两个位置</td></tr><tr><td>排列</td><td>插入变异</td><td>将某元素插入到新位置</td></tr><tr><td>排列</td><td>倒置变异</td><td>反转子序列</td></tr></table>",
+        "bbox": [
+            130,
+            111,
+            902,
+            516
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "page_number",
+        "text": "41",
+        "bbox": [
+            920,
+            944,
+            940,
+            964
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "变异算子 MATLAB 代码",
+        "text_level": 2,
+        "bbox": [
+            263,
+            29,
+            734,
+            92
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n% 位翻转\nfunction child = bit_flip(parent, pm)\n    child = parent;\n    for i = 1:length(parent)\n    if rand < pm\n    child(i) = 1 - child(i);\n    end\n    end\nend\n% 高斯变异\nfunction child = gaussian_mutation(parent, sigma, lb, ub)\n    child = parent + sigma * randn(size(parent));\n    child = min(max(child, lb), ub);\nend\n% 交换变异（排列）\nfunction child = swap_mutation(parent)\n    n = length(parent);\n    idx = randperm(n, 2);\n    child = parent;\n    child(idx(1)) = parent(idx(2));\n    child(idx(2)) = parent(idx(1));\nend\n```",
+        "bbox": [
+            55,
+            114,
+            795,
+            953
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "page_number",
+        "text": "42",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "table",
+        "img_path": "images/6adfd3a8df4ec4a1e524454a45fc13c70c0c397a2c9dcb521e079c9c52c4bc3a.jpg",
+        "table_caption": [
+            "关键参数一览"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>参数</td><td>含义</td><td>典型值</td><td>影响</td></tr><tr><td>N</td><td>种群大小</td><td>20-200</td><td>大:搜索充分但慢;小:快但易早熟</td></tr><tr><td> $p_c$ </td><td>交叉率</td><td>0.6-0.95</td><td>大:探索能力强;小:收敛快</td></tr><tr><td> $p_m$ </td><td>变异率</td><td>0.01-0.1</td><td>大:多样性好但易破坏优良解</td></tr><tr><td> $G_{max}$ </td><td>最大代数</td><td>100-1000</td><td>影响搜索深度</td></tr><tr><td>k</td><td>锦标赛大小</td><td>2-4</td><td>大:选择压力大;小:多样性好</td></tr><tr><td>e</td><td>精英数</td><td>1-2</td><td>保证收敛,一般为1-2</td></tr></table>",
+        "bbox": [
+            47,
+            111,
+            975,
+            516
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "page_number",
+        "text": "43",
+        "bbox": [
+            920,
+            942,
+            940,
+            964
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "种群大小的影响",
+        "text_level": 2,
+        "bbox": [
+            341,
+            31,
+            654,
+            88
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "选择建议：",
+        "text_level": 2,
+        "bbox": [
+            56,
+            122,
+            183,
+            162
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "\\- 简单问题: $N = 20 - 50$",
+        "bbox": [
+            54,
+            170,
+            404,
+            207
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "\\- 复杂问题： $N = 100 - 200$",
+        "bbox": [
+            55,
+            216,
+            434,
+            255
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "\\- 经验公式： $N \\propto n$ （变量数）",
+        "bbox": [
+            54,
+            262,
+            445,
+            303
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "image",
+        "img_path": "images/95894784323a6563ec47233c1d44977ce1e1731ff2153748a85723276a18e684.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            633,
+            112,
+            843,
+            955
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "page_number",
+        "text": "44",
+        "bbox": [
+            920,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "收敛判断与终止条件",
+        "text_level": 2,
+        "bbox": [
+            295,
+            29,
+            700,
+            88
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "收敛：种群逐渐趋同，最优解不再改善",
+        "bbox": [
+            55,
+            124,
+            533,
+            162
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "常用终止条件:",
+        "bbox": [
+            56,
+            170,
+            240,
+            209
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 最大代数: $t > G_{max}$",
+        "bbox": [
+            55,
+            216,
+            359,
+            259
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. 最优适应度阈值： $F_{best} \\geq F_{target}$",
+        "bbox": [
+            54,
+            266,
+            513,
+            312
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 停滞判断： $|F_{best}^{t} - F_{best}^{t - \\Delta}| < \\epsilon$",
+        "bbox": [
+            52,
+            318,
+            472,
+            364
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "4. 计算时间限制",
+        "bbox": [
+            54,
+            366,
+            279,
+            405
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "收敛曲线：记录每代的最优适应度，观察算法进展",
+        "bbox": [
+            55,
+            412,
+            670,
+            451
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "提问：如何判断算法是否已经收敛？",
+        "bbox": [
+            54,
+            459,
+            495,
+            500
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "page_number",
+        "text": "45",
+        "bbox": [
+            920,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "早熟收敛问题",
+        "text_level": 2,
+        "bbox": [
+            363,
+            31,
+            631,
+            88
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "早熟收敛：算法过早收敛到局部最优",
+        "bbox": [
+            56,
+            124,
+            505,
+            162
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "种群多样性丧失",
+        "bbox": [
+            101,
+            283,
+            241,
+            320
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "无法探索新区域",
+        "bbox": [
+            327,
+            285,
+            468,
+            320
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "陷入局部最优",
+        "bbox": [
+            552,
+            285,
+            675,
+            320
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "无法找到全局最优",
+        "bbox": [
+            759,
+            285,
+            920,
+            318
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "预防策略：",
+        "text_level": 2,
+        "bbox": [
+            56,
+            451,
+            184,
+            490
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "1. 增大种群规模",
+        "bbox": [
+            56,
+            498,
+            277,
+            537
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "2. 使用合适的变异率",
+        "bbox": [
+            55,
+            546,
+            333,
+            583
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "3. 采用多样性保持机制（小生境、拥挤距离）",
+        "bbox": [
+            55,
+            592,
+            625,
+            631
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "4. 使用自适应参数",
+        "bbox": [
+            55,
+            638,
+            306,
+            677
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "page_number",
+        "text": "46",
+        "bbox": [
+            920,
+            944,
+            941,
+            962
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "自适应遗传算法",
+        "text_level": 2,
+        "bbox": [
+            347,
+            29,
+            656,
+            90
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "思想：根据种群状态动态调整参数",
+        "bbox": [
+            55,
+            116,
+            479,
+            155
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "image",
+        "img_path": "images/c6a0e80b6fb479c15929f4e144b59c717892d51803e1d1ba2641a6985e8d7905.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            238,
+            168,
+            750,
+            661
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "自适应交叉率:",
+        "bbox": [
+            59,
+            705,
+            241,
+            748
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "自适应变异率:",
+        "bbox": [
+            59,
+            816,
+            241,
+            859
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "$$\np _ {c} = p _ {c 0} \\cdot \\frac {F _ {m a x} - F _ {a v g}}{F _ {m a x} - F _ {m i n}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            354,
+            735,
+            640,
+            835
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "$$\np _ {m} = p _ {m 0} \\cdot \\frac {F _ {m a x} - F}{F _ {m a x} - F _ {a v g}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            347,
+            844,
+            647,
+            944
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "page_number",
+        "text": "47",
+        "bbox": [
+            919,
+            942,
+            941,
+            962
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "MATLAB GA 工具箱简介",
+        "text_level": 1,
+        "bbox": [
+            250,
+            31,
+            747,
+            90
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "MATLAB 自带 ga 函数:",
+        "bbox": [
+            52,
+            122,
+            354,
+            162
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% 实数编码",
+        "bbox": [
+            106,
+            168,
+            262,
+            207
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[x, fval] = ga(@fitness, nvars, A, b, Aeq, beq, lb, ub, nonlcon, IntCon, options);",
+        "bbox": [
+            104,
+            216,
+            891,
+            301
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% 参数说明:",
+        "bbox": [
+            106,
+            344,
+            272,
+            385
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% @fitness - 适应度函数句柄",
+        "bbox": [
+            105,
+            390,
+            545,
+            431
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% nvars - 变量个数",
+        "bbox": [
+            106,
+            433,
+            463,
+            475
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% lb, ub - 变量下界和上界",
+        "bbox": [
+            105,
+            477,
+            545,
+            520
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% IntCon - 整数变量索引 (1-based)",
+        "bbox": [
+            106,
+            522,
+            673,
+            564
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "% options - 算法参数设置",
+        "bbox": [
+            106,
+            568,
+            518,
+            609
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "整数约束:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            616,
+            184,
+            657
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "IntCon = [1, 3, 5]; % 第1、3、5个变量为整数",
+        "bbox": [
+            102,
+            662,
+            798,
+            705
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "page_number",
+        "text": "48",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "自定义算子与参数设置",
+        "text_level": 2,
+        "bbox": [
+            280,
+            27,
+            722,
+            92
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "% 设置算法参数",
+        "text_level": 2,
+        "bbox": [
+            108,
+            120,
+            316,
+            161
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\noptions = optimoptions('ga', ...\n'PopulationSize', 100, ...\n'MaxGenerations', 500, ...\n'CrossoverFraction', 0.8, ...\n'MutationFcn', @mutationadaptfeasible, ...\n'Display', 'iter', ...\n'PlotFcn', {@gaplotbestf, @gaplotscorediversity});\n```",
+        "bbox": [
+            104,
+            166,
+            877,
+            524
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\n% 运行GA\n[x, fval, exitflag, output, population, scores]\n= ...\nga(@fitness, nvars, A, b, [], [], lb, ub, [], IntCon, options);\n```",
+        "bbox": [
+            104,
+            566,
+            926,
+            790
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "page_number",
+        "text": "49",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "算例1：函数优化（Rastrigin函数）",
+        "bbox": [
+            159,
+            29,
+            813,
+            92
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "问题描述：最小化 Rastrigin 函数",
+        "bbox": [
+            55,
+            122,
+            456,
+            164
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "$$\nf (\\pmb {x}) = 1 0 n + \\sum_ {i = 1} ^ {n} \\left[ x _ {i} ^ {2} - 1 0 \\cos (2 \\pi x _ {i}) \\right]\n$$",
+        "text_format": "latex",
+        "bbox": [
+            270,
+            166,
+            720,
+            290
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "其中 $x_{i}\\in [-5.12,5.12]$ ， $n$ 为变量个数。",
+        "bbox": [
+            55,
+            294,
+            531,
+            335
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "特点：",
+        "bbox": [
+            55,
+            342,
+            130,
+            381
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 多峰函数，有大量局部最优解",
+        "bbox": [
+            52,
+            390,
+            473,
+            429
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 全局最优在 $x = 0, f = 0$",
+        "bbox": [
+            52,
+            437,
+            423,
+            477
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "编码方式：实数编码",
+        "bbox": [
+            54,
+            483,
+            313,
+            524
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "page_number",
+        "text": "50",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "算例1: MATLAB 代码",
+        "text_level": 2,
+        "bbox": [
+            277,
+            29,
+            719,
+            92
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n% Rastrigin 函数\nfunction f = rastrigin(x)\n    n = length(x);\n    f = 10*n + sum(x.^2 - 10*cos(2*pi*x));\nend\n% 主程序\nnvars = 2;\nlb = -5.12 * ones(1, nvars);\nub = 5.12 * ones(1, nvars);\noptions = optimoptions('ga', ...\n    'PopulationSize', 50, ...\n    'MaxGenerations', 200, ...\n    'Display', 'iter', ...\n    'PlotFcn', @gaplotbestf);\n[x_opt, fval] = ga(@rastrigin, nvars, [], [], [], [], lb, ub, [], options);\nfprintf('最优解: x = [%.4f, %.4f]\\n', x_opt(1), x_opt(2));\nfprintf('最优值: f = %.4f\\n', fval);\n```",
+        "bbox": [
+            52,
+            120,
+            944,
+            977
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "算例1：结果分析",
+        "text_level": 2,
+        "bbox": [
+            331,
+            29,
+            666,
+            90
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "收敛曲线：展示最优适应度随代数变化",
+        "bbox": [
+            55,
+            122,
+            534,
+            164
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "提问：为什么 Rastrigin 函数难优化？遗传算法是如何克服的？",
+        "bbox": [
+            55,
+            170,
+            804,
+            212
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "参数敏感性分析:",
+        "bbox": [
+            56,
+            216,
+            270,
+            257
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "\\- 种群大小的影响",
+        "bbox": [
+            54,
+            264,
+            306,
+            303
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "\\- 变异率的影响",
+        "bbox": [
+            55,
+            311,
+            279,
+            351
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "table",
+        "img_path": "images/712134ae336f0b08daa39ccf042d250c73a16371786f618e698aa4d2a4e041a0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>参数组合</td><td>最优值</td><td>收敛代数</td></tr><tr><td>N=20, pm=0.01</td><td>0.123</td><td>150</td></tr><tr><td>N=50, pm=0.05</td><td>0.002</td><td>80</td></tr><tr><td>N=100, pm=0.02</td><td>0.000</td><td>45</td></tr></table>",
+        "bbox": [
+            179,
+            433,
+            686,
+            648
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "page_number",
+        "text": "52",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "算例2：0-1背包问题",
+        "text_level": 2,
+        "bbox": [
+            300,
+            29,
+            695,
+            90
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "问题描述:",
+        "bbox": [
+            55,
+            124,
+            184,
+            162
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "• 有 n 个物品，每个物品有重量 $w_{i}$ 和价值 $v_{i}$",
+        "bbox": [
+            52,
+            172,
+            631,
+            216
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "\\- 背包容量为 $W$",
+        "bbox": [
+            52,
+            222,
+            286,
+            259
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "\\- 选择物品使总价值最大，且总重量不超过容量",
+        "bbox": [
+            52,
+            268,
+            666,
+            309
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r} {{\\mathrm{最大化} \\sum_ {i = 1} ^ {n} v _ {i} x _ {i}}} \\\\ {{\\mathrm{约束} \\sum_ {i = 1} ^ {n} w _ {i} x _ {i} \\leq W, \\quad x _ {i} \\in \\{0, 1 \\}}} \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            308,
+            312,
+            688,
+            557
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "编码方式：二进制编码",
+        "bbox": [
+            54,
+            557,
+            341,
+            598
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "page_number",
+        "text": "53",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "算例2: MATLAB 代码",
+        "text_level": 2,
+        "bbox": [
+            277,
+            27,
+            720,
+            92
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n% 数据\nn = 20;\nw = randi([1, 10], 1, n);\nv = randi([1, 20], 1, n);\nW = 50;\n\n% 适应度函数（带惩罚）\nfunction fit = knapsack_fitness(x)\n    total_w = sum(w .* x);\n    total_v = sum(v .* x);\n    if total_w > W\n    fit = total_v - 100 * (total_w - W); % 惩罚\n    else\n    fit = total_v;\n    end\nend\n% 遗传算法设置\noptions = optimoptions('ga', 'PopulationSize', 50, 'MaxGenerations', 100);\nIntCon = 1:n; % 所有变量为整数\nlb = zeros(1, n);\nub = ones(1, n);\n\n[x_opt, fval] = ga(@knapsack_fitness, n, [], [], [], [], lb, ub, [],\nIntCon, options);\n```",
+        "bbox": [
+            27,
+            94,
+            955,
+            992
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "算例3: TSP 问题",
+        "text_level": 2,
+        "bbox": [
+            331,
+            31,
+            663,
+            88
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "问题描述：旅行商从起点出发，访问所有城市后返回，求最短路径难点：",
+        "bbox": [
+            54,
+            122,
+            866,
+            209
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "\\- 组合爆炸： $n$ 个城市有 $(n - 1)! / 2$ 条路径",
+        "bbox": [
+            52,
+            216,
+            606,
+            257
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "• 20个城市有约 $10^{16}$ 条路径",
+        "bbox": [
+            55,
+            264,
+            431,
+            305
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "编码方式：排列编码",
+        "bbox": [
+            55,
+            316,
+            313,
+            353
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "关键设计：",
+        "bbox": [
+            56,
+            362,
+            184,
+            401
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "\\- 个体：城市访问顺序",
+        "bbox": [
+            54,
+            409,
+            361,
+            448
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "\\- 适应度： $F = 1 / D$ （D为总距离）",
+        "bbox": [
+            54,
+            455,
+            495,
+            496
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "\\- 交叉: PMX或OX",
+        "bbox": [
+            52,
+            503,
+            327,
+            540
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "\\- 变异：交换或倒置",
+        "bbox": [
+            54,
+            550,
+            333,
+            588
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "page_number",
+        "text": "55",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "text",
+        "text": "算例3: MATLAB 框架",
+        "text_level": 2,
+        "bbox": [
+            277,
+            29,
+            719,
+            90
+        ],
+        "page_idx": 55
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```matlab\n% 城市坐标\ncities = 10 * rand(20, 2);\n\n% 计算距离矩阵\nD = pdist2(cities, cities);\n\n% 适应度函数\nfunction dist = tsp_fitness(route)\n    dist = 0;\n    for i = 1:length(route) - 1\n    dist = dist + D(route(i), route(i+1));\n    end\n    dist = dist + D(route(end), route(1)); % 返回起点\nend\n\n% 注意: MATLAB ga 默认不支持排列编码\n% 需要使用自定义交叉和变异算子\n% 或使用第三方工具箱\n```",
+        "bbox": [
+            106,
+            118,
+            950,
+            968
+        ],
+        "page_idx": 55
+    },
+    {
+        "type": "text",
+        "text": "GA的优点",
+        "text_level": 2,
+        "bbox": [
+            391,
+            31,
+            602,
+            88
+        ],
+        "page_idx": 56
+    },
+    {
+        "type": "text",
+        "text": "1. 不依赖于梯度信息\n- 适用于不可导、不连续的问题\n- 适用于黑盒优化\n2. 全局搜索能力强\n- 同时探索解空间多个区域\n- 不易陷入局部最优\n3. 并行性\n- 隐式并行，适合并行计算\n- 天然适合GPU加速\n4. 灵活性强\n- 可处理各种类型的决策变量\n- 可结合其他启发式算法\n5. 鲁棒性好\n- 对问题数学性质要求低\n- 适合工程实际应用",
+        "bbox": [
+            52,
+            122,
+            520,
+            820
+        ],
+        "page_idx": 56
+    },
+    {
+        "type": "page_number",
+        "text": "57",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 56
+    },
+    {
+        "type": "text",
+        "text": "GA 的缺点",
+        "text_level": 2,
+        "bbox": [
+            391,
+            31,
+            602,
+            88
+        ],
+        "page_idx": 57
+    },
+    {
+        "type": "text",
+        "text": "1. 收敛速度慢\n- 需要大量函数评估\n- 接近最优解时收敛慢\n2. 参数敏感\n- 性能依赖参数设置\n- 需要经验调参\n3. 不保证最优性\n- 不能保证找到全局最优\n- 结果是概率性的\n4. 理论支撑不足\n- 理论分析困难\n- 缺乏严格的收敛保证\n5. 计算代价高\n- 大规模问题计算量大\n- 复杂适应度函数计算慢",
+        "bbox": [
+            52,
+            122,
+            441,
+            822
+        ],
+        "page_idx": 57
+    },
+    {
+        "type": "page_number",
+        "text": "58",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 57
+    },
+    {
+        "type": "text",
+        "text": "适用场景总结",
+        "text_level": 2,
+        "bbox": [
+            363,
+            29,
+            633,
+            90
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "使用 GA 的场景:",
+        "text_level": 2,
+        "bbox": [
+            55,
+            122,
+            268,
+            162
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 目标函数复杂（非线性、非凸、不可导）",
+        "bbox": [
+            52,
+            170,
+            597,
+            209
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 搜索空间大且不规则",
+        "bbox": [
+            54,
+            216,
+            361,
+            255
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 需要全局最优（而非局部最优）",
+        "bbox": [
+            52,
+            264,
+            486,
+            303
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 没有现成的梯度信息",
+        "bbox": [
+            54,
+            311,
+            362,
+            350
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 可接受较长的计算时间",
+        "bbox": [
+            54,
+            357,
+            388,
+            396
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "不使用 GA 的场景:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            403,
+            294,
+            442
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 问题有解析解",
+        "bbox": [
+            54,
+            451,
+            280,
+            490
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 对求解时间要求严格",
+        "bbox": [
+            52,
+            498,
+            362,
+            535
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 需要严格的最优性保证",
+        "bbox": [
+            54,
+            546,
+            390,
+            583
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "\\- 目标函数是线性的（用线性规划更快）",
+        "bbox": [
+            54,
+            592,
+            570,
+            631
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "提问：你的研究或工作中，哪些问题适合用遗传算法解决？",
+        "bbox": [
+            54,
+            638,
+            772,
+            679
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "page_number",
+        "text": "59",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 58
+    },
+    {
+        "type": "text",
+        "text": "练习题1：概念理解",
+        "text_level": 2,
+        "bbox": [
+            306,
+            31,
+            690,
+            88
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "题目：请解释遗传算法中“选择”、“交叉”、“变异”三个算子的作用，并说明它们各自模拟了生物进化中的哪些机制。",
+        "bbox": [
+            54,
+            122,
+            941,
+            207
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "要求：",
+        "text_level": 2,
+        "bbox": [
+            56,
+            216,
+            130,
+            253
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "1. 分别说明三个算子的功能",
+        "bbox": [
+            56,
+            262,
+            416,
+            301
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "2. 分析三个算子之间的平衡关系",
+        "bbox": [
+            52,
+            307,
+            470,
+            348
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "3. 举例说明如果缺少某个算子会怎样",
+        "bbox": [
+            52,
+            355,
+            527,
+            394
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "提示:",
+        "text_level": 2,
+        "bbox": [
+            55,
+            403,
+            130,
+            440
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "\\- 选择 $\\rightarrow$ 优胜劣汰",
+        "bbox": [
+            54,
+            450,
+            320,
+            488
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "\\- 交叉 $\\rightarrow$ 基因重组",
+        "bbox": [
+            54,
+            496,
+            320,
+            533
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "\\- 变异 $\\rightarrow$ 基因突变",
+        "bbox": [
+            54,
+            542,
+            319,
+            581
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "page_number",
+        "text": "60",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 59
+    },
+    {
+        "type": "text",
+        "text": "练习题2：编码设计",
+        "text_level": 2,
+        "bbox": [
+            308,
+            31,
+            687,
+            88
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "题目：考虑一个生产调度问题：有5个工件需要在3台机器上加工，每个工件需要按指定顺序经过多台机器。请设计一种遗传算法的编码方式。",
+        "bbox": [
+            54,
+            122,
+            922,
+            209
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "要求:",
+        "bbox": [
+            56,
+            214,
+            130,
+            253
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "1. 说明采用什么编码方式",
+        "bbox": [
+            56,
+            262,
+            391,
+            300
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "2. 给出一个具体的编码示例",
+        "bbox": [
+            54,
+            309,
+            416,
+            346
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "3. 讨论该编码的优点和可能的局限性",
+        "bbox": [
+            54,
+            355,
+            527,
+            394
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "提示：可以尝试排列编码 + 整数编码的组合",
+        "bbox": [
+            54,
+            401,
+            591,
+            442
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "page_number",
+        "text": "61",
+        "bbox": [
+            919,
+            944,
+            940,
+            964
+        ],
+        "page_idx": 60
+    },
+    {
+        "type": "text",
+        "text": "练习题3：算子应用",
+        "text_level": 2,
+        "bbox": [
+            306,
+            29,
+            687,
+            90
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "题目：给定两个排列编码的父代个体：",
+        "bbox": [
+            52,
+            124,
+            519,
+            162
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "• P1 = [2, 4, 1, 5, 3, 6]",
+        "bbox": [
+            52,
+            172,
+            343,
+            212
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "• P2 = [3, 5, 2, 1, 6, 4]",
+        "bbox": [
+            54,
+            218,
+            343,
+            259
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "请分别使用：",
+        "bbox": [
+            56,
+            264,
+            213,
+            303
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "1. 单点交叉（交叉点位置为3）",
+        "bbox": [
+            56,
+            309,
+            444,
+            350
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "2. 交换变异（交换位置2和5）",
+        "bbox": [
+            52,
+            357,
+            431,
+            396
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "计算产生的子代个体，并说明操作过程。",
+        "bbox": [
+            55,
+            403,
+            545,
+            446
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "page_number",
+        "text": "62",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 61
+    },
+    {
+        "type": "text",
+        "text": "练习题4：参数分析",
+        "text_level": 2,
+        "bbox": [
+            306,
+            29,
+            690,
+            90
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "题目：假设您要用遗传算法求解一个包含100个变量的连续优化问题，请设计一组参数设置并说明理由。",
+        "bbox": [
+            52,
+            122,
+            934,
+            207
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "需要指定的参数：",
+        "text_level": 2,
+        "bbox": [
+            56,
+            214,
+            270,
+            255
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "1. 种群大小",
+        "bbox": [
+            56,
+            262,
+            225,
+            301
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "2. 交叉率",
+        "bbox": [
+            54,
+            307,
+            197,
+            348
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "3. 变异率",
+        "bbox": [
+            54,
+            355,
+            197,
+            396
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "4. 精英数",
+        "bbox": [
+            54,
+            401,
+            197,
+            442
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "5. 最大代数",
+        "bbox": [
+            55,
+            450,
+            225,
+            488
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "6. 选择方式",
+        "bbox": [
+            54,
+            496,
+            225,
+            535
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "要求：解释每个参数选择的依据，说明它们之间的相互影响。",
+        "bbox": [
+            54,
+            542,
+            795,
+            583
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "page_number",
+        "text": "63",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 62
+    },
+    {
+        "type": "text",
+        "text": "练习题5：综合应用",
+        "text_level": 2,
+        "bbox": [
+            306,
+            31,
+            686,
+            88
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "题目：考虑一个简单的设施选址问题：有10个候选位置和50个需求点，需要选择3个位置建设施，使总覆盖距离最小。",
+        "bbox": [
+            54,
+            122,
+            905,
+            209
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "要求:",
+        "bbox": [
+            56,
+            214,
+            130,
+            253
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "1. 建立问题的数学模型",
+        "bbox": [
+            56,
+            262,
+            362,
+            301
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "2. 设计遗传算法的编码方式",
+        "bbox": [
+            52,
+            307,
+            419,
+            348
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "3. 设计适应度函数（包含约束处理）",
+        "bbox": [
+            52,
+            355,
+            513,
+            394
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "4. 选择合适的交叉和变异算子",
+        "bbox": [
+            52,
+            401,
+            445,
+            442
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "5. 用伪代码描述算法",
+        "bbox": [
+            55,
+            450,
+            336,
+            488
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "加分项：考虑算法参数如何随问题规模调整。",
+        "bbox": [
+            52,
+            494,
+            602,
+            535
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "page_number",
+        "text": "64",
+        "bbox": [
+            919,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 63
+    },
+    {
+        "type": "text",
+        "text": "课程总结",
+        "text_level": 2,
+        "bbox": [
+            408,
+            31,
+            588,
+            88
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "本课程核心知识点回顾：",
+        "bbox": [
+            56,
+            124,
+            350,
+            162
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "1. 基本原理：模拟生物进化的群体搜索策略",
+        "bbox": [
+            55,
+            170,
+            613,
+            209
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "2. 算法流程：初始化 → 评估 → 选择 → 交叉 → 变异 → 替换",
+        "bbox": [
+            54,
+            216,
+            820,
+            255
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "3. 核心算子：选择、交叉、变异（必须与编码匹配）",
+        "bbox": [
+            52,
+            264,
+            709,
+            303
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "4. 四种编码：二进制、实数、整数、排列",
+        "bbox": [
+            52,
+            312,
+            584,
+            350
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "5. 参数设置：N、 $p_{c}$ 、 $p_{m}$ 、 $G_{max}$",
+        "bbox": [
+            52,
+            359,
+            479,
+            405
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "page_number",
+        "text": "65",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 64
+    },
+    {
+        "type": "text",
+        "text": "讨论",
+        "text_level": 2,
+        "bbox": [
+            455,
+            31,
+            543,
+            88
+        ],
+        "page_idx": 65
+    },
+    {
+        "type": "text",
+        "text": "讨论问题:",
+        "text_level": 2,
+        "bbox": [
+            56,
+            124,
+            184,
+            162
+        ],
+        "page_idx": 65
+    },
+    {
+        "type": "text",
+        "text": "1. 遗传算法在你所在领域有哪些潜在应用？",
+        "bbox": [
+            56,
+            170,
+            600,
+            209
+        ],
+        "page_idx": 65
+    },
+    {
+        "type": "text",
+        "text": "2. 你认为遗传算法的最大优势是什么？",
+        "bbox": [
+            54,
+            216,
+            545,
+            255
+        ],
+        "page_idx": 65
+    },
+    {
+        "type": "text",
+        "text": "3. 如果要改进遗传算法，你会从哪个方向入手？",
+        "bbox": [
+            54,
+            264,
+            655,
+            303
+        ],
+        "page_idx": 65
+    },
+    {
+        "type": "page_number",
+        "text": "66",
+        "bbox": [
+            920,
+            942,
+            941,
+            964
+        ],
+        "page_idx": 65
+    }
+]

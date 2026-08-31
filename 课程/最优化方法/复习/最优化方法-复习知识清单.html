@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>最优化方法 — 复习知识清单</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']]
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<style>
+/* === ExamPass Shared Styles === */
+/* Paper-like warm background, clean typography, responsive */
+
+:root {
+  --paper: #fdf6e3;
+  --paper-dark: #f5ecd7;
+  --ink: #2c2c2c;
+  --ink-light: #555;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --divider: #d6c8a8;
+  --card-bg: #fef9ef;
+  --card-border: #e8dcc8;
+  --correct: #22c55e;
+  --correct-bg: #f0fdf4;
+  --wrong: #ef4444;
+  --wrong-bg: #fef2f2;
+  --tag-bg: #fef3c7;
+  --tag-text: #92400e;
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", "Noto Sans SC", "SimSun", sans-serif;
+  font-size: 12pt; line-height: 1.75; color: var(--ink);
+  max-width: 860px; margin: auto; padding: 24px 20px 60px;
+  background: var(--paper);
+}
+
+@media print {
+  body { font-size: 10.5pt; background: #fff; }
+  .no-print { display: none !important; }
+  h1, h2, h3 { page-break-after: avoid; }
+}
+
+/* ── Header ── */
+#exampass-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 6px 0; margin-bottom: 0;
+}
+.header-brand { font-size: 1.2em; font-weight: 700; color: #1a1a2e; letter-spacing: 0.3px; }
+.header-url  { font-size: 0.78em; color: #999; }
+.header-divider { border: none; border-top: 2px solid var(--divider); margin: 4px 0 20px 0; }
+
+/* ── Typography ── */
+h1 { font-size: 1.55em; text-align: center; border-bottom: 2px solid var(--divider); padding-bottom: 8px; margin-top: 0; }
+h2 { font-size: 1.25em; border-bottom: 1px solid var(--divider); padding-bottom: 4px; margin-top: 28px; }
+h3 { font-size: 1.08em; margin-top: 20px; color: var(--ink); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Tables ── */
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.95em; }
+td, th { border: 1px solid var(--card-border); padding: 5px 9px; text-align: left; }
+th { background: var(--paper-dark); font-weight: 700; }
+
+/* ── Knowledge point vs explanation ── */
+.kp { font-weight: 700; color: var(--ink); }           /* key point: bold dark */
+.exp { font-weight: 400; color: var(--ink-light); }    /* explanation: lighter */
+.exp em, .exp strong { color: var(--ink); }             /* emphasis inside explanation */
+
+/* ── Block elements ── */
+blockquote {
+  border-left: 3px solid #c0392b; background: #fef9ef;
+  padding: 6px 14px; margin: 10px 0; font-size: 0.95em;
+}
+code { background: #f0ede0; padding: 2px 5px; border-radius: 3px; font-size: 0.92em; }
+pre { background: #f0ede0; padding: 10px; border-radius: var(--radius); overflow-x: auto; }
+
+/* ── TOC ── */
+div.toc {
+  background: var(--card-bg); padding: 14px 18px;
+  border: 1px solid var(--card-border); border-radius: var(--radius); margin-bottom: 22px;
+}
+div.toc ul { padding-left: 18px; }
+div.toc li { margin: 3px 0; font-size: 0.95em; }
+
+/* ── Priority tags ── */
+.tag-must   { background: #fee2e2; color: #991b1b; padding: 1px 6px; border-radius: 3px; font-size: 0.82em; font-weight: 600; }
+.tag-key    { background: #fef3c7; color: #92400e; padding: 1px 6px; border-radius: 3px; font-size: 0.82em; font-weight: 600; }
+.tag-freq   { background: #dbeafe; color: #1e40af; padding: 1px 6px; border-radius: 3px; font-size: 0.82em; font-weight: 600; }
+.tag-info   { background: #f0fdf4; color: #166534; padding: 1px 6px; border-radius: 3px; font-size: 0.82em; font-weight: 600; }
+
+
+</style>
+</head>
+<body>
+
+<header id="exampass-header">
+  <div class="header-left"><span class="header-brand">ExamPass Assistant</span></div>
+  <div class="header-right"><span class="header-url">github.com/WUBING2023/ExamPass-Assistant</span></div>
+</header>
+<hr class="header-divider">
+
+<h1>最优化方法 — 复习知识清单</h1>
+<div class="toc">
+<h2>目录</h2>
+<ul>
+<li><a href="#s32140910">I. 预备知识（第2-3章）重点</a></li>
+  <li><a href="#s78238250">1.1 向量空间与线性组合 重点</a></li>
+  <li><a href="#s47613111">1.2 线性方程组 高频</a></li>
+  <li><a href="#s10756093">1.3 内积与范数 重点</a></li>
+  <li><a href="#s73897018">1.4 特征值与实对称矩阵 重点</a></li>
+  <li><a href="#s74184713">1.5 正交投影算子 重点</a></li>
+  <li><a href="#s74416269">1.6 二次型与正定性 必考</a></li>
+  <li><a href="#s45217893">1.7 矩阵范数与谱分析 高频</a></li>
+  <li><a href="#s39224143">1.8 线性方程组解的情况判定 高频</a></li>
+<li><a href="#s68194239">II. 凸集与凸函数（第4-6章）必考</a></li>
+  <li><a href="#s88945776">2.1 凸集与保凸运算 必考</a></li>
+  <li><a href="#s43916957">2.2 凸函数 必考</a></li>
+  <li><a href="#s68842550">2.3 凸优化的核心定理 必考</a></li>
+  <li><a href="#s71882278">2.4 梯度、Jacobian、Hessian 重点</a></li>
+  <li><a href="#s64200055">2.5 最优性条件 必考</a></li>
+  <li><a href="#s60577411">2.6 切锥与可行方向 重点</a></li>
+  <li><a href="#s76331370">2.7 典型判断题 高频</a></li>
+<li><a href="#s86424454">III. 线搜索（第7章 + 第25章）重点</a></li>
+  <li><a href="#s67048972">3.1 一维搜索方法对比 重点</a></li>
+  <li><a href="#s14478030">3.2 非精确步长准则 必考</a></li>
+  <li><a href="#s86593867">3.3 精确步长公式（二次函数）高频</a></li>
+  <li><a href="#s60601293">3.4 Zoutendijk 定理 重点</a></li>
+  <li><a href="#s88011592">3.5 信赖域法 重点</a></li>
+<li><a href="#s24245609">IV. 无约束优化（第8-11章）必考</a></li>
+  <li><a href="#s42517333">4.1 四大方法族总览 必考</a></li>
+  <li><a href="#s87396540">4.2 收敛阶定义 重点</a></li>
+  <li><a href="#s35906671">4.3 梯度下降法 必考</a></li>
+  <li><a href="#s71133383">4.4 牛顿法 必考</a></li>
+  <li><a href="#s62825767">4.5 共轭梯度法 必考</a></li>
+  <li><a href="#s11537107">4.6 拟牛顿法（DFP / BFGS）必考</a></li>
+  <li><a href="#s81034560">4.7 非线性最小二乘 高频</a></li>
+<li><a href="#s42893327">V. 线性规划（第15-17章）必考</a></li>
+  <li><a href="#s48302405">5.1 标准形与基本概念 必考</a></li>
+  <li><a href="#s40061377">5.2 单纯形法 必考</a></li>
+  <li><a href="#s47873258">5.3 对偶理论 必考</a></li>
+  <li><a href="#s18204056">5.4 对偶单纯形法 高频</a></li>
+<li><a href="#s78926153">VI. 整数规划（第19章）了解</a></li>
+<li><a href="#s19538080">VII. 约束优化及求解方法（第20-23章）必考</a></li>
+  <li><a href="#s55012956">7.1 Lagrange 乘子法（等式约束）必考</a></li>
+  <li><a href="#s14146821">7.2 KKT 条件（不等式约束）必考</a></li>
+  <li><a href="#s17327363">7.3 二阶条件 重点</a></li>
+  <li><a href="#s22088861">7.4 对偶理论 重点</a></li>
+  <li><a href="#s89443396">7.5 约束优化数值方法 重点</a></li>
+<li><a href="#s78151239">VIII. 多目标规划（第24章）了解</a></li>
+<li><a href="#s37833970">常考查的六大证明 必考</a></li>
+  <li><a href="#s63277961">证明1：最速下降法的锯齿现象</a></li>
+  <li><a href="#s45473101">证明2：BFGS / DFP 公式推导</a></li>
+  <li><a href="#s63180416">证明3：凸函数局部极小 $\Rightarrow$ 全局极小</a></li>
+  <li><a href="#s90430842">证明4：牛顿法局部二阶收敛</a></li>
+  <li><a href="#s74717934">证明5：共轭方向法 $n$ 步收敛</a></li>
+  <li><a href="#s80325845">证明6：FONC</a></li>
+<li><a href="#s76495185">FONC → KKT 条件证明链 必考</a></li>
+</ul>
+</div>
+
+
+<h2 id="s32140910">I. 预备知识（第2-3章）<span class="tag-key">重点</span></h2>
+
+<h3 id="s78238250">1.1 向量空间与线性组合 <span class="tag-key">重点</span></h3>
+<p><strong>动机</strong>：最优化中每一步都在处理向量——梯度是向量，搜索方向是向量，约束的法向量构成子空间。理解向量空间的基本结构是读懂所有优化理论的先决条件。</p>
+
+<p><span class="kp">线性无关</span><span class="exp">——向量组中每个向量都提供了新方向，不存在冗余。数学上：$\sum \alpha_i a_i = 0 \Rightarrow \alpha_i = 0$（只有零解）。</span></p>
+
+<p><span class="kp">基</span><span class="exp">——线性无关 + 张成整个空间。一句话：最少向量、完整表达空间的「坐标系」。维数 = 基中向量的个数。</span></p>
+
+<p><span class="kp">矩阵的四大空间</span><span class="exp">：对 $A \in \mathbb{R}^{m \times n}$，值域 $\mathcal{R}(A)$ 维数 $= \operatorname{rank}(A)$，零空间 $\mathcal{N}(A)$ 维数 $= n - \operatorname{rank}(A)$。空间对偶关系：$\mathcal{R}(A)^\perp = \mathcal{N}(A^\top)$。</span></p>
+
+<blockquote>易错：零空间维数 $= n - \operatorname{rank}(A)$，不是 $m - \operatorname{rank}(A)$。$\mathcal{N}(A)$ 是 $\mathbb{R}^n$ 的子空间。</blockquote>
+
+<h3 id="s47613111">1.2 线性方程组 <span class="tag-freq">高频</span></h3>
+<p><span class="kp">解的存在唯一性判定</span><span class="exp">：$\operatorname{rank}(A) = \operatorname{rank}[A, b] = n$ 则唯一解；秩相等但小于 $n$ 则无穷多解；秩不相等则无解。判定口诀：有解靠秩相等，唯一靠秩等于列数。</span></p>
+
+<p><span class="kp">通解结构</span><span class="exp">：$x = x_0 + \mathcal{N}(A)$——特解 + 零空间。零空间中的向量不改变 $Ax$ 的结果，它们是自由变量对应的自由度。</span></p>
+
+<h3 id="s10756093">1.3 内积与范数 <span class="tag-key">重点</span></h3>
+<p><span class="kp">范数等价性</span><span class="exp">——在 $\mathbb{R}^n$ 中所有范数等价：$c_1 \|x\|_\alpha \leq \|x\|_\beta \leq c_2 \|x\|_\alpha$。这是收敛性分析选最方便范数（通常是 $\ell_2$）的理论基础。仅在有限维空间成立。</span></p>
+
+<p><span class="kp">$p$-范数</span><span class="exp">：$\|x\|_1$ = 分量绝对值之和（曼哈顿距离）；$\|x\|_2$ = 欧式距离；$\|x\|_\infty$ = 最大分量绝对值。</span></p>
+
+<h3 id="s73897018">1.4 特征值与实对称矩阵 <span class="tag-key">重点</span></h3>
+<p><span class="kp">实对称矩阵的三条黄金性质</span><span class="exp">：(1) 特征值全实数——用于正定性判定；(2) 互异特征值的特征向量正交——保证正交对角化；(3) 可正交对角化 $A = Q\Lambda Q^\top$——二次型化简为标准形。</span></p>
+
+<h3 id="s74184713">1.5 正交投影算子 <span class="tag-key">重点</span></h3>
+<p><span class="kp">判定定理</span><span class="exp">：$P$ 是某子空间的正交投影算子 $\iff P = P^\top = P^2$（对称且幂等）。仅幂等 $P^2 = P$ 是斜投影，还需对称才是正交投影。</span></p>
+
+<blockquote>易错：投影算子需同时验证对称和幂等，两者缺一不可。</blockquote>
+
+<h3 id="s74416269">1.6 二次型与正定性 <span class="tag-must">必考</span></h3>
+<p><span class="kp">正定性分类</span><span class="exp">：$Q \succ 0$（正定，SOSC严格局部极小）、$Q \succeq 0$（半正定，SONC + 凸性）、不定（鞍点）。</span></p>
+
+<p><span class="kp">Sylvester 准则</span><span class="exp">（仅对称矩阵有效）：$Q \succ 0 \iff$ 所有顺序主子式 $\Delta_k > 0 \iff$ 所有特征值 $\lambda_i > 0$。</span></p>
+
+<blockquote>易错：顺序主子式非负 $\neq$ 半正定！半正定需要所有主子式（而非仅顺序主子式）非负，或特征值全非负。考试最容易在此设陷阱。</blockquote>
+
+<h3 id="s45217893">1.7 矩阵范数与谱分析 <span class="tag-freq">高频</span></h3>
+<p><span class="kp">谱范数 vs 谱半径</span><span class="exp">：谱范数 $\|A\|_2 = \sqrt{\lambda_{\max}(A^\top A)}$（任意矩阵）；谱半径 $\rho(A) = \max_i |\lambda_i(A)|$（仅方阵）。关系：$\rho(A) \leq \|A\|_2$。若 $A$ 对称则两者相等。</span></p>
+
+<p><span class="kp">Rayleigh 不等式</span><span class="exp">：$\lambda_{\min}(Q) \|x\|^2 \leq x^\top Q x \leq \lambda_{\max}(Q) \|x\|^2$。优化意义：梯度法的收敛率 $\left(\frac{\lambda_{\max} - \lambda_{\min}}{\lambda_{\max} + \lambda_{\min}}\right)^2$ 直接来自 Rayleigh 不等式。</span></p>
+
+<h3 id="s39224143">1.8 线性方程组解的情况判定 <span class="tag-freq">高频</span></h3>
+<p><strong>步骤</strong>：(1) 写出 $A$ 和增广矩阵 $[A, b]$；(2) 计算两个秩；(3) 与 $n$（列数）比较。秩不等→无解；相等且 $=n$→唯一解；相等且 $< n$→无穷多解。</p>
+
+<hr>
+
+<h2 id="s68194239">II. 凸集与凸函数（第4-6章）<span class="tag-must">必考</span></h2>
+
+<h3 id="s88945776">2.1 凸集与保凸运算 <span class="tag-must">必考</span></h3>
+<p><span class="kp">凸集定义</span><span class="exp">：$S$ 是凸集 $\iff$ 任取两点，连线全程在集合内。数学上：$a x + (1-a) y \in S, \forall a \in (0,1)$。</span></p>
+
+<p><span class="kp">五种保凸运算</span><span class="exp">：数乘、交集、Minkowski 和、线性变换、内部/闭包。保凸运算是「免费」构造新凸集的工具箱。</span></p>
+
+<p><span class="kp">三种「包」的记忆口诀</span><span class="exp">：凸包 = 非负 + 和为1；锥包 = 仅非负；仿射包 = 仅和为1（无非负限制）。约束越少，生成的集合越大。</span></p>
+
+<h3 id="s43916957">2.2 凸函数 <span class="tag-must">必考</span></h3>
+<p><span class="kp">凸函数的三种判定方法</span><span class="exp">：(1) 定义法——直接验证 $f(ax+(1-a)y) \leq af(x)+(1-a)f(y)$；(2) 一阶条件——$f(y) \geq f(x) + \nabla f(x)^\top (y-x)$（图在切平面之上）；(3) 二阶条件——$\nabla^2 f(x) \succeq 0$（Hessian 处处半正定，$f \in C^2$）。</span></p>
+
+<p><span class="kp">保凸运算</span><span class="exp">：非负加权和、与仿射函数的复合、逐点上确界都保持凸性。</span></p>
+
+<h3 id="s68842550">2.3 凸优化的核心定理 <span class="tag-must">必考</span></h3>
+<p><span class="kp">局部最优 = 全局最优</span><span class="exp">——若 $f$ 是凸函数且 $\Omega$ 是凸集，则任意局部极小点必是全局极小点。两者缺一不可。</span></p>
+
+<blockquote>易错：凸函数局部最优 = 全局最优的前提是 $f$ 凸 + $\Omega$ 凸。两者缺一不可。</blockquote>
+
+<h3 id="s71882278">2.4 梯度、Jacobian、Hessian <span class="tag-key">重点</span></h3>
+<p><span class="kp">梯度三重角色</span><span class="exp">：(1) 代数：各偏导数组成的向量；(2) 几何：水平集的法向量；(3) 优化：最速上升方向。</span></p>
+
+<p><span class="kp">Hessian</span><span class="exp"> = 「梯度的梯度」= 函数在各方向上的曲率。若 $f \in C^2$，Hessian 自动对称。</span></p>
+
+<p><span class="kp">多元 Taylor 展开</span><span class="exp">：一阶 $f(x) \approx f(x_0) + \nabla f(x_0)^\top (x-x_0)$——用于梯度下降；二阶 $f(x) \approx f(x_0) + \nabla f^\top \Delta x + \frac{1}{2}\Delta x^\top \nabla^2 f \Delta x$——用于牛顿法 + FONC/SONC/SOSC 推导。注意 $\frac{1}{2}$ 因子！</span></p>
+
+<h3 id="s64200055">2.5 最优性条件 <span class="tag-must">必考</span></h3>
+<p><span class="kp">FONC（一阶必要条件）</span><span class="exp">：$x^*$ 是局部极小点 $\Rightarrow d^\top \nabla f(x^*) \geq 0, \forall d \in \mathcal{T}(x^*)$。内点特例：$\nabla f(x^*) = 0$。</span></p>
+
+<p><span class="kp">SONC（二阶必要条件）</span><span class="exp">：$\nabla f(x^*) = 0$ 且 $\nabla^2 f(x^*) \succeq 0$（内点）。满足不一定是极小点（如 $f(x)=x^3$ 在 $x=0$）。</span></p>
+
+<p><span class="kp">SOSC（二阶充分条件）</span><span class="exp">：$\nabla f(x^*) = 0$ 且 $\nabla^2 f(x^*) \succ 0 \Rightarrow x^*$ 是严格局部极小点。满足一定是极小点，但极小点不一定满足（边界点除外）。</span></p>
+
+<blockquote>易错：FONC/SONC 是必要条件（满足不一定是最小点）；SOSC 是充分条件（满足一定是最小点）。边界点不能用 $\nabla f(x^*) = 0$。</blockquote>
+
+<h3 id="s60577411">2.6 切锥与可行方向 <span class="tag-key">重点</span></h3>
+<p><span class="kp">等式约束切锥</span><span class="exp">：$\mathcal{T}(x) = \{d \mid Dh(x) d = 0\}$（子空间）。不等式约束切锥：$\mathcal{T}(x) = \{d \mid Dg_j(x) d < 0, j \in \mathcal{J}(x)\}$（开锥）。核心口诀：「积极约束才有发言权，$Dg \cdot d < 0$ 指向可行侧。」</span></p>
+
+<h3 id="s76331370">2.7 典型判断题 <span class="tag-freq">高频</span></h3>
+<p><strong>二阶锥</strong> $\{(x,t) \mid \|x\|_2 \leq t\}$ 是凸集（冰淇淋筒）。<strong>正定对称矩阵集合</strong>是凸集（半正定锥的内部）。<strong>线性函数</strong> $f(x,y)=x$ 既是凸也是凹。<strong>Log-Sum-Exp</strong> $f(x,y)=\log(e^x+e^y)$ 是凸函数。</p>
+
+<hr>
+
+<h2 id="s86424454">III. 线搜索（第7章 + 第25章）<span class="tag-key">重点</span></h2>
+
+<h3 id="s67048972">3.1 一维搜索方法对比 <span class="tag-key">重点</span></h3>
+<p><strong>核心假设</strong>：$f$ 是单峰函数（区间内有唯一极小点）。</p>
+
+<p><span class="kp">黄金分割法</span><span class="exp">——只需 $f(x)$ 值，压缩比 $\mu = \frac{\sqrt{5}-1}{2} \approx 0.618$，每步只需算 1 个新函数值（自相似性设计）。推导核心：$\lambda = (1-\lambda)^2$，解得 $\lambda \approx 0.382$。</span></p>
+
+<p><span class="kp">二分法</span><span class="exp">——需要 $f'(x)$，压缩比 $0.5$（比黄金分割快），在中点检查导数符号决定删去哪一半：$f'(x_{\text{mid}}) > 0$ 则极小点在左边。</span></p>
+
+<p><span class="kp">牛顿法（一元）</span><span class="exp">——需要 $f', f''$，迭代格式 $x_{k+1} = x_k - \frac{f'(x_k)}{f''(x_k)}$。二次收敛（局部），要求 $f'' > 0$。对二次函数一步收敛。</span></p>
+
+<p><span class="kp">割线法</span><span class="exp">——仅需 $f'$（两个点），用差商近似 $f''$：$x_{k+1} = x_k - \frac{f'(x_k)(x_k - x_{k-1})}{f'(x_k) - f'(x_{k-1})}$。超线性收敛（约 1.618 阶），是牛顿法的「平价替代」。</span></p>
+
+<h3 id="s14478030">3.2 非精确步长准则 <span class="tag-must">必考</span></h3>
+
+<table>
+<tr><th>准则</th><th>公式</th><th>参数</th><th>特点</th></tr>
+<tr><td><strong>Armijo</strong></td><td>$f(x_k + \alpha p_k) \leq f(x_k) + c \alpha p_k^T \nabla f(x_k)$</td><td>$c \in (0,1)$，典型 $10^{-4}$</td><td>仅保证充分下降，不能阻止步长过小</td></tr>
+<tr><td><strong>Goldstein</strong></td><td>Armijo + 下界限制</td><td>$c \in (0, 0.5)$</td><td>防止步长过小</td></tr>
+<tr><td><strong>（强）Wolfe</strong></td><td>Armijo + 曲率条件 $\vert\nabla f(x_k + \alpha p_k)^T p_k\vert \leq c_2 \vert p_k^T \nabla f(x_k)\vert$</td><td>$0 < c_1 < c_2 < 1$，典型 $c_1=10^{-4}, c_2=0.9$</td><td><strong>实践最常用</strong></td></tr>
+</table>
+
+<blockquote>易错：Armijo 条件不能单独使用——允许 $\alpha \to 0$ 时条件总是近似满足。必须配合回溯（从大 $\bar{\alpha}$ 开始）或加上 Wolfe 的曲率条件。</blockquote>
+
+<h3 id="s86593867">3.3 精确步长公式（二次函数）<span class="tag-freq">高频</span></h3>
+<p>若 $f(x) = \frac{1}{2}x^T A x + b^T x + c$（$A \succ 0$）：$\alpha_k = -\frac{p_k^T \nabla f(x_k)}{p_k^T A p_k}$。分子是方向导数，分母是沿方向的曲率——曲率越大，最优步长越小。</p>
+
+<h3 id="s60601293">3.4 Zoutendijk 定理 <span class="tag-key">重点</span></h3>
+<p><span class="kp">定理结论</span><span class="exp">：若 $f$ 连续可微有下界、$\nabla f$ Lipschitz 连续、$p_k$ 下降方向且 $\alpha_k$ 满足 Wolfe 准则，则 $\sum \cos^2\theta_k \|\nabla f(x_k)\|^2 < \infty$，从而 $\cos^2\theta_k \|\nabla f(x_k)\|^2 \to 0$。若 $\cos\theta_k \geq \delta > 0$（方向始终不趋于与负梯度正交），则 $\|\nabla f(x_k)\| \to 0$。这是线搜索方法的收敛性基石。</span></p>
+
+<h3 id="s88011592">3.5 信赖域法 <span class="tag-key">重点</span></h3>
+<p><span class="kp">核心思想</span><span class="exp">：在 $x_k$ 周围定义「信任区域」，只在这个区域内信任二次模型。与线搜索的关键区别：线搜索是先选方向再选步长，信赖域是先选范围再在范围内选点。</span></p>
+
+<p><span class="kp">子问题</span><span class="exp">：$\min_s \frac{1}{2}s^T B_k s + g_k^T s$ s.t. $\|s\| \leq r_k$。KKT 条件中 Lagrange 乘子 $\lambda$ 使 $B + \lambda I$ 正定——约束自动为 Hessian 加了「正则项」。</span></p>
+
+<p><span class="kp">半径更新</span><span class="exp">：通过 $\rho_k = \frac{f(x_k) - f(x_{k+1})}{m_k(0) - m_k(s_k)}$（实际下降/预估下降）判断模型质量：$\rho_k < 0.25$ 收缩，$\rho_k > 0.75$ 扩张。</span></p>
+
+<blockquote>易错：信赖域收敛不要求 Hessian 正定——子问题是有界约束下的优化，极小点总存在。这是对比纯牛顿法的最重要优势。</blockquote>
+
+<hr>
+
+<h2 id="s24245609">IV. 无约束优化（第8-11章）<span class="tag-must">必考</span></h2>
+
+<h3 id="s42517333">4.1 四大方法族总览 <span class="tag-must">必考</span></h3>
+
+<table>
+<tr><th>维度</th><th>梯度法</th><th>牛顿法</th><th>共轭梯度法</th><th>拟牛顿法 (BFGS)</th></tr>
+<tr><td>使用信息</td><td>一阶</td><td>二阶</td><td>一阶+历史方向</td><td>一阶+历史更新</td></tr>
+<tr><td>每步计算量</td><td>$O(n)$</td><td>$O(n^3)$</td><td>$O(n)$</td><td>$O(n^2)$</td></tr>
+<tr><td>二次函数收敛</td><td>线性，多次迭代</td><td>一步终止</td><td>至多 $n$ 步</td><td>至多 $n$ 步</td></tr>
+<tr><td>一般函数收敛</td><td>线性</td><td>局部二次</td><td>超线性（需 restart）</td><td>超线性</td></tr>
+<tr><td>收敛率常数</td><td>$\left(\frac{\kappa-1}{\kappa+1}\right)^2$</td><td>误差平方缩小</td><td>—</td><td>—</td></tr>
+<tr><td>适用场景</td><td>大规模+低精度</td><td>中小规模+高精度</td><td>大规模+中等精度</td><td>中等规模+高精度</td></tr>
+</table>
+
+<h3 id="s87396540">4.2 收敛阶定义 <span class="tag-key">重点</span></h3>
+<p>$\lim_{k \to \infty} \frac{\|x_{k+1} - x^*\|}{\|x_k - x^*\|^p} = L$：次线性 ($p=1, L=1$) → 线性 ($p=1, L \in (0,1)$) → 超线性 ($L=0$) → 二次 ($p=2$)。数值表现：二次收敛有效数字每步翻倍。</p>
+
+<h3 id="s35906671">4.3 梯度下降法 <span class="tag-must">必考</span></h3>
+<p><span class="kp">迭代格式</span><span class="exp">：$x_{k+1} = x_k - \alpha_k \nabla f(x_k)$。<strong>最速下降法</strong>是采用精确线搜索的梯度下降法。</span></p>
+
+<p><span class="kp">锯齿现象（正交性）</span><span class="exp">：最速下降法的相邻梯度正交——$\nabla f(x_{k+1}) \perp \nabla f(x_k)$。证明：令 $\phi(\alpha) = f(x_k - \alpha \nabla f(x_k))$，由 $\phi'(\alpha_k) = 0$ 和链式法则即得。当 Hessian 条件数大时锯齿使收敛极慢。</span></p>
+
+<p><span class="kp">收敛率（二次函数）</span><span class="exp">：$V(x_{k+1}) \leq \left(\frac{\lambda_{\max} - \lambda_{\min}}{\lambda_{\max} + \lambda_{\min}}\right)^2 V(x_k) = \left(\frac{\kappa-1}{\kappa+1}\right)^2 V(x_k)$。$\kappa = 1$ 一步收敛，$\kappa = 100$ 收敛极慢（$c \approx 0.96$）。</span></p>
+
+<p><span class="kp">定步长收敛充要条件</span><span class="exp">：$\alpha \in (0, \frac{2}{\lambda_{\max}(Q)})$。在此范围外即使对最简单的二次函数也可能发散。</span></p>
+
+<h3 id="s71133383">4.4 牛顿法 <span class="tag-must">必考</span></h3>
+<p><span class="kp">迭代格式</span><span class="exp">：$x_{k+1} = x_k - [\nabla^2 f(x_k)]^{-1} \nabla f(x_k)$。用二阶 Taylor 展开构造二次模型，直接跳到二次模型的极小点。</span></p>
+
+<p><span class="kp">局部二阶收敛定理</span><span class="exp">：若 $f \in C^3$，$\nabla f(x^*) = 0$，$\nabla^2 f(x^*)$ 可逆，则对充分靠近 $x^*$ 的 $x_0$，牛顿法以至少 2 阶收敛：$\|x_{k+1} - x^*\| \leq c_1 c_2 \|x_k - x^*\|^2$。$c_1$ 来自 Hessian Lipschitz 连续性（控制 Taylor 余项），$c_2$ 来自 Hessian 逆范数有界（控制敏感度）。</span></p>
+
+<blockquote>易错：二阶收敛是局部性质——初始点必须在解附近。远离解时牛顿法可能发散。这是纯牛顿法最大的局限。</blockquote>
+
+<h3 id="s62825767">4.5 共轭梯度法 <span class="tag-must">必考</span></h3>
+<p><span class="kp">$Q$-共轭</span><span class="exp">：$p_i^T Q p_j = 0, \forall i \neq j$。当 $Q = I$ 时退化为正交。$n$ 个 $Q$-共轭非零向量构成 $\mathbb{R}^n$ 的一组基。</span></p>
+
+<p><span class="kp">$n$ 步收敛定理</span><span class="exp">：对二次函数 $f(x) = \frac{1}{2}x^T Q x + b^T x$（$Q \succ 0$），共轭方向法至多 $n$ 次迭代达到精确极小点：$x_n = x^*$。</span></p>
+
+<p><span class="kp">扩展子空间定理</span><span class="exp">：$x_{k+1} = \arg\min_{x \in V_k} f(x)$，其中 $V_k = x_0 + \text{span}\{p_0, \dots, p_k\}$。每步得到逐渐扩大子空间上的最优解——步子不浪费。</span></p>
+
+<p><span class="kp">共轭梯度法方向递推</span><span class="exp">：$p_0 = -g_0$，$p_k = -g_k + \beta_{k-1} p_{k-1}$。$\beta_k$ 的四种等价公式（二次函数）：FR（$\beta_k = \frac{g_{k+1}^T g_{k+1}}{g_k^T g_k}$，数值最稳定）、PR、HS、DY。对非线性函数不等价。</span></p>
+
+<blockquote>易错：共轭方向法的 $n$ 步收敛仅对二次函数 + 精确线搜索成立。非线性 CG 需要 restart。</blockquote>
+
+<h3 id="s11537107">4.6 拟牛顿法（DFP / BFGS）<span class="tag-must">必考</span></h3>
+<p><strong>动机</strong>：牛顿法每次需 $O(n^3)$ 计算 Hessian 并求逆。拟牛顿法用梯度信息迭代更新近似矩阵，实现超线性收敛。</p>
+
+<p><span class="kp">拟牛顿方程（割线方程）</span><span class="exp">——由一阶 Taylor 展开导出：令 $s_k = x_k - x_{k+1}$，$y_k = g_k - g_{k+1}$。版本1（近似 Hessian 逆）：$H_{k+1} y_k = s_k$；版本2（近似 Hessian）：$B_{k+1} s_k = y_k$。</span></p>
+
+<p><span class="kp">DFP 公式</span><span class="exp">：$H_{k+1}^{\text{DFP}} = H_k + \frac{s_k s_k^T}{s_k^T y_k} - \frac{H_k y_k y_k^T H_k}{y_k^T H_k y_k}$。近似 Hessian 逆，方向直接计算 $d_k = -H_k g_k$。</span></p>
+
+<p><span class="kp">BFGS 公式</span><span class="exp">：$B_{k+1}^{\text{BFGS}} = B_k + \frac{y_k y_k^T}{y_k^T s_k} - \frac{B_k s_k s_k^T B_k}{s_k^T B_k s_k}$。近似 Hessian，需解 $B_k d_k = -g_k$。实践中公认表现最好的拟牛顿公式。</span></p>
+
+<p><span class="kp">Sherman-Morrison 公式</span><span class="exp">：$(A + uv^T)^{-1} = A^{-1} - \frac{A^{-1}uv^T A^{-1}}{1 + v^T A^{-1}u}$。两次应用可从 $H_k$ 得到 $H_{k+1}$ 的 BFGS 逆更新，避免每次求解线性方程组。</span></p>
+
+<p><span class="kp">曲率条件</span><span class="exp">：$s_k^T y_k > 0$ 保证 $H_{k+1} \succ 0$（正定性遗传）。用强 Wolfe 线搜索时自动满足。</span></p>
+
+<p><span class="kp">共轭特征定理</span><span class="exp">：在二次函数上，拟牛顿法自动生成 $Q$-共轭搜索方向——「隐式」的共轭梯度法。</span></p>
+
+<blockquote>易错：BFGS 在数值上普遍优于 DFP，实际首选 BFGS 或 L-BFGS。秩1校正不保证正定性，不要在生产代码中使用。</blockquote>
+
+<h3 id="s81034560">4.7 非线性最小二乘 <span class="tag-freq">高频</span></h3>
+<p><span class="kp">高斯-牛顿法</span><span class="exp">：$\min_x \frac{1}{2}\|r(x)\|^2$，省略 Hessian 中 $r$ 的二阶项，用 $J^T J$ 近似 Hessian：$x_{k+1} = x_k - [J^T J]^{-1} J^T r$。</span></p>
+
+<hr>
+
+<h2 id="s42893327">V. 线性规划（第15-17章）<span class="tag-must">必考</span></h2>
+
+<h3 id="s48302405">5.1 标准形与基本概念 <span class="tag-must">必考</span></h3>
+<p><span class="kp">标准形</span><span class="exp">：$\min c^T x$ s.t. $Ax = b, x \geq 0$。要求 $\operatorname{rank}(A) = m < n$，$b \geq 0$。</span></p>
+
+<p><span class="kp">标准化四步</span><span class="exp">：(1) $\max \to \min$（取负）；(2) $\leq$ 引入松弛变量 $+s_i$，$\geq$ 引入剩余变量 $-s_i$；(3) 自由变量 $x_i = x_i^+ - x_i^-$；(4) $b_i < 0$ 时方程两边乘 $-1$。</span></p>
+
+<p><span class="kp">基矩阵、基本解、BFS</span><span class="exp">：选 $m$ 个线性无关列构成 $B$，令非基变量为 0，$x_B = B^{-1}b$。若 $x_B \geq 0$ 则为 BFS。退化 BFS：某基变量为 0。BFS 个数 $\leq \binom{n}{m}$。</span></p>
+
+<h3 id="s40061377">5.2 单纯形法 <span class="tag-must">必考</span></h3>
+<p><span class="kp">判别数（检验数）</span><span class="exp">：$r_D = c_D^T - c_B^T B^{-1} D$。$\min$ 问题下 $r_D \geq 0$ 则当前 BFS 最优。存在 $r_j < 0$ 且该列所有 $a_{ij} \leq 0$ 则 LP 无下界。</span></p>
+
+<p><span class="kp">$\theta$ 规则</span><span class="exp">：$\frac{b_k}{a_{kl}} = \min\{\frac{b_i}{a_{il}} \mid a_{il} > 0\}$。只考虑 $a_{il} > 0$ 的行。</span></p>
+
+<p><span class="kp">两阶段法</span><span class="exp">：Phase I 引入人工变量，$\min e^T y$ 找初始 BFS。若最优值 $>0$ 则原问题不可行。Phase II 擦除人工变量列，替换目标函数行，正常单纯形迭代。</span></p>
+
+<p><span class="kp">大M法</span><span class="exp">：$\min c^T x + M e^T y$，$M$ 充分大。一阶段求解，但 $M$ 太大导致数值病态。</span></p>
+
+<blockquote>易错：Phase I 最后一张表 $\neq$ Phase II 第一张表——需删人工变量列、替换目标行、行变换消去基变量判别数。</blockquote>
+
+<h3 id="s47873258">5.3 对偶理论 <span class="tag-must">必考</span></h3>
+<p><span class="kp">弱对偶定理</span><span class="exp">：$x$ 可行 (P)，$\lambda$ 可行 (D) $\Rightarrow c^T x \geq \lambda^T b$。推论：(P) 无下界 $\Rightarrow$ (D) 不可行。</span></p>
+
+<p><span class="kp">强对偶定理</span><span class="exp">：若 (P) 有最优解，则 (D) 有最优解且最优值相等。对偶最优解 $\lambda^T = c_B^T B^{-1}$（从最终单纯形表提取）。</span></p>
+
+<p><span class="kp">互补松弛</span><span class="exp">：$(c_j - \lambda^T a_j) \cdot x_j = 0, \forall j$。正变量对应的对偶约束取等号；非紧对偶约束对应的原始变量为零。</span></p>
+
+<p><span class="kp">写对偶问题</span><span class="exp">：对偶转化表——$\min \leftrightarrow \max$；$\geq$ 约束 $\to \lambda_i \geq 0$；$\leq$ 约束 $\to \lambda_i \leq 0$；$=$ 约束 $\to \lambda_i$ 自由；$x_j \geq 0 \to A_j^T \lambda \leq c_j$。</span></p>
+
+<h3 id="s18204056">5.4 对偶单纯形法 <span class="tag-freq">高频</span></h3>
+<p><span class="kp">适用场景</span><span class="exp">：判别数全 $\geq 0$（对偶可行），但 $b$ 有负分量（原始不可行）。先选出基行（最负 $b_k$），后选进基列（$\max\{r_j/(-a_{kj}) \mid a_{kj} < 0\}$）。pivot 必须取负。</span></p>
+
+<hr>
+
+<h2 id="s78926153">VI. 整数规划（第19章）<span class="tag-info">了解</span></h2>
+
+<p><span class="kp">两类求解方法</span><span class="exp">：(1) <strong>割平面法</strong>——不断添加 Gomory 割「切掉」非整数松弛解，逐步逼近整数解；(2) <strong>分支定界法</strong>——将可行域反复分割为子域，用松弛问题上下界剪枝。</span></p>
+
+<p>整数规划是 NP-hard 的。LP 松弛解四舍五入不保证得到 IP 最优解。</p>
+
+<hr>
+
+<h2 id="s19538080">VII. 约束优化及求解方法（第20-23章）<span class="tag-must">必考</span></h2>
+
+<h3 id="s55012956">7.1 Lagrange 乘子法（等式约束）<span class="tag-must">必考</span></h3>
+<p><span class="kp">条件极值定理（FONC）</span><span class="exp">：$x^*$ 是正则局部极小点 $\Rightarrow \exists \lambda^*$ 使 $\nabla f(x^*) + \sum \lambda_i^* \nabla h_i(x^*) = 0$。即 $\nabla f(x^*)$ 落在法空间中——可被约束梯度的线性组合表示。</span></p>
+
+<p><span class="kp">推导核心</span><span class="exp">：等式约束切锥是子空间 $\Rightarrow$ FONC 不等式自动升级为等式 $\Rightarrow \nabla f \in T^\perp = \text{range}(Dh^T)$。</span></p>
+
+<p><span class="kp">LICQ</span><span class="exp">：积极约束梯度线性无关，保证乘子唯一。</span></p>
+
+<h3 id="s14146821">7.2 KKT 条件（不等式约束）<span class="tag-must">必考</span></h3>
+<p><span class="kp">KKT 四个条件</span><span class="exp">：(1) 原始可行性：$h=0, g \leq 0$；(2) 对偶可行性：$\mu \geq 0$；(3) 驻点条件：$\nabla f + \sum \mu_j \nabla g_j + \sum \lambda_i \nabla h_i = 0$；(4) 互补松弛：$\mu_j g_j = 0$。</span></p>
+
+<p><span class="kp">推导关键</span><span class="exp">：FONC $\to$ 线性不等式组无解 $\to$ Farkas 引理 $\to$ 非负乘子存在 $\to$ KKT。Farkas 引理 = 线性不等式版本的「要么存在解，要么存在证明无解的证书」。</span></p>
+
+<p><span class="kp">互补松弛的直觉</span><span class="exp">：约束「松」时影子价格为零（$\mu_j = 0$），约束「紧」时乘子可能为正。</span></p>
+
+<blockquote>易错：$\lambda$（等式乘子）无符号限制；$\mu$（不等式乘子）必须 $\geq 0$。非凸问题中 KKT 是必要条件（需正则性）；凸优化中 KKT 升格为充分条件（不需正则性）。</blockquote>
+
+<h3 id="s17327363">7.3 二阶条件 <span class="tag-key">重点</span></h3>
+<p><span class="kp">等式约束</span><span class="exp">：SONC—$d^T L(x^*, \lambda^*) d \geq 0, \forall d \in \mathcal{T}$；SOSC—严格正定在切空间上。不等式约束：需在临界锥 $\mathcal{C}(x^*, \mu^*)$ 上判定，$\mu_j > 0$ 的约束在临界锥中表现得像等式约束。</span></p>
+
+<blockquote>易错：二阶条件只在切空间/临界锥上判定，不在全空间 $\mathbb{R}^n$。临界锥 $\neq$ 可行方向锥。</blockquote>
+
+<h3 id="s22088861">7.4 对偶理论 <span class="tag-key">重点</span></h3>
+<p><span class="kp">对偶函数</span><span class="exp">：$q(\lambda, \mu) = \min_x \mathcal{L}(x, \lambda, \mu)$。弱对偶：$w^* \geq q^*$ 永远成立。强对偶：$w^* = q^*$ 需凸优化 + Slater 条件（存在严格内点）。</span></p>
+
+<p><span class="kp">鞍点</span><span class="exp">：$(x^*, z^*)$ 是鞍点 $\iff \phi(x^*, z) \leq \phi(x^*, z^*) \leq \phi(x, z^*)$。凸优化中 KKT 点、鞍点、全局极小点三者等价。</span></p>
+
+<h3 id="s89443396">7.5 约束优化数值方法 <span class="tag-key">重点</span></h3>
+
+<table>
+<tr><th>方法</th><th>迭代格式</th><th>使用条件</th></tr>
+<tr><td><strong>投影梯度法</strong></td><td>$x^{(k+1)} = \Pi_\Omega[x^{(k)} - \alpha_k \nabla f(x^{(k)})]$</td><td>投影好算（盒子/球/仿射集）</td></tr>
+<tr><td><strong>Lagrange 乘子法</strong></td><td>$x$ 下降 + $\lambda$ 上升（$\lambda^{(k+1)} = \lambda^{(k)} + \beta_k h(x^{(k)})$）</td><td>中小规模</td></tr>
+<tr><td><strong>$\ell_2$ 罚函数法</strong></td><td>$\min_x f(x) + \gamma(\|h\|^2 + \|[g]_+\|^2)$，$\gamma \to \infty$</td><td>灵活、实现简单</td></tr>
+<tr><td><strong>增广 Lagrange 法</strong></td><td>$L_\gamma = f + \lambda^T h + \mu^T g + \frac{\gamma}{2}(\|h\|^2 + \|[g]_+\|^2)$，固定 $\gamma$</td><td>稳健（不需 $\gamma \to \infty$）</td></tr>
+</table>
+
+<p><span class="kp">简单集合投影公式</span><span class="exp">：盒子→分量截断 median；球→$\min(1, r/\|x\|) \cdot x$；仿射集→$x - A^\dagger(Ax - b)$；超平面→$x - \frac{a^T x - b}{\|a\|^2}a$。</span></p>
+
+<blockquote>易错：罚函数法 $\gamma$ 不能无限增大——太大会导致 Hessian 条件数爆炸。</blockquote>
+
+<hr>
+
+<h2 id="s78151239">VIII. 多目标规划（第24章）<span class="tag-info">了解</span></h2>
+
+<p><span class="kp">Pareto 最优解</span><span class="exp">——不存在其他可行解在所有目标上不差且至少一个目标严格更好。一句话：「改进已经穷尽」。</span></p>
+
+<p><span class="kp">四种转单目标方法</span><span class="exp">：(1) 加权凸组合——$\sum c_i f_i, c_i \geq 0, \sum c_i = 1$（简单但遗漏非凸前沿）；(2) 极大极小——$\min \max f_i$（追求均衡）；(3) 范数法——$\|f(x)\|_p$（$p=1$ 为加权和，$p=\infty$ 为极大极小）；(4) 约束集法——保留主目标，其余转为 $\leq b_i$ 约束。</span></p>
+
+<blockquote>易错：加权和法遗漏非凸 Pareto 前沿的凹陷部分。极大极小法要求目标量纲一致。</blockquote>
+
+<hr>
+
+<h2 id="s37833970">常考查的六大证明 <span class="tag-must">必考</span></h2>
+
+<h3 id="s63277961">证明1：最速下降法的锯齿现象</h3>
+<p>精确线搜索 $\Rightarrow \phi'(\alpha_k) = 0$（$\phi(\alpha) = f(x_k - \alpha \nabla f(x_k))$）。链式法则 $\Rightarrow -\nabla f(x_{k+1})^T \nabla f(x_k) = 0$。梯度正交导致在「谷底」来回反弹。</p>
+
+<h3 id="s45473101">证明2：BFGS / DFP 公式推导</h3>
+<p>出发点：拟牛顿方程 $H_{k+1} y_k = s_k$。秩2设 $H_{k+1} = H_k + auu^T + bvv^T$，自然取 $u = s_k, v = H_k y_k$，由 $a(s_k^T y_k)=1, b(y_k^T H_k y_k)=-1$ 解出系数即得 DFP。BFGS 是对偶版本（$s \leftrightarrow y, H \leftrightarrow B$）。</p>
+
+<h3 id="s63180416">证明3：凸函数局部极小 $\Rightarrow$ 全局极小</h3>
+<p>反证法：假设 $\exists y: f(y) < f(x^*)$。凸性 $\Rightarrow f(x^*+t(y-x^*)) \leq (1-t)f(x^*) + tf(y) < f(x^*), \forall t > 0$。取 $t$ 充分小破坏局部极小性，矛盾。</p>
+
+<h3 id="s90430842">证明4：牛顿法局部二阶收敛</h3>
+<p>$f \in C^3 \Rightarrow \nabla^2 f$ Lipschitz 连续 $\Rightarrow$ Taylor 余项 $O(\|x_k - x^*\|^2)$。$\nabla^2 f(x^*)$ 可逆 $\Rightarrow$ 邻域内 Hessian 逆范数有界。两者相乘得 $\|x_{k+1} - x^*\| \leq c_1 c_2 \|x_k - x^*\|^2$。</p>
+
+<h3 id="s74717934">证明5：共轭方向法 $n$ 步收敛</h3>
+<p>$n$ 个 $Q$-共轭向量构成基 $\Rightarrow x^* - x_0 = \sum \beta_i p_i$。乘 $p_k^T Q$ 利用共轭性得 $\beta_k = \frac{p_k^T Q(x^*-x_0)}{p_k^T Q p_k} = -\frac{p_k^T g_k}{p_k^T Q p_k} = \alpha_k$。$\therefore x_n = x_0 + \sum \alpha_k p_k = x^*$。</p>
+
+<h3 id="s80325845">证明6：FONC</h3>
+<p>$d \in \mathcal{T}(x^*)$ 由可行方向序列定义。Taylor 展开 $f(x_k) \geq f(x^*) \Rightarrow \nabla f(x^*)^T (x_k - x^*) + o(\|x_k - x^*\|) \geq 0$。除以 $t_k$ 取极限 $k \to \infty$ 得 $d^T \nabla f(x^*) \geq 0$。</p>
+
+<hr>
+
+<h2 id="s76495185">FONC → KKT 条件证明链 <span class="tag-must">必考</span></h2>
+<p><strong>四步推导</strong>：(1) FONC $\Rightarrow \nabla f(x^*)^T d \geq 0, \forall d \in \mathcal{T}(x^*)$；(2) 等价于线性不等式组无解；(3) Farkas 引理 $\Rightarrow \exists$ 非负乘子；(4) 变量重命名得 KKT——稳定性 + 原始可行性 + 对偶可行性 + 互补松弛。</p>
+
+<p><strong>等式约束情形更简单</strong>：切锥是子空间 $\Rightarrow$ FONC 不等号自动变等号 $\Rightarrow \nabla f \in T^\perp = \text{range}(Dh^T)$ $\Rightarrow$ Lagrange 乘子定理。</p>
+
+
+
+
+</body>
+</html>

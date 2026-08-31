@@ -1,0 +1,431 @@
+# 22a-凸优化问题
+
+---
+title: 第22章 凸优化问题
+subject: 最优化方法
+source: 无动画Chapter22Convex.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 22
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第22章 凸优化问题
+1．凸函数
+2．凸优化问题
+3．半定规划
+4．矩阵优化
+5．线性矩阵不等式
+![](https://web-api.textin.com/ocr_image/external/0798f64f580125ea.jpg)
+2
+第22章 凸优化问题
+## 约束优化问题
+![](https://web-api.textin.com/ocr_image/external/e916e64ce160398f.jpg)
+★由于目标函数、约束函数的非线性性，优化问题通常不易求解.即使目标函数比较“简单”，大部分优化问题的难点在于处理／分析约束集.
+min $x_{1}^{2}+x_{2}^{2}$  s.t. $x_{2}-x_{1}-2\leq 0$  $x_{1}^{2}-x_{2}-4\leq 0.$ 
+右图：所有约束在极小点（即原点）处是非积极的.因此，求解上述约束优化问题与求解无约束优化问题等价.
+![](https://web-api.textin.com/ocr_image/external/7d8fc5ed9d163a10.jpg)
+min $x_{1}^{2}+x_{2}^{2}$ s.t. $x_{1}-10\leq 0$ $x_{1}-x_{2}^{2}-4\geq 0.$ 右图：在极小点处，只有一个约束是积极的.若事先已知 $x_{1}-x_{2}^{2}-4\geq 0$ 是积极约束，则上述不等式约束的优化 问题可以简化为等式约束的优化问题.
+![](https://web-api.textin.com/ocr_image/external/f6568c54d24359b5.jpg)
+- $x_{1}x[4x]$
+![](https://web-api.textin.com/ocr_image/external/e3bcc5a7d72ca491.jpg)
+min $x_{1}^{2}+x_{2}^{2}$ ,s.t. $4-x_{1}-x_{2}^{2}\leq 0$ 
+$$3x_{2}-x_{1}\leq 0,-3x_{2}-x_{1}\leq 0.$$
+右图：优化问题有唯一极小值，但是有两个极小点.
+$4x_{1}=x_{2}^{2}=0$ $y_{1}=0$ $x_{1}$ tD
+![](https://web-api.textin.com/ocr_image/external/8a121b79940d27e3.jpg)
+![](https://web-api.textin.com/ocr_image/external/d5fbe23b2a436d02.jpg)
+若优化问题的约束集是凸集，则分析／求解优化问题的难度会大大降低.因此，处理约束优化问题的难点在于“问题是否是凸优化问题”
+![](https://web-api.textin.com/ocr_image/external/de9f40db5a70e563.jpg)
+### 凸函数
+### 定义（函数图像（graph）和上图（epigraph)）
+集合 $Ω\subset \mathbb {R}^{n}$ ，函数 $f:Ω\rightarrow \mathbb {R}$ 
+· $f$  的图定义为 $Ωx\mathbb {R}$ 中的点集：
+$$\text {gph}(f)=\left\{(\boldsymbol {x},\beta )\in \mathbb {R}^{n+1}|\beta =f(\boldsymbol {x}),\boldsymbol {x}\in Ω\right\}$$
+· $f$  的上图定义为 $Ωx\mathbb {R}$ 中的点集合
+$\text {epi}(f)=\left\{(\boldsymbol {x},\beta )\in \subset \mathbb {R}^{n+1}|\beta \geq f(\boldsymbol {x})\right.$ $x\in Ω\}$ 
+() epigraph off graph of f
+![](https://web-api.textin.com/ocr_image/external/10451ab3538ed9ce.jpg)
+集合 $Ω\subset \mathbb {R}^{n}$ ，函数 $f:Ω\rightarrow \mathbb {R}.$ 
+## 定义（凸函数）
+$f$ 是Ω上的凸函数 $企$  $epi(f)$ 是 $\mathbb {R}^{n+1}$ 中的凸集.
+![](https://web-api.textin.com/ocr_image/external/d92e94eec158a76e.jpg)
+第22章 凸优化问题
+3/31
+# 凸函数
+# 定理
+若 $f:Ω\rightarrow \mathbb {R}$ 是凸函数，则定义域Ω是凸集合.
+证.（反证）假设Ω不是凸集.
+则 $\exists \boldsymbol {y}_{1},\boldsymbol {y}_{2}\in Ω$ 和 $α\in (0,1)$ 使得 $\boldsymbol {z}=α\boldsymbol {y}_{1}+(1-α)\boldsymbol {y}_{2}\notin Ω.$ 
+记 $\beta _{1}=f\left(\boldsymbol {y}_{1}\right),$ $\beta _{2}=f\left(\boldsymbol {y}_{2}\right)$ 
+则 $\left[\begin{array}{l}\boldsymbol {y}_{1}\\ \beta _{1}\end{array}\right]$ 和 $\left[\begin{array}{l}\boldsymbol {y}_{2}\\ \beta _{2}\end{array}\right]$  属于上图 $epi(f)$ 
+设 $\boldsymbol {w}=α\left[\begin{array}{c}\boldsymbol {y}_{1}\\ \beta _{1}\end{array}\right]+(1-α)\left[\begin{array}{c}\boldsymbol {y}_{2}\\ \beta _{2}\end{array}\right]=\left[\begin{array}{c}\boldsymbol {z}\\ α\beta _{1}+(1-α)\beta _{2}\end{array}\right]$ 
+. $\boldsymbol {z}\notin Ω,$  $\therefore \boldsymbol {w}\notin \text {epi}(f)$ , $\therefore epi(f)$ 不是凸集.
+第22章 凸优化问题
+4/31
+# 凸函数
+# 定义（凸函数）
+若 $f:Ω\subset \mathbb {R}^{n}\rightarrow$ R是凸函数，则
+$$f(α\boldsymbol {x}+(1-α)\boldsymbol {y})\leq αf(\boldsymbol {x})+(1-α)f(\boldsymbol {y})\quad \forall \boldsymbol {x},\boldsymbol {y}\in Ω,\quad α\in (0,1),$$
+$f\left(\sum _{i=1}^{s}α_{i}\boldsymbol {x}_{i}\right)\leq \sum _{i=1}^{s}α_{i}f\left(\boldsymbol {x}_{i}\right),$ $\forall \boldsymbol {x}_{i}\in Ω,α_{i}\in (0,1)$ $\sum _{i=1}^{s}α_{i}=1$  （Jensen不等式）
+# 凸函数几何解释
+连接函数图像上任意两点的“弦”在“弧”的上方；或者连接函数图像上任意两点的“弦”属于函数的上图，即 $epi(f)$ 是凸集.
+![](https://web-api.textin.com/ocr_image/external/51bf90922ed2553f.jpg)
+$f$ 严格凸 $Longleftrightarrowf(α\boldsymbol {x}+(1-α)\boldsymbol {y})<αf(\boldsymbol {x})+(1-α)f(\boldsymbol {y})$  $\forall \boldsymbol {x}\neq \boldsymbol {y}$ 
+· $f$  强凸 $Longleftrightarrowf(α\boldsymbol {x}+(1-α)\boldsymbol {y})\leq αf(\boldsymbol {x})+(1-α)f(\boldsymbol {y})-\frac {α(1-α)c}{2}\|\boldsymbol {x}-\boldsymbol {y}\|^{2}.$ 
+★应用： $\left\{p_{i}\right\}_{i=1}^{m},\left\{q_{i}\right\}_{i=1}^{m}$  是离散概率分布，证 $D_{KL}(p,q)=\sum _{i=1}^{m}p_{i}\ln \frac {p_{i}}{q_{i}}\geq 0$ 设 $f(·)=\ln (·),x_{i}=q_{i}/p_{i}$ ，利用Jensen不等式：
+$$D_{KL}(p,q)=\sum _{i=1}^{m}p_{i}f\left(x_{i}\right)\geq f\left(\sum _{i=1}^{m}p_{i}x_{i}\right)=f\left(\sum _{i=1}^{m}q_{i}\right)=\ln (1)=0$$
+![](https://web-api.textin.com/ocr_image/external/cb1e470b8b2c6b21.jpg)
+## 凸函数
+例. $f(\boldsymbol {x})=x_{1}x_{2}$ 在 $Ω=\left\{\boldsymbol {x}|x_{1}\geq 0,x_{2}\geq 0\right\}$ 上是凸函数吗？
+解：取 $\boldsymbol {x}=[1,2]^{\top }\in Ω,$ $\boldsymbol {y}=[2,1]^{\top }\in Ω$  则 $α\boldsymbol {x}+(1-α)\boldsymbol {y}=\left[\begin{array}{l}2-α\\ 1+α\end{array}\right]$ 
+∴ $\left\{\begin{array}{l}f(α\boldsymbol {x}+(1-α)\boldsymbol {y})=(2-α)(1+α)=2+α-α^{2},\\ αf(\boldsymbol {x})+(1-α)f(\boldsymbol {y})=2.\end{array}\right.$ 
+取 $α=\frac {1}{2}\in (0,1)$ ，则 $f\left(\frac {1}{2}\boldsymbol {x}+\frac {1}{2}\boldsymbol {y}\right)=\frac {9}{4}>\frac {1}{2}f(\boldsymbol {x})+\frac {1}{2}f(\boldsymbol {y})$ $\therefore f$ 不是Ω上的凸函数.
+例. $f(\boldsymbol {x})=\sum _{i=1}^{n}x_{i}\ln \left(x_{i}\right)$ 在 $\Delta =\left\{\boldsymbol {x}|x_{i}\geq 0,\sum _{i=1}^{n}x_{i}\leq 1\right\}$ 上是强凸函数.只需证： $\nabla ^{2}f(\boldsymbol {x})=\text {diag}\left(\frac {1}{x_{1}},\cdots ,\frac {1}{x_{n}}\right)\succ 0$ .在 $\Delta 上,$ ，易证 $\nabla ^{2}f(\boldsymbol {x})\succ I_{n}$ 
+# 定理（可微凸函数的特点）
+设 $Ω\subset \mathbb {R}^{n}$ 是开凸集， $f:Ω\rightarrow$ R 属于 $\mathcal {C}^{1}$ ．若 $f$ 是Ω上的凸函数→ $f(\boldsymbol {y})\geq f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})$  $\forall \boldsymbol {x},\boldsymbol {y}\in Ω.$ .即 $epi(f)$ 总被切平面支撑.若对任意： $\boldsymbol {x}\neq \boldsymbol {y}$ ,“＞”成立 $\rightarrow$  $f$ 是严格凸的
+![](https://web-api.textin.com/ocr_image/external/37e201d4ccb5f40e.jpg)
+第22章 凸优化问题
+# 不可微凸函数
+## 定义（不可微分凸函数的特点）
+设 $Ω\subset \mathbb {R}^{n}$ 是开凸集， $f:Ω\rightarrow \mathbb {R}.$ 
+向量 $\boldsymbol {g}\in \mathbb {R}^{n}$ 称为 $f$ 在 $\boldsymbol {x}\in Ω$ 处的次梯度：
+$$f(\boldsymbol {y})\geq f(\boldsymbol {x})+\boldsymbol {g}^{\top }(\boldsymbol {y}-\boldsymbol {x})\quad \forall \boldsymbol {y}\in Ω.$$
+R grf/ $S_{2}$ $s_{1}$ Rn $R^{n}$ x+h x
+![](https://web-api.textin.com/ocr_image/external/d87879e862023812.jpg)
+### 定理
+设 $Ω\subset \mathbb {R}^{n}$ 是开凸集， $f:Ω\rightarrow \mathbb {R}$ 且 $f\in \mathcal {C}^{2}$  .则 $f$ 是Ω上的凸函数→ $\boldsymbol {F}(\boldsymbol {x})\succeq 0,$ $\forall \boldsymbol {x}\in Ω,$  其中 $F(x)$ 是 $f$ 在x处的黑塞矩阵.
+证.←)设 $\boldsymbol {x},\boldsymbol {y}\in Ω.$ 
+. $f\in \mathcal {C}^{2}$ ，由Taylor展开知：ヨ $α\in (0,1)$ 使得
+$$f(\boldsymbol {y})=f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})+\frac {1}{2}(\boldsymbol {y}-\boldsymbol {x})^{\top }\boldsymbol {F}(\boldsymbol {x}+α(\boldsymbol {y}-\boldsymbol {x}))(\boldsymbol {y}-\boldsymbol {x})$$
+$\because$ $\boldsymbol {F}(\boldsymbol {x}+α(\boldsymbol {y}-\boldsymbol {x}))\succeq 0Longleftrightarrow(\boldsymbol {y}-\boldsymbol {x})^{\top }\boldsymbol {F}(α\boldsymbol {y}+(1-α)\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})\geq 0$ 
+$\therefore f(\boldsymbol {y})\geq f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})$ $\therefore f$ 是凸函数.
+![](https://web-api.textin.com/ocr_image/external/974c1e8feace89df.jpg)
+### 可微凸函数
+$\rightarrow )$ 若 $\exists x\in Ω$ 使得 $\boldsymbol {F}(\boldsymbol {x})notneq0Longleftrightarrow\exists \boldsymbol {d}\in \mathbb {R}^{n}$ 使得 $\boldsymbol {d}^{\top }\boldsymbol {F}(\boldsymbol {x})\boldsymbol {d}<0.$ 
+黑塞的连续性 $\boldsymbol {F}(\boldsymbol {x}+s\boldsymbol {d})not\succeq 0.$ 
+记 $\boldsymbol {y}=\boldsymbol {x}+s\boldsymbol {d}$ .由Taylor展开得 $\exists α\in (0,1)$ 使得
+$$f(\boldsymbol {y})=f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})+\frac {1}{2}(\boldsymbol {y}-\boldsymbol {x})^{\top }\boldsymbol {F}(\boldsymbol {x}+α(\boldsymbol {y}-\boldsymbol {x}))(\boldsymbol {y}-\boldsymbol {x})$$
+$$=f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})+\frac {1}{2}s^{2}\boldsymbol {d}^{\top }\boldsymbol {F}(\boldsymbol {x}+αs\boldsymbol {d})\boldsymbol {d}.$$
+. $\boldsymbol {d}^{\top }\boldsymbol {F}(\boldsymbol {x}+αs\boldsymbol {d})\boldsymbol {d}<0Longrightarrowf(\boldsymbol {y})<f(\boldsymbol {x})+Df(\boldsymbol {x})(\boldsymbol {y}-\boldsymbol {x})\cdots f$ 不是凸函数.
+$f(\boldsymbol {x})=4x_{1}^{2}+3x_{2}^{2}+5x_{3}^{2}+6x_{1}x_{2}+x_{1}x_{3}-3x_{1}-2x_{2}+15$ $\because$ $\because f$ 的黑塞矩阵为 $\boldsymbol {F}(\boldsymbol {x})=\left[\begin{array}{lll}8&6&1\\ 6&6&0\\ 1&0&10\end{array}\right]$ $A$ $\boldsymbol {x}\in \mathbb {R}^{3}$ $\boldsymbol {F}(\boldsymbol {x})\succ 0,$ ∴f是 $\mathbb {R}^{3}$ 上的凸函数.
+![](https://web-api.textin.com/ocr_image/external/b4032502e19be189.jpg)
+$$f(\boldsymbol {x})=2x_{1}x_{2}-x_{1}^{2}-x_{2}^{2}$$
+<table border="1" ><tr>
+<td>$\because f$ 的黑塞矩阵为 $\boldsymbol {F}(\boldsymbol {x})=\left[\begin{array}{cc}-2&2\\ 2&-2\end{array}\right]$</td>
+<td>$\vert \begin{matrix}\therefore \forall x\in \mathbb {R}^{2},F(x)\leq 0,\\ \therefore f是\mathbb {R}^{2}\text {上的凹函数.\end{matrix}$</td>
+</tr></table>
+第22章 凸优化问题
+# 保凸运算
+**Table** 2.5.1. Main operations yielding convexity
+<table border="1" ><tr>
+<td>Operations<br>on functions:$f=$</td>
+<td>Operations on sets:epi f $\text {or}\mathrm {ep}_{\mathrm {s}}f=$</td>
+<td>Closedness</td>
+</tr><tr>
+<td>$\sum _{j=1}^{m}t_{j}f_{j}$</td>
+<td>nothing interesting</td>
+<td>preserved</td>
+</tr><tr>
+<td>$\sup _{j\in J}f_{j}$</td>
+<td>$\cap _{j\in J}\text {epi}f_{j}$ $\overset {-1}{A^{\prime }}(epig)$</td>
+<td>preserved</td>
+</tr><tr>
+<td>$g\circ A(Aaffine)$</td>
+<td></td>
+<td>preserved</td>
+</tr><tr>
+<td>$ug(x/u)$</td>
+<td>$\mathbb {R}_{*}^{+}(\{1\}\times \mathrm {epi}g)$</td>
+<td>must be forced</td>
+</tr><tr>
+<td>$f_{1}\downarrow f_{2}$</td>
+<td>$epi_{s}f_{1}+epi_{s}f_{2}$</td>
+<td>destroyed</td>
+</tr><tr>
+<td>$f_{1}\overline {\vee }f_{2}$</td>
+<td>$epi_{s}f_{1}*epi_{s}f_{2}$</td>
+<td>preserved from $f_{1}$</td>
+</tr><tr>
+<td>Ag(A linear)</td>
+<td>epigr. hull of A'(epi g)</td>
+<td>destroyed</td>
+</tr><tr>
+<td>$\inf _{y}g(\cdot ,y)$</td>
+<td>$\text {Proj}_{R^{n}\times R}\text {epi}_{s}g$</td>
+<td>destroyed</td>
+</tr><tr>
+<td>cog</td>
+<td>epigr. hull of co epi g</td>
+<td>can be forced</td>
+</tr></table>
+![](https://web-api.textin.com/ocr_image/external/e5a51eb30706e74f.jpg)
+![](https://web-api.textin.com/ocr_image/external/ac9693bf6086f5c2.jpg)
+凸函数
+## 例：
+·一元凸函数：
+$$f(x)=e^{x}\quad ,f(x)=|x|^{p}(p>1)\quad f(x)=\frac {x^{2}}{1-|x|}\quad f(x)=|x|-\ln (1+|x|)$$
+·多元凸函数：
+$f(\boldsymbol {x})=\boldsymbol {a}^{\top }\boldsymbol {x}-α$ ，其中 $\boldsymbol {a}\in \mathbb {R}^{n},α\in \mathbb {R}$ 
+$f(\boldsymbol {x})=\frac {1}{2}\boldsymbol {x}^{\top }\boldsymbol {A}\boldsymbol {x}+\boldsymbol {a}^{\top }\boldsymbol {x}-α$ ，其中 $\boldsymbol {A}\in \mathbb {S}_{+}^{n},\boldsymbol {a}\in \mathbb {R}^{n},α\in \mathbb {R}$ 
+$$f(\boldsymbol {x})=\sum _{i=1}^{m}e^{\boldsymbol {a}_{i}^{\top }\boldsymbol {x}+α_{i}};f(\boldsymbol {x})=\sum _{i=1}^{m}\left|\boldsymbol {a}_{i}^{\top }\boldsymbol {x}+α_{i}\right|^{p};f(\boldsymbol {x})=\ln \left(\sum _{i=1}^{m}e^{x_{i}}\right)$$
+·证明（最后一例）：记 $g(\boldsymbol {x})=\sum _{i=1}^{m}e^{x_{i}}$ ，则 $f(\boldsymbol {x})=\ln (g(\boldsymbol {x}))$ 
+$$\nabla f(\boldsymbol {x})=\frac {\nabla g(\boldsymbol {x})}{g(\boldsymbol {x})},\nabla ^{2}f(\boldsymbol {x})=\frac {\nabla ^{2}g(\boldsymbol {x})g(\boldsymbol {x})-\nabla g(\boldsymbol {x})\nabla g(\boldsymbol {x})^{\top }}{(g(\boldsymbol {x}))^{2}}$$
+$$\left\{\begin{array}{l}g(\boldsymbol {x})=e^{x_{1}}+\cdots +e^{x_{m}}\\ \nabla g(\boldsymbol {x})=\left[e^{x_{1}},\cdots ,e^{x_{m}}\right]^{\top }\\ \nabla ^{2}g(\boldsymbol {x})=\text {diag}\left\{e^{x_{1}},\cdots ,e^{x_{m}}\right\}\end{array}\right.\quad \Rightarrow \nabla ^{2}f(\boldsymbol {x})\succeq 0\text {(why?)}$$
+## 凸函数二阶性质
+（Nesterov 定理2.1.5) Vx,y E Rn, α E [0,1]， $LI\succeq \nabla ^{2}f(\boldsymbol {x}\succeq μI$ 
+$$f(\boldsymbol {y})-f(\boldsymbol {x})-\nabla f(\boldsymbol {x})^{\top }(\boldsymbol {y}-\boldsymbol {x})\leq \left\{\begin{array}{l}\frac {L}{2}\|\boldsymbol {x}-\boldsymbol {y}\|^{2}\\ \frac {1}{2μ}\|\nabla f(\boldsymbol {x})-\nabla f(\boldsymbol {y})\|^{2}\end{array}\right.$$
+·或者
+$$\langle \nabla f(\boldsymbol {y})-\nabla f(\boldsymbol {x}),\boldsymbol {y}-\boldsymbol {x}\rangle \geq \left\{\begin{matrix}\mu \|\boldsymbol {x}-\boldsymbol {y}\|^{2}\\ \frac {1}{L}\|\nabla f(\boldsymbol {x})-\nabla f(\boldsymbol {y})\|^{2}\end{matrix}\right.$$
+$$\nabla f(\boldsymbol {y})-\nabla f(\boldsymbol {x}),\boldsymbol {y}-\boldsymbol {x}\rangle \leq \left\{\begin{array}{l}L\|\boldsymbol {x}-\boldsymbol {y}\|^{2}\\ \frac {1}{μ}\|\nabla f(\boldsymbol {x})-\nabla f(\boldsymbol {y})\|\end{array}\right.$$
+。进一步
+$$\langle \nabla f(\boldsymbol {y})-\nabla f(\boldsymbol {x}),\boldsymbol {y}-\boldsymbol {x}\rangle \geq \frac {μL}{μ+L}\|\boldsymbol {x}-\boldsymbol {y}\|^{2}+\frac {1}{μ+L}\|\nabla f(\boldsymbol {x})-\nabla f(\boldsymbol {y})\|^{2}$$
+注.上述不等式中的范数可以不一样.
+![](https://web-api.textin.com/ocr_image/external/eae9e5c7291cd302.jpg)
+## 凸优化问题
+# 定理（局部极小点全局极小点）
+$f:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}$ 是凸函数.f在Ω上的全局极小点f在Ω上的局部极小点.
+证..→）显然.
+反证法←）假设 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的局部极小点，但不是全局极小点.
+则3 $\boldsymbol {y}\in Ω,$ 使得 $f(\boldsymbol {y})<f\left(\boldsymbol {x}^{*}\right)$ 
+$\because f$ 是凸函数，
+$$\therefore\quad f\left(α\boldsymbol {y}+(1-α)\boldsymbol {x}^{*}\right)\leq αf(\boldsymbol {y})+(1-α)f\left(\boldsymbol {x}^{*}\right),\forall α\in (0,1)$$
+$\because$ $f(\boldsymbol {y})<f\left(\boldsymbol {x}^{*}\right)$ 
+$$αf(\boldsymbol {y})+(1-α)f\left(\boldsymbol {x}^{*}\right)=α\left(f(\boldsymbol {y})-f\left(\boldsymbol {x}^{*}\right)\right)+f\left(\boldsymbol {x}^{*}\right)<f\left(\boldsymbol {x}^{*}\right)$$
+∴ $\forall α\in (0,1),f\left(α\boldsymbol {y}+(1-α)\boldsymbol {x}^{*}\right)<f\left(\boldsymbol {x}^{*}\right).$ 
+$\boldsymbol {x}^{*}$ 不是局部极小点，矛盾.
+# 凸优化问题
+## 引理（凸函数的下水平集）
+$f:Ω\subset \mathbb {R}^{n}\rightarrow$ R是凸函数.则 $f$ 关于任意常数c的下水平集
+$S_{f}(c)=\{\boldsymbol {x}\in Ω|f(\boldsymbol {x})\leq c\}$ 是凸集.
+![](https://web-api.textin.com/ocr_image/external/5e7e61234aa08dfc.jpg)
+上述引理是必要条件，非充分条件（why?）
+### 引理（全局极小点条件）
+$f:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}$ 是凸函数且 $f\in \mathcal {C}^{1}$ .任意 $\boldsymbol {x}^{*}\in Ω,$  若
+$Df\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\geq 0$ $\forall \boldsymbol {x}\in Ω,\boldsymbol {x}\neq \boldsymbol {x}^{*},$ 
+则 $\boldsymbol {x}^{*}$  是 $f$ 在Ω上的全局极小点.
+### 定理
+$f:$ $Ω\subset \mathbb {R}^{n}\rightarrow$ $R$ 是凸函数且 $f\in \mathcal {C}^{1}$ .任意 $\boldsymbol {x}^{*}\in Ω,$  若 $\boldsymbol {x}^{*}$  处的任意可行方向 $d,$ 有 $\boldsymbol {d}^{\top }\nabla f\left(\boldsymbol {x}^{*}\right)\geq 0,$  则 $\boldsymbol {x}^{*}$  是 $f$ 在Ω上的全局极小点.
+![](https://web-api.textin.com/ocr_image/external/2b900f61d7796234.jpg)
+第22章 凸优化问题
+### 凸优化问题
+### 推论
+$f:Ω\subset \mathbb {R}^{n}\rightarrow$ R是凸函数且 $f\in \mathcal {C}^{1}$ .任意 $\boldsymbol {x}^{*}\in \text {int}(Ω)$ ，若 $\nabla f\left(\boldsymbol {x}^{*}\right)=\mathbf {0}$  则 $\boldsymbol {x}^{*}$  是 $f$ 在Ω上的全局极小点.
+### 推论
+$f:Ω\subset \mathbb {R}^{n}\rightarrow \mathbb {R}$ 是μ-强凸函数且 $f\in \mathcal {C}^{1}$ .任意 $\boldsymbol {x}^{*}\in \text {int}(Ω)$ ，若
+$f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)+\frac {μ}{2}\left\|\boldsymbol {x}-\boldsymbol {x}^{*}\right\|^{2},$ 
+则 $\boldsymbol {x}^{*}$ 是 $f$  在Ω上的唯一全局极小点.
+# 推论（等式约束优化问题）
+设 $Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0}\right\}$ ，其中h： $\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ $\boldsymbol {h}\in \mathcal {C}^{1},$ Ω是凸集，
+$f:$ $Ω\subset \mathbb {R}^{n}\rightarrow$ R是凸函数且 $f\in \mathcal {C}^{1}$  若
+$\exists \boldsymbol {x}^{*}\in Ω,\boldsymbol {λ}^{*}\in \mathbb {R}^{m}$ 使得 $Df\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)=\mathbf {0}^{\top }$ , $(*)$ 
+则 $\boldsymbol {x}^{*}$  是 $f$ 在Ω上的全局极小点.
+14/31
+这意味着目标函数是凸函数且约束集为凸集时，拉格朗日条件是极小点的充分条件.
+STO
+## 凸优化问题
+证. $\because f$ 是凸函数，
+$\therefore$ $\forall \boldsymbol {x}\in Ω,$ $f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)+Df\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\stackrel {(\star )}{=}$ $f\left(\boldsymbol {x}^{*}\right)-\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)$ 
+$\because Ω$ 是凸集， $\forall α\in (0,1),\quad (1-α)\boldsymbol {x}^{*}+α\boldsymbol {x}\in Ω.$ 
+$$\therefore \boldsymbol {h}\left(\boldsymbol {x}^{*}+α\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\right)=\boldsymbol {h}\left((1-α)\boldsymbol {x}^{*}+α\boldsymbol {x}\right)=\mathbf {0}.$$
+左乘 $\boldsymbol {λ}^{*\top }$ ，并减去 $\boldsymbol {λ}^{*\top }\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)=0$ ，我们得
+$$\frac {\boldsymbol {λ}^{*\top }\boldsymbol {h}\left(\boldsymbol {x}^{*}+α\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\right)-\boldsymbol {λ}^{*\top }\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)}{α}=0.$$
+令 $α\rightarrow 0$ ，我们有
+$$\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)=0.$$
+$\therefore$ $f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)$ 
+$\therefore$ $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的极小点.
+# 凸优化问题
+# 定理（不等式约束优化问题）
+$f:$ $\mathbb {R}^{n}\rightarrow \mathbb {R}$ 和 $f\in \mathcal {C}^{1}$ 是凸函数，约束集为
+$$Ω=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {h}(\boldsymbol {x})=\mathbf {0},\boldsymbol {g}(\boldsymbol {x})\leq \mathbf {0}\right\}$$
+其中 $\boldsymbol {h}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m},\boldsymbol {g}$ $\mathbb {R}^{n}\rightarrow \mathbb {R}^{p}$ ，且 $\boldsymbol {h},\boldsymbol {g}\in \mathcal {C}^{1}$ ，Ω是凸集.若存在 $\boldsymbol {x}^{*}\in Ω,$ $\boldsymbol {λ}^{*}\in \mathbb {R}^{m},\boldsymbol {μ}^{*}\in \mathbb {R}^{p}$ 使得
+1 $μ^{*}\geq 0.$ 
+2 $\begin{array}{l}Df\left(\boldsymbol {x}^{*}\right)+\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)+\boldsymbol {μ}^{*\top }D\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)=\mathbf {0}^{\top }.\\ \boldsymbol {μ}^{*\top }\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)=0.\end{array}$ 
+3 $\boldsymbol {μ}^{*\top }\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)=0.$ 
+则 $\boldsymbol {x}^{*}$ 是 $f$ 在Ω上的全局极小点.
+证.取 $\boldsymbol {x}\in Ω.\because f$ 是凸函数 $\rightarrow$ $f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)+Df\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)$ 
+由条件❷得
+$$f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)-\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)-\boldsymbol {μ}^{*\top }D\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)$$
+# 凸优化问题
+由定理22.8知
+$$\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)=0.$$
+现证 $\boldsymbol {μ}^{*\top }D\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\leq 0.$ 
+$\because Ω$ 是凸集， $\therefore (1-α)\boldsymbol {x}^{*}+α\boldsymbol {x}\in Ω,$  $\forall α\in (0,1)$ 
+$$\therefore \boldsymbol {g}\left(\boldsymbol {x}^{*}+α\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\right)=\boldsymbol {g}\left((1-α)\boldsymbol {x}^{*}+α\boldsymbol {x}\right)\leq \mathbf {0}.$$
+左乘 $\boldsymbol {μ}^{*\top }\geq \mathbf {0}^{\top }$ （借助条件❶），减去 $\boldsymbol {μ}^{*\top }\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)=0$ （借助探测❸），我们有
+$$\frac {\boldsymbol {μ}^{*\top }\boldsymbol {g}\left(\boldsymbol {x}^{*}+α\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\right)-\boldsymbol {μ}^{*\top }\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)}{α}\leq 0.$$
+令 $α\rightarrow 0$ ，得 $\boldsymbol {μ}^{*\top }D\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\leq 0.$ 
+$$\therefore f(\boldsymbol {x})\geq f\left(\boldsymbol {x}^{*}\right)-\boldsymbol {λ}^{*\top }D\boldsymbol {h}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)-\boldsymbol {μ}^{*\top }D\boldsymbol {g}\left(\boldsymbol {x}^{*}\right)\left(\boldsymbol {x}-\boldsymbol {x}^{*}\right)\geq f\left(\boldsymbol {x}^{*}\right)$$
+## 凹优化
+## 定理
+如果凹函数 $f:$ $\mathbb {R}^{n}\rightarrow$ R在凸集X的内点 $\boldsymbol {x}^{*}\in ri(X)$ 取得极小点，则 $f$ 在X 上必是常值函数.
+## 证.（反证法）
+设 $\boldsymbol {x}\in X$ 满足 $f(\boldsymbol {x})>f\left(\boldsymbol {x}^{*}\right)$ 
+连接线段 $\left[\boldsymbol {x},\boldsymbol {x}^{*}\right]$ 并沿着 $\boldsymbol {x}\text {-to-}\boldsymbol {x}^{*}$ 的方向延伸到 $\boldsymbol {x}^{\prime }\in X$ 
+由于 $f$ 是凹函数，则存在 $α\in (0,1)$ 使得
+$$f\left(\boldsymbol {x}^{*}\right)\geq αf(\boldsymbol {x})+(1-α)f\left(\boldsymbol {x}^{\prime }\right)$$
+由于 $f\left(\boldsymbol {x}^{\prime }\right)>f\left(\boldsymbol {x}^{*}\right)$ ，我们有 $f(x^{*})>f(x)(矛盾).$ 
+# Semi-definite Programming
+定义（semi-definite programming）
+minimizing linear function subject to linear matrix inequalities
+$\min \boldsymbol {c}^{\top }\boldsymbol {x}$  s.t. $\boldsymbol {F}(\boldsymbol {x})\succeq 0,$ 
+where $\boldsymbol {F}(\boldsymbol {x})=\boldsymbol {F}_{0}+x_{1}\boldsymbol {F}_{1}+\cdots +x_{n}\boldsymbol {F}_{n}=\boldsymbol {F}_{0}+\sum _{i=1}^{n}x_{i}\boldsymbol {F}_{i}$ is called an affine functionof $x,$ and $\boldsymbol {F}_{i}=\boldsymbol {F}_{i}^{\top }\in \mathbb {R}^{mxm}$ for $i=0,1,\cdots ,n.$ 
+# Semi-definite Programming
+![](https://web-api.textin.com/ocr_image/external/f324aed396244f77.jpg)
+The inequality constraint of the form (positive semidefinite):
+$$\boldsymbol {F}(\boldsymbol {x})=\boldsymbol {F}_{0}+x_{1}\boldsymbol {F}_{1}+\cdots +x_{n}\boldsymbol {F}_{n}\succeq 0.$$
+![](https://web-api.textin.com/ocr_image/external/a68358a1a30702e8.jpg)
+$\{\boldsymbol {x}|\boldsymbol {F}(\boldsymbol {x})\succeq 0\}$ is convex.
+## 定义（systems of multiple linear matrix inequalities）
+$$\boldsymbol {F}_{1}(\boldsymbol {x})\succeq 0,\cdots ,\boldsymbol {F}\quad \boldsymbol {F}_{k}(\boldsymbol {x})\succeq 0Longleftrightarrow\boldsymbol {F}(\boldsymbol {x})=\left[\begin{array}{lll}\boldsymbol {F}_{1}(\boldsymbol {x})&&\\ &\boldsymbol {F}_{2}(\boldsymbol {x})&&\\ &&·&\\ &&&\boldsymbol {F}_{k}(\boldsymbol {x})\end{array}\right]\succeq 0$$
+### 定义（block matrix contract transformation）
+$$\left[\begin{array}{cc}\boldsymbol {A}&\boldsymbol {B}\\ \boldsymbol {B}^{\top }&\boldsymbol {D}\end{array}\right]\succeq 0Longleftrightarrow\left[\begin{array}{cc}\boldsymbol {D}&\boldsymbol {B}^{\top }\\ \boldsymbol {B}&\boldsymbol {A}\end{array}\right]\succeq 0.$$
+![](https://web-api.textin.com/ocr_image/external/ea325092cb081d18.jpg)
+![](https://web-api.textin.com/ocr_image/external/621f407d17aee7be.jpg)
+![](https://web-api.textin.com/ocr_image/external/91ecb642d8f2444e.jpg)
+![](https://web-api.textin.com/ocr_image/external/3d8b6e7aee445a02.jpg)
+第22章 凸优化问题
+# Properties of Matrices
+## 定义（Schur complement）
+A blockymatrix $\stackrel {{+}}{{\text {勺}}}$ $\boldsymbol {A}=\left[\begin{array}{ll}\boldsymbol {A}_{11}&\boldsymbol {A}_{12}\\ \boldsymbol {A}_{21}&\boldsymbol {A}_{22}\end{array}\right]$  where $\boldsymbol {A}_{11}$  and A22 are square submatrices.
+If $\boldsymbol {A}_{11}$  is invertible, then the Schur complement of $\boldsymbol {A}_{11}$  is
+$$\boldsymbol {\Delta }_{11}=\boldsymbol {A}_{22}-\boldsymbol {A}_{21}\boldsymbol {A}_{11}^{-1}\boldsymbol {A}_{12}.$$
+$\text {If}\boldsymbol {A}_{22}$  is invertible, then the Schur complementof $\boldsymbol {A}_{22}$  is $\boldsymbol {\Delta }_{22}=\boldsymbol {A}_{11}-\boldsymbol {A}_{12}\boldsymbol {A}_{22}^{-1}\boldsymbol {A}_{21}$ 
+## 定理
+$$\boldsymbol {A}\succ 0Longleftrightarrow\boldsymbol {A}_{11}\succ 0\text {and}\boldsymbol {\Delta }_{11}\succ 0Longleftrightarrow\boldsymbol {A}_{22}\succ 0\text {,and}\boldsymbol {\Delta }_{22}\succ 0.$$
+![](https://web-api.textin.com/ocr_image/external/964848581d66a255.jpg)
+第22章 凸优化问题
+21/31
+## Properties of Matrices
+例.
+![](https://web-api.textin.com/ocr_image/external/7863d0242ae247bf.jpg)
+![](https://web-api.textin.com/ocr_image/external/abbae35c63c757dc.jpg)
+Does $\boldsymbol {A}\in \mathbb {R}^{m\times m}$ have all its eigenvalues in the open left half-complex plane?
+![](https://web-api.textin.com/ocr_image/external/40728555a37249b6.jpg)
+Ans: If this conditionis true 3 a symmetric positive definite matrix $\boldsymbol {P}\in \mathbb {R}^{m\times m}$ such that(Lyapunov inequality)
+$$\boldsymbol {A}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}prec0Longleftrightarrow\left[\begin{array}{cc}\boldsymbol {P}&\boldsymbol {O}\\ \boldsymbol {O}&-\boldsymbol {A}^{\top }\boldsymbol {P}-\boldsymbol {P}\boldsymbol {A}\end{array}\right]\succ 0.$$
+$$\text {Let}\boldsymbol {P}=\left[\begin{array}{cccc}x_{1}&x_{2}&\cdots &x_{m}\\ x_{2}&x_{m+1}&\cdots &x_{2m-1}\\ :&&&:\\ x_{m}&x_{2m-1}&\cdots &x_{n}\end{array}\right],\quad n=\frac {m(m+1)}{2}$$
+## Properties of Matrices
+$$\boldsymbol {P}_{1}=\left[\begin{array}{lllll}1&0&0&\cdots &0\\ 0&0&0&\cdots &0\\ 0&0&0&\cdots &0\\ :&&&&\\ :&&&&:\\ 0&0&0&\cdots &0\end{array}\right],\boldsymbol {P}_{2}=\left[\begin{array}{llll}0&1&0&\cdots &0\\ 1&0&0&\cdots &0\\ 0&0&0&\cdots &0\\ :&&&&:\\ 0&0&0&\cdots &0\end{array}\right],\cdots ,\boldsymbol {P}_{n}=\left[\begin{array}{llll}0&0&0&\cdots &0\\ 0&0&0&\cdots &0\\ 0&0&0&\cdots &0\\ :&&&&:\\ 0&0&0&\cdots &1\end{array}\right]$$
+![](https://web-api.textin.com/ocr_image/external/173dcc5b82336fe1.jpg)
+$\boldsymbol {P}_{i}$ has only nonzero elements corresponding to $\boldsymbol {x}_{i}$ in P.
+$$Let\quad \boldsymbol {F}_{i}=-\boldsymbol {A}^{\top }\boldsymbol {P}_{i}-\boldsymbol {P}_{i}\boldsymbol {A}\quad i=1,2,\cdots ,n.$$
+$$Longrightarrow\boldsymbol {A}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}=x_{1}\left(\boldsymbol {A}^{\top }\boldsymbol {P}_{1}+\boldsymbol {P}_{1}\boldsymbol {A}\right)+\cdots +x_{n}\left(\boldsymbol {A}^{\top }\boldsymbol {P}_{n}+\boldsymbol {P}_{n}\boldsymbol {A}\right)$$
+$$=-x_{1}\boldsymbol {F}_{1}-x_{2}\boldsymbol {F}_{2}-\cdots -x_{n}\boldsymbol {F}_{n}prec0.$$
+Let $\boldsymbol {F}(\boldsymbol {x})=x_{1}\boldsymbol {F}_{1}+x_{2}\boldsymbol {F}_{2}+\cdots +x_{n}\boldsymbol {F}_{n}$ 
+Then, $\boldsymbol {P}=\boldsymbol {P}^{\top }\succ 0,\boldsymbol {A}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}prec0Longleftrightarrow\boldsymbol {F}(\boldsymbol {x})\succ 0.$ 
+Thus, the problem is equivalent to feasibility of the above matrix inequality.
+136e
+# Linear Matrix Inequality (LMI) Solvers
+## 定义（canonical representation of LMI）
+$$\boldsymbol {F}(\boldsymbol {x})=\boldsymbol {F}_{0}+x_{1}\boldsymbol {F}_{1}+\cdots +x_{n}\boldsymbol {F}_{n}\succeq 0.$$
+Matlab Solver (I): Consider the form
+$$\boldsymbol {N}^{\top }\mathcal {L}\left(\boldsymbol {X}_{1},\cdots ,\boldsymbol {X}_{k}\right)\boldsymbol {N}preceq\boldsymbol {M}^{\top }\boldsymbol {R}\left(\boldsymbol {X}_{1},\cdots ,\boldsymbol {X}_{k}\right)\boldsymbol {M}$$
+· $\boldsymbol {X}_{1},\cdots ,\boldsymbol {X}_{k}$  matrix variables;
+· $N$ : left outer factor;M:right outer factor.
+· $\mathcal {L}\left(\boldsymbol {X}_{1},\cdots ,\boldsymbol {X}_{k}\right)$ : left inner factor; $\boldsymbol {R}\left(\boldsymbol {X}_{1},\cdots ,\boldsymbol {X}_{k}\right)$ :right one.
+The matrices $\mathcal {L}(·)$   and $R(·)$ ) are, in general, symmetric block matrices.
+例. $\boldsymbol {A}_{1}=\left[\begin{array}{cc}-1&0\\ 0&-1\end{array}\right]$ $\boldsymbol {A}_{2}=\left[\begin{array}{cc}-2&0\\ 1&-1\end{array}\right]$ Find P such that $\boldsymbol {P}\succeq 0.5\boldsymbol {I}_{2},\boldsymbol {A}_{1}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}_{1}preceq0$ and $\boldsymbol {A}_{2}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}_{2}preceq0.$
+![](https://web-api.textin.com/ocr_image/external/d0b92711f1359244.jpg)
+![](https://web-api.textin.com/ocr_image/external/3d7f6eb472fec5c4.jpg)
+# Linear Matrix Inequality (LMI) Solvers
+## Matlab Syntax:
+$$A_{-}1=\left[\begin{array}{lll}-1&0&0&-1\end{array}\right];$$
+$$A_{-}2=\left[\begin{array}{lll}-2&0&;1&-1\end{array}\right];$$
+setlmis([])
+$$\mathrm {P}=\text {lmivar}(1,[2,1])$$
+\ mi term( [1 1 1 P],A1',1,'s')
+Imiterm([2 1 1 P ,A2',1,'s')
+Imiterm([3 1 1 0],.5)
+Imiterm([-3 1 1 P],1,1)
+$$\text {Imis=getlmis;}$$
+$[\text {tmin,xfeas}]=\text {feasp}(\text {lmis})$ ;
+$$\mathrm {P}=\text {dec2mat}(\text {Imis,xfeas,P})$$
+# Linear Matrix Inequality (LMI)Solvers
+Matlab Solver (II) for problem in the form:
+<table border="1" ><tr>
+<td>min  $\boldsymbol {c}^{\top }\boldsymbol {x}$s.t. $\boldsymbol {A}(\boldsymbol {x})\succeq \boldsymbol {B}(\boldsymbol {x})$</td>
+</tr></table>
+例.
+min $\boldsymbol {c}^{\top }\boldsymbol {x}$  s.t. $\boldsymbol {A}\boldsymbol {x}\leq \boldsymbol {b}\text {,where}\boldsymbol {c}=\left[\begin{array}{l}4\\ 5\end{array}\right]$ $\boldsymbol {A}=\left[\begin{array}{ll}1&1\\ 1&3\\ 2&1\end{array}\right]$ , $\boldsymbol {b}=\left[\begin{array}{l}8\\ 18\\ 14\end{array}\right]$ 
+We first use the feasp solver to find a feasible point. Then, using the mincx solver to solve the optimization problem.
+Linear Matrix Inequality(LMI) Solvers
+## Matlab Syntax:
+$$A=[11;13;21];$$
+$$b=[81814]';$$
+$$c=[-4-5]^{\prime };$$
+setlmis([]);
+$X=\text {Imivar}(2,[21])$ ;
+$\text {Imiterm}([111X],A(1,:),1)$ ;
+$Imiterm([1110],-b(1))$ ;
+Imiterm([1 2 2 X],A(2,:),1);
+$Imiterm([1220],-b(2))$ ;
+$Imiterm([133X],A(3,:),1)$ );
+$Imiterm([1330],-b(3))$ ;
+$$\text {Imis=getlmis;}$$
+[tmin, $\text {xfeas}]=\text {feasp}(\text {Imis})$ ;
+$x\_feasp=dec2mat(lmis,xfeas,X)$ );
+$$[objective,x\_mincx]$$
+$$=\text {mincx}(\text {lmis,c,}[0.00011000001])$$
+The feasp function produces
+$\boldsymbol {x}_{\text {feasp}}=\left[\begin{array}{l}-64.3996\\ -25.1712\end{array}\right]$ ,
+The mincx function produces
+$$\boldsymbol {x}_{\text {mincx}}=\left[\begin{array}{l}3.0000\\ 5.0000\end{array}\right]$$
+![](https://web-api.textin.com/ocr_image/external/9897d8dc7b1fe92e.jpg)
+![](https://web-api.textin.com/ocr_image/external/a10055b323eecebc.jpg)
+第22章 凸优化问题
+31
+# Linear Matrix Inequality (LMI)Solvers
+Matlab Solver(II) for the form: min trace(P),s.t. $\boldsymbol {A}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}preceq0$  $\boldsymbol {P}\succeq 0$ .To use mincx,we need a vector c such that
+$$\boldsymbol {c}^{\top }\boldsymbol {x}=\text {trace}(\boldsymbol {P})$$
+We can obtain the desired c with the following Matlab Syntax:
+$$q=decnbr(lmisys);$$
+$$c=\text {zeros(q,1);}$$
+for $\mathrm {j}=1:\mathrm {q}$ 
+$$\mathrm {Pj}=\text {defcx}(\text {lmisys,j,P});$$
+$$c(j)=trace(Pj);$$
+end
+Having obtained the vector $C,$ , we can use mincx to solve the optimization problem.
+![](https://web-api.textin.com/ocr_image/external/7eea899788f3e092.jpg)
+# Linear Matrix Inequality(LMI) Solvers
+例.
+[minimize generalized eigenvalue under LMI constraints]
+min λ, s.t. $\boldsymbol {C}(\boldsymbol {x})pcq\boldsymbol {D}(\boldsymbol {x}),$ $0pcq\boldsymbol {B}(\boldsymbol {x}),$ $\boldsymbol {A}(\boldsymbol {x})pcqλ\boldsymbol {B}(\boldsymbol {x})$ 
+$\boldsymbol {C}(\boldsymbol {x})preceq\boldsymbol {D}(\boldsymbol {x})$ : standard LMI constraints.
+· $\boldsymbol {A}(\boldsymbol {x})preceqλ\boldsymbol {B}(\boldsymbol {x})$ : linear-fractional LMIs.
+## Matlab Solver (II):gevp
+$$[\text {lopt,xopt}]=\text {gep}\{\text {lmisys,nflc}\}$$
+·lopt: global minimum of the generalized eigenvalue.
+·xopt: optimal decision vector variable.
+·Imisys: system of LMIs
+$\boldsymbol {C}(\boldsymbol {x})preceq\boldsymbol {D}(\boldsymbol {x}),\boldsymbol {C}(\boldsymbol {x})preceq\boldsymbol {D}(\boldsymbol {x})$ ,and $\boldsymbol {A}(\boldsymbol {x})preceqλ\boldsymbol {B}(\boldsymbol {x})$ for $λ=1.$ 
+·nflc: the number of linear-fractional constraints.
+![](https://web-api.textin.com/ocr_image/external/b26bb704dbef05ca.jpg)
+![](https://web-api.textin.com/ocr_image/external/04bdd496fb9f5838.jpg)
+$$(0)(0)(0)(0)(0)$$
+第22章 凸优化问题
+# Linear Matrix Inequality (LMI) Solvers
+例.
+Find the smallest a such that
+$\boldsymbol {P}\succ 0,$ $\boldsymbol {A}^{\top }\boldsymbol {P}+\boldsymbol {P}\boldsymbol {A}preceq-α\boldsymbol {P}$  where $\boldsymbol {A}=\left[\begin{array}{ccc}-1.1853&0.9134&0.2785\\ 0.9058&-1.3676&0.5469\\ 0.1270&0.0975&-3.0000\end{array}\right]$ 
+## Matlab Syntax
+A = [-1.1853 0.9134 0.2785; 0.9058 -1.3676 0.5469; 0.1270 0.0975-3.0000]; setlmis([]);
+$$\mathrm {P}=\text {Imivar}(1,[31])$$
+Imiterm([-1 1 1 P],1,1)
+%P
+Imiterm([1 110],.01)
+$$\%\mathrm {P}>=0.01*\mathrm {I}$$
+Imiterm([2 1 1 P],1,A,'s')
+% linear fractional constraint --- LHS
+Imiterm([-2 1 1 P],1,1)
+% linear fractional constraint --- RHS
+$\text {Imis}=\text {getlmis}$ ; [gamma, $\left.\mathrm {P}_{-}\mathrm {opt}\right]=\text {gevp}(\text {Imis},1)$ ;
+$$\mathrm {P}=\text {dec}2\text {mat}(\text {lmis,P_{opt}})$$
+$$\text {alpha=-gamma}$$
+# Linear Matrix Inequality (LMI) Solvers
+The result5 $α=0.6561,\boldsymbol {P}=\left[\begin{array}{ccc}0.6996&-0.7466&-0.0296\\ -0.7466&0.8537&-0.2488\\ -0.0296&-0.2488&3.2307\end{array}\right]$ 
+![](https://web-api.textin.com/ocr_image/external/dc056577f29d2000.jpg)
+2
+第22章 凸优化问题
+31/31

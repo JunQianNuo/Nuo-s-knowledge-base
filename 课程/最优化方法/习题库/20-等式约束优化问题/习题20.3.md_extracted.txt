@@ -1,0 +1,115 @@
+# 习题20.3
+
+---
+title: 习题20.3 - 线性约束下二次型退化为常数函数
+subject: 最优化方法
+chapter: 20
+section: 等式约束优化问题
+source: Screenshot_2026-05-26-00-12-03-03_0a79bb7e1b8811a.jpg
+status: OCR转换（已校对）
+type: 习题
+topics:
+  - Lagrange乘子法
+  - 一阶必要条件
+  - 二阶条件
+  - 退化情形
+---
+
+# 习题 20.3 — 约束使目标函数恒为常数
+
+设目标函数
+
+$$f(x) = (a^\top x)(b^\top x),\quad x \in \mathbb{R}^3$$
+
+约束条件：
+
+$$x_1 + x_2 = 0,\quad x_1 + x_3 = 0$$
+
+其中 $a = [1, 1, 0]^\top$，$b = [0, 0, 1]^\top$。
+
+试求该优化问题的极大点和极小点。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 先将约束化简，用自由变量表示所有 $x_i$。两个等式约束会将 $\mathbb{R}^3$ 限制到一条直线上。
+> - 化简后代入 $f(x)$，观察目标函数是否恒为常数。
+> - 若 $f$ 在可行域上恒为常数，则所有可行点均同时为全局极大和全局极小点。
+> - 再用 Lagrange 乘子法验证：一阶条件对所有可行点都成立吗？二阶条件呢？
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+>
+> ### 方法一：约束代入法（推荐）
+>
+> 两个等式约束：
+>
+> $$\begin{cases} x_1 + x_2 = 0 \\ x_1 + x_3 = 0 \end{cases} \;\Longrightarrow\; x_2 = -x_1,\; x_3 = -x_1$$
+>
+> 可行域为直线 $\Omega = \{(x_1, -x_1, -x_1) \mid x_1 \in \mathbb{R}\}$。
+>
+> 代入目标函数：
+>
+> $$a^\top x = x_1 + x_2 = x_1 + (-x_1) = 0$$
+> $$b^\top x = x_3 = -x_1$$
+> $$f(x) = (a^\top x)(b^\top x) = 0 \cdot (-x_1) = 0$$
+>
+> **$f$ 在可行域上恒为零。** 任意 $x \in \Omega$ 同时为全局极大点和全局极小点，$f^* = 0$。
+>
+> ---
+>
+> ### 方法二：Lagrange 乘子法
+>
+> **Lagrangian：**
+>
+> $$\mathcal{L} = (x_1 + x_2)x_3 + \lambda_1(x_1 + x_2) + \lambda_2(x_1 + x_3)$$
+>
+> **一阶必要条件（FONC）：**
+>
+> $$\begin{aligned}
+> \frac{\partial \mathcal{L}}{\partial x_1} &= x_3 + \lambda_1 + \lambda_2 = 0 \quad &(1) \\
+> \frac{\partial \mathcal{L}}{\partial x_2} &= x_3 + \lambda_1 = 0 \quad &(2) \\
+> \frac{\partial \mathcal{L}}{\partial x_3} &= x_1 + x_2 + \lambda_2 = 0 \quad &(3)
+> \end{aligned}$$
+>
+> 联合 $x_2 = -x_1$，$x_3 = -x_1$：
+>
+> - (3)：$x_1 + (-x_1) + \lambda_2 = 0 \Rightarrow \lambda_2 = 0$
+> - (2)：$-x_1 + \lambda_1 = 0 \Rightarrow \lambda_1 = x_1$
+> - (1)：$-x_1 + x_1 + 0 = 0$ ✓ 恒成立
+>
+> **结论：对任意 $x_1 \in \mathbb{R}$，取 $\lambda_1 = x_1,\; \lambda_2 = 0$ 即满足 FONC。** 所有可行点均为 Lagrange 驻点。
+>
+> **二阶条件（SONC）：**
+>
+> $f = x_1x_3 + x_2x_3$，其 Hessian：
+>
+> $$\nabla^2 f = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix}$$
+>
+> 约束线性的，$\nabla^2 h_i = 0$，故 $\nabla_{xx}^2 \mathcal{L} = \nabla^2 f$。
+>
+> 切空间：$d_2 = -d_1,\; d_3 = -d_1$，取基 $d = (1, -1, -1)^\top$。
+>
+> $$d^\top \nabla_{xx}^2 \mathcal{L}\, d = \begin{bmatrix}1 & -1 & -1\end{bmatrix} \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix} \begin{bmatrix}1 \\ -1 \\ -1\end{bmatrix} = 2d_1d_3 + 2d_2d_3$$
+>
+> 代入 $d_2 = -d_1,\; d_3 = -d_1$：
+>
+> $$= 2d_1(-d_1) + 2(-d_1)(-d_1) = -2d_1^2 + 2d_1^2 = 0$$
+>
+> **$d^\top \nabla_{xx}^2 \mathcal{L}\, d = 0$，恰好退化。** SONC（$\geq 0$）和极大点二阶条件（$\leq 0$）同时满足——二阶条件无法区分极值类型，与常数函数性质一致。
+>
+> > **点评：** 先在可行域上化简目标函数，往往比盲目套用 Lagrange 乘子法更高效。本题约束使 $f$ 退化为常数，所有可行点均同时为极大和极小点。
+
+---
+
+## 相关知识点
+
+- [[20-等式约束优化问题#3. 拉格朗日条件极值|Lagrange 定理与一阶必要条件]]
+- [[20-等式约束优化问题#4. 二阶条件|二阶必要/充分条件]]
+- [[20-等式约束优化问题#2.3 等式约束下的切空间|切空间与维数]]
+- [[../知识点解析梳理/20-等式约束优化问题-知识梳理|第20章 知识梳理]]

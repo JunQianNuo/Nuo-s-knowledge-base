@@ -1,0 +1,258 @@
+# 03-线性代数基础
+
+---
+title: 第3章 变换
+subject: 最优化方法
+source: 无动画Chapter3.pdf
+type: 课件笔记
+status: xparse解析
+chapter: 3
+parser: xparse-cli v2.0.2
+topics: []
+---
+
+# 第3章 变换
+1．线性变换
+2．特征值与特征向量
+3．正交投影
+4．二次型
+5．矩阵范数
+## 线性变换
+## 定义（线性变换）
+映射 $\mathcal {L}:\mathbb {R}^{n}\rightarrow \mathbb {R}^{m}$ 称为线性变换，如果对任意 $\boldsymbol {x}\in \mathbb {R}^{n},$ $\boldsymbol {y}\in \mathbb {R}^{n}$ 和 $a\in \mathbb {R}$ ，有
+$$\mathcal {L}(a\boldsymbol {x})=a\mathcal {L}(\boldsymbol {x});\mathcal {L}(\boldsymbol {x}+\boldsymbol {y})=\mathcal {L}(\boldsymbol {x})+\mathcal {L}(\boldsymbol {y})$$
+例： $\mathcal {L}(\boldsymbol {x})=\boldsymbol {A}\boldsymbol {x},\mathcal {L}(\boldsymbol {x})=\boldsymbol {a}^{\top }\boldsymbol {x},\cdots$ 但 $\mathcal {L}(\boldsymbol {x})=\boldsymbol {A}\boldsymbol {x}+b,\mathcal {L}(\boldsymbol {x})=\boldsymbol {a}^{\top }\boldsymbol {x}+c,$ 否］
+### 定义（线性变换可表示为：坐标下的矩阵乘法）
+向量 $\boldsymbol {x}\in \mathbb {R}^{n},$ $\boldsymbol {y}\in \mathbb {R}^{m}$ .在空间 $\mathbb {R}^{n}$ 和 $\mathbb {R}^{m}$ 中选定基，设 $\boldsymbol {x}^{\prime }$  为x在 $\mathbb {R}^{n}$ 中基下的坐标， $\boldsymbol {y}^{\prime }$ ＇为y在 $\mathbb {R}^{m}$ 中基下的坐标.
+如果 $\boldsymbol {y}=\mathcal {L}(\boldsymbol {x})$ ，那么存在矩阵 $\boldsymbol {A}\in \mathbb {R}^{mxn}$ 使得 $\boldsymbol {y}^{\prime }=\boldsymbol {A}\boldsymbol {x}^{\prime }$ $.A$ 称为线性变换C关于 $\mathbb {R}^{n}$  和 $\mathbb {R}^{m}$  中给定的基的矩阵表示.
+![](https://web-api.textin.com/ocr_image/external/c39ff94308dcd017.jpg)
+### 特别地，对于 $\mathbb {R}^{n}$ 和 $\mathbb {R}^{m}$  中的标准基，矩阵表示A满足 $\mathcal {L}(\boldsymbol {x})=\boldsymbol {A}\boldsymbol {x}.$ 
+## 线性变换
+### 定义（过渡矩阵（transformation matrix)）
+设 $\left\{\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right\}$ 和 $\left\{\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right\}$ 是 $\mathbb {R}^{n}$ 的两组基.定义矩阵T为 $\boldsymbol {T}=\left[\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right]^{-1}\left[\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right]$ ，或
+$$\left[\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right]=\left[\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right]\boldsymbol {T}$$
+则T称为从基 $\left\{\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right\}$ 到基 $\left\{\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right\}$ 的过渡矩阵.
+### 引理
+任意向量 $\boldsymbol {u}\in \mathbb {R}^{n}$  设y和 $\boldsymbol {y}^{\prime }$ 分别是u在基 $\left\{\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right\}$ 和 $\left\{\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right\}$ 下的坐标，T是两基之间的过渡矩阵，则 $\boldsymbol {y}^{\prime }=\boldsymbol {T}\boldsymbol {y}$ 
+相似变换（simnilarity)：线性变换C： $\mathbb {R}^{n}\rightarrow \mathbb {R}^{n}$ .A为C在基 $\left\{\boldsymbol {e}_{1},\boldsymbol {e}_{2},\cdots ,\boldsymbol {e}_{n}\right\}$ 下的矩阵，B为C在基 $\left\{\boldsymbol {e}_{1}^{\prime },\boldsymbol {e}_{2}^{\prime },\cdots ,\boldsymbol {e}_{n}^{\prime }\right\}$ 下的矩阵.
+记 $y=Ax$ 且 $\boldsymbol {y}^{\prime }=\boldsymbol {B}\boldsymbol {x}^{\prime }$ ，其中 $y$  和 $\boldsymbol {y}^{\prime }$ ,x和 $\boldsymbol {x}^{\prime }$ 同上例所定义.
+因此， $\boldsymbol {y}^{\prime }=\boldsymbol {T}\boldsymbol {y}=\boldsymbol {T}\boldsymbol {A}\boldsymbol {x}=\boldsymbol {B}\boldsymbol {x}^{\prime }=\boldsymbol {B}\boldsymbol {T}\boldsymbol {x},$ 
+从而得， $TA=BT$ 或 $\boldsymbol {A}=\boldsymbol {T}^{-1}\boldsymbol {B}\boldsymbol {T}$ ，即矩阵相似.
+## 特征值和特征向量
+### 定义（特征值（eigenvalue）和特征向量（eigenvector)）
+设 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ .若存在 $λ\in \mathbb {C}$ 和 $0\neq \boldsymbol {v}\in \mathbb {C}^{n}$ 使得 $\boldsymbol {A}\boldsymbol {v}=λ\boldsymbol {v}$ 则入称为A的特征值，v 称为A关于特征值入的特征向量.
+### 特点：互异特征值的特征向量线性无关；特征子空间 $\left\{\mathcal {V}_{λ_{i}}\right\}_{i=1}^{r}$ 构成直和关系.
+![](https://web-api.textin.com/ocr_image/external/b7467445ef45a837.jpg)
+## ★特征方程： $\text {det}[λ\boldsymbol {I}-\boldsymbol {A}]=λ^{n}+a_{n-1}λ^{n-1}+\cdots +a_{1}λ+a_{0}=0.$ 
+### 推论
+若 $\text {det}[λ\boldsymbol {I}-\boldsymbol {A}]=0$ 有n个互异根，记为 $\left\{λ_{i}\right\}_{i=1}^{n}$ ，则A有n个线性无关的特征向量 $\left\{\boldsymbol {v}_{i}\right\}_{i=1}^{n}$ 
+### 定理（矩阵 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ 的相似对角化）
+A可相似对角化 $A$ 有n个线性无关的特征向量.
+A可相似对角 $化\Leftarrow $ 有n个互异的特征值.
+。A可相似对角化A的任意特征值的代数重数与几何重数相等.
+第3章 变换
+## 特征值和特征向量
+### 矩阵相似对角化的具体操作
+计算A的特征值，记为 $\left\{λ_{i}\right\}_{i=1}^{n};$ 
+求每个特征值对应的线性无关特征向量，并全部记为 $\left\{\boldsymbol {v}_{i}\right\}_{i=1}^{n};$ 
+令 $\boldsymbol {T}=\left[\boldsymbol {v}_{1},\boldsymbol {v}_{2},\cdots ,\boldsymbol {v}_{n}\right]$ $,$ $\boldsymbol {Λ}=\text {diag}\left(λ_{1},λ_{2},\cdots ,λ_{n}\right)$ ，那么 $\boldsymbol {A}=\boldsymbol {T}\boldsymbol {Λ}\boldsymbol {T}^{-1}.$ 
+#### 定理（实对称矩阵，即 $\boldsymbol {A}\in \mathbb {R}^{nxn}$  且 $\boldsymbol {A}=\boldsymbol {A}^{\top }$ ，记为AES"）
+·A的特征值全是实数.（简要证明）
+·A的互异特征值对应的特征向量正交.（简要证明）
+#### 定义（正交矩阵（orthogonal matrix)）
+如果矩阵的转置等于它的逆，称为正交矩阵，即 $\boldsymbol {A}^{-1}=\boldsymbol {A}^{\top }.$ 
+#### 定理
+任意矩阵 $\boldsymbol {A}\in \mathbb {S}^{n}$ 可正交相似于对角矩阵.即存在正交矩阵T和对角矩阵A使得 $\boldsymbol {A}=\boldsymbol {T}\boldsymbol {Λ}\boldsymbol {T}^{\top }.$ 
+![](https://web-api.textin.com/ocr_image/external/1747450d099a083c.jpg)
+![](https://web-api.textin.com/ocr_image/external/8a47ece9d2bab329.jpg)
+![](https://web-api.textin.com/ocr_image/external/10952df22302808f.jpg)
+第3章 变换
+# 特征值和特征向量
+## 实对称矩阵正交相似对角化的具体操作
+计算矩阵的特征值；
+②求特征值所对应的特征向量；
+对同一个特征值的特征向量进行施密特正交化；
+![](https://web-api.textin.com/ocr_image/external/4b55b14d85656f0b.jpg)
+正交向量组单位化
+![](https://web-api.textin.com/ocr_image/external/1cf81e8e01c10212.jpg)
+## 定义（可约（reducible）矩阵，对角占优（diagonally dominant）矩阵）
+设 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ ，则A称为
+。可约矩阵：3置换阵P使得 $\boldsymbol {P}\boldsymbol {A}\boldsymbol {P}^{\top }=\left(\begin{array}{cc}\boldsymbol {B}_{11}&\boldsymbol {B}_{12}\\ 0&\boldsymbol {B}_{22}\end{array}\right)$ ，其中 $\boldsymbol {B}_{11}$ $,B22$ 是方阵.
+。对角占优矩阵： $\left|a_{ii}\right|\geq \sum _{i=1,i\neq j}^{n}\left|a_{ij}\right|,$ $\forall i=1,\cdots ,n$ ；若“＞”对所有i成立，则称为严格对角占优.
+。不可约对角占优：A是不可约，对角占优且至少有一个不等式严格成立.
+# 特征值和特征向量
+## 定理 $\left(\boldsymbol {A}\in \mathbb {R}^{nxn}\right.$ 是不可约矩阵充要条件）
+A是不可约矩阵 $Longleftrightarrow\exists \emptyset \neq J\subset \{1,\cdots ,n\}$ 使得 $a_{kj}=0,\forall k\in J,j\notin J.$ 
+## 定理
+若 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ **是严格对角占优或不可约对角占优，则A可逆.**
+## 定理（盖尔圆（Gerschgorin circle）定理）
+若 $\boldsymbol {A}\in \mathbb {R}^{nxn}$ .定义 $D_{i}=\left\{λ|\left|λ-a_{ii}\right|\leq \sum _{i=1,i\neq j}^{n}\left|a_{ij}\right|\right\},i=1,\cdots ,n.$ .则A的所有特征值在 $\cup _{i=1}^{n}D_{i}$ 中.进一步，
+$$λ_{\min }\geq \min _{i}\left\{a_{ii}-\sum _{i=1,i\neq j}\left|a_{ij}\right|\right\},λ_{\max }\leq \max _{i}\left\{a_{ii}+\sum _{i=1,i\neq j}\left|a_{ij}\right|\right\}$$
+## 定理（设 $\boldsymbol {A}\in \mathbb {S}^{n}$ 的特征值为 $\left.λ_{1}\geq λ_{2}\geq \cdots \geq λ_{n}\right)$ 
+若 $\boldsymbol {B}=\boldsymbol {A}+σ\boldsymbol {u}\boldsymbol {u}^{\top }$ 的特征值为 $μ_{1}\geq μ_{2}\geq \cdots \geq μ_{n}$ 则
+$$\left\{\begin{array}{l}λ_{1}\geq μ_{1}\geq λ_{2}\geq μ_{2}\geq \cdots \geq λ_{n}\geq μ_{n},\\ μ_{1}\geq λ_{1}\geq μ_{2}\geq λ_{2}\cdots \geq μ_{n}\geq λ_{n},\end{array}\right.\quad \text {if}σ<0\quad \text {if}σ>0$$
+![](https://web-api.textin.com/ocr_image/external/8254a2e03b703d3f.jpg)
+7/
+# 正交投影
+## 定义（子空间，满足加法和数乘的封闭性）
+任意 $α,\beta \in \mathbb {R},$ 如果 $\boldsymbol {x}_{1},\boldsymbol {x}_{2}\in \mathcal {V}Longrightarrowα\boldsymbol {x}_{1}+\beta \boldsymbol {x}_{2}\in \mathcal {V}$  ，那么V称为 $\mathbb {R}^{n}$  的子空间.子空间中线性无关组所含向量的最大数目称为子空间的维数，记为dimV.
+### 定义（正交补（complementary)）
+如果V是 $\mathbb {R}^{n}$ 的子空间，那么V的正交补空间为：所有与子空间V正交的向量组成的集合，即 $\mathcal {V}^{\bot }=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {v}^{\top }\boldsymbol {x}=0,\forall \boldsymbol {v}\in \mathcal {V}\right\}$ 
+$V^{\bot }$  也是 $\mathbb {R}^{n}$  的子空间.子空间V和 $\mathcal {V}^{\bot }$  张成 $\mathbb {R}^{n}$ ，即
+$\mathbb {R}^{n}=\mathcal {V}\oplus \mathcal {V}^{\bot }$
+![](https://web-api.textin.com/ocr_image/external/9e353188f103eaa6.jpg)
+且 $0=\mathcal {V}\cap \mathcal {V}^{\bot }$ 
+任意向量 $\boldsymbol {x}\in \mathbb {R}^{n}$ ，它都可以唯一地表示为
+正交分解： $x=x_{1}+x_{2},$ 其中 $\boldsymbol {x}_{1}\in \mathcal {V},\boldsymbol {x}_{2}\in \mathcal {V}^{\bot }.$ 
+![](https://web-api.textin.com/ocr_image/external/6b27940c8b43bcec.jpg)
+$\boldsymbol {x}_{1}$ 和 $\boldsymbol {x}_{2}$ 分别是x在V和 $\mathcal {V}^{\bot }$ 上的正交投影.
+$DQG$
+# 正交投影
+## 定义（正交投影）
+如果对任意 $\boldsymbol {x}\in \mathbb {R}^{n}$ 都有 $\boldsymbol {P}\boldsymbol {x}\in \mathcal {V}$ 和 $\boldsymbol {x}-\boldsymbol {P}\boldsymbol {x}\in \mathcal {V}^{\bot }$ ，则称线性变换P是V上的正交投影算子.
+## 定义 （矩阵AER” $\mathbb {R}^{mxn}$ 的值域和核）
+·A的值域（range)： $\mathcal {R}(\boldsymbol {A})=\left\{\boldsymbol {A}\boldsymbol {x}|\boldsymbol {x}\in \mathbb {R}^{n}\right\};$ 
+。A的零空间（null)： $\mathcal {N}(\boldsymbol {A})=\left\{\boldsymbol {x}\in \mathbb {R}^{n}|\boldsymbol {A}\boldsymbol {x}=0\right\}$ 
+![](https://web-api.textin.com/ocr_image/external/2f5d6d192e060406.jpg)
+$R(A)$ 和 $\mathcal {N}(\boldsymbol {A})$ 都是子空间.
+### 引理
+任意矩阵 $\boldsymbol {A}\in \mathbb {R}^{mxn}$  总有 $\mathcal {R}(\boldsymbol {A})^{\bot }=\mathcal {N}\left(\boldsymbol {A}^{\top }\right)$ 和 $\mathcal {N}(\boldsymbol {A})^{\bot }=\mathcal {R}\left(\boldsymbol {A}^{\top }\right)$ 成立.证.提示：相互包含关系
+![](https://web-api.textin.com/ocr_image/external/825e9d52c79539ca.jpg)
+# 正交投影
+## 定理（投影算子的性质：对称性，幂等）
+矩阵 $\boldsymbol {P}\in \mathbb {R}^{nxn}$ 是子空间 $\mathcal {V}=\mathcal {R}(\boldsymbol {P})$ 的一个正交投影算子 $企$  $\boldsymbol {P}^{2}=\boldsymbol {P}=\boldsymbol {P}^{\top }$ .（黑板证明）
+## 定义（二次型（quadratic form)）
+f: $\mathbb {R}^{n}\rightarrow$ R是二次型函数→ $f(\boldsymbol {x})=\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x},$ ，其中 $Q\in \mathbb {R}^{nxn}$ 
+![](https://web-api.textin.com/ocr_image/external/aa433860fcb46ae9.jpg)
+不失一般性，总假设Q是对称矩阵，即 $\boldsymbol {Q}=\boldsymbol {Q}^{\top }$  如果Q非对称，则会出现什么情况？
+![](https://web-api.textin.com/ocr_image/external/cba2314f202f7734.jpg)
+## 二次型
+<table border="1" ><tr>
+<td colspan="3">设$Q\in \mathbb {R}^{nxn}$ 则二次型$\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}$是</td>
+</tr><tr>
+<td>正定（positive definite）</td>
+<td>$\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}>0,\forall \boldsymbol {x}\neq 0Longleftrightarrow\boldsymbol {Q}\succ 0;$ $\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}\geq 0,\forall \boldsymbol {x}\neq 0Longleftrightarrow\boldsymbol {Q}\succeq 0;$</td>
+<td></td>
+</tr><tr>
+<td>半正定（positive semidefinite）</td>
+<td></td>
+<td></td>
+</tr><tr>
+<td>负定（negative definite）</td>
+<td>$\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}<0,\forall \boldsymbol {x}\neq 0\Leftrightarrow \boldsymbol {Q}<0;$ $\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}\leq 0,\forall \boldsymbol {x}\neq 0Longleftrightarrow\boldsymbol {Q}preceq0.$</td>
+<td></td>
+</tr><tr>
+<td>半负定（negative semidefinite）</td>
+<td></td>
+<td></td>
+</tr></table>
+$\boldsymbol {Q}_{p}=\begin{bmatrix}q_{i_{1}j_{1}}&q_{i_{1}j_{2}}&\cdots &q_{i_{1}j_{p}}\\ q_{i_{2}j_{1}}&q_{i_{2}j_{2}}&\cdots &q_{i_{2}j_{p}}\\ :&:&\cdot &:\\ :&:&\cdot &:\\ q_{i_{p}j_{1}}&q_{i_{p}j_{2}}&\cdots &q_{i_{p}j_{p}}\end{bmatrix}$ $1\leq i_{1}\leq \cdots \leq i_{p}\leq n$ $1\leq j_{1}\leq \cdots \leq j_{p}\leq n,$ 称为Q的子式（minor）
+![](https://web-api.textin.com/ocr_image/external/4a170ce9af0b78c7.jpg)
+定义（主子式（principal minor)，顺序主子式（leading principal minor)）
+。Q的p-阶子式： $\text {det}\boldsymbol {Q}_{p}.$ 
+Q的p-阶主子式： $\text {det}\boldsymbol {Q}_{p}$  其中 $i_{k}=j_{k}$ ，任意 $k=1,\cdots ,p.$ 
+。Q的p-阶顺序主子式： $\text {det}\boldsymbol {Q}_{p}$  其中 $i_{k}=j_{k}=k$ ，任意 $k=1,\cdots ,p.$ 
+## 二次型
+## 判定对称矩阵Q的正定性 $Q\succ 0Longleftrightarrow$ $Q$ 的特征值全为正数（即 $\left.\left\{λ_{i}>0\right\}_{i=1}^{n}\right)$ 
+$\boldsymbol {Q}\succ 0Longleftrightarrow\boldsymbol {Q}$ 的各阶顺序主子式是正数（Sylvester rule）
+证（提示）.记 $\Delta _{i}$ 为Q的i阶顺序主子式，则存在可逆矩阵V使得
+$$\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}\stackrel {\boldsymbol {x}=\boldsymbol {V}\tilde {\boldsymbol {x}}}{\Delta _{1}}\tilde {x}_{1}^{2}+\frac {\Delta _{1}}{\Delta _{2}}\tilde {x}_{2}^{2}+\cdots +\frac {\Delta _{n-1}}{\Delta _{n}}\tilde {x}_{n}^{2}$$
+### 反例（counterexample).若Q非对称，则Sylvester准则不再适用.
+![](https://web-api.textin.com/ocr_image/external/80791c84935c06fa.jpg)
+$\boldsymbol {Q}=\left[\begin{array}{cc}1&0\\ -4&1\end{array}\right]$  ( $\left.\boldsymbol {x}=[1,1]^{\top }Longrightarrow\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}=-2<0\right)$ 
+易得 $\Delta _{1}=1>0,$ $\Delta _{2}=\text {det}\boldsymbol {Q}=1>0$ ，但是 $\boldsymbol {Q}\neq 0.$ 
+定理 $(\boldsymbol {Q}\succeq 0Longrightarrow$ 
+Q的顺序主子式全非负.（注：非充分条件））
+$$\boldsymbol {Q}=\left[\begin{array}{lll}2&2&2\\ 2&2&2\\ 2&2&0\end{array}\right]$$
+易得 $\Delta _{1}=2,$ $\Delta _{2}=0,$ $\Delta _{3}=0$ ，然而 $\boldsymbol {Q}not\mod els0.$ 
+$\left(\because \boldsymbol {x}=[1,1,-2]^{\top }\right.$ → $\left.\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}<0\right)$ 
+![](https://web-api.textin.com/ocr_image/external/17839936cad61217.jpg)
+### 二次型
+## 定理（判定对称矩阵Q的半正定性）
+![](https://web-api.textin.com/ocr_image/external/683ede4991637067.jpg)
+$\boldsymbol {Q}\succeq 0$ Q的所有主子式均非负.
+![](https://web-api.textin.com/ocr_image/external/88eccafa35828c7b.jpg)
+$\boldsymbol {Q}\succeq 0$ Q的所有特征值均非负（证明见线代／高代课本）.
+### 定义（Frobenius内积）
+矩阵 $\boldsymbol {A}\in \mathbb {R}^{m\times n},$ $\boldsymbol {B}\in \mathbb {R}^{m\times n}$ 的内积定义为 $\langle \boldsymbol {A},\boldsymbol {B}\rangle =\text {Tr}\left(\boldsymbol {A}^{\top }\boldsymbol {B}\right)=\sum _{i=1}^{m}\sum _{j=1}^{n}a_{ij}b_{ij}$ 
+·矩阵F-内积实际上是将矩阵拉成向量后的向量内积；·内积可刻画矩阵间的夹角.
+### 定义（Rayleigh不等式）
+设 $λ_{\max }(\boldsymbol {Q})$ 和 $λ_{\min }(\boldsymbol {Q})$ 分别为对称矩阵 $Q\in \mathbb {R}^{nxn}$ 的最大和最小特征值，则任意 $\boldsymbol {x}\neq 0,$ 有 $λ_{\min }(\boldsymbol {Q})\|\boldsymbol {x}\|_{2}^{2}\leq \|\boldsymbol {x}\|_{\boldsymbol {Q}}^{2}\leq λ_{\max }(\boldsymbol {Q})\|\boldsymbol {x}\|_{2}^{2}$ .（证明：二次型的标准形.）
+### 矩阵范数
+## 定义（矩阵范数）
+矩阵A的范数，记为 $\|\boldsymbol {A}\|$ ，是满足如下条件的函数：
+![](https://web-api.textin.com/ocr_image/external/74879baafa30b380.jpg)
+非负性： $\|\boldsymbol {A}\|\geq 0$ ，且 $"="$  成立当且仅当 $\boldsymbol {A}=0;$ 
+齐次性：任意 $c\in \mathbb {R}$ ，有 $\|c\boldsymbol {A}\|=|c|\|\boldsymbol {A}\|;$ 
+![](https://web-api.textin.com/ocr_image/external/c8b3fc34353abc03.jpg)
+$\|\boldsymbol {A}+\boldsymbol {B}\|\leq \|\boldsymbol {A}\|+\|\boldsymbol {B}\|$ 和 $\|\boldsymbol {A}\boldsymbol {B}\|\leq \|\boldsymbol {A}\|\|\boldsymbol {B}\|$ 
+![](https://web-api.textin.com/ocr_image/external/2c4a1088922821ba.jpg)
+★例：Frobenius 范数（F-范数）： $\|\boldsymbol {A}\|_{F}=\left(\sum _{i=1}^{m}\sum _{j=1}^{n}a_{ij}^{2}\right)^{1/2}=\text {tr}\left(AA^{\top }\right)$ 
+![](https://web-api.textin.com/ocr_image/external/3a8e9572c00d8ab5.jpg)
+★例：Sparse-范数： $\|\boldsymbol {A}\|_{S}=\sum _{i=1}^{m}\sum _{j=1}^{n}\left|a_{ij}\right|$ 
+### 定理（矩阵的F-范数对应的Cauchy不等式）
+设A, $\boldsymbol {B}\in \mathbb {R}^{m\times n}$ ，则 $|\langle \boldsymbol {A},\boldsymbol {B}\rangle |\leq \|\boldsymbol {A}\|_{F}\|\boldsymbol {B}\|_{F}$ ，等号成立当且仅当A和B线性相关.
+**并不是所有矩阵范数都满足相容性.反例：** $\|\boldsymbol {A}\|=\max _{i,j}\left|a_{ij}\right|$ 
+取 $\boldsymbol {A}=\boldsymbol {B}=\left(\begin{array}{ll}1&1\\ 1&1\end{array}\right)$ ，则相容性不等式不成立.
+![](https://web-api.textin.com/ocr_image/external/4dc1a9eb4fe0fc05.jpg)
+# 矩阵范数
+## 导出范数（induced norm）
+设 $\|·\|_{(n)}$ 和 $\|·\|_{(m)}$ 分别为 $\mathbb {R}^{n}$ 和 $\mathbb {R}^{m}$ 中的向量范数.如果任意矩阵 $\boldsymbol {A}\in \mathbb {R}^{mxn}$ 和向量 $\boldsymbol {x}\in \mathbb {R}^{n}$  有 $\|\boldsymbol {A}\boldsymbol {x}\|_{(m)}\leq \|\boldsymbol {A}\|\|\boldsymbol {x}\|_{(n)}$ ，即
+$$\|\boldsymbol {A}\|_{m,n}=\max _{\boldsymbol {x}\neq 0}\frac {\|\boldsymbol {A}\boldsymbol {x}\|_{(m)}}{\|\boldsymbol {x}\|_{(n)}}=\max _{\|\boldsymbol {x}\|_{(n)=1}}\|\boldsymbol {A}\boldsymbol {x}\|_{(m)},$$
+则称 $\|\boldsymbol {A}\|_{m,n}$ 为向量范数导出的矩阵范数.
+例.谱范数（spectral norm)：取 $\|·\|_{(n)}$ 和 $\|·\|_{(m)}$ 均为2-范数
+$\|\boldsymbol {A}\|=\sqrt {λ_{1}}$ ，其中 $λ_{1}$ 是 $\boldsymbol {A}^{\top }\boldsymbol {A}$ 的最大特征值.
+证 $\boldsymbol {A}^{\top }\boldsymbol {A}$ 是对称半正定.
+设 $λ_{1}\geq λ_{2}\geq \cdots \geq λ_{n}\geq 0$ 为 $\boldsymbol {A}^{\top }\boldsymbol {A}$ 的特征值，
+$\boldsymbol {x}_{1},\boldsymbol {x}_{2},\cdots ,\boldsymbol {x}_{n}$ 为对应的正交特征向量.
+任意 $\boldsymbol {x}\in \mathbb {R}^{n}$ 且 $\|\boldsymbol {x}\|_{2}=1$ ，由Rayleigh不等式得
+$$\|\boldsymbol {A}\boldsymbol {x}\|^{2}=\left\langle \boldsymbol {x},\boldsymbol {A}^{\top }\boldsymbol {A}\boldsymbol {x}\right\rangle \leq λ_{1}\|\boldsymbol {x}\|_{2}^{2}=λ_{1}$$
+又因为 $\boldsymbol {A}^{\top }\boldsymbol {A}$ 的特征值 $λ_{1}$ 所对应的单位特征向量 $\boldsymbol {x}$ 有 $\|\boldsymbol {A}\boldsymbol {x}\|^{2}=\left\langle \boldsymbol {x},\boldsymbol {A}^{\top }\boldsymbol {A}\boldsymbol {x}\right\rangle =λ_{1}\langle \boldsymbol {x},\boldsymbol {x}\rangle =λ_{1}.$ 
+∴max $\frac {\|\boldsymbol {A}\boldsymbol {x}\|_{2}}{\|\boldsymbol {x}\|_{2}}=\sqrt {λ_{1}}.$ 
+![](https://web-api.textin.com/ocr_image/external/4ed29f055ad297e1.jpg)
+★事实上， $λ_{1}=\max _{\|\boldsymbol {x}\|_{2}=1}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}=\max _{\boldsymbol {x}\neq 0}\frac {\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}}{\boldsymbol {x}^{\top }\boldsymbol {x}},λ_{n}=\min _{\|\boldsymbol {x}\|_{2}=1}\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}=\min _{\boldsymbol {x}\neq 0}\frac {\boldsymbol {x}^{\top }\boldsymbol {Q}\boldsymbol {x}}{\boldsymbol {x}^{\top }\boldsymbol {x}}$ 
+![](https://web-api.textin.com/ocr_image/external/ea5b5ef7327f5165.jpg)
+# 矩阵范数
+## 例.计算A的谱范数
+$$\boldsymbol {A}=\left[\begin{array}{ll}2&1\\ 1&2\end{array}\right],\|\boldsymbol {A}\|=?$$
+解. $\left|λI_{2}-\boldsymbol {A}^{\top }\boldsymbol {A}\right|=λ^{2}-10λ+9=0,\quad \therefore λ_{1}=9,\quad \therefore \|\boldsymbol {A}\|=\sqrt {λ_{1}}=3.$ 
+### ★谱半径和谱范数.
+·谱半径：谱范数： $\begin{array}{l}\rho (\boldsymbol {A})=\max _{1\leq i\leq n}\left|λ_{i}(\boldsymbol {A})\right|.\\ \|\boldsymbol {A}\|=\max _{1\leq i\leq n}\sqrt {λ_{i}\left(\boldsymbol {A}^{\top }\boldsymbol {A}\right)}\end{array}$ 阵才有.所有矩阵都有
+通常 $ρ(\boldsymbol {A})\leq \|\boldsymbol {A}\|.$ .如 $\boldsymbol {A}=\left[\begin{array}{ll}0&1\\ 0&0\end{array}\right]Longrightarrowλ_{1}(\boldsymbol {A})=0$  和 $λ_{1}\left(\boldsymbol {A}^{\top }\boldsymbol {A}\right)=1.$ 
+![](https://web-api.textin.com/ocr_image/external/44e70fdc7dac261d.jpg)
+如果 $\boldsymbol {A}\in \mathbb {S}^{n}$ ，则 $"="$ 成立.
+### 定理（设 $A$ $\in \mathbb {R}^{n\times n}$  则）
+$$\|\boldsymbol {A}\|_{2}^{2}=\left\|\boldsymbol {A}^{\top }\right\|_{2}^{2}=\left\|\boldsymbol {A}^{\top }\boldsymbol {A}\right\|_{2}=\left\|\boldsymbol {A}\boldsymbol {A}^{\top }\right\|_{2}.$$
+。对于任意n阶酉矩阵 $C,D,$ ，均有 $\|\boldsymbol {C}\boldsymbol {A}\boldsymbol {D}\|_{2}=\|\boldsymbol {A}\|_{2}.$ 
+。 $\|\boldsymbol {A}\|_{2}=\max _{\|\boldsymbol {x}\|_{2}=1,\|\boldsymbol {y}\|_{2}=1}\left|\boldsymbol {x}^{\top }\boldsymbol {A}\boldsymbol {y}\right|;\|\boldsymbol {A}\|_{2}^{2}\leq \|\boldsymbol {A}\|_{1}\|\boldsymbol {A}\|_{\infty }$ 
+### 矩阵范数
+常用矩阵诱导范数： $\|\boldsymbol {A}\|_{1}=\max _{1\leq j\leq n}\sum _{i=1}^{m}\left|a_{ij}\right|,$ $\|\boldsymbol {A}\|_{\infty }=\max _{1\leq i\leq m}\sum _{j=1}^{n}\left|a_{ij}\right|$ 
+**例.** $\boldsymbol {A}\in \mathbb {R}^{m\times n}$ **的其他诱导范数**：取 $\|·\|_{a}$ **和** $\|·\|_{b}$ 
+<table border="1" ><tr>
+<td></td>
+<td>$a=1$</td>
+<td>$\because$ $\frac {\max _{j=1,\cdots ,n}\left\|\boldsymbol {A}_{:,j}\right\|_{2}}{\left(λ_{\max }\left(\boldsymbol {A}^{\top }\boldsymbol {A}\right)\right)^{1/2}}$</td>
+<td>$a=\infty$</td>
+</tr><tr>
+<td>$b=1$</td>
+<td>$\max _{j=1,\cdots ,n}\left\|\boldsymbol {A}_{:,j}\right\|$</td>
+<td></td>
+<td>$\frac {\max _{j=1,\cdots ,n}\left\|\boldsymbol {A}_{:,j}\right\|_{\infty }}{\max _{i=1,\cdots ,m}\left\|\boldsymbol {A}_{i,:}\right\|_{2}}$</td>
+</tr><tr>
+<td>$b=2$</td>
+<td>$NP-$</td>
+<td></td>
+<td></td>
+</tr><tr>
+<td>$b=\infty$</td>
+<td>$NP-hard$</td>
+<td>$NP-hard$</td>
+<td>$\max _{i=1,\cdots ,m}\left\|\boldsymbol {A}_{i,:}\right\|_{1}$</td>
+</tr></table>
+### 定理
+矩阵的 $\ell _{1}$ 范数是自相容的；矩阵的 $\ell _{2}$ 范数是自相容的.（提示：利用Cauchy不等式）
+![](https://web-api.textin.com/ocr_image/external/c1e05bd03ca7254d.jpg)
+### ★常用非诱导范数（充分条件：单位矩阵的范数是1)：
+$\|\boldsymbol {A}\|_{*}=\sum _{i=1}^{n}σ_{i}$ $\|\boldsymbol {A}\|_{F}=\left(\sum _{i=1}^{n}σ_{i}^{2}\right)^{1/2}$ ，其中 $\boldsymbol {A}=\boldsymbol {U}Σ\boldsymbol {V}^{\top }$  是SVD.
+课后习题：3.17,3.21,3.22
+17/
