@@ -8,6 +8,7 @@ from .base import (
     SupportDecision,
     SupportStatus,
 )
+from .evaluation import AHPPlugin, EntropyWeightPlugin, TOPSISPlugin
 from .graph import DijkstraPlugin, MaxFlowPlugin
 from .optimization import (
     LinearProgrammingPlugin,
@@ -20,7 +21,9 @@ __all__ = [
     "AlgorithmMetadata",
     "AlgorithmPlugin",
     "AlgorithmRegistry",
+    "AHPPlugin",
     "DijkstraPlugin",
+    "EntropyWeightPlugin",
     "FieldSpec",
     "IOContract",
     "LinearProgrammingPlugin",
@@ -32,4 +35,5 @@ __all__ = [
     "RegistryDecision",
     "SupportDecision",
     "SupportStatus",
+    "TOPSISPlugin",
 ]
