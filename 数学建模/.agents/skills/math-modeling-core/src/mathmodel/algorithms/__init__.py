@@ -15,24 +15,36 @@ from .optimization import (
     MixedIntegerLinearProgrammingPlugin,
     NonlinearOptimizationPlugin,
 )
+from .prediction import (
+    ARIMAPlugin,
+    LinearRegressionPlugin,
+    RandomForestPlugin,
+    RidgeRegressionPlugin,
+)
 from .registry import AlgorithmRegistry, RegistryDecision
+from .statistics import PCAPlugin
 
 __all__ = [
     "AlgorithmMetadata",
     "AlgorithmPlugin",
     "AlgorithmRegistry",
     "AHPPlugin",
+    "ARIMAPlugin",
     "DijkstraPlugin",
     "EntropyWeightPlugin",
     "FieldSpec",
     "IOContract",
     "LinearProgrammingPlugin",
+    "LinearRegressionPlugin",
     "MaxFlowPlugin",
     "MixedIntegerLinearProgrammingPlugin",
     "NonlinearOptimizationPlugin",
+    "PCAPlugin",
     "PermissionSpec",
     "PluginStatus",
     "RegistryDecision",
+    "RandomForestPlugin",
+    "RidgeRegressionPlugin",
     "SupportDecision",
     "SupportStatus",
     "TOPSISPlugin",
