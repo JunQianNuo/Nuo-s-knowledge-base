@@ -1,0 +1,40 @@
+flowchart TD
+  P["ProblemSpec + DomainContext"] --> R["生成 ModelRequirements"]
+  R --> C["生成 ModelCandidate 集合"]
+
+  subgraph ModelSelection["一级：模型选择"]
+    C --> G{"七项 ModelAdequacyGate"}
+    G -->|"FAIL"| X1["拒绝候选并记录原因"]
+    G -->|"UNKNOWN"| U["解决歧义或仅保留为 experimental challenger"]
+    G -->|"PASS"| N["Pareto 支配与最小充分模型"]
+    N --> B["经典充分主模型"]
+    C --> Q{"复杂候选有完整 GapClosureClaim?"}
+    Q -->|"否"| X2["拒绝复杂候选"]
+    Q -->|"是"| H["最多保留一个挑战者"]
+  end
+
+  subgraph AlgorithmSelection["二级：算法选择"]
+    B --> A["Algorithm Registry capability match"]
+    H --> A
+    A --> S{"API / schema / 依赖 / 权限 / 数值条件"}
+    S -->|"不满足"| X3["FAIL 或 BLOCKED"]
+    S -->|"满足"| P1{"P1 最小结构等价实例"}
+    P1 -->|"FAIL"| X4["回退模型合同或插件选择"]
+    P1 -->|"PASS"| F["全量求解"]
+  end
+
+  F --> V{"ValidationReport"}
+  V -->|"FAIL / BLOCKED"| X5["保存失败证据并回退"]
+  V -->|"PASS / WARN"| E["相同 EvaluationProtocol 比较"]
+  E --> I{"挑战者达到最小实用改进且风险可接受?"}
+  I -->|"否或差异不确定"| K["保留简单主模型"]
+  I -->|"是"| W["挑战者晋级"]
+  K --> O["SolveResult + Manifest"]
+  W --> O
+
+  classDef pass fill:#E7F6EC,stroke:#2E7D32,color:#143D1E;
+  classDef stop fill:#FDECEC,stroke:#C62828,color:#5A1717;
+  classDef decision fill:#FFF5D6,stroke:#B7791F,color:#5C3A00;
+  class B,H,K,W,O pass;
+  class X1,X2,X3,X4,X5 stop;
+  class G,Q,S,P1,V,I decision;
