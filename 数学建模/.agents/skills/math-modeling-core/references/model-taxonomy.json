@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "routing_rule": "candidate_generation_only",
+  "problem_types": [
+    {
+      "id": "prediction_regression",
+      "label": "prediction/regression",
+      "output": "continuous estimate or future value",
+      "capability_tags": ["linear_regression", "ridge_regression", "arima", "random_forest"]
+    },
+    {
+      "id": "classification",
+      "label": "classification",
+      "output": "class label or probability",
+      "capability_tags": ["random_forest"]
+    },
+    {
+      "id": "evaluation_ranking",
+      "label": "evaluation/ranking",
+      "output": "score or rank",
+      "capability_tags": ["ahp", "entropy_weight", "topsis"]
+    },
+    {
+      "id": "optimization_decision",
+      "label": "optimization/decision",
+      "output": "feasible best action",
+      "capability_tags": ["linear_programming", "mixed_integer_linear_programming", "nonlinear_optimization", "monte_carlo"]
+    },
+    {
+      "id": "mechanism_physics",
+      "label": "mechanism/physics",
+      "output": "state trajectory or physical quantity",
+      "capability_tags": ["ode"]
+    },
+    {
+      "id": "clustering_grouping",
+      "label": "clustering/grouping",
+      "output": "unlabeled groups",
+      "capability_tags": ["pca"]
+    },
+    {
+      "id": "association_causality",
+      "label": "association/causality",
+      "output": "relationship, effect, and uncertainty",
+      "capability_tags": ["linear_regression", "ridge_regression"]
+    },
+    {
+      "id": "game_strategy",
+      "label": "game/strategy",
+      "output": "equilibrium or policy",
+      "capability_tags": []
+    },
+    {
+      "id": "geometry_kinematics",
+      "label": "geometry/kinematics",
+      "output": "position, path, angle, or collision state",
+      "capability_tags": ["shortest_path", "nonlinear_optimization", "ode"]
+    },
+    {
+      "id": "statistical_inference_design",
+      "label": "statistical inference/design",
+      "output": "effect, interval, or decision rule",
+      "capability_tags": ["linear_regression", "pca", "monte_carlo"]
+    },
+    {
+      "id": "network_graph",
+      "label": "network/graph",
+      "output": "path, flow, matching, or robustness",
+      "capability_tags": ["shortest_path", "maximum_flow"]
+    },
+    {
+      "id": "ecosystem_environment",
+      "label": "ecosystem/environment",
+      "output": "population, diversity, emissions, or sustainability",
+      "capability_tags": ["ode", "monte_carlo"]
+    }
+  ]
+}
