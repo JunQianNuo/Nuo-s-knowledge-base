@@ -14,7 +14,7 @@ Lupynow 的问题与算法知识
 + 新增的统一算法 API、Registry 和 Validation Runtime
 ```
 
-合并范围聚焦“数学建模与算法设计”：题目理解、问题拆解、数据审计、模型选择、算法执行、验证、比较和复现。论文写作继续由现有 `math-modeling-paper` 独立承担。
+合并范围聚焦“数学建模与算法设计”：题目理解、问题拆解、数据审计、论文证据检索、模型选择、算法执行、验证、比较和复现。论文写作继续由现有 `math-modeling-paper` 独立承担。论文检索服务于模型选择、参数溯源和验证设计，不负责摘要、正文或排版。
 
 本 Skill 只在个人工作区使用，不发布，因此不实施许可证清洗、clean-room 重写、来源登记、第三方声明、社区治理或发布流程。允许直接复用两个上游仓库中的相关文本和代码，并在合并时修正已知缺陷。
 
@@ -36,8 +36,9 @@ Lupynow 的问题与算法知识
 - 读取题目与附件，建立数据结构指纹。
 - 将子问题映射到 Lupynow 的 12 类问题本质，允许混合类型与级联数据流。
 - 形成 `ProblemSpec` 和 `ModelContract`，明确目标、约束、输入输出、假设、指标、风险和回退条件。
+- 从问题结构生成中英文检索式，检索相似问题、候选算法、参数依据和验证方法，形成结构化 `EvidenceRecord`。
 - 从知识层产生多个候选，但进入计算阶段时最多保留一个主模型和一个结构独立的对照模型。
-- 使用数据结构、约束、验证可行性、依赖和复杂度评分候选，不把场景矩阵当成模型名称查表器。
+- 使用数据结构、约束、文献适用性、验证可行性、依赖和复杂度评分候选，不把场景矩阵或论文数量当成模型名称查表器。
 
 ### 2. Algorithm Layer：可执行算法插件
 
@@ -60,6 +61,7 @@ Lupynow 的问题与算法知识
 - 灵敏度、多初值、多随机种子、baseline 与 oracle 比较。
 - 只在候选通过验证后进行模型比较。
 - 输出结构化 `ValidationReport`、artifacts 和 reproducibility manifest。
+- 核验进入最终结论的 DOI、题名、参数来源和文献适用条件；未核验内容不得伪装成已验证证据。
 
 ### 4. Knowledge Layer：知识增强
 
@@ -70,6 +72,7 @@ Lupynow 的问题与算法知识
 - 8 本 Cookbook。
 - 12 本 Playbook，降级为示例而非强制路线。
 - 22 个 Python 与 7 个 MATLAB 模板，作为迁移 specification 或 experimental 资产。
+- 文献检索策略、检索次数上限、适用条件审查和参数溯源方法。
 
 补充 XiaoMa：
 
@@ -77,6 +80,7 @@ Lupynow 的问题与算法知识
 - 建模手的模型合同、假设、验证与风险规则。
 - 编程手的数值稳定、尺度、条件数、收敛、边界和资源降级规范。
 - 动态依赖检查、最小可运行切片、输入只读、阶段回退和复现约束。
+- OpenAlex 与可用第二检索源的交叉核验、去重和结果融合机制。
 
 两套算法索引不并行承担路由。统一映射为：
 
@@ -96,6 +100,7 @@ problem taxonomy → required capabilities → Algorithm Registry
 │   ├── problem-decomposition.md
 │   ├── model-contract.md
 │   ├── model-selection.md
+│   ├── literature-evidence.md
 │   ├── data-and-solver-engineering.md
 │   ├── validation-runtime.md
 │   ├── reproducibility.md
@@ -111,7 +116,14 @@ problem taxonomy → required capabilities → Algorithm Registry
 │       │   └── validation.py
 │       ├── reasoning/
 │       │   ├── taxonomy.py
-│       │   └── selector.py
+│       │   ├── selector.py
+│       │   └── evidence_mapper.py
+│       ├── evidence/
+│       │   ├── records.py
+│       │   ├── providers.py
+│       │   ├── retrieval.py
+│       │   ├── deduplication.py
+│       │   └── cache.py
 │       ├── algorithms/
 │       │   ├── base.py
 │       │   ├── registry.py
@@ -170,6 +182,28 @@ SolveResult + ValidationReport
 - `ValidationReport`：`PASS`、`FAIL` 或 `BLOCKED`，并给出回退阶段。
 - `AlgorithmMetadata`：名称、版本、状态、能力、依赖和支持范围。
 - `AlgorithmPlugin`：`supports`、`solve`、`validate` 协议。
+- `EvidenceRecord`：题名、作者、年份、期刊、DOI/稳定标识、检索源、使用模型、适用条件、参数依据、验证方法、局限和访问日期。
+- `EvidenceBundle`：检索式、检索预算、去重结果、核验状态以及与子问题和候选算法的映射。
+
+## Literature Evidence Pipeline
+
+论文检索位于“问题拆解”之后、“候选模型定榜”之前：
+
+1. 从 `ProblemSpec` 为每个子问题生成中文和英文检索式。
+2. 默认最多执行 5 次外部检索；找到 5–8 篇高度相关且来源可核验的论文后停止。
+3. 优先使用 OpenAlex，并在可用时用 Semantic Scholar、出版方页面或第二检索源交叉核验题名、年份和 DOI。
+4. 支持读取用户已下载的本地 PDF/Markdown 文献，纳入同一 `EvidenceRecord` 契约。
+5. 按 DOI 优先、规范化题名其次去重；同一论文的多个来源合并为一个记录。
+6. 提取“论文解决的问题、实际使用的模型、适用条件、参数依据、验证方法、量化结果和局限”，禁止仅凭摘要关键词推荐模型。
+7. 将证据映射到子问题、模型合同和候选算法，输出支持、反对或条件性证据。
+
+核验状态：
+
+- `VERIFIED`：题名/年份/DOI 或稳定标识已由权威页面或两个独立来源核对。
+- `PARTIAL`：论文存在已确认，但方法细节、参数或全文尚未核验。
+- `UNVERIFIED`：仅有搜索片段或用户未要求检索；不得作为确定性事实进入最终结论。
+
+检索是默认步骤，但不是硬阻塞。用户明确跳过、网络不可用或时间受限时可以继续模型设计，同时在候选表、验证报告和 manifest 中保留 `evidence_status=UNVERIFIED`。不得伪造 DOI、期刊级别、参数来源或论文结论。
 
 ## Registry 与模型选择
 
@@ -179,6 +213,7 @@ Registry 依据能力标签而不是文件名匹配算法。Selector 对候选�
 结构匹配
 + 数据匹配
 + 约束匹配
++ 文献适用性与证据质量
 + 可验证性
 + 依赖可用性
 - 复杂度风险
@@ -191,6 +226,8 @@ Registry 依据能力标签而不是文件名匹配算法。Selector 对候选�
 - `experimental` 不得在没有用户明确选择的情况下胜出。
 - `stable` 但依赖缺失的插件返回 `BLOCKED`，不得静默替换算法。
 - 最终最佳模型是“通过预定义门禁后的综合最优”，不是目标函数数值最优。
+- 文献数量不直接决定排序；一篇适用条件匹配的强证据可以高于多篇场景不匹配的弱证据。
+- 文献与本题数据结构或约束冲突时，记录反对证据并降低候选得分，不得只保留支持性论文。
 
 ## v1.0 Stable 算法集合
 
@@ -222,6 +259,9 @@ NSGA-II 与 CVaR 保留为 P1 修复对象。必须先修复上游已知错误�
   → Intake 与数据审计
   → 问题拆解和 taxonomy
   → ProblemSpec / ModelContract
+  → Literature Evidence Pipeline
+      VERIFIED/PARTIAL → 提取适用条件、参数与验证方法
+      UNVERIFIED → 显式标记后继续
   → 候选生成与 Registry 匹配
   → 主模型 + 独立对照模型
   → P1 最小结构等价实例
@@ -254,6 +294,17 @@ Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁�
 - 预测任务的时间顺序或交叉验证。
 - 随机算法的多 seed 与稳定性检查。
 - baseline、替代模型和灵敏度比较。
+- DOI/题名去重、证据适用条件和参数来源核验。
+
+证据管线测试包含：
+
+- 5 次检索预算与 5–8 篇提前停止规则。
+- DOI 优先、题名回退的确定性去重。
+- 多来源记录合并且不丢失冲突信息。
+- `VERIFIED`、`PARTIAL`、`UNVERIFIED` 状态转换。
+- 离线、超时、空结果和只有本地文献时的回退。
+- 候选排序不会因论文数量多而覆盖结构或适用条件冲突。
+- manifest 能重放检索式、来源标识、访问日期和证据映射。
 
 ## 复现与版本
 
@@ -268,6 +319,7 @@ Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁�
 - Python、平台和依赖版本。
 - 验证状态。
 - 唯一复现命令。
+- 文献检索式、检索源、记录标识、访问日期、核验状态和本地文献哈希。
 
 旧算法版本不能被同号覆盖。算法回归失败时禁止晋级；稳定别名继续指向上一个通过版本。
 
@@ -275,6 +327,9 @@ Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁�
 
 - 输入不完整：`BLOCKED`，列出缺少字段，不猜测硬约束。
 - 无候选插件：回退知识层给出人工方案，不虚构 Registry 命中。
+- 检索源不可用：使用其他已配置源或本地文献；都不可用时标记 `UNVERIFIED` 后继续，不编造结果。
+- DOI/题名冲突：保留冲突记录并标记 `PARTIAL`，在核验前不引用争议字段。
+- 文献适用条件不匹配：作为反对证据进入候选评分，不把“检索到论文”解释为“模型适合本题”。
 - 依赖缺失：`BLOCKED` 并列出缺失依赖，不自动安装。
 - 最小实例失败：禁止全量计算，返回模型合同或算法实现。
 - 数学规划不可行：诊断冲突约束、最小松弛或无界原因。
@@ -286,12 +341,13 @@ Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁�
 1. 建立契约测试和失败基线。
 2. 创建第三个 Skill 目录与四层骨架。
 3. 合并、去重并重路由两仓库知识资料。
-4. 实现 contracts、Registry、Selector 和 Validation Runtime。
-5. 逐个以 RED-GREEN-REFACTOR 实现 15 个 stable 插件。
-6. 修复并验证 NSGA-II、CVaR，仍不满足门槛时保持 experimental。
-7. 实现 doctor、runner 和 reproducibility manifest。
-8. 运行 Skill、算法、集成和现有工作区回归测试。
-9. 禁用旧 solver，验证新 Skill 能被发现且无入口冲突。
+4. 实现 `EvidenceRecord`、检索 providers、去重、核验、缓存和候选证据映射。
+5. 实现 contracts、Registry、Selector 和 Validation Runtime。
+6. 逐个以 RED-GREEN-REFACTOR 实现 15 个 stable 插件。
+7. 修复并验证 NSGA-II、CVaR，仍不满足门槛时保持 experimental。
+8. 实现 doctor、runner 和 reproducibility manifest。
+9. 运行 Skill、证据管线、算法、集成和现有工作区回归测试。
+10. 禁用旧 solver，验证新 Skill 能被发现且无入口冲突。
 
 ## v1.0 验收门槛
 
@@ -302,6 +358,9 @@ Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁�
 - 固定 seed 的随机算法可复现率 100%。
 - 算法依赖 metadata 完整率 100%。
 - 算法输入输出统一契约覆盖率 100%。
+- 所有进入最终结论的文献记录均具有稳定标识和非 `UNVERIFIED` 状态。
+- 检索预算、去重、离线回退和证据映射测试通过率 100%。
+- manifest 对检索式、来源、访问日期、核验状态和本地文献哈希的记录完整率 100%。
 - Critical 测试失败数为 0。
 - `SKILL.md` 与 `agents/openai.yaml` 通过 Skill validator。
 - 新增 Python 代码编译通过，测试分支覆盖率目标不低于 85%。
