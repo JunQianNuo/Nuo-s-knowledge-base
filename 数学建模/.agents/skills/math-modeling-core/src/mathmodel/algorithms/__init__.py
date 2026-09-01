@@ -10,6 +10,7 @@ from .base import (
 )
 from .evaluation import AHPPlugin, EntropyWeightPlugin, TOPSISPlugin
 from .graph import DijkstraPlugin, MaxFlowPlugin
+from .mechanistic import ODESolverPlugin
 from .optimization import (
     LinearProgrammingPlugin,
     MixedIntegerLinearProgrammingPlugin,
@@ -22,6 +23,7 @@ from .prediction import (
     RidgeRegressionPlugin,
 )
 from .registry import AlgorithmRegistry, RegistryDecision
+from .simulation import MonteCarloPlugin
 from .statistics import PCAPlugin
 
 __all__ = [
@@ -37,8 +39,10 @@ __all__ = [
     "LinearProgrammingPlugin",
     "LinearRegressionPlugin",
     "MaxFlowPlugin",
+    "MonteCarloPlugin",
     "MixedIntegerLinearProgrammingPlugin",
     "NonlinearOptimizationPlugin",
+    "ODESolverPlugin",
     "PCAPlugin",
     "PermissionSpec",
     "PluginStatus",
