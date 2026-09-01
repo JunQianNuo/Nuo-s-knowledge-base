@@ -2,171 +2,317 @@
 
 日期：2026-09-01
 
-## 目标
+## 目标与范围
 
-把 `XiaoMaColtAI/math-modeling-skill` 与 `Lupynow/math-modeling-skills` 中的解题能力合并进本地现有的 `math-modeling-solver`，供个人工作区使用。合并后的 Skill 聚焦“读题、拆题、模型选择、算法实现、验证、比较和复现”，论文写作继续由现有 `math-modeling-paper` 独立承担。
+严格采用研究报告提出的架构合并方法，把 `XiaoMaColtAI/math-modeling-skill` 与 `Lupynow/math-modeling-skills` 合并为本地个人使用的第三个 Skill：`math-modeling-core`。
 
-本次不建设可发布仓库，不处理开源许可证、第三方声明、社区治理或发布兼容性。两个下载仓库保留为只读上游快照，活动 Skill 不依赖其运行时路径。
-
-## 选定方案
-
-直接升级 `.agents/skills/math-modeling-solver`，不新建会与它争抢触发词的第三个建模 Skill。
-
-选择该方案的原因：
-
-- 当前活动目录已经包含 Lupynow 的问题分类、模型矩阵、Cookbook、Playbook 和代码模板，是最小迁移基线。
-- XiaoMa 的主要增量是模型合同、角色化工程流程、环境检查、最小可运行切片、阶段门禁和复现约束，适合作为控制层合并进现有 solver。
-- 保留 `math-modeling-paper` 为独立写作 Skill，避免主入口继续膨胀，也避免与本次“建模与算法设计”目标混杂。
-
-## 分层架构
-
-### 1. Skill 路由层
-
-根入口统一为大写 `SKILL.md`，并提供三种模式：
-
-- 全流程：题目接收 → 数据审计 → 问题合同 → 候选模型 → 最小实例 → 全量求解 → 验证比较 → 复现交付。
-- 局部协助：直接进入模型选择、算法实现、验证或结果诊断，仅补齐当前结论所必需的前置检查。
-- 方案审查：审查用户已有模型、代码与结果，不无理由推翻已有方案。
-
-入口只保留路由、硬约束、阶段产物和失败回退。详细规则按需进入 `references/`，避免一次加载整个知识库。
-
-### 2. Reasoning / Knowledge 层
-
-以 Lupynow 内容为主体：
-
-- `problem-decomposition.md`：12 类问题本质与混合问题拆解。
-- `model-selection-matrix.md`：候选模型生成和场景判断。
-- 8 本 Cookbook：模型和算法知识。
-- Playbook：仅作为案例参考，不作为强制路径。
-- 29 个代码模板：保留为 `experimental/reference`，不得因脚本可运行就宣称算法可信。
-
-吸收 XiaoMa 内容：
-
-- 模型合同、变量/参数/约束字典和阶段交付约束。
-- 数值稳定性、尺度、条件数、多初值、多随机种子、收敛与边界检查。
-- `SKILL_ROOT` 只读、题目附件只读、所有结果写入 `PROJECT_ROOT`。
-- 动态依赖检查、唯一复现命令和输入哈希。
-
-两套算法索引不并行保留为两个路由器。统一使用：
-
-`问题本质 taxonomy → required_capabilities → Algorithm Registry`。
-
-### 3. Typed Runtime 层
-
-在 Skill 内新增可直接调用的 Python 包：
+目标不是拼接两个目录，而是形成：
 
 ```text
-scripts/mathmodel_core/
-├── contracts.py
-├── registry.py
-├── selector.py
-├── validation.py
-├── reproducibility.py
-└── algorithms/
+Lupynow 的问题与算法知识
++ XiaoMa 的工程门禁与复现机制
++ 新增的统一算法 API、Registry 和 Validation Runtime
 ```
 
-核心契约：
+合并范围聚焦“数学建模与算法设计”：题目理解、问题拆解、数据审计、模型选择、算法执行、验证、比较和复现。论文写作继续由现有 `math-modeling-paper` 独立承担。
 
-- `ProblemSpec`：题目标识、问题类型、目标、约束、能力、指标和假设。
-- `DataBundle`：原始数据、特征、目标和元数据。
-- `SolveConfig`：随机种子、超时、容差和最大迭代数。
-- `SolveResult`：解、目标值、指标、诊断和产物。
-- `ValidationReport`：状态、检查项、失败证据和建议回退阶段。
-- `AlgorithmPlugin`：`supports`、`solve`、`validate` 统一协议。
+本 Skill 只在个人工作区使用，不发布，因此不实施许可证清洗、clean-room 重写、来源登记、第三方声明、社区治理或发布流程。允许直接复用两个上游仓库中的相关文本和代码，并在合并时修正已知缺陷。
 
-首版实现两个跨领域、依赖轻且可构造数学 oracle 的 stable 插件：
+## 部署策略
 
-- TOPSIS：代表综合评价；验证权重、归一化、贴近度范围和已知排序。
-- Dijkstra shortest path：代表图论；验证路径连续性、端点、边权和、不可达状态及已知最短路。
+新建 `.agents/skills/math-modeling-core/`，完整实现报告中的第三套架构。完成并通过验收后：
 
-其余上游模板全部进入 Registry 的 `experimental` 清单或仅保留为知识参考。NSGA-II、CVaR 等已知有缺陷的模板不得注册为 stable。
+- 把当前 `.agents/skills/math-modeling-solver` 移到 `.agents/disabled-skills/` 作为可恢复旧版。
+- 保留 `math-modeling-paper`，只承担论文写作。
+- 保留 `mathmodel-skill` 竞赛全流程插件，不修改其内部文件；通过更窄的触发描述避免与新 Skill 重复路由。
+- 两个下载仓库继续作为只读上游快照，不作为运行时依赖。
 
-### 4. Validation Runtime 层
+## 四层架构
 
-统一验证流水线包含：
+### 1. Reasoning Layer：问题理解与模型设计
 
-1. 数据完整性与 Schema 检查。
-2. 问题约束和数学不变量。
-3. 数值有限性、范围和稳定性。
-4. 算法专项 oracle/property 检验。
-5. 多随机种子、灵敏度或 baseline 比较（适用时）。
+职责：
 
-`ValidationReport.status` 只能为 `PASS`、`FAIL` 或 `BLOCKED`。只有 `PASS` 候选可以进入最终比较；失败必须携带机器可读检查项和回退阶段，不能由文字解释覆盖。
+- 读取题目与附件，建立数据结构指纹。
+- 将子问题映射到 Lupynow 的 12 类问题本质，允许混合类型与级联数据流。
+- 形成 `ProblemSpec` 和 `ModelContract`，明确目标、约束、输入输出、假设、指标、风险和回退条件。
+- 从知识层产生多个候选，但进入计算阶段时最多保留一个主模型和一个结构独立的对照模型。
+- 使用数据结构、约束、验证可行性、依赖和复杂度评分候选，不把场景矩阵当成模型名称查表器。
 
-### 5. Reproducibility 层
+### 2. Algorithm Layer：可执行算法插件
 
-每次运行生成 JSON manifest，至少记录：
+职责：
 
-- Skill/API/算法版本。
-- 输入文件 SHA-256。
-- seed、参数、Python 和依赖版本。
-- 验证状态。
-- 唯一复现命令。
+- 所有算法通过统一 `AlgorithmPlugin` 协议注册。
+- 插件声明名称、算法版本、API 版本、状态、能力标签、依赖、约束支持和随机性。
+- `stable` 算法必须拥有 unit test 和数学 oracle/property test。
+- 未审计模板只能标记为 `experimental` 或保留为知识示例。
+- 第三方扩展通过 Registry 注册，不修改主 `SKILL.md`。
 
-manifest 写入用户项目的 `results/`，不得写回 Skill 目录。
+### 3. Validation Runtime：执行、验证、比较和复现
 
-## 数据流
+职责：
+
+- 环境与依赖检查。
+- P1 最小结构等价实例执行。
+- 全量求解、超时和失败状态管理。
+- 五层验证：数据、数学不变量、数值稳定、统计/泛化、题目约束。
+- 灵敏度、多初值、多随机种子、baseline 与 oracle 比较。
+- 只在候选通过验证后进行模型比较。
+- 输出结构化 `ValidationReport`、artifacts 和 reproducibility manifest。
+
+### 4. Knowledge Layer：知识增强
+
+以 Lupynow 为知识主体：
+
+- 12 类问题 taxonomy 和混合问题拆解。
+- 95+ 场景模型选择矩阵。
+- 8 本 Cookbook。
+- 12 本 Playbook，降级为示例而非强制路线。
+- 22 个 Python 与 7 个 MATLAB 模板，作为迁移 specification 或 experimental 资产。
+
+补充 XiaoMa：
+
+- 七类算法资料与算法适用条件索引。
+- 建模手的模型合同、假设、验证与风险规则。
+- 编程手的数值稳定、尺度、条件数、收敛、边界和资源降级规范。
+- 动态依赖检查、最小可运行切片、输入只读、阶段回退和复现约束。
+
+两套算法索引不并行承担路由。统一映射为：
 
 ```text
-题目与附件
-  → 数据审计 + 问题拆解
-  → ProblemSpec / DataBundle
-  → 候选模型与能力标签
-  → Registry 匹配（最多 1 个主模型 + 1 个独立对照）
-  → 最小结构等价实例
-  → 全量求解
+problem taxonomy → required capabilities → Algorithm Registry
+```
+
+## 目录结构
+
+```text
+.agents/skills/math-modeling-core/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── references/
+│   ├── workflow.md
+│   ├── problem-decomposition.md
+│   ├── model-contract.md
+│   ├── model-selection.md
+│   ├── data-and-solver-engineering.md
+│   ├── validation-runtime.md
+│   ├── reproducibility.md
+│   ├── cookbooks/
+│   ├── playbooks/
+│   └── algorithm-notes/
+├── src/
+│   └── mathmodel/
+│       ├── contracts/
+│       │   ├── problem.py
+│       │   ├── data.py
+│       │   ├── result.py
+│       │   └── validation.py
+│       ├── reasoning/
+│       │   ├── taxonomy.py
+│       │   └── selector.py
+│       ├── algorithms/
+│       │   ├── base.py
+│       │   ├── registry.py
+│       │   ├── optimization/
+│       │   ├── evaluation/
+│       │   ├── forecasting/
+│       │   ├── statistics/
+│       │   ├── graph/
+│       │   ├── mechanistic/
+│       │   └── simulation/
+│       ├── validation/
+│       │   ├── invariants.py
+│       │   ├── numerical.py
+│       │   ├── statistical.py
+│       │   ├── constraints.py
+│       │   └── comparison.py
+│       └── runtime/
+│           ├── executor.py
+│           ├── dependencies.py
+│           ├── artifacts.py
+│           └── reproducibility.py
+├── scripts/
+│   ├── doctor.py
+│   └── run_model.py
+├── tests/
+│   ├── unit/
+│   ├── algorithms/
+│   ├── properties/
+│   ├── regression/
+│   ├── integration/
+│   └── fixtures/
+└── pyproject.toml
+```
+
+## 统一契约
+
+所有算法接受：
+
+```text
+ProblemSpec + DataBundle + SolveConfig
+```
+
+并返回：
+
+```text
+SolveResult + ValidationReport
+```
+
+核心类型：
+
+- `ProblemSpec`：题目标识、问题类型、目标、约束、能力、指标和假设。
+- `DataBundle`：特征、目标、原始数据和数据元信息。
+- `SolveConfig`：seed、timeout、tolerance、max_iterations 和算法参数。
+- `SolveResult`：解、目标值、指标、诊断、状态和 artifacts。
+- `ValidationCheck`：检查名称、状态、观测值、阈值和证据。
+- `ValidationReport`：`PASS`、`FAIL` 或 `BLOCKED`，并给出回退阶段。
+- `AlgorithmMetadata`：名称、版本、状态、能力、依赖和支持范围。
+- `AlgorithmPlugin`：`supports`、`solve`、`validate` 协议。
+
+## Registry 与模型选择
+
+Registry 依据能力标签而不是文件名匹配算法。Selector 对候选计算：
+
+```text
+结构匹配
++ 数据匹配
++ 约束匹配
++ 可验证性
++ 依赖可用性
+- 复杂度风险
+```
+
+规则：
+
+- 知识层可以返回多个候选。
+- 计算阶段最多选择一个主模型和一个结构独立的对照模型。
+- `experimental` 不得在没有用户明确选择的情况下胜出。
+- `stable` 但依赖缺失的插件返回 `BLOCKED`，不得静默替换算法。
+- 最终最佳模型是“通过预定义门禁后的综合最优”，不是目标函数数值最优。
+
+## v1.0 Stable 算法集合
+
+首个完成版本实现不少于 15 个 stable 插件：
+
+| 域 | 插件 |
+|---|---|
+| 精确优化 | Linear Programming、Mixed-Integer Linear Programming、连续非线性优化 |
+| 图论 | Dijkstra Shortest Path、Max Flow |
+| 综合评价 | AHP、Entropy Weight、TOPSIS |
+| 预测 | Linear Regression、Ridge Regression、ARIMA |
+| 统计/ML | PCA、Random Forest |
+| 机理/仿真 | ODE Solver、Monte Carlo |
+
+每个插件必须：
+
+- 使用统一契约。
+- 声明依赖和能力。
+- 提供一个已知答案或标准 benchmark。
+- 提供至少一个数学不变量或 property test。
+- 对错误输入给出定义明确的 `FAIL` 或 `BLOCKED`。
+
+NSGA-II 与 CVaR 保留为 P1 修复对象。必须先修复上游已知错误并通过 ZDT/独立 LP oracle，之后才能从 `experimental` 晋级 `stable`。
+
+## 数据流与阶段门禁
+
+```text
+题目 / 附件
+  → Intake 与数据审计
+  → 问题拆解和 taxonomy
+  → ProblemSpec / ModelContract
+  → 候选生成与 Registry 匹配
+  → 主模型 + 独立对照模型
+  → P1 最小结构等价实例
+      FAIL → 回退合同或候选选择
+      PASS → 全量求解
   → Validation Pipeline
-  → 通过验证的模型比较
-  → SolveResult + manifest
+      FAIL → 保留证据并回退
+      PASS → Model Comparator
+  → SolveResult + Artifacts + Manifest
   → 可选交给 math-modeling-paper
 ```
 
-## 文件迁移规则
+Skill 根目录和题目附件只读；产物只写入 `PROJECT_ROOT`。门禁失败不能由文字解释覆盖。
 
-- 保留现有 Lupynow references、Cookbook、Playbook 和模板。
-- 从 XiaoMa 复制建模手/编程手中与论文无关的工程规则，并重组为短小、条件化 references。
-- 复用或改造 XiaoMa 的环境检查与复现脚本；输出接口适配本设计的 JSON 契约。
-- 不合并论文手、DOCX、LaTeX、论文搜索以及 Office 生成工具；需要时继续调用已有独立 Skills。
-- 修正根入口文件名为 `SKILL.md`，添加 `agents/openai.yaml`，并使描述只陈述触发条件。
-- 保留旧 Skill 的可恢复快照；活动路径中只存在一个 `math-modeling-solver`。
+## 验证体系
+
+五类测试：
+
+1. Unit：公式和局部实现。
+2. Oracle：与手工解析解、独立 formulation 或已知答案一致。
+3. Property：概率和、流守恒、边界、排序、可行性等数学不变量。
+4. Benchmark：标准数据或标准问题上的合理表现。
+5. Regression：固定 seed 和容差下的关键指标稳定。
+
+运行时验证包含：
+
+- 数据类型、维度、缺失、异常、单位和泄漏检查。
+- 约束可行性和结果有限性。
+- 条件数、尺度、收敛与边界检查。
+- 预测任务的时间顺序或交叉验证。
+- 随机算法的多 seed 与稳定性检查。
+- baseline、替代模型和灵敏度比较。
+
+## 复现与版本
+
+分别记录：
+
+- Skill 版本。
+- API 版本。
+- Schema 版本。
+- 算法名称和算法版本。
+- 输入 SHA-256。
+- seed 和参数。
+- Python、平台和依赖版本。
+- 验证状态。
+- 唯一复现命令。
+
+旧算法版本不能被同号覆盖。算法回归失败时禁止晋级；稳定别名继续指向上一个通过版本。
 
 ## 错误处理
 
-- 输入不完整：返回 `BLOCKED` 并列出缺少字段，不猜测硬约束。
-- 无候选插件：回退知识层给出人工实现方案，不虚构 Registry 命中。
-- 依赖缺失：报告缺少的 feature/package，不自动安装。
-- 最小实例失败：禁止进入全量计算，回退模型合同或算法实现。
-- 验证失败：保留原始结果和失败报告，禁止把目标值最优等同于模型合格。
-- 超时：报告当前可行解和已有诊断；不把超时表述为无解。
+- 输入不完整：`BLOCKED`，列出缺少字段，不猜测硬约束。
+- 无候选插件：回退知识层给出人工方案，不虚构 Registry 命中。
+- 依赖缺失：`BLOCKED` 并列出缺失依赖，不自动安装。
+- 最小实例失败：禁止全量计算，返回模型合同或算法实现。
+- 数学规划不可行：诊断冲突约束、最小松弛或无界原因。
+- 超时：报告 incumbent、bound、gap 或当前诊断，不把超时表述为无解。
+- 验证失败：保存原始结果与失败证据，不把目标函数更优等同于模型合格。
 
-## 测试与验收
+## 实施顺序
 
-### RED / GREEN 范围
+1. 建立契约测试和失败基线。
+2. 创建第三个 Skill 目录与四层骨架。
+3. 合并、去重并重路由两仓库知识资料。
+4. 实现 contracts、Registry、Selector 和 Validation Runtime。
+5. 逐个以 RED-GREEN-REFACTOR 实现 15 个 stable 插件。
+6. 修复并验证 NSGA-II、CVaR，仍不满足门槛时保持 experimental。
+7. 实现 doctor、runner 和 reproducibility manifest。
+8. 运行 Skill、算法、集成和现有工作区回归测试。
+9. 禁用旧 solver，验证新 Skill 能被发现且无入口冲突。
 
-实施前先编写会失败的契约测试，覆盖：
+## v1.0 验收门槛
 
-- 规范入口与必要 references 尚不存在或未路由。
-- 未注册/experimental 算法不能作为 stable 选择。
-- 无效 `ProblemSpec`、非有限结果和违反不变量的结果被拒绝。
-- TOPSIS 与 shortest-path 的已知答案和边界 case。
-- manifest 对相同输入和 seed 保持确定性。
-
-随后实现最小代码使测试通过，再整理重复内容。
-
-### 完成交付门槛
-
-- `SKILL.md` 和 `agents/openai.yaml` 通过 skill validator。
-- 所有新增 Python 文件通过编译。
-- 所有单元、oracle、property、回归和集成测试通过。
-- 两个 stable 插件均使用同一契约，并各有 oracle/property test。
-- 任何未验证上游模板均未注册为 stable。
-- 上游仓库快照不被修改。
-- 现有 `math-modeling-paper` 和 `mathmodel-skill` 测试不因本次修改失败。
+- Stable 算法插件不少于 15。
+- stable 插件 unit test 覆盖率 100%。
+- stable 插件 oracle/property test 覆盖率 100%。
+- 未测试模板进入 stable 的数量为 0。
+- 固定 seed 的随机算法可复现率 100%。
+- 算法依赖 metadata 完整率 100%。
+- 算法输入输出统一契约覆盖率 100%。
+- Critical 测试失败数为 0。
+- `SKILL.md` 与 `agents/openai.yaml` 通过 Skill validator。
+- 新增 Python 代码编译通过，测试分支覆盖率目标不低于 85%。
+- 两个上游源码快照保持未修改。
+- 旧 solver 已移出自动发现目录且可恢复。
+- 现有 `math-modeling-paper` 与 `mathmodel-skill` 回归测试通过。
 
 ## 明确不做
 
-- 不实现报告中的 15 个 stable 算法目标；首版先验证架构和质量门禁。
-- 不合并或重写论文生成链。
 - 不发布、不推送上游、不创建 PR。
+- 不处理许可证、来源声明或 clean-room 重写。
+- 不把论文生成链合并进核心 Skill。
 - 不自动安装第三方 Python/MATLAB 依赖。
 - 不把 Playbook 或模型矩阵当成唯一决策规则。
