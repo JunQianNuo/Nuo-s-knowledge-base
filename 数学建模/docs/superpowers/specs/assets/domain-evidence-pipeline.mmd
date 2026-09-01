@@ -1,0 +1,40 @@
+flowchart TD
+  A["题目与附件"] --> B["Intake：术语、歧义、未知清单"]
+  B --> C["E0 领域理解检索"]
+
+  C --> C1["领域背景证据"]
+  C --> C2["物理或业务机制证据"]
+  C --> C3["当前业务规则与标准"]
+  C --> C4["变量定义与测量证据"]
+
+  C1 --> D["DomainContext"]
+  C2 --> E["机制关系图"]
+  C3 --> F["业务规则表"]
+  C4 --> G["候选变量字典"]
+
+  D --> H["领域证据支持的问题拆解"]
+  E --> H
+  F --> H
+  G --> H
+
+  H --> I["数据审计与可测量性检查"]
+  I --> J["ProblemSpec 与 ModelContract"]
+  J --> K["E1 方法与验证检索"]
+
+  K --> K1["候选模型证据"]
+  K --> K2["参数依据"]
+  K --> K3["验证方法与 benchmark"]
+  K --> K4["失败条件与局限"]
+
+  K1 --> L["EvidenceBundle"]
+  K2 --> L
+  K3 --> L
+  K4 --> L
+
+  L --> M["Registry 与候选评分"]
+  J --> M
+  M --> N["主模型与独立对照模型"]
+  N --> O["P1 最小结构等价实例"]
+  O -->|"FAIL"| H
+  O -->|"PASS"| P["全量求解与 Validation Pipeline"]
+  P --> Q["SolveResult、证据链与复现 Manifest"]
