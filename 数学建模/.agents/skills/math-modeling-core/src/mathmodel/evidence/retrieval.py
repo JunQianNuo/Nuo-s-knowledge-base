@@ -8,6 +8,7 @@ from typing import Any, Mapping
 
 from .records import (
     EvidenceBundle,
+    EvidenceClaim,
     EvidenceRecord,
     NetworkEvent,
     ProviderResponse,
@@ -139,6 +140,7 @@ def retrieve_evidence(
 ) -> EvidenceBundle:
     accepted_requests: list[SearchRequest] = []
     records: list[EvidenceRecord] = []
+    claims: list[EvidenceClaim] = []
     record_indexes: dict[str, int] = {}
     snapshots: list[EvidenceSnapshot] = []
     events: list[NetworkEvent] = []
@@ -188,29 +190,31 @@ def retrieve_evidence(
             incoming = _record_from_raw(raw, provider.name, accessed_on)
             doi_key = f"doi:{incoming.doi}" if incoming.doi else None
             title_key = f"title:{normalize_title(incoming.title)}"
-            existing_index = (
-                record_indexes.get(doi_key) if doi_key else record_indexes.get(title_key)
-            )
-            if existing_index is None:
-                existing_index = record_indexes.get(title_key)
+            existing_index = record_indexes.get(doi_key) if doi_key else None
+            title_index = record_indexes.get(title_key)
+            if existing_index is None and title_index is not None:
+                title_match = records[title_index]
+                if incoming.doi is None or title_match.doi is None:
+                    existing_index = title_index
             if existing_index is None:
                 existing_index = len(records)
                 records.append(incoming)
             else:
                 records[existing_index] = _merge_records(records[existing_index], incoming)
             current = records[existing_index]
-            record_indexes[f"title:{normalize_title(current.title)}"] = existing_index
+            record_indexes.setdefault(
+                f"title:{normalize_title(current.title)}", existing_index
+            )
             if current.doi:
                 record_indexes[f"doi:{current.doi}"] = existing_index
+            for raw_claim in raw.get("claims", ()):
+                claims.append(_claim_from_raw(raw_claim, current.record_key))
 
-    revision_payload = {
-        "snapshot_hashes": [snapshot.snapshot_hash for snapshot in snapshots],
-        "record_keys": [record.record_key for record in records],
-    }
+    revision_payload = _revision_payload(snapshots, records, claims)
     return EvidenceBundle(
         requests=tuple(accepted_requests),
         records=tuple(records),
-        claims=(),
+        claims=tuple(claims),
         snapshots=tuple(snapshots),
         network_events=tuple(events),
         evidence_revision=_sha256(revision_payload),
@@ -232,6 +236,7 @@ def _record_from_raw(
         venue=_optional_str(raw.get("venue")),
         doi=doi,
         stable_id=stable_id,
+        stable_identifiers=(f"{provider}:{stable_id}",) if stable_id else (),
         sources=(provider,),
         model=_optional_str(raw.get("model")),
         applicability=tuple(str(item) for item in raw.get("applicability", ())),
@@ -251,7 +256,7 @@ def _merge_records(first: EvidenceRecord, second: EvidenceRecord) -> EvidenceRec
     conflicts = list(first.conflicts)
     if normalize_title(first.title) != normalize_title(second.title):
         conflicts.append(f"conflicting_title:{second.title}")
-    for name in ("doi", "stable_id", "year", "venue"):
+    for name in ("doi", "year", "venue"):
         left, right = getattr(first, name), getattr(second, name)
         if left is not None and right is not None and left != right:
             conflicts.append(f"conflicting_{name}:{right}")
@@ -265,6 +270,11 @@ def _merge_records(first: EvidenceRecord, second: EvidenceRecord) -> EvidenceRec
         first,
         authors=_unique((*first.authors, *second.authors)),
         sources=sources,
+        doi=first.doi or second.doi,
+        stable_id=first.stable_id or second.stable_id,
+        stable_identifiers=_unique(
+            (*first.stable_identifiers, *second.stable_identifiers)
+        ),
         applicability=_unique((*first.applicability, *second.applicability)),
         parameter_basis=_unique((*first.parameter_basis, *second.parameter_basis)),
         validation_methods=_unique(
@@ -274,6 +284,58 @@ def _merge_records(first: EvidenceRecord, second: EvidenceRecord) -> EvidenceRec
         metadata_status=metadata_status,
         conflicts=_unique(conflicts),
     )
+
+
+def _claim_from_raw(raw: Mapping[str, Any], record_key: str) -> EvidenceClaim:
+    return EvidenceClaim(
+        claim_id=str(raw["claim_id"]),
+        claim_type=str(raw["claim_type"]),
+        text=str(raw["text"]),
+        record_key=record_key,
+        locator=_optional_str(raw.get("locator")),
+        applicability=tuple(str(item) for item in raw.get("applicability", ())),
+        status=VerificationStatus(
+            str(raw.get("status", VerificationStatus.UNVERIFIED.value))
+        ),
+        contradiction=_optional_str(raw.get("contradiction")),
+    )
+
+
+def _revision_payload(
+    snapshots: list[EvidenceSnapshot],
+    records: list[EvidenceRecord],
+    claims: list[EvidenceClaim],
+) -> dict[str, Any]:
+    normalized_snapshots = []
+    for snapshot in snapshots:
+        identities = []
+        for raw in snapshot.response.records:
+            doi = normalize_doi(_optional_str(raw.get("doi")))
+            identity = (
+                f"doi:{doi}"
+                if doi
+                else f"title:{normalize_title(str(raw.get('title', '')))}"
+            )
+            identities.append(identity)
+        normalized_snapshots.append(
+            {
+                "provider": snapshot.provider,
+                "provider_version": snapshot.provider_version,
+                "request": snapshot.request.to_dict(),
+                "accessed_at": snapshot.accessed_at,
+                "record_identities": sorted(identities),
+            }
+        )
+    normalized_snapshots.sort(
+        key=lambda item: _canonical_json(item)
+    )
+    return {
+        "snapshots": normalized_snapshots,
+        "record_keys": sorted(record.record_key for record in records),
+        "claims": sorted(
+            (claim.claim_id, claim.record_key, claim.status.value) for claim in claims
+        ),
+    }
 
 
 def _unique(values: tuple[str, ...] | list[str]) -> tuple[str, ...]:

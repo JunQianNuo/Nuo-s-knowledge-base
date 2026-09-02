@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
+from scipy.optimize import LinearConstraint
 
 from mathmodel.algorithms import (
     LinearProgrammingPlugin,
@@ -81,3 +82,60 @@ def test_nonlinear_convex_quadratic_matches_analytic_optimum() -> None:
     assert result.status is RunStatus.SUCCESS
     np.testing.assert_allclose(result.solution["x"], [1.0, -2.0], atol=1e-6)
     assert result.objective is not None and result.objective < 1e-12
+
+
+def test_nonlinear_default_honors_declared_inequality_constraint() -> None:
+    plugin = NonlinearOptimizationPlugin()
+    data = DataBundle(
+        arrays={"x0": np.array([0.0])},
+        metadata={
+            "objective": lambda x: x[0] ** 2,
+            "constraints": ({"type": "ineq", "fun": lambda x: x[0] - 1.0},),
+        },
+    )
+
+    result = plugin.solve(
+        optimization_problem("nonlinear_optimization"), data, SolveConfig()
+    )
+
+    assert result.status is RunStatus.SUCCESS
+    assert result.solution["x"][0] >= 1.0 - 1e-7
+
+
+def test_milp_preserves_continuous_components_of_mixed_solution() -> None:
+    plugin = MixedIntegerLinearProgrammingPlugin()
+    data = DataBundle(
+        arrays={
+            "c": np.array([0.0, 1.0]),
+            "integrality": np.array([1, 0]),
+            "lower_bounds": np.array([0.0, 0.0]),
+            "upper_bounds": np.array([1.0, 1.0]),
+            "constraints": np.array([[0.0, 1.0]]),
+            "constraint_lower": np.array([0.5]),
+            "constraint_upper": np.array([np.inf]),
+        }
+    )
+
+    result = plugin.solve(
+        optimization_problem("mixed_integer_linear_programming"), data, SolveConfig()
+    )
+
+    assert result.status is RunStatus.SUCCESS
+    np.testing.assert_allclose(result.solution["x"], [0.0, 0.5], atol=1e-10)
+
+
+def test_nonlinear_accepts_scipy_constraint_object_without_ambiguous_comparison() -> None:
+    result = NonlinearOptimizationPlugin().solve(
+        optimization_problem("nonlinear_optimization"),
+        DataBundle(
+            arrays={"x0": np.array([0.0])},
+            metadata={
+                "objective": lambda x: x[0] ** 2,
+                "constraints": LinearConstraint([[1.0]], [1.0], [np.inf]),
+            },
+        ),
+        SolveConfig(),
+    )
+
+    assert result.status is RunStatus.SUCCESS
+    assert result.solution["x"][0] >= 1.0 - 1e-7

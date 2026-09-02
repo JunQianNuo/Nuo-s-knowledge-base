@@ -2,7 +2,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import StrEnum
-from typing import Protocol
+from numbers import Integral, Real
+from collections.abc import Mapping, Sequence
+from typing import Any, Protocol
+
+import numpy as np
 
 from mathmodel.contracts import DataBundle, ProblemSpec, SolveConfig, SolveResult
 
@@ -65,15 +69,128 @@ class IOContract:
         object.__setattr__(self, "output_fields", tuple(self.output_fields))
         object.__setattr__(self, "config_fields", tuple(self.config_fields))
 
-    def missing_inputs(self, data: DataBundle) -> tuple[str, ...]:
-        missing: list[str] = []
+    def validate_inputs(self, data: DataBundle) -> tuple[str, ...]:
+        reasons: list[str] = []
         for item in self.input_fields:
-            if not item.required:
-                continue
             container = getattr(data, item.container, None)
             if container is None or item.name not in container:
-                missing.append(f"missing_input:{item.container}.{item.name}")
-        return tuple(missing)
+                if item.required:
+                    reasons.append(f"missing_input:{item.container}.{item.name}")
+                continue
+            if not _matches_kind(container[item.name], item.kind):
+                reasons.append(
+                    f"invalid_input:{item.container}.{item.name}:{item.kind}"
+                )
+        return tuple(reasons)
+
+    def missing_inputs(self, data: DataBundle) -> tuple[str, ...]:
+        return tuple(
+            reason for reason in self.validate_inputs(data) if reason.startswith("missing_")
+        )
+
+    def validate_config(self, config: SolveConfig) -> tuple[str, ...]:
+        reasons: list[str] = []
+        for item in self.config_fields:
+            value = getattr(config, item.name, None)
+            if value is None:
+                if item.required:
+                    reasons.append(f"missing_config:{item.name}")
+                continue
+            if not _matches_kind(value, item.kind):
+                reasons.append(f"invalid_config:{item.name}:{item.kind}")
+        return tuple(reasons)
+
+    def validate_output(self, result: SolveResult) -> tuple[str, ...]:
+        reasons: list[str] = []
+        for item in self.output_fields:
+            container = getattr(result, item.container, None)
+            if container is None or item.name not in container:
+                if item.required:
+                    reasons.append(f"missing_output:{item.container}.{item.name}")
+                continue
+            if not _matches_kind(container[item.name], item.kind):
+                reasons.append(
+                    f"invalid_output:{item.container}.{item.name}:{item.kind}"
+                )
+        return tuple(reasons)
+
+
+def _matches_kind(value: Any, kind: str) -> bool:
+    if kind == "callable" or kind == "vectorized_callable":
+        return callable(value)
+    if kind == "ndarray":
+        return isinstance(value, np.ndarray)
+    if kind in {"number", "positive_number"}:
+        valid = isinstance(value, Real) and not isinstance(value, bool) and np.isfinite(value)
+        return bool(valid and (kind != "positive_number" or value > 0))
+    if kind in {"integer", "positive_integer"}:
+        valid = isinstance(value, Integral) and not isinstance(value, bool)
+        return bool(valid and (kind != "positive_integer" or value > 0))
+    if kind == "node":
+        try:
+            hash(value)
+        except TypeError:
+            return False
+        return True
+    if kind in {"weighted_adjacency", "capacity_adjacency", "flow_adjacency"}:
+        return isinstance(value, Mapping)
+    if kind == "arima_order":
+        return (
+            isinstance(value, (tuple, list))
+            and len(value) == 3
+            and all(isinstance(item, Integral) and item >= 0 for item in value)
+        )
+    if kind == "benefit_cost_sequence":
+        return isinstance(value, (tuple, list)) and all(
+            item in {"benefit", "cost"} for item in value
+        )
+    if kind in {"node_sequence", "index_sequence"}:
+        return isinstance(value, Sequence) and not isinstance(value, (str, bytes))
+
+    array = np.asarray(value)
+    vector_kinds = {
+        "vector",
+        "probability_vector",
+        "bounded_vector",
+        "ordered_vector",
+        "increasing_vector",
+        "chronological_vector",
+        "state_vector",
+        "target_vector",
+    }
+    matrix_kinds = {
+        "matrix",
+        "positive_square_matrix",
+        "feature_matrix",
+        "orthonormal_matrix",
+        "trajectory_matrix",
+        "dimension_by_two_matrix",
+    }
+    if kind in vector_kinds:
+        if array.ndim != 1:
+            return False
+        if kind == "probability_vector":
+            numeric = np.asarray(value, dtype=float)
+            return bool(np.all(numeric >= 0) and np.isclose(numeric.sum(), 1.0))
+        if kind == "bounded_vector":
+            numeric = np.asarray(value, dtype=float)
+            return bool(np.all((numeric >= 0) & (numeric <= 1)))
+        if kind == "increasing_vector":
+            numeric = np.asarray(value, dtype=float)
+            return bool(numeric.size > 0 and np.all(np.diff(numeric) > 0))
+        return True
+    if kind in matrix_kinds:
+        if array.ndim != 2:
+            return False
+        if kind == "positive_square_matrix":
+            numeric = np.asarray(value, dtype=float)
+            return bool(
+                numeric.shape[0] == numeric.shape[1] and np.all(numeric > 0)
+            )
+        if kind == "dimension_by_two_matrix":
+            return array.shape[1:] == (2,)
+        return True
+    return False
 
 
 @dataclass(frozen=True, slots=True)

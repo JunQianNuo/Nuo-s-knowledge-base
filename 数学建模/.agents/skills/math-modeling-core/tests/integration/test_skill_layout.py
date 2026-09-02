@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import tomllib
 
 import yaml
 
@@ -128,3 +129,27 @@ def test_candidate_matrix_and_machine_readable_taxonomy_are_migrated() -> None:
         "network_graph",
         "ecosystem_environment",
     }
+
+
+def test_dependency_profiles_and_acceptance_lock_are_present() -> None:
+    pyproject = tomllib.loads(
+        (SKILL_ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    )
+    profiles = pyproject["project"]["optional-dependencies"]
+
+    assert {"core", "optimization", "forecasting", "ml", "graph", "dev"} <= set(
+        profiles
+    )
+    lock = (SKILL_ROOT / "requirements.lock").read_text(encoding="utf-8")
+    for package in ("numpy", "scipy", "statsmodels", "scikit-learn", "PyYAML", "pytest"):
+        assert f"{package}==" in lock
+
+
+def test_domain_evidence_pipeline_source_and_export_are_present() -> None:
+    source = SKILL_ROOT / "assets/domain-evidence-pipeline.mmd"
+    export = SKILL_ROOT / "assets/domain-evidence-pipeline.svg"
+
+    assert source.is_file()
+    assert export.is_file()
+    assert source.read_text(encoding="utf-8").startswith("flowchart LR")
+    assert "<svg" in export.read_text(encoding="utf-8")

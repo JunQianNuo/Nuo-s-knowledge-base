@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, is_dataclass
+from datetime import date, datetime
 from enum import Enum
 import json
 import os
@@ -146,6 +147,8 @@ def to_jsonable(value: Any) -> Any:
         return value.value
     if isinstance(value, Path):
         return str(value)
+    if isinstance(value, (date, datetime)):
+        return value.isoformat()
     if is_dataclass(value):
         return to_jsonable(asdict(value))
     if isinstance(value, Mapping):

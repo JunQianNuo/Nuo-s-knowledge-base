@@ -9,7 +9,7 @@ import pytest
 
 from mathmodel.algorithms import DijkstraPlugin
 from mathmodel.contracts import CheckStatus, ProblemSpec, SolveConfig
-from mathmodel.runtime import PaperHandoff, RunContext, build_manifest
+from mathmodel.runtime import PaperHandoff, RunContext, build_manifest, verify_manifest
 
 
 SKILL_ROOT = Path(__file__).resolve().parents[2]
@@ -111,6 +111,227 @@ def test_missing_declared_dependency_returns_exit_three(tmp_path: Path) -> None:
     ]
 
 
+def test_evidence_mode_does_not_execute_algorithm_or_probe_solver_dependency(
+    tmp_path: Path,
+) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    write_json(
+        problem_path,
+        {
+            "problem_id": "evidence-only",
+            "model_family": "shortest_path",
+            "mandatory_outputs": ["domain_evidence"],
+            "required_dependencies": ["definitely_missing_mathmodel_dependency"],
+        },
+    )
+
+    completed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--mode",
+        "evidence",
+        "--output",
+        "results/evidence-only",
+    )
+
+    run_root = project / "results/evidence-only"
+    assert completed.returncode == 0
+    assert not (run_root / "solve/result.json").exists()
+    diagnostics = json.loads(
+        (run_root / "diagnostics.json").read_text(encoding="utf-8")
+    )
+    assert diagnostics["mode"] == "evidence"
+    assert diagnostics["solver_executed"] is False
+    assert diagnostics["evidence_action"] == "query_plan_created"
+    plan = json.loads((run_root / "evidence/query-plan.json").read_text(encoding="utf-8"))
+    assert [item["phase"] for item in plan["requests"]] == [
+        "E0",
+        "E0",
+        "E0",
+        "E0",
+        "E1",
+    ]
+    planned_text = " ".join(item["query"] for item in plan["requests"])
+    assert "physical mechanism" in planned_text
+    assert "business rules" in planned_text
+    assert "variable definition" in planned_text
+    manifest = json.loads((run_root / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["validation_status"] == "SKIPPED"
+    assert manifest["mode"] == "evidence"
+
+
+def test_evidence_refresh_blocks_before_network_when_initial_budget_is_exceeded(
+    tmp_path: Path,
+) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    requests = [
+        {
+            "phase": "E0",
+            "query": f"query {index}",
+            "provider": "not-configured",
+            "page": 1,
+        }
+        for index in range(6)
+    ]
+    write_json(
+        problem_path,
+        {
+            "problem_id": "budget",
+            "model_family": "shortest_path",
+            "mandatory_outputs": ["domain_evidence"],
+            "evidence_requests": requests,
+        },
+    )
+
+    completed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--mode",
+        "evidence",
+        "--refresh-evidence",
+        "--output",
+        "results/budget",
+    )
+
+    diagnostics = json.loads(
+        (project / "results/budget/diagnostics.json").read_text(encoding="utf-8")
+    )
+    assert completed.returncode == 3
+    assert diagnostics["reasons"] == ["initial_search_budget_exceeded"]
+
+
+def test_analyze_mode_audits_domain_before_algorithm_lookup(tmp_path: Path) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    write_json(
+        problem_path,
+        {
+            "problem_id": "domain-first",
+            "model_family": "not-yet-selected",
+            "mandatory_outputs": ["decision"],
+        },
+    )
+
+    completed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--mode",
+        "analyze",
+        "--output",
+        "results/domain-first",
+    )
+
+    audit = json.loads(
+        (project / "results/domain-first/domain/audit.json").read_text(encoding="utf-8")
+    )
+    assert completed.returncode == 3
+    assert audit["status"] == "BLOCKED"
+    assert "domain_context_missing" in audit["reasons"]
+    assert not (project / "results/domain-first/solve/result.json").exists()
+
+
+def test_review_mode_without_declared_artifact_is_blocked(tmp_path: Path) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    write_json(
+        problem_path,
+        {
+            "problem_id": "review",
+            "model_family": "shortest_path",
+            "mandatory_outputs": ["path"],
+        },
+    )
+
+    completed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--mode",
+        "review",
+        "--output",
+        "results/review",
+    )
+
+    report = json.loads(
+        (project / "results/review/validation/review.json").read_text(encoding="utf-8")
+    )
+    assert completed.returncode == 3
+    assert report == {"reasons": ["review_artifact_missing"], "status": "BLOCKED"}
+
+
+def test_review_mode_verifies_a_hash_bound_manifest(tmp_path: Path) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    data_path = project / "data.json"
+    write_json(
+        problem_path,
+        {
+            "problem_id": "review-source",
+            "model_family": "shortest_path",
+            "mandatory_outputs": ["path"],
+        },
+    )
+    write_json(
+        data_path,
+        {
+            "tables": {"graph": {"A": {"B": 1}, "B": {}}},
+            "scalars": {"source": "A", "target": "B"},
+        },
+    )
+    source = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--data",
+        str(data_path),
+        "--output",
+        "results/source",
+    )
+    source_manifest = project / "results/source/manifest.json"
+
+    reviewed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--mode",
+        "review",
+        "--review-artifact",
+        str(source_manifest),
+        "--output",
+        "results/review-valid",
+    )
+
+    assert source.returncode == 0
+    assert reviewed.returncode == 0
+    report = json.loads(
+        (project / "results/review-valid/validation/review.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert report["status"] == "PASS"
+    review_manifest = json.loads(
+        (project / "results/review-valid/manifest.json").read_text(encoding="utf-8")
+    )
+    assert "--review-artifact" in review_manifest["reproduce_command"]
+    assert review_manifest["inputs"]["review_artifact"]["sha256"]
+
+
 def test_invalid_problem_schema_returns_exit_two(tmp_path: Path) -> None:
     project = (tmp_path / "project").resolve()
     project.mkdir()
@@ -168,6 +389,89 @@ def test_solver_failure_persists_diagnostics_and_manifest(tmp_path: Path) -> Non
     assert manifest["manifest_hash"]
 
 
+def test_cli_preserves_verified_domain_and_variable_contract(tmp_path: Path) -> None:
+    project = (tmp_path / "project").resolve()
+    project.mkdir()
+    problem_path = project / "problem.json"
+    write_json(
+        problem_path,
+        {
+            "problem_id": "domain-contract",
+            "model_family": "shortest_path",
+            "mandatory_outputs": ["path"],
+            "required_capabilities": ["shortest_path"],
+            "domain_context": {
+                "object_name": "road network",
+                "system_boundary": "declared nodes and edges",
+                "stakeholders": ["traveler"],
+                "temporal_scale": "static snapshot",
+                "spatial_scale": "network",
+                "terminology": {"weight": "travel time"},
+                "typical_magnitudes": {"travel_time_min": [0, 120]},
+                "unresolved_ambiguities": [],
+            },
+            "variables": [
+                {
+                    "name": "edge travel time",
+                    "symbol": "t_ij",
+                    "definition": "time to traverse a directed edge",
+                    "role": "input",
+                    "data_type": "continuous",
+                    "unit": "min",
+                    "measurement": "road sensor estimate",
+                    "observable": True,
+                    "data_available": True,
+                    "identifiable": True,
+                    "evidence_claims": ["claim-travel-time"],
+                    "evidence_status": "VERIFIED",
+                }
+            ],
+        },
+    )
+    data_path = project / "data.json"
+    write_json(
+        data_path,
+        {
+            "tables": {"graph": {"A": {"B": 1}, "B": {}}},
+            "scalars": {"source": "A", "target": "B"},
+        },
+    )
+
+    completed = run_cli(
+        "--project-root",
+        str(project),
+        "--problem",
+        str(problem_path),
+        "--data",
+        str(data_path),
+        "--output",
+        "results/domain-contract",
+    )
+
+    manifest = json.loads(
+        (project / "results/domain-contract/manifest.json").read_text(encoding="utf-8")
+    )
+    assert completed.returncode == 0
+    assert manifest["problem"]["domain_context"]["object_name"] == "road network"
+    assert manifest["problem"]["variables"][0]["unit"] == "min"
+    assert len(manifest["artifacts"]["selection/algorithm.json"]) == 64
+    assert len(manifest["artifacts"]["selection/p1.json"]) == 64
+    selection = json.loads(
+        (project / "results/domain-contract/selection/algorithm.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert selection["selected_plugin"] == "graph.dijkstra"
+    assert selection["selection_source"] == "audited_builtin_registry"
+    p1 = json.loads(
+        (project / "results/domain-contract/selection/p1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert p1["status"] == "PASS"
+    assert "known_answer" in p1["passed_checks"]
+
+
 def test_manifest_has_literal_required_keys_and_stable_hash(tmp_path: Path) -> None:
     context = RunContext.create(
         skill_root=SKILL_ROOT,
@@ -189,6 +493,9 @@ def test_manifest_has_literal_required_keys_and_stable_hash(tmp_path: Path) -> N
         "validation_status": CheckStatus.PASS,
         "evidence_revision": "evidence-1",
         "created_at": "2026-09-01T00:00:00Z",
+        "mode": "solve",
+        "problem_path": tmp_path / "problem.json",
+        "data_path": tmp_path / "data.json",
     }
 
     first = build_manifest(**arguments)
@@ -199,18 +506,33 @@ def test_manifest_has_literal_required_keys_and_stable_hash(tmp_path: Path) -> N
         "skill_version",
         "run_id",
         "created_at",
+        "mode",
         "problem",
         "plugin",
         "solve_config",
         "input_hashes",
         "validation_status",
         "evidence_revision",
+        "evidence",
+        "selection",
+        "evaluation_protocol",
         "environment",
+        "inputs",
+        "artifacts",
         "reproduce_command",
         "manifest_hash",
     }
     assert first == second
     assert first["manifest_hash"] == second["manifest_hash"]
+    assert first["evidence"] == {"refreshed": False, "revision": "evidence-1"}
+    assert first["selection"]["algorithm_plugin_id"] == "graph.dijkstra"
+    assert verify_manifest(first) is True
+    tampered = dict(first)
+    tampered["validation_status"] = "FAIL"
+    assert verify_manifest(tampered) is False
+    assert '--problem "' in first["reproduce_command"]
+    assert '--data "' in first["reproduce_command"]
+    assert '--mode "solve"' in first["reproduce_command"]
 
 
 def test_warn_handoff_preserves_visible_warning() -> None:

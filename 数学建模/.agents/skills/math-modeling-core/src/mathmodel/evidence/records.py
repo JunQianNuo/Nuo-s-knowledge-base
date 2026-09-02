@@ -2,15 +2,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date
-from enum import StrEnum
 from typing import Any, Mapping
 import re
 
+from mathmodel.contracts import EvidenceStatus
 
-class VerificationStatus(StrEnum):
-    VERIFIED = "VERIFIED"
-    PARTIAL = "PARTIAL"
-    UNVERIFIED = "UNVERIFIED"
+
+VerificationStatus = EvidenceStatus
 
 
 def normalize_doi(value: str | None) -> str | None:
@@ -36,6 +34,7 @@ class EvidenceRecord:
     venue: str | None = None
     doi: str | None = None
     stable_id: str | None = None
+    stable_identifiers: tuple[str, ...] = ()
     sources: tuple[str, ...] = ()
     model: str | None = None
     applicability: tuple[str, ...] = ()
@@ -53,6 +52,7 @@ class EvidenceRecord:
         for name in (
             "authors",
             "sources",
+            "stable_identifiers",
             "applicability",
             "parameter_basis",
             "validation_methods",

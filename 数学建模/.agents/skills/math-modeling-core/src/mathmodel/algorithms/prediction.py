@@ -20,6 +20,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -30,6 +31,20 @@ from .base import (
 def _metadata(
     plugin_id: str, family: str, dependencies: frozenset[str]
 ) -> AlgorithmMetadata:
+    if family == "arima":
+        input_fields = (
+            FieldSpec("arrays", "series", "chronological_vector"),
+            FieldSpec("scalars", "horizon", "positive_integer"),
+            FieldSpec("metadata", "order", "arima_order"),
+        )
+        output_fields = (FieldSpec("solution", "forecast", "vector"),)
+    else:
+        input_fields = (
+            FieldSpec("arrays", "X", "feature_matrix"),
+            FieldSpec("arrays", "y", "target_vector"),
+            FieldSpec("arrays", "X_predict", "feature_matrix"),
+        )
+        output_fields = (FieldSpec("solution", "predictions", "vector"),)
     return AlgorithmMetadata(
         plugin_id=plugin_id,
         name=plugin_id,
@@ -46,7 +61,14 @@ def _metadata(
         ),
         deterministic=True,
         resource_tier=2,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=input_fields,
+            output_fields=output_fields,
+            config_fields=(
+                FieldSpec("config", "seed", "integer"),
+                FieldSpec("config", "tolerance", "positive_number"),
+            ),
+        ),
         content_hash=f"builtin:{plugin_id}:1.0.0",
     )
 

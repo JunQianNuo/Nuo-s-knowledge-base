@@ -21,7 +21,7 @@ Resolve every path and verify containment before opening. Write structured files
 
 ## Manifest contents
 
-Record skill/API/schema versions, run ID/time, input hashes, `ProblemSpec`, variable/domain revisions, model requirements, accepted and rejected candidates with gate reasons, plugin ID/version/hash and solver guarantee, dependencies/environment, solve config, seeds/tolerances, evaluation protocol, validation state, evidence queries/budget/provider versions/snapshot hashes/revision/claim states, artifacts, and one replay command.
+Record skill/API/schema versions, run ID/time, resolved input locations and hashes, `ProblemSpec`, variable/domain revisions, model requirements, accepted and rejected candidates with gate reasons, plugin ID/version/hash and solver guarantee, dependencies/environment, solve config, seeds/tolerances, evaluation protocol, validation state, evidence queries/budget/provider versions/snapshot hashes/revision/claim states, artifact paths and hashes, and one replay command. Selection, P1, evidence, solve, and diagnostic details may live in dedicated artifacts, but their hashes must be bound into the manifest.
 
 Use canonical JSON and SHA-256. Identical declared inputs and timestamps must produce a byte-stable manifest hash. Never overwrite an algorithm version, evidence revision, or prior run to create the appearance of reproducibility.
 
@@ -33,5 +33,7 @@ Use canonical JSON and SHA-256. Identical declared inputs and timestamps must pr
 - surface environment/version differences;
 - preserve all rejected candidates and warnings;
 - create a new run for refreshed evidence or changed assumptions.
+
+Review mode recomputes `manifest_hash` after removing the declared hash field. A changed status, artifact reference, input, or environment declaration therefore fails review instead of being accepted as prose.
 
 `doctor.py` reports dependency state only. It must not install packages. A missing dependency is a reproducible `BLOCKED` result, not permission to change the mathematical model.

@@ -23,7 +23,9 @@ Check only dependencies declared by the selected plugin and project contract. Re
 Use `python scripts/doctor.py --profile <core|optimization|forecasting|ml|all>` for diagnostics. The public runner is:
 
 ```text
-python scripts/run_model.py --project-root <absolute-path> --problem <problem.yaml> [--data <data.yaml>] --mode <analyze|solve|review|evidence> [--output results/<run_id>] [--refresh-evidence]
+python scripts/run_model.py --project-root <absolute-path> --problem <problem.yaml> [--data <data.yaml>] --mode <analyze|solve|review|evidence> [--review-artifact <manifest.json>] [--output results/<run_id>] [--refresh-evidence]
 ```
+
+`analyze` writes a domain-freeze audit; `evidence` creates four E0 query tracks plus one E1 track and performs network retrieval only when `--refresh-evidence` is explicit; `review` requires `--review-artifact` and verifies its manifest hash. `solve` selects through the audited registry and records a passing known-answer P1 report before touching the full instance.
 
 Exit codes: `0` success; `2` input/schema error; `3` dependency/permission/support blocked; `4` solver or critical validation failure; `5` unexpected internal error. Persist diagnostics whenever a run directory can safely be created.

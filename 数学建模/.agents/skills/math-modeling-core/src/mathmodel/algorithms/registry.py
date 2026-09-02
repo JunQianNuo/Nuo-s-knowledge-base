@@ -20,6 +20,18 @@ class AlgorithmRegistry:
         for plugin in plugins:
             self.register(plugin)
 
+    @property
+    def plugins(self) -> tuple[AlgorithmPlugin, ...]:
+        return tuple(
+            sorted(
+                self._plugins.values(),
+                key=lambda plugin: (
+                    plugin.metadata.plugin_id,
+                    plugin.metadata.algorithm_version,
+                ),
+            )
+        )
+
     def register(self, plugin: AlgorithmPlugin) -> None:
         key = (plugin.metadata.plugin_id, plugin.metadata.algorithm_version)
         if key in self._plugins:
@@ -38,6 +50,8 @@ class AlgorithmRegistry:
         allow_experimental: bool = False,
         api_version: int = 1,
         schema_version: int = 1,
+        require_network: bool = False,
+        required_executables: tuple[str, ...] = (),
     ) -> RegistryDecision:
         accepted: list[AlgorithmPlugin] = []
         rejected: dict[str, tuple[str, ...]] = {}
@@ -58,12 +72,30 @@ class AlgorithmRegistry:
                 reasons.append(
                     "missing_capabilities:" + ",".join(sorted(missing_capabilities))
                 )
+            declared_outputs = {
+                item.name for item in metadata.io_contract.output_fields if item.required
+            }
+            missing_outputs = set(problem.mandatory_outputs) - declared_outputs
+            if missing_outputs:
+                reasons.append("missing_outputs:" + ",".join(sorted(missing_outputs)))
             missing_dependencies = metadata.dependencies - set(installed_dependencies)
             if missing_dependencies:
                 reasons.append(
                     "missing_dependencies:" + ",".join(sorted(missing_dependencies))
                 )
-            reasons.extend(metadata.io_contract.missing_inputs(data))
+            reasons.extend(metadata.io_contract.validate_inputs(data))
+            if require_network and not metadata.permissions.network:
+                reasons.append("network_permission_not_declared")
+            missing_executables = set(required_executables) - set(
+                metadata.permissions.executables
+            )
+            if missing_executables or (
+                required_executables and not metadata.permissions.subprocess
+            ):
+                reasons.append(
+                    "subprocess_permission_not_declared:"
+                    + ",".join(sorted(missing_executables or required_executables))
+                )
 
             if not reasons:
                 support = plugin.supports(problem, data)

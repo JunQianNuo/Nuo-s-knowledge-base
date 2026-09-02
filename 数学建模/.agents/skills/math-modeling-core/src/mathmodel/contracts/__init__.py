@@ -13,14 +13,30 @@ from .core import (
     ValidationCheck,
     ValidationReport,
 )
+from .domain import (
+    BusinessRuleSpec,
+    ConstraintKind,
+    DomainContext,
+    EvidenceStatus,
+    MechanismKind,
+    MechanismSpec,
+    VariableRole,
+    VariableSpec,
+)
 
 __all__ = [
     "CheckStatus",
+    "BusinessRuleSpec",
     "ComplexityProfile",
+    "ConstraintKind",
     "DataBundle",
+    "DomainContext",
+    "EvidenceStatus",
     "GapClosureClaim",
     "ModelCandidate",
     "ModelRequirements",
+    "MechanismKind",
+    "MechanismSpec",
     "ProblemSpec",
     "RunStatus",
     "Severity",
@@ -28,4 +44,6 @@ __all__ = [
     "SolveResult",
     "ValidationCheck",
     "ValidationReport",
+    "VariableRole",
+    "VariableSpec",
 ]

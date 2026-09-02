@@ -21,6 +21,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -29,6 +30,26 @@ from .base import (
 
 
 def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
+    if family == "shortest_path":
+        input_fields = (
+            FieldSpec("tables", "graph", "weighted_adjacency"),
+            FieldSpec("scalars", "source", "node"),
+            FieldSpec("scalars", "target", "node"),
+        )
+        output_fields = (
+            FieldSpec("solution", "path", "node_sequence"),
+            FieldSpec("solution", "distance", "number"),
+        )
+    else:
+        input_fields = (
+            FieldSpec("tables", "capacities", "capacity_adjacency"),
+            FieldSpec("scalars", "source", "node"),
+            FieldSpec("scalars", "sink", "node"),
+        )
+        output_fields = (
+            FieldSpec("solution", "flows", "flow_adjacency"),
+            FieldSpec("solution", "min_cut_value", "number"),
+        )
     return AlgorithmMetadata(
         plugin_id=plugin_id,
         name=plugin_id,
@@ -43,7 +64,11 @@ def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
         validation_capabilities=frozenset({"path", "flow_conservation", "min_cut"}),
         deterministic=True,
         resource_tier=1,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=input_fields,
+            output_fields=output_fields,
+            config_fields=(FieldSpec("config", "tolerance", "positive_number"),),
+        ),
         content_hash=f"builtin:{plugin_id}:1.0.0",
     )
 
@@ -162,13 +187,15 @@ class MaxFlowPlugin:
         nodes = set(capacities)
         for row in capacities.values():
             nodes.update(row)
-        residual = {node: {other: 0.0 for other in nodes} for node in nodes}
+        capacity_matrix = {node: {other: 0.0 for other in nodes} for node in nodes}
         for start, row in capacities.items():
             for end, capacity in row.items():
-                residual[start][end] = float(capacity)
+                capacity_matrix[start][end] = float(capacity)
+        net_flow = {node: {other: 0.0 for other in nodes} for node in nodes}
 
         total = 0.0
         while True:
+            residual = _residual_graph(capacity_matrix, net_flow)
             parent = _augmenting_path(residual, source, sink)
             if parent is None:
                 break
@@ -181,18 +208,18 @@ class MaxFlowPlugin:
             node = sink
             while node != source:
                 previous = parent[node]
-                residual[previous][node] -= bottleneck
-                residual[node][previous] += bottleneck
+                net_flow[previous][node] += bottleneck
+                net_flow[node][previous] -= bottleneck
                 node = previous
             total += bottleneck
 
         flows = {
             start: {
-                end: float(capacity) - residual[start][end]
-                for end, capacity in row.items()
+                end: max(0.0, net_flow[start][end]) for end in row
             }
             for start, row in capacities.items()
         }
+        residual = _residual_graph(capacity_matrix, net_flow)
         reachable = _reachable_nodes(residual, source)
         cut_value = sum(
             float(capacity)
@@ -239,6 +266,19 @@ def _augmenting_path(
                     return parent
                 queue.append(neighbor)
     return None
+
+
+def _residual_graph(
+    capacities: Mapping[Any, Mapping[Any, float]],
+    net_flow: Mapping[Any, Mapping[Any, float]],
+) -> dict[Any, dict[Any, float]]:
+    return {
+        start: {
+            end: float(capacity) - float(net_flow[start][end])
+            for end, capacity in row.items()
+        }
+        for start, row in capacities.items()
+    }
 
 
 def _reachable_nodes(

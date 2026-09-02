@@ -19,6 +19,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -44,7 +45,19 @@ class MonteCarloPlugin:
         ),
         deterministic=True,
         resource_tier=2,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=(
+                FieldSpec("arrays", "bounds", "dimension_by_two_matrix"),
+                FieldSpec("metadata", "integrand", "vectorized_callable"),
+                FieldSpec("scalars", "n_samples", "integer"),
+            ),
+            output_fields=(
+                FieldSpec("solution", "estimate", "number"),
+                FieldSpec("solution", "ci_low", "number"),
+                FieldSpec("solution", "ci_high", "number"),
+            ),
+            config_fields=(FieldSpec("config", "seed", "integer"),),
+        ),
         content_hash="builtin:simulation.monte-carlo:1.0.0",
     )
 

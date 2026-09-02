@@ -19,6 +19,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -27,6 +28,22 @@ from .base import (
 
 
 def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
+    if family == "ahp":
+        input_fields = (FieldSpec("arrays", "pairwise", "positive_square_matrix"),)
+        output_fields = (FieldSpec("solution", "weights", "probability_vector"),)
+    elif family == "entropy_weight":
+        input_fields = (FieldSpec("arrays", "decision_matrix", "matrix"),)
+        output_fields = (FieldSpec("solution", "weights", "probability_vector"),)
+    else:
+        input_fields = (
+            FieldSpec("arrays", "decision_matrix", "matrix"),
+            FieldSpec("arrays", "weights", "probability_vector"),
+            FieldSpec("metadata", "directions", "benefit_cost_sequence"),
+        )
+        output_fields = (
+            FieldSpec("solution", "scores", "bounded_vector"),
+            FieldSpec("solution", "rank", "index_sequence"),
+        )
     return AlgorithmMetadata(
         plugin_id=plugin_id,
         name=plugin_id,
@@ -43,7 +60,11 @@ def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
         ),
         deterministic=True,
         resource_tier=1,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=input_fields,
+            output_fields=output_fields,
+            config_fields=(FieldSpec("config", "tolerance", "positive_number"),),
+        ),
         content_hash=f"builtin:{plugin_id}:1.0.0",
     )
 

@@ -18,6 +18,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -41,7 +42,14 @@ class PCAPlugin:
         validation_capabilities=frozenset({"orthonormality", "variance_order"}),
         deterministic=True,
         resource_tier=1,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=(FieldSpec("arrays", "X", "feature_matrix"),),
+            output_fields=(
+                FieldSpec("solution", "components", "orthonormal_matrix"),
+                FieldSpec("solution", "explained_variance", "ordered_vector"),
+            ),
+            config_fields=(FieldSpec("config", "tolerance", "positive_number"),),
+        ),
         content_hash="builtin:statistics.pca:1.0.0",
     )
 

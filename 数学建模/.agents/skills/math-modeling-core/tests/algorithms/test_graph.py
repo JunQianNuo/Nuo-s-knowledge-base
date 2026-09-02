@@ -72,3 +72,24 @@ def test_max_flow_matches_hand_min_cut_and_conserves_flow() -> None:
     for start, row in flows.items():
         for end, value in row.items():
             assert 0.0 <= value <= capacities[start][end]
+
+
+def test_max_flow_antiparallel_arc_output_never_becomes_negative() -> None:
+    capacities = {
+        "s": {"a": 1.0},
+        "a": {"b": 1.0},
+        "b": {"a": 1.0, "t": 1.0},
+        "t": {},
+    }
+    result = MaxFlowPlugin().solve(
+        graph_problem("maximum_flow"),
+        DataBundle(
+            tables={"capacities": capacities},
+            scalars={"source": "s", "sink": "t"},
+        ),
+        SolveConfig(),
+    )
+
+    assert result.status is RunStatus.SUCCESS
+    assert result.solution["flows"]["a"]["b"] == 1.0
+    assert result.solution["flows"]["b"]["a"] == 0.0

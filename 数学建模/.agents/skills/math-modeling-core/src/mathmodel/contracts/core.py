@@ -4,6 +4,15 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 from typing import Any, Mapping
 
+from .domain import (
+    BusinessRuleSpec,
+    ConstraintKind,
+    DomainContext,
+    MechanismKind,
+    MechanismSpec,
+    VariableSpec,
+)
+
 
 class CheckStatus(StrEnum):
     PASS = "PASS"
@@ -34,6 +43,10 @@ class ProblemSpec:
     assumptions: Mapping[str, Any] = field(default_factory=dict)
     preference_weights: Mapping[str, float] = field(default_factory=dict)
     minimum_practical_improvement: float | None = None
+    domain_context: DomainContext | None = None
+    variables: tuple[VariableSpec, ...] = ()
+    mechanisms: tuple[MechanismSpec, ...] = ()
+    business_rules: tuple[BusinessRuleSpec, ...] = ()
 
     def __post_init__(self) -> None:
         if not self.problem_id.strip():
@@ -49,6 +62,38 @@ class ProblemSpec:
         )
         object.__setattr__(self, "assumptions", dict(self.assumptions))
         object.__setattr__(self, "preference_weights", dict(self.preference_weights))
+        object.__setattr__(self, "variables", tuple(self.variables))
+        object.__setattr__(self, "mechanisms", tuple(self.mechanisms))
+        object.__setattr__(self, "business_rules", tuple(self.business_rules))
+        variable_keys = [(item.name.casefold(), item.symbol.casefold()) for item in self.variables]
+        if len(variable_keys) != len(set(variable_keys)):
+            raise ValueError("problem variables must have unique name/symbol pairs")
+        ineligible_variables = [item.name for item in self.variables if not item.freeze_eligible]
+        if ineligible_variables:
+            raise ValueError(
+                "variable is not freeze-eligible: " + ",".join(ineligible_variables)
+            )
+        invalid_laws = [
+            item.mechanism_id
+            for item in self.mechanisms
+            if item.kind is MechanismKind.PHYSICAL_LAW
+            and not item.physical_law_eligible
+        ]
+        if invalid_laws:
+            raise ValueError(
+                "physical law is not freeze-eligible: " + ",".join(invalid_laws)
+            )
+        invalid_hard_rules = [
+            item.rule_id
+            for item in self.business_rules
+            if item.constraint_kind is ConstraintKind.HARD
+            and not item.hard_constraint_eligible
+        ]
+        if invalid_hard_rules:
+            raise ValueError(
+                "hard business rule is not freeze-eligible: "
+                + ",".join(invalid_hard_rules)
+            )
 
 
 @dataclass(frozen=True, slots=True)

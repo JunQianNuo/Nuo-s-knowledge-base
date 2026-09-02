@@ -121,7 +121,31 @@ def test_retrieval_deduplicates_by_doi_then_normalized_title() -> None:
     by_title = {record.title: record for record in bundle.records}
     assert by_title["Traffic-Flow Model"].sources == ("fake",)
     assert "conflicting_title:Renamed record" in by_title["Traffic-Flow Model"].conflicts
-    assert "conflicting_stable_id:o2" in by_title["Other Model"].conflicts
+    assert "fake:o1" in by_title["Other Model"].stable_identifiers
+    assert "fake:o2" in by_title["Other Model"].stable_identifiers
+    assert not any("stable_id" in conflict for conflict in by_title["Other Model"].conflicts)
+
+
+def test_same_title_with_two_different_dois_remains_two_records() -> None:
+    provider = FakeProvider(
+        {
+            1: ProviderResponse(
+                records=(
+                    raw_record("Shared Title", doi="10.1000/one", stable_id="1"),
+                    raw_record("shared-title", doi="10.1000/two", stable_id="2"),
+                )
+            )
+        }
+    )
+
+    bundle = retrieve_evidence(
+        (request(),),
+        {"fake": provider},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    assert {record.doi for record in bundle.records} == {"10.1000/one", "10.1000/two"}
 
 
 def test_verified_record_does_not_promote_unverified_claim() -> None:
@@ -150,6 +174,29 @@ def test_verified_record_does_not_promote_unverified_claim() -> None:
     assert claim.status is VerificationStatus.UNVERIFIED
 
 
+def test_retrieval_extracts_claims_without_promoting_them_from_record_metadata() -> None:
+    raw = raw_record("Claimed Model", doi="10.1000/claim", stable_id="c")
+    raw["claims"] = [
+        {
+            "claim_id": "claim-1",
+            "claim_type": "mechanism",
+            "text": "X is associated with Y",
+            "locator": None,
+            "applicability": ["laboratory scale"],
+            "status": "UNVERIFIED",
+        }
+    ]
+    provider = FakeProvider({1: ProviderResponse(records=(raw,))})
+
+    bundle = retrieve_evidence(
+        (request(),), {"fake": provider}, SearchBudget(), accessed_on=date(2026, 9, 1)
+    )
+
+    assert len(bundle.claims) == 1
+    assert bundle.claims[0].record_key == bundle.records[0].record_key
+    assert bundle.claims[0].status is VerificationStatus.UNVERIFIED
+
+
 def test_snapshot_hash_is_canonical_and_replay_preserves_response_order() -> None:
     response = ProviderResponse(
         records=(raw_record("First", stable_id="1"), raw_record("Second", stable_id="2"))
@@ -168,6 +215,28 @@ def test_snapshot_hash_is_canonical_and_replay_preserves_response_order() -> Non
     changed = replace(snapshot, snapshot_hash="bad")
     with pytest.raises(ValueError, match="snapshot hash mismatch"):
         EvidenceSnapshot.from_json(changed.to_json())
+
+
+def test_evidence_revision_is_stable_when_provider_order_changes() -> None:
+    first = ProviderResponse(
+        records=(raw_record("First", stable_id="1"), raw_record("Second", stable_id="2"))
+    )
+    reversed_response = ProviderResponse(records=tuple(reversed(first.records)))
+
+    first_bundle = retrieve_evidence(
+        (request(),),
+        {"fake": FakeProvider({1: first})},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+    second_bundle = retrieve_evidence(
+        (request(),),
+        {"fake": FakeProvider({1: reversed_response})},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    assert first_bundle.evidence_revision == second_bundle.evidence_revision
 
 
 @pytest.mark.parametrize(

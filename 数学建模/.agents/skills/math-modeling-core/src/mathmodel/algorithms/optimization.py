@@ -20,6 +20,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -28,6 +29,17 @@ from .base import (
 
 
 def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
+    input_fields = {
+        "linear_programming": (FieldSpec("arrays", "c", "vector"),),
+        "mixed_integer_linear_programming": (
+            FieldSpec("arrays", "c", "vector", required=False),
+            FieldSpec("arrays", "values", "vector", required=False),
+        ),
+        "nonlinear_optimization": (
+            FieldSpec("arrays", "x0", "vector"),
+            FieldSpec("metadata", "objective", "callable"),
+        ),
+    }[family]
     return AlgorithmMetadata(
         plugin_id=plugin_id,
         name=plugin_id,
@@ -42,7 +54,14 @@ def _metadata(plugin_id: str, family: str) -> AlgorithmMetadata:
         validation_capabilities=frozenset({"feasibility", "solver_status"}),
         deterministic=True,
         resource_tier=2,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=input_fields,
+            output_fields=(FieldSpec("solution", "x", "vector"),),
+            config_fields=(
+                FieldSpec("config", "timeout", "positive_number"),
+                FieldSpec("config", "tolerance", "positive_number"),
+            ),
+        ),
         content_hash=f"builtin:{plugin_id}:1.0.0",
     )
 
@@ -168,7 +187,13 @@ class MixedIntegerLinearProgrammingPlugin:
             constraints=constraints,
             options={"time_limit": config.timeout},
         )
-        solution = [] if result.x is None else np.rint(result.x).astype(int).tolist()
+        if result.x is None:
+            solution: list[float] = []
+        else:
+            solution_array = np.asarray(result.x, dtype=float).copy()
+            integer_mask = integrality != 0
+            solution_array[integer_mask] = np.rint(solution_array[integer_mask])
+            solution = solution_array.tolist()
         objective = None
         if result.fun is not None:
             objective = float(-result.fun if maximize else result.fun)
@@ -209,21 +234,56 @@ class NonlinearOptimizationPlugin:
         support = self.supports(problem, data)
         if support.status is not SupportStatus.SUPPORTED:
             return _blocked(self.metadata.plugin_id, support.reasons)
+        constraints = data.metadata.get("constraints", ())
+        bounds = data.metadata.get("bounds")
+        declared_method = data.metadata.get("method")
+        if declared_method is None:
+            if constraints:
+                method = "SLSQP"
+            elif bounds is not None:
+                method = "L-BFGS-B"
+            else:
+                method = "BFGS"
+        else:
+            method = str(declared_method)
+        options: dict[str, Any] = {"maxiter": config.max_iterations}
+        if method.upper() == "SLSQP":
+            options["ftol"] = config.tolerance
+        else:
+            options["gtol"] = config.tolerance
         result = minimize(
             data.metadata["objective"],
             np.asarray(data.arrays["x0"], dtype=float),
-            method=str(data.metadata.get("method", "BFGS")),
-            bounds=data.metadata.get("bounds"),
-            constraints=data.metadata.get("constraints", ()),
-            options={"maxiter": config.max_iterations, "gtol": config.tolerance},
+            method=method,
+            bounds=bounds,
+            constraints=constraints,
+            options=options,
         )
-        report = _report("solver_success", bool(result.success), result.message)
+        violation = max(
+            _constraint_violation(constraints, np.asarray(result.x, dtype=float)),
+            _bounds_violation(bounds, np.asarray(result.x, dtype=float)),
+        )
+        feasible = violation <= max(config.tolerance * 10, 1e-7)
+        passed = bool(result.success and feasible)
+        report = _report(
+            "solver_success_and_feasibility",
+            passed,
+            {
+                "message": str(result.message),
+                "max_constraint_violation": violation,
+            },
+        )
         return SolveResult(
-            status=RunStatus.SUCCESS if result.success else RunStatus.FAIL,
+            status=RunStatus.SUCCESS if passed else RunStatus.FAIL,
             plugin_id=self.metadata.plugin_id,
             solution={"x": result.x.tolist()},
             objective=float(result.fun),
-            diagnostics={"iterations": int(result.nit), "message": str(result.message)},
+            diagnostics={
+                "iterations": int(result.nit),
+                "message": str(result.message),
+                "method": method,
+                "max_constraint_violation": violation,
+            },
             validation_report=report,
         )
 
@@ -234,6 +294,59 @@ class NonlinearOptimizationPlugin:
 def _optional_array(data: DataBundle, name: str) -> np.ndarray | None:
     value = data.arrays.get(name)
     return None if value is None else np.asarray(value, dtype=float)
+
+
+def _constraint_violation(constraints: Any, x: np.ndarray) -> float:
+    if constraints is None:
+        return 0.0
+    if isinstance(constraints, (tuple, list)) and not constraints:
+        return 0.0
+    items = constraints if isinstance(constraints, (tuple, list)) else (constraints,)
+    maximum = 0.0
+    for constraint in items:
+        if isinstance(constraint, dict):
+            observed = np.asarray(constraint["fun"](x), dtype=float)
+            if constraint.get("type") == "eq":
+                maximum = max(maximum, float(np.max(np.abs(observed))))
+            else:
+                maximum = max(maximum, float(np.max(np.maximum(-observed, 0.0))))
+            continue
+        if isinstance(constraint, LinearConstraint):
+            observed = np.asarray(constraint.A @ x, dtype=float)
+        elif hasattr(constraint, "fun"):
+            observed = np.asarray(constraint.fun(x), dtype=float)
+        else:
+            continue
+        lower = np.broadcast_to(np.asarray(constraint.lb, dtype=float), observed.shape)
+        upper = np.broadcast_to(np.asarray(constraint.ub, dtype=float), observed.shape)
+        maximum = max(
+            maximum,
+            float(np.max(np.maximum(lower - observed, 0.0))),
+            float(np.max(np.maximum(observed - upper, 0.0))),
+        )
+    return maximum
+
+
+def _bounds_violation(bounds: Any, x: np.ndarray) -> float:
+    if bounds is None:
+        return 0.0
+    if isinstance(bounds, Bounds):
+        lower = np.broadcast_to(np.asarray(bounds.lb, dtype=float), x.shape)
+        upper = np.broadcast_to(np.asarray(bounds.ub, dtype=float), x.shape)
+    else:
+        normalized = list(bounds)
+        lower = np.asarray(
+            [-np.inf if item[0] is None else item[0] for item in normalized],
+            dtype=float,
+        )
+        upper = np.asarray(
+            [np.inf if item[1] is None else item[1] for item in normalized],
+            dtype=float,
+        )
+    return max(
+        float(np.max(np.maximum(lower - x, 0.0))),
+        float(np.max(np.maximum(x - upper, 0.0))),
+    )
 
 
 def _blocked(plugin_id: str, reasons: tuple[str, ...]) -> SolveResult:

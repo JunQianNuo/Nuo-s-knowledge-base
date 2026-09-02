@@ -42,3 +42,5 @@ Evidence providers are separate network-capable components governed by the evide
 ## Extension policy
 
 Load built-ins from a versioned allowlist. Load a personal extension only from an explicitly configured path or entry point with a validated manifest. Do not recursively scan the project or import unregistered Python files. Missing dependencies return `BLOCKED` with an exact list; never install them automatically.
+
+The personal manifest is closed-schema metadata: `plugin_id`, semantic `algorithm_version`, positive `api_version`/`schema_version`, `status`, `entrypoint`, dependency list, complete permission object, input/output/config field schemas, and `sha256:<digest>` of the entrypoint module source. Resolve both manifest and source below an explicit allowed root, verify the source hash, and only then consider a separate authorized import step. Unknown fields such as install commands are rejected rather than executed.

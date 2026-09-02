@@ -19,6 +19,7 @@ from mathmodel.contracts import (
 
 from .base import (
     AlgorithmMetadata,
+    FieldSpec,
     IOContract,
     PluginStatus,
     SupportDecision,
@@ -42,7 +43,18 @@ class ODESolverPlugin:
         validation_capabilities=frozenset({"solver_status", "monotone_time"}),
         deterministic=True,
         resource_tier=2,
-        io_contract=IOContract(),
+        io_contract=IOContract(
+            input_fields=(
+                FieldSpec("arrays", "y0", "state_vector"),
+                FieldSpec("arrays", "t_eval", "increasing_vector"),
+                FieldSpec("metadata", "rhs", "callable"),
+            ),
+            output_fields=(
+                FieldSpec("solution", "time", "increasing_vector"),
+                FieldSpec("solution", "state", "trajectory_matrix"),
+            ),
+            config_fields=(FieldSpec("config", "tolerance", "positive_number"),),
+        ),
         content_hash="builtin:mechanistic.solve-ivp:1.0.0",
     )
 
