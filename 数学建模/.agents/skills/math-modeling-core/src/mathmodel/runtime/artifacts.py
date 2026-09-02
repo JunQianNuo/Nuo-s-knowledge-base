@@ -54,6 +54,8 @@ class RunContext:
         results_root = (project_path / "results").resolve()
         if not run_root.is_relative_to(results_root) or run_root == results_root:
             raise ValueError("output must be inside project root results directory")
+        if run_root.exists():
+            raise ValueError(f"run output already exists: {run_root}")
         return cls(
             skill_root=Path(skill_root).resolve(),
             project_root=project_path,
@@ -67,7 +69,12 @@ class ArtifactStore:
         self.context = context
 
     def initialize(self) -> None:
-        self.context.run_root.mkdir(parents=True, exist_ok=True)
+        try:
+            self.context.run_root.mkdir(parents=True, exist_ok=False)
+        except FileExistsError as exc:
+            raise ValueError(
+                f"run output already exists: {self.context.run_root}"
+            ) from exc
         for directory in ARTIFACT_DIRECTORIES:
             (self.context.run_root / directory).mkdir(exist_ok=True)
 

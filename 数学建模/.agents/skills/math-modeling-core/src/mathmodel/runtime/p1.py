@@ -25,6 +25,7 @@ class P1Report:
     status: CheckStatus
     passed_checks: tuple[str, ...]
     reasons: tuple[str, ...]
+    structure_signature: str = "generic"
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,10 +34,12 @@ class _P1Case:
     oracle: Callable[[SolveResult], bool]
 
 
-def run_p1(plugin: AlgorithmPlugin) -> P1Report:
+def run_p1(
+    plugin: AlgorithmPlugin, *, user_data: DataBundle | None = None
+) -> P1Report:
     """Run a tiny known-answer case before exposing a plugin to full data."""
     plugin_id = plugin.metadata.plugin_id
-    case = _cases().get(plugin_id)
+    case, structure_signature = _select_case(plugin_id, user_data)
     if case is None:
         return P1Report(plugin_id, CheckStatus.BLOCKED, (), ("p1_case_missing",))
 
@@ -118,7 +121,92 @@ def run_p1(plugin: AlgorithmPlugin) -> P1Report:
             ("known_answer_mismatch",),
         )
     passed.append("known_answer")
-    return P1Report(plugin_id, CheckStatus.PASS, tuple(passed), ())
+    return P1Report(
+        plugin_id,
+        CheckStatus.PASS,
+        tuple(passed),
+        (),
+        structure_signature,
+    )
+
+
+def _select_case(
+    plugin_id: str, user_data: DataBundle | None
+) -> tuple[_P1Case | None, str]:
+    base = _cases().get(plugin_id)
+    if base is None or user_data is None:
+        return base, "generic"
+    if plugin_id == "optimization.nonlinear" and user_data.metadata.get(
+        "constraints"
+    ):
+        return (
+            _P1Case(
+                DataBundle(
+                    arrays={"x0": np.array([0.0])},
+                    metadata={
+                        "objective": lambda vector: vector[0] ** 2,
+                        "constraints": (
+                            {
+                                "type": "ineq",
+                                "fun": lambda vector: vector[0] - 1.0,
+                            },
+                        ),
+                    },
+                ),
+                lambda result: np.asarray(result.solution["x"])[0] >= 1.0 - 1e-7,
+            ),
+            "constrained_nonlinear",
+        )
+    if plugin_id == "optimization.mixed-integer-linear-programming" and all(
+        name in user_data.arrays for name in ("c", "integrality")
+    ):
+        return (
+            _P1Case(
+                DataBundle(
+                    arrays={
+                        "c": np.array([0.0, 1.0]),
+                        "integrality": np.array([1, 0]),
+                        "lower_bounds": np.array([0.0, 0.0]),
+                        "upper_bounds": np.array([1.0, 1.0]),
+                        "constraints": np.array([[0.0, 1.0]]),
+                        "constraint_lower": np.array([0.5]),
+                        "constraint_upper": np.array([np.inf]),
+                    }
+                ),
+                lambda result: np.allclose(result.solution["x"], [0.0, 0.5]),
+            ),
+            "mixed_integrality",
+        )
+    if plugin_id == "prediction.arima" and "order" in user_data.metadata:
+        order = tuple(int(item) for item in user_data.metadata["order"])
+        return (
+            _P1Case(
+                DataBundle(
+                    arrays={"series": np.linspace(1.0, 2.5, 24)},
+                    scalars={"horizon": 2},
+                    metadata={"order": order},
+                ),
+                lambda result: len(result.solution["forecast"]) == 2
+                and np.all(np.isfinite(result.solution["forecast"])),
+            ),
+            f"arima_order:{order}",
+        )
+    if plugin_id == "mechanistic.solve-ivp" and user_data.metadata.get("method"):
+        method = str(user_data.metadata["method"])
+        metadata = dict(base.data.metadata)
+        metadata["method"] = method
+        return (
+            _P1Case(
+                DataBundle(
+                    arrays=base.data.arrays,
+                    scalars=base.data.scalars,
+                    metadata=metadata,
+                ),
+                base.oracle,
+            ),
+            f"ode_method:{method}",
+        )
+    return base, "generic"
 
 
 def _cases() -> dict[str, _P1Case]:

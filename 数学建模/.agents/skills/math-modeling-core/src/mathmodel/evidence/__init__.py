@@ -16,6 +16,7 @@ from .retrieval import (
     EvidenceSnapshot,
     SearchBudget,
     retrieve_evidence,
+    replay_evidence,
 )
 
 __all__ = [
@@ -36,4 +37,5 @@ __all__ = [
     "normalize_doi",
     "normalize_title",
     "retrieve_evidence",
+    "replay_evidence",
 ]

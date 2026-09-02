@@ -200,7 +200,16 @@ def retrieve_evidence(
                 existing_index = len(records)
                 records.append(incoming)
             else:
+                previous_key = records[existing_index].record_key
                 records[existing_index] = _merge_records(records[existing_index], incoming)
+                merged_key = records[existing_index].record_key
+                if previous_key != merged_key:
+                    claims = [
+                        replace(claim, record_key=merged_key)
+                        if claim.record_key == previous_key
+                        else claim
+                        for claim in claims
+                    ]
             current = records[existing_index]
             record_indexes.setdefault(
                 f"title:{normalize_title(current.title)}", existing_index
@@ -219,6 +228,61 @@ def retrieve_evidence(
         network_events=tuple(events),
         evidence_revision=_sha256(revision_payload),
     )
+
+
+def replay_evidence(
+    snapshots: tuple[EvidenceSnapshot, ...] | list[EvidenceSnapshot],
+) -> EvidenceBundle:
+    """Rebuild a bundle from verified local snapshots without network access."""
+    normalized = tuple(snapshots)
+    if not normalized:
+        raise ValueError("at least one evidence snapshot is required")
+    access_dates = {item.accessed_at[:10] for item in normalized}
+    if len(access_dates) != 1:
+        raise ValueError("snapshot replay requires one evidence access date")
+    providers: dict[str, _SnapshotReplayProvider] = {}
+    for snapshot in normalized:
+        provider = providers.get(snapshot.provider)
+        if provider is None:
+            provider = _SnapshotReplayProvider(
+                snapshot.provider, snapshot.provider_version, {}
+            )
+            providers[snapshot.provider] = provider
+        elif provider.version != snapshot.provider_version:
+            raise ValueError("provider version changed within snapshot set")
+        provider.responses.setdefault(_request_key(snapshot.request), []).append(
+            snapshot.response
+        )
+    count = len(normalized)
+    replayed = retrieve_evidence(
+        tuple(item.request for item in normalized),
+        providers,
+        SearchBudget(initial_limit=max(1, count), hard_cap=max(1, count)),
+        accessed_on=date.fromisoformat(next(iter(access_dates))),
+        unresolved_critical=True,
+    )
+    expected_hashes = tuple(item.snapshot_hash for item in normalized)
+    actual_hashes = tuple(item.snapshot_hash for item in replayed.snapshots)
+    if actual_hashes != expected_hashes:
+        raise ValueError("snapshot replay hash mismatch")
+    return replayed
+
+
+@dataclass(slots=True)
+class _SnapshotReplayProvider:
+    name: str
+    version: str
+    responses: dict[str, list[ProviderResponse]]
+
+    def search(self, request: SearchRequest) -> ProviderResponse:
+        values = self.responses.get(_request_key(request), [])
+        if not values:
+            raise ValueError("snapshot response missing for request")
+        return values.pop(0)
+
+
+def _request_key(request: SearchRequest) -> str:
+    return _canonical_json(request.to_dict())
 
 
 def _record_from_raw(
@@ -260,6 +324,10 @@ def _merge_records(first: EvidenceRecord, second: EvidenceRecord) -> EvidenceRec
         left, right = getattr(first, name), getattr(second, name)
         if left is not None and right is not None and left != right:
             conflicts.append(f"conflicting_{name}:{right}")
+    first_authors = {item.casefold().strip() for item in first.authors}
+    second_authors = {item.casefold().strip() for item in second.authors}
+    if first_authors and second_authors and first_authors != second_authors:
+        conflicts.extend(f"conflicting_authors:{item}" for item in second.authors)
     sources = _unique((*first.sources, *second.sources))
     metadata_status = first.metadata_status
     if len(sources) >= 2 and not conflicts:
@@ -308,22 +376,21 @@ def _revision_payload(
 ) -> dict[str, Any]:
     normalized_snapshots = []
     for snapshot in snapshots:
-        identities = []
-        for raw in snapshot.response.records:
-            doi = normalize_doi(_optional_str(raw.get("doi")))
-            identity = (
-                f"doi:{doi}"
-                if doi
-                else f"title:{normalize_title(str(raw.get('title', '')))}"
-            )
-            identities.append(identity)
+        normalized_records = sorted(
+            (dict(raw) for raw in snapshot.response.records),
+            key=_canonical_json,
+        )
         normalized_snapshots.append(
             {
                 "provider": snapshot.provider,
                 "provider_version": snapshot.provider_version,
                 "request": snapshot.request.to_dict(),
                 "accessed_at": snapshot.accessed_at,
-                "record_identities": sorted(identities),
+                "response": {
+                    "records": normalized_records,
+                    "status_code": snapshot.response.status_code,
+                    "detail": snapshot.response.detail,
+                },
             }
         )
     normalized_snapshots.sort(
@@ -331,10 +398,48 @@ def _revision_payload(
     )
     return {
         "snapshots": normalized_snapshots,
-        "record_keys": sorted(record.record_key for record in records),
-        "claims": sorted(
-            (claim.claim_id, claim.record_key, claim.status.value) for claim in claims
+        "records": sorted(
+            (_record_revision_value(record) for record in records),
+            key=_canonical_json,
         ),
+        "claims": sorted(
+            (_claim_revision_value(claim) for claim in claims),
+            key=_canonical_json,
+        ),
+    }
+
+
+def _record_revision_value(record: EvidenceRecord) -> dict[str, Any]:
+    return {
+        "title": record.title,
+        "authors": record.authors,
+        "year": record.year,
+        "venue": record.venue,
+        "doi": record.doi,
+        "stable_id": record.stable_id,
+        "stable_identifiers": record.stable_identifiers,
+        "sources": record.sources,
+        "model": record.model,
+        "applicability": record.applicability,
+        "parameter_basis": record.parameter_basis,
+        "validation_methods": record.validation_methods,
+        "limitations": record.limitations,
+        "accessed_on": record.accessed_on.isoformat() if record.accessed_on else None,
+        "metadata_status": record.metadata_status.value,
+        "conflicts": record.conflicts,
+    }
+
+
+def _claim_revision_value(claim: EvidenceClaim) -> dict[str, Any]:
+    return {
+        "claim_id": claim.claim_id,
+        "claim_type": claim.claim_type,
+        "text": claim.text,
+        "record_key": claim.record_key,
+        "locator": claim.locator,
+        "applicability": claim.applicability,
+        "status": claim.status.value,
+        "contradiction": claim.contradiction,
     }
 
 

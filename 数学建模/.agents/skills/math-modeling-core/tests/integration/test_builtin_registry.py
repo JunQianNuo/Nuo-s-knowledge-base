@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from hashlib import sha256
+import inspect
+from pathlib import Path
+
 from mathmodel.algorithms import PluginStatus, create_builtin_registry
 from mathmodel.contracts import CheckStatus
 from mathmodel.runtime import run_p1
@@ -39,6 +43,8 @@ def test_builtin_registry_contains_exactly_fifteen_stable_audited_plugins() -> N
         assert metadata.io_contract.input_fields
         assert metadata.io_contract.output_fields
         assert metadata.io_contract.config_fields
+        source = Path(inspect.getfile(plugin.__class__))
+        assert metadata.content_hash == f"sha256:{sha256(source.read_bytes()).hexdigest()}"
 
 
 def test_every_builtin_plugin_passes_its_known_answer_p1_case() -> None:

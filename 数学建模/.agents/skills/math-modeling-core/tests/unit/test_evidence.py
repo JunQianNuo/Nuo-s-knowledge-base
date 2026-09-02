@@ -15,6 +15,7 @@ from mathmodel.evidence import (
     SearchRequest,
     VerificationStatus,
     retrieve_evidence,
+    replay_evidence,
 )
 
 
@@ -30,6 +31,10 @@ class FakeProvider:
         if isinstance(response, Exception):
             raise response
         return response
+
+
+class OtherFakeProvider(FakeProvider):
+    name = "other"
 
 
 def request(page: int = 1, provider: str = "fake") -> SearchRequest:
@@ -197,6 +202,36 @@ def test_retrieval_extracts_claims_without_promoting_them_from_record_metadata()
     assert bundle.claims[0].status is VerificationStatus.UNVERIFIED
 
 
+def test_claim_key_follows_record_when_later_source_adds_doi() -> None:
+    without_doi = raw_record("Same Work", stable_id="first")
+    without_doi["claims"] = [
+        {
+            "claim_id": "claim-before-doi",
+            "claim_type": "definition",
+            "text": "A declared definition",
+            "status": "PARTIAL",
+        }
+    ]
+    with_doi = raw_record("same-work", doi="10.1000/same", stable_id="second")
+    provider = FakeProvider(
+        {
+            1: ProviderResponse(records=(without_doi,)),
+            2: ProviderResponse(records=(with_doi,)),
+        }
+    )
+
+    bundle = retrieve_evidence(
+        (request(1), request(2)),
+        {"fake": provider},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    assert len(bundle.records) == 1
+    assert bundle.records[0].record_key == "doi:10.1000/same"
+    assert bundle.claims[0].record_key == bundle.records[0].record_key
+
+
 def test_snapshot_hash_is_canonical_and_replay_preserves_response_order() -> None:
     response = ProviderResponse(
         records=(raw_record("First", stable_id="1"), raw_record("Second", stable_id="2"))
@@ -215,6 +250,24 @@ def test_snapshot_hash_is_canonical_and_replay_preserves_response_order() -> Non
     changed = replace(snapshot, snapshot_hash="bad")
     with pytest.raises(ValueError, match="snapshot hash mismatch"):
         EvidenceSnapshot.from_json(changed.to_json())
+
+
+def test_snapshot_replay_reconstructs_the_same_evidence_revision_without_network() -> None:
+    response = ProviderResponse(
+        records=(raw_record("Replay Work", doi="10.1000/replay", stable_id="r"),)
+    )
+    original = retrieve_evidence(
+        (request(),),
+        {"fake": FakeProvider({1: response})},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    replayed = replay_evidence(original.snapshots)
+
+    assert replayed.evidence_revision == original.evidence_revision
+    assert replayed.records == original.records
+    assert replayed.snapshots[0].snapshot_hash == original.snapshots[0].snapshot_hash
 
 
 def test_evidence_revision_is_stable_when_provider_order_changes() -> None:
@@ -237,6 +290,55 @@ def test_evidence_revision_is_stable_when_provider_order_changes() -> None:
     )
 
     assert first_bundle.evidence_revision == second_bundle.evidence_revision
+
+
+def test_evidence_revision_changes_when_claim_content_changes() -> None:
+    def response(text: str) -> ProviderResponse:
+        raw = raw_record("Claim Revision", doi="10.1000/revision", stable_id="r")
+        raw["claims"] = [
+            {
+                "claim_id": "revision-claim",
+                "claim_type": "mechanism",
+                "text": text,
+                "locator": "p. 3",
+                "applicability": ["declared scale"],
+                "status": "PARTIAL",
+            }
+        ]
+        return ProviderResponse(records=(raw,))
+
+    first = retrieve_evidence(
+        (request(),),
+        {"fake": FakeProvider({1: response("first wording")})},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+    second = retrieve_evidence(
+        (request(),),
+        {"fake": FakeProvider({1: response("materially changed wording")})},
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    assert first.evidence_revision != second.evidence_revision
+
+
+def test_conflicting_authors_prevent_cross_provider_metadata_verification() -> None:
+    first = raw_record("Author Conflict", doi="10.1000/authors", stable_id="a")
+    second = raw_record("author-conflict", doi="10.1000/authors", stable_id="b")
+    second["authors"] = ["Different Author"]
+    bundle = retrieve_evidence(
+        (request(provider="fake"), request(provider="other")),
+        {
+            "fake": FakeProvider({1: ProviderResponse(records=(first,))}),
+            "other": OtherFakeProvider({1: ProviderResponse(records=(second,))}),
+        },
+        SearchBudget(),
+        accessed_on=date(2026, 9, 1),
+    )
+
+    assert bundle.records[0].metadata_status is VerificationStatus.PARTIAL
+    assert "conflicting_authors:Different Author" in bundle.records[0].conflicts
 
 
 @pytest.mark.parametrize(

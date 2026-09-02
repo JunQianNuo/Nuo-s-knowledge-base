@@ -65,9 +65,12 @@ class ProblemSpec:
         object.__setattr__(self, "variables", tuple(self.variables))
         object.__setattr__(self, "mechanisms", tuple(self.mechanisms))
         object.__setattr__(self, "business_rules", tuple(self.business_rules))
-        variable_keys = [(item.name.casefold(), item.symbol.casefold()) for item in self.variables]
-        if len(variable_keys) != len(set(variable_keys)):
-            raise ValueError("problem variables must have unique name/symbol pairs")
+        variable_names = [item.name.casefold() for item in self.variables]
+        variable_symbols = [item.symbol.casefold() for item in self.variables]
+        if len(variable_names) != len(set(variable_names)) or len(
+            variable_symbols
+        ) != len(set(variable_symbols)):
+            raise ValueError("problem variables require unique variable names and symbols")
         ineligible_variables = [item.name for item in self.variables if not item.freeze_eligible]
         if ineligible_variables:
             raise ValueError(

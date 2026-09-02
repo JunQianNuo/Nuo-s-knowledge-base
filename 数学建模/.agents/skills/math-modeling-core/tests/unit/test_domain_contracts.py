@@ -119,3 +119,41 @@ def test_problem_spec_refuses_unverified_rule_as_frozen_hard_constraint() -> Non
             mandatory_outputs=("decision",),
             business_rules=(rule,),
         )
+
+
+@pytest.mark.parametrize(
+    "second",
+    [
+        {"name": "traffic density", "symbol": "rho"},
+        {"name": "vehicle concentration", "symbol": "k"},
+    ],
+)
+def test_problem_variables_require_unique_names_and_symbols(
+    second: dict[str, str],
+) -> None:
+    def variable(name: str, symbol: str) -> VariableSpec:
+        return VariableSpec(
+            name=name,
+            symbol=symbol,
+            definition="a measured traffic state",
+            role=VariableRole.STATE,
+            data_type="continuous",
+            unit="veh/km",
+            measurement="verified sensor field",
+            observable=True,
+            data_available=True,
+            identifiable=True,
+            evidence_claims=("claim-variable",),
+            evidence_status=EvidenceStatus.VERIFIED,
+        )
+
+    with pytest.raises(ValueError, match="unique variable names and symbols"):
+        ProblemSpec(
+            problem_id="p",
+            model_family="traffic",
+            mandatory_outputs=("state",),
+            variables=(
+                variable("traffic density", "k"),
+                variable(second["name"], second["symbol"]),
+            ),
+        )

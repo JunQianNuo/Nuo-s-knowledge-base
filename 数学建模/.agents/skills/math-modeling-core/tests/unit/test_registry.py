@@ -218,3 +218,14 @@ def test_io_contract_validates_config_and_output_kinds() -> None:
     assert contract.validate_output(invalid_result) == (
         "invalid_output:solution.value:number",
     )
+
+
+@pytest.mark.parametrize("invalid", [["oops"], [[1.0], [1.0, 2.0]], [1.0, np.nan]])
+def test_numeric_vector_contract_rejects_nonnumeric_ragged_or_nonfinite_values(
+    invalid: object,
+) -> None:
+    contract = IOContract(input_fields=(FieldSpec("arrays", "c", "vector"),))
+
+    assert contract.validate_inputs(DataBundle(arrays={"c": invalid})) == (
+        "invalid_input:arrays.c:vector",
+    )

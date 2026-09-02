@@ -133,7 +133,20 @@ def _matches_kind(value: Any, kind: str) -> bool:
             return False
         return True
     if kind in {"weighted_adjacency", "capacity_adjacency", "flow_adjacency"}:
-        return isinstance(value, Mapping)
+        if not isinstance(value, Mapping):
+            return False
+        try:
+            weights = [
+                float(weight)
+                for row in value.values()
+                for weight in row.values()
+                if isinstance(row, Mapping)
+            ]
+        except (TypeError, ValueError):
+            return False
+        return all(isinstance(row, Mapping) for row in value.values()) and bool(
+            np.all(np.isfinite(weights))
+        )
     if kind == "arima_order":
         return (
             isinstance(value, (tuple, list))
@@ -147,7 +160,10 @@ def _matches_kind(value: Any, kind: str) -> bool:
     if kind in {"node_sequence", "index_sequence"}:
         return isinstance(value, Sequence) and not isinstance(value, (str, bytes))
 
-    array = np.asarray(value)
+    try:
+        array = np.asarray(value)
+    except (TypeError, ValueError):
+        return False
     vector_kinds = {
         "vector",
         "probability_vector",
@@ -169,21 +185,35 @@ def _matches_kind(value: Any, kind: str) -> bool:
     if kind in vector_kinds:
         if array.ndim != 1:
             return False
-        if kind == "probability_vector":
+        if kind == "target_vector":
+            if np.issubdtype(array.dtype, np.number):
+                return bool(np.all(np.isfinite(array.astype(float))))
+            return bool(all(item is not None and str(item) != "" for item in array))
+        try:
             numeric = np.asarray(value, dtype=float)
+        except (TypeError, ValueError):
+            return False
+        if not np.all(np.isfinite(numeric)):
+            return False
+        if kind == "probability_vector":
             return bool(np.all(numeric >= 0) and np.isclose(numeric.sum(), 1.0))
         if kind == "bounded_vector":
-            numeric = np.asarray(value, dtype=float)
             return bool(np.all((numeric >= 0) & (numeric <= 1)))
         if kind == "increasing_vector":
-            numeric = np.asarray(value, dtype=float)
             return bool(numeric.size > 0 and np.all(np.diff(numeric) > 0))
+        if kind == "ordered_vector":
+            return bool(np.all(np.diff(numeric) <= 0))
         return True
     if kind in matrix_kinds:
         if array.ndim != 2:
             return False
-        if kind == "positive_square_matrix":
+        try:
             numeric = np.asarray(value, dtype=float)
+        except (TypeError, ValueError):
+            return False
+        if not np.all(np.isfinite(numeric)):
+            return False
+        if kind == "positive_square_matrix":
             return bool(
                 numeric.shape[0] == numeric.shape[1] and np.all(numeric > 0)
             )

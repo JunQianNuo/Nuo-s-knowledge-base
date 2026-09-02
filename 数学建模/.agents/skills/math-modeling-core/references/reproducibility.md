@@ -33,6 +33,7 @@ Use canonical JSON and SHA-256. Identical declared inputs and timestamps must pr
 - surface environment/version differences;
 - preserve all rejected candidates and warnings;
 - create a new run for refreshed evidence or changed assumptions.
+- never reuse an existing run directory; replay commands omit `--output` so they create a new immutable run instead of replacing the source run.
 
 Review mode recomputes `manifest_hash` after removing the declared hash field. A changed status, artifact reference, input, or environment declaration therefore fails review instead of being accepted as prose.
 

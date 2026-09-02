@@ -1,3 +1,8 @@
+from dataclasses import replace
+from hashlib import sha256
+import inspect
+from pathlib import Path
+
 from .base import (
     AlgorithmMetadata,
     AlgorithmPlugin,
@@ -30,25 +35,30 @@ from .statistics import PCAPlugin
 
 def create_builtin_registry() -> AlgorithmRegistry:
     """Return the audited, versioned built-in plugin allowlist."""
-    return AlgorithmRegistry(
-        (
-            LinearProgrammingPlugin(),
-            MixedIntegerLinearProgrammingPlugin(),
-            NonlinearOptimizationPlugin(),
-            DijkstraPlugin(),
-            MaxFlowPlugin(),
-            AHPPlugin(),
-            EntropyWeightPlugin(),
-            TOPSISPlugin(),
-            LinearRegressionPlugin(),
-            RidgeRegressionPlugin(),
-            ARIMAPlugin(),
-            PCAPlugin(),
-            RandomForestPlugin(),
-            ODESolverPlugin(),
-            MonteCarloPlugin(),
-        )
+    plugins = (
+        LinearProgrammingPlugin(),
+        MixedIntegerLinearProgrammingPlugin(),
+        NonlinearOptimizationPlugin(),
+        DijkstraPlugin(),
+        MaxFlowPlugin(),
+        AHPPlugin(),
+        EntropyWeightPlugin(),
+        TOPSISPlugin(),
+        LinearRegressionPlugin(),
+        RidgeRegressionPlugin(),
+        ARIMAPlugin(),
+        PCAPlugin(),
+        RandomForestPlugin(),
+        ODESolverPlugin(),
+        MonteCarloPlugin(),
     )
+    for plugin in plugins:
+        source = Path(inspect.getfile(plugin.__class__)).resolve()
+        plugin.metadata = replace(
+            plugin.metadata,
+            content_hash=f"sha256:{sha256(source.read_bytes()).hexdigest()}",
+        )
+    return AlgorithmRegistry(plugins)
 
 __all__ = [
     "AlgorithmMetadata",

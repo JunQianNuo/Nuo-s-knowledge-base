@@ -37,6 +37,8 @@ Knowledge templates and unaudited upstream code are examples only. They cannot b
 
 Default permissions allow declared input/reference reads and writes only inside the active run artifacts. Network, secrets, arbitrary subprocesses, dynamic installation, and dynamic `eval/exec` are denied. An external solver requires `subprocess=true` and an executable allowlist; pass arguments as an array, never a shell string.
 
+The Python permission check is a fail-closed preflight for the audited built-ins, not an operating-system sandbox. Stable in-process plugins remain trusted code and must be source-reviewed/content-addressed. Do not execute a personal extension merely because its manifest validates; loading it requires a separate explicit authorization and a process/container isolation mechanism if the code is not trusted. The v1 loader validates metadata and source integrity only and deliberately does not import or register extension code.
+
 Evidence providers are separate network-capable components governed by the evidence budget. They cannot write the algorithm directory or read secrets.
 
 ## Extension policy

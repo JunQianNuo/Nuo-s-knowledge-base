@@ -23,9 +23,9 @@ Check only dependencies declared by the selected plugin and project contract. Re
 Use `python scripts/doctor.py --profile <core|optimization|forecasting|ml|all>` for diagnostics. The public runner is:
 
 ```text
-python scripts/run_model.py --project-root <absolute-path> --problem <problem.yaml> [--data <data.yaml>] --mode <analyze|solve|review|evidence> [--review-artifact <manifest.json>] [--output results/<run_id>] [--refresh-evidence]
+python scripts/run_model.py --project-root <absolute-path> --problem <problem.yaml> [--data <data.yaml>] --mode <analyze|solve|review|evidence> [--review-artifact <manifest.json>] [--evidence-snapshot <snapshot.json>] [--output results/<run_id>] [--refresh-evidence]
 ```
 
-`analyze` writes a domain-freeze audit; `evidence` creates four E0 query tracks plus one E1 track and performs network retrieval only when `--refresh-evidence` is explicit; `review` requires `--review-artifact` and verifies its manifest hash. `solve` selects through the audited registry and records a passing known-answer P1 report before touching the full instance.
+`analyze` writes a domain-freeze audit and, when `model_requirements` plus `model_candidates` are declared, executes the seven adequacy gates and minimum-sufficient selector. `evidence` creates four E0 query tracks plus one E1 track, replays verified `--evidence-snapshot` inputs without network, and performs live retrieval only when `--refresh-evidence` is explicit. `review` requires `--review-artifact` and verifies the manifest, input hashes, and bound artifact hashes. `solve` consumes the frozen model decision, selects the algorithm through the audited registry, and records a structure-aware known-answer P1 report before touching the full instance. If no candidate set is embedded, the model decision is recorded as externally frozen/`SKIPPED`, not invented by the runtime.
 
 Exit codes: `0` success; `2` input/schema error; `3` dependency/permission/support blocked; `4` solver or critical validation failure; `5` unexpected internal error. Persist diagnostics whenever a run directory can safely be created.

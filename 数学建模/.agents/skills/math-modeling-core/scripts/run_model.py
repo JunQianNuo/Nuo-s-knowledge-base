@@ -16,18 +16,23 @@ from mathmodel.algorithms import create_builtin_registry  # noqa: E402
 from mathmodel.contracts import (  # noqa: E402
     BusinessRuleSpec,
     CheckStatus,
+    ComplexityProfile,
     ConstraintKind,
     DataBundle,
     DomainContext,
     EvidenceStatus,
     MechanismKind,
     MechanismSpec,
+    GapClosureClaim,
+    ModelCandidate,
+    ModelRequirements,
     ProblemSpec,
     RunStatus,
     SolveConfig,
     VariableRole,
     VariableSpec,
 )
+from mathmodel.reasoning import select_models  # noqa: E402
 from mathmodel.runtime import (  # noqa: E402
     ArtifactStore,
     CapabilityPolicy,
@@ -39,11 +44,13 @@ from mathmodel.runtime import (  # noqa: E402
     verify_manifest,
 )
 from mathmodel.evidence import (  # noqa: E402
+    EvidenceSnapshot,
     OpenAlexProvider,
     SearchBudget,
     SearchRequest,
     SemanticScholarProvider,
     retrieve_evidence,
+    replay_evidence,
 )
 
 
@@ -59,6 +66,7 @@ def parser() -> argparse.ArgumentParser:
     )
     value.add_argument("--output")
     value.add_argument("--refresh-evidence", action="store_true")
+    value.add_argument("--evidence-snapshot", action="append", default=[])
     value.add_argument("--review-artifact")
     return value
 
@@ -75,6 +83,9 @@ def main(argv: list[str] | None = None) -> int:
     review_artifact_path = (
         Path(arguments.review_artifact).resolve() if arguments.review_artifact else None
     )
+    evidence_snapshot_paths = tuple(
+        Path(item).resolve() for item in arguments.evidence_snapshot
+    )
     try:
         problem_raw = _load_mapping(problem_path)
         problem = _problem_spec(problem_raw)
@@ -83,7 +94,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"invalid problem schema: {exc}", file=sys.stderr)
         return 2
 
-    output = arguments.output or _default_output(problem_path, data_path)
+    output = arguments.output or _default_output(
+        problem_path, data_path, review_artifact_path
+    )
     try:
         context = RunContext.create(
             skill_root=SKILL_ROOT,
@@ -94,7 +107,11 @@ def main(argv: list[str] | None = None) -> int:
         print(str(exc), file=sys.stderr)
         return 2
     store = ArtifactStore(context)
-    store.initialize()
+    try:
+        store.initialize()
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
     created_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace(
         "+00:00", "Z"
     )
@@ -103,6 +120,9 @@ def main(argv: list[str] | None = None) -> int:
         input_hashes["data"] = _file_hash(data_path)
     if review_artifact_path and review_artifact_path.is_file():
         input_hashes["review_artifact"] = _file_hash(review_artifact_path)
+    for index, snapshot_path in enumerate(evidence_snapshot_paths):
+        if snapshot_path.is_file():
+            input_hashes[f"evidence_snapshot_{index}"] = _file_hash(snapshot_path)
 
     config = SolveConfig()
     try:
@@ -115,6 +135,7 @@ def main(argv: list[str] | None = None) -> int:
                     problem_raw=problem_raw,
                     store=store,
                     context=context,
+                    snapshot_paths=evidence_snapshot_paths,
                 )
             )
             manifest = build_manifest(
@@ -130,11 +151,55 @@ def main(argv: list[str] | None = None) -> int:
                 problem_path=problem_path,
                 data_path=data_path,
                 review_artifact=review_artifact_path,
-                evidence_refreshed=arguments.refresh_evidence,
+                evidence_snapshots=evidence_snapshot_paths,
+                evidence_refreshed=(
+                    bool(arguments.refresh_evidence) and evidence_revision is not None
+                ),
                 artifacts=artifacts,
             )
             store.write_json("manifest.json", manifest)
             return exit_code
+
+        model_selection = _model_selection_from_raw(problem_raw)
+        if model_selection is None:
+            model_selection_value = {
+                "status": CheckStatus.SKIPPED,
+                "source": "externally_frozen_problem_spec",
+                "model_family": problem.model_family,
+                "reason": "no_candidate_set_declared",
+            }
+        else:
+            model_selection_value = _selection_value(model_selection)
+        store.write_json("selection/model.json", model_selection_value)
+        if model_selection is not None and (
+            model_selection.status is not CheckStatus.PASS
+            or model_selection.main is None
+            or model_selection.main.model_family != problem.model_family
+        ):
+            store.write_json(
+                "diagnostics.json",
+                {
+                    "reason": "model_selection_not_passed",
+                    "selection": model_selection_value,
+                },
+            )
+            manifest = build_manifest(
+                    context=context,
+                    snapshot_paths=evidence_snapshot_paths,
+                problem=problem,
+                plugin=None,
+                config=config,
+                input_hashes=input_hashes,
+                validation_status=CheckStatus.BLOCKED,
+                evidence_revision=None,
+                created_at=created_at,
+                mode="solve",
+                problem_path=problem_path,
+                data_path=data_path,
+                artifacts=("selection/model.json", "diagnostics.json"),
+            )
+            store.write_json("manifest.json", manifest)
+            return 3
 
         registry = create_builtin_registry()
         declared_dependencies = frozenset(
@@ -182,7 +247,11 @@ def main(argv: list[str] | None = None) -> int:
                 mode="solve",
                 problem_path=problem_path,
                 data_path=data_path,
-                artifacts=("selection/algorithm.json", "diagnostics.json"),
+                artifacts=(
+                    "selection/model.json",
+                    "selection/algorithm.json",
+                    "diagnostics.json",
+                ),
             )
             store.write_json("manifest.json", manifest)
             print(
@@ -191,7 +260,7 @@ def main(argv: list[str] | None = None) -> int:
             )
             return 3
 
-        p1_report = run_p1(plugin)
+        p1_report = run_p1(plugin, user_data=data)
         store.write_json("selection/p1.json", p1_report)
         if p1_report.status is not CheckStatus.PASS:
             store.write_json(
@@ -216,6 +285,7 @@ def main(argv: list[str] | None = None) -> int:
                 data_path=data_path,
                 artifacts=(
                     "selection/algorithm.json",
+                    "selection/model.json",
                     "selection/p1.json",
                     "diagnostics.json",
                 ),
@@ -281,8 +351,10 @@ def main(argv: list[str] | None = None) -> int:
             data_path=data_path,
             artifacts=(
                 "selection/algorithm.json",
+                "selection/model.json",
                 "selection/p1.json",
                 "solve/result.json" if outcome.result is not None else "diagnostics.json",
+                "diagnostics.json",
             ),
         )
         store.write_json("manifest.json", manifest)
@@ -304,15 +376,17 @@ def _run_non_solve_mode(
     problem_raw: Mapping[str, Any],
     store: ArtifactStore,
     context: RunContext,
+    snapshot_paths: tuple[Path, ...],
 ) -> tuple[int, CheckStatus, str | None, tuple[str, ...]]:
     if mode == "analyze":
-        return _run_analyze(problem, store)
+        return _run_analyze(problem, problem_raw, store)
     if mode == "evidence":
         return _run_evidence(
             problem,
             problem_raw,
             store,
             refresh=bool(arguments.refresh_evidence),
+            snapshot_paths=snapshot_paths,
         )
     if mode == "review":
         return _run_review(arguments.review_artifact, store, context)
@@ -320,7 +394,7 @@ def _run_non_solve_mode(
 
 
 def _run_analyze(
-    problem: ProblemSpec, store: ArtifactStore
+    problem: ProblemSpec, problem_raw: Mapping[str, Any], store: ArtifactStore
 ) -> tuple[int, CheckStatus, None, tuple[str, ...]]:
     reasons: list[str] = []
     if problem.domain_context is None:
@@ -330,6 +404,17 @@ def _run_analyze(
             f"unresolved_ambiguity:{item}"
             for item in problem.domain_context.unresolved_ambiguities
         )
+    selection = _model_selection_from_raw(problem_raw)
+    selection_artifact: tuple[str, ...] = ()
+    if selection is None:
+        reasons.append("model_selection_inputs_missing")
+    else:
+        store.write_json("selection/model.json", _selection_value(selection))
+        selection_artifact = ("selection/model.json",)
+        if selection.status is not CheckStatus.PASS or selection.main is None:
+            reasons.append("model_selection_blocked")
+        elif selection.main.model_family != problem.model_family:
+            reasons.append("selected_model_family_mismatch")
     status = CheckStatus.BLOCKED if reasons else CheckStatus.PASS
     audit = {
         "status": status.value,
@@ -349,7 +434,10 @@ def _run_analyze(
             "model_family": problem.model_family,
             "mandatory_outputs": problem.mandatory_outputs,
             "required_capabilities": problem.required_capabilities,
-            "ready_for_model_selection": status is CheckStatus.PASS,
+            "ready_for_model_selection": not any(
+                reason.startswith("domain_") or reason.startswith("unresolved_")
+                for reason in reasons
+            ),
         },
     )
     store.write_json(
@@ -360,8 +448,128 @@ def _run_analyze(
         3 if status is CheckStatus.BLOCKED else 0,
         status,
         None,
-        ("domain/audit.json", "selection/model-readiness.json", "diagnostics.json"),
+        (
+            "domain/audit.json",
+            "selection/model-readiness.json",
+            *selection_artifact,
+            "diagnostics.json",
+        ),
     )
+
+
+def _model_selection_from_raw(problem_raw: Mapping[str, Any]):
+    raw_requirements = problem_raw.get("model_requirements")
+    raw_candidates = problem_raw.get("model_candidates")
+    if raw_requirements is None and raw_candidates is None:
+        return None
+    if not isinstance(raw_requirements, Mapping) or not isinstance(
+        raw_candidates, (tuple, list)
+    ):
+        raise ValueError(
+            "model_requirements mapping and model_candidates list are both required"
+        )
+    requirements = ModelRequirements(
+        mandatory_capabilities=frozenset(
+            str(item) for item in raw_requirements["mandatory_capabilities"]
+        ),
+        mandatory_outputs=frozenset(
+            str(item) for item in raw_requirements.get("mandatory_outputs", ())
+        ),
+        structural_features=frozenset(
+            str(item) for item in raw_requirements.get("structural_features", ())
+        ),
+        hard_constraints=tuple(
+            str(item) for item in raw_requirements.get("hard_constraints", ())
+        ),
+        available_fields=frozenset(
+            str(item) for item in raw_requirements.get("available_fields", ())
+        ),
+    )
+    candidates = tuple(_model_candidate(item) for item in raw_candidates)
+    if not candidates:
+        raise ValueError("model_candidates must not be empty")
+    return select_models(requirements, candidates)
+
+
+def _model_candidate(value: Mapping[str, Any]) -> ModelCandidate:
+    complexity_value = value.get("complexity", {})
+    if not isinstance(complexity_value, Mapping):
+        raise ValueError("candidate complexity must be a mapping")
+    gap_value = value.get("gap_closure")
+    gap = None
+    if gap_value is not None:
+        if not isinstance(gap_value, Mapping):
+            raise ValueError("gap_closure must be a mapping")
+        gap = GapClosureClaim(
+            baseline_model=str(gap_value["baseline_model"]),
+            addresses_gap=str(gap_value["addresses_gap"]),
+            expected_gain=str(gap_value["expected_gain"]),
+            validation_test=str(gap_value["validation_test"]),
+            minimum_practical_improvement=gap_value.get(
+                "minimum_practical_improvement"
+            ),
+            added_variables=tuple(
+                str(item) for item in gap_value.get("added_variables", ())
+            ),
+            added_assumptions=tuple(
+                str(item) for item in gap_value.get("added_assumptions", ())
+            ),
+            added_data=tuple(str(item) for item in gap_value.get("added_data", ())),
+        )
+    complexity = ComplexityProfile(
+        **{
+            name: int(complexity_value.get(name, 0))
+            for name in (
+                "additional_data_fields",
+                "latent_parameters",
+                "unverified_critical_assumptions",
+                "model_dimension_tier",
+                "time_tier",
+                "memory_tier",
+            )
+        }
+    )
+    return ModelCandidate(
+        candidate_id=str(value["candidate_id"]),
+        model_family=str(value["model_family"]),
+        capabilities=frozenset(str(item) for item in value.get("capabilities", ())),
+        covered_outputs=frozenset(
+            str(item) for item in value.get("covered_outputs", ())
+        ),
+        structural_features=frozenset(
+            str(item) for item in value.get("structural_features", ())
+        ),
+        required_data=frozenset(
+            str(item) for item in value.get("required_data", ())
+        ),
+        constraints_supported=_optional_bool(
+            value.get("constraints_supported", True), "constraints_supported"
+        ),
+        assumptions_verified=_optional_bool(
+            value.get("assumptions_verified", True), "assumptions_verified"
+        ),
+        identifiable=_optional_bool(value.get("identifiable", True), "identifiable"),
+        validation_path=_optional_bool(
+            value.get("validation_path", True), "validation_path"
+        ),
+        complexity=complexity,
+        gap_closure=gap,
+        structurally_independent=_strict_bool(
+            value.get("structurally_independent", False),
+            "structurally_independent",
+        ),
+        evidence_count=int(value.get("evidence_count", 0)),
+    )
+
+
+def _selection_value(decision: Any) -> dict[str, Any]:
+    return {
+        "status": decision.status,
+        "main": decision.main,
+        "challenger": decision.challenger,
+        "rejected": dict(decision.rejected),
+        "assessments": decision.assessments,
+    }
 
 
 def _run_evidence(
@@ -370,6 +578,7 @@ def _run_evidence(
     store: ArtifactStore,
     *,
     refresh: bool,
+    snapshot_paths: tuple[Path, ...],
 ) -> tuple[int, CheckStatus, str | None, tuple[str, ...]]:
     raw_requests = problem_raw.get("evidence_requests")
     if raw_requests is None:
@@ -432,6 +641,44 @@ def _run_evidence(
             "refresh_requested": refresh,
         },
     )
+    if not refresh and snapshot_paths:
+        snapshots: list[EvidenceSnapshot] = []
+        for snapshot_path in snapshot_paths:
+            if not snapshot_path.is_relative_to(store.context.project_root):
+                raise ValueError("evidence snapshot is outside project root")
+            snapshots.append(
+                EvidenceSnapshot.from_json(snapshot_path.read_text(encoding="utf-8"))
+            )
+        bundle = replay_evidence(snapshots)
+        store.write_json("evidence/bundle.json", bundle)
+        snapshot_artifacts: list[str] = []
+        for snapshot in bundle.snapshots:
+            relative_name = f"evidence/snapshots/{snapshot.snapshot_hash}.json"
+            store.write_json(relative_name, json.loads(snapshot.to_json()))
+            snapshot_artifacts.append(relative_name)
+        status = CheckStatus.PASS if bundle.claims else CheckStatus.WARN
+        store.write_json(
+            "diagnostics.json",
+            {
+                "mode": "evidence",
+                "solver_executed": False,
+                "evidence_action": "snapshot_replay",
+                "record_count": len(bundle.records),
+                "claim_count": len(bundle.claims),
+                "claim_extraction_required": not bundle.claims,
+            },
+        )
+        return (
+            0,
+            status,
+            bundle.evidence_revision,
+            (
+                "evidence/query-plan.json",
+                "evidence/bundle.json",
+                *snapshot_artifacts,
+                "diagnostics.json",
+            ),
+        )
     if not refresh:
         store.write_json(
             "diagnostics.json",
@@ -482,16 +729,19 @@ def _run_evidence(
         unresolved_critical=unresolved_critical,
     )
     store.write_json("evidence/bundle.json", bundle)
+    snapshot_artifacts: list[str] = []
     for snapshot in bundle.snapshots:
+        relative_name = f"evidence/snapshots/{snapshot.snapshot_hash}.json"
         store.write_json(
-            f"evidence/snapshots/{snapshot.snapshot_hash}.json",
+            relative_name,
             json.loads(snapshot.to_json()),
         )
+        snapshot_artifacts.append(relative_name)
     event_statuses = tuple(event.status for event in bundle.network_events)
     if not bundle.records:
         status = CheckStatus.BLOCKED
         exit_code = 3
-    elif any(value != "ok" for value in event_statuses):
+    elif not bundle.claims or any(value != "ok" for value in event_statuses):
         status = CheckStatus.WARN
         exit_code = 0
     else:
@@ -505,6 +755,7 @@ def _run_evidence(
             "evidence_action": "network_refresh",
             "record_count": len(bundle.records),
             "claim_count": len(bundle.claims),
+            "claim_extraction_required": not bundle.claims,
             "network_statuses": event_statuses,
         },
     )
@@ -512,7 +763,12 @@ def _run_evidence(
         exit_code,
         status,
         bundle.evidence_revision,
-        ("evidence/query-plan.json", "evidence/bundle.json", "diagnostics.json"),
+        (
+            "evidence/query-plan.json",
+            "evidence/bundle.json",
+            *snapshot_artifacts,
+            "diagnostics.json",
+        ),
     )
 
 
@@ -539,11 +795,18 @@ def _run_review(
         exit_code = 3
     else:
         reviewed = _load_mapping(artifact_path)
-        valid = verify_manifest(reviewed)
+        manifest_valid = verify_manifest(reviewed)
+        integrity_reasons = (
+            _referenced_hash_reasons(reviewed, artifact_path)
+            if manifest_valid
+            else ["manifest_hash_mismatch"]
+        )
+        valid = manifest_valid and not integrity_reasons
         report = {
             "artifact": str(artifact_path),
-            "manifest_hash_valid": valid,
-            "reasons": [] if valid else ["manifest_hash_mismatch"],
+            "manifest_hash_valid": manifest_valid,
+            "referenced_hashes_valid": not integrity_reasons,
+            "reasons": integrity_reasons,
             "status": "PASS" if valid else "FAIL",
         }
         status = CheckStatus.PASS if valid else CheckStatus.FAIL
@@ -556,6 +819,41 @@ def _run_review(
         "validation/review.json",
         "diagnostics.json",
     )
+
+
+def _referenced_hash_reasons(
+    manifest: Mapping[str, Any], manifest_path: Path
+) -> list[str]:
+    reasons: list[str] = []
+    artifacts = manifest.get("artifacts", {})
+    if not isinstance(artifacts, Mapping):
+        return ["invalid_artifact_hash_map"]
+    run_root = manifest_path.parent.resolve()
+    for relative_name, expected in artifacts.items():
+        relative_path = Path(str(relative_name))
+        candidate = (run_root / relative_path).resolve()
+        if relative_path.is_absolute() or not candidate.is_relative_to(run_root):
+            reasons.append(f"artifact_path_invalid:{relative_name}")
+        elif not candidate.is_file():
+            reasons.append(f"artifact_missing:{relative_name}")
+        elif _file_hash(candidate) != str(expected):
+            reasons.append(f"artifact_hash_mismatch:{relative_name}")
+
+    inputs = manifest.get("inputs", {})
+    if not isinstance(inputs, Mapping):
+        reasons.append("invalid_input_hash_map")
+        return reasons
+    for name, declaration in inputs.items():
+        if not isinstance(declaration, Mapping):
+            reasons.append(f"input_declaration_invalid:{name}")
+            continue
+        candidate = Path(str(declaration.get("path", ""))).resolve()
+        expected = str(declaration.get("sha256", ""))
+        if not candidate.is_file():
+            reasons.append(f"input_missing:{name}")
+        elif _file_hash(candidate) != expected:
+            reasons.append(f"input_hash_mismatch:{name}")
+    return reasons
 
 
 def _problem_spec(value: Mapping[str, Any]) -> ProblemSpec:
@@ -612,9 +910,9 @@ def _variable_spec(value: Mapping[str, Any]) -> VariableSpec:
         data_type=str(value["data_type"]),
         unit=str(value["unit"]),
         measurement=str(value["measurement"]),
-        observable=bool(value["observable"]),
-        data_available=bool(value["data_available"]),
-        identifiable=bool(value["identifiable"]),
+        observable=_strict_bool(value["observable"], "observable"),
+        data_available=_strict_bool(value["data_available"], "data_available"),
+        identifiable=_strict_bool(value["identifiable"], "identifiable"),
         reasonable_range=(
             (float(reasonable_range[0]), float(reasonable_range[1]))
             if reasonable_range is not None
@@ -690,16 +988,34 @@ def _load_mapping(path: Path) -> Mapping[str, Any]:
     return value
 
 
-def _default_output(problem_path: Path, data_path: Path | None) -> str:
+def _default_output(
+    problem_path: Path,
+    data_path: Path | None,
+    review_artifact: Path | None = None,
+) -> str:
     digest = hashlib.sha256(problem_path.read_bytes())
     if data_path:
         digest.update(data_path.read_bytes())
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    if review_artifact and review_artifact.is_file():
+        digest.update(review_artifact.read_bytes())
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     return f"results/{stamp}-{digest.hexdigest()[:8]}"
 
 
 def _file_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _strict_bool(value: Any, name: str) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError(f"{name} must be boolean")
+    return value
+
+
+def _optional_bool(value: Any, name: str) -> bool | None:
+    if value is None:
+        return None
+    return _strict_bool(value, name)
 
 
 if __name__ == "__main__":

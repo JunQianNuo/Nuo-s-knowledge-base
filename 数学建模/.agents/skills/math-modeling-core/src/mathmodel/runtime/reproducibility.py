@@ -11,6 +11,7 @@ from mathmodel.algorithms import AlgorithmMetadata
 from mathmodel.contracts import CheckStatus, ProblemSpec, SolveConfig
 
 from .artifacts import RunContext, to_jsonable
+from .dependencies import check_dependencies
 
 
 def build_manifest(
@@ -27,6 +28,7 @@ def build_manifest(
     problem_path: Path | None = None,
     data_path: Path | None = None,
     review_artifact: Path | None = None,
+    evidence_snapshots: tuple[Path, ...] = (),
     evidence_refreshed: bool = False,
     artifacts: tuple[str, ...] = (),
 ) -> dict[str, Any]:
@@ -68,7 +70,11 @@ def build_manifest(
             "dependencies": _dependency_versions(plugin),
         },
         "inputs": _input_locations(
-            problem_path, data_path, review_artifact, input_hashes
+            problem_path,
+            data_path,
+            review_artifact,
+            evidence_snapshots,
+            input_hashes,
         ),
         "artifacts": _artifact_hashes(context, artifacts),
         "reproduce_command": _reproduce_command(
@@ -78,6 +84,7 @@ def build_manifest(
             mode=mode,
             evidence_refreshed=evidence_refreshed,
             review_artifact=review_artifact,
+            evidence_snapshots=evidence_snapshots,
         ),
     }
     manifest["manifest_hash"] = _hash_manifest(manifest)
@@ -87,13 +94,10 @@ def build_manifest(
 def _dependency_versions(plugin: AlgorithmMetadata | None) -> dict[str, str]:
     if plugin is None:
         return {}
-    versions: dict[str, str] = {}
-    for name in sorted(plugin.dependencies):
-        try:
-            versions[name] = metadata.version(name)
-        except metadata.PackageNotFoundError:
-            versions[name] = "missing"
-    return versions
+    report = check_dependencies(plugin.dependencies)
+    versions = dict(report.versions)
+    versions.update({name: "missing" for name in report.missing})
+    return dict(sorted(versions.items()))
 
 
 def _artifact_hashes(
@@ -117,6 +121,7 @@ def _input_locations(
     problem_path: Path | None,
     data_path: Path | None,
     review_artifact: Path | None,
+    evidence_snapshots: tuple[Path, ...],
     input_hashes: Mapping[str, str],
 ) -> dict[str, dict[str, str]]:
     locations: dict[str, dict[str, str]] = {}
@@ -130,6 +135,12 @@ def _input_locations(
                 "path": str(Path(path).resolve()),
                 "sha256": str(input_hashes.get(name, "")),
             }
+    for index, path in enumerate(evidence_snapshots):
+        name = f"evidence_snapshot_{index}"
+        locations[name] = {
+            "path": str(Path(path).resolve()),
+            "sha256": str(input_hashes.get(name, "")),
+        }
     return locations
 
 
@@ -141,6 +152,7 @@ def _reproduce_command(
     mode: str,
     evidence_refreshed: bool,
     review_artifact: Path | None,
+    evidence_snapshots: tuple[Path, ...],
 ) -> str:
     command = [
         "python",
@@ -156,12 +168,12 @@ def _reproduce_command(
         command.extend(
             ("--review-artifact", f'"{Path(review_artifact).resolve()}"')
         )
+    for path in evidence_snapshots:
+        command.extend(("--evidence-snapshot", f'"{Path(path).resolve()}"'))
     command.extend(
         (
             "--mode",
             f'"{mode}"',
-            "--output",
-            f'"results/{context.run_id}"',
         )
     )
     if evidence_refreshed:
