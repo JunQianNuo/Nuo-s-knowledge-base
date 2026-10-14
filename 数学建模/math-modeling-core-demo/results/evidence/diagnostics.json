@@ -1,0 +1,6 @@
+{
+  "evidence_action": "query_plan_created",
+  "mode": "evidence",
+  "refresh_required_for_network": true,
+  "solver_executed": false
+}

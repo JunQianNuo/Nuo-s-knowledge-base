@@ -1,0 +1,11 @@
+{
+  "mandatory_outputs": [
+    "path",
+    "distance"
+  ],
+  "model_family": "shortest_path",
+  "ready_for_model_selection": true,
+  "required_capabilities": [
+    "shortest_path"
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "typecheck",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "lint",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "candidate-performance",
+    "exit": 0,
+    "stdout": "main.js 2.15 MiB (2250255 bytes); reference delta -1489329 bytes (-1.42 MiB); pre-Step-11 health baseline delta -2645745 bytes; median cold Node evaluation 98.1 ms; with host dependencies preloaded 60.3 ms (Node proxies)\n",
+    "stderr": "Performance warning: median cold module evaluation is 98.1 ms; indicator is 50 ms.\n"
+  }
+]

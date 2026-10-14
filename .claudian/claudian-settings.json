@@ -2,8 +2,7 @@
   "userName": "",
   "permissionMode": "yolo",
   "model": "opus",
-  "thinkingBudget": "medium",
-  "effortLevel": "max",
+  "effortLevel": "high",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationLocale": "",
@@ -11,11 +10,9 @@
   "excludedTags": [],
   "mediaFolder": "",
   "systemPrompt": "",
-  "persistentExternalContextPaths": [],
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
-  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
@@ -33,12 +30,67 @@
       "enableChrome": false,
       "enableBangBash": false,
       "customModels": "",
-      "defaultModel": "opus",
       "lastModel": "opus",
       "modelEnvironmentType": "",
       "titleModelEnvironmentType": "",
       "environmentVariables": "",
-      "environmentHash": ""
+      "environmentHash": "",
+      "outputStyle": null,
+      "promptSuggestions": false,
+      "discoveredOutputStyles": [
+        "default",
+        "Proactive",
+        "Explanatory",
+        "Learning"
+      ],
+      "modelAliases": {},
+      "visibleModels": [
+        "haiku",
+        "sonnet",
+        "opus",
+        "fable"
+      ],
+      "selectedModels": [
+        {
+          "value": "opus",
+          "label": "deepseek-flash",
+          "description": "Custom Opus model",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "sonnet",
+          "label": "deepseek-flash",
+          "description": "Custom Sonnet model",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "haiku",
+          "label": "deepseek-flash",
+          "description": "Custom Haiku model",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
+      ]
     },
     "codex": {
       "enabled": true,
@@ -47,12 +99,26 @@
       "cliPathsByHost": {
         "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "C:\\Users\\Nuo\\AppData\\Roaming\\npm\\codex.cmd"
       },
-      "customModels": "",
-      "discoveredModels": [
+      "modelAliases": {},
+      "visibleModels": [
+        "gpt-6.1-sol",
+        "gpt-6-astra"
+      ],
+      "enableUltraEffort": true,
+      "responseStyle": "friendly",
+      "responseVerbosity": "low",
+      "reasoningSummary": "concise",
+      "environmentVariables": "",
+      "environmentHash": "runtime-input:v1:dd2c1d1b26c231d67117288c82b0ee4e281a1adb60ceb05f5ebba3aff1834e8b",
+      "installationMethodsByHost": {
+        "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "native-windows"
+      },
+      "wslDistroOverridesByHost": {},
+      "selectedModels": [
         {
-          "model": "gpt-5.6-sol",
-          "displayName": "GPT-5.6-Sol",
-          "description": "Latest frontier agentic coding model.",
+          "model": "gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "description": "Latest workhorse model for coding and everyday work.",
           "supportedReasoningEfforts": [
             {
               "value": "low",
@@ -84,7 +150,7 @@
             {
               "id": "priority",
               "name": "Fast",
-              "description": "1.5x speed, increased usage"
+              "description": "2x speed, increased usage"
             }
           ],
           "defaultServiceTier": null,
@@ -95,9 +161,9 @@
           "isDefault": true
         },
         {
-          "model": "gpt-5.6-terra",
-          "displayName": "GPT-5.6-Terra",
-          "description": "Balanced agentic coding model for everyday work.",
+          "model": "gpt-6-astra",
+          "displayName": "GPT-6 Astra",
+          "description": "Frontier intelligence for the most demanding work.",
           "supportedReasoningEfforts": [
             {
               "value": "low",
@@ -124,191 +190,14 @@
               "description": "Maximum reasoning with automatic task delegation"
             }
           ],
-          "defaultReasoningEffort": "medium",
+          "defaultReasoningEffort": "low",
           "serviceTiers": [
             {
               "id": "priority",
               "name": "Fast",
-              "description": "1.5x speed, increased usage"
+              "description": "2x speed, increased usage"
             }
           ],
-          "defaultServiceTier": null,
-          "inputModalities": [
-            "text",
-            "image"
-          ],
-          "isDefault": false
-        },
-        {
-          "model": "gpt-5.6-luna",
-          "displayName": "GPT-5.6-Luna",
-          "description": "Fast and affordable agentic coding model.",
-          "supportedReasoningEfforts": [
-            {
-              "value": "low",
-              "description": "Fast responses with lighter reasoning"
-            },
-            {
-              "value": "medium",
-              "description": "Balances speed and reasoning depth for everyday tasks"
-            },
-            {
-              "value": "high",
-              "description": "Greater reasoning depth for complex problems"
-            },
-            {
-              "value": "xhigh",
-              "description": "Extra high reasoning depth for complex problems"
-            },
-            {
-              "value": "max",
-              "description": "Maximum reasoning depth for the hardest problems"
-            }
-          ],
-          "defaultReasoningEffort": "medium",
-          "serviceTiers": [
-            {
-              "id": "priority",
-              "name": "Fast",
-              "description": "1.5x speed, increased usage"
-            }
-          ],
-          "defaultServiceTier": null,
-          "inputModalities": [
-            "text",
-            "image"
-          ],
-          "isDefault": false
-        },
-        {
-          "model": "gpt-5.5",
-          "displayName": "GPT-5.5",
-          "description": "Frontier model for complex coding, research, and real-world work.",
-          "supportedReasoningEfforts": [
-            {
-              "value": "low",
-              "description": "Fast responses with lighter reasoning"
-            },
-            {
-              "value": "medium",
-              "description": "Balances speed and reasoning depth for everyday tasks"
-            },
-            {
-              "value": "high",
-              "description": "Greater reasoning depth for complex problems"
-            },
-            {
-              "value": "xhigh",
-              "description": "Extra high reasoning depth for complex problems"
-            }
-          ],
-          "defaultReasoningEffort": "medium",
-          "serviceTiers": [
-            {
-              "id": "priority",
-              "name": "Fast",
-              "description": "1.5x speed, increased usage"
-            }
-          ],
-          "defaultServiceTier": null,
-          "inputModalities": [
-            "text",
-            "image"
-          ],
-          "isDefault": false
-        },
-        {
-          "model": "gpt-5.4",
-          "displayName": "GPT-5.4",
-          "description": "Strong model for everyday coding.",
-          "supportedReasoningEfforts": [
-            {
-              "value": "low",
-              "description": "Fast responses with lighter reasoning"
-            },
-            {
-              "value": "medium",
-              "description": "Balances speed and reasoning depth for everyday tasks"
-            },
-            {
-              "value": "high",
-              "description": "Greater reasoning depth for complex problems"
-            },
-            {
-              "value": "xhigh",
-              "description": "Extra high reasoning depth for complex problems"
-            }
-          ],
-          "defaultReasoningEffort": "medium",
-          "serviceTiers": [
-            {
-              "id": "priority",
-              "name": "Fast",
-              "description": "1.5x speed, increased usage"
-            }
-          ],
-          "defaultServiceTier": null,
-          "inputModalities": [
-            "text",
-            "image"
-          ],
-          "isDefault": false
-        },
-        {
-          "model": "gpt-5.4-mini",
-          "displayName": "GPT-5.4-Mini",
-          "description": "Small, fast, and cost-efficient model for simpler coding tasks.",
-          "supportedReasoningEfforts": [
-            {
-              "value": "low",
-              "description": "Fast responses with lighter reasoning"
-            },
-            {
-              "value": "medium",
-              "description": "Balances speed and reasoning depth for everyday tasks"
-            },
-            {
-              "value": "high",
-              "description": "Greater reasoning depth for complex problems"
-            },
-            {
-              "value": "xhigh",
-              "description": "Extra high reasoning depth for complex problems"
-            }
-          ],
-          "defaultReasoningEffort": "medium",
-          "serviceTiers": [],
-          "defaultServiceTier": null,
-          "inputModalities": [
-            "text",
-            "image"
-          ],
-          "isDefault": false
-        },
-        {
-          "model": "gpt-5.2",
-          "displayName": "GPT-5.2",
-          "description": "Optimized for professional work and long-running agents.",
-          "supportedReasoningEfforts": [
-            {
-              "value": "low",
-              "description": "Balances speed with some reasoning; useful for straightforward queries and short explanations"
-            },
-            {
-              "value": "medium",
-              "description": "Provides a solid balance of reasoning depth and latency for general-purpose tasks"
-            },
-            {
-              "value": "high",
-              "description": "Maximizes reasoning depth for complex or ambiguous problems"
-            },
-            {
-              "value": "xhigh",
-              "description": "Extra high reasoning for complex problems"
-            }
-          ],
-          "defaultReasoningEffort": "medium",
-          "serviceTiers": [],
           "defaultServiceTier": null,
           "inputModalities": [
             "text",
@@ -316,19 +205,7 @@
           ],
           "isDefault": false
         }
-      ],
-      "modelAliases": {},
-      "visibleModels": null,
-      "enableUltraEffort": false,
-      "reasoningSummary": "detailed",
-      "environmentVariables": "",
-      "environmentHash": "runtime-input:v1:dd2c1d1b26c231d67117288c82b0ee4e281a1adb60ceb05f5ebba3aff1834e8b",
-      "catalogTimestamp": 1788144887856,
-      "catalogFingerprint": "2:b6270f138b5a17f603b529a3b1364255b812e816aa711e9a8389626ac1933520",
-      "installationMethodsByHost": {
-        "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "native-windows"
-      },
-      "wslDistroOverridesByHost": {}
+      ]
     },
     "opencode": {
       "cliPath": "",
@@ -338,73 +215,171 @@
       "environmentVariables": "OPENCODE_ENABLE_EXA=1",
       "modelAliases": {},
       "preferredThinkingByModel": {},
-      "selectedMode": "",
       "thinkingOptionsByModel": {},
-      "visibleModels": []
+      "visibleModels": [],
+      "selectedModels": []
     },
     "pi": {
       "cliPath": "",
       "cliPathsByHost": {},
-      "discoveredModels": [],
       "enabled": false,
       "environmentHash": "",
       "environmentVariables": "",
       "modelAliases": {},
       "preferredThinkingByModel": {},
-      "toolMode": "all",
-      "visibleModels": []
+      "visibleModels": [],
+      "selectedModels": []
     },
     "grok": {
-      "catalogsByHost": {},
       "cliPath": "",
       "cliPathsByHost": {},
       "enabled": false,
       "environmentHash": "",
       "environmentVariables": "",
       "modelAliases": {},
-      "planBasePermissionMode": "normal",
       "preferredReasoningByModel": {},
-      "visibleModels": null
+      "visibleModels": [],
+      "selectedModelsByHost": {}
+    },
+    "deepseek": {
+      "enabled": true,
+      "codeMode": false,
+      "presetPlugins": "",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "environmentVariables": "",
+      "environmentHash": "",
+      "visibleModels": [
+        "deepseek:deepseek-official/deepseek-flash",
+        "deepseek:deepseek-official/deepseek-v4-flash",
+        "deepseek:deepseek-official/deepseek-v4-flash-vision-exp"
+      ],
+      "modelAliases": {},
+      "preferredReasoningByModel": {
+        "deepseek:deepseek-official/deepseek-flash": "low"
+      },
+      "selectedModels": [
+        {
+          "encodedId": "deepseek:deepseek-official/deepseek-flash",
+          "provider": "deepseek-official",
+          "id": "deepseek-flash",
+          "label": "DeepSeek-V41-Flash",
+          "reasoning": [
+            {
+              "id": "off",
+              "name": "Off"
+            },
+            {
+              "id": "low",
+              "name": "Low"
+            },
+            {
+              "id": "high",
+              "name": "High"
+            },
+            {
+              "id": "max",
+              "name": "Max"
+            }
+          ],
+          "available": true
+        },
+        {
+          "encodedId": "deepseek:deepseek-official/deepseek-v4-flash",
+          "provider": "deepseek-official",
+          "id": "deepseek-v4-flash",
+          "label": "DeepSeek-V4-Flash",
+          "reasoning": [
+            {
+              "id": "off",
+              "name": "Off"
+            },
+            {
+              "id": "low",
+              "name": "Low"
+            },
+            {
+              "id": "high",
+              "name": "High"
+            },
+            {
+              "id": "max",
+              "name": "Max"
+            }
+          ],
+          "description": "Fast, efficient, and economical; suited to focused, routine, or parallel tasks.",
+          "available": true
+        },
+        {
+          "encodedId": "deepseek:deepseek-official/deepseek-v4-flash-vision-exp",
+          "provider": "deepseek-official",
+          "id": "deepseek-v4-flash-vision-exp",
+          "label": "DeepSeek-V4-Flash-Vision-Exp",
+          "reasoning": [
+            {
+              "id": "off",
+              "name": "Off"
+            },
+            {
+              "id": "low",
+              "name": "Low"
+            },
+            {
+              "id": "high",
+              "name": "High"
+            },
+            {
+              "id": "max",
+              "name": "Max"
+            }
+          ],
+          "available": true
+        }
+      ]
     }
   },
   "settingsProvider": "claude",
   "lastSelectedChatModel": {
     "providerId": "codex",
-    "model": "gpt-5.6-sol"
+    "model": "openai-codex/gpt-6.1-sol"
   },
   "savedProviderModel": {
-    "claude": "opus",
-    "codex": "gpt-5.6-sol"
+    "claude": "opus"
   },
   "savedProviderEffort": {
-    "claude": "max",
-    "codex": "high"
+    "claude": "high",
+    "codex": "high",
+    "deepseek": "low"
   },
-  "savedProviderServiceTier": {
-    "codex": "default"
-  },
-  "savedProviderThinkingBudget": {},
+  "savedProviderServiceTier": {},
   "savedProviderPermissionMode": {
     "claude": "yolo",
     "codex": "yolo"
   },
   "pendingProviderSessionInvalidations": {},
-  "lastCustomModel": "",
-  "maxWarmAgentProcesses": 5,
   "enableAutoScroll": true,
+  "showMessageTimestamps": false,
   "deferMathRenderingDuringStreaming": true,
   "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
+  "enableZenMode": true,
+  "zenModePosition": null,
   "enableDualPane": true,
   "dualPaneSide": "right",
   "restoreTabsOnStartup": true,
+  "skillsSynced": false,
+  "sessionManagerOrganization": "list",
+  "sessionManagerSort": "last-updated",
+  "sessionAutoArchiveAfter": "off",
+  "pinnedLinkedContentPaths": [],
+  "hiddenCommands": [],
+  "thinkingBudget": "medium",
+  "customModelAliases": {},
+  "savedProviderThinkingBudget": {},
+  "lastCustomModel": "",
   "collabEnabled": false,
   "collabProjectsFolder": "workspace",
   "collabGitPath": "",
-  "sessionManagerOrganization": "list",
-  "sessionManagerSort": "last-updated",
-  "pinnedLinkedContentPaths": [],
-  "hiddenProviderCommands": {},
   "maxTabs": 3,
   "tabBarPosition": "input"
 }

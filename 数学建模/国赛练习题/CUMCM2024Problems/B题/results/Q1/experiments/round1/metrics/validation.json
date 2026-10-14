@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "checks": {
+    "M1_900": {
+      "mass_error": 4.196643033083092e-14,
+      "ASN_dual_error": 1.750777300912887e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.02809434396613962,
+      "grid_sup_wrong_acceptance_including_boundary": 0.006790080787377571,
+      "monotonicity_violation": 2.220446049250313e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    },
+    "M1_1000": {
+      "mass_error": 4.596323321948148e-14,
+      "ASN_dual_error": 2.148681232938543e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.028164972605123805,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0069157540284180835,
+      "monotonicity_violation": 2.220446049250313e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    },
+    "M1_1100": {
+      "mass_error": 4.951594689828198e-14,
+      "ASN_dual_error": 2.523847797419876e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.028228137767451,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0070241342833830935,
+      "monotonicity_violation": 2.220446049250313e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    },
+    "B1_900": {
+      "mass_error": 4.0190073491430667e-14,
+      "ASN_dual_error": 2.6716406864579767e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.02442689655790401,
+      "grid_sup_wrong_acceptance_including_boundary": 0.03762651770740528,
+      "monotonicity_violation": 8.881784197001252e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    },
+    "B1_1000": {
+      "mass_error": 4.340972026284362e-14,
+      "ASN_dual_error": 3.5356606531422585e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.025039861683558585,
+      "grid_sup_wrong_acceptance_including_boundary": 0.03854966147410365,
+      "monotonicity_violation": 8.881784197001252e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    },
+    "B1_1100": {
+      "mass_error": 4.6629367034256575e-14,
+      "ASN_dual_error": 4.1382008930668235e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.024367069390542843,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0392047510735613,
+      "monotonicity_violation": 8.881784197001252e-16,
+      "endpoint_max_undecided": 0.0,
+      "probe_max_absolute_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    }
+  },
+  "scope": "Deterministic numerical self-checks, not independent code review",
+  "scale": [
+    {
+      "method_id": "M1",
+      "execution_time_seconds": 1.2842304999994667,
+      "peak_traced_memory_mb": 4.262152671813965
+    },
+    {
+      "method_id": "B1",
+      "execution_time_seconds": 0.9459516000006261,
+      "peak_traced_memory_mb": 4.149910926818848
+    }
+  ]
+}

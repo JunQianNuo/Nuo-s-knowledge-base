@@ -161,6 +161,16 @@ FROM "AI/CLI/飞书办公"
 SORT date DESC
 ```
 
+### 会议办公
+
+> tmeet（腾讯会议 CLI）
+
+```dataview
+TABLE type, status, date
+FROM "AI/CLI/会议办公"
+SORT date DESC
+```
+
 ### AI开发
 
 > ant

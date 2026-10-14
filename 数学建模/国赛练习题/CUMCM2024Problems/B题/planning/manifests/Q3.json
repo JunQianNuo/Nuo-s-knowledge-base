@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "rigor_profile": "lean",
+  "current_gate": "G2",
+  "status": "assumption_policy_confirmed_waiting_method_screening",
+  "artifacts": {
+    "problem_parse": "planning/parse/problem_parse.json",
+    "classification": "planning/classification/problem_classification.json",
+    "related_paper_analysis": "workspace/papers/related_paper_analysis.md",
+    "data_report": "workspace/data/data_report.md",
+    "data_profile": "workspace/data/data_profile.json",
+    "symbol_table": "planning/symbol_table.md",
+    "model_assumptions": "planning/model_assumptions.md",
+    "framing_decisions": "planning/framing_decisions.jsonl",
+    "method_card": null,
+    "decision_ledger": null,
+    "risk_probe": null,
+    "latest_run": null
+  },
+  "allowed": {
+    "code_generation": false,
+    "freeze": false,
+    "paper_writing": false,
+    "final_assembly": false
+  },
+  "blockers": [
+    "尚缺Q3主候选与可信baseline的方法卡、已执行风险探针及使用者方法选择"
+  ],
+  "next_action": {
+    "owner": "ai",
+    "skill": "method-selector",
+    "reason": "简化假设政策已记录；复用现有偏好，先完成Q1候选与baseline风险筛选，再按依赖处理后续子问题"
+  },
+  "updated_at": "2026-09-07T00:34:34+08:00"
+}

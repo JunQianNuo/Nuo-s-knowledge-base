@@ -1,0 +1,51 @@
+{
+  "run_id": "math-modeling-core-analyze-20260902",
+  "mode": "analyze",
+  "status": "WARN",
+  "checks": [
+    {
+      "name": "official_problem_source_bound",
+      "status": "PASS",
+      "sha256": "F54529DD15D729B046E248EA41033B4F66EF68333BE2BEE912B0C54EAFD227AB"
+    },
+    {
+      "name": "problem_text_extract_bound",
+      "status": "PASS",
+      "sha256": "F01C72A86AFEE9866677D6DB96048FD982B38D60416A07D3A2980EF1C7D07699"
+    },
+    {
+      "name": "external_search_budget",
+      "status": "PASS",
+      "observed": "5/5 requests; no expansion"
+    },
+    {
+      "name": "evidence_claim_schema",
+      "status": "PASS",
+      "sha256": "0E30BE2C9019364FDAA983AEC62B075D3D4A446775F4FA193A6AB6CEEC6782DB"
+    },
+    {
+      "name": "numeric_sanity_checks",
+      "status": "PASS",
+      "observed": "exact-binomial sensitivity table, 0.9^3, 0.9^12 and 2^16 independently recomputed"
+    },
+    {
+      "name": "model_selection_q2_q3",
+      "status": "PASS",
+      "observed": "all seven adequacy gates satisfied by the stated minimum-sufficient model families"
+    },
+    {
+      "name": "q1_numeric_instantiation",
+      "status": "BLOCKED",
+      "observed": "p1/indifference zone and truncation policy are not supplied by the problem"
+    },
+    {
+      "name": "q4_numeric_instantiation",
+      "status": "BLOCKED",
+      "observed": "per-node sample counts and sampling conditions are not supplied; risk rule is additionally needed if policy intervals cross"
+    }
+  ],
+  "analysis_sha256": "13B56FC130C69B6CD1181D7496FB87D9FEBE0545752E9A487A13F2F800FDB08D",
+  "solver_executed": false,
+  "accepted_risk": null,
+  "rollback_stage": "contract_freeze_for_q1_q4"
+}

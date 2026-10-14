@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "generated_at": "2026-09-07T03:25:59.581401+00:00",
+  "input_sha256": {
+    "workspace/data_clean/q1_statement_parameters.csv": "76605c7d3efedbb60932fea119c21b2d29f1648e45b45abc516cf2aabc14c3a3",
+    "planning/framing_decisions.jsonl": "85608af9c19935db7bd9a41be9a8c2fc78dc0373087fd9f62668b772383439fd",
+    "planning/model_assumptions.md": "0dc69fd7a67cdd16eb68e412afafbaec5be44d99358b710553bb5a1165179d10",
+    "methods/Q1/probes/probe_config.json": "33a8a502972415bceaf4bad94b34b5cd26af09daf69060a9f19b14af01e6924a",
+    "methods/Q1/probes/q1_screening_probe.py": "24bfe47487689050dd89dafc6da76d6459f2db8c03c3e8597c499ccee64fb2d8"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.5"
+  },
+  "seed": null,
+  "randomness": "None: exact finite-state probability propagation",
+  "scope": "pre_selection_diagnostic_only",
+  "data_refs": [
+    "workspace/data_clean/q1_statement_parameters.csv",
+    "workspace/data/data_profile.json"
+  ],
+  "methods": [
+    {
+      "id": "M1",
+      "role": "main_candidate",
+      "executability": {
+        "status": "PASS",
+        "evidence": {
+          "mass_conservation_max_error": 4.596323321948148e-14,
+          "independent_path_enumeration_max_error": 4.618527782440651e-13,
+          "grid_sup_wrong_rejection": 0.028164972605123805,
+          "grid_sup_wrong_acceptance_including_boundary": 0.0069157540284180835,
+          "monotonicity_violation": 2.220446049250313e-16,
+          "endpoint_max_undecided": 0.0,
+          "boundary_undecided": 0.9649192733664852,
+          "decision_distribution_max_TV_under_10pct_theta": 0.4389992445999061
+        }
+      },
+      "data_coverage": {
+        "status": "PASS",
+        "evidence": {
+          "official_parameter_rows": 1,
+          "observed_sample_rows": 0,
+          "effective_sample_size": null,
+          "theta_grid_points": 77,
+          "theta_range": [
+            0,
+            1
+          ],
+          "selection": "Predeclared parameter grid spanning both sides, boundary and extremes, plus relative +/-10% perturbations",
+          "missingness": "No empirical observations supplied; theoretical design does not require fabricated records"
+        }
+      },
+      "assumption_checks": [
+        {
+          "name": "iid_Bernoulli_and_perfect_detection",
+          "status": "CONDITIONAL",
+          "evidence": "Accepted simplifying assumptions A1/A2; not empirically testable from supplied inputs"
+        },
+        {
+          "name": "repeated_looks_error_control",
+          "status": "PASS",
+          "evidence": {
+            "mass_conservation_max_error": 4.596323321948148e-14,
+            "independent_path_enumeration_max_error": 4.618527782440651e-13,
+            "grid_sup_wrong_rejection": 0.028164972605123805,
+            "grid_sup_wrong_acceptance_including_boundary": 0.0069157540284180835,
+            "monotonicity_violation": 2.220446049250313e-16,
+            "endpoint_max_undecided": 0.0,
+            "boundary_undecided": 0.9649192733664852,
+            "decision_distribution_max_TV_under_10pct_theta": 0.4389992445999061
+          },
+          "basis": "Ville mixture martingale"
+        }
+      ],
+      "output_degeneracy": {
+        "status": "PASS",
+        "metrics": {
+          "endpoint_max_undecided": 0.0,
+          "boundary_undecided": 0.9649192733664852,
+          "max_single_outcome_probability": 1.0,
+          "nonzero_outcome_types_across_grid": 3
+        },
+        "interpretation": "Near p0 undecided concentration is inherent; endpoints must decide. No universal all-undecided rule."
+      },
+      "perturbation_sensitivity": {
+        "status": "CONDITIONAL",
+        "perturbation": "true theta +/-10%; cap 900/1000/1100, official p0 and confidence fixed",
+        "metric": "decision_distribution_total_variation_not_individual_path_flip_rate",
+        "value": 0.4389992445999061,
+        "monotonicity_violation": 2.220446049250313e-16,
+        "note": "No human-defined acceptable TV threshold. Changes crossing p0 are not automatically instability failures."
+      },
+      "scale_check": {
+        "status": "PASS",
+        "representative_caps": [
+          250,
+          500,
+          900,
+          1000,
+          1100
+        ],
+        "runtime_seconds": 1.8781819999567233,
+        "peak_traced_memory_mb": 3.772663116455078,
+        "memory_scope": "Python/NumPy allocations tracked by tracemalloc, not process RSS"
+      },
+      "verdict": "CONDITIONAL",
+      "conditions": [
+        "Accepted iid and perfect detection assumptions are not empirically validated by absent sampling records.",
+        "Nmax is a reporting/probe budget, not an optimized objective or official limit.",
+        "No uniform ASN optimum is claimed; compare decision rates alongside ASN.",
+        "Human must judge reported sensitivity and undecided/ASN tradeoff before approving method."
+      ],
+      "evidence_refs": [
+        "methods/Q1/probes/probe_config.json",
+        "methods/Q1/probes/risk_probe_metrics.json"
+      ]
+    },
+    {
+      "id": "B1",
+      "role": "usable_baseline",
+      "executability": {
+        "status": "PASS",
+        "evidence": {
+          "mass_conservation_max_error": 4.340972026284362e-14,
+          "independent_path_enumeration_max_error": 6.750155989720952e-13,
+          "grid_sup_wrong_rejection": 0.025039861683558585,
+          "grid_sup_wrong_acceptance_including_boundary": 0.03854966147410365,
+          "monotonicity_violation": 8.881784197001252e-16,
+          "endpoint_max_undecided": 0.0,
+          "boundary_undecided": 0.936410476842364,
+          "decision_distribution_max_TV_under_10pct_theta": 0.4446395171816745
+        }
+      },
+      "data_coverage": {
+        "status": "PASS",
+        "evidence": {
+          "official_parameter_rows": 1,
+          "observed_sample_rows": 0,
+          "effective_sample_size": null,
+          "theta_grid_points": 77,
+          "theta_range": [
+            0,
+            1
+          ],
+          "selection": "Predeclared parameter grid spanning both sides, boundary and extremes, plus relative +/-10% perturbations",
+          "missingness": "No empirical observations supplied; theoretical design does not require fabricated records"
+        }
+      },
+      "assumption_checks": [
+        {
+          "name": "iid_Bernoulli_and_perfect_detection",
+          "status": "CONDITIONAL",
+          "evidence": "Accepted simplifying assumptions A1/A2; not empirically testable from supplied inputs"
+        },
+        {
+          "name": "repeated_looks_error_control",
+          "status": "PASS",
+          "evidence": {
+            "mass_conservation_max_error": 4.340972026284362e-14,
+            "independent_path_enumeration_max_error": 6.750155989720952e-13,
+            "grid_sup_wrong_rejection": 0.025039861683558585,
+            "grid_sup_wrong_acceptance_including_boundary": 0.03854966147410365,
+            "monotonicity_violation": 8.881784197001252e-16,
+            "endpoint_max_undecided": 0.0,
+            "boundary_undecided": 0.936410476842364,
+            "decision_distribution_max_TV_under_10pct_theta": 0.4446395171816745
+          },
+          "basis": "Exact binomial tails plus Bonferroni union bound"
+        }
+      ],
+      "output_degeneracy": {
+        "status": "PASS",
+        "metrics": {
+          "endpoint_max_undecided": 0.0,
+          "boundary_undecided": 0.936410476842364,
+          "max_single_outcome_probability": 1.0000000000000009,
+          "nonzero_outcome_types_across_grid": 3
+        },
+        "interpretation": "Near p0 undecided concentration is inherent; endpoints must decide. No universal all-undecided rule."
+      },
+      "perturbation_sensitivity": {
+        "status": "CONDITIONAL",
+        "perturbation": "true theta +/-10%; cap 900/1000/1100, official p0 and confidence fixed",
+        "metric": "decision_distribution_total_variation_not_individual_path_flip_rate",
+        "value": 0.4446395171816745,
+        "monotonicity_violation": 8.881784197001252e-16,
+        "note": "No human-defined acceptable TV threshold. Changes crossing p0 are not automatically instability failures."
+      },
+      "scale_check": {
+        "status": "PASS",
+        "representative_caps": [
+          250,
+          500,
+          900,
+          1000,
+          1100
+        ],
+        "runtime_seconds": 1.7117934999987483,
+        "peak_traced_memory_mb": 3.60416316986084,
+        "memory_scope": "Python/NumPy allocations tracked by tracemalloc, not process RSS"
+      },
+      "verdict": "CONDITIONAL",
+      "conditions": [
+        "Accepted iid and perfect detection assumptions are not empirically validated by absent sampling records.",
+        "Nmax is a reporting/probe budget, not an optimized objective or official limit.",
+        "No uniform ASN optimum is claimed; compare decision rates alongside ASN.",
+        "Human must judge reported sensitivity and undecided/ASN tradeoff before approving method."
+      ],
+      "evidence_refs": [
+        "methods/Q1/probes/probe_config.json",
+        "methods/Q1/probes/risk_probe_metrics.json"
+      ]
+    }
+  ]
+}

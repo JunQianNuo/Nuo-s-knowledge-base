@@ -1,0 +1,86 @@
+.daily-course-summary {
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.daily-course-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.daily-course-card {
+  align-items: center;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+}
+
+.daily-course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.daily-course-details span,
+.daily-course-empty {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.daily-course-card button {
+  flex: 0 0 auto;
+}
+
+.daily-question-modal-overlay {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 1rem;
+  position: fixed;
+  z-index: var(--layer-modal, 1000);
+}
+
+.daily-question-modal {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-l);
+  max-width: 34rem;
+  padding: 1.25rem;
+  width: 100%;
+}
+
+.daily-question-modal h3 {
+  margin: 0 0 0.35rem;
+}
+
+.daily-question-modal-meta {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  margin: 0 0 0.9rem;
+}
+
+.daily-question-modal-input {
+  box-sizing: border-box;
+  min-height: 8rem;
+  resize: vertical;
+  width: 100%;
+}
+
+.daily-question-modal-status {
+  color: var(--text-error);
+  min-height: 1.5rem;
+  padding-top: 0.35rem;
+}
+
+.daily-question-modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}

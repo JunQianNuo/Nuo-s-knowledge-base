@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "status": "FROZEN",
+  "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+  "frozen_by_skill": "solution-package-builder",
+  "package_signoff_decision_id": "q1_package_signoff_v2",
+  "signoff_raw_response": "冻结",
+  "approved_claim_ids": [
+    "PF-Q1-001", "PF-Q1-002", "PF-Q1-003", "PF-Q1-004", "PF-Q1-005",
+    "PF-Q1-006", "PF-Q1-007", "PF-Q1-008", "PF-Q1-009", "PF-Q1-010",
+    "PF-Q1-011", "PF-Q1-012", "PF-Q1-013", "PF-Q1-014", "PF-Q1-015"
+  ],
+  "signed_package_snapshot": {
+    "path": "results/Q1/reports/q1_solution_package_for_writer.md",
+    "sha256": "858e5ba5cf3a2ecfc29a70ac1482afb9b3a3e4061e07b051570b03588971f5ab"
+  },
+  "claims": [
+    {
+      "claim_id": "PF-Q1-001",
+      "value": {"p0": 0.1, "reject_confidence": 0.95, "accept_confidence": 0.9, "alpha_R": 0.05, "alpha_A": 0.1},
+      "unit": "probability",
+      "source_file": "workspace/data_clean/q1_statement_parameters.csv",
+      "source_locator": "row 1; alpha_R=1-reject_confidence; alpha_A=1-accept_confidence",
+      "source_sha256": "76605c7d3efedbb60932fea119c21b2d29f1648e45b45abc516cf2aabc14c3a3",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2"
+    },
+    {
+      "claim_id": "PF-Q1-002",
+      "value": {"N_max": 1000, "K": 8, "looks": [10, 20, 40, 80, 160, 320, 640, 1000]},
+      "unit": "N_max and looks in items; K in checks",
+      "source_file": "results/Q1/experiments/round3/tables/decision_boundaries.csv",
+      "source_locator": "method_id=B1, cap=1000, is_look=True",
+      "source_sha256": "14cec7775680212b86ac58c73e782681b293dbb25ea1c110ca0b40141640caaf",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "N_max is an operating budget, not a problem-given optimum"
+    },
+    {
+      "claim_id": "PF-Q1-003",
+      "value": {"theta_start": 0.0, "theta_end": 1.0, "theta_step": 0.001, "theta_count": 1001, "caps": [900, 1000, 1100], "method_count": 2, "operating_rows": 6006, "near_start": 0.08, "near_end": 0.12, "near_count": 41},
+      "unit": "theta in probability; caps in items; counts dimensionless",
+      "source_file": "results/Q1/experiments/round3/run_summary.json",
+      "source_locator": "$.configuration.theta_grid; $.configuration.caps; output row counts",
+      "source_sha256": "d47945f7adeff4613154330d0356f5914f76f24d9ac7b9e706db2544dec74eef",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "theoretical parameter scenarios, not observed production batches"
+    },
+    {
+      "claim_id": "PF-Q1-004",
+      "value": 959.3274283395174,
+      "display_value": 959.33,
+      "unit": "items",
+      "source_file": "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+      "source_locator": "method_id=B1, cap=1000, theta=0.1, field=ASN",
+      "source_sha256": "95e5e297f5118fb06a1529727303a48875a5cd2553f0c3e6bba26aa6a05166c8",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2"
+    },
+    {
+      "claim_id": "PF-Q1-005",
+      "value": 0.03854966147410365,
+      "display_value": 0.03855,
+      "unit": "probability",
+      "source_file": "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+      "source_locator": "method_id=B1, cap=1000, theta=0.1, field=P_A",
+      "source_sha256": "95e5e297f5118fb06a1529727303a48875a5cd2553f0c3e6bba26aa6a05166c8",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2"
+    },
+    {
+      "claim_id": "PF-Q1-006",
+      "value": 0.025039861683558585,
+      "display_value": 0.02504,
+      "unit": "probability",
+      "source_file": "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+      "source_locator": "method_id=B1, cap=1000, theta=0.1, field=P_R",
+      "source_sha256": "95e5e297f5118fb06a1529727303a48875a5cd2553f0c3e6bba26aa6a05166c8",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2"
+    },
+    {
+      "claim_id": "PF-Q1-007",
+      "value": 0.936410476842364,
+      "display_value": 0.93641,
+      "unit": "probability",
+      "source_file": "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+      "source_locator": "method_id=B1, cap=1000, theta=0.1, field=P_U",
+      "source_sha256": "95e5e297f5118fb06a1529727303a48875a5cd2553f0c3e6bba26aa6a05166c8",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "high undecided probability must be disclosed"
+    },
+    {
+      "claim_id": "PF-Q1-008",
+      "value": {"M1_ASN": 967.7440880098518, "M1_P_U": 0.9649192733664852, "B1_minus_M1_ASN": -8.4166596703344, "B1_minus_M1_P_U": -0.028508796524121194},
+      "unit": "ASN and ASN difference in items; probabilities dimensionless",
+      "source_file": "results/Q1/experiments/round3/tables/comparison.csv",
+      "source_locator": "cap=1000, theta=0.1",
+      "source_sha256": "ce4fd627464e3f366fff7da408fc45238f277c53e96dcd61fdc38fd7b8af9074",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "M1 is a usable baseline, not a second final method"
+    },
+    {
+      "claim_id": "PF-Q1-009",
+      "value": {"window_start": 0.08, "window_end": 0.12, "grid_points": 41, "B1_lower_both_points": 41},
+      "unit": "theta in probability; point counts dimensionless",
+      "source_file": "robustness/Q1/q1_robustness_summary.json",
+      "source_locator": "$.checks[3].observed.near_0_08_to_0_12_*",
+      "source_sha256": "49736fc3485ab1781cafa562f2d3211bfd04d3e4ddbf9f4d500e0e6b1afc9101",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "claim is limited to the tested window and finite grid"
+    },
+    {
+      "claim_id": "PF-Q1-010",
+      "value": {"grid_points": 1001, "B1_lower_ASN_points": 145, "B1_higher_ASN_points": 856, "largest_ASN_advantage_theta": 0.07, "largest_ASN_advantage_difference": -154.59074446527325, "largest_ASN_disadvantage_theta": 0.0, "largest_ASN_disadvantage_difference": 18.0},
+      "unit": "theta in probability; differences in items; counts dimensionless",
+      "source_file": "robustness/Q1/q1_robustness_summary.json",
+      "source_locator": "$.checks[3].observed",
+      "source_sha256": "49736fc3485ab1781cafa562f2d3211bfd04d3e4ddbf9f4d500e0e6b1afc9101",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "no global ASN superiority claim"
+    },
+    {
+      "claim_id": "PF-Q1-011",
+      "value": {"B1_lower_P_U_points": 183, "P_U_tie_within_1e_10_points": 818, "B1_higher_P_U_points": 0},
+      "unit": "grid points",
+      "source_file": "robustness/Q1/q1_robustness_summary.json",
+      "source_locator": "$.checks[3].observed",
+      "source_sha256": "49736fc3485ab1781cafa562f2d3211bfd04d3e4ddbf9f4d500e0e6b1afc9101",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "grid counts have no supplied real-world theta weighting"
+    },
+    {
+      "claim_id": "PF-Q1-012",
+      "value": {"threshold": 0.9, "B1_start": 0.095, "B1_end": 0.107, "B1_points": 13, "M1_start": 0.085, "M1_end": 0.115, "M1_points": 31},
+      "unit": "probability and grid points",
+      "source_file": "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+      "source_locator": "$.concentration.B1.P_U_at_least_0.9[0]; $.concentration.M1.P_U_at_least_0.9[0]",
+      "source_sha256": "aa6b75eb8840be7958df83caa0b4ed0a609c053127b6872e4352771d3011dee9",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "0.9 is descriptive, not a human acceptance threshold"
+    },
+    {
+      "claim_id": "PF-Q1-013",
+      "value": {"max_wrong_rejection": 0.028228137767451, "max_wrong_acceptance": 0.0392047510735613, "rejection_limit": 0.05, "acceptance_limit": 0.1},
+      "unit": "probability",
+      "source_file": "results/Q1/experiments/round3/metrics/validation.json",
+      "source_locator": "$.max_wrong_rejection; $.max_wrong_acceptance",
+      "source_sha256": "1464f1140b7959049122c9aaf18f107855d541a485903f4949f3ce02a32982a5",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "finite-grid implementation check; uniform control also relies on theory"
+    },
+    {
+      "claim_id": "PF-Q1-014",
+      "value": {"max_mass_error": 4.374278717023117e-14, "max_ASN_dual_error": 3.728928277269006e-11, "round2_overlap_max_error": 0.0, "max_monotonicity_violation": 2.55351295663786e-15, "B1_max_adjacent_TV": 0.043106362279054664, "B1_TV_theta_from": 0.079, "B1_TV_theta_to": 0.08, "B1_ASN_change": 17.789392674381816, "M1_max_adjacent_TV": 0.045215865202382785, "M1_TV_theta_from": 0.07, "M1_TV_theta_to": 0.071, "M1_ASN_change": 21.898796776636914},
+      "unit": "mixed numerical validation and sensitivity metrics",
+      "source_file": "results/Q1/experiments/round3/metrics/validation.json",
+      "source_locator": "top-level error fields; sensitivity values cross-checked in dense_grid_summary.json",
+      "source_sha256": "1464f1140b7959049122c9aaf18f107855d541a485903f4949f3ce02a32982a5",
+      "secondary_source_file": "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+      "secondary_source_sha256": "aa6b75eb8840be7958df83caa0b4ed0a609c053127b6872e4352771d3011dee9",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "numerical error is not model-form uncertainty"
+    },
+    {
+      "claim_id": "PF-Q1-015",
+      "value": {"theta": 0.107, "P_U_cap_1000": 0.9103721143977386, "P_U_cap_1100": 0.9117090351707935, "increase": 0.001336920773054917, "look_count_1000": 8, "look_count_1100": 8},
+      "unit": "probability and check count",
+      "source_file": "robustness/Q1/q1_robustness_summary.json",
+      "source_locator": "$.checks[5].observed",
+      "source_sha256": "49736fc3485ab1781cafa562f2d3211bfd04d3e4ddbf9f4d500e0e6b1afc9101",
+      "frozen_at": "2026-09-09T15:59:31.9680303+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_package_signoff_v2",
+      "limitation": "local nonnested-schedule effect, not a general cap monotonicity law"
+    }
+  ]
+}

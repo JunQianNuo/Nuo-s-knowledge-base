@@ -1,0 +1,197 @@
+{
+  "artifacts": {
+    "diagnostics.json": "96a5502d8608f2c135b180040da4f7b49752f5c7f0a3e28ae4a1e11427132c25",
+    "selection/algorithm.json": "936d107196c12a91b540e6e0a8705550809fe4f65748e87c92c4ac2295bcbc38",
+    "selection/model.json": "7029996d0b35afa9eeae8afa9109b605915f5d6cd25e73cda1d9be3fd0f952cb",
+    "selection/p1.json": "6f6cbf816de88bde1cef5d0e8f580670020d0767f2a4962be60a580dcd3f5374",
+    "solve/result.json": "eb1c6ebd860b4922d4b9d33417629289f7c7c1ea6c0dfaf8612b7f29094c8506"
+  },
+  "created_at": "2026-09-02T06:46:19Z",
+  "environment": {
+    "dependencies": {},
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.0"
+  },
+  "evaluation_protocol": {
+    "mandatory_outputs": [
+      "path",
+      "distance"
+    ],
+    "minimum_practical_improvement": null,
+    "required_capabilities": [
+      "shortest_path"
+    ]
+  },
+  "evidence": {
+    "refreshed": false,
+    "revision": null
+  },
+  "evidence_revision": null,
+  "input_hashes": {
+    "data": "dffda76b8aa08e6be833500b0400ecc9c60b8e7173a387595693f4dfd90b2b48",
+    "problem": "883b49c30b58e582a5884d94ab0f046a42273c7db9a73da58ee2c98abae5bdc6"
+  },
+  "inputs": {
+    "data": {
+      "path": "D:\\知识库\\数学建模\\math-modeling-core-demo\\data.json",
+      "sha256": "dffda76b8aa08e6be833500b0400ecc9c60b8e7173a387595693f4dfd90b2b48"
+    },
+    "problem": {
+      "path": "D:\\知识库\\数学建模\\math-modeling-core-demo\\problem.json",
+      "sha256": "883b49c30b58e582a5884d94ab0f046a42273c7db9a73da58ee2c98abae5bdc6"
+    }
+  },
+  "manifest_hash": "24e9cbc500810ee57aab8e0e7a1ffaa3fca05384741819b191aba74d4b5ff1d4",
+  "mode": "solve",
+  "plugin": {
+    "algorithm_version": "1.0.0",
+    "api_version": 1,
+    "capabilities": [
+      "shortest_path"
+    ],
+    "content_hash": "sha256:4eead5699883cfac3bc5402e2ecb6bc4a37d9622c42771dea516dcf9033e5340",
+    "dependencies": [],
+    "deterministic": true,
+    "io_contract": {
+      "config_fields": [
+        {
+          "container": "config",
+          "kind": "positive_number",
+          "name": "tolerance",
+          "required": true
+        }
+      ],
+      "input_fields": [
+        {
+          "container": "tables",
+          "kind": "weighted_adjacency",
+          "name": "graph",
+          "required": true
+        },
+        {
+          "container": "scalars",
+          "kind": "node",
+          "name": "source",
+          "required": true
+        },
+        {
+          "container": "scalars",
+          "kind": "node",
+          "name": "target",
+          "required": true
+        }
+      ],
+      "output_fields": [
+        {
+          "container": "solution",
+          "kind": "node_sequence",
+          "name": "path",
+          "required": true
+        },
+        {
+          "container": "solution",
+          "kind": "number",
+          "name": "distance",
+          "required": true
+        }
+      ]
+    },
+    "model_families": [
+      "shortest_path"
+    ],
+    "name": "graph.dijkstra",
+    "permissions": {
+      "executables": [],
+      "filesystem_read": [
+        "declared_inputs"
+      ],
+      "filesystem_write": [
+        "run_artifacts"
+      ],
+      "network": false,
+      "secrets": false,
+      "subprocess": false
+    },
+    "plugin_id": "graph.dijkstra",
+    "resource_tier": 1,
+    "schema_version": 1,
+    "solver_guarantee": "exact for declared graph assumptions",
+    "status": "stable",
+    "validation_capabilities": [
+      "flow_conservation",
+      "min_cut",
+      "path"
+    ]
+  },
+  "problem": {
+    "assumptions": {},
+    "business_rules": [],
+    "domain_context": {
+      "object_name": "static directed road network",
+      "spatial_scale": "five-node demonstration network",
+      "stakeholders": [
+        "traveler"
+      ],
+      "system_boundary": "declared nodes and nonnegative travel-time edges",
+      "temporal_scale": "single static snapshot",
+      "terminology": {
+        "edge_weight": "travel time"
+      },
+      "typical_magnitudes": {
+        "travel_time_min": [
+          0.0,
+          120.0
+        ]
+      },
+      "unresolved_ambiguities": []
+    },
+    "mandatory_outputs": [
+      "path",
+      "distance"
+    ],
+    "mechanisms": [],
+    "minimum_practical_improvement": null,
+    "model_family": "shortest_path",
+    "preference_weights": {},
+    "problem_id": "road-routing-demo",
+    "required_capabilities": [
+      "shortest_path"
+    ],
+    "variables": [
+      {
+        "data_available": true,
+        "data_type": "continuous",
+        "definition": "time required to traverse directed edge i to j",
+        "evidence_claims": [
+          "demo-declared-input"
+        ],
+        "evidence_status": "VERIFIED",
+        "identifiable": true,
+        "measurement": "demonstration input table",
+        "name": "edge travel time",
+        "observable": true,
+        "reasonable_range": null,
+        "role": "input",
+        "symbol": "t_ij",
+        "unit": "min"
+      }
+    ]
+  },
+  "reproduce_command": "python \"D:\\知识库\\数学建模\\.agents\\skills\\math-modeling-core\\scripts\\run_model.py\" --project-root \"D:\\知识库\\数学建模\\math-modeling-core-demo\" --problem \"D:\\知识库\\数学建模\\math-modeling-core-demo\\problem.json\" --data \"D:\\知识库\\数学建模\\math-modeling-core-demo\\data.json\" --mode \"solve\"",
+  "run_id": "solve",
+  "schema_version": 2,
+  "selection": {
+    "algorithm_plugin_id": "graph.dijkstra",
+    "algorithm_version": "1.0.0"
+  },
+  "skill_version": "0.1.0",
+  "solve_config": {
+    "max_iterations": 10000,
+    "parameters": {},
+    "seed": 42,
+    "timeout": 60.0,
+    "tolerance": 1e-08
+  },
+  "validation_status": "PASS"
+}

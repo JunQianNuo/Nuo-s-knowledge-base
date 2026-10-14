@@ -1,0 +1,40 @@
+{
+  "status": "WARN",
+  "solver_status": "SUCCESS_LOCAL_CALIBRATION",
+  "model": "Q1-M6",
+  "algorithm": "Q1-A2",
+  "main_assumption": {
+    "p0": 0.10,
+    "p1": 0.13,
+    "alpha": 0.05,
+    "beta": 0.10,
+    "kappa": 1.0
+  },
+  "main_result": {
+    "plan_hash": "097cee36c394fece",
+    "N_max": 968,
+    "terminal_cutoff": 112,
+    "h_accept": -5.251291798606495,
+    "h_reject": 4.8903717578961645,
+    "producer_risk": 0.04891319629510894,
+    "consumer_risk": 0.09959663865398771,
+    "ASN_at_p0": 838.6178931022558,
+    "ASN_at_p1": 772.4095788989027,
+    "grid_worst_ASN": 923.1034983747957,
+    "grid_worst_p": 0.112375
+  },
+  "verification": {
+    "unit_tests": 5,
+    "unit_test_result": "PASS",
+    "formal_run_exit_code": 0,
+    "all_16_scenarios_present": true,
+    "all_risk_constraints_pass": true,
+    "binary_terminal_rule": true,
+    "maximum_probability_residual": 4.951594689828198e-14
+  },
+  "limitations": [
+    "p1=0.13 is an engineering design assumption, not problem-given data.",
+    "The boundary search is a predeclared local calibration grid.",
+    "The gray-zone ASN supremum is grid-evaluated rather than interval-certified."
+  ]
+}

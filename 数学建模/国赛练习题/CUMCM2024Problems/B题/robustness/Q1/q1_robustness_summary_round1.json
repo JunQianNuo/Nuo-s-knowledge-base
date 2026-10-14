@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "rigor_profile": "lean",
+  "generated_at": "2026-09-07T16:50:47.6088149+08:00",
+  "approved_decision_id": "q1_method_choice",
+  "methods": [
+    {
+      "id": "M1",
+      "role": "main"
+    },
+    {
+      "id": "B1",
+      "role": "usable_baseline"
+    }
+  ],
+  "scope": "Risk-targeted reuse and recomputation of approved round1; no new model, simulations, or empirical observations",
+  "source_sha256": {
+    "results/Q1/experiments/round1/run_summary.json": "0388fce640cf49f50baeccaa2d2bd3ed27f44aec662bffa33ac1fbd6fe32ee7f",
+    "code/Q1/reviews/q1_python_review.json": "e69e3c30078d9d4f1c075a5942aa96ed877e87a25711ffc94d914b6427741659",
+    "methods/Q1/q1_decisions.jsonl": "7940b3c52729e816e36e37d7b6942b1c2467fef38313b89a347690fab9c0719e",
+    "results/Q1/experiments/round1/tables/comparison.csv": "5f83acde89c4a7bdf5c7dff45e39781e54b9184495034a6d8a5d5cae538fb9d1",
+    "methods/Q1/probes/probe_config.json": "33a8a502972415bceaf4bad94b34b5cd26af09daf69060a9f19b14af01e6924a",
+    "results/Q1/experiments/round1/metrics/sensitivity.json": "02ec2bca730763c136155d551b38e5da3b0459f916d1e908ad63e63d5e8d680b",
+    "results/Q1/experiments/round1/tables/decision_boundaries.csv": "85a2c03a7084b5b906b152184ac48d752051a7e9a73266de5f2b2c3fe58027eb",
+    "results/Q1/experiments/round1/tables/operating_characteristics.csv": "d042394acf1b082e29b1ec1200a2c822f75622170c50b50bef4b4f68fda1d0c6",
+    "results/Q1/experiments/round1/metrics/validation.json": "b1e9c368dd5790ef86c96a9d03a37f6b5698aab6038c4913dcf63858433f526c"
+  },
+  "perturbation_design": {
+    "source": "methods/Q1/probes/probe_config.json",
+    "timing": "Predeclared before original probe",
+    "theta": "Base grid times 0.9/1.1, clipped to [0,1]; 77 unique total grid points",
+    "caps": [
+      900,
+      1000,
+      1100
+    ],
+    "reference_cap": 1000,
+    "official_p0": 0.1,
+    "alpha_R": 0.05,
+    "alpha_A": 0.1,
+    "rationale": "User-approved lean +/-10% single-parameter perturbation; report cap effects separately rather than optimize cap",
+    "random_seed": 2026,
+    "seed_used": false,
+    "randomness": "none"
+  },
+  "checks": [
+    {
+      "id": "numeric_reproducibility",
+      "tested_claim": "Approved implementation produces reproducible numerical probabilities and costs",
+      "status": "PASS",
+      "source_refs": [
+        "code/Q1/reviews/q1_python_review.json",
+        "results/Q1/experiments/round1/metrics/validation.json"
+      ],
+      "metric": "unit_tests_and_full_rerun",
+      "threshold": {
+        "all_tests_pass": true,
+        "mass_error": 1e-10,
+        "ASN_dual_error": 1e-8
+      },
+      "observed": {
+        "tests_passed": 10,
+        "full_rerun": "All deterministic CSV/JSON fields matched saved artifacts",
+        "max_mass_error": 4.951594689828198e-14,
+        "max_ASN_dual_error": 4.1382008930668235e-11
+      },
+      "limitation": "Numerical correctness is not empirical model validation"
+    },
+    {
+      "id": "error_control_grid",
+      "tested_claim": "Wrong-side decision rates remain under their thresholds on all examined parameter/cap pairs",
+      "status": "PASS",
+      "source_refs": [
+        "results/Q1/experiments/round1/metrics/validation.json"
+      ],
+      "threshold": {
+        "wrong_rejection": 0.05,
+        "wrong_acceptance": 0.1,
+        "tolerance": 1e-10
+      },
+      "observed": {
+        "M1": {
+          "max_wrong_rejection": 0.028228137767451,
+          "max_wrong_acceptance_including_boundary": 0.0070241342833830935
+        },
+        "B1": {
+          "max_wrong_rejection": 0.025039861683558585,
+          "max_wrong_acceptance_including_boundary": 0.0392047510735613
+        }
+      },
+      "limitation": "Finite grid check only; all-parameter time-uniform guarantee relies on method-card arguments and A1/A2"
+    },
+    {
+      "id": "M1_boundary_and_budget_consistency",
+      "tested_claim": "M1 does not change previous boundaries when the cap is extended; unresolved probability cannot rise for its nested stopping rule",
+      "status": "PASS",
+      "source_refs": [
+        "results/Q1/experiments/round1/tables/decision_boundaries.csv",
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv"
+      ],
+      "threshold": {
+        "prefix_mismatches": 0,
+        "unresolved_increase_tolerance": 1e-10
+      },
+      "threshold_basis": "Mechanical invariants of fixed M1 rule, not a post-hoc acceptable-performance threshold",
+      "observed": {
+        "boundary_prefix_mismatches": 0,
+        "max_unresolved_increase": 0,
+        "at_theta_015": [
+          {
+            "method_id": "M1",
+            "cap": 900,
+            "theta": 0.15,
+            "ASN": 412.222342507732,
+            "SD_T_star": 280.4220353770727,
+            "P_A": 0.00005667465382223246,
+            "P_R": 0.905674820183127,
+            "P_U": 0.0942685051630379
+          },
+          {
+            "method_id": "M1",
+            "cap": 1000,
+            "theta": 0.15,
+            "ASN": 420.02574444582075,
+            "SD_T_star": 294.8166601818232,
+            "P_A": 0.00005667465382502373,
+            "P_R": 0.9365965826030878,
+            "P_U": 0.06334674274307463
+          },
+          {
+            "method_id": "M1",
+            "cap": 1100,
+            "theta": 0.15,
+            "ASN": 425.2108131374206,
+            "SD_T_star": 305.59232015428955,
+            "P_A": 0.00005667465382539788,
+            "P_R": 0.9587369015170171,
+            "P_U": 0.04120642382914485
+          }
+        ]
+      },
+      "limitation": "Extending the cap can cost more samples and still leave substantial undecided probability"
+    },
+    {
+      "id": "terminal_schedule_discreteness",
+      "tested_claim": "Whether increasing the B1 cap guarantees fewer undecided decisions",
+      "status": "CONDITIONAL",
+      "source_refs": [
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv"
+      ],
+      "threshold": null,
+      "observed": {
+        "theta": 0.105,
+        "delta_u_900_to_1000": -0.003193699696647845,
+        "delta_u_1000_to_1100": 0.0012502438502052238,
+        "max_P_U_increase": 0.0012502438502052238,
+        "before": {
+          "method_id": "B1",
+          "cap": 1000,
+          "theta": 0.105,
+          "ASN": 956.7464996747245,
+          "SD_T_star": 182.1790134849087,
+          "P_A": 0.019025153693851334,
+          "P_R": 0.05482673509988771,
+          "P_U": 0.9261481112062736
+        },
+        "after": {
+          "method_id": "B1",
+          "cap": 1100,
+          "theta": 0.105,
+          "ASN": 1050.9173254526447,
+          "SD_T_star": 204.65719335333327,
+          "P_A": 0.019076643935077988,
+          "P_R": 0.053525001008457,
+          "P_U": 0.9273983550564788
+        }
+      },
+      "interpretation": "B1 replaces its final look when changing cap; this is not a nested extension that retains the old final look. Do not impose M1's monotonic-cap property on B1 or silently add a ninth look.",
+      "limitation": "Exploratory diagnosis of an existing approved schedule; no model change authorized"
+    },
+    {
+      "id": "theta_sensitivity",
+      "tested_claim": "Small relative theta changes preserve similar three-outcome decision probabilities and ASN",
+      "status": "CONDITIONAL",
+      "source_refs": [
+        "results/Q1/experiments/round1/metrics/sensitivity.json",
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv"
+      ],
+      "metric": "TV=0.5*sum absolute change of (P_A,P_R,P_U); relative ASN change",
+      "threshold": null,
+      "observed": {
+        "M1": {
+          "method_id": "M1",
+          "theta": 0.14,
+          "perturbed_theta": 0.126,
+          "crosses_nominal": false,
+          "TV": 0.4389992445999061,
+          "ASN_relative_change": 0.4038609380688756,
+          "before": {
+            "method_id": "M1",
+            "cap": 1000,
+            "theta": 0.14,
+            "ASN": 591.814646664705,
+            "SD_T_star": 343.8487035755966,
+            "P_A": 0.0001284659041030404,
+            "P_R": 0.7541566187494213,
+            "P_U": 0.24571491534647594
+          },
+          "after": {
+            "method_id": "M1",
+            "cap": 1000,
+            "theta": 0.126,
+            "ASN": 830.8254650296129,
+            "SD_T_star": 308.8346849956217,
+            "P_A": 0.00042486254630693434,
+            "P_R": 0.3151573741495152,
+            "P_U": 0.6844177633041781
+          }
+        },
+        "B1": {
+          "method_id": "B1",
+          "theta": 0.13,
+          "perturbed_theta": 0.117,
+          "crosses_nominal": false,
+          "TV": 0.4446395171816745,
+          "ASN_relative_change": 0.24886908460579482,
+          "before": {
+            "method_id": "B1",
+            "cap": 1000,
+            "theta": 0.13,
+            "ASN": 713.5732375144902,
+            "SD_T_star": 334.5407888282742,
+            "P_A": 0.0014344012284785315,
+            "P_R": 0.7304773175121506,
+            "P_U": 0.26808828125937095
+          },
+          "after": {
+            "method_id": "B1",
+            "cap": 1000,
+            "theta": 0.117,
+            "ASN": 891.1595559339148,
+            "SD_T_star": 257.2854500169065,
+            "P_A": 0.004740428268668053,
+            "P_R": 0.28583780033048195,
+            "P_U": 0.7094217714008617
+          }
+        }
+      },
+      "interpretation": "Both maximum-TV pairs remain above p0. Most change moves probability from rejection to undecided as theta approaches p0; this is power sensitivity, not numerical instability or observed same-batch decision flips.",
+      "limitation": "No human-defined acceptable TV or detection-rate target; cannot declare operational stability or reject method automatically"
+    },
+    {
+      "id": "output_concentration",
+      "tested_claim": "Method does not universally degenerate, while concentration near p0 is reported",
+      "status": "CONDITIONAL",
+      "source_refs": [
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round1/metrics/validation.json"
+      ],
+      "threshold": {
+        "endpoint_unresolved_max": 1e-10,
+        "near_nominal_acceptable_unresolved": null
+      },
+      "observed": {
+        "M1_nominal": {
+          "method_id": "M1",
+          "cap": 1000,
+          "theta": 0.1,
+          "ASN": 967.7440880098518,
+          "SD_T_star": 171.94277722334076,
+          "P_A": 0.0069157540284180835,
+          "P_R": 0.028164972605123805,
+          "P_U": 0.9649192733664852
+        },
+        "B1_nominal": {
+          "method_id": "B1",
+          "cap": 1000,
+          "theta": 0.1,
+          "ASN": 959.3274283395174,
+          "SD_T_star": 176.59249673035256,
+          "P_A": 0.03854966147410365,
+          "P_R": 0.025039861683558585,
+          "P_U": 0.936410476842364
+        },
+        "endpoint_max_unresolved": 0
+      },
+      "limitation": "Endpoints decide and all three outcomes are represented, but high near-threshold undecided rates remain; force-deciding would change the approved statistical contract"
+    },
+    {
+      "id": "baseline_comparison",
+      "tested_claim": "M1 is uniformly more sample-efficient than B1",
+      "status": "CONDITIONAL",
+      "claim_supported": false,
+      "source_refs": [
+        "results/Q1/experiments/round1/tables/comparison.csv"
+      ],
+      "threshold": null,
+      "observed": {
+        "theta_005": [
+          {
+            "method_id": "M1",
+            "cap": 1000,
+            "theta": 0.05,
+            "ASN": 313.3269522163622,
+            "SD_T_star": 181.64732940544755,
+            "P_A": 0.9936748768352022,
+            "P_R": 0.0036038459320288704,
+            "P_U": 0.002721277232755109
+          },
+          {
+            "method_id": "B1",
+            "cap": 1000,
+            "theta": 0.05,
+            "ASN": 261.38169651940365,
+            "SD_T_star": 171.46664328326978,
+            "P_A": 0.9998465204898312,
+            "P_R": 0.00010977650555424171,
+            "P_U": 0.00004370300460295659
+          }
+        ],
+        "theta_020": [
+          {
+            "method_id": "M1",
+            "cap": 1000,
+            "theta": 0.2,
+            "ASN": 105.34826192255997,
+            "SD_T_star": 86.87220242601508,
+            "P_A": 0.0000010637319615851713,
+            "P_R": 0.9999989129222917,
+            "P_U": 2.3345752532361855e-8
+          },
+          {
+            "method_id": "B1",
+            "cap": 1000,
+            "theta": 0.2,
+            "ASN": 121.31716350570008,
+            "SD_T_star": 95.9287353430484,
+            "P_A": 0.0000038686815601868766,
+            "P_R": 0.9999961312043758,
+            "P_U": 1.1407097426650528e-10
+          }
+        ]
+      },
+      "interpretation": "Counterexample to blanket efficiency superiority: B1 uses fewer samples and has lower undecided probability at theta=.05; M1 has lower ASN at .20. This does not reverse the human flexibility preference.",
+      "limitation": "No theta weighting or scalar optimality criterion approved; no global minimum claim"
+    },
+    {
+      "id": "empirical_assumptions",
+      "tested_claim": "iid large-batch approximation and perfect detection hold in practice",
+      "status": "CONDITIONAL",
+      "source_refs": [
+        "planning/model_assumptions.md",
+        "workspace/data/data_profile.json"
+      ],
+      "perturbation": "Not varied under the approved first-round simplifying policy",
+      "threshold": null,
+      "observed": {
+        "observed_sampling_rows": 0,
+        "batch_size": null,
+        "test_error_rate": null
+      },
+      "limitation": "No empirical evidence. Finite-population, dependence and misclassification claims unsupported; no invented parameters"
+    }
+  ],
+  "reproducibility": {
+    "commands": [
+      "python -B code/Q1/test_q1_model.py",
+      "python -B code/Q1/q1_run.py --verify-existing"
+    ],
+    "fresh_rerun_exit_codes": [
+      0,
+      0
+    ],
+    "aggregation_recipe": [
+      "Filter operating_characteristics by method/cap/theta; join on theta for budget changes.",
+      "Select largest TV within each method from saved sensitivity.theta_perturbations; join source and perturbed theta to operating_characteristics.",
+      "For each M1 boundary with cap900/1000 compare same k with cap1100; count mismatches.",
+      "For each theta and method compute P_U(1000)-P_U(900) and P_U(1100)-P_U(1000); report largest positive increment.",
+      "Aggregate maximum predeclared error and numeric tolerances across six validation groups."
+    ]
+  },
+  "not_run": {
+    "resampling": "No empirical sample supplied; not justified",
+    "seed_sweep": "Deterministic exact recursion, no stochastic seed variability",
+    "additional_assumption_scenarios": "Excluded by accepted lean simplifying policy; require scope change before adding"
+  },
+  "overall_status": "CONDITIONAL",
+  "human_verdict": null,
+  "final_claims_frozen": false,
+  "fallback_trigger": {
+    "fallback_id": null,
+    "activated": false,
+    "relevance": "If human rejects the undecided/sensitivity tradeoff, return to decision-prompt-builder and method-selector; no automatic substitution or archiving"
+  },
+  "next_action": {
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "decision_id": "q1_round1_stability_scope",
+    "decision_type": "stability_verdict",
+    "question": "Retain M1 with restricted claims and documented sensitive regions, or specify a required detection/undecided target before revising?"
+  }
+}

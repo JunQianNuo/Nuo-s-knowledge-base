@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "generated_by": "code/Q1/q1_run_round3.py",
+  "generated_at": "2026-09-08T07:51:53.287608+00:00",
+  "question": "Q1",
+  "round": "round3",
+  "implementation_target": "python",
+  "status": "success",
+  "approved_decision_id": "q1_method_choice_v2",
+  "experiment_adjustment_decision_id": "q1_final_result_verdict",
+  "change_from_round2": "theta_grid_density_only",
+  "mathematical_rule_change": false,
+  "random_seed": 2026,
+  "randomness": "none",
+  "seed_used": false,
+  "data_kind": "theoretical_parameter_scenarios_no_observed_samples",
+  "configuration": {
+    "p0": 0.1,
+    "alpha_R": 0.05,
+    "alpha_A": 0.1,
+    "caps": [
+      900,
+      1000,
+      1100
+    ],
+    "theta_grid": {
+      "start": 0.0,
+      "end": 1.0,
+      "step": 0.001,
+      "count": 1001
+    },
+    "mixture": [
+      1,
+      1
+    ],
+    "B1_first_look": 10,
+    "B1_growth": 2
+  },
+  "input_sha256": {
+    "workspace/data_clean/q1_statement_parameters.csv": "76605c7d3efedbb60932fea119c21b2d29f1648e45b45abc516cf2aabc14c3a3",
+    "methods/Q1/probes/probe_config.json": "33a8a502972415bceaf4bad94b34b5cd26af09daf69060a9f19b14af01e6924a",
+    "methods/Q1/probes/risk_probe_summary.json": "16cb2f19f9448527ac08029daec2e45706b8f64e6e397e596562a33aecf9585c",
+    "methods/Q1/probes/risk_probe_metrics.json": "cb145963f5f8b8a6cc9e244dc5f1b6a0b3f3c53d9a775aee19167d0409891ae8",
+    "methods/Q1/q1_decisions.jsonl": "2296273ed8326d27c03b5b446cd81960ab1cada31d030ca1624bb61e0574ae88",
+    "methods/Q1/q1_method_card.md": "aec03c953488474097050b32cc34d97c7d760aa57d18d6eed66a7c40f6c2de95",
+    "planning/model_assumptions.md": "0dc69fd7a67cdd16eb68e412afafbaec5be44d99358b710553bb5a1165179d10",
+    "planning/symbol_table.md": "de580719c5c3d6328acb627e50f8289629a7a013071af3a59ca79d99b35a52e6",
+    "workspace/data/data_profile.json": "c8af5397a41b47c5761e2e45f32c3426668ea10abf464d25a7cd5b7dfe852da4",
+    "code/Q1/q1_code_plan.md": "17b75a67186d66c4d225dec0d0959c951d1ffb22ece4e89d4f66c3acb2938fc4",
+    "code/Q1/q1_code_plan_round1.md": "6ab1230cc78e75c1042e29a33747041ea22ced44d821402c918206cbe159c931",
+    "results/Q1/experiments/round1/run_summary.json": "0388fce640cf49f50baeccaa2d2bd3ed27f44aec662bffa33ac1fbd6fe32ee7f",
+    "results/Q1/experiments/round1/tables/operating_characteristics.csv": "d042394acf1b082e29b1ec1200a2c822f75622170c50b50bef4b4f68fda1d0c6",
+    "results/Q1/experiments/round1/tables/comparison.csv": "5f83acde89c4a7bdf5c7dff45e39781e54b9184495034a6d8a5d5cae538fb9d1",
+    "results/Q1/experiments/round2/run_summary.json": "86ab5e08780de41472c0ee47b68516c90a70a9093a79ee29905c30152dd40b38",
+    "results/Q1/experiments/round2/tables/operating_characteristics.csv": "594a28988925111add06b2c626c70e448a818c752d93c1735eca880ac41330d2",
+    "results/Q1/experiments/round2/metrics/validation.json": "fc2727845cf74e0c24d645a1507ecb630cc9926a61d46a655633994d1e67b830"
+  },
+  "code_sha256": {
+    "code/Q1/q1_run_round3.py": "240545506d5c3f5763f12139df1943f3a1c47f6d62d98860d2d4cc7e0f33984d",
+    "code/Q1/test_q1_round3.py": "1b6ea7f9cf2884570427bcfa782e5f52412c472cc30d250470007bf3630cf774",
+    "code/Q1/q1_run.py": "09137debd65019ba28b40097710b0537a8aa9caa48641e6a5a4f153819e5be45",
+    "code/Q1/q1_run_round2.py": "96b19a88459400a548d4d913785ffb4659057275e45c93e53f6a8b43fbfe4836"
+  },
+  "methods": [
+    {
+      "method_id": "B1",
+      "role": "main",
+      "script": "code/Q1/q1_run_round3.py",
+      "reused_numeric_core": "code/Q1/q1_run.py",
+      "status": "success",
+      "execution_time_seconds": 13.936436500007403,
+      "peak_traced_memory_mb": 28.798136711120605,
+      "memory_scope": "tracemalloc tracked allocations, not RSS",
+      "input_files": [
+        "workspace/data_clean/q1_statement_parameters.csv",
+        "methods/Q1/probes/probe_config.json",
+        "methods/Q1/probes/risk_probe_summary.json",
+        "methods/Q1/probes/risk_probe_metrics.json",
+        "methods/Q1/q1_decisions.jsonl",
+        "methods/Q1/q1_method_card.md",
+        "planning/model_assumptions.md",
+        "planning/symbol_table.md",
+        "workspace/data/data_profile.json",
+        "code/Q1/q1_code_plan.md",
+        "code/Q1/q1_code_plan_round1.md",
+        "results/Q1/experiments/round1/run_summary.json",
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round1/tables/comparison.csv",
+        "results/Q1/experiments/round2/run_summary.json",
+        "results/Q1/experiments/round2/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round2/metrics/validation.json"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round3/tables/decision_boundaries.csv",
+        "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round3/tables/comparison.csv",
+        "results/Q1/experiments/round3/tables/near_threshold_dense.csv",
+        "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+        "results/Q1/experiments/round3/metrics/validation.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "at_nominal_rate": {
+          "theta": 0.1,
+          "ASN": 959.3274283395174,
+          "SD_T_star": 176.59249673035256,
+          "P_A": 0.03854966147410365,
+          "P_R": 0.025039861683558585,
+          "P_U": 0.936410476842364
+        },
+        "output_degeneracy": {
+          "endpoint_max_undecided": 0.0,
+          "nonzero_outcome_types": 3
+        }
+      },
+      "warnings": [
+        "Theory conditional on iid Bernoulli and perfect detection",
+        "Dense finite grid is not a proof of global optimality",
+        "Near-threshold undecided concentration remains"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "M1",
+      "role": "usable_baseline",
+      "script": "code/Q1/q1_run_round3.py",
+      "reused_numeric_core": "code/Q1/q1_run.py",
+      "status": "success",
+      "execution_time_seconds": 20.249172299998463,
+      "peak_traced_memory_mb": 28.771825790405273,
+      "memory_scope": "tracemalloc tracked allocations, not RSS",
+      "input_files": [
+        "workspace/data_clean/q1_statement_parameters.csv",
+        "methods/Q1/probes/probe_config.json",
+        "methods/Q1/probes/risk_probe_summary.json",
+        "methods/Q1/probes/risk_probe_metrics.json",
+        "methods/Q1/q1_decisions.jsonl",
+        "methods/Q1/q1_method_card.md",
+        "planning/model_assumptions.md",
+        "planning/symbol_table.md",
+        "workspace/data/data_profile.json",
+        "code/Q1/q1_code_plan.md",
+        "code/Q1/q1_code_plan_round1.md",
+        "results/Q1/experiments/round1/run_summary.json",
+        "results/Q1/experiments/round1/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round1/tables/comparison.csv",
+        "results/Q1/experiments/round2/run_summary.json",
+        "results/Q1/experiments/round2/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round2/metrics/validation.json"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round3/tables/decision_boundaries.csv",
+        "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+        "results/Q1/experiments/round3/tables/comparison.csv",
+        "results/Q1/experiments/round3/tables/near_threshold_dense.csv",
+        "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+        "results/Q1/experiments/round3/metrics/validation.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "at_nominal_rate": {
+          "theta": 0.1,
+          "ASN": 967.7440880098518,
+          "SD_T_star": 171.94277722334076,
+          "P_A": 0.0069157540284180835,
+          "P_R": 0.028164972605123805,
+          "P_U": 0.9649192733664852
+        },
+        "output_degeneracy": {
+          "endpoint_max_undecided": 0.0,
+          "nonzero_outcome_types": 3
+        }
+      },
+      "warnings": [
+        "Theory conditional on iid Bernoulli and perfect detection",
+        "Dense finite grid is not a proof of global optimality",
+        "Near-threshold undecided concentration remains"
+      ],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "table": "results/Q1/experiments/round3/tables/comparison.csv",
+    "summary": "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+    "direction": "B1 minus M1",
+    "uniform_superiority_claim": false,
+    "theta_weighting": null
+  },
+  "fallback_trigger": {
+    "fallback_id": null,
+    "condition": null,
+    "observed": false,
+    "evidence": null
+  },
+  "risk_conditions": {
+    "status": "CONDITIONAL",
+    "assumptions": [
+      "A1",
+      "A2"
+    ],
+    "B1_boundary_undecided": 0.936410476842364,
+    "dense_grid_is_uniform_proof": false,
+    "cap_monotonicity_assumed": false,
+    "global_minimum_claim": false,
+    "force_decision_at_cap": false
+  },
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "executable": "C:\\Users\\Nuo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe"
+  },
+  "output_files": [
+    "results/Q1/experiments/round3/tables/decision_boundaries.csv",
+    "results/Q1/experiments/round3/tables/operating_characteristics.csv",
+    "results/Q1/experiments/round3/tables/comparison.csv",
+    "results/Q1/experiments/round3/tables/near_threshold_dense.csv",
+    "results/Q1/experiments/round3/metrics/dense_grid_summary.json",
+    "results/Q1/experiments/round3/metrics/validation.json"
+  ],
+  "figure_files": []
+}

@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "scope": "Deterministic dense-grid generator self-checks; independent review pending",
+  "named_checks": {
+    "input_contract": true,
+    "method_alignment": true,
+    "probability_and_moments": true,
+    "dense_error_grid": true,
+    "directional_monotonicity": true,
+    "round2_overlap": true,
+    "schedule_check": true,
+    "reproducibility": true
+  },
+  "checks": {
+    "B1_900": {
+      "mass_error": 3.3084646133829665e-14,
+      "ASN_dual_error": 3.0240698833949864e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.02442689655790401,
+      "grid_sup_wrong_acceptance_including_boundary": 0.03762651770740528,
+      "monotonicity_violation": 2.55351295663786e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    },
+    "B1_1000": {
+      "mass_error": 3.6415315207705135e-14,
+      "ASN_dual_error": 3.4219738154206425e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.025039861683558585,
+      "grid_sup_wrong_acceptance_including_boundary": 0.03854966147410365,
+      "monotonicity_violation": 2.55351295663786e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    },
+    "B1_1100": {
+      "mass_error": 3.952393967665557e-14,
+      "ASN_dual_error": 3.728928277269006e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.024367069390542843,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0392047510735613,
+      "monotonicity_violation": 2.55351295663786e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 30,
+      "boundary_overlap_count": 0
+    },
+    "M1_900": {
+      "mass_error": 3.8413716652030416e-14,
+      "ASN_dual_error": 1.602984411874786e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.02809434396613962,
+      "grid_sup_wrong_acceptance_including_boundary": 0.006790080787377571,
+      "monotonicity_violation": 1.9984014443252818e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    },
+    "M1_1000": {
+      "mass_error": 4.085620730620576e-14,
+      "ASN_dual_error": 2.000888343900442e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.028164972605123805,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0069157540284180835,
+      "monotonicity_violation": 1.9984014443252818e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    },
+    "M1_1100": {
+      "mass_error": 4.374278717023117e-14,
+      "ASN_dual_error": 2.3646862246096134e-11,
+      "minimum_variance_before_roundoff_clip": 0.0,
+      "grid_sup_wrong_rejection": 0.028228137767451,
+      "grid_sup_wrong_acceptance_including_boundary": 0.0070241342833830935,
+      "monotonicity_violation": 1.9984014443252818e-15,
+      "endpoint_max_undecided": 0.0,
+      "round2_overlap_count": 69,
+      "round2_overlap_max_error": 0.0,
+      "independent_boundary_witnesses": 37,
+      "boundary_overlap_count": 0
+    }
+  },
+  "max_mass_error": 4.374278717023117e-14,
+  "max_ASN_dual_error": 3.728928277269006e-11,
+  "max_wrong_rejection": 0.028228137767451,
+  "max_wrong_acceptance": 0.0392047510735613,
+  "max_monotonicity_violation": 2.55351295663786e-15,
+  "round2_overlap_count": 414,
+  "round2_overlap_max_error": 0.0,
+  "independent_path_max_error": 6.750155989720952e-13,
+  "B1_schedule": {
+    "look_counts": {
+      "900": 8,
+      "1000": 8,
+      "1100": 8
+    },
+    "shared_prefix": [
+      10,
+      20,
+      40,
+      80,
+      160,
+      320,
+      640
+    ],
+    "same_error_allocation": true,
+    "nonnested_last_look": true,
+    "last_looks": {
+      "900": 900,
+      "1000": 1000,
+      "1100": 1100
+    }
+  },
+  "scale": [
+    {
+      "method_id": "B1",
+      "execution_time_seconds": 13.731348599991179,
+      "peak_traced_memory_mb": 28.798385620117188
+    },
+    {
+      "method_id": "M1",
+      "execution_time_seconds": 19.931550499997684,
+      "peak_traced_memory_mb": 28.771825790405273
+    }
+  ]
+}

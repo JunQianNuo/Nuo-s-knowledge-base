@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "round": "round3",
+  "reviewed_files": [
+    {
+      "path": "code/Q1/q1_run_round3.py",
+      "sha256": "240545506d5c3f5763f12139df1943f3a1c47f6d62d98860d2d4cc7e0f33984d"
+    },
+    {
+      "path": "code/Q1/test_q1_round3.py",
+      "sha256": "1b6ea7f9cf2884570427bcfa782e5f52412c472cc30d250470007bf3630cf774"
+    },
+    {
+      "path": "code/Q1/q1_run.py",
+      "sha256": "09137debd65019ba28b40097710b0537a8aa9caa48641e6a5a4f153819e5be45"
+    },
+    {
+      "path": "code/Q1/q1_run_round2.py",
+      "sha256": "96b19a88459400a548d4d913785ffb4659057275e45c93e53f6a8b43fbfe4836"
+    }
+  ],
+  "code_plan": {
+    "path": "code/Q1/q1_code_plan.md",
+    "sha256": "17b75a67186d66c4d225dec0d0959c951d1ffb22ece4e89d4f66c3acb2938fc4"
+  },
+  "decision_id": "q1_method_choice_v2",
+  "experiment_adjustment_decision_id": "q1_final_result_verdict",
+  "run_summary": {
+    "path": "results/Q1/experiments/round3/run_summary.json",
+    "sha256": "d47945f7adeff4613154330d0356f5914f76f24d9ac7b9e706db2544dec74eef"
+  },
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "py_compile passed for q1_run_round3.py, test_q1_round3.py, q1_run.py and q1_run_round2.py",
+        "No unexpected non-ASCII source characters were found in q1_run_round3.py"
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "The one-row cleaned parameter contract remains p0=0.10, alpha_R=0.05 and alpha_A=0.10",
+        "The human B1/M1 method decision and q1_final_result_verdict adjustment are validated before computing",
+        "The theta grid has 1001 values from 0 to 1 at step 0.001; 41 values lie in [0.08,0.12]",
+        "No code path reads workspace/data_raw",
+        "Downstream robustness and the superseded final result report are not hashed as computational inputs"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "B1 remains main and M1 remains usable_baseline; no third method or fallback implementation is present",
+        "The change is theta_grid_density_only and mathematical_rule_change=false",
+        "B1 uses eight predeclared looks for each tested cap, with a shared seven-look prefix and distinct final looks 900, 1000 and 1100",
+        "B1 per-look error allocations remain identical across the three caps; schedules are nonnested because the last look is replaced",
+        "M1 and B1 return directly comparable ASN, SD_T_star, P_A, P_R and P_U on the same grid and caps"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "Nine round3 behavioral tests passed after the final input-provenance repair",
+        "q1_run_round3.py --verify-existing completed successfully after the final regeneration",
+        "All input_sha256 and code_sha256 entries in run_summary.json match files on disk",
+        "414 round2-overlap method-cap-theta cases match on ASN, SD_T_star, P_A, P_R and P_U with maximum error 0",
+        "Independent small-state path error is below 1e-10"
+      ]
+    },
+    "output_contract": {
+      "status": "PASS",
+      "evidence": [
+        "Saved row counts are 6000 boundaries, 6006 operating characteristics, 3003 comparisons and 41 dense near-threshold rows",
+        "dense_grid_summary.json records comparison counts, extrema, concentration ranges, adjacent changes and limitations",
+        "run_summary.json records roles, configuration, hashes, environment, warnings, fallback state and output paths",
+        "The exact-recursion run is labeled theoretical_parameter_scenarios_no_observed_samples and does not claim global superiority"
+      ]
+    },
+    "dense_grid_risk_checks": {
+      "status": "PASS",
+      "evidence": [
+        "Maximum probability mass error is 4.37427871702312e-14 and maximum ASN dual error is 3.72892827726901e-11",
+        "Maximum directional monotonicity violation is 2.55351295663786e-15",
+        "Maximum wrong rejection is 0.028228137767451 below 0.05; maximum wrong acceptance is 0.0392047510735613 below 0.10",
+        "Endpoint undecided probability is zero for both methods and all tested caps"
+      ]
+    },
+    "scale": {
+      "status": "PASS",
+      "evidence": [
+        "B1 used 13.9364 seconds and 28.7981 MB traced memory",
+        "M1 used 20.2492 seconds and 28.7718 MB traced memory",
+        "Both remain below the planned 60 seconds per method and 256 MB traced-memory limits"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "Q1-R3-LOW-001",
+      "severity": "LOW",
+      "blocking": false,
+      "summary": "Broad test_q1*.py discovery includes a historical round1 role assertion",
+      "evidence": "The independent review observed 23 of 24 broad-discovery tests passing; test_q1_model.py expects the superseded M1-main decision.",
+      "impact": "This does not affect round3 computations or its nine dedicated tests, but an undifferentiated directory-wide test command returns a failure code.",
+      "disposition": "Run code/Q1/test_q1_round3.py for the active round; isolate historical tests in a later maintenance change rather than altering archived evidence now."
+    }
+  ],
+  "repairs_during_review": [
+    {
+      "change": "Removed downstream robustness and the superseded final result report from round3 computational input hashes",
+      "reason": "Updating downstream reports must not invalidate a deterministic model run",
+      "verification": "A failing provenance test was added first; all nine tests and full --verify-existing then passed"
+    }
+  ],
+  "review_provenance": "Independent pre-repair review plus targeted post-repair rerun of every affected check; no mathematical rule changed.",
+  "verdict": "PASSED",
+  "reviewed_at": "2026-09-08T16:01:52.3353626+08:00"
+}

@@ -177,7 +177,8 @@ def _plan_row(result: dict) -> dict:
 
 def _git_value(*args: str) -> str:
     try:
-        return subprocess.check_output(["git", *args], cwd=HERE, text=True).strip()
+        raw = subprocess.check_output(["git", *args], cwd=HERE)
+        return raw.decode("utf-8", errors="replace").strip()
     except (OSError, subprocess.SubprocessError):
         return "unavailable"
 

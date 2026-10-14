@@ -1,0 +1,41 @@
+{
+  "artifacts": [],
+  "diagnostics": {},
+  "metrics": {},
+  "objective": 10.0,
+  "plugin_id": "graph.dijkstra",
+  "solution": {
+    "distance": 10.0,
+    "path": [
+      "A",
+      "C",
+      "B",
+      "D",
+      "E"
+    ]
+  },
+  "status": "SUCCESS",
+  "validation_report": {
+    "accepted_risk": null,
+    "checks": [
+      {
+        "evidence": [],
+        "name": "path_reconstruction",
+        "observed": [
+          "A",
+          "C",
+          "B",
+          "D",
+          "E"
+        ],
+        "required": true,
+        "rollback_stage": null,
+        "severity": "critical",
+        "status": "PASS",
+        "threshold": null
+      }
+    ],
+    "rollback_stage": null,
+    "status": "PASS"
+  }
+}

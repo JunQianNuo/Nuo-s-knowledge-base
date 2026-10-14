@@ -1,0 +1,43 @@
+{
+  "run_id": "math-modeling-core-algorithm-design-20260902",
+  "stage": "algorithm-design",
+  "status": "WARN",
+  "report": "../algorithm-design.md",
+  "full_solver_executed": false,
+  "checks": {
+    "model_algorithm_fit": "PASS",
+    "q1_contract": "PASS_WITH_DATA_BLOCK",
+    "q2_contract": "PASS",
+    "q3_contract": "PASS",
+    "q4_contract": "PASS_WITH_DATA_AND_IMPLEMENTATION_BLOCK",
+    "legacy_q4_voi_demoted": true,
+    "unproved_all_upper_endpoint_worst_case_rejected": true,
+    "no_metaheuristic_for_16_or_65536_policy_spaces": true
+  },
+  "test_command": "python -m unittest q1.test_q1 q2.test_q2 q3.test_q3 q4.test_q4 -v",
+  "test_result": {
+    "status": "PASS",
+    "tests_run": 32,
+    "elapsed_seconds": 8.953,
+    "failures": 0,
+    "errors": 0,
+    "warnings": [
+      "q3/run_q3.py emits a pandas FutureWarning about silent downcasting; it does not affect current numerical acceptance results."
+    ]
+  },
+  "verified_existing_components": [
+    "Q1 fixed-binomial oracle and exact finite-path recursion",
+    "Q2 reachable-state Markov reward evaluation and nonabsorption checks",
+    "Q3 complete 65536-policy enumeration, material balance, and Q2 degeneration",
+    "Q4 fixed/sequential intervals and batch-evaluator cross-checks"
+  ],
+  "not_yet_implemented": [
+    "Q4 verified interval linear solve and interval branch-and-bound stability certificate",
+    "Q4 certified profit/regret envelopes over the full simultaneous confidence set"
+  ],
+  "data_blocks": [
+    "Q1 requires a declared LTPD p1 and maximum-sample rule for one official plan",
+    "Q4 requires per-parameter N_j, K_j, conditioning, and stopping-rule metadata"
+  ],
+  "claim_scope": "The algorithm design is complete. Existing tests validate reusable components only; they do not imply that the new Q4 certification layer has been implemented or that final numerical answers have been solved."
+}

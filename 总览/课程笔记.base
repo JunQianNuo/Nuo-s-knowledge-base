@@ -17,17 +17,16 @@ properties:
     displayName: 最近修改
 views:
   - type: table
-    name: 全部课程笔记
+    name: 快速浏览（20 条）
     order:
       - file.name
       - subject
       - type
       - status
-      - topics
-      - review_date
       - file.mtime
+    limit: 20
   - type: table
-    name: 待处理课程资料
+    name: 已标注的当前学习
     filters:
       or:
         - status == "待处理"
@@ -37,4 +36,6 @@ views:
       - subject
       - type
       - status
+      - topics
+      - review_date
       - file.mtime

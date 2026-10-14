@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "reviewed_files": [
+    "code/Q1/q1_run.py",
+    "code/Q1/test_q1_model.py"
+  ],
+  "decision_id": "q1_method_choice",
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "运行测试文件：10项测试全部通过，无最终警告；入口实际运行成功。",
+        "代码导入不执行求解；主入口受__main__保护。"
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "校验官方CSV恰一行、三个字段及概率域；拒绝缺失、重复行、NaN/Inf、越界参数。",
+        "运行前核对M1人类选择、B1对照、探针输入哈希和数据画像。",
+        "路径相对于脚本解析；从D:/知识库这一不同工作目录重运行成功。",
+        "生产脚本仅读清洗数据与本工作流材料；输出目录不覆盖测试通过。未读取历史B题作答。"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "逐项核对方法卡：M1使用Beta(1,1)混合对数似然比及方向约束；B1使用预定检查点的精确二项尾和每侧alpha/K。",
+        "12件全部4096条二进制路径，6个真实参数情景、两方法独立阶乘/尾概率核算与吸收递推在1e-10内一致；B1包含10、12两次检查。",
+        "三个预算分别核验M1 37个、B1 30个独立边界见证点；M1用置信集二分反演，B1用独立lgamma及fsum。",
+        "6000条已保存边界无接收/拒收重叠；B1三种预算共24次有效检查，非检查点边界为null；未决在上限计入成本。"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "使用--verify-existing从不同工作目录完整重新计算；CSV文本以及排除时间戳/耗时/跟踪内存后的全部JSON值一致，未覆盖旧结果。",
+        "Python 3.12.13、NumPy 2.3.5及解释器路径已记录。random_seed=2026、seed_used=false、randomness=none准确反映确定性递推。",
+        "当前代码及全部输入哈希与run_summary一致；同配置相对原筛选探针的theta/ASN/判定概率最大绝对差为0。"
+      ]
+    },
+    "output_contract": {
+      "status": "PASS",
+      "evidence": [
+        "实际产物：6000行判定边界、462行性能表、231行成对比较表、敏感性JSON、数值核验JSON、运行摘要。",
+        "从CSV独立核对概率守恒、比较表连接键与M1减B1的差值方向；全部输出引用存在。",
+        "最大概率守恒误差4.951594689828198e-14；最大双重ASN误差4.1382008930668235e-11，均满足预定容差。",
+        "M1/B1主对照角色、无备用、CONDITIONAL条件、退化指标、警告及缺少人类稳定性评价明确保存。",
+        "按本轮规划不生成图表，figure_files为空；未将尚未规划/生成的图表列为已有产物。"
+      ]
+    },
+    "scale": {
+      "status": "PASS",
+      "evidence": [
+        "首次正式运行：M1约1.284秒、B1约0.946秒；跟踪分配峰值分别约4.262MB和4.150MB，均低于每方法60秒/256MB预算。",
+        "内存口径为tracemalloc跟踪分配，不是进程RSS。"
+      ]
+    }
+  },
+  "findings": [],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-09-07T16:31:04+08:00",
+  "review_scope": "Code and saved numerical output contract only; not empirical assumption validation, human stability judgment or final QA",
+  "remaining_model_limitations": [
+    "A1/A2未获实测验证；阈值附近未决集中。",
+    "部分同侧参数区间仍有明显检出率/未决概率变化。",
+    "没有全局ASN最优性证明，也没有用户确认最终稳定性或结论范围。"
+  ],
+  "evidence_refs": [
+    "results/Q1/experiments/round1/run_summary.json",
+    "results/Q1/experiments/round1/metrics/validation.json",
+    "results/Q1/experiments/round1/metrics/sensitivity.json",
+    "code/Q1/q1_code_plan.md"
+  ],
+  "reviewed_code_sha256": {
+    "code/Q1/q1_run.py": "09137debd65019ba28b40097710b0537a8aa9caa48641e6a5a4f153819e5be45",
+    "code/Q1/test_q1_model.py": "c6973a729469090448f4cc51e9b868acecb111e7705a0139e78ca0d0f097936a"
+  },
+  "run_summary_sha256": "0388fce640cf49f50baeccaa2d2bd3ed27f44aec662bffa33ac1fbd6fe32ee7f"
+}

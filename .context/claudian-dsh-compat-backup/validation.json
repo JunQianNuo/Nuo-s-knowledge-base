@@ -1,0 +1,81 @@
+{
+  "scope": "Local model discovery and startup repair; not a general dsh compatibility release",
+  "pluginVersion": "2.3.20",
+  "dshVersion": "0.1.5-rc.1",
+  "onlyProductionSourceChanged": "src/providers/deepseek/runtime/DeepSeekLaunchArtifacts.ts",
+  "onlyInstalledFileToChange": ".obsidian/plugins/realclaudian/main.js",
+  "realDsh": {
+    "models": [
+      "deepseek-flash",
+      "deepseek-v4-flash",
+      "deepseek-v4-pro",
+      "deepseek-v4-flash-vision-exp"
+    ],
+    "blankPresetSessionCreation": [
+      "claudian",
+      "claudian-code",
+      "claudian-passive",
+      "claudian-read-only"
+    ],
+    "ephemeralGuardsReady": true,
+    "actualModelTurnsTested": false
+  },
+  "focusedTests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "typecheckExit": 0,
+  "lintExit": 0,
+  "buildExit": 0,
+  "scriptTests": {
+    "passed": 76,
+    "failed": 0
+  },
+  "fullSuite": {
+    "passed": 7716,
+    "failed": 38,
+    "skipped": 7,
+    "suitesPassed": 513,
+    "suitesFailed": 18,
+    "identicalFailuresToUnmodifiedOfficialBaseline": true,
+    "failedSuites": [
+      "tests/integration/providers/claude/history/ClaudeTurnStats.test.ts",
+      "tests/integration/providers/claude/runtime/ClaudeRewindService.test.ts",
+      "tests/integration/providers/deepseek/app/DeepSeekWorkspaceServices.test.ts",
+      "tests/unit/core/storage/VaultFileAdapter.test.ts",
+      "tests/unit/features/agent-skills/AgentSkillRepository.test.ts",
+      "tests/unit/features/agent-skills/ClaudeSkillSync.test.ts",
+      "tests/unit/features/agent-skills/SkillsSettingsTab.test.ts",
+      "tests/unit/features/chat/subagents/SubagentManager.test.ts",
+      "tests/unit/providers/claude/execution/ClaudeExecutionBackend.test.ts",
+      "tests/unit/providers/codex/execution/CodexExecutionBackend.test.ts",
+      "tests/unit/providers/codex/history/CodexHistoryStore.test.ts",
+      "tests/unit/providers/codex/runtime/CodexBinaryLocator.test.ts",
+      "tests/unit/providers/codex/runtime/CodexCLIResolver.desktop.test.ts",
+      "tests/unit/providers/deepseek/runtime/DeepSeekCLIResolver.test.ts",
+      "tests/unit/providers/deepseek/runtime/DeepSeekInstallation.test.ts",
+      "tests/unit/providers/deepseek/runtime/DeepSeekPresetPlugins.test.ts",
+      "tests/unit/providers/deepseek/ui/DeepSeekSettingsTab.test.ts",
+      "tests/unit/providers/opencode/execution/OpencodeACPSessionKernel.test.ts"
+    ]
+  },
+  "limitations": [
+    "dsh session/projections no longer exists: old-session history/resume compatibility remains unresolved",
+    "Native custom preset roots/root-exclusion settings are not generally preserved; this local profile has none",
+    "Real model turns and full ephemeral fork/tool/image/upload residue behavior were not verified",
+    "Other dsh versions and Desktop were not qualified",
+    "Plugin updates can overwrite this local patch"
+  ],
+  "backup": "main-before-dsh-compat.js",
+  "beforeSha256": "aa81b5cec6c494b2c4738963907b730d71ec63fee04efb36b3280b54eb1677e4",
+  "candidateSha256": "11b631c9369a3367cdf2d674a96ec5645fb68978a76450d49a75270d58a873ec",
+  "unrelatedBundleBytesUnchanged": true,
+  "deployedSha256": "11b631c9369a3367cdf2d674a96ec5645fb68978a76450d49a75270d58a873ec",
+  "settingsUnchangedDuringDeployment": true,
+  "performanceCheck": {
+    "exit": 0,
+    "coldEvaluationMs": 91.9,
+    "warning": "Cold module evaluation exceeds the 50 ms indicator; check did not fail"
+  },
+  "liveAppReloaded": false
+}

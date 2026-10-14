@@ -1,0 +1,106 @@
+{
+  "rejected": {
+    "evaluation.ahp": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.pairwise"
+    ],
+    "evaluation.entropy-weight": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.decision_matrix"
+    ],
+    "evaluation.topsis": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.decision_matrix",
+      "missing_input:arrays.weights",
+      "missing_input:metadata.directions"
+    ],
+    "graph.edmonds-karp": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:tables.capacities",
+      "missing_input:scalars.sink"
+    ],
+    "mechanistic.solve-ivp": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.y0",
+      "missing_input:arrays.t_eval",
+      "missing_input:metadata.rhs"
+    ],
+    "optimization.linear-programming": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.c"
+    ],
+    "optimization.mixed-integer-linear-programming": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path"
+    ],
+    "optimization.nonlinear": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.x0",
+      "missing_input:metadata.objective"
+    ],
+    "prediction.arima": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.series",
+      "missing_input:scalars.horizon",
+      "missing_input:metadata.order"
+    ],
+    "prediction.linear-regression": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.X",
+      "missing_input:arrays.y",
+      "missing_input:arrays.X_predict"
+    ],
+    "prediction.random-forest": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.X",
+      "missing_input:arrays.y",
+      "missing_input:arrays.X_predict"
+    ],
+    "prediction.ridge-regression": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.X",
+      "missing_input:arrays.y",
+      "missing_input:arrays.X_predict"
+    ],
+    "simulation.monte-carlo": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.bounds",
+      "missing_input:metadata.integrand",
+      "missing_input:scalars.n_samples"
+    ],
+    "statistics.pca": [
+      "unsupported_model_family:shortest_path",
+      "missing_capabilities:shortest_path",
+      "missing_outputs:distance,path",
+      "missing_input:arrays.X"
+    ]
+  },
+  "selected_plugin": "graph.dijkstra",
+  "selected_version": "1.0.0",
+  "selection_source": "audited_builtin_registry"
+}

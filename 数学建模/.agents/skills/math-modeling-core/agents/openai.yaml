@@ -1,6 +1,0 @@
-interface:
-  display_name: "Math Modeling Core"
-  short_description: "Validated mathematical modeling and algorithm selection"
-  default_prompt: "Use $math-modeling-core to analyze this problem, choose the smallest adequate model, solve it, and validate the result."
-policy:
-  allow_implicit_invocation: true

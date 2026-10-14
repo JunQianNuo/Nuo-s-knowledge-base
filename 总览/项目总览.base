@@ -1,23 +1,23 @@
 filters:
   and:
-    - 'file.ext == "md"'
-    - 'type == "项目"'
+    - file.ext == "md"
+    - type == "项目"
 formulas:
-  due_in_days: 'if(due_date, (date(due_date) - today()).days, "")'
+  due_in_days: if(due_date, (date(due_date) - today()).days, "")
 properties:
   subject:
-    displayName: "领域"
+    displayName: 领域
   status:
-    displayName: "状态"
+    displayName: 状态
   due_date:
-    displayName: "截止日期"
+    displayName: 截止日期
   next_action:
-    displayName: "下一步"
+    displayName: 下一步
   formula.due_in_days:
-    displayName: "距截止天数"
+    displayName: 距截止天数
 views:
   - type: table
-    name: "全部项目"
+    name: 全部项目
     order:
       - file.name
       - subject
@@ -26,8 +26,8 @@ views:
       - formula.due_in_days
       - next_action
   - type: table
-    name: "数学建模项目"
-    filters: 'subject == "数学建模"'
+    name: 数学建模项目
+    filters: subject == "数学建模"
     order:
       - file.name
       - status
@@ -35,8 +35,8 @@ views:
       - formula.due_in_days
       - next_action
   - type: table
-    name: "考研项目"
-    filters: 'subject == "考研"'
+    name: 考研项目
+    filters: subject == "考研"
     order:
       - file.name
       - status

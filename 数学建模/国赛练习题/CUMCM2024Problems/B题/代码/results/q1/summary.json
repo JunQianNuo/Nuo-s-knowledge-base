@@ -418,5 +418,5 @@
     "threshold search is a declared local calibration grid",
     "gray-zone ASN objective is grid evaluated, not interval-certified"
   ],
-  "runtime_seconds": 315.9337439009996
+  "runtime_seconds": 367.36205579998204
 }

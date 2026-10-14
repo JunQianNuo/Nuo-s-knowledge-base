@@ -2,14 +2,22 @@ from __future__ import annotations
 
 import itertools
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
 from .exact_path_dp import BoundaryPlan, evaluate, fixed_plan_as_boundary, llr_boundaries
 from .fixed_binomial_plan import minimum_plan, risks
+from .run_q1 import _git_value
 
 
 class Q1Tests(unittest.TestCase):
+    def test_git_metadata_decodes_utf8_bytes_without_locale_failure(self):
+        raw = b" M path-\xe4\xb8\xad\xae.txt\n"
+        with patch("q1.run_q1.subprocess.check_output", return_value=raw):
+            actual = _git_value("status", "--porcelain")
+        self.assertEqual(actual, "M path-中�.txt")
+
     def test_fixed_plan_oracles(self):
         expected = {
             .12: (2096, 232, .0493657550, .0995398380),

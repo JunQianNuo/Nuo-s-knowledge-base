@@ -1,0 +1,82 @@
+{
+  "scope": "Local model discovery/startup repair for missing native session availability; chat/history not qualified",
+  "pluginVersion": "2.3.20",
+  "dshVersion": "0.1.5-rc.1",
+  "nativeRowsMissingAgentAvailable": 134,
+  "fullHostRegression": {
+    "before": "Malformed DeepSeek session row.",
+    "after": "ready",
+    "finalCandidateRosterAndLaunchArtifactUsed": true,
+    "models": [
+      "deepseek-flash",
+      "deepseek-v4-flash",
+      "deepseek-v4-pro",
+      "deepseek-v4-flash-vision-exp"
+    ],
+    "blankEphemeralPresetSessionsCreated": 4,
+    "realModelTurnsTested": false
+  },
+  "focusedTests": {
+    "passed": 28,
+    "failed": 0
+  },
+  "scriptTests": {
+    "passed": 76,
+    "failed": 0
+  },
+  "staticChecks": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "lint",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "candidate-performance",
+      "exit": 0,
+      "stdout": "main.js 2.15 MiB (2250255 bytes); reference delta -1489329 bytes (-1.42 MiB); pre-Step-11 health baseline delta -2645745 bytes; median cold Node evaluation 98.1 ms; with host dependencies preloaded 60.3 ms (Node proxies)\n",
+      "stderr": "Performance warning: median cold module evaluation is 98.1 ms; indicator is 50 ms.\n"
+    }
+  ],
+  "buildExit": 0,
+  "fullSuite": {
+    "suitesFailed": 17,
+    "suitesPassed": 514,
+    "failed": 37,
+    "passed": 7722,
+    "skipped": 7,
+    "total": 7766,
+    "newFailureNamesAgainstOfficialBaseline": [],
+    "baselineFailed": 38,
+    "notAllTestsPass": true
+  },
+  "review": {
+    "critical": 0,
+    "important": 0,
+    "availabilityMeans": "attached control evidence, not a guarantee of fully mounted Agent"
+  },
+  "patchedMethods": [
+    "DeepSeekRoster.row",
+    "DeepSeekRoster.allRows",
+    "DeepSeekRoster.upsert"
+  ],
+  "allOtherInstalledBytesPreserved": true,
+  "beforeSha256": "11b631c9369a3367cdf2d674a96ec5645fb68978a76450d49a75270d58a873ec",
+  "deployedSha256": "69d90e7f211385bd24879623bdc0e6676fad6333ae51c69cb922824c9d0c8422",
+  "backup": "main-before-session-row-compat.js",
+  "settingsUnchangedDuringDeployment": true,
+  "liveAppReloaded": false,
+  "limitations": [
+    "dsh session/projections no longer exists: old-session history/resume compatibility remains unresolved",
+    "Native custom preset roots/root-exclusion settings are not generally preserved; this local profile has none",
+    "Real model turns and full ephemeral fork/tool/image/upload residue behavior were not verified",
+    "Other dsh versions and Desktop were not qualified",
+    "Plugin updates can overwrite this local patch"
+  ]
+}

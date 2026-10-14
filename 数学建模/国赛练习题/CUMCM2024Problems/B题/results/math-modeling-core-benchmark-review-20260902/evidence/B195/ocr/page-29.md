@@ -1,0 +1,9 @@
+324sampleindices = random.sample(range(allnum),int(samplenum))
+
+<table border="1" ><tr>
+<td>325<br>320<br>327<br>328<br>320<br>330<br>331<br>330<br>333<br>334<br>335<br>336<br>337<br>338<br>330<br>340<br>341<br>342<br>343<br>344<br>345<br>346<br>347<br>348<br>340<br>350<br>351<br>352<br>353<br>354<br>355<br>350<br>357<br>358<br>359<br>300<br>361<br>362<br>363<br>304<br>365<br>366<br>367<br>368<br>360<br>370<br>371<br>372<br>373<br>374</td>
+<td>＃抽取整个群的产品作为样本<br>$\text {sample}=[]$for indices in sampleindices:<br>$sample+=data_get[indices]$＃打印抽样结果<br>print（”整群抽样的样本为：”，sample）<br>ztest $_func(sample)$＃todo：二重抽样<br>＃第一阶段抽样<br>$\text {data_{get}=df[}$样本（0 为次品，1 为合格）］<br>$all_num=len(data_get)$samplenum $=\text {all_{num}}*0.5$randomindices $=$random.sample(range(allrnum),int(samplenum))<br>data $\underline {}get=[$ $data_get[i]$ for i in randomindices]<br>＃ print（”一重抽样的样本为：”，dataget）<br>＃第二阶段抽样<br>$data_get=np.array(data_get)$ $all_num=len(data_get)$samplenum $=all_num*0.2$randomindices $=$random.sample(range(allnum),int(samplenum))<br>$sample=[data_get[i]$for i in randomindices]<br>print （”二重抽样的最终样本为：”,sample)<br>ztestfunc(sample)<br>＃todo ：尝试不同的抽样方法<br>＃简单随机抽样，整群抽样，二重抽样<br>import numpy as np<br>import pandas as pd<br>from statsmodels.stats.proportion import proportionsztest<br>import random<br>＃载入数据并建检验数据<br>$df=pd.read_excel($ 第一问／问题一数据．xlsx ',  $sheet_name='Sheet1'$）<br>$\text {data_{get}}=\text {df}[$样本（0 为次品，1 为合格）］<br>print ( f ”首先进行数据检验，此批产品中合格率为：$\{np.sum(data_get)/len(data_get)\}")$random . seed ( 1024 )＃设置随机数种子，以确保结果可重复<br>＃todo ：简单随机抽样<br>＃确定抽样比例<br>$\text {data_{get}=df[}$样本（0 为次品，1 为合格）］<br>$no_num$ $=int((data_get=0).sum())$ $all_num=len(data_get)$sample $\text {num}=\text {all_{num}}*0.1$＃进行抽样<br>dxs.moe.gov.cn randomindices $=$random.sample(range(allnum),int(samplenum))</td>
+</tr></table>
+
+<!-- 29 -->
+

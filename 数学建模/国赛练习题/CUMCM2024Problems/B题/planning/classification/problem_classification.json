@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "source": "planning/parse/problem_parse.json",
+  "classification_basis": "按各子问题必须交付的输出、决策结构、约束与依赖分类；没有读取或引用已有作答。",
+  "subquestions": [
+    {
+      "id": "Q1",
+      "primary_type": "optimization/decision",
+      "secondary_type": "descriptive/inference",
+      "confidence": "high",
+      "evidence": [
+        "Q1.required_outputs要求完整的接收、拒收和继续检测或停止规则。",
+        "Q1.constraints要求在给定信度约束下使检测次数尽可能少。",
+        "Q1.inputs包含样本合格/不合格观测，需要从样本形成对真实次品率的统计判断。"
+      ],
+      "required_validation": [
+        "接收、拒收和未决区域覆盖所有可能观测且没有相互冲突。",
+        "95%拒收要求和90%接收要求采用明确、可复核的错误或置信口径。",
+        "检测次数的评价口径、边界行为和可能的最大检测量明确。",
+        "在标称值附近及其两侧检查判定行为，避免只验证单个样本结果。"
+      ],
+      "required_deliverables": [
+        "抽样判定规则",
+        "标称值10%下的具体接收与拒收边界或结果",
+        "检测次数指标及其定义",
+        "两项信度要求的验证证据"
+      ],
+      "framing_decision_id": "q1_sampling_efficiency_scope",
+      "framing_status": "RESOLVED",
+      "framing_decision_ref": "planning/framing_decisions.jsonl",
+      "confidence_semantics_status": "RESOLVED",
+      "confidence_semantics_choice": "A",
+      "confidence_semantics_decision_ref": "planning/framing_decisions.jsonl",
+      "risks": [
+        "若不先定义“检测次数尽可能少”，不同方案之间无法公平比较。",
+        "若把样本次品率直接等同真实次品率，会遗漏统计不确定性。",
+        "接收和拒收信度不对称，不能用一个未经说明的统一阈值替代。"
+      ]
+    },
+    {
+      "id": "Q2",
+      "primary_type": "optimization/decision",
+      "secondary_type": "mechanism/dynamics",
+      "confidence": "high",
+      "evidence": [
+        "Q2.unknowns_or_decisions列出零配件检测、成品检测和不合格品拆解等可控决策。",
+        "Q2.required_outputs要求为表1六种情形给出具体方案、依据和量化指标。",
+        "Q2.constraints及proposed_relationships表明拆解回用和市场调换会形成重复生产过程，质量流和成本流随过程演化。"
+      ],
+      "required_validation": [
+        "决策变量覆盖题目列出的全部生产阶段，并满足强制调换等硬约束。",
+        "同一经营目标和指标口径用于比较六种情形。",
+        "采购、检测、装配、拆解、调换及回流的质量与成本核算闭合且不重复计数。",
+        "对循环过程检查终止性、长期平均或累计指标的定义及可实施性。"
+      ],
+      "required_deliverables": [
+        "六种情形的完整决策表",
+        "统一定义的经营与质量指标",
+        "每项决策的约束可行性和指标依据",
+        "循环回用与调换的核算说明"
+      ],
+      "framing_decision_id": "q2_business_objective",
+      "framing_status": "RESOLVED",
+      "framing_decision_ref": "planning/framing_decisions.jsonl",
+      "risks": [
+        "若经营目标未确认，不能声称某方案最优。",
+        "若只计算一次装配，可能漏算拆解回流和多次调换。",
+        "把条件装配次品率误作无条件次品率会重复计算缺陷。"
+      ]
+    },
+    {
+      "id": "Q3",
+      "primary_type": "optimization/decision",
+      "secondary_type": "graph/routing/network",
+      "confidence": "high",
+      "evidence": [
+        "Q3.required_outputs同时要求一般m工序、n零配件决策方案和表2实例的具体决策。",
+        "Q3.inputs包含图1所给多层装配拓扑，节点之间的装配与拆解回流关系决定可行决策。",
+        "Q3.dependencies要求沿用Q2的单级决策定义和指标口径。"
+      ],
+      "required_validation": [
+        "装配节点、输入边和拆解回流边的语义与题面图1一致。",
+        "一般表示能覆盖任意给定的分层装配结构，并在题给8零配件实例上完整落地。",
+        "所有零配件、半成品和成品的检测及拆解决策均被覆盖。",
+        "多层成本与质量传播不漏项、不重复计数，并与Q2口径一致。",
+        "报告一般化方案适用的网络边界和规模限制。"
+      ],
+      "required_deliverables": [
+        "一般m工序、n零配件的决策输入输出定义",
+        "图1拓扑下的完整决策表",
+        "相应经营与质量指标",
+        "一般化范围和限制"
+      ],
+      "framing_decision_id": "q2_business_objective",
+      "framing_status": "RESOLVED_INHERITED",
+      "framing_decision_ref": "planning/framing_decisions.jsonl",
+      "network_scope_status": "RESOLVED",
+      "network_scope_decision_id": "q3_network_scope",
+      "network_scope_decision_ref": "planning/framing_decisions.jsonl",
+      "risks": [
+        "若把多层结构仅当作平铺零配件集合，会丢失半成品层的检测和拆解决策。",
+        "一般网络边界未说明时，不能把图1实例的结论无条件推广到任意生产网络。",
+        "若Q2和Q3指标口径不同，两问结果将不可比较。"
+      ]
+    },
+    {
+      "id": "Q4",
+      "primary_type": "optimization/decision",
+      "secondary_type": "prediction/estimation",
+      "confidence": "high",
+      "evidence": [
+        "Q4.required_outputs要求在次品率来自抽样估计时重新给出Q2和Q3决策。",
+        "Q4.goal要求评估决策与指标稳定性，而非只估计次品率。",
+        "Q4.inputs需要各次品率的抽样观测或不确定性描述，但题面没有提供实际样本记录。"
+      ],
+      "required_validation": [
+        "次品率估计的误差、区间或分布性描述与抽样信息一致。",
+        "估计不确定性被传递到Q2和Q3的经营及质量指标。",
+        "比较确定次品率与估计次品率条件下的决策变化，并检查决策稳定性。",
+        "明确区分由真实抽样数据支持的结果、参数化规则和人为设定的实验场景。",
+        "不得把缺失的样本量或不合格数虚构为题面数据。"
+      ],
+      "required_deliverables": [
+        "抽样信息或不确定性输入合同",
+        "考虑估计不确定性后的Q2与Q3决策",
+        "决策变化和稳定性指标",
+        "证据范围及不能支持的结论"
+      ],
+      "framing_decision_id": "q4_missing_sampling_evidence_policy",
+      "framing_status": "RESOLVED",
+      "framing_decision_ref": "planning/framing_decisions.jsonl",
+      "business_objective_status": "RESOLVED_INHERITED",
+      "business_objective_decision_id": "q2_business_objective",
+      "business_objective_decision_ref": "planning/framing_decisions.jsonl",
+      "network_scope_status": "RESOLVED_INHERITED",
+      "network_scope_decision_id": "q3_network_scope",
+      "network_scope_decision_ref": "planning/framing_decisions.jsonl",
+      "risks": [
+        "没有实际抽样记录时，具体数值结论可能缺乏数据来源。",
+        "若只把点估计代回Q2和Q3，Q4要求的不确定性影响没有被回答。",
+        "若人为场景未明确标记为场景，容易被误写成题目事实或实验结果。"
+      ]
+    }
+  ],
+  "cross_question_dependencies": [
+    "Q1提供抽样判断与不确定性表达，供Q4引用。",
+    "Q2定义单级生产决策和统一指标，供Q3推广。",
+    "Q2与Q3的确定参数结果是Q4进行不确定性对比的参照。"
+  ],
+  "unresolved_framing": [],
+  "resolved_framing": [
+    {
+      "decision_id": "global_assumption_policy",
+      "choice": "A",
+      "choice_label": "统一采用简化假设",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "首轮采用已确认简化假设；保留参数扰动与输出退化检查，检测误差、外生相关性及有限总体影响只报告局限性；不扩大精简预算。"
+    },
+    {
+      "decision_id": "interpretability_performance_priority",
+      "choice": "A",
+      "choice_label": "可解释性优先",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "方法筛选优先保留置信边界、质量传播、循环成本和策略比较均可逐步追踪的方法；复杂方法只有在确有必要且仍可审计时才进入候选。"
+    },
+    {
+      "decision_id": "defended_output_form",
+      "choice": "A",
+      "choice_label": "决策表与判定边界为主",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q1主要交付接收、拒收、未决边界和ASN曲线；Q2至Q4主要交付具体策略表、期望净利润与稳定区间，公式用于解释和复核，不扩展为大篇幅一般理论。"
+    },
+    {
+      "decision_id": "experiment_budget_tier",
+      "choice": "A",
+      "choice_label": "精简预算",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "首轮仅评估1个主方法和1个可信baseline；关键参数采用正负10%的单因素扰动，Q4联合参数情形不超过约1000个。若首轮暴露不稳定或退化，再由使用者决定是否扩大预算。"
+    },
+    {
+      "decision_id": "method_screening_failure_priority",
+      "choice": "A",
+      "choice_label": "决策不稳定最不可接受",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "方法筛选与风险探针优先检查小幅参数扰动下的策略翻转、输出集中或退化；稳定性不足时不得仅凭标称点的ASN或期望净利润采用该方法。"
+    },
+    {
+      "decision_id": "q3_network_scope",
+      "choice": "A",
+      "choice_label": "分层装配树",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q3及Q4中的一般化正向装配结构限定为单一最终成品的分层装配树，每个零配件或半成品只进入一个直接上级，拆解返回直接子部件；不声称覆盖共享部件、多成品或正向回路网络。"
+    },
+    {
+      "decision_id": "q2_business_objective",
+      "choice": "A",
+      "choice_label": "期望净利润最大",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q2至Q4统一按完成一次销售承诺的期望净利润比较决策，核算检测、装配、拆解、回流和调换循环；市场次品或调换风险作为报告指标而非硬约束或最坏情形目标。"
+    },
+    {
+      "decision_id": "q1_sampling_efficiency_scope",
+      "choice": "A",
+      "choice_label": "参数化期望检测次数 ASN(p)",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q1以 ASN(p)=E_p[T*] 作为检测效率主指标；最大检测上限仅作为运行边界，并与未决概率一同报告，不作为主要优化目标。"
+    },
+    {
+      "decision_id": "q1_confidence_semantics",
+      "choice": "A",
+      "choice_label": "单侧置信界，允许未决区域",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q1在每个检测时点分别用95%单侧下置信界判定拒收、用90%单侧上置信界判定接收；未越界时继续检测，达到检测上限仍未越界则输出未决。"
+    },
+    {
+      "decision_id": "q4_missing_sampling_evidence_policy",
+      "choice": "A",
+      "choice_label": "参数化规则",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "consequence": "Q4把样本量、缺陷数或等价不确定性信息作为输入，输出参数化决策规则及稳定性范围；不把人为样本值写成题面事实。"
+    }
+  ],
+  "method_screening_preferences": {
+    "assumption_policy": {"choice":"A","decision_id":"global_assumption_policy","decision_ref":"planning/framing_decisions.jsonl","assumptions_ref":"planning/model_assumptions.md"},
+    "unacceptable_failure_priority": "decision_instability",
+    "decision_id": "method_screening_failure_priority",
+    "decision_ref": "planning/framing_decisions.jsonl",
+    "required_probes": ["parameter_perturbation", "strategy_flip_rate", "output_concentration_or_degeneracy"],
+    "experiment_budget": {
+      "tier": "lean_trial",
+      "decision_id": "experiment_budget_tier",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "main_method_count": 1,
+      "baseline_count": 1,
+      "one_at_a_time_perturbation": "-10%, nominal, +10%",
+      "q4_joint_scenario_cap": 1000,
+      "expansion_requires_new_human_decision": true
+    },
+    "output_form": {
+      "primary": "decision_tables_and_decision_boundaries",
+      "decision_id": "defended_output_form",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "q1_outputs": ["accept_reject_undecided_boundaries", "ASN_curve"],
+      "q2_q4_outputs": ["strategy_tables", "expected_net_profit", "stability_intervals"],
+      "formula_role": "explanation_and_verification"
+    },
+    "interpretability_performance": {
+      "priority": "interpretability_first",
+      "decision_id": "interpretability_performance_priority",
+      "decision_ref": "planning/framing_decisions.jsonl",
+      "complexity_rule": "additional_complexity_requires_clear_necessity_and_auditable_reasoning"
+    }
+  },
+  "method_selection_performed": false,
+  "updated_at": "2026-09-07T00:34:34+08:00"
+}
