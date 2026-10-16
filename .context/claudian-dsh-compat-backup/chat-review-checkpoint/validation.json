@@ -1,0 +1,222 @@
+{
+  "status": "not-deployed-review-blocked",
+  "installedHash": "69d90e7f211385bd24879623bdc0e6676fad6333ae51c69cb922824c9d0c8422",
+  "fullJest": {
+    "failed": 38,
+    "passed": 7727,
+    "skipped": 7,
+    "baselineFailed": 38,
+    "newFailures": [],
+    "resolvedBaselineFailures": [],
+    "failureNames": [
+      "● AgentSkillRepository › on a filesystem-backed vault › still lists the other skills when the root holds a dangling link",
+      "● AgentSkillRepository › on a filesystem-backed vault › still lists the other skills when the root holds a dangling link",
+      "● Claude rewind filesystem recovery › restores files, directories, links and missing paths when the provider declines after mutation",
+      "● Claude rewind filesystem recovery › restores files, directories, links and missing paths when the provider declines after mutation",
+      "● Claude rewind filesystem recovery › restores files, directories, links and missing paths when the provider throws after mutation",
+      "● Claude rewind filesystem recovery › restores files, directories, links and missing paths when the provider throws after mutation",
+      "● ClaudeExecutionBackend › keeps native success when cancellation arrives during stats loading",
+      "● ClaudeExecutionBackend › keeps native success when cancellation arrives during stats loading",
+      "● ClaudeSkillSync › executing a folder sync › moves packages intact, converts commands, strips frontmatter and links the folder",
+      "● ClaudeSkillSync › executing a folder sync › moves packages intact, converts commands, strips frontmatter and links the folder",
+      "● ClaudeSkillSync › executing a folder sync › never follows a foreign per-skill link when removing it",
+      "● ClaudeSkillSync › executing a folder sync › never follows a foreign per-skill link when removing it",
+      "● ClaudeSkillSync › link states › links a missing folder without planning items",
+      "● ClaudeSkillSync › link states › links a missing folder without planning items",
+      "● ClaudeSkillSync › link states › repairs a broken-link without touching the old target",
+      "● ClaudeSkillSync › link states › repairs a broken-link without touching the old target",
+      "● ClaudeSkillSync › link states › repairs a foreign-link without touching the old target",
+      "● ClaudeSkillSync › link states › repairs a foreign-link without touching the old target",
+      "● ClaudeSkillSync › planning a Claude skills folder › plans packages, commands, links and leftovers with their issues",
+      "● ClaudeSkillSync › planning a Claude skills folder › plans packages, commands, links and leftovers with their issues",
+      "● ClaudeSkillSync › planning a Claude skills folder › unlinks a dangling per-skill link that listing cannot follow",
+      "● ClaudeSkillSync › planning a Claude skills folder › unlinks a dangling per-skill link that listing cannot follow",
+      "● CodexBinaryLocator › prefers inherited PATH over automatic darwin installations",
+      "● CodexBinaryLocator › prefers inherited PATH over automatic darwin installations",
+      "● CodexBinaryLocator › prefers inherited PATH over automatic linux installations",
+      "● CodexBinaryLocator › prefers inherited PATH over automatic linux installations",
+      "● CodexExecutionBackend › when a native thread omits its rollout path › searches once per persistent thread instead of after every run",
+      "● CodexExecutionBackend › when a native thread omits its rollout path › searches once per persistent thread instead of after every run",
+      "● CodexHistoryStore › parseCodexSessionFileAsync - persisted tools › withholds script output that cannot be separated from hidden internal values, keeping native command output",
+      "● CodexHistoryStore › parseCodexSessionFileAsync - persisted tools › withholds script output that cannot be separated from hidden internal values, keeping native command output",
+      "● DeepSeek additional preset plugins › previews the effective chat preset as YAML without machine-specific launch paths",
+      "● DeepSeek additional preset plugins › previews the effective chat preset as YAML without machine-specific launch paths",
+      "● DeepSeek additional preset plugins › rejects a built-in tool row with an actionable message",
+      "● DeepSeek additional preset plugins › rejects a built-in tool row with an actionable message",
+      "● DeepSeek installation layout › maps the macOS bundle to its wrapper, Electron executable and install anchor",
+      "● DeepSeek installation layout › maps the macOS bundle to its wrapper, Electron executable and install anchor",
+      "● DeepSeek installation selection › keeps npm first in Auto but an explicit app wins, including a renamed Unicode app and symlinks",
+      "● DeepSeek installation selection › keeps npm first in Auto but an explicit app wins, including a renamed Unicode app and symlinks",
+      "● DeepSeekSettingsTab › identifies an explicitly selected Desktop app and explains installation selection",
+      "● DeepSeekSettingsTab › identifies an explicitly selected Desktop app and explains installation selection",
+      "● DeepSeekSettingsTab › keeps invalid additional plugin rows out of settings and explains why",
+      "● DeepSeekSettingsTab › keeps invalid additional plugin rows out of settings and explains why",
+      "● OpencodeACPSessionKernel read policy › rejects a dangling in-workspace symlink targeting an outside path",
+      "● OpencodeACPSessionKernel read policy › rejects a dangling in-workspace symlink targeting an outside path",
+      "● OpencodeACPSessionKernel read policy › rejects an in-workspace symlink whose canonical target is outside",
+      "● OpencodeACPSessionKernel read policy › rejects an in-workspace symlink whose canonical target is outside",
+      "● OpencodeACPSessionKernel read policy › returns the canonical validated target and preserves missing paths",
+      "● OpencodeACPSessionKernel read policy › returns the canonical validated target and preserves missing paths",
+      "● SkillsSettingsTab › shows the shared list with a Resync button for a broken-link",
+      "● SkillsSettingsTab › shows the shared list with a Resync button for a broken-link",
+      "● SkillsSettingsTab › shows the shared list with a Resync button for a foreign-link",
+      "● SkillsSettingsTab › shows the shared list with a Resync button for a foreign-link",
+      "● SubagentManager › async parsing edge cases › ignores truncated full output files outside trusted temp roots",
+      "● SubagentManager › async parsing edge cases › ignores truncated full output files outside trusted temp roots",
+      "● VaultFileAdapter › folder links › creates a relative folder link and reports it as linked to the target",
+      "● VaultFileAdapter › folder links › creates a relative folder link and reports it as linked to the target",
+      "● VaultFileAdapter › folder links › reports missing, folder, file, foreign and broken states without following links",
+      "● VaultFileAdapter › folder links › reports missing, folder, file, foreign and broken states without following links",
+      "● VaultFileAdapter › managed resources › rejects a symlinked SKILL.md on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked SKILL.md on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked managed root on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked managed root on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked package on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked package on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked skills root on desktop adapters",
+      "● VaultFileAdapter › managed resources › rejects a symlinked skills root on desktop adapters",
+      "● discovers the nested ChatGPT macOS runtime in the system Applications folder",
+      "● discovers the nested ChatGPT macOS runtime in the system Applications folder",
+      "● does not start native timing from an interrupt or rebuilt context: User: Earlier question",
+      "● does not start native timing from an interrupt or rebuilt context: User: Earlier question",
+      "● does not start native timing from an interrupt or rebuilt context: [Request interrupted by user]",
+      "● does not start native timing from an interrupt or rebuilt context: [Request interrupted by user]",
+      "● matches replay across tool-result ancestry and reads a bounded suffix of a long session",
+      "● matches replay across tool-result ancestry and reads a bounded suffix of a long session",
+      "● stops the shared Host before a provider transition and restarts it lazily with the new CLI, environment and preset plugins",
+      "● stops the shared Host before a provider transition and restarts it lazily with the new CLI, environment and preset plugins"
+    ]
+  },
+  "scripts": {
+    "passed": 76,
+    "failed": 0
+  },
+  "changedSource": [
+    {
+      "path": "src/providers/deepseek/execution/DeepSeekExecutionSession.ts",
+      "sha256": "9bff5fac8b5475cb0c8988ecfccd0c4fc9ef046fda8857777eb07d3a4e62649d"
+    },
+    {
+      "path": "src/providers/deepseek/execution/DeepSeekPermissions.ts",
+      "sha256": "1967f84b4a9ee779450936a465c54114ec2db298e74e3d600a1d2720deb92529"
+    },
+    {
+      "path": "src/providers/deepseek/execution/DeepSeekSessionObserver.ts",
+      "sha256": "8b5877f64363f39de4ba2199748ae97129b04967c96267ce9ef8a5b3457d56ff"
+    },
+    {
+      "path": "src/providers/deepseek/history/DeepSeekImages.ts",
+      "sha256": "8c0001caaef60da859d589252b058d420e46486d9f2984ed2512b38e9f2f3551"
+    },
+    {
+      "path": "src/providers/deepseek/history/DeepSeekJournal.ts",
+      "sha256": "b4ec1ffbdfaf32606418b43c15eb0577e4a6b6117fb723ac354a580391682a91"
+    },
+    {
+      "path": "src/providers/deepseek/normalization/DeepSeekOutput.ts",
+      "sha256": "951c4c970aa21bfc0a198207a36137d67fcfe2e57b22f43f23121c2cf9b6488f"
+    },
+    {
+      "path": "src/providers/deepseek/normalization/DeepSeekSubagents.ts",
+      "sha256": "5588537217d87a2c8441f68fee1dbc4e5820d7469f64a8612e16f1b1c8ba95f0"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekHost.ts",
+      "sha256": "1b19e417c8028b8e802f6cd8cce65d39b4438dc79bc489d0bf187c17a175b7fe"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekJobBridge.ts",
+      "sha256": "17b1dd837b91eaf31cc882bc1ef69a3ff1e09b637ba80381cec0904d5405386c"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekJobs.ts",
+      "sha256": "7363f898615336003ddf78da47794630596f27ebee60afea2d81a6c22fac576f"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekLaunchArtifacts.ts",
+      "sha256": "85eda36dbd954261daf4e7b89c5ee63d20791bf71ff54e174c0f828dbca90498"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekPresetPlugins.ts",
+      "sha256": "8849f32b92ea80a9dcacbb214f0846bdf3b6ab2eafa1530e5e85bd0d3ae1821b"
+    },
+    {
+      "path": "src/providers/deepseek/runtime/DeepSeekRoster.ts",
+      "sha256": "aec8dacb2777948358448f494e500fa48344c215858c380b08a57dbd6802f355"
+    },
+    {
+      "path": "tests/helpers/deepseek/LaunchPresets.ts",
+      "sha256": "9047fed42fc8298506c8a1da0d1c38028e8daead348755a76b2b269705f468bd"
+    },
+    {
+      "path": "tests/helpers/deepseek/NativeDefaults.ts",
+      "sha256": "17e86b65ab75e2457976c9dab012b666ceb62eb8bb9b4b9a487e4e3bc6987af8"
+    },
+    {
+      "path": "tests/integration/features/chat/side-chat/SideChatNative.deepseek.test.ts",
+      "sha256": "74ffc65e4fbd64944eb15f77c6f112743b8b6edfb90ffbadbfbcc844277bd405"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/app/DeepSeekWorkspaceServices.test.ts",
+      "sha256": "72627244de31f89756b36acc9aeabec4e193ee938510322ca18c0a718035fa28"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/execution/DeepSeekExecutionBackend.test.ts",
+      "sha256": "6722e5d643235bdcaf6e0501fef60de312250ccb8b15997323d671b8b690b855"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/execution/DeepSeekPermissions.test.ts",
+      "sha256": "c5ccdbd5904e2817466544232c9c54deb0b6806c453992da0bfbc752fc3b2944"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/execution/DeepSeekQuestions.dom.test.ts",
+      "sha256": "4f5a43c625af62329e6443f46f12dfb98c3c386a2275b47e24cdfe26f14273d1"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/execution/DeepSeekSessionObserver.test.ts",
+      "sha256": "3e0555dda6ef11ad56b6036beb1afbb2dcbf25fec7e8ffdad1e6eeb7e4d9dd15"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/execution/DeepSeekSharedHost.test.ts",
+      "sha256": "79fca762693ddce2d8881b04512adcb4e7cd024db3cd150b47658897586f4c12"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/history/DeepSeekConversationHistoryService.test.ts",
+      "sha256": "de7f6e2041914ced91c9055d0eb12c6cb4074283f28056a1f8d3cab5c7709b3f"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/history/DeepSeekJournal.test.ts",
+      "sha256": "dbeb02253c0e0fe8c1cb7816dcbc6bf075875c0d0a949540dd56c355cdbdc28e"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/runtime/DeepSeekHost.test.ts",
+      "sha256": "1e1b5ea8ec131168c74a87019e06c37b80750fc2b583223a7b568fb82cda6c7c"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/runtime/DeepSeekHostProcess.test.ts",
+      "sha256": "f3ed7dcef71c5d99c5719a9ffa7a7fe7d4c2ed10c0356d75030b0e18d3649224"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/runtime/DeepSeekJobBridge.test.ts",
+      "sha256": "47e2c1df180bd361fb75ab0e0da8583aa20f26d290de3d66e0e2b49379e1538b"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/runtime/DeepSeekLaunchArtifacts.test.ts",
+      "sha256": "29452eb535d00f9924bfc3aafdf5781bb6be23be63c7b47388c0dc12fbb7220b"
+    },
+    {
+      "path": "tests/integration/providers/deepseek/runtime/DeepSeekRoster.test.ts",
+      "sha256": "291479f84e25acdd3bfb698bb48b6fd3d644558bd98ee7fc05d418c531e42f33"
+    },
+    {
+      "path": "tests/unit/providers/deepseek/normalization/DeepSeekOutput.test.ts",
+      "sha256": "2bfd958065f1400073ccb17160367b01a5e23067acdc01aba05a8efe1f8cd63b"
+    }
+  ],
+  "reviewBlockers": [
+    "Live native subagents cannot use commands/list: need a root-authorized native-verified descendant route.",
+    "Cold seeded/fork sessions have no authoritative list projection: need supported cold-read contract."
+  ],
+  "uiAccepted": false,
+  "candidateQualified": false
+}

@@ -1,0 +1,92 @@
+{
+  "claims": [
+    {
+      "endpoint": "session/list",
+      "registered": true
+    },
+    {
+      "endpoint": "session/control",
+      "registered": true
+    },
+    {
+      "endpoint": "session/create",
+      "registered": true
+    },
+    {
+      "endpoint": "session/follow",
+      "registered": true
+    },
+    {
+      "endpoint": "session/page",
+      "registered": true
+    },
+    {
+      "endpoint": "session/projections",
+      "registered": false
+    },
+    {
+      "endpoint": "session/prompt",
+      "registered": true
+    },
+    {
+      "endpoint": "session/cancel",
+      "registered": true
+    },
+    {
+      "endpoint": "session/updateQueue",
+      "registered": true
+    },
+    {
+      "endpoint": "job/list",
+      "registered": false
+    },
+    {
+      "endpoint": "job/kill",
+      "registered": false
+    },
+    {
+      "endpoint": "commands/list",
+      "registered": true
+    },
+    {
+      "endpoint": "commands/execute",
+      "registered": true
+    },
+    {
+      "endpoint": "permissionPresets/catalog",
+      "registered": false
+    },
+    {
+      "endpoint": "skills/list",
+      "registered": true
+    },
+    {
+      "endpoint": "subagents/interruptByParent",
+      "registered": true
+    }
+  ],
+  "services": [
+    {
+      "name": "sessionController",
+      "present": false
+    },
+    {
+      "name": "jobs",
+      "present": true
+    },
+    {
+      "name": "commands",
+      "present": true
+    },
+    {
+      "name": "permissionPresets",
+      "present": true
+    }
+  ],
+  "jobRemoteExports": [],
+  "permissionPresetNames": [
+    "read-only",
+    "workspace-write",
+    "danger-full-access"
+  ]
+}

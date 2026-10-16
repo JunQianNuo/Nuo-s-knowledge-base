@@ -1,0 +1,241 @@
+[
+  {
+    "old": [
+      {
+        "name": "GC",
+        "len": 3747,
+        "text": "class{constructor(e,t){this.client=e;this.onFailure=t;this.rows=new Map;this.projections=new Map;this.roots=new Map;this.unrouted=new Map;th"
+      },
+      {
+        "name": "OCe",
+        "len": 120,
+        "text": "new Set([\"session/list\",\"session/projections\",\"session/page\",\"session/attachment\",\"session/modelCatalog\",\"skills/list\"]),DCe=15e3,LCe=5*6e4,"
+      }
+    ],
+    "new": [
+      {
+        "name": "GC",
+        "len": 25,
+        "text": "\"claudian-internal-jobs-\",F3=String.raw`\nexport const name = 'claudian-job-control';\nexport const inject = ['commands', 'jobs'];\n\nexport fun"
+      },
+      {
+        "name": "F3",
+        "len": 1680,
+        "text": "String.raw`\nexport const name = 'claudian-job-control';\nexport const inject = ['commands', 'jobs'];\n\nexport function apply(ctx, config) {\n  "
+      },
+      {
+        "name": "H3",
+        "len": 784,
+        "text": "async function H3(n,e,t,i){let r={signal:i?AbortSignal.any([i,AbortSignal.timeout(1e4)]):AbortSignal.timeout(1e4)},s=await n.call(\"commands/"
+      },
+      {
+        "name": "B3",
+        "len": 328,
+        "text": "async function B3(n,e){let t=await H3(n,e,{action:\"list\"});if(!Array.isArray(t))throw new Error(\"Malformed DeepSeek exact-owner jobs.\");retu"
+      },
+      {
+        "name": "U3",
+        "len": 212,
+        "text": "async function U3(n,e,t){let i=await H3(n,e.owner,{action:\"stop\",jobId:e.id},t);if(!x(i)||i.status!==\"requested\"&&i.status!==\"already-finish"
+      },
+      {
+        "name": "qC",
+        "len": 6200,
+        "text": "class{constructor(e,t){this.client=e;this.onFailure=t;this.rows=new Map;this.projections=new Map;this.roots=new Map;this.unrouted=new Map;th"
+      },
+      {
+        "name": "HCe",
+        "len": 98,
+        "text": "new Set([\"session/list\",\"session/page\",\"session/attachment\",\"session/modelCatalog\",\"skills/list\"]),BCe=15e3,UCe=5*6e4,$C=class{constructor(e"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "T6",
+        "len": 106,
+        "text": "{compatibility:\"<claudian-compatibility.mjs>\",codeModeFile:\"<code mode>\",promptFile:()=>\"<system prompt>\"};function Aw(n,e,t=[]){let i=wo(n)"
+      },
+      {
+        "name": "Aw",
+        "len": 1288,
+        "text": "function Aw(n,e,t=[]){let i=wo(n),r=n===\"claudian-passive\"?[]:[\"read\",\"read_image\",\"glob\",\"grep\"],s=(o,a)=>({id:o,name:`@deepseek-ai/dsh-${o"
+      }
+    ],
+    "new": [
+      {
+        "name": "D6",
+        "len": 176,
+        "text": "{compatibility:\"<claudian-compatibility.mjs>\",codeModeFile:\"<code mode>\",promptFile:()=>\"<system prompt>\",jobBridge:{path:\"<claudian-jobs.mj"
+      },
+      {
+        "name": "Mw",
+        "len": 1395,
+        "text": "function Mw(n,e,t=[]){let i=wo(n),r=n===\"claudian-passive\"?[]:[\"read\",\"read_image\",\"glob\",\"grep\"],s=(o,a)=>({id:o,name:`@deepseek-ai/dsh-${o"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "O6",
+        "len": 2319,
+        "text": "async function O6(n=(0,A6.tmpdir)(),e=[]){let t=await(0,Zt.mkdtemp)((0,hn.join)(n,\"claudian-deepseek-\")),i=(0,hn.join)(t,\"presets\"),r=(0,hn."
+      }
+    ],
+    "new": [
+      {
+        "name": "H6",
+        "len": 2451,
+        "text": "async function H6(n=(0,N6.tmpdir)(),e=[]){let t=await(0,gt.mkdtemp)((0,mt.join)(n,\"claudian-deepseek-\")),i=(0,mt.join)(t,\"presets\"),r=(0,mt."
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "lr",
+        "len": 309,
+        "text": "async function lr(n,e){let t=await n.call(\"session/projections\",{request:{sessionId:e}});if(t===null)throw new X(\"DeepSeek native session is"
+      }
+    ],
+    "new": [
+      {
+        "name": "Oi",
+        "len": 451,
+        "text": "async function Oi(n,e){let t=await n.call(\"session/list\",{_request:{}});if(!x(t)||!Array.isArray(t.items))throw new Error(\"Malformed DeepSee"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "Bm",
+        "len": 22,
+        "text": "require(\"node:crypto\");async function jD(n,e,t){if(!Array.isArray(t))return[];let i=[];for(let r of t){if(!R(r)||r.type!==\"image\")continue;i"
+      },
+      {
+        "name": "jD",
+        "len": 810,
+        "text": "async function jD(n,e,t){if(!Array.isArray(t))return[];let i=[];for(let r of t){if(!R(r)||r.type!==\"image\")continue;if(!R(r.attachment)||typ"
+      },
+      {
+        "name": "Sd",
+        "len": 358,
+        "text": "async function Sd(n,e,t){if(t.type!==\"tool/result\"||!R(t.data)||!R(t.data.message))return t;let i=await jD(n,e,t.data.message.content);retur"
+      }
+    ],
+    "new": [
+      {
+        "name": "Um",
+        "len": 22,
+        "text": "require(\"node:crypto\");var Di=class extends Error{constructor(){super(\"DeepSeek output changed during recovery. Reload Claudian or Obsidian,"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "Ro",
+        "len": 6417,
+        "text": "class{constructor(e){this.emit=e;this.attempts=new Map;this.committed=new Map;this.records=new Set;this.calls=new Map;this.completedTools=ne"
+      },
+      {
+        "name": "Ow",
+        "len": 32,
+        "text": "function Ow(n){return Lwe[n]??n}function dr(n){return Array.isArray(n)?n.flatMap(e=>R(e)&&e.type===\"text\"&&typeof e.text==\"string\"?[e.text]:"
+      }
+    ],
+    "new": [
+      {
+        "name": "Ro",
+        "len": 6487,
+        "text": "class{constructor(e){this.emit=e;this.attempts=new Map;this.committed=new Map;this.records=new Set;this.calls=new Map;this.completedTools=ne"
+      },
+      {
+        "name": "Dw",
+        "len": 32,
+        "text": "function Dw(n){return Uwe[n]??n}function dr(n){return Array.isArray(n)?n.flatMap(e=>x(e)&&e.type===\"text\"&&typeof e.text==\"string\"?[e.text]:"
+      }
+    ]
+  },
+  {
+    "old": [],
+    "new": [
+      {
+        "name": "Sd",
+        "len": 389,
+        "text": "function Sd(n){if(!x(n))return;if(typeof n.toolCallId==\"string\")return n;let e=Array.isArray(n.content)?n.content.filter(i=>x(i)&&i.type===\""
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "Wu",
+        "len": 3154,
+        "text": "class{constructor(e){this.publish=e;this.calls=new Map;this.children=new Map;this.parents=new Map}clear(){this.calls.clear(),this.children.c"
+      }
+    ],
+    "new": [
+      {
+        "name": "KD",
+        "len": 810,
+        "text": "async function KD(n,e,t){if(!Array.isArray(t))return[];let i=[];for(let r of t){if(!x(r)||r.type!==\"image\")continue;if(!x(r.attachment)||typ"
+      },
+      {
+        "name": "bd",
+        "len": 508,
+        "text": "async function bd(n,e,t){if(t.type!==\"tool/result\"||!x(t.data)||!x(t.data.message))return t;let i=Sd(t.data.message);if(!i)return t;let r=aw"
+      },
+      {
+        "name": "ju",
+        "len": 3158,
+        "text": "class{constructor(e){this.publish=e;this.calls=new Map;this.children=new Map;this.parents=new Map}clear(){this.calls.clear(),this.children.c"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "Q6",
+        "len": 829,
+        "text": "async function Q6(n,e,t,i){let r=$6[t];if(!r)throw new Error(\"Unsupported DeepSeek permission mode.\");let s=await n.call(\"permissionPresets/"
+      },
+      {
+        "name": "Lw",
+        "len": 4918,
+        "text": "class{constructor(e,t,i,r,s){this.client=e;this.roster=t;this.rootId=i;this.onFollow=r;this.onError=s;this.followed=new Map;this.interaction"
+      }
+    ],
+    "new": [
+      {
+        "name": "t4",
+        "len": 828,
+        "text": "async function t4(n,e,t,i){let r=e4[t];if(!r)throw new Error(\"Unsupported DeepSeek permission mode.\");let o=(await Oi(n,e)).values.permissio"
+      },
+      {
+        "name": "_w",
+        "len": 4872,
+        "text": "class{constructor(e,t,i,r,s){this.client=e;this.roster=t;this.rootId=i;this.onFollow=r;this.onError=s;this.followed=new Map;this.interaction"
+      }
+    ]
+  },
+  {
+    "old": [
+      {
+        "name": "_w",
+        "len": 31432,
+        "text": "class{constructor(e,t,i){this.host=e;this.config=t;this.deepseek=i;this.providerId=\"deepseek\";this.sessionInstanceId=(0,Bm.randomUUID)();thi"
+      }
+    ],
+    "new": [
+      {
+        "name": "Nw",
+        "len": 31708,
+        "text": "class{constructor(e,t,i){this.host=e;this.config=t;this.deepseek=i;this.providerId=\"deepseek\";this.sessionInstanceId=(0,Um.randomUUID)();thi"
+      }
+    ]
+  }
+]
