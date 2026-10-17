@@ -207,8 +207,18 @@ def load_timetable(path=None):
             makeup[m.group(1)] = WEEKDAY_MAP[m.group(2)]
         else:
             print(f'  [警告] 无法解析调休配置: {item!r}（应形如 2026-10-10=三）')
+    cancelled = set()
+    for item in re.split(r'[,，、;；]', meta.get('停课', '')):
+        item = item.strip()
+        if not item:
+            continue
+        try:
+            cancelled.add(dt.date.fromisoformat(item).isoformat())
+        except ValueError:
+            print(f'  [警告] 无法解析停课配置: {item!r}（应形如 2026-10-16）')
     return {'semester': meta.get('学期', ''), 'semester_start': semester_start,
-            'courses': courses, 'excluded_subjects': excluded, 'makeup': makeup}
+            'courses': courses, 'excluded_subjects': excluded, 'makeup': makeup,
+            'cancelled': cancelled}
 
 
 def week_no(date, semester_start):
@@ -245,7 +255,7 @@ def class_no_for(course_row, date, timetable):
             # 第 k 周中该行星期对应的具体日期
             d = semester_start + dt.timedelta(
                 days=(k - 1) * 7 + (r['weekday'] - semester_start.weekday()) % 7)
-            if d <= date:
+            if d <= date and d.isoformat() not in (timetable.get('cancelled') or set()):
                 count += 1
     return count
 
@@ -257,6 +267,8 @@ def match_course(meeting_dt, timetable):
     if not timetable:
         return None, None
     date = meeting_dt.date()
+    if date.isoformat() in (timetable.get('cancelled') or set()):
+        return None, None
     # 调休日：用配置的星期替代实际星期
     weekday = (timetable.get('makeup') or {}).get(date.isoformat())
     if weekday is None:

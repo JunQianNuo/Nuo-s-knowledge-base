@@ -80,6 +80,7 @@ def save_timetable(meta, rows):
               '> - **时间段**：`HH:MM-HH:MM`（会议开始时间落在「开始前 30 分钟 ~ 结束后 45 分钟」窗口内即匹配）',
               '> - **周次**：`1-16`（每周）、`1-8单`、`2-16双`、`3,5,7`（指定周）均可',
               '> - **会议号**：可填，填写后优先按会议号强匹配',
+              '> - **停课**：frontmatter 中填写停课日期，停课日不匹配课程且不计入学期课次',
               '', '## 作息时间（教务系统设置，2026-09-02 确认）', '',
               '| 节次 | 时间 | 节次 | 时间 |', '|:--|:--|:--|:--|',
               '| 第1节 | 08:30-09:15 | 第7节 | 16:20-17:05 |',
@@ -196,6 +197,7 @@ PAGE = """<!DOCTYPE html>
     <div><label>开学日期</label><input id="m_start" placeholder="如 2026-08-31"></div>
     <div><label>排除主题（逗号分隔）</label><input id="m_excluded" placeholder="如 公开课,测试"></div>
     <div><label>调休（日期=星期，逗号分隔）</label><input id="m_makeup" placeholder="如 2026-10-10=三, 2026-09-26=四"></div>
+    <div><label>停课（日期，逗号分隔）</label><input id="m_cancelled" placeholder="如 2026-10-16, 2026-11-06"></div>
   </div>
   <table id="tt">
     <thead><tr><th>课程</th><th>星期</th><th>节次</th><th>时间段</th><th>周次</th><th>会议号</th><th>教师</th><th></th></tr></thead>
@@ -261,6 +263,7 @@ function renderTimetable() {
   $('m_start').value = t.meta['开学日期'] || '';
   $('m_excluded').value = t.meta['排除主题'] || '';
   $('m_makeup').value = t.meta['调休'] || '';
+  $('m_cancelled').value = t.meta['停课'] || '';
   const tb = $('tt').querySelector('tbody');
   tb.innerHTML = '';
   (t.rows || []).forEach(r => addRow(r));
@@ -322,7 +325,8 @@ async function removeSchedule() {
 async function saveTimetable() {
   const body = {
     meta: { '学期': $('m_semester').value.trim(), '开学日期': $('m_start').value.trim(),
-            '排除主题': $('m_excluded').value.trim(), '调休': $('m_makeup').value.trim() },
+            '排除主题': $('m_excluded').value.trim(), '调休': $('m_makeup').value.trim(),
+            '停课': $('m_cancelled').value.trim() },
     rows: collectRows(),
   };
   const r = await api('/api/timetable', 'POST', body);
