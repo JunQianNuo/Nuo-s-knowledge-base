@@ -340,8 +340,8 @@
   },
   "settingsProvider": "claude",
   "lastSelectedChatModel": {
-    "providerId": "deepseek",
-    "model": "deepseek:deepseek-official/deepseek-flash"
+    "providerId": "codex",
+    "model": "openai-codex/gpt-6.1-sol"
   },
   "savedProviderModel": {
     "claude": "opus"
