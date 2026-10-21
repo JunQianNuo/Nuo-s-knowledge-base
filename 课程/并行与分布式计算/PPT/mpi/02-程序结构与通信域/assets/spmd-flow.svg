@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">同一 MPI 程序的四份独立执行</title>
+  <desc id="desc">可执行文件 hello_mpi 经 mpirun -np 4 启动四个进程。每个进程独立执行初始化、查询 rank 和 size、本地计算与输出、结束 MPI。列间没有同步箭头。</desc>
+  <defs>
+    <style>
+      .title{font:700 27px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .label{font:700 21px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .body{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .code{font:700 21px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .rank{font:700 21px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+    </style>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#506574"/></marker>
+    <marker id="launch" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#D78738"/></marker>
+  </defs>
+  <rect width="1200" height="500" fill="#F7FAFB"/>
+  <text x="56" y="40" class="title">SPMD：同一程序启动多个 MPI 进程</text>
+  <rect x="256" y="64" width="256" height="44" rx="10" fill="#FFFFFF" stroke="#B8C8D0" stroke-width="1.5"/>
+  <text x="384" y="93" text-anchor="middle" class="code">hello_mpi</text>
+  <path d="M526 86H606" fill="none" stroke="#506574" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="622" y="64" width="330" height="44" rx="10" fill="#FFF1E2" stroke="#D78738" stroke-width="1.5"/>
+  <text x="787" y="93" text-anchor="middle" class="code">mpirun -np 4</text>
+  <path d="M787 108V129M178 129H1022M178 129V148M460 129V148M740 129V148M1022 129V148" fill="none" stroke="#D78738" stroke-width="2"/>
+  <path d="M178 145V155" stroke="#D78738" stroke-width="2" marker-end="url(#launch)"/>
+  <path d="M460 145V155" stroke="#D78738" stroke-width="2" marker-end="url(#launch)"/>
+  <path d="M740 145V155" stroke="#D78738" stroke-width="2" marker-end="url(#launch)"/>
+  <path d="M1022 145V155" stroke="#D78738" stroke-width="2" marker-end="url(#launch)"/>
+  <g transform="translate(56 158)">
+    <rect width="244" height="278" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H230Q244 0 244 14V43H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="122" y="29" text-anchor="middle" class="rank">rank 0</text>
+    <rect x="17" y="57" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="83" text-anchor="middle" class="body">MPI_Init</text>
+    <path d="M122 99V111" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="115" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="141" text-anchor="middle" class="body">查询 rank / size</text>
+    <path d="M122 157V169" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="173" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="199" text-anchor="middle" class="body">本地计算 / 输出</text>
+    <path d="M122 215V227" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="231" width="210" height="34" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="255" text-anchor="middle" class="body">MPI_Finalize</text>
+  </g>
+  <g transform="translate(338 158)">
+    <rect width="244" height="278" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H230Q244 0 244 14V43H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="122" y="29" text-anchor="middle" class="rank">rank 1</text>
+    <rect x="17" y="57" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="83" text-anchor="middle" class="body">MPI_Init</text>
+    <path d="M122 99V111" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="115" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="141" text-anchor="middle" class="body">查询 rank / size</text>
+    <path d="M122 157V169" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="173" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="199" text-anchor="middle" class="body">本地计算 / 输出</text>
+    <path d="M122 215V227" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="231" width="210" height="34" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="255" text-anchor="middle" class="body">MPI_Finalize</text>
+  </g>
+  <g transform="translate(618 158)">
+    <rect width="244" height="278" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H230Q244 0 244 14V43H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="122" y="29" text-anchor="middle" class="rank">rank 2</text>
+    <rect x="17" y="57" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="83" text-anchor="middle" class="body">MPI_Init</text>
+    <path d="M122 99V111" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="115" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="141" text-anchor="middle" class="body">查询 rank / size</text>
+    <path d="M122 157V169" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="173" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="199" text-anchor="middle" class="body">本地计算 / 输出</text>
+    <path d="M122 215V227" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="231" width="210" height="34" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="255" text-anchor="middle" class="body">MPI_Finalize</text>
+  </g>
+  <g transform="translate(900 158)">
+    <rect width="244" height="278" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H230Q244 0 244 14V43H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="122" y="29" text-anchor="middle" class="rank">rank 3</text>
+    <rect x="17" y="57" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="83" text-anchor="middle" class="body">MPI_Init</text>
+    <path d="M122 99V111" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="115" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="141" text-anchor="middle" class="body">查询 rank / size</text>
+    <path d="M122 157V169" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="173" width="210" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="199" text-anchor="middle" class="body">本地计算 / 输出</text>
+    <path d="M122 215V227" stroke="#506574" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="17" y="231" width="210" height="34" rx="8" fill="#FFFFFF"/>
+    <text x="122" y="255" text-anchor="middle" class="body">MPI_Finalize</text>
+  </g>
+  <text x="600" y="479" text-anchor="middle" class="small">同一程序，多份独立执行；各进程推进速度可不同</text>
+</svg>

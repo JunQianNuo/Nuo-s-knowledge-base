@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="从核心、CPU 插槽、计算节点到集群的硬件层次示意图">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1E8A89"/></marker>
+    <style>
+      .title{font:700 28px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#10283F}
+      .label{font:700 22px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#10283F}
+      .small{font:17px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#4E6474}
+      .white{font:700 17px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect width="1200" height="480" fill="#F7FAFB"/>
+  <text x="60" y="55" class="title">计算资源从核心延伸到集群</text>
+  <line x1="60" y1="78" x2="1140" y2="78" stroke="#D9E4E9" stroke-width="2"/>
+
+  <g transform="translate(50,125)">
+    <text x="0" y="0" class="label">01  核心</text>
+    <rect x="0" y="28" width="210" height="210" rx="16" fill="#DCEDEF" stroke="#9DC6CB" stroke-width="2"/>
+    <rect x="44" y="65" width="122" height="94" rx="10" fill="#12314A"/>
+    <text x="105" y="121" text-anchor="middle" class="white">执行指令</text>
+    <rect x="34" y="180" width="142" height="34" rx="7" fill="#A6D8D5"/>
+    <text x="105" y="203" text-anchor="middle" class="small">缓存 / 寄存器</text>
+    <text x="105" y="268" text-anchor="middle" class="small">最小执行单元之一</text>
+  </g>
+  <path d="M 273 250 H 322" stroke="#1E8A89" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(335,125)">
+    <text x="0" y="0" class="label">02  插槽 / NUMA</text>
+    <rect x="0" y="28" width="225" height="210" rx="16" fill="#E8F2F0" stroke="#9DC6CB" stroke-width="2"/>
+    <rect x="23" y="66" width="52" height="52" rx="7" fill="#237B87"/>
+    <rect x="86" y="66" width="52" height="52" rx="7" fill="#237B87"/>
+    <rect x="149" y="66" width="52" height="52" rx="7" fill="#237B87"/>
+    <text x="112" y="156" text-anchor="middle" class="small">多个核心</text>
+    <rect x="35" y="174" width="155" height="36" rx="6" fill="#A6D8D5"/>
+    <text x="112" y="199" text-anchor="middle" class="small">相连的内存</text>
+    <text x="112" y="268" text-anchor="middle" class="small">内存位置影响访问代价</text>
+  </g>
+  <path d="M 574 250 H 623" stroke="#1E8A89" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(637,125)">
+    <text x="0" y="0" class="label">03  计算节点</text>
+    <rect x="0" y="28" width="220" height="210" rx="16" fill="#DFE8F3" stroke="#9BAEC6" stroke-width="2"/>
+    <rect x="24" y="62" width="77" height="72" rx="8" fill="#235878"/>
+    <rect x="119" y="62" width="77" height="72" rx="8" fill="#235878"/>
+    <text x="63" y="105" text-anchor="middle" class="white">CPU</text>
+    <text x="157" y="105" text-anchor="middle" class="white">CPU</text>
+    <rect x="28" y="160" width="164" height="42" rx="7" fill="#B7CBE1"/>
+    <text x="110" y="188" text-anchor="middle" class="small">主存 / OS</text>
+    <text x="110" y="268" text-anchor="middle" class="small">可运行多个进程</text>
+  </g>
+  <path d="M 870 250 H 919" stroke="#1E8A89" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(932,125)">
+    <text x="0" y="0" class="label">04  集群</text>
+    <rect x="0" y="28" width="220" height="210" rx="16" fill="#F4EADB" stroke="#DEC6A4" stroke-width="2"/>
+    <rect x="32" y="60" width="65" height="56" rx="6" fill="#C88040"/>
+    <rect x="123" y="60" width="65" height="56" rx="6" fill="#C88040"/>
+    <rect x="77" y="149" width="65" height="56" rx="6" fill="#C88040"/>
+    <path d="M 98 88 H 122 M 65 119 L 92 147 M 154 119 L 127 147" stroke="#9A5D2A" stroke-width="3"/>
+    <text x="110" y="268" text-anchor="middle" class="small">节点由网络互联</text>
+  </g>
+  <text x="600" y="440" text-anchor="middle" class="small">示意图：层次扩大时，程序需要更明确地安排数据放置与交换</text>
+</svg>

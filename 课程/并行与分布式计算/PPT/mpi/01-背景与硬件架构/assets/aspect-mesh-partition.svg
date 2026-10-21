@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660" role="img" aria-labelledby="title desc">
+  <title id="title">大尺度地幔模拟中的网格分块、局部加密与邻域数据交换</title>
+  <desc id="desc">自绘概念示意图，不是 ASPECT 的实际计算输出。二维计算域分给四个 MPI rank，热异常附近局部加密，rank 1 与 rank 2 的接口需要交换数据。</desc>
+  <defs>
+    <linearGradient id="plume" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#D78738" stop-opacity=".80"/>
+      <stop offset=".65" stop-color="#EBAF6A" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#F7D6AA" stop-opacity=".35"/>
+    </linearGradient>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B4D9D4"/>
+      <stop offset="1" stop-color="#E8F3F1"/>
+    </linearGradient>
+    <pattern id="coarse" width="36.5" height="41" patternUnits="userSpaceOnUse" x="56" y="140">
+      <path d="M36.5 0H0V41" fill="none" stroke="#89A8B0" stroke-width="1.25" opacity=".64"/>
+    </pattern>
+    <pattern id="fine" width="18.25" height="20.5" patternUnits="userSpaceOnUse" x="530" y="263">
+      <path d="M18.25 0H0V20.5" fill="none" stroke="#678B99" stroke-width="1" opacity=".78"/>
+    </pattern>
+    <clipPath id="domain"><rect x="56" y="140" width="1168" height="410" rx="18"/></clipPath>
+    <clipPath id="refined"><rect x="530" y="263" width="219" height="205" rx="3"/></clipPath>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5.5L1 10" fill="none" stroke="#D78738" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .title{font:700 38px 'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .badge{font:700 25px 'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif;fill:#A4581D}
+      .rank{font:700 34px 'Avenir Next','Helvetica Neue',sans-serif;fill:#fff}
+      .label{font:600 23px 'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .small{font:500 21px 'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .caption{font:600 25px 'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif;fill:#365468}
+    </style>
+  </defs>
+
+  <rect width="1280" height="660" fill="#F7FAFB"/>
+  <text x="56" y="72" class="title">把大网格分给多个 MPI 进程</text>
+  <rect x="821" y="33" width="403" height="54" rx="27" fill="#FFF1DF" stroke="#E9BE8E" stroke-width="1.5"/>
+  <text x="1022" y="69" text-anchor="middle" class="badge">概念示意 · 非 ASPECT 输出</text>
+  <text x="57" y="112" class="small">二维地幔计算域示意：每个 rank 负责一部分网格单元</text>
+
+  <g clip-path="url(#domain)">
+    <rect x="56" y="140" width="292" height="410" fill="#E7F3F1"/>
+    <rect x="348" y="140" width="292" height="410" fill="#D8ECEB"/>
+    <rect x="640" y="140" width="292" height="410" fill="#E3F1EE"/>
+    <rect x="932" y="140" width="292" height="410" fill="#EAF1F4"/>
+    <rect x="56" y="140" width="1168" height="22" fill="url(#surface)"/>
+    <rect x="56" y="140" width="1168" height="410" fill="url(#coarse)"/>
+
+    <!-- Stylized thermal anomaly: a context cue, not a simulation field. -->
+    <path d="M545 550 C567 522 594 502 590 476 C585 445 566 423 578 395 C594 363 624 362 620 328 C618 305 612 279 637 254 C663 281 651 308 666 334 C680 361 709 367 712 399 C715 428 693 452 696 476 C701 511 721 529 747 550Z" fill="url(#plume)"/>
+
+    <!-- A rectangular fine-grid patch is deliberately simplified for teaching. -->
+    <rect x="530" y="263" width="219" height="205" fill="#FFF8EB" opacity=".28"/>
+    <rect x="530" y="263" width="219" height="205" fill="url(#fine)" clip-path="url(#refined)"/>
+    <rect x="530" y="263" width="219" height="205" rx="3" fill="none" stroke="#D78738" stroke-width="3" stroke-dasharray="10 7"/>
+
+    <path d="M348 140V550 M640 140V550 M932 140V550" fill="none" stroke="#507B87" stroke-width="2.6" stroke-dasharray="9 8"/>
+    <path d="M640 263V468" fill="none" stroke="#A4581D" stroke-width="4"/>
+  </g>
+  <rect x="56" y="140" width="1168" height="410" rx="18" fill="none" stroke="#A4BDC5" stroke-width="2"/>
+
+  <g>
+    <rect x="136" y="174" width="132" height="52" rx="26" fill="#147F85"/>
+    <rect x="428" y="174" width="132" height="52" rx="26" fill="#147F85"/>
+    <rect x="720" y="174" width="132" height="52" rx="26" fill="#147F85"/>
+    <rect x="1012" y="174" width="132" height="52" rx="26" fill="#147F85"/>
+    <text x="202" y="209" text-anchor="middle" class="rank">rank 0</text>
+    <text x="494" y="209" text-anchor="middle" class="rank">rank 1</text>
+    <text x="786" y="209" text-anchor="middle" class="rank">rank 2</text>
+    <text x="1078" y="209" text-anchor="middle" class="rank">rank 3</text>
+  </g>
+
+  <rect x="562" y="178" width="156" height="45" rx="22.5" fill="#FFFFFF" stroke="#E5D2B7" stroke-width="1.5"/>
+  <text x="640" y="207" text-anchor="middle" class="label">邻域交换</text>
+  <path d="M572 240H708" fill="none" stroke="#D78738" stroke-width="4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="516" y="477" width="248" height="46" rx="23" fill="#FFFFFF" stroke="#E5D2B7" stroke-width="1.5"/>
+  <text x="640" y="506" text-anchor="middle" class="label">热异常附近局部加密</text>
+
+  <circle cx="86" cy="607" r="10" fill="#147F85"/>
+  <text x="107" y="614" class="caption">并行分担计算与内存</text>
+  <path d="M666 607H708" fill="none" stroke="#D78738" stroke-width="3.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="730" y="614" class="caption">接口交换边界信息</text>
+</svg>

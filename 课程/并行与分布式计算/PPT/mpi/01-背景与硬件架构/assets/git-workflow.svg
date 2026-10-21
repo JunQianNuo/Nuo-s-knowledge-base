@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="440" viewBox="0 0 1250 440" role="img" aria-label="Git 工作区、暂存区、本地提交、个人 Fork 与课程仓库之间的流程">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#D78738"/></marker>
+    <style>
+      .title{font:700 27px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#112C43}
+      .place{font:700 19px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#506574}
+      .box{font:700 25px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#112C43}
+      .body{font:18px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#506574}
+      .verb{font:700 18px 'TeX Gyre Heros','Arial',sans-serif;fill:#B86B28}
+    </style>
+  </defs>
+  <rect width="1250" height="440" fill="#F7FAFB"/>
+  <text x="50" y="49" class="title">一次改动怎样到达课程仓库？</text>
+  <text x="50" y="91" class="place">个人电脑：Git 记录版本</text>
+  <text x="947" y="91" class="place">Gitee：托管与协作</text>
+
+  <rect x="48" y="147" width="214" height="120" rx="15" fill="#E9F4F2" stroke="#75B5B5" stroke-width="2"/>
+  <text x="155" y="194" class="box" text-anchor="middle">工作区</text>
+  <text x="155" y="235" class="body" text-anchor="middle">正在编辑的文件</text>
+
+  <rect x="342" y="147" width="214" height="120" rx="15" fill="#E9F4F2" stroke="#75B5B5" stroke-width="2"/>
+  <text x="449" y="194" class="box" text-anchor="middle">暂存区</text>
+  <text x="449" y="235" class="body" text-anchor="middle">选定的改动</text>
+
+  <rect x="636" y="147" width="214" height="120" rx="15" fill="#E5EDF4" stroke="#9AAEC0" stroke-width="2"/>
+  <text x="743" y="194" class="box" text-anchor="middle">本地仓库</text>
+  <text x="743" y="235" class="body" text-anchor="middle">提交与历史</text>
+
+  <rect x="944" y="147" width="250" height="120" rx="15" fill="#E9F4F2" stroke="#75B5B5" stroke-width="2"/>
+  <text x="1069" y="194" class="box" text-anchor="middle">个人 Fork</text>
+  <text x="1069" y="235" class="body" text-anchor="middle">自己的远端分支</text>
+
+  <path d="M269 207H333" stroke="#D78738" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="301" y="185" class="verb" text-anchor="middle">add</text>
+  <path d="M563 207H627" stroke="#D78738" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="595" y="185" class="verb" text-anchor="middle">commit</text>
+  <path d="M857 207H935" stroke="#D78738" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="896" y="185" class="verb" text-anchor="middle">push</text>
+
+  <path d="M1069 275V313" stroke="#D78738" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="1160" y="300" class="verb" text-anchor="middle">Pull Request</text>
+  <rect x="944" y="319" width="250" height="87" rx="15" fill="#FBEFDF" stroke="#D78738" stroke-width="2"/>
+  <text x="1069" y="356" class="box" text-anchor="middle">课程仓库</text>
+  <text x="1069" y="385" class="body" text-anchor="middle">审核后决定是否合并</text>
+
+  <text x="50" y="350" class="body">提交保存在本地；推送与 PR 是两个不同的操作。</text>
+</svg>

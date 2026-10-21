@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">MPI_COMM_WORLD 中的 rank 与进程本地变量</title>
+  <desc id="desc">通信域 MPI_COMM_WORLD 含四个进程，rank 为 0 至 3。每个进程有独立的同名变量 value。只有 rank 0 将自己的 value 设为 99，其余进程的 value 仍为 10。通信域边框表示通信上下文，并不表示共享内存。</desc>
+  <defs>
+    <style>
+      .title{font:700 27px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .label{font:700 23px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .body{font:20px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+      .value{font:700 28px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .changed{font:700 28px 'SFMono-Regular',Consolas,monospace;fill:#B26920}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#F7FAFB"/>
+  <text x="56" y="44" class="title">通信域、进程编号与本地变量</text>
+  <rect x="56" y="88" width="1088" height="333" rx="20" fill="#FFFFFF" stroke="#147F85" stroke-width="2.5"/>
+  <text x="89" y="130" class="label">MPI_COMM_WORLD</text>
+  <text x="1111" y="130" text-anchor="end" class="body">size = 4</text>
+  <g transform="translate(89 164)">
+    <rect width="220" height="198" rx="13" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M13 0H207Q220 0 220 13V57H0V13Q0 0 13 0Z" fill="#147F85"/>
+    <text x="110" y="38" text-anchor="middle" class="rank">rank 0</text>
+    <text x="110" y="90" text-anchor="middle" class="body">本地变量</text>
+    <rect x="18" y="108" width="184" height="61" rx="9" fill="#FFF1E2" stroke="#D78738" stroke-width="1.5"/>
+    <text x="110" y="148" text-anchor="middle" class="changed">value = 99</text>
+  </g>
+  <g transform="translate(356 164)">
+    <rect width="220" height="198" rx="13" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M13 0H207Q220 0 220 13V57H0V13Q0 0 13 0Z" fill="#147F85"/>
+    <text x="110" y="38" text-anchor="middle" class="rank">rank 1</text>
+    <text x="110" y="90" text-anchor="middle" class="body">本地变量</text>
+    <rect x="18" y="108" width="184" height="61" rx="9" fill="#FFFFFF" stroke="#B8C8D0" stroke-width="1.5"/>
+    <text x="110" y="148" text-anchor="middle" class="value">value = 10</text>
+  </g>
+  <g transform="translate(623 164)">
+    <rect width="220" height="198" rx="13" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M13 0H207Q220 0 220 13V57H0V13Q0 0 13 0Z" fill="#147F85"/>
+    <text x="110" y="38" text-anchor="middle" class="rank">rank 2</text>
+    <text x="110" y="90" text-anchor="middle" class="body">本地变量</text>
+    <rect x="18" y="108" width="184" height="61" rx="9" fill="#FFFFFF" stroke="#B8C8D0" stroke-width="1.5"/>
+    <text x="110" y="148" text-anchor="middle" class="value">value = 10</text>
+  </g>
+  <g transform="translate(890 164)">
+    <rect width="220" height="198" rx="13" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M13 0H207Q220 0 220 13V57H0V13Q0 0 13 0Z" fill="#147F85"/>
+    <text x="110" y="38" text-anchor="middle" class="rank">rank 3</text>
+    <text x="110" y="90" text-anchor="middle" class="body">本地变量</text>
+    <rect x="18" y="108" width="184" height="61" rx="9" fill="#FFFFFF" stroke="#B8C8D0" stroke-width="1.5"/>
+    <text x="110" y="148" text-anchor="middle" class="value">value = 10</text>
+  </g>
+  <text x="600" y="398" text-anchor="middle" class="small">各进程保有自己的变量副本</text>
+  <text x="600" y="474" text-anchor="middle" class="small">rank 是此通信域内的编号；同名变量属于不同进程</text>
+</svg>

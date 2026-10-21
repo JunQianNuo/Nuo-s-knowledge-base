@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="四个 MPI rank 分布在两台计算节点的示意图">
+  <defs>
+    <style>
+      .title{font:700 27px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#10283F}
+      .label{font:700 22px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#12314A}
+      .small{font:18px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:#4E6474}
+      .rank{font:700 20px 'Hiragino Sans GB','PingFang SC',sans-serif;fill:white}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#F7FAFB"/>
+  <text x="65" y="54" class="title">一种可能的部署：4 个 rank，2 台节点</text>
+  <g>
+    <rect x="80" y="106" width="420" height="227" rx="18" fill="#E5F2F0" stroke="#8DBFBD" stroke-width="2"/>
+    <rect x="700" y="106" width="420" height="227" rx="18" fill="#E5F2F0" stroke="#8DBFBD" stroke-width="2"/>
+    <text x="290" y="148" text-anchor="middle" class="label">节点 A</text>
+    <text x="910" y="148" text-anchor="middle" class="label">节点 B</text>
+    <rect x="122" y="182" width="145" height="75" rx="10" fill="#237B87"/>
+    <rect x="313" y="182" width="145" height="75" rx="10" fill="#237B87"/>
+    <rect x="742" y="182" width="145" height="75" rx="10" fill="#237B87"/>
+    <rect x="933" y="182" width="145" height="75" rx="10" fill="#237B87"/>
+    <text x="194" y="227" text-anchor="middle" class="rank">rank 0</text>
+    <text x="385" y="227" text-anchor="middle" class="rank">rank 1</text>
+    <text x="814" y="227" text-anchor="middle" class="rank">rank 2</text>
+    <text x="1005" y="227" text-anchor="middle" class="rank">rank 3</text>
+    <text x="290" y="299" text-anchor="middle" class="small">本节点的内存</text>
+    <text x="910" y="299" text-anchor="middle" class="small">本节点的内存</text>
+  </g>
+  <path d="M500 218H700" stroke="#D37F36" stroke-width="7"/>
+  <text x="600" y="192" text-anchor="middle" class="small">互联网络</text>
+  <text x="600" y="384" text-anchor="middle" class="small">rank 是通信域中的编号；进程可重新映射到节点，rank 与节点没有一一对应关系</text>
+</svg>
