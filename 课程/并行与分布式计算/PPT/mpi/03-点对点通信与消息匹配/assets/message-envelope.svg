@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="650" viewBox="0 0 1280 650" role="img" aria-labelledby="title desc">
+  <title id="title">MPI 消息信封、有效载荷与本地缓冲区</title>
+  <desc id="desc">在 MPI_COMM_WORLD 中，rank 0 将一个值为 10 的 MPI_INT 发送给 rank 1，标签为 10。消息信封由通信上下文、源进程、目标进程与标签描述。发送和接收各自用本地缓冲区、count 和 datatype 描述数据；两端的 value 是不同进程的变量。</desc>
+  <defs>
+    <style>
+      .title{font:700 28px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .label{font:700 22px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .body{font:21px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .code{font:20px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .compact{font:18px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#147F85"/></marker>
+  </defs>
+  <rect width="1280" height="650" fill="#F7FAFB"/>
+  <text x="44" y="48" class="title">一次点对点通信：把数据交给匹配的接收操作</text>
+  <g transform="translate(44 95)">
+    <rect width="326" height="402" rx="16" fill="#FFFFFF" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M16 0H310Q326 0 326 16V58H0V16Q0 0 16 0Z" fill="#147F85"/>
+    <text x="163" y="38" text-anchor="middle" class="rank">rank 0</text>
+    <text x="24" y="98" class="label">发送：MPI_Send</text>
+    <rect x="22" y="119" width="282" height="56" rx="9" fill="#E9F4F2"/>
+    <text x="163" y="154" text-anchor="middle" class="code">value = 10</text>
+    <text x="24" y="210" class="code">buf = &amp;value</text>
+    <text x="24" y="246" class="code">count = 1</text>
+    <text x="24" y="282" class="code">datatype = MPI_INT</text>
+    <text x="24" y="318" class="code">dest = 1, tag = 10</text>
+    <text x="24" y="354" class="compact">comm = MPI_COMM_WORLD</text>
+    <text x="24" y="385" class="small">本地发送缓冲区</text>
+  </g>
+  <g transform="translate(910 95)">
+    <rect width="326" height="402" rx="16" fill="#FFFFFF" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M16 0H310Q326 0 326 16V58H0V16Q0 0 16 0Z" fill="#147F85"/>
+    <text x="163" y="38" text-anchor="middle" class="rank">rank 1</text>
+    <text x="24" y="98" class="label">接收：MPI_Recv</text>
+    <rect x="22" y="119" width="282" height="56" rx="9" fill="#FFF1E2"/>
+    <text x="163" y="154" text-anchor="middle" class="code">value: 0 → 10</text>
+    <text x="24" y="210" class="code">buf = &amp;value</text>
+    <text x="24" y="246" class="code">count = 1</text>
+    <text x="24" y="282" class="code">datatype = MPI_INT</text>
+    <text x="24" y="318" class="code">source = 0, tag = 10</text>
+    <text x="24" y="354" class="compact">comm = MPI_COMM_WORLD</text>
+    <text x="24" y="385" class="small">本地接收缓冲区</text>
+  </g>
+  <path d="M379 287H413" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M860 287H899" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(426 110)">
+    <rect width="428" height="263" rx="14" fill="#E9F4F2" stroke="#147F85" stroke-width="1.5"/>
+    <text x="24" y="38" class="label">消息信封：用于匹配</text>
+    <path d="M24 57H404" stroke="#A3C8C7" stroke-width="1.5"/>
+    <text x="24" y="93" class="body">通信上下文</text>
+    <text x="24" y="125" class="code">MPI_COMM_WORLD</text>
+    <text x="24" y="168" class="body">源进程</text><text x="205" y="168" class="code">0</text>
+    <text x="24" y="206" class="body">目标进程</text><text x="205" y="206" class="code">1</text>
+    <text x="24" y="244" class="body">标签 tag</text><text x="205" y="244" class="code">10</text>
+  </g>
+  <g transform="translate(426 389)">
+    <rect width="428" height="108" rx="14" fill="#FFF1E2" stroke="#D78738" stroke-width="1.5"/>
+    <text x="24" y="37" class="label">有效载荷：实际传输的数据</text>
+    <text x="24" y="78" class="body">1 个整数，数值为 10</text>
+  </g>
+  <text x="640" y="547" text-anchor="middle" class="small">count 与 datatype 描述各自的缓冲区；不属于消息信封的匹配字段。</text>
+  <text x="640" y="582" text-anchor="middle" class="small">两端的 &amp;value 是各自进程的本地地址；接收方的 count 表示最多可接收的元素个数。</text>
+  <text x="640" y="617" text-anchor="middle" class="small">图示按逻辑作用分类；不表示网络数据包的实际布局。</text>
+</svg>

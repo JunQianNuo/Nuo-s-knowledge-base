@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">连续分块：余数任务与空区间</title>
+<desc id="desc">上半部展示N=10、P=3，rank 0负责下标0至3，对应半开区间[0,4)；rank 1负责4至6，对应[4,7)；rank 2负责7至9，对应[7,10)。下半部展示N=3、P=4，前三个rank各负责一个任务，rank 3区间[3,3)为空，局部和为零。</desc>
+<defs><style>
+.title{font:700 29px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.body{font:22px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.label{font:700 23px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+.code{font:22px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+.rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+</style>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker>
+<marker id="axis" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#506574"/></marker>
+</defs>
+<rect width="1200" height="660" fill="#F7FAFB"/>
+<text x="44" y="48" class="body" text-anchor="start" >连续分块：每个任务恰好属于一个 rank</text>
+<text x="44" y="92" class="body" text-anchor="start" >N = 10，P = 3：每个 rank 先分到 3 个任务，余下 1 个交给 rank 0。</text>
+<text x="276" y="143" class="label" text-anchor="middle" >rank 0</text>
+<rect x="60" y="165" width="108" height="64" fill="#147F85" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="114" y="207" class="rank" text-anchor="middle" >0</text>
+<rect x="168" y="165" width="108" height="64" fill="#147F85" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="222" y="207" class="rank" text-anchor="middle" >1</text>
+<rect x="276" y="165" width="108" height="64" fill="#147F85" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="330" y="207" class="rank" text-anchor="middle" >2</text>
+<rect x="384" y="165" width="108" height="64" fill="#147F85" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="438" y="207" class="rank" text-anchor="middle" >3</text>
+<path d="M64 245V256H488V245" fill="none" stroke="#147F85" stroke-width="2.5" />
+<text x="276" y="292" class="code" text-anchor="middle" >[0, 4)  ·  4 个</text>
+<text x="654" y="143" class="label" text-anchor="middle" >rank 1</text>
+<rect x="492" y="165" width="108" height="64" fill="#386889" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="546" y="207" class="rank" text-anchor="middle" >4</text>
+<rect x="600" y="165" width="108" height="64" fill="#386889" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="654" y="207" class="rank" text-anchor="middle" >5</text>
+<rect x="708" y="165" width="108" height="64" fill="#386889" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="762" y="207" class="rank" text-anchor="middle" >6</text>
+<path d="M496 245V256H812V245" fill="none" stroke="#386889" stroke-width="2.5" />
+<text x="654" y="292" class="code" text-anchor="middle" >[4, 7)  ·  3 个</text>
+<text x="978" y="143" class="label" text-anchor="middle" >rank 2</text>
+<rect x="816" y="165" width="108" height="64" fill="#D78738" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="870" y="207" class="rank" text-anchor="middle" >7</text>
+<rect x="924" y="165" width="108" height="64" fill="#D78738" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="978" y="207" class="rank" text-anchor="middle" >8</text>
+<rect x="1032" y="165" width="108" height="64" fill="#D78738" rx="0" stroke="#F7FAFB" stroke-width="3"/>
+<text x="1086" y="207" class="rank" text-anchor="middle" >9</text>
+<path d="M820 245V256H1136V245" fill="none" stroke="#D78738" stroke-width="2.5" />
+<text x="978" y="292" class="code" text-anchor="middle" >[7, 10)  ·  3 个</text>
+<rect x="44" y="327" width="1112" height="54" fill="#E9F4F2" rx="10" />
+<text x="600" y="362" class="body" text-anchor="middle" >半开区间 [begin, end)：包含 begin，不包含 end。</text>
+<text x="44" y="427" class="body" text-anchor="start" >N = 3，P = 4：任务数少于进程数时，允许空区间。</text>
+<rect x="60" y="454" width="258" height="132" fill="#FFFFFF" rx="12" stroke="#DCE6EA" stroke-width="1.5"/>
+<rect x="60" y="454" width="258" height="44" fill="#147F85" rx="12" />
+<rect x="60" y="478" width="258" height="20" fill="#147F85" rx="0" />
+<text x="189" y="484" class="rank" text-anchor="middle" >rank 0</text>
+<text x="189" y="534" class="code" text-anchor="middle" >[0, 1)</text>
+<text x="189" y="570" class="small" text-anchor="middle" >任务下标 0</text>
+<rect x="334" y="454" width="258" height="132" fill="#FFFFFF" rx="12" stroke="#DCE6EA" stroke-width="1.5"/>
+<rect x="334" y="454" width="258" height="44" fill="#386889" rx="12" />
+<rect x="334" y="478" width="258" height="20" fill="#386889" rx="0" />
+<text x="463" y="484" class="rank" text-anchor="middle" >rank 1</text>
+<text x="463" y="534" class="code" text-anchor="middle" >[1, 2)</text>
+<text x="463" y="570" class="small" text-anchor="middle" >任务下标 1</text>
+<rect x="608" y="454" width="258" height="132" fill="#FFFFFF" rx="12" stroke="#DCE6EA" stroke-width="1.5"/>
+<rect x="608" y="454" width="258" height="44" fill="#D78738" rx="12" />
+<rect x="608" y="478" width="258" height="20" fill="#D78738" rx="0" />
+<text x="737" y="484" class="rank" text-anchor="middle" >rank 2</text>
+<text x="737" y="534" class="code" text-anchor="middle" >[2, 3)</text>
+<text x="737" y="570" class="small" text-anchor="middle" >任务下标 2</text>
+<rect x="882" y="454" width="258" height="132" fill="#FFFFFF" rx="12" stroke="#DCE6EA" stroke-width="1.5"/>
+<rect x="882" y="454" width="258" height="44" fill="#506574" rx="12" />
+<rect x="882" y="478" width="258" height="20" fill="#506574" rx="0" />
+<text x="1011" y="484" class="rank" text-anchor="middle" >rank 3</text>
+<text x="1011" y="534" class="code" text-anchor="middle" >[3, 3)</text>
+<text x="1011" y="570" class="small" text-anchor="middle" >无任务，局部和 = 0</text>
+<text x="600" y="632" class="small" text-anchor="middle" >空区间不跳过 MPI 生命周期；仍按通信协议发送局部和 0。</text>
+</svg>

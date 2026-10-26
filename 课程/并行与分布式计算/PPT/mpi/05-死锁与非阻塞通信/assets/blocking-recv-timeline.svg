@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc"><title id="title">阻塞接收：先收到数据，才执行下一行</title><desc id="desc">单线程rank 0调用MPI_Recv等待消息时，后面的printf尚不能执行；rank 1继续准备数据并发送42，匹配接收完成后rank 0才打印42。示意一种可能的交错，不规定双方调用的返回顺序。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style>
+<marker id="teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker><marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#506574"/></marker><marker id="amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#D78738"/></marker></defs>
+<rect width="1200" height="620" fill="white"/>
+<text x="44" y="50" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="start">阻塞接收：先收到数据，才执行下一行</text>
+<text x="44" y="88" font-size="22" font-weight="400" style="fill:#506574" text-anchor="start">两个 rank 各自执行自己的代码；rank 0 的等待不会让 rank 1 停住。</text>
+<text x="330" y="140" font-size="26" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<text x="870" y="140" font-size="26" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<path d="M80 160V500" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="80" y="535" font-size="20" font-weight="400" style="fill:#506574" text-anchor="middle">时间向下</text>
+<path d="M330 160V500" fill="none" stroke="#D6E3E8" stroke-width="2"/>
+<path d="M870 160V500" fill="none" stroke="#D6E3E8" stroke-width="2"/>
+<rect x="150" y="180" width="360" height="210" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="330" y="222" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">MPI_Recv(&amp;value, ...)</text>
+<text x="330" y="266" font-size="23" font-weight="400" style="fill:#112C43" text-anchor="middle">停在这一行，等待接收完成</text>
+<text x="330" y="302" font-size="23" font-weight="400" style="fill:#112C43" text-anchor="middle">后面的 printf 尚未执行</text>
+<text x="330" y="367" font-size="23" font-weight="700" style="fill:#147F85" text-anchor="middle">收到 value = 42，接收完成</text>
+<rect x="690" y="180" width="360" height="70" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="870" y="224" font-size="24" font-weight="400" style="fill:#112C43" text-anchor="middle">准备数据：value = 42</text>
+<path d="M870 252V278" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="690" y="282" width="360" height="68" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="870" y="324" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">MPI_Send(&amp;value, ...)</text>
+<path d="M688 330L512 356" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<text x="599" y="306" font-size="22" font-weight="400" style="fill:#147F85" text-anchor="middle">消息：42</text>
+<path d="M330 392V430" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="150" y="434" width="360" height="70" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="330" y="477" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">printf 输出 42</text>
+<text x="870" y="407" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">发送调用也有自己的完成条件</text>
+<text x="870" y="443" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">不由这张图规定返回先后</text>
+<text x="600" y="571" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">绿色斜箭头表示消息传递；竖向排列表示本 rank 的代码顺序。</text>
+<text x="600" y="602" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">图示一种可能的执行交错；距离不表示耗时。</text>
+</svg>

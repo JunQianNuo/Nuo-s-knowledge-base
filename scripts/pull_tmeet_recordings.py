@@ -473,7 +473,10 @@ title: {date_str} 第{class_no}节 {course}
 subject: {course}
 class_no: {class_no}
 date: {date_str}
-source: 腾讯会议录制（{subject}）
+source:
+  - {json.dumps(f'腾讯会议录制（{subject}）', ensure_ascii=False)}
+  - {json.dumps(f'[[{transcript_rel}]]', ensure_ascii=False)}
+  - {json.dumps(f'[[{minutes_rel}]]', ensure_ascii=False)}
 meeting_code: {meeting_code}
 start_time: {start_time}
 status: 待润色

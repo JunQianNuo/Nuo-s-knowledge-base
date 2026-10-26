@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">两个 MPI 进程的 Ping-Pong 通信</title>
+  <desc id="desc">rank 0 先发送整数 10，tag 为 10。rank 1 接收后将值加一，再用 tag 20 将整数 11 发回 rank 0。竖直方向仅表示各进程的本地程序顺序，斜箭头表示消息依赖，不表示同步物理时钟或按比例绘制的耗时。</desc>
+  <defs>
+    <style>
+      .title{font:700 28px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .body{font:21px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .label{font:700 22px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .code{font:21px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+    </style>
+    <marker id="teal" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#147F85"/></marker>
+    <marker id="amber" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#D78738"/></marker>
+    <marker id="order" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#A0B3BE"/></marker>
+  </defs>
+  <rect width="1200" height="620" fill="#F7FAFB"/>
+  <text x="44" y="48" class="title">Ping-Pong：收到请求，再返回响应</text>
+  <rect x="170" y="87" width="210" height="57" rx="12" fill="#147F85"/>
+  <text x="275" y="124" text-anchor="middle" class="rank">rank 0</text>
+  <rect x="820" y="87" width="210" height="57" rx="12" fill="#147F85"/>
+  <text x="925" y="124" text-anchor="middle" class="rank">rank 1</text>
+  <path d="M275 154V505" fill="none" stroke="#A0B3BE" stroke-width="2" marker-end="url(#order)"/>
+  <path d="M925 154V505" fill="none" stroke="#A0B3BE" stroke-width="2" marker-end="url(#order)"/>
+  <text x="243" y="200" text-anchor="end" class="code">MPI_Send</text>
+  <text x="243" y="230" text-anchor="end" class="small">发送 10</text>
+  <circle cx="275" cy="206" r="7" fill="#147F85"/>
+  <path d="M286 206L913 264" fill="none" stroke="#147F85" stroke-width="3.5" marker-end="url(#teal)"/>
+  <rect x="455" y="169" width="300" height="48" rx="10" fill="#E9F4F2"/>
+  <text x="605" y="200" text-anchor="middle" class="code">value = 10, tag = 10</text>
+  <circle cx="925" cy="265" r="7" fill="#147F85"/>
+  <text x="957" y="260" class="code">MPI_Recv</text>
+  <text x="957" y="290" class="small">收到 10</text>
+  <rect x="824" y="312" width="202" height="48" rx="10" fill="#FFFFFF" stroke="#B8C8D0" stroke-width="1.5"/>
+  <text x="925" y="343" text-anchor="middle" class="code">value += 1</text>
+  <circle cx="925" cy="397" r="7" fill="#D78738"/>
+  <text x="957" y="392" class="code">MPI_Send</text>
+  <text x="957" y="422" class="small">发送 11</text>
+  <path d="M913 397L286 455" fill="none" stroke="#D78738" stroke-width="3.5" marker-end="url(#amber)"/>
+  <rect x="455" y="358" width="300" height="48" rx="10" fill="#FFF1E2"/>
+  <text x="605" y="389" text-anchor="middle" class="code">value = 11, tag = 20</text>
+  <circle cx="275" cy="456" r="7" fill="#D78738"/>
+  <text x="243" y="451" text-anchor="end" class="code">MPI_Recv</text>
+  <text x="243" y="481" text-anchor="end" class="small">收到 11</text>
+  <text x="600" y="554" text-anchor="middle" class="small">所有通信均在 MPI_COMM_WORLD 中；两个 tag 分别标识请求与响应。</text>
+  <text x="600" y="588" text-anchor="middle" class="small">向下表示本地程序顺序；图中位置与箭头长度不表示同步时钟或实际耗时。</text>
+</svg>

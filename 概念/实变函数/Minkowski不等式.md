@@ -46,6 +46,6 @@ $$\left(\int_E |f(x) + g(x)|^p dx\right)^{1/p} \leq \left(\int_E |f(x)|^p dx\rig
 
 ## 相关概念
 
-- [[概念/实变函数/L^p空间]] — Minkowski 不等式使 $L^p$ 成为赋范空间。
+- [[L^p空间]] — Minkowski 不等式使 $L^p$ 成为赋范空间。
 - [[概念/实变函数/Hölder不等式]] — Minkowski 不等式的证明依赖 Hölder 不等式。
 - [[概念/实变函数/卷积]] — 卷积的 Young 不等式是 Minkowski 与 Hölder 的综合推广。

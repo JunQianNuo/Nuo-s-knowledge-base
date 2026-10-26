@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc"><title id="title">非阻塞交换：先把接收与发送都发起</title><desc id="desc">两个rank分别先Irecv再Isend，之后各自Waitall两个请求。两个方向的数据有匹配接收，Waitall只等本rank请求，返回后才检查接收数组和修改发送数组。图示一种可能交错，不要求同一时刻返回。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style>
+<marker id="teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker><marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#506574"/></marker><marker id="amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#D78738"/></marker></defs>
+<rect width="1200" height="690" fill="white"/>
+<text x="44" y="50" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="start">先发起 Irecv 和 Isend，再在 Waitall 确认完成</text>
+<text x="44" y="88" font-size="22" font-weight="400" style="fill:#506574" text-anchor="start">启动调用返回后可以执行下一行；请求未完成时仍须保护通信缓冲区。</text>
+<text x="325" y="137" font-size="26" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<text x="875" y="137" font-size="26" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<path d="M82 155V556" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="82" y="591" font-size="20" font-weight="400" style="fill:#506574" text-anchor="middle">时间向下</text>
+<path d="M325 158V549" fill="none" stroke="#D6E3E8" stroke-width="2"/>
+<path d="M875 158V578" fill="none" stroke="#D6E3E8" stroke-width="2"/>
+<rect x="160" y="163" width="330" height="60" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="325" y="202" font-size="23" font-weight="700" style="fill:#112C43" text-anchor="middle">Irecv 发起接收后返回</text>
+<path d="M325 225V249" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="160" y="254" width="330" height="60" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="325" y="293" font-size="23" font-weight="700" style="fill:#112C43" text-anchor="middle">Isend 发起发送后返回</text>
+<rect x="710" y="180" width="330" height="60" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="875" y="219" font-size="23" font-weight="700" style="fill:#112C43" text-anchor="middle">Irecv 发起接收后返回</text>
+<path d="M875 242V266" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="710" y="271" width="330" height="60" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="875" y="310" font-size="23" font-weight="700" style="fill:#112C43" text-anchor="middle">Isend 发起发送后返回</text>
+<path d="M325 314V343" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="160" y="347" width="330" height="94" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="325" y="384" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">Waitall(2, ...)</text>
+<text x="325" y="422" font-size="21" font-weight="400" style="fill:#112C43" text-anchor="middle">确认本 rank 两个请求完成</text>
+<path d="M875 331V365" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="710" y="369" width="330" height="107" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="875" y="406" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">Waitall(2, ...)</text>
+<text x="875" y="444" font-size="21" font-weight="400" style="fill:#112C43" text-anchor="middle">确认本 rank 两个请求完成</text>
+<path d="M492 286L708 345" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<path d="M708 306L492 367" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<rect x="503" y="304" width="194" height="40" rx="12" fill="white" stroke="white" stroke-width="2"/>
+<text x="600" y="332" font-size="21" font-weight="400" style="fill:#147F85" text-anchor="middle">收发已可匹配</text>
+<path d="M325 443V485" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="160" y="489" width="330" height="62" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="325" y="528" font-size="21" font-weight="700" style="fill:#112C43" text-anchor="middle">可读取接收区、复用发送区</text>
+<path d="M875 478V521" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="710" y="525" width="330" height="62" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="875" y="564" font-size="21" font-weight="700" style="fill:#112C43" text-anchor="middle">可读取接收区、复用发送区</text>
+<text x="600" y="626" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">斜实线箭头示意两个方向的数据传递；各 rank 的 Waitall 可以在不同时间返回。</text>
+<text x="600" y="662" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">时间线只给出一种可能交错，不表示自动通信加速；竖向距离不表示耗时。</text>
+</svg>

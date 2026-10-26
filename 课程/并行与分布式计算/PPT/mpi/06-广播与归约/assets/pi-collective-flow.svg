@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="950" viewBox="0 0 1200 950" role="img" aria-labelledby="title desc"><title id="title">用广播与归约完成并行中点积分</title><desc id="desc">root读入N并设置valid。所有rank首先广播valid，无效时所有rank结束MPI并返回非零。有效时继续广播N，按连续分块计算未乘h的局部和，再归约到root并除以N。N为10，四个进程分块3、3、2、2。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style><marker id="teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker><marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#506574"/></marker></defs>
+<rect width="1200" height="950" fill="white"/>
+<text x="42" y="49" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="start">先让所有 rank 选择同一路径，再计算并归约</text>
+<text x="42" y="89" font-size="22" font-weight="400" style="fill:#506574" text-anchor="start">示例 N = 10、P = 4；h = 1/N，xᵢ = (i + 1/2)h，f(x) = 4/(1 + x²)。</text>
+<rect x="235" y="116" width="730" height="64" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="600" y="156" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">root 读入 N，并设置输入是否有效的 valid</text>
+<path d="M600 182V211" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<rect x="155" y="218" width="890" height="98" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="256" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">所有 rank 调用 Bcast(valid)</text>
+<text x="600" y="295" font-size="23" font-weight="400" style="fill:#D78738" text-anchor="middle">valid = 0：各 rank 调用 Finalize，随后返回非零状态</text>
+<path d="M600 318V365" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="730" y="349" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">仅 valid = 1 继续</text>
+<rect x="155" y="372" width="890" height="66" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="414" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">所有 rank 调用 Bcast(n)：各自取得 n = 10</text>
+<path d="M195 440V476" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="195" y="510" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="82" y="528" width="226" height="125" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="195" y="563" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">[0, 3)</text>
+<text x="195" y="597" font-size="22" font-weight="400" style="fill:#112C43" text-anchor="middle" class="code">i = 0, 1, 2</text>
+<text x="195" y="634" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">局部和 S0</text>
+<path d="M195 655V692" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<path d="M465 440V476" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="465" y="510" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="352" y="528" width="226" height="125" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="465" y="563" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">[3, 6)</text>
+<text x="465" y="597" font-size="22" font-weight="400" style="fill:#112C43" text-anchor="middle" class="code">i = 3, 4, 5</text>
+<text x="465" y="634" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">局部和 S1</text>
+<path d="M465 655V692" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<path d="M735 440V476" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="735" y="510" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 2</text>
+<rect x="622" y="528" width="226" height="125" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="735" y="563" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">[6, 8)</text>
+<text x="735" y="597" font-size="22" font-weight="400" style="fill:#112C43" text-anchor="middle" class="code">i = 6, 7</text>
+<text x="735" y="634" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">局部和 S2</text>
+<path d="M735 655V692" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<path d="M1005 440V476" fill="none" stroke="#506574" stroke-width="3" marker-end="url(#gray)"/>
+<text x="1005" y="510" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 3</text>
+<rect x="892" y="528" width="226" height="125" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="1005" y="563" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">[8, 10)</text>
+<text x="1005" y="597" font-size="22" font-weight="400" style="fill:#112C43" text-anchor="middle" class="code">i = 8, 9</text>
+<text x="1005" y="634" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">局部和 S3</text>
+<path d="M1005 655V692" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<rect x="155" y="699" width="890" height="66" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="741" font-size="23" font-weight="700" style="fill:#112C43" text-anchor="middle">所有 rank 调用 Reduce：按 MPI_SUM 合并 S₀、S₁、S₂、S₃</text>
+<path d="M600 767V800" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<rect x="240" y="807" width="720" height="66" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="600" y="849" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle">root：Q_N = (S₀ + S₁ + S₂ + S₃) / N</text>
+<text x="600" y="908" font-size="21" font-weight="400" style="fill:#506574" text-anchor="middle">框与箭头表示阶段及数据依赖，不表示各 rank 同步进入或同时返回。</text>
+<text x="600" y="938" font-size="20" font-weight="400" style="fill:#506574" text-anchor="middle">Sᵣ 是本 rank 所负责积分点的 f(xᵢ) 之和；没有预先乘 h。</text>
+</svg>

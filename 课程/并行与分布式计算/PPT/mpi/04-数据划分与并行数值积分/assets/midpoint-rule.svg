@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">复合中点求积：四个矩形近似积分</title>
+<desc id="desc">被积函数为 f(x)=4/(1+x²)，横轴从0到1，纵轴从0到4.4。将区间均分为4份，矩形宽度为1/4，高度分别为中点1/8、3/8、5/8、7/8处的真实函数值。矩形总面积约为3.146800518，用于近似精确积分π。</desc>
+<defs><style>
+.title{font:700 29px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.body{font:22px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.label{font:700 23px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+.small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+.code{font:22px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+.rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+</style>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker>
+<marker id="axis" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#506574"/></marker>
+</defs>
+<rect width="1200" height="660" fill="#F7FAFB"/>
+<text x="44" y="48" class="body" text-anchor="start" >中点求积：每个小区间用一个矩形近似</text>
+<text x="44" y="87" class="small" text-anchor="start" >N = 4，h = 1/4；矩形高度取自小区间中点。</text>
+<path d="M100 405H760" fill="none" stroke="#DCE6EA" stroke-width="1" />
+<text x="78" y="412" class="small" text-anchor="end" >1</text>
+<path d="M100 330H760" fill="none" stroke="#DCE6EA" stroke-width="1" />
+<text x="78" y="337" class="small" text-anchor="end" >2</text>
+<path d="M100 255H760" fill="none" stroke="#DCE6EA" stroke-width="1" />
+<text x="78" y="262" class="small" text-anchor="end" >3</text>
+<path d="M100 180H760" fill="none" stroke="#DCE6EA" stroke-width="1" />
+<text x="78" y="187" class="small" text-anchor="end" >4</text>
+<rect x="100" y="184.61538461538458" width="165" height="295.3846153846154" fill="#A9D6D1" rx="0" fill-opacity="0.62" stroke="#147F85" stroke-width="1.8"/>
+<rect x="265" y="216.98630136986304" width="165" height="263.01369863013696" fill="#A9D6D1" rx="0" fill-opacity="0.62" stroke="#147F85" stroke-width="1.8"/>
+<rect x="430" y="264.2696629213483" width="165" height="215.73033707865167" fill="#A9D6D1" rx="0" fill-opacity="0.62" stroke="#147F85" stroke-width="1.8"/>
+<rect x="595" y="310.08849557522126" width="165" height="169.91150442477877" fill="#A9D6D1" rx="0" fill-opacity="0.62" stroke="#147F85" stroke-width="1.8"/>
+<path d="M100 480V488" fill="none" stroke="#506574" stroke-width="1.5" />
+<text x="100" y="512" class="small" text-anchor="middle" >0</text>
+<path d="M265 480V488" fill="none" stroke="#506574" stroke-width="1.5" />
+<text x="265" y="512" class="small" text-anchor="middle" >0.25</text>
+<path d="M430 480V488" fill="none" stroke="#506574" stroke-width="1.5" />
+<text x="430" y="512" class="small" text-anchor="middle" >0.50</text>
+<path d="M595 480V488" fill="none" stroke="#506574" stroke-width="1.5" />
+<text x="595" y="512" class="small" text-anchor="middle" >0.75</text>
+<path d="M760 480V488" fill="none" stroke="#506574" stroke-width="1.5" />
+<text x="760" y="512" class="small" text-anchor="middle" >1</text>
+<path d="M100 480H790" fill="none" stroke="#506574" stroke-width="2" marker-end="url(#axis)"/>
+<path d="M100 480V142" fill="none" stroke="#506574" stroke-width="2" marker-end="url(#axis)"/>
+<text x="80" y="487" class="small" text-anchor="end" >0</text>
+<text x="801" y="489" class="body" text-anchor="start" >x</text>
+<text x="101" y="127" class="body" text-anchor="start" >f(x)</text>
+<path d="M100.000 180.000L102.200 180.003L104.400 180.013L106.600 180.030L108.800 180.053L111.000 180.083L113.200 180.120L115.400 180.163L117.600 180.213L119.800 180.270L122.000 180.333L124.200 180.403L126.400 180.479L128.600 180.562L130.800 180.652L133.000 180.748L135.200 180.851L137.400 180.960L139.600 181.076L141.800 181.199L144.000 181.327L146.200 181.463L148.400 181.605L150.600 181.753L152.800 181.908L155.000 182.069L157.200 182.237L159.400 182.410L161.600 182.591L163.800 182.777L166.000 182.970L168.200 183.169L170.400 183.375L172.600 183.587L174.800 183.804L177.000 184.029L179.200 184.259L181.400 184.495L183.600 184.737L185.800 184.986L188.000 185.240L190.200 185.501L192.400 185.767L194.600 186.039L196.800 186.317L199.000 186.601L201.200 186.891L203.400 187.187L205.600 187.488L207.800 187.795L210.000 188.108L212.200 188.426L214.400 188.750L216.600 189.080L218.800 189.415L221.000 189.755L223.200 190.101L225.400 190.453L227.600 190.809L229.800 191.171L232.000 191.538L234.200 191.911L236.400 192.288L238.600 192.671L240.800 193.059L243.000 193.452L245.200 193.850L247.400 194.252L249.600 194.660L251.800 195.073L254.000 195.490L256.200 195.912L258.400 196.339L260.600 196.770L262.800 197.206L265.000 197.647L267.200 198.092L269.400 198.542L271.600 198.996L273.800 199.454L276.000 199.917L278.200 200.384L280.400 200.855L282.600 201.331L284.800 201.810L287.000 202.294L289.200 202.781L291.400 203.273L293.600 203.768L295.800 204.268L298.000 204.771L300.200 205.278L302.400 205.788L304.600 206.302L306.800 206.820L309.000 207.342L311.200 207.866L313.400 208.395L315.600 208.927L317.800 209.462L320.000 210.000L322.200 210.542L324.400 211.086L326.600 211.634L328.800 212.185L331.000 212.739L333.200 213.296L335.400 213.856L337.600 214.419L339.800 214.985L342.000 215.553L344.200 216.125L346.400 216.698L348.600 217.275L350.800 217.854L353.000 218.435L355.200 219.019L357.400 219.606L359.600 220.195L361.800 220.786L364.000 221.379L366.200 221.975L368.400 222.573L370.600 223.173L372.800 223.775L375.000 224.379L377.200 224.985L379.400 225.593L381.600 226.202L383.800 226.814L386.000 227.428L388.200 228.043L390.400 228.660L392.600 229.278L394.800 229.898L397.000 230.520L399.200 231.143L401.400 231.768L403.600 232.394L405.800 233.021L408.000 233.650L410.200 234.280L412.400 234.911L414.600 235.543L416.800 236.177L419.000 236.812L421.200 237.447L423.400 238.084L425.600 238.722L427.800 239.360L430.000 240.000L432.200 240.640L434.400 241.282L436.600 241.924L438.800 242.566L441.000 243.210L443.200 243.854L445.400 244.499L447.600 245.144L449.800 245.790L452.000 246.436L454.200 247.083L456.400 247.730L458.600 248.378L460.800 249.025L463.000 249.674L465.200 250.322L467.400 250.971L469.600 251.620L471.800 252.269L474.000 252.918L476.200 253.568L478.400 254.217L480.600 254.867L482.800 255.516L485.000 256.166L487.200 256.815L489.400 257.465L491.600 258.114L493.800 258.763L496.000 259.412L498.200 260.060L500.400 260.709L502.600 261.357L504.800 262.005L507.000 262.652L509.200 263.300L511.400 263.946L513.600 264.593L515.800 265.239L518.000 265.884L520.200 266.529L522.400 267.174L524.600 267.818L526.800 268.461L529.000 269.104L531.200 269.746L533.400 270.387L535.600 271.028L537.800 271.668L540.000 272.308L542.200 272.946L544.400 273.584L546.600 274.221L548.800 274.858L551.000 275.493L553.200 276.128L555.400 276.762L557.600 277.395L559.800 278.027L562.000 278.658L564.200 279.288L566.400 279.917L568.600 280.545L570.800 281.172L573.000 281.798L575.200 282.424L577.400 283.048L579.600 283.671L581.800 284.293L584.000 284.913L586.200 285.533L588.400 286.151L590.600 286.769L592.800 287.385L595.000 288.000L597.200 288.614L599.400 289.226L601.600 289.838L603.800 290.448L606.000 291.057L608.200 291.664L610.400 292.271L612.600 292.876L614.800 293.479L617.000 294.082L619.200 294.683L621.400 295.282L623.600 295.881L625.800 296.478L628.000 297.073L630.200 297.667L632.400 298.260L634.600 298.852L636.800 299.441L639.000 300.030L641.200 300.617L643.400 301.203L645.600 301.787L647.800 302.370L650.000 302.951L652.200 303.531L654.400 304.109L656.600 304.686L658.800 305.261L661.000 305.835L663.200 306.407L665.400 306.977L667.600 307.547L669.800 308.114L672.000 308.680L674.200 309.245L676.400 309.808L678.600 310.369L680.800 310.929L683.000 311.487L685.200 312.044L687.400 312.599L689.600 313.152L691.800 313.704L694.000 314.254L696.200 314.803L698.400 315.350L700.600 315.895L702.800 316.439L705.000 316.981L707.200 317.522L709.400 318.061L711.600 318.598L713.800 319.133L716.000 319.667L718.200 320.200L720.400 320.731L722.600 321.260L724.800 321.787L727.000 322.313L729.200 322.837L731.400 323.359L733.600 323.880L735.800 324.399L738.000 324.917L740.200 325.433L742.400 325.947L744.600 326.459L746.800 326.970L749.000 327.479L751.200 327.987L753.400 328.493L755.600 328.997L757.800 329.499L760.000 330.000" fill="none" stroke="#112C43" stroke-width="3.7" />
+<path d="M182.5 184.61538461538464V480" fill="none" stroke="#D78738" stroke-width="1.8" stroke-dasharray="5 6"/>
+<circle cx="182.5" cy="184.61538461538464" r="6.5" fill="#D78738" stroke="#FFFFFF" stroke-width="2"/>
+<text x="182.5" y="542" class="small" text-anchor="middle" >1/8</text>
+<path d="M347.5 216.98630136986299V480" fill="none" stroke="#D78738" stroke-width="1.8" stroke-dasharray="5 6"/>
+<circle cx="347.5" cy="216.98630136986299" r="6.5" fill="#D78738" stroke="#FFFFFF" stroke-width="2"/>
+<text x="347.5" y="542" class="small" text-anchor="middle" >3/8</text>
+<path d="M512.5 264.2696629213483V480" fill="none" stroke="#D78738" stroke-width="1.8" stroke-dasharray="5 6"/>
+<circle cx="512.5" cy="264.2696629213483" r="6.5" fill="#D78738" stroke="#FFFFFF" stroke-width="2"/>
+<text x="512.5" y="542" class="small" text-anchor="middle" >5/8</text>
+<path d="M677.5 310.08849557522126V480" fill="none" stroke="#D78738" stroke-width="1.8" stroke-dasharray="5 6"/>
+<circle cx="677.5" cy="310.08849557522126" r="6.5" fill="#D78738" stroke="#FFFFFF" stroke-width="2"/>
+<text x="677.5" y="542" class="small" text-anchor="middle" >7/8</text>
+<path d="M100 564V573H265V564" fill="none" stroke="#147F85" stroke-width="2" />
+<text x="182.5" y="605" class="code" text-anchor="middle" >h = 0.25</text>
+<text x="511" y="598" class="small" text-anchor="middle" style="fill:#D78738">● 中点处的函数值</text>
+<rect x="820" y="150" width="336" height="330" fill="#FFFFFF" rx="14" stroke="#DCE6EA" stroke-width="1.5"/>
+<text x="844" y="194" class="code" text-anchor="start" >f(x) = 4 / (1 + x²)</text>
+<path d="M844 220H1132" fill="none" stroke="#DCE6EA" stroke-width="1.5" />
+<text x="844" y="259" class="label" text-anchor="start" >矩形面积之和</text>
+<text x="844" y="303" class="code" text-anchor="start" >I₄ = h × Σ f(xᵢ)</text>
+<text x="844" y="344" class="code" text-anchor="start" >≈ 3.146800518</text>
+<text x="844" y="406" class="body" text-anchor="start" >精确积分：π</text>
+<text x="844" y="444" class="small" text-anchor="start" >近似值与精确值有差异。</text>
+<text x="600" y="643" class="small" text-anchor="middle" >图中的曲线与矩形按实际函数值绘制；N 越大，矩形通常越能刻画曲线。</text>
+</svg>

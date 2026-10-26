@@ -50,6 +50,6 @@ $$\int_E |f(x)g(x)| \, dx \leq \left(\int_E |f(x)|^p dx\right)^{1/p} \left(\int_
 
 ## 相关概念
 
-- [[概念/实变函数/L^p空间]] — Hölder 不等式是 $L^p$ 理论的核心工具。
+- [[L^p空间]] — Hölder 不等式是 $L^p$ 理论的核心工具。
 - [[概念/实变函数/Minkowski不等式]] — Minkowski 不等式的证明依赖于 Hölder 不等式。
 - [[概念/实变函数/卷积]] — 卷积的 Young 不等式（$\|f*g\|_p \leq \|f\|_p \|g\|_1$）是 Hölder 不等式的推广。

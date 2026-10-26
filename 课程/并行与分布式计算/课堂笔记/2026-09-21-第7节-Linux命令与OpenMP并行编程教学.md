@@ -4,7 +4,12 @@ subject: 并行与分布式计算
 type: 课堂笔记
 class_no: 7
 date: 2026-09-21
-source: Linux常用命令.md；并行与分布式计算5-OpenMP编程基础.md；腾讯会议录制（Linux命令与OpenMP并行编程教学）
+source:
+  - Linux常用命令.md；并行与分布式计算5-OpenMP编程基础.md；腾讯会议录制（Linux命令与OpenMP并行编程教学）
+  - "[[课程/并行与分布式计算/课堂笔记/raw/2026-09-21-Linux命令与OpenMP并行编程教学-780480-逐字稿]]"
+  - "[[课程/并行与分布式计算/课堂笔记/raw/2026-09-21-Linux命令与OpenMP并行编程教学-780480-纪要]]"
+  - "[[课程/并行与分布式计算/PPT/并行与分布式计算5-OpenMP编程基础/并行与分布式计算5-OpenMP编程基础]]"
+  - "[[课程/并行与分布式计算/PPT/Linux常用命令/Linux常用命令]]"
 courseware: 并行与分布式计算5-OpenMP编程基础
 meeting_code:
 start_time: 2026-09-21T16:20:58+08:00

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc"><title id="title">归约：每个rank贡献一个数，只有root得到总和</title><desc id="desc">rank0至rank3分别贡献整数1、2、3、4。四个rank调用MPI_Reduce，MPI_SUM按对应元素求和，root0的total得到10；其他rank不从total读取归约结果。图示数据依赖而非内部算法。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style><marker id="teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker><marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#506574"/></marker></defs>
+<rect width="1200" height="650" fill="white"/>
+<text x="42" y="49" font-size="30" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="start">归约：每个 rank 贡献一个数，root 得到总和</text>
+<text x="42" y="89" font-size="22" font-weight="400" fill="#506574" style="fill:#506574" text-anchor="start">MPI_SUM 合并各 rank 的对应元素；count = 1 表示每个 rank 提供 1 个数。</text>
+<text x="180" y="148" font-size="24" font-weight="700" fill="#147F85" style="fill:#147F85" text-anchor="middle">rank 0 · root</text>
+<rect x="70" y="171" width="220" height="92" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="180" y="226" font-size="27" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">local = 1</text>
+<path d="M180 265L420 325" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<text x="460" y="148" font-size="24" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="350" y="171" width="220" height="92" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="460" y="226" font-size="27" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">local = 2</text>
+<path d="M460 265L540 325" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<text x="740" y="148" font-size="24" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle">rank 2</text>
+<rect x="630" y="171" width="220" height="92" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="740" y="226" font-size="27" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">local = 3</text>
+<path d="M740 265L660 325" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<text x="1020" y="148" font-size="24" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle">rank 3</text>
+<rect x="910" y="171" width="220" height="92" rx="12" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="1020" y="226" font-size="27" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">local = 4</text>
+<path d="M1020 265L780 325" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<rect x="225" y="332" width="750" height="100" rx="12" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="371" font-size="26" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle">所有 rank 调用 MPI_Reduce</text>
+<text x="600" y="407" font-size="27" font-weight="400" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">MPI_SUM：1 + 2 + 3 + 4</text>
+<path d="M600 434V473" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#teal)"/>
+<rect x="330" y="480" width="540" height="74" rx="12" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="600" y="525" font-size="28" font-weight="700" fill="#112C43" style="fill:#112C43" text-anchor="middle" class="code">rank 0：total = 10</text>
+<text x="600" y="590" font-size="22" font-weight="400" fill="#506574" style="fill:#506574" text-anchor="middle">root 也贡献 local；归约结果只写入 root 的接收缓冲区。</text>
+<text x="600" y="625" font-size="21" font-weight="400" fill="#506574" style="fill:#506574" text-anchor="middle">箭头表示输入与结果的关系，不规定 MPI 内部采用的树或消息顺序。</text>
+</svg>

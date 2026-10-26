@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">四个 MPI 进程组成的逻辑环与令牌转发</title>
+  <desc id="desc">逻辑通信顺序为 rank 0 到 1 到 2 到 3 再回到 0。rank 0 以令牌 0 启动；rank 1、2、3 分别在接收后加一，因此各段消息的值依次为 0、1、2、3。rank 0 最终收到 3，不再加一。该示例展示串行转发依赖，不表示物理网络布局或并行加速。</desc>
+  <defs>
+    <style>
+      .title{font:700 28px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .body{font:21px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#112C43}
+      .small{font:19px 'Hiragino Sans GB','PingFang SC','Noto Sans CJK SC',sans-serif;fill:#506574}
+      .code{font:21px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+      .rank{font:700 24px 'SFMono-Regular',Consolas,monospace;fill:#FFFFFF}
+      .value{font:700 23px 'SFMono-Regular',Consolas,monospace;fill:#112C43}
+    </style>
+    <marker id="teal" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#147F85"/></marker>
+    <marker id="amber" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#D78738"/></marker>
+  </defs>
+  <rect width="1200" height="640" fill="#F7FAFB"/>
+  <text x="44" y="48" class="title">逻辑环：一个令牌依次经过四个进程</text>
+  <g transform="translate(180 105)">
+    <rect width="250" height="138" rx="14" fill="#FFF1E2" stroke="#D78738" stroke-width="1.5"/>
+    <path d="M14 0H236Q250 0 250 14V47H0V14Q0 0 14 0Z" fill="#D78738"/>
+    <text x="125" y="32" text-anchor="middle" class="rank">rank 0</text>
+    <text x="125" y="82" text-anchor="middle" class="body">初始 token = 0</text>
+    <text x="125" y="116" text-anchor="middle" class="body">最终收到 3，不加一</text>
+  </g>
+  <g transform="translate(770 105)">
+    <rect width="250" height="138" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H236Q250 0 250 14V47H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="125" y="32" text-anchor="middle" class="rank">rank 1</text>
+    <text x="125" y="82" text-anchor="middle" class="body">接收 → 加一 → 发送</text>
+    <text x="125" y="116" text-anchor="middle" class="value">0 → 1</text>
+  </g>
+  <g transform="translate(770 382)">
+    <rect width="250" height="138" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H236Q250 0 250 14V47H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="125" y="32" text-anchor="middle" class="rank">rank 2</text>
+    <text x="125" y="82" text-anchor="middle" class="body">接收 → 加一 → 发送</text>
+    <text x="125" y="116" text-anchor="middle" class="value">1 → 2</text>
+  </g>
+  <g transform="translate(180 382)">
+    <rect width="250" height="138" rx="14" fill="#E9F4F2" stroke="#A3C8C7" stroke-width="1.5"/>
+    <path d="M14 0H236Q250 0 250 14V47H0V14Q0 0 14 0Z" fill="#147F85"/>
+    <text x="125" y="32" text-anchor="middle" class="rank">rank 3</text>
+    <text x="125" y="82" text-anchor="middle" class="body">接收 → 加一 → 发送</text>
+    <text x="125" y="116" text-anchor="middle" class="value">2 → 3</text>
+  </g>
+  <path d="M448 175H748" fill="none" stroke="#147F85" stroke-width="3.5" marker-end="url(#teal)"/>
+  <rect x="519" y="131" width="162" height="33" rx="8" fill="#FFFFFF"/>
+  <text x="600" y="155" text-anchor="middle" class="code">token = 0</text>
+  <path d="M895 257V363" fill="none" stroke="#147F85" stroke-width="3.5" marker-end="url(#teal)"/>
+  <text x="922" y="319" class="code">token = 1</text>
+  <path d="M752 452H452" fill="none" stroke="#147F85" stroke-width="3.5" marker-end="url(#teal)"/>
+  <rect x="519" y="408" width="162" height="33" rx="8" fill="#FFFFFF"/>
+  <text x="600" y="432" text-anchor="middle" class="code">token = 2</text>
+  <path d="M305 367V262" fill="none" stroke="#D78738" stroke-width="3.5" marker-end="url(#amber)"/>
+  <text x="278" y="319" text-anchor="end" class="code">token = 3</text>
+  <text x="600" y="297" text-anchor="middle" class="code">0 → 1 → 2 → 3 → 0</text>
+  <text x="600" y="334" text-anchor="middle" class="small">MPI_COMM_WORLD · size = 4</text>
+  <text x="600" y="570" text-anchor="middle" class="small">每个非零 rank 收到令牌后加一，再转发给下一个进程。</text>
+  <text x="600" y="605" text-anchor="middle" class="small">这是令牌的串行转发；逻辑环只描述通信关系，不代表物理网络拓扑。</text>
+</svg>
