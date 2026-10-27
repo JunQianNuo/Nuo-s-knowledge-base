@@ -368,7 +368,7 @@
   "dualPaneSide": "right",
   "restoreTabsOnStartup": true,
   "skillsSynced": false,
-  "sessionManagerOrganization": "list",
+  "sessionManagerOrganization": "linked-content",
   "sessionManagerSort": "last-updated",
   "sessionAutoArchiveAfter": "off",
   "pinnedLinkedContentPaths": [],

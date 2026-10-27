@@ -15,6 +15,10 @@ knowledge_tags:
   - Lebesgue控制收敛定理
 method_tags:
   - DCT控制函数构造法
+tags:
+- 控制收敛定理
+- 控制函数
+- DCT控制函数构造法
 ---
 
 # 考题：构造 DCT 控制函数的典型方法

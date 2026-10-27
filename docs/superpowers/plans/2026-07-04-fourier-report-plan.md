@@ -623,7 +623,7 @@ $$
 两者都满足 **Parseval 等式**——内积（能量）在变换下保持不变。
 
 > [!note] 深入阅读
-> 严格数学理论见实变函数笔记：[[概念/实变函数/Fourier变换]] 和 [[知识点/实变函数/正交基与Fourier展开]]。
+> 严格数学理论见实变函数笔记：[[概念/Fourier变换]] 和 [[知识点/正交基与Fourier展开]]。
 ```
 
 - [ ] **Step 4: 写入第 5 章 — 应用举例**
@@ -723,8 +723,8 @@ JPEG 图像压缩的核心是**离散余弦变换（DCT）**——Fourier 变换
 
 1. A. V. Oppenheim, A. S. Willsky, *Signals and Systems*, 2nd ed., Prentice Hall, 1996.
 2. G. B. Folland, *Fourier Analysis and Its Applications*, AMS, 2009.
-3. [[概念/实变函数/Fourier变换]] — 严格数学定义（$L^1$/$L^2$ 框架）
-4. [[知识点/实变函数/正交基与Fourier展开]] — 标准正交基与 Fourier 展开
+3. [[概念/Fourier变换]] — 严格数学定义（$L^1$/$L^2$ 框架）
+4. [[知识点/正交基与Fourier展开]] — 标准正交基与 Fourier 展开
 ```
 
 - [ ] **Step 6: 验证**

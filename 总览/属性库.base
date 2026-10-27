@@ -1,0 +1,89 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("总览/属性库/条目")
+    - type == "属性条目"
+formulas:
+  search_query: '"[" + title + "]"'
+properties:
+  note.title:
+    displayName: 属性名
+  note.scope:
+    displayName: 用途分类
+  note.description:
+    displayName: 用途
+  note.note:
+    displayName: 处理建议
+  note.total:
+    displayName: 内容笔记数（快照）
+  note.status:
+    displayName: 维护状态
+  formula.search_query:
+    displayName: 查找使用位置
+  file.name:
+    displayName: 详细记录
+views:
+  - type: table
+    name: 日常通用（8 项）
+    filters:
+      and:
+        - scope == "日常通用"
+    order:
+      - title
+      - description
+      - note.note
+      - total
+  - type: table
+    name: 按用途归类
+    groupBy:
+      property: scope
+      direction: ASC
+    order:
+      - title
+      - scope
+      - description
+      - note.note
+      - total
+      - file.name
+  - type: table
+    name: 归并与精简候选
+    filters:
+      and:
+        - status == "待处理"
+    groupBy:
+      property: scope
+      direction: ASC
+    order:
+      - title
+      - scope
+      - note.note
+      - total
+      - formula.search_query
+      - file.name
+  - type: table
+    name: 系统与自动化保护
+    filters:
+      or:
+        - scope == "标签系统"
+        - scope == "软件与管理"
+        - scope == "导入转换"
+        - scope == "课堂采集"
+        - scope == "课表配置"
+    order:
+      - title
+      - scope
+      - description
+      - note.note
+      - total
+      - file.name
+  - type: table
+    name: 全部属性
+    order:
+      - title
+      - scope
+      - description
+      - note.note
+      - total
+      - status
+      - formula.search_query
+      - file.name

@@ -1,0 +1,17 @@
+---
+title: 标签：Lagrangian
+type: 标签条目
+status: 使用中
+canonical_tag: Lagrangian
+tag_aliases: []
+promote: true
+source_kind:
+- 重复概念主题
+source:
+- '[[课程/归档/最优化方法/答疑/22b-拉格朗日对偶/22b-Lagrangian无下界例子]]'
+- '[[课程/归档/最优化方法/答疑/22b-拉格朗日对偶/22b-对偶函数定义]]'
+---
+
+# Lagrangian
+
+标准名保存在 canonical_tag，同义名称保存在 tag_aliases。通过标签数据库编辑记录，并复制动态生成的内置搜索检索式。

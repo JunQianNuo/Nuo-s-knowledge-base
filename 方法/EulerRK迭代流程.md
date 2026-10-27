@@ -3,8 +3,10 @@ title: EulerRK迭代流程
 type: 方法
 status: 已整理
 related:
-- "[[知识点/数值分析/Euler方法]]"
-- "[[知识点/数值分析/Runge-Kutta方法]]"
+- "[[方法/Euler方法]]"
+- "[[方法/Runge-Kutta方法]]"
+tags:
+- EulerRK迭代流程
 ---
 
 # EulerRK迭代流程
@@ -44,8 +46,8 @@ flowchart TD
 > RK4：$y_5\approx0.3679$，误差极小。点评：RK4 的局部截断误差为 $O(h^5)$，在光滑问题上远优于 Euler。
 
 ## 链接的知识点
-- [[知识点/数值分析/Euler方法]]
-- [[知识点/数值分析/Runge-Kutta方法]]
+- [[方法/Euler方法]]
+- [[方法/Runge-Kutta方法]]
 
 ## 链接的习题
-- [[课程/数值分析/习题库/10-常微分方程初值问题的数值解法/README|第10章习题库]]
+- [[课程/归档/数值分析/习题库/10-常微分方程初值问题的数值解法/README|第10章习题库]]

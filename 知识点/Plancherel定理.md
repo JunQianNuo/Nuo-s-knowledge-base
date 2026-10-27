@@ -2,7 +2,7 @@
 title: Plancherel定理
 type: 知识点
 source:
-- 课程/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理.md
+- "[[课程/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]"
 topics:
 - Fourier变换
 - L^2空间
@@ -11,6 +11,11 @@ topics:
 - Parseval恒等式
 exam: 考试重点
 status: 已整理
+tags:
+- 傅里叶变换
+- Parseval恒等式
+- Plancherel定理
+- L2空间
 ---
 
 # Plancherel定理
@@ -98,12 +103,12 @@ $$
 
 ## 相关概念
 
-- [[Fourier变换]]
-- [[L^p空间]]
-- [[Lebesgue积分]]
-- [[概念/实变函数/卷积]]
-- [[知识点/实变函数/Riesz定理]]
+- [[概念/Fourier变换]]
+- [[概念/L^p空间]]
+- [[概念/Lebesgue积分]]
+- [[概念/卷积]]
+- [[知识点/Riesz定理]]
 
 ## 习题
 
-- [[课程/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — Plancherel 定理相关习题（L^p 空间完备性与 Fourier 变换）
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — Plancherel 定理相关习题（L^p 空间完备性与 Fourier 变换）

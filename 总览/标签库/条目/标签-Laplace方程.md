@@ -1,0 +1,17 @@
+---
+title: 标签：Laplace方程
+type: 标签条目
+status: 使用中
+canonical_tag: Laplace方程
+tag_aliases: []
+promote: true
+source_kind:
+- 重复概念主题
+source:
+- '[[课程/数学物理方程/知识点解析梳理/02-定解问题与偏微分方程理论-知识梳理]]'
+- '[[课程/数学物理方程/课堂笔记/2026-09-18-第2节-偏微分方程课程讲授]]'
+---
+
+# Laplace方程
+
+标准名保存在 canonical_tag，同义名称保存在 tag_aliases。通过标签数据库编辑记录，并复制动态生成的内置搜索检索式。

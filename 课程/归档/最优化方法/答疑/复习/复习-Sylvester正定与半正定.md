@@ -19,6 +19,13 @@ source_context:
 related_notes:
   - "[[../复习/I-预备知识]]"
   - "[[03-线性代数基础-知识梳理]]"
+tags:
+- Sylvester准则
+- 正定性
+- 半正定性
+- 顺序主子式
+- 主子式
+- Hessian
 ---
 
 # 答疑 — Sylvester 准则：顺序主子式全正 vs 全非负

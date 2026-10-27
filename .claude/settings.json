@@ -2,7 +2,10 @@
   "includeGitInstructions": false,
   "permissions": {
     "allow": [
-      "Bash(rmdir \"D:/zhishiku/\" 2>/dev/null && echo \"done\" || echo \"dir not empty or in use\")"
+      "Bash(rmdir \"D:/zhishiku/\" 2>/dev/null && echo \"done\" || echo \"dir not empty or in use\")",
+      "Bash(git diff *)",
+      "Bash(git lfs *)",
+      "Bash(git add *)"
     ]
   }
 }

@@ -15,6 +15,11 @@ knowledge_tags:
   - 正交基与Fourier展开
 method_tags:
   - 
+tags:
+- Fourier展开
+- Parseval等式
+- 正交基与Fourier展开
+- L2空间
 ---
 
 # 考题：正交基与 Fourier 展开

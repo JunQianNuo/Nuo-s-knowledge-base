@@ -11,6 +11,14 @@ topics:
   - Romberg外推
   - Gauss求积
   - 数值微分
+tags:
+- 求积公式
+- 代数精度
+- Newton-Cotes公式
+- 复化求积
+- Romberg外推
+- Gauss求积
+- 数值微分
 ---
 
 # VIII. 数值积分与数值微分（第9章）

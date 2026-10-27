@@ -2,7 +2,7 @@
 title: Fourier变换
 type: 概念
 source:
-- 课程/实变函数/课件/MD/2023-RA-28.md
+- "[[课程/归档/实变函数/课件/MD/2023-RA-28]]"
 topics:
 - Fourier变换
 - L^1上的Fourier变换
@@ -10,6 +10,8 @@ topics:
 - Riemann-Lebesgue引理
 exam: 考试重点
 status: 已整理
+tags:
+- 傅里叶变换
 ---
 
 # Fourier变换
@@ -53,7 +55,11 @@ $$\|\hat{f}\|_2 = \|f\|_2 \quad (\text{Plancherel 定理}).$$
 
 ## 相关概念
 
-- [[Lebesgue积分]] — Fourier 变换的严格定义需要 Lebesgue 积分。
-- [[L^p空间]] — Fourier 变换在 $L^1$ 和 $L^2$ 上有定义，在其他 $L^p$ 上需用插值理论。
-- [[概念/实变函数/卷积]] — $\widehat{f*g} = (2\pi)^{n/2} \hat{f} \hat{g}$，卷积与 Fourier 变换互为对偶。
-- [[概念/实变函数/Minkowski不等式]] — 用于证明 Fourier 变换相关的积分不等式。
+- [[概念/Lebesgue积分]] — Fourier 变换的严格定义需要 Lebesgue 积分。
+- [[概念/L^p空间]] — Fourier 变换在 $L^1$ 和 $L^2$ 上有定义，在其他 $L^p$ 上需用插值理论。
+- [[概念/卷积]] — $\widehat{f*g} = (2\pi)^{n/2} \hat{f} \hat{g}$，卷积与 Fourier 变换互为对偶。
+- [[知识点/Minkowski不等式]] — 用于证明 Fourier 变换相关的积分不等式。
+
+## 与概率特征函数的联系
+
+[[知识点/多维随机变量的特征函数]] 把 $E[e^{i t^TX}]$ 用作分布的特征函数，可看作概率测度的 Fourier 型变换。使用分析中的 Fourier 公式前，应核对指数正负号和归一化约定。

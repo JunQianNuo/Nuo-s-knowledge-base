@@ -10,6 +10,10 @@ topics:
   - Lagrange乘子法
   - 一阶必要条件
   - 二阶充分条件
+tags:
+- Lagrange乘子法
+- 一阶必要条件
+- 二阶充分条件
 ---
 
 # 考题 01 — Lagrange 函数求解等式约束

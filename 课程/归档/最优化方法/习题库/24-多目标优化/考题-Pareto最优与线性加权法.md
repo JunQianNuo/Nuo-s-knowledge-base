@@ -10,6 +10,10 @@ topics:
   - Pareto最优
   - 线性加权法
   - Pareto前沿
+tags:
+- Pareto最优
+- 线性加权法
+- Pareto前沿
 ---
 
 # 考题 01 — Pareto 最优 + 线性加权法

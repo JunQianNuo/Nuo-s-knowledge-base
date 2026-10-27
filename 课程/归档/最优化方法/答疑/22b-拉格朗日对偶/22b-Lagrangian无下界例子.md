@@ -15,6 +15,10 @@ source_context:
 related_notes:
   - "[[../复习/VII-约束优化及求解方法]]"
   - "[[22b-拉格朗日对偶-知识梳理]]"
+tags:
+- 对偶函数
+- Lagrangian
+- Lagrange对偶
 ---
 
 # 第22b章 答疑 — Lagrangian 无下界的例子

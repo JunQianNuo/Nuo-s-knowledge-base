@@ -12,6 +12,11 @@ topics:
   - Jacobian矩阵
   - 方向导数
   - 向量值函数求导
+tags:
+- 梯度
+- Hessian矩阵
+- Jacobian矩阵
+- 方向导数
 ---
 
 # 考题 01

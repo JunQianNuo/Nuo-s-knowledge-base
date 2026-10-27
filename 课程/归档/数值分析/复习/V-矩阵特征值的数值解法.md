@@ -13,6 +13,15 @@ topics:
   - Householder
   - QR算法
   - Gershgorin圆盘
+tags:
+- 幂法
+- 逆幂法
+- Rayleigh商
+- QR分解
+- Gram-Schmidt
+- Householder变换
+- QR算法
+- Gershgorin圆盘
 ---
 
 # V. 矩阵特征值的数值解法（第6章）

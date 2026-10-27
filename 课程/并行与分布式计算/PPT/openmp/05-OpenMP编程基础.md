@@ -339,7 +339,7 @@ for (int i = 0; i < I; ++i) {
 
 1. 比较数组按行遍历和按列遍历的计算速度。
 2. 比较不同并行方式的加速效果。
-3. 分别按 Amdahl 和 Gustafson 的假设设计实验，分析加速比，参阅 [性能评测标准](03-性能评测标准.md)。
+3. 分别按 Amdahl 和 Gustafson 的假设设计实验，分析加速比，参阅 [性能评测标准](<课程/并行与分布式计算/PPT/openmp/03-性能评测标准.md>)。
 
 ### 4. `parallel sections` 分配代码段
 
@@ -596,4 +596,4 @@ static int thread_counter = 0;
 
 ---
 
-下一讲：[OpenMP 并行应用实践](06-OpenMP并行应用实践.md)。
+下一讲：[OpenMP 并行应用实践](<课程/并行与分布式计算/PPT/openmp/06-OpenMP并行应用实践.md>)。

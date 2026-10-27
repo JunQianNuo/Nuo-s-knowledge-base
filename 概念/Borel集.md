@@ -2,7 +2,7 @@
 title: Borel集
 type: 概念
 source:
-- 课程/实变函数/知识点解析梳理/01-集合论与点集拓扑基础-知识梳理.md
+- "[[课程/归档/实变函数/知识点解析梳理/01-集合论与点集拓扑基础-知识梳理]]"
 topics:
 - Borel集
 - Borel $\sigma$ 代数
@@ -12,6 +12,11 @@ topics:
 - Lebesgue可测集
 exam: 不考
 status: 已整理
+tags:
+- Borel集
+- Lebesgue可测集
+- Gδ集
+- Fσ集
 ---
 
 # Borel集
@@ -73,7 +78,7 @@ $G_\delta$ 与 $F_\sigma$ 互为对偶（取余集互换）。例如：$\mathbb{
 
 ## 相关概念
 
-- [[概念/实变函数/零测集]] — $\mathcal{L}$ 是 $\mathcal{B}$ 的完备化：任何 Lebesgue 可测集 = Borel 集 + 零测集子集
-- [[概念/实变函数/可测函数]] — 随机变量定义为 Borel 可测函数；Borel $\sigma$ 代数保证了可测函数与连续函数间的深刻联系（Lusin/Egorov）
-- [[Lebesgue积分]] — Lebesgue 积分的定义以 Borel/Lebesgue 可测空间为前提
-- [[不可数集]] — Cantor 集是零测 Borel 集（$G_\delta$ 集）且不可数；其某些子集 Lebesgue 可测但非 Borel
+- [[概念/零测集]] — $\mathcal{L}$ 是 $\mathcal{B}$ 的完备化：任何 Lebesgue 可测集 = Borel 集 + 零测集子集
+- [[概念/可测函数]] — 随机变量定义为 Borel 可测函数；Borel $\sigma$ 代数保证了可测函数与连续函数间的深刻联系（Lusin/Egorov）
+- [[概念/Lebesgue积分]] — Lebesgue 积分的定义以 Borel/Lebesgue 可测空间为前提
+- [[概念/不可数集]] — Cantor 集是零测 Borel 集（$G_\delta$ 集）且不可数；其某些子集 Lebesgue 可测但非 Borel

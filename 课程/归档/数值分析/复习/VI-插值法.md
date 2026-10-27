@@ -10,6 +10,13 @@ topics:
   - Runge现象
   - Chebyshev节点
   - 样条插值
+tags:
+- Lagrange插值
+- Newton插值
+- 差商
+- Runge现象
+- Chebyshev节点
+- 样条插值
 ---
 
 # VI. 插值法（第7章）

@@ -15,6 +15,11 @@ source_context:
 related_notes:
   - "[[../复习/VII-约束优化及求解方法]]"
   - "[[../复习/V-线性规划]]"
+tags:
+- 强对偶
+- Lagrange对偶
+- 线性规划对偶
+- Slater条件
 ---
 
 # 第22b章 答疑 — Lagrange 强对偶 vs LP 强对偶

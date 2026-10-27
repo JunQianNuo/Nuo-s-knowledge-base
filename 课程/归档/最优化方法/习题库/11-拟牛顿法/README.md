@@ -9,6 +9,10 @@ topics:
   - 拟牛顿法
   - DFP
   - BFGS
+tags:
+- 拟牛顿法
+- DFP
+- BFGS
 ---
 
 # 第11章 习题库

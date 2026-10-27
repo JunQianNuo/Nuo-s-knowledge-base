@@ -13,9 +13,17 @@ topics:
 exam: 考试重点
 status: 已整理
 related:
-- "[[知识点/实变函数/Plancherel定理]]"
-- "[[知识点/实变函数/正交基与Fourier展开]]"
-- "[[知识点/实变函数/Young不等式(卷积版)]]"
+- "[[知识点/Plancherel定理]]"
+- "[[知识点/正交基与Fourier展开]]"
+- "[[知识点/Young不等式(卷积版)]]"
+tags:
+- 傅里叶变换
+- 卷积定理
+- Plancherel定理
+- Gauss函数
+- Parseval恒等式
+- sinc函数
+- Fourier变换求解法
 ---
 
 # Fourier变换求解法
@@ -173,11 +181,11 @@ flowchart TD
 
 ## 知识链接
 
-- [[知识点/实变函数/Plancherel定理]] — Fourier 变换在 $L^2$ 上的等距延拓，$\|\hat{f}\|_2 = \|f\|_2$
-- [[知识点/实变函数/正交基与Fourier展开]] — $L^2$ 中 Fourier 展开与 Parseval 等式，Plancherel 的离散对应
-- [[知识点/实变函数/Young不等式(卷积版)]] — 卷积在 $L^p$ 中的连续性，卷积定理成立的基础
+- [[知识点/Plancherel定理]] — Fourier 变换在 $L^2$ 上的等距延拓，$\|\hat{f}\|_2 = \|f\|_2$
+- [[知识点/正交基与Fourier展开]] — $L^2$ 中 Fourier 展开与 Parseval 等式，Plancherel 的离散对应
+- [[知识点/Young不等式(卷积版)]] — 卷积在 $L^p$ 中的连续性，卷积定理成立的基础
 
 ## 习题链接
 
-- [[课程/实变函数/习题库/05-重积分与Lp空间/考题-Fourier变换的核心性质]] — 卷积定理证明、Gauss 变换、Plancherel 陈述（考试级综合题）
-- [[课程/实变函数/习题库/05-重积分与Lp空间/考题-正交基与Fourier展开]] — 正交基、Fourier 展开与 Parseval 等式（离散版本对照）
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/考题-Fourier变换的核心性质]] — 卷积定理证明、Gauss 变换、Plancherel 陈述（考试级综合题）
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/考题-正交基与Fourier展开]] — 正交基、Fourier 展开与 Parseval 等式（离散版本对照）

@@ -2,13 +2,18 @@
 title: Pareto最优
 type: 概念
 source:
-- 课程/最优化方法/知识点解析梳理/24-多目标优化-知识梳理.md
+- "[[课程/归档/最优化方法/知识点解析梳理/24-多目标优化-知识梳理]]"
 topics:
 - Pareto最优
 - 多目标优化
 - Pareto前沿
 - 支配关系
 status: 已整理
+tags:
+- Pareto最优
+- 多目标优化
+- Pareto前沿
+- 支配关系
 ---
 
 # Pareto 最优
@@ -39,4 +44,4 @@ Pareto 最优由意大利经济学家 Vilfredo Pareto 在 1906 年提出。在�
 
 ## 相关概念
 
-- [[对偶]]
+- [[概念/对偶]]

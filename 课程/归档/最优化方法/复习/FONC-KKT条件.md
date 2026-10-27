@@ -13,6 +13,15 @@ topics:
   - 积极约束集
   - 线性化切锥
   - LICQ
+tags:
+- 一阶必要条件
+- KKT条件
+- Farkas引理
+- 不等式约束优化
+- 等式约束优化
+- 互补松弛条件
+- 积极约束集
+- LICQ
 ---
 
 # FONC → KKT 条件（Karush-Kuhn-Tucker 条件）

@@ -2,7 +2,7 @@
 title: Minkowski不等式
 type: 知识点
 source:
-- 课程/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理.md
+- "[[课程/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]"
 topics:
 - Minkowski不等式
 - L^p三角不等式
@@ -11,10 +11,14 @@ topics:
 - 共轭指数
 exam: 考试重点
 related:
-- "[[概念/实变函数/L^p空间]]"
-- "[[概念/实变函数/Hölder不等式]]"
-- "[[概念/实变函数/卷积]]"
+- "[[概念/L^p空间]]"
+- "[[知识点/Hölder不等式]]"
+- "[[概念/卷积]]"
 status: 已整理
+tags:
+- Minkowski不等式
+- Hölder不等式
+- 共轭指数
 ---
 
 # Minkowski不等式
@@ -187,16 +191,15 @@ $$
 
 ## 相关概念
 
-- [[概念/实变函数/Minkowski不等式]] — 概念层：Minkowski不等式的由来、作用与关系网
-- [[L^p空间]] — Minkowski 不等式使 $L^p$ 成为赋范空间
-- [[概念/实变函数/Hölder不等式]] — Minkowski 不等式的证明完全依赖 Hölder 不等式
-- [[概念/实变函数/卷积]] — 卷积的 Young 不等式是 Minkowski 与 Hölder 的综合推广
-- [[知识点/实变函数/Riesz-Fisher定理]] — Minkowski + Hölder + Riesz-Fisher → $L^p$ 是 Banach 空间
-- [[知识点/实变函数/Young不等式(卷积版)]] — 卷积版 Young 不等式综合运用 Minkowski 与 Hölder
+- [[概念/L^p空间]] — Minkowski 不等式使 $L^p$ 成为赋范空间
+- [[知识点/Hölder不等式]] — Minkowski 不等式的证明完全依赖 Hölder 不等式
+- [[概念/卷积]] — 卷积的 Young 不等式是 Minkowski 与 Hölder 的综合推广
+- [[知识点/Riesz-Fisher定理]] — Minkowski + Hölder + Riesz-Fisher → $L^p$ 是 Banach 空间
+- [[知识点/Young不等式(卷积版)]] — 卷积版 Young 不等式综合运用 Minkowski 与 Hölder
 
 ## 习题
 
-- [[课程/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — 重积分与 $L^p$ 空间
-- [[课程/实变函数/习题库/05-重积分与Lp空间/习题5.7-Minkowski不等式（L^p三角不等式）-习题|习题5.7]] — Minkowski 不等式（$L^p$ 三角不等式）的完整证明
-- [[课程/实变函数/习题库/05-重积分与Lp空间/习题5.6-Hölder不等式-习题|习题5.6]] — Hölder 不等式（Minkowski 证明的前置工具）
-- [[课程/实变函数/习题库/05-重积分与Lp空间/习题5.9-L^p范数的对偶表示（定理4.1.5）-习题|习题5.9]] — $L^p$ 范数的对偶表示（使用 Minkowski 与 Hölder）
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — 重积分与 $L^p$ 空间
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/习题5.7-Minkowski不等式（L^p三角不等式）-习题|习题5.7]] — Minkowski 不等式（$L^p$ 三角不等式）的完整证明
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/习题5.6-Hölder不等式-习题|习题5.6]] — Hölder 不等式（Minkowski 证明的前置工具）
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/习题5.9-L^p范数的对偶表示（定理4.1.5）-习题|习题5.9]] — $L^p$ 范数的对偶表示（使用 Minkowski 与 Hölder）

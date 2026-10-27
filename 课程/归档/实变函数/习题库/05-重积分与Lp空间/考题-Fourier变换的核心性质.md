@@ -14,6 +14,10 @@ knowledge_tags:
   - Plancherel定理
 method_tags:
   - 
+tags:
+- 傅里叶变换
+- 卷积定理
+- Plancherel定理
 ---
 
 # 考题：Fourier 变换的核心性质

@@ -15,6 +15,10 @@ source_context:
     text: "Hessian：∇²f(x) = J(x)^T J(x) + S(x)"
 related_notes:
   - "[[09-牛顿法-知识梳理]]"
+tags:
+- Hessian矩阵
+- 非线性最小二乘
+- 高斯-牛顿法
 ---
 
 # 第9章 答疑 — Hessian 矩阵 $\nabla^2 f = J^T J + S$ 的推导

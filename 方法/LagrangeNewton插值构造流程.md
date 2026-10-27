@@ -3,8 +3,10 @@ title: LagrangeNewton插值构造流程
 type: 方法
 status: 已整理
 related:
-- "[[知识点/数值分析/Lagrange插值]]"
-- "[[知识点/数值分析/Newton插值(差商)]]"
+- "[[方法/Lagrange插值]]"
+- "[[方法/Newton插值(差商)]]"
+tags:
+- LagrangeNewton插值构造流程
 ---
 
 # LagrangeNewton插值构造流程
@@ -45,8 +47,8 @@ flowchart TD
 > $P_2(x)=1+1(x-0)+0(x-0)(x-1)=x+1$。点评：数据来自直线，二阶差商为 $0$。
 
 ## 链接的知识点
-- [[知识点/数值分析/Lagrange插值]]
-- [[知识点/数值分析/Newton插值(差商)]]
+- [[方法/Lagrange插值]]
+- [[方法/Newton插值(差商)]]
 
 ## 链接的习题
-- [[课程/数值分析/习题库/07-插值法/README|第7章习题库]]
+- [[课程/归档/数值分析/习题库/07-插值法/README|第7章习题库]]

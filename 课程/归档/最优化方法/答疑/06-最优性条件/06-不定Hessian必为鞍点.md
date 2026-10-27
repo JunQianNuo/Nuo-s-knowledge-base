@@ -20,6 +20,12 @@ source_context:
 related_notes:
   - "[[../复习/II-凸集与凸函数]]"
   - "[[06-最优性条件-知识梳理]]"
+tags:
+- Hessian
+- 鞍点
+- 二阶充分条件
+- 二阶必要条件
+- Taylor展开
 ---
 
 # 第6章 答疑 — 内点处 Hessian 不定为何必为鞍点

@@ -15,6 +15,10 @@ source_context:
     text: "两次应用 Sherman-Morrison 公式即可递推地从 H_k 得到 H_{k+1}，无需每次求解"
 related_notes:
   - "[[11-拟牛顿法-知识梳理]]"
+tags:
+- Sherman-Morrison公式
+- BFGS
+- 矩阵求逆
 ---
 
 # 第11章 答疑 — Sherman-Morrison 公式与 BFGS
@@ -119,5 +123,5 @@ $$H_{k+1} = H_k - \rho H_k y s^T - \rho s y^T H_k + (\rho + \rho^2 \gamma) s s^T
 ## 相关链接
 
 - [[11-拟牛顿法-知识梳理#八、Sherman-Morrison 公式|Sherman-Morrison 公式]]
-- [[11-拟牛顿法-知识梳理#七、BFGS 公式|BFGS 秩2校正]]
+- [[课程/归档/最优化方法/知识点解析梳理/11-拟牛顿法-知识梳理#七、BFGS 公式（秩2校正，近似 Hessian，本章核心）|BFGS 秩2校正]]
 - [[11-拟牛顿法/11-秩1矫正|秩1矫正（问一）]]

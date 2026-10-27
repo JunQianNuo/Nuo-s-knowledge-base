@@ -377,4 +377,4 @@ $$
 
 ---
 
-前一讲：[OpenMP 编程基础](05-OpenMP编程基础.md)。返回：[讲义目录](README.md)。
+前一讲：[OpenMP 编程基础](<课程/并行与分布式计算/PPT/openmp/05-OpenMP编程基础.md>)。返回：[讲义目录](README.md)。

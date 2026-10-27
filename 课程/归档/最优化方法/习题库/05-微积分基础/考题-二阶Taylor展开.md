@@ -12,6 +12,10 @@ topics:
   - Hessian矩阵
   - 二次近似
   - 近似误差
+tags:
+- Taylor展开
+- 梯度
+- Hessian矩阵
 ---
 
 # 考题 02

@@ -2,7 +2,7 @@
 title: 正交基与Fourier展开
 type: 知识点
 source:
-- 课程/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理.md
+- "[[课程/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]"
 topics:
 - 标准正交基
 - Fourier展开
@@ -12,6 +12,11 @@ topics:
 - Hilbert空间
 exam: 考试重点
 status: 已整理
+tags:
+- Fourier展开
+- Parseval等式
+- 正交基与Fourier展开
+- L2空间
 ---
 
 # 正交基与Fourier展开
@@ -140,12 +145,12 @@ $$
 
 ## 相关概念
 
-- [[L^p空间]] — $L^2$ 是唯一具内积结构的 $L^p$ 空间，正交基理论建基于此
-- [[Lebesgue积分]] — Fourier 系数由 Lebesgue 积分定义，极限定理保障级数分析
-- [[概念/实变函数/Hölder不等式]] — $p=q=2$ 时退化为 Cauchy-Schwarz 不等式：$|\langle f,g\rangle| \leq \|f\|_2\|g\|_2$
-- [[Fourier变换]] — Fourier 级数（离散谱）到 Fourier 变换（连续谱）的泛化
-- [[知识点/实变函数/Riesz定理]] — Riesz-Fischer 定理确立 $L^2$ 与 $\ell^2$ 等距同构，是标准正交基理论的前置
+- [[概念/L^p空间]] — $L^2$ 是唯一具内积结构的 $L^p$ 空间，正交基理论建基于此
+- [[概念/Lebesgue积分]] — Fourier 系数由 Lebesgue 积分定义，极限定理保障级数分析
+- [[知识点/Hölder不等式]] — $p=q=2$ 时退化为 Cauchy-Schwarz 不等式：$|\langle f,g\rangle| \leq \|f\|_2\|g\|_2$
+- [[概念/Fourier变换]] — Fourier 级数（离散谱）到 Fourier 变换（连续谱）的泛化
+- [[知识点/Riesz定理]] — Riesz-Fischer 定理确立 $L^2$ 与 $\ell^2$ 等距同构，是标准正交基理论的前置
 
 ## 习题
 
-- [[课程/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — 习题 5.12（$L^p$ 完备性 / Riesz-Fischer）、习题 5.13（简单函数在 $L^p$ 中稠密）与正交基的完备性/稠密性条件一脉相承
+- [[课程/归档/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]] — 习题 5.12（$L^p$ 完备性 / Riesz-Fischer）、习题 5.13（简单函数在 $L^p$ 中稠密）与正交基的完备性/稠密性条件一脉相承

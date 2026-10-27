@@ -10,6 +10,11 @@ topics:
   - 谱半径
   - 收敛性判据
   - 分裂矩阵
+tags:
+- Jacobi迭代
+- Gauss-Seidel迭代
+- SOR迭代
+- 谱半径
 ---
 
 # III. 线性方程组的迭代法（第4章）

@@ -23,6 +23,8 @@ topics:
   - 条件编译
   - argc
   - argv
+tags:
+- OpenMP
 ---
 
 # 2026-09-21 第7节 Linux 命令、Shell 脚本与 OpenMP 入门

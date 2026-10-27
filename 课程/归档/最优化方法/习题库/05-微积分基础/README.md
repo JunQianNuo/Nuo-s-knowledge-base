@@ -9,6 +9,10 @@ topics:
   - 梯度
   - Hessian
   - 链式法则
+tags:
+- 梯度
+- Hessian
+- 链式法则
 ---
 
 # 第5章 习题库
