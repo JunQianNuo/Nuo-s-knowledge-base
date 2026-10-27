@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:v1:method",
+  "allOf": [{"$ref": "urn:knowledge:v1:common"}],
+  "required": ["type"],
+  "properties": {"type": {"const": "method"}, "role": {"not": {"const": "moc"}}}
+}

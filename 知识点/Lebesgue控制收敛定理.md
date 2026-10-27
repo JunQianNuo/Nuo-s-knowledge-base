@@ -1,9 +1,21 @@
 ---
+schema_version: 1
 title: Lebesgue控制收敛定理
-type: 知识点
+type: proposition
 source:
 - "[[课程/归档/实变函数/知识点解析梳理/04-Lebesgue积分-知识梳理]]"
 topics:
+- "[[概念/Lebesgue积分]]"
+prerequisites:
+- "[[概念/可测函数]]"
+- "[[概念/Lebesgue积分]]"
+- "[[概念/几乎处处收敛]]"
+about:
+- "[[概念/可测函数]]"
+- "[[概念/Lebesgue积分]]"
+uses:
+- "[[知识点/Fatou引理]]"
+legacy_topics:
 - Lebesgue控制收敛定理
 - DCT
 - 积分与极限交换

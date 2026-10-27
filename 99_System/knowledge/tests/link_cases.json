@@ -1,0 +1,15 @@
+[
+  {"id":"wiki","text":"[[Target]]","statuses":["resolved"]},
+  {"id":"markdown","text":"[Target](Target.md)","statuses":["resolved"]},
+  {"id":"missing","text":"[[Missing]]","statuses":["unresolved"]},
+  {"id":"external","text":"[external](https://example.org)","statuses":["unchecked"]},
+  {"id":"empty-wiki","text":"[[]]","statuses":["invalid_syntax"]},
+  {"id":"unclosed-wiki","text":"[[Target","statuses":["invalid_syntax"]},
+  {"id":"nested-wiki","text":"[[A[[Target]]","statuses":["invalid_syntax"]},
+  {"id":"escaped-wiki","text":"\\[[Target]]","statuses":[]},
+  {"id":"inline-code","text":"`[[Target]]`","statuses":[]},
+  {"id":"math-caret","text":"$x^p$ [[概念/L^p空间]]","statuses":["resolved"]},
+  {"id":"self-heading","text":"# Local\n[[#Local]]","statuses":["resolved"]},
+  {"id":"pdf-page","text":"![[Target.pdf#page=3]]","statuses":["unchecked"]},
+  {"id":"windows-style-unchecked-uri","text":"[file](file:///C:/outside.md)","statuses":["unchecked"]}
+]

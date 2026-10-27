@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:registry:1",
+  "type": "object",
+  "required": ["registry_version", "note_schema_version", "schema_files", "profiles", "field_catalog", "legacy_types", "out_of_scope_types", "legacy_tag_scopes", "system_exclusions"],
+  "additionalProperties": false,
+  "properties": {
+    "registry_version": {"type": "integer", "const": 1},
+    "note_schema_version": {"type": "integer", "const": 1},
+    "schema_files": {"type": "array", "minItems": 6, "items": {"type": "string"}, "uniqueItems": true},
+    "profiles": {
+      "type": "object",
+      "required": ["concept", "proposition", "method", "moc"],
+      "additionalProperties": false,
+      "properties": {"concept": {"$ref": "#/$defs/profile"}, "proposition": {"$ref": "#/$defs/profile"}, "method": {"$ref": "#/$defs/profile"}, "moc": {"$ref": "#/$defs/profile"}}
+    },
+    "field_catalog": {"type": "string", "minLength": 1},
+    "legacy_types": {"type": "object", "required": ["知识点"], "properties": {"知识点": {"type": "object", "required": ["semantic_review_required"], "additionalProperties": false, "properties": {"semantic_review_required": {"const": true}}}}, "additionalProperties": {"type": "object", "required": ["semantic_review_required"], "additionalProperties": false, "properties": {"semantic_review_required": {"type": "boolean"}}}},
+    "out_of_scope_types": {"$ref": "#/$defs/names"},
+    "legacy_tag_scopes": {"$ref": "#/$defs/names"},
+    "system_exclusions": {
+      "type": "object", "required": ["prefixes", "filenames", "exclude_hidden"], "additionalProperties": false,
+      "properties": {"prefixes": {"allOf": [{"$ref": "#/$defs/names"}, {"contains": {"const": "99_System"}}, {"contains": {"const": "docs"}}]}, "filenames": {"$ref": "#/$defs/names"}, "exclude_hidden": {"const": true}}
+    }
+  },
+  "$defs": {
+    "names": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "profile": {
+      "type": "object", "required": ["selector", "schema", "template"], "additionalProperties": false,
+      "properties": {
+        "selector": {"oneOf": [{"type": "object", "required": ["type"], "additionalProperties": false, "properties": {"type": {"enum": ["concept", "proposition", "method"]}}}, {"type": "object", "required": ["role"], "additionalProperties": false, "properties": {"role": {"const": "moc"}}}]},
+        "schema": {"type": "string", "pattern": "^schemas/[^/]+\\.schema\\.json$"},
+        "template": {"type": "string", "pattern": "^templates/[^/]+\\.md$"}
+      }
+    }
+  }
+}

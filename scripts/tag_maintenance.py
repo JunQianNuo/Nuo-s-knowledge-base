@@ -1,7 +1,8 @@
 """Maintain Obsidian tags using the Markdown records behind 标签库.base.
 
 Default is read-only. --apply backs up the exact current bytes before writing.
-Only explicit metadata is matched; note bodies are never classified or rewritten.
+Only existing explicit tags are normalized; no tags are inferred from other fields.
+New/mixed metadata is skipped both when planning and immediately before execution.
 """
 from __future__ import annotations
 
@@ -41,12 +42,31 @@ def metadata(raw: bytes) -> dict:
     match = FM.match(raw.decode("utf-8"))
     if not match:
         return {}
+    node = yaml.compose(match["yaml"])
+    if isinstance(node, yaml.MappingNode):
+        keys = [key.value for key, _ in node.value]
+        if len(keys) != len(set(keys)):
+            raise ValueError("Duplicate frontmatter keys")
     value = yaml.safe_load(match["yaml"])
     if value is None:
         return {}
     if not isinstance(value, dict):
         raise ValueError("Frontmatter must be a mapping")
     return value
+
+
+def legacy_skip_reason(fm: dict) -> str | None:
+    if "schema_version" in fm:
+        return "explicit_or_unsupported_schema_version"
+    if fm.get("type") in ("concept", "proposition", "method") or fm.get("role") == "moc":
+        return "new_type_or_moc_role"
+    if any(key in fm for key in ("prerequisites", "about", "uses")):
+        return "new_semantic_fields"
+    topics = fm.get("topics", [])
+    topics = topics if isinstance(topics, list) else [topics]
+    if any(isinstance(text, str) and "[[" in text for text in topics):
+        return "linked_or_mixed_topics"
+    return None
 
 
 @dataclass(frozen=True)
@@ -136,22 +156,19 @@ def replace_tags(raw: bytes, tags: list[str]) -> bytes:
 
 def plan_note(raw: bytes, relative_path: str, registry: Registry) -> bytes:
     fm = metadata(raw)
-    if not fm:
+    if not fm or legacy_skip_reason(fm):
         return raw
-    context = relative_path + " " + json.dumps(fm, ensure_ascii=False, default=str)
-    original = values(fm.get("tags"))
+    stored = fm.get("tags")
+    if stored is None:
+        return raw
+    original = stored if isinstance(stored, list) else [stored]
+    if any(not isinstance(tag, str) or not valid_tag(tag) for tag in original):
+        raise ValueError("Invalid explicit tag; manual review required")
     candidates = []
     for tag in original:
-        candidates.append(registry.resolve(tag, context, existing=True) or tag)
-    explicit = []
-    for field in ("topics", "knowledge_tags", "method_tags", "concept_tags", "topic_tags"):
-        explicit.extend(values(fm.get(field)))
-    if relative_path.split("/", 1)[0] in {"概念", "知识点", "方法"} and fm.get("type") in {"概念", "知识点", "方法"}:
-        explicit.extend(values(fm.get("title")))
-    for value in explicit:
-        tag = registry.resolve(value, context)
-        if tag:
-            candidates.append(tag)
+        # Empty context intentionally prevents ambiguous aliases being resolved
+        # using filenames, titles, topics or semantic relationships.
+        candidates.append(registry.resolve(tag, "", existing=True) or tag)
     seen = set(); tags = []
     for tag in candidates:
         if tag.casefold() not in seen:
@@ -169,6 +186,8 @@ def iter_notes(root: Path):
             relative = path.relative_to(root)
             if not path.resolve().is_relative_to(root.resolve()):
                 continue
+            if _protected_path(root, path):
+                continue
             if any(part.startswith(".") or part in {"raw", "node_modules", "__pycache__"} for part in relative.parts):
                 continue
             yield path
@@ -181,11 +200,16 @@ class Change:
     after: bytes
 
 
-def plan_vault(root: Path, registry: Registry):
+def plan_vault(root: Path, registry: Registry, *, skipped: list | None = None):
     changes = []; errors = []
     for path in iter_notes(root):
         before = path.read_bytes()
         try:
+            reason = legacy_skip_reason(metadata(before))
+            if reason:
+                if skipped is not None:
+                    skipped.append({"path": path.relative_to(root).as_posix(), "reason": reason})
+                continue
             after = plan_note(before, path.relative_to(root).as_posix(), registry)
         except (ValueError, yaml.YAMLError, UnicodeError) as error:
             errors.append({"path": path.relative_to(root).as_posix(), "error": str(error)})
@@ -199,13 +223,41 @@ def sha(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
-def apply_changes(root: Path, changes: list[Change], backup: Path) -> Path:
-    # Check the entire batch before the first write; preserve concurrent user edits.
-    for change in changes:
-        if not change.path.resolve().is_relative_to(root.resolve()):
-            raise RuntimeError(f"Outside vault: {change.path}")
-        if change.path.read_bytes() != change.before:
+def _protected_path(root: Path, path: Path) -> bool:
+    root = root.resolve()
+    if not path.resolve().is_relative_to(root):
+        return True
+    for current in (path, *path.parents):
+        if current == root:
+            break
+        if current.is_symlink() or current.is_junction() or (current.is_dir() and (current / ".git").exists()):
+            return True
+    return False
+
+
+def apply_changes(root: Path, changes: list[Change], backup: Path, *, registry: Registry | None = None) -> Path:
+    root = root.resolve()
+    if registry is None:
+        registry = Registry.load(root / "总览/标签库/条目")
+
+    def verify(change):
+        if _protected_path(root, change.path):
+            raise RuntimeError(f"Outside or protected path: {change.path}")
+        current = change.path.read_bytes()
+        if current != change.before:
             raise RuntimeError(f"File changed after scan: {change.path}")
+        reason = legacy_skip_reason(metadata(current))
+        if reason:
+            raise RuntimeError(f"New/mixed metadata skipped at execution: {reason}: {change.path}")
+        expected = plan_note(current, change.path.relative_to(root).as_posix(), registry)
+        if expected != change.after:
+            raise RuntimeError(f"Plan no longer matches explicit-tag-only policy: {change.path}")
+
+    # Check the entire batch before the first write; preserve concurrent user edits.
+    if len({str(c.path.resolve()).casefold() for c in changes}) != len(changes):
+        raise RuntimeError("Duplicate paths in tag change plan")
+    for change in changes:
+        verify(change)
     backup.mkdir(parents=True, exist_ok=False)
     manifest = {"root": str(root), "state": "backed_up", "files": []}
     for change in changes:
@@ -217,8 +269,7 @@ def apply_changes(root: Path, changes: list[Change], backup: Path) -> Path:
     manifest_path = backup / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     for change in changes:
-        if change.path.read_bytes() != change.before:
-            raise RuntimeError(f"File changed during backup: {change.path}")
+        verify(change)
         temp = change.path.with_name(change.path.name + ".tag-" + uuid.uuid4().hex + ".tmp")
         try:
             temp.write_bytes(change.after)
@@ -240,15 +291,16 @@ def main():
     args = parser.parse_args()
     root = args.root.resolve()
     registry = Registry.load(root / "总览/标签库/条目")
-    changes, errors = plan_vault(root, registry)
+    skipped = []
+    changes, errors = plan_vault(root, registry, skipped=skipped)
     result = {"mode": "apply" if args.apply else "audit", "registry_entries": len(registry.entries),
-              "changed_files": len(changes), "errors": errors,
+              "changed_files": len(changes), "errors": errors, "skipped_files": len(skipped), "skipped": skipped,
               "changes": [{"path": c.path.relative_to(root).as_posix(), "tags": metadata(c.after)["tags"]} for c in changes]}
     if args.apply and errors:
         raise RuntimeError("Malformed metadata found; inspect the audit report before applying")
     if args.apply and changes:
         backup = args.backup_dir or Path.home() / ".codex/backups/knowledge-tags" / datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-        result["backup_manifest"] = str(apply_changes(root, changes, backup))
+        result["backup_manifest"] = str(apply_changes(root, changes, backup, registry=registry))
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")

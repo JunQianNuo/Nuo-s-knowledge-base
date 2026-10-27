@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:v1:common",
+  "type": "object",
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "title": {"$ref": "#/$defs/nonEmptyString"},
+    "type": {"$ref": "#/$defs/nonEmptyString"},
+    "role": {"$ref": "#/$defs/nonEmptyString"},
+    "topics": {"$ref": "#/$defs/noteLinkList"},
+    "prerequisites": {"$ref": "#/$defs/noteLinkList"},
+    "about": {"$ref": "#/$defs/noteLinkList"},
+    "uses": {"$ref": "#/$defs/noteLinkList"},
+    "related": {"$ref": "#/$defs/noteLinkList"},
+    "aliases": {"$ref": "#/$defs/stringList"},
+    "tags": {"$ref": "#/$defs/stringList"},
+    "source": {"$ref": "#/$defs/stringList"},
+    "status": {"$ref": "#/$defs/nonEmptyString"}
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "nonEmptyString": {"type": "string", "pattern": "\\S"},
+    "noteLink": {
+      "type": "string",
+      "pattern": "^\\[\\[(?!\\s|\\^)[^\\[\\]#|\\r\\n]+(?<!\\s)\\]\\]$",
+      "not": {"pattern": "[\\r\\n]"},
+      "description": "Whole-note Wiki-link, with or without a path; no embed, alias or anchor. A caret inside a filename such as L^p is allowed."
+    },
+    "noteLinkList": {"type": "array", "items": {"$ref": "#/$defs/noteLink"}, "uniqueItems": true},
+    "stringList": {"type": "array", "items": {"$ref": "#/$defs/nonEmptyString"}}
+  }
+}

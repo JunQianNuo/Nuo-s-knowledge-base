@@ -1,8 +1,17 @@
 ---
+schema_version: 1
 title: DCT控制函数构造法
-type: 方法
+type: method
 method_type: 基础方法
 topics:
+- "[[概念/Lebesgue积分]]"
+prerequisites:
+- "[[概念/可测函数]]"
+- "[[概念/Lebesgue积分]]"
+- "[[概念/几乎处处收敛]]"
+uses:
+- "[[知识点/Lebesgue控制收敛定理]]"
+legacy_topics:
 - DCT
 - Lebesgue控制收敛定理
 - 控制函数

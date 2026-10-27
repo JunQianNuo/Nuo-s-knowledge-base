@@ -6,6 +6,18 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 这是一个 **Obsidian 中文知识库**，使用 Codex Agent（claudian 插件）进行知识管理。主要语言为中文，数学内容使用 LaTeX 标记。
 
+## 知识体系规则与维护边界
+
+知识模型与 v1 属性规则统一以 [[docs/KNOWLEDGE_ARCHITECTURE]] 为准，机器约束见 `99_System/knowledge/registry.yaml`；与本文件下述旧约定冲突时，新建或明确按 v1 维护的笔记采用新规，历史笔记保持兼容，不自动升级。
+
+新建笔记的 topics 使用内部链接；现阶段 v1 Schema 只严格覆盖原子笔记和 MOC，其他内容类型不硬套三类枚举。
+
+三类原子类型为 `concept/proposition/method`；MOC 用 `role: moc`，暂兼容历史 `type: MOC`。YAML `title` 可省略；无版本但通过兼容检查不证明历史创建规范。历史“知识点”必须语义审查，不能无条件映射。
+
+旧目录描述、课程样例与附件约定不构成迁移授权。新 v1 模板使用 `99_System/knowledge/templates/`，不切换插件配置；旧标签工具适配验收前，不对新格式或链接 topics 笔记执行标签写入。
+
+重要批量变更先提供 dry-run、逐文件 diff、哈希与恢复方案；现有清理规则不触发本重构的自动删除。实体统计、MOC 查询与图谱构建必须排除系统文件，且保留用户修改及独立仓库边界。阶段权限以用户最新明确授权为准，Formatter 未定位时不得声称已集成。
+
 ## 目录结构
 
 ```

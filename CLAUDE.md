@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 这是一个 **Obsidian 中文知识库**，使用 Claude Agent（claudian 插件）进行知识管理。主要语言为中文，数学内容使用 LaTeX 标记。
 
+## 共享项目规则
+
+执行知识库任务前先读取根 `AGENTS.md`，共享维护边界按该文件执行；知识模型与 v1 属性统一以 [[docs/KNOWLEDGE_ARCHITECTURE]] 和类型注册表为准。
+
+下文旧类型、topics、模板入口与补标约定仅按其兼容范围适用，不覆盖共同规则；历史笔记不自动升级，批量变更仍需审查授权，阶段权限以用户最新明确指令为准。
+
 ## 目录结构
 
 ```

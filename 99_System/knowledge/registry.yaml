@@ -1,0 +1,77 @@
+registry_version: 1
+note_schema_version: 1
+schema_files:
+  - schemas/registry.schema.json
+  - schemas/common.schema.json
+  - schemas/concept.schema.json
+  - schemas/proposition.schema.json
+  - schemas/method.schema.json
+  - schemas/moc.schema.json
+profiles:
+  concept:
+    selector: {type: concept}
+    schema: schemas/concept.schema.json
+    template: templates/concept.md
+  proposition:
+    selector: {type: proposition}
+    schema: schemas/proposition.schema.json
+    template: templates/proposition.md
+  method:
+    selector: {type: method}
+    schema: schemas/method.schema.json
+    template: templates/method.md
+  moc:
+    selector: {role: moc}
+    schema: schemas/moc.schema.json
+    template: templates/moc.md
+field_catalog: 总览/属性库/条目
+legacy_types:
+  概念: {semantic_review_required: false}
+  知识点: {semantic_review_required: true}
+  方法: {semantic_review_required: false}
+  MOC: {semantic_review_required: false}
+out_of_scope_types:
+  - 课程笔记
+  - 课堂笔记
+  - 课件笔记
+  - 知识梳理
+  - 习题
+  - 例题
+  - 证明题
+  - 思考题
+  - 答疑
+  - 复习
+  - 考题
+  - 项目
+  - 资料
+  - 参考文献
+  - 日计划
+  - 周回顾
+  - 审查报告
+  - 索引
+  - 规范
+  - 标签条目
+  - 属性条目
+  - Skill
+  - CLI
+  - MCP
+  - 闪卡
+legacy_tag_scopes:
+  - 课程
+  - 概念
+  - 知识点
+  - 方法
+  - 数学建模/知识体系
+system_exclusions:
+  prefixes:
+    - 99_System
+    - docs
+    - scripts
+    - 模板
+    - 规范
+    - 总览/标签库
+    - 总览/属性库
+  filenames:
+    - AGENTS.md
+    - CLAUDE.md
+  exclude_hidden: true
