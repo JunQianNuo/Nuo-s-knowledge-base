@@ -25,6 +25,7 @@ def _module(name, path):
 
 links = _module("knowledge_links", SYSTEM / "link_validator.py")
 v = links.v
+import topic_policy
 tags = _module("knowledge_legacy_tags", SYSTEM.parents[1] / "scripts/tag_maintenance.py")
 
 
@@ -80,14 +81,17 @@ def audit(root, scopes, system=None):
                   "attributes": v.validate_note(raw, path, system),
                   "links": links.audit_links(raw, path, index, system),
                   "tags": _tag_report(raw, registry)}
+        result["topic_policy"] = topic_policy.audit(raw, path, index, system, result["links"])
         results.append(result)
     statuses = Counter(row["status"] for item in results for row in item["links"])
     attribute_errors = sum(d["severity"] == "error" for item in results for d in item["attributes"]["diagnostics"])
+    topic_errors = sum(len(item["topic_policy"]["errors"]) for item in results)
     summary = {"files": len(results), "knowledge_entities": sum(item["attributes"]["is_knowledge_entity"] for item in results),
                "attribute_classifications": dict(Counter(item["attributes"]["classification"] for item in results)),
                "links": {name: statuses[name] for name in links.STATUSES},
                "tag_skipped": sum(item["tags"]["action"] == "skip" for item in results),
-               "errors": attribute_errors + statuses["invalid_syntax"] + len(errors)}
+               "topic_errors": topic_errors,
+               "errors": attribute_errors + statuses["invalid_syntax"] + len(errors) + topic_errors}
     return {"ok": summary["errors"] == 0, "dry_run": True, "writes": 0, "proposed_changes": [],
             "formatter": {"status": "not_located", "integrated": False},
             "scope": {"root": str(root), "requested": requested, "audited": [item["path"] for item in results],

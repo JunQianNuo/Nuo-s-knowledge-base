@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:advisory:annotation:1",
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "conflict",
+        "adjudicated"
+      ]
+    },
+    "annotator": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "gold": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "document_role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192
+            },
+            "form": {
+              "enum": [
+                "atomic",
+                "mixed",
+                "non_atomic",
+                "undetermined"
+              ]
+            },
+            "primary_type": {
+              "enum": [
+                "concept",
+                "proposition",
+                "method",
+                null
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:knowledge:advisory:request:1#/$defs/evidence"
+              },
+              "minItems": 1,
+              "maxItems": 100
+            },
+            "relations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "enum": [
+                      "topics",
+                      "prerequisites",
+                      "about",
+                      "uses",
+                      "related"
+                    ]
+                  },
+                  "target_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "urn:knowledge:advisory:request:1#/$defs/evidence"
+                    },
+                    "minItems": 1,
+                    "maxItems": 100
+                  }
+                },
+                "required": [
+                  "field",
+                  "target_id",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0,
+              "maxItems": 100
+            },
+            "split_review": {
+              "enum": [
+                "retain",
+                "review_extract",
+                "defer"
+              ]
+            },
+            "uncertainties": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8192
+              },
+              "minItems": 0,
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "document_role",
+            "form",
+            "primary_type",
+            "evidence",
+            "relations",
+            "split_review",
+            "uncertainties"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "sample_id",
+    "sha256",
+    "status",
+    "gold"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "pending"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "gold": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

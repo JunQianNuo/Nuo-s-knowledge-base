@@ -1,0 +1,133 @@
+---
+subject:
+- 最优化方法
+chapter: 5
+section: 微积分基础
+source:
+- 复习纲要补充
+type: homework
+tags:
+- Taylor展开
+- 梯度
+- Hessian矩阵
+aliases:
+- 考题-02 - 多元函数二阶Taylor展开
+schema_version: 2
+time: "2026-08-31T11:44:20+08:00"
+legacy_status: 已校对
+legacy_topics:
+- Taylor展开
+- 梯度
+- Hessian矩阵
+- 二次近似
+- 近似误差
+status: not done
+---
+
+# 考题 02
+
+已知二元函数：
+
+$$f(x_1, x_2) = e^{x_1 + x_2} + x_1^2 x_2$$
+
+**(a)** 写出 $f$ 在点 $x_0 = [0, 0]^\top$ 处的一阶 Taylor 展开式。
+
+**(b)** 写出 $f$ 在 $x_0$ 处的二阶 Taylor 展开式。
+
+**(c)** 利用二阶 Taylor 展开式近似计算 $f(0.1, -0.1)$，并与精确值比较，计算近似误差。
+
+---
+
+## 💡 提示
+
+> [!hint]- 点击展开提示
+> - 一阶展开：$f(x) \approx f(x_0) + \nabla f(x_0)^\top (x - x_0)$。
+> - 二阶展开：$f(x) \approx f(x_0) + \nabla f(x_0)^\top (x - x_0) + \frac{1}{2}(x - x_0)^\top \nabla^2 f(x_0) (x - x_0)$。
+> - 在 $x_0 = [0, 0]^\top$ 处，$e^{x_1+x_2}$ 的各阶导数都很简洁。
+> - 对于 (c)，注意 $x - x_0 = [0.1, -0.1]^\top$，代入二阶展开式计算。
+
+---
+
+## 📝 详细解析
+
+> [!solution]- 点击展开详细解析
+> ### 准备工作：计算 $f(x_0)$、$\nabla f(x_0)$、$\nabla^2 f(x_0)$
+>
+> $$f(x_1, x_2) = e^{x_1 + x_2} + x_1^2 x_2$$
+>
+> **函数值：** $f(0, 0) = e^0 + 0 = 1$
+>
+> **梯度：**
+> $$\begin{aligned}
+> \frac{\partial f}{\partial x_1} &= e^{x_1 + x_2} + 2x_1 x_2 \quad\to\quad \left.\frac{\partial f}{\partial x_1}\right|_{(0,0)} = 1 + 0 = 1 \\[4pt]
+> \frac{\partial f}{\partial x_2} &= e^{x_1 + x_2} + x_1^2 \quad\to\quad \left.\frac{\partial f}{\partial x_2}\right|_{(0,0)} = 1 + 0 = 1
+> \end{aligned}$$
+>
+> $$\nabla f(0, 0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$$
+>
+> **Hessian：**
+> $$\begin{aligned}
+> \frac{\partial^2 f}{\partial x_1^2} &= e^{x_1 + x_2} + 2x_2 \quad\to\quad 1 \\
+> \frac{\partial^2 f}{\partial x_1 \partial x_2} &= e^{x_1 + x_2} + 2x_1 \quad\to\quad 1 \\
+> \frac{\partial^2 f}{\partial x_2 \partial x_1} &= e^{x_1 + x_2} + 2x_1 \quad\to\quad 1 \\
+> \frac{\partial^2 f}{\partial x_2^2} &= e^{x_1 + x_2} \quad\to\quad 1
+> \end{aligned}$$
+>
+> $$\nabla^2 f(0, 0) = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}$$
+>
+> ### (a) 一阶 Taylor 展开
+>
+> $$f(x) \approx f(x_0) + \nabla f(x_0)^\top (x - x_0)$$
+>
+> 令 $\Delta x = [x_1, x_2]^\top$（因 $x_0 = [0, 0]^\top$）：
+>
+> $$f(x_1, x_2) \approx 1 + \begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 1 + x_1 + x_2$$
+>
+> ### (b) 二阶 Taylor 展开
+>
+> $$f(x) \approx f(x_0) + \nabla f(x_0)^\top \Delta x + \frac{1}{2}\Delta x^\top \nabla^2 f(x_0) \Delta x$$
+>
+> 计算二次型部分：
+>
+> $$\begin{aligned}
+> \frac{1}{2}\Delta x^\top \nabla^2 f(0, 0) \Delta x &= \frac{1}{2} \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \\
+> &= \frac{1}{2}(x_1^2 + 2x_1 x_2 + x_2^2) \\
+> &= \frac{1}{2}(x_1 + x_2)^2
+> \end{aligned}$$
+>
+> 因此二阶 Taylor 展开式为：
+>
+> $$f(x_1, x_2) \approx 1 + x_1 + x_2 + \frac{1}{2}(x_1 + x_2)^2$$
+>
+> ### (c) 数值近似与误差
+>
+> 代入 $[x_1, x_2]^\top = [0.1, -0.1]^\top$：
+>
+> **二阶近似值：**
+> $$\begin{aligned}
+> f_{\text{approx}} &= 1 + 0.1 + (-0.1) + \frac{1}{2}(0.1 - 0.1)^2 \\
+> &= 1 + 0 + \frac{1}{2} \cdot 0^2 = 1
+> \end{aligned}$$
+>
+> **精确值：**
+> $$\begin{aligned}
+> f_{\text{exact}} &= e^{0.1 + (-0.1)} + (0.1)^2 \cdot (-0.1) \\
+> &= e^0 - 0.001 \\
+> &= 1 - 0.001 = 0.999
+> \end{aligned}$$
+>
+> **近似误差：**
+> $$|f_{\text{approx}} - f_{\text{exact}}| = |1 - 0.999| = 0.001$$
+>
+> 相对误差约 $0.1\%$，说明二阶 Taylor 展开在靠近展开点处具有良好的近似精度。$\square$
+>
+> **点评：** 本题展示了 Taylor 展开的核心操作流程：计算函数值 → 梯度 → Hessian → 代公式。注意在 $x_0 = [0, 0]^\top$ 处展开时，$\Delta x$ 就是坐标本身，计算大大简化。二阶展开的二次型部分可写为 $\frac{1}{2}\sum_{i,j} H_{ij} \Delta x_i \Delta x_j$。本题中 $f(0.1, -0.1)$ 的二阶近似恰好等于 1，这是因为 $\Delta x_1 + \Delta x_2 = 0$，一阶项和二阶项均抵消了。在最优性理论中，二阶 Taylor 展开是推导 FONC/SONC/SOSC 的核心工具。
+
+---
+
+## 相关知识点
+
+- [[03_Sources/Courses/归档/最优化方法/最优化方法PPT课件/MD/05-微积分基础]] — 多元函数 Taylor 展开
+- [[03_Sources/Courses/归档/最优化方法/最优化方法PPT课件/MD/05-微积分基础#Jacobian矩阵与Hessian矩阵|Jacobian 与 Hessian]]
+- [[../知识点解析梳理/05-微积分基础-知识梳理|第5章 知识梳理]] — Taylor 展开与二次近似
+- [[../06-最优性条件/考题-FONC-SONC应用|FONC/SONC应用]] — Taylor 展开在最优性条件中的应用

@@ -4,6 +4,8 @@ type: concept
 topics: []
 ---
 
+%% topics 只链接已存在、合法且显式 role: moc 的导航；普通原子间的关系使用 prerequisites/about/uses/related。 %%
+
 # {{title}}
 
 %% 系统模板，不计入知识实体。复制为新笔记后，标题默认取文件名；YAML title 可省略。topics 与语义关系按需使用带引号的整篇笔记 Wiki-link；不要从 topics 自动补 tags。 %%

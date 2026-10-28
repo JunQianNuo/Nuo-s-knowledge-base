@@ -1,5 +1,13 @@
 # Phase 1 与 Phase 2A 实施及验收记录
 
+## 2026-10-28 topics 目标规则
+
+topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/KNOWLEDGE_ARCHITECTURE]]、[[docs/KNOWLEDGE_DAILY_GUIDE]] 及 [[docs/TOPICS_MOC_ACCEPTANCE_2026-10-28]]。
+
+## 2026-10-28 最终实施
+
+按用户最终授权执行；不再等待旧 Phase 4A-2/5/6 分阶段审批。详细结果统一见 [[docs/KNOWLEDGE_ACCEPTANCE_2026-10-28]]，日常使用见 [[docs/KNOWLEDGE_DAILY_GUIDE]]。逐文件 SHA-256、原字节、内部 dry-run/diff 和恢复记录保存在 D:/KnowledgeRefactorBackups/20261028-0050。
+
 前文保留 Phase 1 当时的权限与结果；本次生效的增量授权、检查点和逐文件对照见后文“Phase 2A 执行记录”。
 
 ## 目标与权限

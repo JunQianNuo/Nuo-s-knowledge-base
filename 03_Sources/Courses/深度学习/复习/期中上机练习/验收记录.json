@@ -1,0 +1,813 @@
+{
+  "verified_at_local": "Wed Oct 28 14:20:39 CST 2026",
+  "notebooks": 36,
+  "teaching_tasks": 56,
+  "tests": 12,
+  "versions": {
+    "Python": "3.13.0",
+    "NumPy": "2.4.6",
+    "PyTorch": "2.12.0+cu126",
+    "Matplotlib": "3.10.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "device": "CPU"
+  },
+  "execution": "Separate real Jupyter python3 kernels; fresh temporary cwd per notebook; delivered outputs kept empty",
+  "answers": {
+    "passed": [
+      {
+        "file": "01-深度学习导论/答案/01-教学练习.ipynb",
+        "seconds": 5.915,
+        "code_cells": 15,
+        "checks": 7,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/L1-06.png",
+            "bytes": 34721
+          },
+          {
+            "name": "output/L1-07.png",
+            "bytes": 20383
+          }
+        ],
+        "stdout_tail": "rch.Size([3]) torch.float64 cpu\n\n自检通过\n\n[[ 0.  1.  1.]\n [ 1.  2.  1.]\n [-1.  2.  1.]]\n[ 0.5  2.  -2. ]\n\n自检通过\n\n(array([ 1., -2.,  3.]), 4.666666666666667, 2.160246899469287)\nbroadcast shape: (3, 3)\n\n自检通过\n\n(array([1.6, 1. ]), array([-2.2, -0.6,  1. ,  2.6,  4.2]), 0.08000000000000004)\ndependent columns: [1. 1. 1.]\n\n自检通过\n\n[ 1.   2.  -1.  -0.   0.5  3. ] 3.125000000000001\n\n自检通过\n\ndegree train_MSE; [[1.       0.011794]\n [3.       0.002677]\n [6.       0.000293]]\n\nHigher degree lowers the best training loss in nested spaces, but may fit noise.\nIndependent validation is needed before choosing a final model.\n\n自检通过\n\n{'beta': array([ 1.996549, -0.74699 ,  0.499125]), 'train_rmse': 0.02694911093119079, 'test_rmse': 0.028641839357920817, 'gap_abs': 0.0016927284267300273, 'gap_signed': 0.0016927284267300273, 'baseline_test_rmse': 1.0926439446885494}\nThe mean-label baseline measures the value of using input features.\nThe signed gap is a finite-sample estimate, not a guarantee on all unseen data.\n\n自检通过\n"
+      },
+      {
+        "file": "01-深度学习导论/答案/02-测试练习A.ipynb",
+        "seconds": 3.954,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q101A.png",
+            "bytes": 22604
+          }
+        ],
+        "stdout_tail": "slope bias: [1.8005212 0.7147245]\ntrain_RMSE test_RMSE gap_abs gap_signed baseline_test_RMSE\n0.08126937138612736 0.09634775153748579 0.015078380151358428 0.015078380151358428 2.8213952830881963\nA straight line cannot exactly represent the sinusoidal perturbation.\nThe training-mean baseline checks whether using the feature is useful.\nThe course generalization gap is absolute; the signed difference is separately named for diagnosis.\n\n自检通过\n"
+      },
+      {
+        "file": "01-深度学习导论/答案/03-测试练习B.ipynb",
+        "seconds": 4.613,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q101B.png",
+            "bytes": 21746
+          }
+        ],
+        "stdout_tail": "NumPy/Torch max difference: 0.0\ncoef: [ 0.499817   -1.18122942  2.00388371]\ntrain_RMSE_noisy test_RMSE_clean gap_abs gap_signed\n0.058513188978814246 0.012175730875250946 0.0463374581035633 -0.0463374581035633\nThe constant column learns a nonzero intercept.\nTraining includes a deterministic perturbation, whereas testing targets the clean response.\nThis difference in label noise affects the signed gap; its sign alone does not prove overfitting.\n\n自检通过\n"
+      },
+      {
+        "file": "02-机器学习基础/答案/01-教学练习.ipynb",
+        "seconds": 5.175,
+        "code_cells": 19,
+        "checks": 9,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/L2-04.png",
+            "bytes": 28500
+          },
+          {
+            "name": "output/L2-06.png",
+            "bytes": 24757
+          },
+          {
+            "name": "output/L2-08.png",
+            "bytes": 39487
+          },
+          {
+            "name": "output/L2-09.png",
+            "bytes": 39803
+          }
+        ],
+        "stdout_tail": " [100.         0.03232    0.038024   0.005704   0.005704]]\n\nA single nested-data experiment does not prove monotonic error changes for all samples.\nThis controlled variant uses 200 test points; the original demo uses 20.\n\n自检通过\n\ndegree lambda train60_RMSE validation30_RMSE; [[ 3.        0.        0.585721  0.622961]\n [ 3.        0.0001    0.585723  0.623451]\n [ 3.        0.01      0.591191  0.656936]\n [ 7.        0.        0.055944  0.065836]\n [ 7.        0.0001    0.241854  0.251347]\n [ 7.        0.01      0.554348  0.622493]\n [11.        0.        0.040594  0.052077]\n [11.        0.0001    0.201746  0.210402]\n [11.        0.01      0.526312  0.594021]]\nchosen: (11, 0.0)\nfinal_train90_RMSE test30_RMSE gap_abs gap_signed\n0.040782171812453666 0.08227834722403175 0.04149617541157809 0.04149617541157809\n\nSelection uses validation only; the test set is evaluated after the final refit.\nFinal training RMSE uses all 90 refit points; one seed does not establish a universally best lambda.\n\n自检通过\n"
+      },
+      {
+        "file": "02-机器学习基础/答案/02-测试练习A.ipynb",
+        "seconds": 4.609,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q201A.png",
+            "bytes": 31650
+          }
+        ],
+        "stdout_tail": "degree train18_RMSE validation12_RMSE; [[1.         0.12545719 0.12676256]\n [2.         0.08523561 0.08190794]\n [4.         0.01622363 0.0319325 ]\n [8.         0.01107618 0.44526171]]\nselected: 4\nfinal_train30_RMSE test25_RMSE gap_abs gap_signed\n0.01830275243242391 0.027623890904406794 0.009321138471982883 0.009321138471982883\nValidation selects the degree; testing is reserved for the final model.\nThe final fit uses 30 samples, so its training RMSE must use those same 30 labels.\nThe model is linear in its coefficients, although it can be nonlinear in x.\n\n自检通过\n"
+      },
+      {
+        "file": "02-机器学习基础/答案/03-测试练习B.ipynb",
+        "seconds": 4.214,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q201B.png",
+            "bytes": 36881
+          }
+        ],
+        "stdout_tail": "lambda train14_RMSE validation16_RMSE coefficient_norm; [[0.00000000e+00 1.89479062e-02 1.01348828e-01 4.64460439e+00]\n [1.00000000e-05 1.91129717e-02 5.74748144e-02 2.43980954e+00]\n [1.00000000e-03 3.43110230e-02 5.62396505e-02 1.69420465e+00]\n [1.00000000e-01 1.91563245e-01 1.81461795e-01 7.94230923e-01]]\nselected lambda: 0.001\ntrain14_RMSE test40_RMSE gap_abs gap_signed\n0.03431102296177678 0.059319908192517416 0.025008885230740636 0.025008885230740636\nMultiplying the mean objective by N produces the N*lambda penalty in squared-sum form.\nExcessive regularization can suppress useful coefficients and underfit.\nThe penalized objective contains an extra term; it is not RMSE.\n\n自检通过\n"
+      },
+      {
+        "file": "03-前馈神经网络/答案/01-教学练习.ipynb",
+        "seconds": 4.817,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q310.png",
+            "bytes": 53077
+          }
+        ],
+        "stdout_tail": "erence abs_error scaled_error: ('tanh', 5, 'w11_1', 2.108688956536223e-06, 2.1086882240339833e-06, 7.325022398299715e-13, 7.325022398299715e-13)\ncoordinate analytic finite_difference abs_error scaled_error: ('tanh', 5, 'w22_2', 0.000174174449078643, 0.00017417444986289607, 7.842530607132109e-13, 7.842530607132109e-13)\ncoordinate analytic finite_difference abs_error scaled_error: ('tanh', 5, 'b3_3', -0.0027695266820124895, -0.002769526682294687, 2.821974424971341e-13, 2.821974424971341e-13)\nW shapes: [(2, 3), (4, 2), (6, 4), (8, 6), (10, 8), (1, 10)] ; b shapes: [(2,), (4,), (6,), (8,), (10,), (1,)]\n\n自检通过\n\nparameters, multiplication count, finite-difference forward calls 207 176 420\nloss 19.46 W gradient\n tensor([[-5.8000, 11.6000],\n        [-6.4000, 12.8000],\n        [ 1.8000, -3.6000]], dtype=torch.float64)\n\n自检通过\n\nsegments,max error,bound 4 0.015625 0.015625\nsegments,max error,bound 8 0.003906000000000187 0.00390625\nsegments,max error,bound 16 0.0009765000000003798 0.0009765625\n\n自检通过\n"
+      },
+      {
+        "file": "03-前馈神经网络/答案/02-测试练习A.ipynb",
+        "seconds": 3.953,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q3A.png",
+            "bytes": 27607
+          }
+        ],
+        "stdout_tail": "'dc': 1.0}\ninput [1. 0.] {'f': 0.6075467727961659, 'dx': array([ 0.11439195, -1.17218949]), 'dW': array([[ 1.06736664,  0.        ],\n       [-0.41929138, -0.        ]]), 'db': array([ 1.06736664, -0.41929138]), 'dv': array([0.53704957, 0.66403677]), 'dc': 1.0}\ninput [0. 1.] {'f': -0.8119155865169467, 'dx': array([-0.3829401 , -0.91740807]), 'dW': array([[ 0.        ,  0.73037604],\n       [-0.        , -0.74812812]]), 'db': array([ 0.73037604, -0.74812812]), 'dv': array([-0.71629787,  0.04995837]), 'dc': 1.0}\ninput [-1.   0.5] {'f': -0.18094363997703883, 'dx': array([ 0.08484936, -0.80046071]), 'dW': array([[-0.73037604,  0.36518802],\n       [ 0.28033866, -0.14016933]]), 'db': array([ 0.73037604, -0.28033866]), 'dv': array([-0.71629787, -0.79133755]), 'dc': 1.0}\nx1 analytic/numeric/error 0.11439194614123427 0.11439194608220404 5.903022515241219e-11\nW00 analytic/numeric/error 1.0673666438808345 1.067366643847656 3.317857100171295e-11\nmaximum absolute sensitivity 0.4278737444876882\n\n自检通过\n"
+      },
+      {
+        "file": "03-前馈神经网络/答案/03-测试练习B.ipynb",
+        "seconds": 8.161,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q3B.png",
+            "bytes": 30803
+          }
+        ],
+        "stdout_tail": "parameters 20 shape torch.Size([6, 2]) prediction tensor([[ 0.4712,  0.0184],\n        [ 0.7864, -0.5797],\n        [ 0.1337,  1.0371],\n        [ 0.0105,  0.8942],\n        [ 0.8827, -0.9750],\n        [-0.3852,  1.3651]], dtype=torch.float64)\nsample losses tensor([0.2224, 0.3816, 0.0192, 4.5670, 0.6567, 4.2623], dtype=torch.float64) loss 1.6848752117414947\nparameter gradient tensor([[-0.0859,  0.1107, -0.8312],\n        [-0.2476,  0.1352,  1.1407],\n        [-0.1124, -0.0772,  0.2574]], dtype=torch.float64)\nparameter gradient tensor([-0.7631,  1.0010,  0.1687], dtype=torch.float64)\nparameter gradient tensor([[ 0.2066,  0.0113, -0.4336],\n        [-0.6384,  0.2494,  1.1463]], dtype=torch.float64)\nparameter gradient tensor([-0.7003,  1.2534], dtype=torch.float64)\ngradient / finite difference / error -0.8311968168124795 -0.831196816819535 7.05546732149287e-12\nworst sample index 3\n\n自检通过\n"
+      },
+      {
+        "file": "04-优化算法/答案/01-教学练习.ipynb",
+        "seconds": 14.11,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q401.png",
+            "bytes": 29807
+          },
+          {
+            "name": "output/Q407.png",
+            "bytes": 29400
+          },
+          {
+            "name": "output/Q409.png",
+            "bytes": 203127
+          }
+        ],
+        "stdout_tail": "471176524107\ninitial (3, 3) method Adam status completed_budget stop step None completed steps 1000 final x [2.018228 4.075135] last finite x [2.018228 4.075135] distance 3.239327990983556 final loss 1.0371459587792142\ninitial (3, 3) method AdaMax status completed_budget stop step None completed steps 1000 final x [2.034388 4.140589] last finite x [2.034388 4.140589] distance 3.3065473943557153 final loss 1.0703024667587882\n\nnonfinite runs: 8 of 24\none-step checks {'GD': array([0.97, 1.04]), 'Momentum': array([0.97, 1.04]), 'AdaGrad': array([0.994, 1.008]), 'RMSProp': array([0.989459, 1.010541]), 'Adam': array([0.990003, 1.009998]), 'AdaMax': array([0.99, 1.01])}\n\n自检通过\n\nweight 0.5 [(1, 0.25), (5, 0.015625), (10, 0.00048828125), (20, 4.76837158203125e-07)]\nweight 1.0 [(1, 1.0), (5, 1.0), (10, 1.0), (20, 1.0)]\nweight 2.0 [(1, 4.0), (5, 64.0), (10, 2048.0), (20, 2097152.0)]\nnew stable problem initial/final 6.0 1.6598064215187693e-19 w tensor([ 2.0000, -1.0000], dtype=torch.float64)\n\n自检通过\n"
+      },
+      {
+        "file": "04-优化算法/答案/02-测试练习A.ipynb",
+        "seconds": 4.519,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q4A.png",
+            "bytes": 31508
+          }
+        ],
+        "stdout_tail": "initial loss and gradient 4.75 [-6.  1.]\nanalytic/numeric/error [-5.2  0.8] [-5.2  0.8] 2.4504909212907933e-10\nfinal theta [ 1.4999985  -0.49999953] parameter error [1.50153968e-06 4.69703556e-07] final loss 4.729864279486108e-12\n\n自检通过\n"
+      },
+      {
+        "file": "04-优化算法/答案/03-测试练习B.ipynb",
+        "seconds": 7.175,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q4B.png",
+            "bytes": 33313
+          }
+        ],
+        "stdout_tail": "initial objective/gradient 2.0 [-2. -2. -4.]\n\nSGD final point [1. 1. 2.] final/recomputed 2.3370004317172475e-29 2.3370004317172475e-29 distance to reference 5.590940293848844e-15\nAdam final point [1. 1. 2.] final/recomputed 1.0078307592427644e-18 1.0078307592427644e-18 distance to reference 1.1317621328176152e-09\n\n自检通过\n"
+      },
+      {
+        "file": "05-回归模型/答案/01-教学练习.ipynb",
+        "seconds": 7.763,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q504.png",
+            "bytes": 24116
+          },
+          {
+            "name": "output/Q510.png",
+            "bytes": 54878
+          }
+        ],
+        "stdout_tail": ".5950]], requires_grad=True)\n\n自检通过\n\nBatch sizes: [[32, 32, 32, 32, 2], [32, 32, 32, 32, 2]] updates: 10 MSE: 0.10158182749381432\n\n自检通过\n\nData source: SYNTHETIC 10D regression replacement; original .data unavailable/not supplied\n\nHomework Exercise 1 replacement baseline: {'train_mse': 0.004596983548253775, 'train_rmse': 0.06780105860717645, 'test_mse': 0.005118878558278084, 'test_rmse': 0.07154633853858688, 'gap_abs': 0.003745279931410439, 'gap_signed': 0.003745279931410439, 'parameter_count': 11301}\n\n自检通过\n\nData source: SYNTHETIC 10D regression replacement; original .data unavailable/not supplied\n\nbaseline default test RMSE 0.07942\ndepth 2 test RMSE 0.12161\ndepth 4 test RMSE 0.07417\ndepth 5 test RMSE 0.07137\nwidth 50 test RMSE 0.06869\nwidth 150 test RMSE 0.07546\nwidth 200 test RMSE 0.09873\nactivation sigmoid test RMSE 0.06316\nactivation softplus test RMSE 0.06423\noptimizer_name Adagrad test RMSE 0.08229\noptimizer_name RMSprop test RMSE 0.10623\noptimizer_name Adam test RMSE 0.12155\n\n自检通过\n"
+      },
+      {
+        "file": "05-回归模型/答案/02-测试练习A.ipynb",
+        "seconds": 6.251,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q5A.png",
+            "bytes": 42686
+          }
+        ],
+        "stdout_tail": "Parameter count: 385\n\n{'train_mse': 0.002139389282092452, 'train_rmse': 0.04625353264446352, 'test_rmse': 0.047185081988573074, 'gap_abs': np.float64(0.0009315493441095571)}\n小gap不代表低误差；squeeze(-1)消去输出维以免(N,1)-(N,)广播成(N,N)。\n\n自检通过\n"
+      },
+      {
+        "file": "05-回归模型/答案/03-测试练习B.ipynb",
+        "seconds": 5.777,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q5B.png",
+            "bytes": 36887
+          }
+        ],
+        "stdout_tail": "Best epoch / total: 15 27 Best val: 0.02006678096950054\n{'train_mse': 0.03377791494131088, 'train_rmse': 0.18378768985247865, 'test_rmse': 0.13415127992630005, 'gap_abs': 0.0496364099261786}\n验证集选择停止和快照，测试集不参与选择，最后再报告。\n\n自检通过\n"
+      },
+      {
+        "file": "06-分类模型/答案/01-教学练习.ipynb",
+        "seconds": 8.088,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q608.png",
+            "bytes": 45432
+          },
+          {
+            "name": "output/Q610.png",
+            "bytes": 53257
+          }
+        ],
+        "stdout_tail": "000],\n       grad_fn=<SumBackward1>)\n\n自检通过\n\n{'train_loss': 0.02527395635843277, 'train_accuracy': 1.0, 'test_accuracy': 0.9791666865348816}\nCPU adaptation: 512/192 samples, width 16, 100 steps; not original full-scale run\n\n自检通过\n\nErrors: 2 Accuracy: 0.9895833134651184\n\n自检通过\n\nData source: SYNTHETIC 40-feature/10-class signals; NOT MNIST1D or original homework .data\nExercise 2 synthetic-interface baseline: {'train_loss': 1.3117505311965942, 'test_accuracy': 1.0, 'parameter_count': 15210}\n\n自检通过\n\nData source: SYNTHETIC 40-feature/10-class signals; NOT MNIST1D or original homework .data\n\nbaseline default test accuracy 0.6667\ndepth 2 test accuracy 1.0\ndepth 4 test accuracy 0.125\ndepth 5 test accuracy 0.2917\nwidth 50 test accuracy 0.4083\nwidth 150 test accuracy 1.0\nwidth 200 test accuracy 1.0\nactivation sigmoid test accuracy 0.1\nactivation softplus test accuracy 0.7167\noptimizer_name Adagrad test accuracy 1.0\noptimizer_name RMSprop test accuracy 1.0\noptimizer_name Adam test accuracy 1.0\n\n自检通过\n"
+      },
+      {
+        "file": "06-分类模型/答案/02-测试练习A.ipynb",
+        "seconds": 5.619,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q6A.png",
+            "bytes": 38034
+          }
+        ],
+        "stdout_tail": "Final training CE: 0.06643559783697128 Test accuracy: 0.9895833134651184\n整数损失目标使用0—3下标故减一；展示课程1—4标签故预测加一。\n\n自检通过\n"
+      },
+      {
+        "file": "06-分类模型/答案/03-测试练习B.ipynb",
+        "seconds": 6.033,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": true,
+        "status": "passed",
+        "pngs": [
+          {
+            "name": "output/Q6B.png",
+            "bytes": 49162
+          }
+        ],
+        "stdout_tail": "Stable/library probe: 0.31326165795326233 0.31326165795326233\n\nFinal training CE: 0.022861283272504807 Test accuracy: 0.9950000047683716\n三类需三分量logits；单sigmoid仅给一个二元概率。CE看真实类置信度，accuracy只看赢家是否正确。\n\n自检通过\n"
+      }
+    ],
+    "failed": []
+  },
+  "students": {
+    "passed": [
+      {
+        "file": "01-深度学习导论/01-教学练习.ipynb",
+        "seconds": 4.61,
+        "code_cells": 15,
+        "checks": 7,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： 请实现 tensor_affine\n\n尚未完成本题： 请实现 affine_matrix\n\n尚未完成本题： 请实现 regression_metrics\n\n尚未完成本题： 请实现 fit_affine\n\n尚未完成本题： 请实现 quadratic_features\n\n尚未完成本题： 请实现 exp_capacity\n\n尚未完成本题： 请实现 linear_experiment\n"
+      },
+      {
+        "file": "01-深度学习导论/02-测试练习A.ipynb",
+        "seconds": 4.467,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'calibrate' is not defined\n"
+      },
+      {
+        "file": "01-深度学习导论/03-测试练习B.ipynb",
+        "seconds": 4.58,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'response_X' is not defined\n"
+      },
+      {
+        "file": "02-机器学习基础/01-教学练习.ipynb",
+        "seconds": 4.32,
+        "code_cells": 19,
+        "checks": 9,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： 请实现 array_lab\n\n尚未完成本题： 请实现 compare_products\n\n尚未完成本题： 请实现 sample_cube\n\n尚未完成本题： 请实现 poly_matrix\n\n尚未完成本题： 请实现 split_and_scale\n\n尚未完成本题： 请实现 capacity_sweep\n\n尚未完成本题： 请实现 poly_ridge\n\n尚未完成本题： 请实现 size_experiment\n\n尚未完成本题： 请实现 validation_pipeline\n"
+      },
+      {
+        "file": "02-机器学习基础/02-测试练习A.ipynb",
+        "seconds": 3.976,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'select_degree' is not defined\n"
+      },
+      {
+        "file": "02-机器学习基础/03-测试练习B.ipynb",
+        "seconds": 3.694,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'ridge8' is not defined\n"
+      },
+      {
+        "file": "03-前馈神经网络/01-教学练习.ipynb",
+        "seconds": 4.156,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： 实现 ReLU/tanh\n\n尚未完成本题： name 'logic_gates' is not defined\n\n尚未完成本题： name 'forward_batch' is not defined\n\n尚未完成本题： name 'equivalent_parameters' is not defined\n\n尚未完成本题： name 'homework3' is not defined\n\n尚未完成本题： name 'first306' is not defined\n\n尚未完成本题： 任意层宽的前后向传播\n\n尚未完成本题： name 'sizes308' is not defined\n\n尚未完成本题： name 'P309' is not defined\n\n尚未完成本题： name 'square_relu' is not defined\n"
+      },
+      {
+        "file": "03-前馈神经网络/02-测试练习A.ipynb",
+        "seconds": 4.61,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'reports3a' is not defined\n"
+      },
+      {
+        "file": "03-前馈神经网络/03-测试练习B.ipynb",
+        "seconds": 4.652,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'model3b' is not defined\n"
+      },
+      {
+        "file": "04-优化算法/01-教学练习.ipynb",
+        "seconds": 4.08,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： name 'stationary401' is not defined\n\n尚未完成本题： name 'optimal_steps402' is not defined\n\n尚未完成本题： name 'mom403' is not defined\n\n尚未完成本题： name 'x404' is not defined\n\n尚未完成本题： name 'v405' is not defined\n\n尚未完成本题： name 'adam_first406' is not defined\n\n尚未完成本题： name 'demo_results407' is not defined\n\n尚未完成本题： name 'batches408' is not defined\n\n尚未完成本题： name 'rosenbrock' is not defined\n\n尚未完成本题： name 'chain_gradient' is not defined\n"
+      },
+      {
+        "file": "04-优化算法/02-测试练习A.ipynb",
+        "seconds": 4.187,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'calibration_loss' is not defined\n"
+      },
+      {
+        "file": "04-优化算法/03-测试练习B.ipynb",
+        "seconds": 4.5,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'coupled_objective' is not defined\n"
+      },
+      {
+        "file": "05-回归模型/01-教学练习.ipynb",
+        "seconds": 4.163,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： name 'sample_cube' is not defined\n\n尚未完成本题： name 'module502' is not defined\n\n尚未完成本题： name 'report503' is not defined\n\n尚未完成本题： name 'history504' is not defined\n\n尚未完成本题： name 'grad_l1_505' is not defined\n\n尚未完成本题： name 'flags506' is not defined\n\n尚未完成本题： name 'max_rowdiff507' is not defined\n\n尚未完成本题： name 'batch_sizes508' is not defined\n\n尚未完成本题： name 'data509' is not defined\n\n尚未完成本题： name 'rows510' is not defined\n"
+      },
+      {
+        "file": "05-回归模型/02-测试练习A.ipynb",
+        "seconds": 4.079,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'Xa_train' is not defined\n"
+      },
+      {
+        "file": "05-回归模型/03-测试练习B.ipynb",
+        "seconds": 4.046,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'Xb_train' is not defined\n"
+      },
+      {
+        "file": "06-分类模型/01-教学练习.ipynb",
+        "seconds": 4.04,
+        "code_cells": 21,
+        "checks": 10,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "NumPy 2.4.6 PyTorch 2.12.0+cu126\n\n尚未完成本题： name 'boundary601' is not defined\n\n尚未完成本题： name 'onehot602' is not defined\n\n尚未完成本题： name 'softmax603' is not defined\n\n尚未完成本题： name 'ce604' is not defined\n\n尚未完成本题： name 'manual605' is not defined\n\n尚未完成本题： name 'counts606' is not defined\n\n尚未完成本题： name 'history607' is not defined\n\n尚未完成本题： name 'pred608' is not defined\n\n尚未完成本题： name 'data609' is not defined\n\n尚未完成本题： name 'rows610' is not defined\n"
+      },
+      {
+        "file": "06-分类模型/02-测试练习A.ipynb",
+        "seconds": 3.875,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'quadrant_a6' is not defined\n"
+      },
+      {
+        "file": "06-分类模型/03-测试练习B.ipynb",
+        "seconds": 3.728,
+        "code_cells": 2,
+        "checks": 1,
+        "answer": false,
+        "status": "passed",
+        "pngs": [],
+        "stdout_tail": "尚未完成本题： name 'ring_labels_b6' is not defined\n"
+      }
+    ],
+    "failed": []
+  },
+  "static_checks": {
+    "notebooks": 36,
+    "chapters": {
+      "1": {
+        "student": 3,
+        "answer": 3
+      },
+      "2": {
+        "student": 3,
+        "answer": 3
+      },
+      "3": {
+        "student": 3,
+        "answer": 3
+      },
+      "4": {
+        "student": 3,
+        "answer": 3
+      },
+      "5": {
+        "student": 3,
+        "answer": 3
+      },
+      "6": {
+        "student": 3,
+        "answer": 3
+      }
+    },
+    "source_documents_unchanged": 59,
+    "link_issues": [],
+    "contract_issues": [],
+    "test_scores": [
+      {
+        "file": "01-深度学习导论/02-测试练习A.ipynb",
+        "points": [
+          15,
+          25,
+          25,
+          20,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "01-深度学习导论/03-测试练习B.ipynb",
+        "points": [
+          20,
+          30,
+          20,
+          15,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "02-机器学习基础/02-测试练习A.ipynb",
+        "points": [
+          15,
+          30,
+          25,
+          15,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "02-机器学习基础/03-测试练习B.ipynb",
+        "points": [
+          15,
+          30,
+          25,
+          15,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "03-前馈神经网络/02-测试练习A.ipynb",
+        "points": [
+          20,
+          35,
+          25,
+          20
+        ],
+        "total": 100
+      },
+      {
+        "file": "03-前馈神经网络/03-测试练习B.ipynb",
+        "points": [
+          25,
+          30,
+          25,
+          20
+        ],
+        "total": 100
+      },
+      {
+        "file": "04-优化算法/02-测试练习A.ipynb",
+        "points": [
+          25,
+          35,
+          20,
+          20
+        ],
+        "total": 100
+      },
+      {
+        "file": "04-优化算法/03-测试练习B.ipynb",
+        "points": [
+          20,
+          40,
+          20,
+          20
+        ],
+        "total": 100
+      },
+      {
+        "file": "05-回归模型/02-测试练习A.ipynb",
+        "points": [
+          15,
+          20,
+          30,
+          20,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "05-回归模型/03-测试练习B.ipynb",
+        "points": [
+          20,
+          20,
+          30,
+          15,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "06-分类模型/02-测试练习A.ipynb",
+        "points": [
+          20,
+          20,
+          30,
+          15,
+          15
+        ],
+        "total": 100
+      },
+      {
+        "file": "06-分类模型/03-测试练习B.ipynb",
+        "points": [
+          20,
+          20,
+          30,
+          15,
+          15
+        ],
+        "total": 100
+      }
+    ],
+    "executed_code_matches": [
+      "01-深度学习导论/答案/01-教学练习.ipynb",
+      "01-深度学习导论/答案/02-测试练习A.ipynb",
+      "01-深度学习导论/答案/03-测试练习B.ipynb",
+      "02-机器学习基础/答案/01-教学练习.ipynb",
+      "02-机器学习基础/答案/02-测试练习A.ipynb",
+      "02-机器学习基础/答案/03-测试练习B.ipynb",
+      "03-前馈神经网络/答案/01-教学练习.ipynb",
+      "03-前馈神经网络/答案/02-测试练习A.ipynb",
+      "03-前馈神经网络/答案/03-测试练习B.ipynb",
+      "04-优化算法/答案/01-教学练习.ipynb",
+      "04-优化算法/答案/02-测试练习A.ipynb",
+      "04-优化算法/答案/03-测试练习B.ipynb",
+      "05-回归模型/答案/01-教学练习.ipynb",
+      "05-回归模型/答案/02-测试练习A.ipynb",
+      "05-回归模型/答案/03-测试练习B.ipynb",
+      "06-分类模型/答案/01-教学练习.ipynb",
+      "06-分类模型/答案/02-测试练习A.ipynb",
+      "06-分类模型/答案/03-测试练习B.ipynb"
+    ]
+  },
+  "validated_moc_files": [
+    "01-深度学习导论/README.md",
+    "02-机器学习基础/README.md",
+    "03-前馈神经网络/README.md",
+    "04-优化算法/README.md",
+    "05-回归模型/README.md",
+    "06-分类模型/README.md",
+    "README.md"
+  ],
+  "variant_contract_regressions": 8,
+  "source_sha256_unchanged": {
+    "作业/第1-6章-课件与课堂提问汇编作业.md": "7ba3d29fce0c4464daf883bfdc3cfc09005645c3c7714b1dac9997670d835298",
+    "演示代码/Chapter2.py": "5efa4690ada9b3de5677c2aa6e005be7f4e0019b2cf72a2eb86a80a6267cbe6a",
+    "演示代码/Chapter4(1).py": "604e6b78db9d9c47dcaa141937316f2deee551d9efd5e00cd71ab96515f8c3ef",
+    "演示代码/Chapter5.py": "acfeac3e4cbee771b18f0739fb17a98e957e18f518aa409c955b1c4b7a038bdc",
+    "演示代码/Chapter6.py": "1f61b36d2064425efdec8b2b2572fa46ce5968bc83e6ed6307f01e9e08f01582",
+    "课堂笔记/2026-08-31-第1节-转写_电子科大王君豪的快速会议.md": "1fd26ce0a70e6f87f0cf4f08f1ffd4b73e5949ffd36d3b9813c5d4e5f5f8eb31",
+    "课堂笔记/2026-09-02-第2节-机器学习基础概念与模型构建教学.md": "b688bec79cc9f01ae2140a1ea0e76060f14d3c2c6f68839dafe31fd29edb533b",
+    "课堂笔记/2026-09-07-第3节-机器学习基础与NumPy实操讲座.md": "72ef216efb65e819bc9751be8bd76c3c7f038ea39c117e244724fe9c9daf515a",
+    "课堂笔记/2026-09-09-第4节-缺少逐字稿.md": "6ce90a0d69256c0d6311db2acb2e55e978a1fb3edd501b49ad70f0759c026756",
+    "课堂笔记/2026-09-14-第5节-神经网络反向传播算法推导与复杂度分析讲座.md": "1bd80da868d88ae154729a2393f236faf9c8c643e3f7f9981d9fad86c4d14027",
+    "课堂笔记/2026-09-16-第6节-深度学习优化理论讲座.md": "5b3f8c8ff193c8db3ebea74aafd5cad49a2c02a6e12348e6184c4dc098f4a8b2",
+    "课堂笔记/2026-09-21-第7节-随机优化算法讲解.md": "daa377a16af2b4141de5777fd086011b1c31f4b4a34c00256a727bcfcaf0c0ec",
+    "课堂笔记/2026-09-23-第8节-深度学习模型训练与正则化讲座.md": "6346c3a5f3b6be1f4ef8594bb5a4364aa3f6eb16ce22e1785adba78ecf9a387c",
+    "课堂笔记/2026-09-28-第9节-缺少逐字稿.md": "169324c21348f931233c98449501c8907910a9c920452dceca3f339f10dfc1fa",
+    "课堂笔记/2026-09-30-第10节-缺少逐字稿.md": "b6bd72d23fc606ea5d953f17b41dfe8b25a81585824d0c194666d45f00f69f2e",
+    "课堂笔记/2026-10-12-第11节-深度学习编程与分类模型宣讲.md": "83afcf5bc45a0551d8fcfe4934890dd74d64cadf2dbfc94171f2bfcadeab646c",
+    "课堂笔记/2026-10-14-第12节-神经网络分类模型代码编写.md": "e314708b14d91af88d2574a1cb734f6f6875bd1198d198a4e580a30ccfea2670",
+    "课堂笔记/2026-10-19-第13节-神经网络与卷积网络课程宣讲.md": "01b72f94d104ee21e495cf34304f76e7d074ecafcb33c2d813c3a1b81835368e",
+    "课堂笔记/2026-10-21-第14节-缺少逐字稿.md": "6a7e0fdf5ab0ddaea8e6839fd179dc19a52f03dd1c22893d38dc272afc161330",
+    "课堂笔记/2026-10-26-第15节-缺少逐字稿.md": "71e8f37d3156492ed9d2bb217eb952fcb0ea111b6489b164f15e0830f0e376d7",
+    "课堂笔记/README.md": "ce3f3f2b1b083d4485311f27b976fcc2e332816d7d8e1fecc2b654baf97f1f1d",
+    "课堂笔记/资料对照与重整说明.md": "5a283a4be8f6236ebbeccff4fc29f03efaf17519edbb420f3882df47e659d9b7",
+    "课堂笔记/raw/2026-08-31-转写_电子科大王君豪的快速会议-407873-纪要.md": "34edc862a2873f3123c31201e510ea6d3e2cae85fa325aca23bdbed46b2d421a",
+    "课堂笔记/raw/2026-08-31-转写_电子科大王君豪的快速会议-407873-逐字稿.md": "a174f4bc27f5c4b35e4d56ad22d24ab8542ac7c6adb8ad0524dcea8938b6f446",
+    "课堂笔记/raw/2026-09-02-20260902录音文件(2)-320192-逐字稿.md": "16cd7078b47bc0c3bb0701fe884c26a0bd9912b729788d34866a0bfe294cddfc",
+    "课堂笔记/raw/2026-09-02-ASR音频转录测试-455040-纪要.md": "82eb74c409a88411d19ce0601f93bb38ded8fe2f1e787179a34b88277653d93e",
+    "课堂笔记/raw/2026-09-02-ASR音频转录测试-455040-逐字稿.md": "7c34219f95675c370700c61ff265329ff48987986e13eccf6b9968268c5d1bd6",
+    "课堂笔记/raw/2026-09-02-机器学习基础概念与模型构建教学-037184-纪要.md": "06fd4ec53116dd3c7c878be281cc789c94b8d97e5a3556b75b1fe5448ce14681",
+    "课堂笔记/raw/2026-09-02-机器学习基础概念与模型构建教学-037184-逐字稿.md": "9d36ac1a022031a4656ec580c27b14037fb0a04f70fb1ee4a12c2c00c2f7e189",
+    "课堂笔记/raw/2026-09-07-机器学习基础与NumPy实操讲座-482624-纪要.md": "ed7b9648f275521509713928d86e6cb78fb5ca73de99cf39018cd76b8ab3e3f0",
+    "课堂笔记/raw/2026-09-07-机器学习基础与NumPy实操讲座-482624-逐字稿.md": "90b955f0306fa2a406565e9b2c5ddad717cc78729112c76b61c15494b20eebb0",
+    "课堂笔记/raw/2026-09-14-神经网络反向传播算法推导与复杂度分析讲座-881792-纪要.md": "947110a7af409692d2bb4da95494a79a4b145e165e4ded727f649f73fa4a4205",
+    "课堂笔记/raw/2026-09-14-神经网络反向传播算法推导与复杂度分析讲座-881792-逐字稿.md": "db0eaed5f71f0d3b365a55c5b3573306888be67b1565682407c7ed0b4a0dfed1",
+    "课堂笔记/raw/2026-09-16-深度学习优化理论讲座-006656-纪要.md": "95b5450fafb3c57a6765228123d321009594314ea51c0c2e7ee3cba63bf0d698",
+    "课堂笔记/raw/2026-09-16-深度学习优化理论讲座-006656-逐字稿.md": "dc8ed40f0251217a1a7ca4bc4c8b1106b850516b63988574eca633f273cdb0ee",
+    "课堂笔记/raw/2026-09-21-优化算法与深度学习课程-815808-纪要.md": "10429ebe114a3647fce506f4c119d73cf7d20725d84f3ab2d8751234753983f6",
+    "课堂笔记/raw/2026-09-21-优化算法与深度学习课程-815808-逐字稿.md": "054304e98829c3fb6bede172b9e1579ec9c79701443b7c2b8111e3405c1f1fa7",
+    "课堂笔记/raw/2026-09-21-随机优化算法讲解-857280-纪要.md": "91b8131917b93f33cd4c7c7115dd39bd735feb4f1612251ff65d78596071b07e",
+    "课堂笔记/raw/2026-09-21-随机优化算法讲解-857280-逐字稿.md": "1a832774ab908553d7747db7d87e9fae12ff1d707dbdd977ff27c0c8fbe3b35b",
+    "课堂笔记/raw/2026-09-23-深度学习模型训练与正则化讲座-449152-纪要.md": "4c536d8901895ab24cab2ab4d62d82ba09bce7600cb62c5d717842fd17c54401",
+    "课堂笔记/raw/2026-09-23-深度学习模型训练与正则化讲座-449152-逐字稿.md": "9e638ce443bcd267928ae0f81297a1cc266c3bb3edfb68b7af1b565927e2b6c8",
+    "课堂笔记/raw/2026-10-12-深度学习编程与分类模型宣讲-586304-纪要.md": "b9f60a924eca336d864308e0bded0fba8e7967538746412c7954fa82a32fac67",
+    "课堂笔记/raw/2026-10-12-深度学习编程与分类模型宣讲-586304-逐字稿.md": "8f85295e52218b3baf2b8308aa79a78224acacdf6d0d930f2bc8ad28aa8fd88d",
+    "课堂笔记/raw/2026-10-14-神经网络分类模型代码编写-252544-纪要.md": "9569d7d2f7d4a253e4b9e35e505842cedf8bba89737b4269f3f640b3e53b3079",
+    "课堂笔记/raw/2026-10-14-神经网络分类模型代码编写-252544-逐字稿.md": "da9583d72ed8230204c361826dd643c6058843248df1451131429885f88d626b",
+    "课堂笔记/raw/2026-10-19-神经网络与卷积网络课程宣讲-500096-纪要.md": "a5b200da78d03148883042dceb7ea1a3981ad39939dba16fb10c370867f4bce9",
+    "课堂笔记/raw/2026-10-19-神经网络与卷积网络课程宣讲-500096-逐字稿.md": "7a5f75654b9d27f1a1b000170cb0859335deda523d9523ae1f29e268b8d15960",
+    "作业/Homework02/Homework02.md": "1b5938bd9148d2ec23a89283e435f7cbcf861d42ade796ebb158fa8a9986da52",
+    "作业/Homework03/Homework03.md": "52bb4367b35167b001de92e080260aef4a0561d3c18730d109d8439cff51128b",
+    "PPT/2026深度学习第一次上机考试规则与命令表v1.1 (1)/2026深度学习第一次上机考试规则与命令表v1.1 (1).md": "5c9e68e7689867597def889cc1b77166429a35d2c7a233c4a0501d7d1131d485",
+    "PPT/Chapter1/Chapter1.md": "72e95085da1f50b3568f0dd8b1c48c856b1f63954e64af0e8fdb7f64157f50f3",
+    "PPT/Chapter2/Chapter2.md": "11f8d85fb3c17472965f9184c04278e09e89c947e8f43e8352f73ec2099155c9",
+    "PPT/Chapter3/Chapter3.md": "e6185d5219a6b299c864859b8e5c61d944864da4d2f5d13ec22841c745d55a84",
+    "PPT/Chapter3(1)/Chapter3(1).md": "bade1902d0a85b91fa6b3ef8b08a39fafed814350eb696f19728c02a9531e07b",
+    "PPT/Chapter4/Chapter4.md": "6c15ce011f1db0d144b5da00396e8b3b08b957a8f6b161a08612b266cd650976",
+    "PPT/Chapter5 (1)/Chapter5 (1).md": "c3d93b5d3a3d2e027e75b1c4d04bc0e6e47f0ce03bacb5f73512b618341aa18a",
+    "PPT/Chapter6/Chapter6.md": "2d7f5ce6320048bf5540efa0dfb8869ecd7ecd596d6de6237c0c7a25fc901318",
+    "PPT/Chapter7/Chapter7.md": "db3abf84d83b258edb910b9841f3e4fb6e492d40b7fb235c095cf1a3c08f52a5",
+    "PPT/deep_learning_handout (1)/deep_learning_handout (1).md": "4640e2b9d4d38445c24781018faaf54d321f43820c190489db10299ebf9dae6c"
+  },
+  "notebook_sha256": {
+    "01-深度学习导论/01-教学练习.ipynb": "311b53c45e2c93eb0d4fd90e1604f500b47bcdd80d58f227695c163be04be351",
+    "01-深度学习导论/02-测试练习A.ipynb": "79fb5b9ef67277cd4e0c835db6890484750c568a627b50806a14ef4cc9c25437",
+    "01-深度学习导论/03-测试练习B.ipynb": "7407694b4eeb5cc7faecee94cc9270c1aff71c960ff37cfb4fb4c74ac39278c3",
+    "01-深度学习导论/答案/01-教学练习.ipynb": "d588e08da9364876f9ef27d8ccd551641eba384ef004cc2fe8204524cdd949d7",
+    "01-深度学习导论/答案/02-测试练习A.ipynb": "b899cbe927954c0e3ccfdfd835d6be13e7e9ca961cc292568fa52209ab1b6dc5",
+    "01-深度学习导论/答案/03-测试练习B.ipynb": "72f6385db91c8f3818cd7d7c68446aa52ca9ecb80b86a64c2dbf40100674d607",
+    "02-机器学习基础/01-教学练习.ipynb": "242d3f6748faf99e333c4f40d43dbf06f9cc9f8ec6cd8e9fc7f8126a6c9ace33",
+    "02-机器学习基础/02-测试练习A.ipynb": "c3cd63eacc0947aca8e5595cc300f838e3693b3e6ca608db68d64a7bdc6931a7",
+    "02-机器学习基础/03-测试练习B.ipynb": "647152f7422af00aa1c8f2d3a044076f2f54f75d3496dc2186f57212fcaaa102",
+    "02-机器学习基础/答案/01-教学练习.ipynb": "4adc0fff4c336c635f2bda1d38b71c47544d4bba3237cf26f3eb7bd20b1bcb85",
+    "02-机器学习基础/答案/02-测试练习A.ipynb": "21c50c2729a279cd5663c796068e02538e5a42f91d98a743f51d909a4f421b62",
+    "02-机器学习基础/答案/03-测试练习B.ipynb": "56321fda22a326f7bc68d9b107e6d91715db5afde6bc8373d39e40ba08aaa82b",
+    "03-前馈神经网络/01-教学练习.ipynb": "9bc8c6f36bc11fa038f10f69f5bf369acf1622b1c2f8aa435a0d97778554c2bf",
+    "03-前馈神经网络/02-测试练习A.ipynb": "6b5c98eae4fb56d95b1b3b280653e4934a4b89efe30170143a60d24fa82d21f3",
+    "03-前馈神经网络/03-测试练习B.ipynb": "585159f05437c2d6fdfd2ba6964183f45212d213cd2fd5725592589eef6a809d",
+    "03-前馈神经网络/答案/01-教学练习.ipynb": "3930c4ca536880e8d9b0d36190e5c05cf282e0dacc20aa0c58c611ea2f9f477f",
+    "03-前馈神经网络/答案/02-测试练习A.ipynb": "5843853e63ca01450ba0e588ef65a7e75b8bb0494250c89aaba84c2df706ff60",
+    "03-前馈神经网络/答案/03-测试练习B.ipynb": "af2784783ed6973101bc0bd871dd222e5dbaf83701397e0586fe1c2f08ee887f",
+    "04-优化算法/01-教学练习.ipynb": "fadfae3b731b0df5fb32080358b6d77b91e5086ba758aeb00911b2c0b0eaee7c",
+    "04-优化算法/02-测试练习A.ipynb": "7006db7c8ccaf3210afc57c18ad44717bb602de633e32eaa0db06e76d941bcc0",
+    "04-优化算法/03-测试练习B.ipynb": "56fc67697332f13512cb52c525df68a6aa64faea407992b97e79687376fa4fc2",
+    "04-优化算法/答案/01-教学练习.ipynb": "00ec58853ece9867319606f98f3b4d5958cc063e2e993328d6e50ff2227e6e3f",
+    "04-优化算法/答案/02-测试练习A.ipynb": "3a2605c95a63d603dff5f1cbeb64ea9d4d193da4e38a042fa79d128c26f75c40",
+    "04-优化算法/答案/03-测试练习B.ipynb": "52fc4885b5ec265bf21dab22b77e58e99bdbcae7cdd8cb23c70acd91062304e6",
+    "05-回归模型/01-教学练习.ipynb": "9e5694e06406ede16296c793397c16206bdd95f2b6e76d1794e7aa485c44a24b",
+    "05-回归模型/02-测试练习A.ipynb": "e49e832deef3196018cc69ed82298503a1100bb3e87853cf846f8e1ca443875d",
+    "05-回归模型/03-测试练习B.ipynb": "5eb5f615ab29a7e3241b4c585249ea6e22b4e05084cd9f8b3d712b61749fc1f7",
+    "05-回归模型/答案/01-教学练习.ipynb": "dcf722f88c4973874e6a7da6f82fb3a8f11d36f374c62592e5db8d51ea708d4f",
+    "05-回归模型/答案/02-测试练习A.ipynb": "0e42f8c8121c16c02f04906be122cb24dab1d05e9319975a03bfad7f013bccec",
+    "05-回归模型/答案/03-测试练习B.ipynb": "182a60bdfaf8a77e1b41488277654dc3ffb80f1fd32ca1bdeb5f782476725f9a",
+    "06-分类模型/01-教学练习.ipynb": "e2e259ed0b3c75fc90399b3446bd0a7acc2d7f805c26f93977c4597f952dd596",
+    "06-分类模型/02-测试练习A.ipynb": "e2d6636ae249f4e25e56276a98c8646df1ed8a9de9386eed0557c3edaee644a0",
+    "06-分类模型/03-测试练习B.ipynb": "add36b450d367fee038115dfe39a0766145613b07130177932228cb9f895912f",
+    "06-分类模型/答案/01-教学练习.ipynb": "112b2612c9181d92cbdbd76a1a69dfc5f96a62398d6da12749d4f36034685937",
+    "06-分类模型/答案/02-测试练习A.ipynb": "db0beb0f03009e23c6c0839b3c3b3fa63667eefb10fc2efe68de3e91b642795c",
+    "06-分类模型/答案/03-测试练习B.ipynb": "42ef7dd18df1bd487d4af86f38546a01cb7065afa24819a2975563d8c1a6ddf9"
+  },
+  "review_fixes": [
+    "private names removed from test checks",
+    "check imports independent of student aliases",
+    "list table/history accepted where prompt does not require ndarray",
+    "teaching result contracts explicit and mirrored in answers",
+    "duplicate contracts removed"
+  ],
+  "limitations": [
+    "Homework03 original .data missing; synthetic replacement is not original data or MNIST1D",
+    "human 30-minute completion time not tested",
+    "no cross-platform bitwise reproducibility claim",
+    "public checks are representative, not exhaustive grading"
+  ]
+}

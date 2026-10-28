@@ -1,0 +1,18 @@
+---
+title: 标签：Slater条件
+type: 标签条目
+status: 使用中
+canonical_tag: Slater条件
+tag_aliases: []
+promote: true
+source_kind:
+- 重复概念主题
+source:
+- '[[03_Sources/Courses/归档/最优化方法/作业/22b-拉格朗日对偶/习题22b.2]]'
+- '[[03_Sources/Reviews/归档/最优化方法/知识点解析梳理/22b-拉格朗日对偶-知识梳理]]'
+- '[[00_Inbox/待核实来源/归档/最优化方法/答疑/22b-拉格朗日对偶/22b-Lagrange强对偶vsLP]]'
+---
+
+# Slater条件
+
+标准名保存在 canonical_tag，同义名称保存在 tag_aliases。通过标签数据库编辑记录，并复制动态生成的内置搜索检索式。

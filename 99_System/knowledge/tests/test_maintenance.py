@@ -19,7 +19,7 @@ class MaintenanceTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.write("Notes/Source.md", '---\ntype: concept\ntags: [用户标签]\ntopics: ["[[Target]]"]\n---\n[[Target]] [[Missing]]\n')
-        self.write("Target.md", "# Target\n")
+        self.write("Target.md", "---\nrole: moc\n---\n# Target\n")
         self.write("99_System/knowledge/templates/concept.md", '---\ntype: concept\n---\n')
         self.write("Project/.git", "marker")
         self.write("Project/private.md", '---\ntype: concept\n---\n')

@@ -9,6 +9,10 @@ topics:
   - frontmatter
 ---
 
+> [!important] 2026-10-28 v2 当前规则
+> v2 新内容属性以 [[docs/KNOWLEDGE_ARCHITECTURE]] 为准：type:moc，不用 role:moc；topics 是 MOC 链接；title 省略；tags 复用 [[99_System/knowledge/v2/generated/标签数据库.base|标准词表]]，不按主题自动补标。图片在 04_Assets/Images；旧根目录附件链接保持兼容直到显式迁移。以下公式、callout、表格、内链格式要求继续适用，旧元数据示例属于历史参考。
+
+
 # Obsidian 写作规范
 
 > [!important] 属性规则适用范围

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:advisory:inference:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "request_id",
+    "stage",
+    "model_input",
+    "retrieval"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": 1
+    },
+    "request_id": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "stage": {
+      "enum": [
+        "classify",
+        "relations"
+      ]
+    },
+    "model_input": {
+      "$ref": "urn:knowledge:advisory:request:1#/properties/model_input"
+    },
+    "retrieval": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "query",
+          "state",
+          "matching_count",
+          "visible_candidate_ids",
+          "hidden_count",
+          "truncated"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "state": {
+            "enum": [
+              "unique",
+              "multiple",
+              "not_found"
+            ]
+          },
+          "matching_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "visible_candidate_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20
+          },
+          "hidden_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "truncated": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

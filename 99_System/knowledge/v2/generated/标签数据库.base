@@ -1,0 +1,11 @@
+filters:
+  and:
+  - file.inFolder("99_System")
+  - canonical_tag != null
+views:
+- type: table
+  name: 标准标签与同义名称
+  order:
+  - file.name
+  - canonical_tag
+  - tag_aliases

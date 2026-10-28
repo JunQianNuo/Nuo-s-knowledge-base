@@ -1,0 +1,345 @@
+{
+  "manifest_version": 1,
+  "dataset_kind": "real_candidates",
+  "samples": [
+    {
+      "sample_id": "S01",
+      "path": "概念/可测函数.md",
+      "sha256": "90cc720e6e68ead5e6c1c4771152faee0adc9edfbbb71d45047aefa765d755a6",
+      "stratum": "C",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S02",
+      "path": "概念/概率空间.md",
+      "sha256": "5e38b61e48834ff888fc5a163a0ad32f9a4d6256245bb025ff5fb7b02746690d",
+      "stratum": "C",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S03",
+      "path": "概念/条件数.md",
+      "sha256": "b7a61471a49ce2112bdf1f9a0fe6471ba390ce2b30d2761afcee18c64c382b87",
+      "stratum": "C",
+      "group": "numerical_analysis_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S04",
+      "path": "概念/波函数.md",
+      "sha256": "0c84c62aa43b58721add21fae93cf7518fc9b09964266159e1d933e8d23c7a70",
+      "stratum": "C",
+      "group": "physics",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S05",
+      "path": "概念/凸集.md",
+      "sha256": "8601efa0829dcd6df7880fbc96caf25f89ce86f48e122949aaee4eebc38180db",
+      "stratum": "C",
+      "group": "optimization_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S06",
+      "path": "知识点/协方差.md",
+      "sha256": "feb7f76d470387f358c52e092fcbdc928cb5a0ca6852d9f4a70759446da58b0c",
+      "stratum": "C",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S07",
+      "path": "知识点/Lebesgue控制收敛定理.md",
+      "sha256": "af76d2403ed0f727fc8b92647cfaed0c6909350a1ba88cadd210fe929ba196f8",
+      "stratum": "P",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S08",
+      "path": "知识点/Fatou引理.md",
+      "sha256": "d8664f8285c8ca76f953dd94f62addd53c4155975411f6b8cfa7b0fe6055cd2a",
+      "stratum": "P",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S09",
+      "path": "知识点/Levi单调收敛定理.md",
+      "sha256": "350924cbe2420bc67646d7f4c3c0e1ca1620bc012c3f6c8dd7d0f0d17e3763b8",
+      "stratum": "P",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S10",
+      "path": "知识点/Gershgorin圆盘定理.md",
+      "sha256": "cdc98706eef415fce3d79f082a1dcead74b1fa9190948f7e04a77e6ddecc9488",
+      "stratum": "P",
+      "group": "numerical_analysis_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S11",
+      "path": "知识点/全概率公式.md",
+      "sha256": "30f9cea1efd40421c61b5d82c07fc721a9bf63f18fcfdc71e239c43797f56d44",
+      "stratum": "P",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S12",
+      "path": "知识点/对偶性定理.md",
+      "sha256": "3d25caf89d00a4fb3cacef815e2fcecdf37853cdb8ca93c7dfe19c2d588fc41f",
+      "stratum": "P",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S13",
+      "path": "方法/DCT控制函数构造法.md",
+      "sha256": "fce359f7ff036b0c625979f5b6f10369d6763511f357971d22684babb9771b12",
+      "stratum": "M",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S14",
+      "path": "方法/LU分解(Doolittle).md",
+      "sha256": "fed7719cda99add40acf2dea81c4be6a377a8eb90e522c710fa56289a4a9fecb",
+      "stratum": "M",
+      "group": "numerical_analysis_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S15",
+      "path": "方法/全期望公式法.md",
+      "sha256": "0cc0885d08833c07e6a12e0fa6b0e3ad09c53274d39e062b8cef665d5951a8fc",
+      "stratum": "M",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S16",
+      "path": "方法/回溯线搜索.md",
+      "sha256": "e58450f4ed8619bbbbc2d31b825b08ce3e756beb439310afad120cf13a23621c",
+      "stratum": "M",
+      "group": "optimization_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S17",
+      "path": "方法/条件数误差分析流程.md",
+      "sha256": "8eb1bdc891075c8401d7ded32ea4582ff6fd1d246e92211544a595eda2f87b6f",
+      "stratum": "M",
+      "group": "numerical_analysis_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S18",
+      "path": "方法/变量变换法（雅可比）.md",
+      "sha256": "e21ca741e0afaf94cda0fcd211f5c674bb162619cb5de8f09f7d1426eb95e2a3",
+      "stratum": "M",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S19",
+      "path": "课程/归档/实变函数/知识点解析梳理/03-可测函数-知识梳理.md",
+      "sha256": "27fbc2936333117ac679e94344fff1cc36b1af82e90ab3d9077b538c6c144aa5",
+      "stratum": "X",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S20",
+      "path": "课程/归档/实变函数/知识点解析梳理/04-Lebesgue积分-知识梳理.md",
+      "sha256": "e5a31dfde0b01f853e9b5aa276f5899ee6d2b706a1a4a3816becb4dc4114df00",
+      "stratum": "X",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S21",
+      "path": "课程/概率论/知识点解析梳理/01c-概率模型与公理化结构-知识梳理.md",
+      "sha256": "aaa52eb19f608a657057ae3e7c3ca87e7d666b92d5bd273a050093b185e04fc9",
+      "stratum": "X",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S22",
+      "path": "课程/概率论/知识点解析梳理/03d-随机变量函数的分布-知识梳理.md",
+      "sha256": "54b8ea78ce527829c05a69b8dc1b713064ebee8ea1687507a54c887497dbb95b",
+      "stratum": "X",
+      "group": "probability_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S23",
+      "path": "课程/归档/数值分析/知识点解析梳理/09-数值积分与数值微分-知识梳理.md",
+      "sha256": "e71e9ba39fd3a7f69bd1d6d4ef420f15b433f99a1399a4ac84c918428b2285a7",
+      "stratum": "X",
+      "group": "numerical_analysis_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S24",
+      "path": "课程/归档/最优化方法/知识点解析梳理/06-最优性条件-知识梳理.md",
+      "sha256": "b53475138993912a51c069a86abcde21fd2065d8603b52aff8f254fc7b2144b4",
+      "stratum": "X",
+      "group": "optimization_source_family",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S25",
+      "path": "总览/收敛性与积分理论-MOC.md",
+      "sha256": "528e058e6d5e331b1d31a20dcf53b5c9c487ddbeb6314b003c81900a0b2d6051",
+      "stratum": "N",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S26",
+      "path": "课程/归档/实变函数/习题库/主题索引-收敛性与积分理论.md",
+      "sha256": "0c09c173fbad029ec775886e181409d943f5fac20ae723089d0f61014f4686d1",
+      "stratum": "N",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S27",
+      "path": "课程/归档/实变函数/习题库/04-Lebesgue积分/习题4.16-控制收敛定理-习题.md",
+      "sha256": "0c539df381f93293a66bb054eb16f26d6631e623e2200975cc72d82a1f37c0cf",
+      "stratum": "N",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": true
+    },
+    {
+      "sample_id": "S28",
+      "path": "课程/数学物理方程/作业/10月23日作业.md",
+      "sha256": "8cff847c8eea09752a6714a38b888b69f0a16ceb28fd972e587c0af6e8a1c4dd",
+      "stratum": "N",
+      "group": "pde_assignment",
+      "partition": "holdout",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S29",
+      "path": "课程/归档/实变函数/考试纲要.md",
+      "sha256": "fca18cfc65bca55ebd9a8a2bad32d1535f6d2fda4a4dede67cf960a8660947ac",
+      "stratum": "N",
+      "group": "real_analysis_source_family",
+      "partition": "development",
+      "phase3_familiar": false
+    },
+    {
+      "sample_id": "S30",
+      "path": "总览/每周回顾与任务.md",
+      "sha256": "230949547811de318bfd6278bf94221efb1423d9ba2800c370d28baf6bd3fd58",
+      "stratum": "N",
+      "group": "planning_navigation",
+      "partition": "holdout",
+      "phase3_familiar": false
+    }
+  ],
+  "scopes": {
+    "source": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24",
+      "S25",
+      "S26",
+      "S27",
+      "S28",
+      "S29",
+      "S30"
+    ],
+    "retrieval": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24",
+      "S25",
+      "S26",
+      "S27",
+      "S28",
+      "S29",
+      "S30"
+    ],
+    "model_visible": []
+  },
+  "model_content_authorization": "pending_phase4a2",
+  "real_model_tests_authorized": false
+}

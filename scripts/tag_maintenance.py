@@ -100,6 +100,8 @@ class Registry:
         entries = []
         for path in sorted(directory.glob("标签-*.md")):
             fm = metadata(path.read_bytes())
+            if "canonical_tag" not in fm and "legacy_canonical_tag" in fm and "synonym_of" in fm:
+                continue
             entries.append(Entry(
                 fm["canonical_tag"], tuple(values(fm.get("tag_aliases"))),
                 fm.get("promote", True), tuple(values(fm.get("ambiguous_aliases"))),
@@ -238,7 +240,7 @@ def _protected_path(root: Path, path: Path) -> bool:
 def apply_changes(root: Path, changes: list[Change], backup: Path, *, registry: Registry | None = None) -> Path:
     root = root.resolve()
     if registry is None:
-        registry = Registry.load(root / "总览/标签库/条目")
+        registry = Registry.load(root / ("99_System/knowledge/tags/条目" if (root / "99_System/knowledge/tags/条目").is_dir() else "总览/标签库/条目"))
 
     def verify(change):
         if _protected_path(root, change.path):
@@ -290,7 +292,7 @@ def main():
     parser.add_argument("--backup-dir", type=Path)
     args = parser.parse_args()
     root = args.root.resolve()
-    registry = Registry.load(root / "总览/标签库/条目")
+    registry = Registry.load(root / ("99_System/knowledge/tags/条目" if (root / "99_System/knowledge/tags/条目").is_dir() else "总览/标签库/条目"))
     skipped = []
     changes, errors = plan_vault(root, registry, skipped=skipped)
     result = {"mode": "apply" if args.apply else "audit", "registry_entries": len(registry.entries),

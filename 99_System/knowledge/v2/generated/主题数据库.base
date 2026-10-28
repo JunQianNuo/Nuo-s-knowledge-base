@@ -1,0 +1,17 @@
+filters:
+  and:
+  - file.inFolder("02_Maps")
+  - '!/(^|\/)(assets|pdf课件|ppt课件|raw|resources|原始录制|原始转写|课件|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+  - file.ext == "md"
+  - schema_version == 2
+  - or:
+    - type == "moc"
+views:
+- type: table
+  name: 学科与主题
+  order:
+  - file.name
+  - topics
+  - aliases
+  - tags
+  - time

@@ -1,0 +1,27 @@
+filters:
+  and:
+  - file.inFolder("03_Sources")
+  - '!/(^|\/)(assets|pdf课件|ppt课件|raw|resources|原始录制|原始转写|课件|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+  - file.ext == "md"
+  - or:
+    - type == "idea"
+    - and:
+      - schema_version == 2
+      - or:
+        - type == "lecture"
+        - type == "review"
+        - type == "homework"
+        - type == "book"
+        - type == "paper"
+        - type == "web"
+views:
+- type: table
+  name: 来源提炼状态
+  order:
+  - file.name
+  - type
+  - status
+  - polish_status
+  - subject
+  - source
+  - time

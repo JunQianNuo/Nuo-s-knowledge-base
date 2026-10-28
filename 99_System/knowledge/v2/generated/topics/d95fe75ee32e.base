@@ -1,0 +1,22 @@
+filters:
+  and:
+  - file.inFolder("01_Knowledge")
+  - '!/(^|\/)(assets|pdf课件|ppt课件|raw|resources|原始录制|原始转写|课件|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+  - file.ext == "md"
+  - schema_version == 2
+  - or:
+    - type == "concept"
+    - type == "proposition"
+    - type == "method"
+  - or:
+    - topics.contains(link("02_Maps/MOC-热学与量子"))
+    - topics.contains(link("02_Maps/MOC-物理"))
+views:
+- type: table
+  name: MOC-物理：递归原子知识
+  order:
+  - file.name
+  - type
+  - topics
+  - source
+  - tags

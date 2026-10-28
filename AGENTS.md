@@ -6,6 +6,24 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 这是一个 **Obsidian 中文知识库**，使用 Codex Agent（claudian 插件）进行知识管理。主要语言为中文，数学内容使用 LaTeX 标记。
 
+## v2 当前执行规则（2026-10-28 用户已批准）
+
+实际数据根为 `D:/知识库`；Codex worktree 仅用于代码开发，处理课程或知识内容时显式使用真实数据根。验收见 [[docs/KNOWLEDGE_ACCEPTANCE_V2_2026-10-28]]。
+
+本节覆盖下文旧目录与 v1 示例。依据 [[docs/KNOWLEDGE_ARCHITECTURE]] 和已批准设计，使用 `99_System/knowledge/v2/` 的模板、Schema 和 `knowledge.py v2`。
+
+- 原子 concept/proposition/method 单一职责、单值 type，平铺 `01_Knowledge`；必填 time、非空 topics 和真实 Sources 笔记 source，不填 title/subject。
+- MOC 为 type:moc，放 `02_Maps`，topics 指上层主题，可多父、拒绝环；上层递归汇集原子并去重。主题库自动读取 MOC。
+- 来源类型 lecture/review/homework/book/paper/web；idea 属性由用户手填。习题归 homework，不设知识梳理/答疑独立类型；课件和原始转写是资料。
+- 课程目录在 `03_Sources/Courses`，复习在 `03_Sources/Reviews`；subject 是课程名列表。课程 PDF/PPT 跟课程走，配套图片放 `04_Assets/Images`。
+- time 为创建时间；lecture_date/due_date 为上课/截止日期。status 只用 not done/done 表示原子归档；polish_status 独立管理录音笔记润色。
+- 用户发出整理指令后，AI 在指定 Sources 范围自主提炼、检索复用、建立主题与关系、登记标签并应用哈希绑定事务。不增自动提炼调度。
+- 无需提炼的内容必须先经人类明确审查，Agent 不得自行调用批准入口或伪造审批记录；待审则保持 not done。
+- tags 可灵活，但先查 `99_System/knowledge/tags` 标准名和同义词；允许自主登记真实新标签，不从 MOC 或文件名机械补标。
+- 遵守 dry-run、逐文件 diff、SHA-256、Vault 外备份和恢复要求；保留并发编辑与独立工程边界。来源不足或类型待核实进入 Inbox，不伪造数据。
+- 本轮不重组 AI/语言/考研/每日疑惑/闪卡/数学建模；仅定点修复移动影响的引用。旧清理规则不触发本轮自动删除。
+- 不宣称未定位的旧 Formatter 已集成；v2 新属性渲染保留正文。
+
 ## 知识体系规则与维护边界
 
 知识模型与 v1 属性规则统一以 [[docs/KNOWLEDGE_ARCHITECTURE]] 为准，机器约束见 `99_System/knowledge/registry.yaml`；与本文件下述旧约定冲突时，新建或明确按 v1 维护的笔记采用新规，历史笔记保持兼容，不自动升级。

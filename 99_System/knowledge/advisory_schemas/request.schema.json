@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:advisory:request:1",
+  "type": "object",
+  "properties": {
+    "protocol_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "stage": {
+      "enum": [
+        "classify",
+        "relations"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "audit": {
+      "type": "object"
+    },
+    "model_input": {
+      "type": "object",
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:knowledge:advisory:request:1#/$defs/document"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:knowledge:advisory:request:1#/$defs/candidate"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "requested_actions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "classification",
+              "relation",
+              "split_review",
+              "new_entity_review",
+              "abstain"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 5
+        },
+        "trust_notice": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        }
+      },
+      "required": [
+        "documents",
+        "candidates",
+        "requested_actions",
+        "trust_notice"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "protocol_version",
+    "stage",
+    "request_id",
+    "manifest_sha256",
+    "audit",
+    "model_input"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "span_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        }
+      },
+      "required": [
+        "document_id",
+        "span_id",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "span": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "start_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "start_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_column": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "start_line",
+        "end_line",
+        "start_column",
+        "end_column"
+      ],
+      "additionalProperties": false
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "coverage": {
+          "enum": [
+            "full",
+            "partial"
+          ]
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:knowledge:advisory:request:1#/$defs/span"
+          },
+          "minItems": 0,
+          "maxItems": 20000
+        }
+      },
+      "required": [
+        "id",
+        "sha256",
+        "coverage",
+        "spans"
+      ],
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "coverage": {
+          "enum": [
+            "full",
+            "partial"
+          ]
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:knowledge:advisory:request:1#/$defs/span"
+          },
+          "minItems": 0,
+          "maxItems": 20000
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "eligibility": {
+          "enum": [
+            "validated_v1_atomic",
+            "legacy_candidate",
+            "navigation",
+            "reference_only"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "sha256",
+        "coverage",
+        "spans",
+        "path",
+        "title",
+        "eligibility"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

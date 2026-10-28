@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "concept",
+        "proposition",
+        "method",
+        "moc",
+        "lecture",
+        "review",
+        "homework",
+        "book",
+        "paper",
+        "web",
+        "idea"
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "not": {
+          "properties": {
+            "type": {
+              "enum": [
+                "idea"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "schema_version",
+          "time"
+        ],
+        "properties": {
+          "time": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "source": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "uses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "subject": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          },
+          "status": {
+            "enum": [
+              "not done",
+              "done"
+            ]
+          },
+          "polish_status": {
+            "enum": [
+              "not done",
+              "done"
+            ]
+          },
+          "source_title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "year": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "edition": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "isbn": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "venue": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "doi": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "site": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "lecture_date": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "due_date": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "concept",
+              "proposition",
+              "method"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "topics",
+          "source"
+        ],
+        "properties": {
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "moc"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "topics"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "lecture",
+              "review",
+              "homework",
+              "book",
+              "paper",
+              "web"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "source",
+          "status"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "lecture",
+              "homework"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "subject"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "book",
+              "paper",
+              "web"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "source_title"
+        ]
+      }
+    }
+  ]
+}

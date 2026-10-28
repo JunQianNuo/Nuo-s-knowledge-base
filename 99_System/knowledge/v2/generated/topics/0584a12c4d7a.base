@@ -1,0 +1,27 @@
+filters:
+  and:
+  - file.inFolder("01_Knowledge")
+  - '!/(^|\/)(assets|pdf课件|ppt课件|raw|resources|原始录制|原始转写|课件|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+  - file.ext == "md"
+  - schema_version == 2
+  - or:
+    - type == "concept"
+    - type == "proposition"
+    - type == "method"
+  - or:
+    - topics.contains(link("02_Maps/MOC-收敛性与积分理论"))
+    - topics.contains(link("02_Maps/MOC-数值计算"))
+    - topics.contains(link("02_Maps/MOC-数学"))
+    - topics.contains(link("02_Maps/MOC-数理统计"))
+    - topics.contains(link("02_Maps/MOC-最优化"))
+    - topics.contains(link("02_Maps/MOC-概率与随机结构"))
+    - topics.contains(link("02_Maps/MOC-集合与空间"))
+views:
+- type: table
+  name: MOC-数学：递归原子知识
+  order:
+  - file.name
+  - type
+  - topics
+  - source
+  - tags

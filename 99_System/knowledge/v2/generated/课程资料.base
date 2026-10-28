@@ -1,0 +1,247 @@
+filters:
+  or:
+  - and:
+    - file.inFolder("03_Sources/Courses")
+    - '!/(^|\/)(assets|raw|resources|原始录制|原始转写|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+  - and:
+    - and:
+      - file.inFolder("03_Sources")
+      - '!/(^|\/)(assets|pdf课件|ppt课件|raw|resources|原始录制|原始转写|课件|转换资料|附件|\.[^\/]+)(\/|$)/i.matches(file.path)'
+      - file.ext == "md"
+      - or:
+        - type == "idea"
+        - and:
+          - schema_version == 2
+          - or:
+            - type == "lecture"
+            - type == "review"
+            - type == "homework"
+            - type == "book"
+            - type == "paper"
+            - type == "web"
+    - subject != null
+views:
+- type: table
+  name: 全部课程资料
+  order:
+  - file.name
+  - file.ext
+  - type
+  - subject
+  - status
+  - polish_status
+- type: table
+  name: 专业写作基础
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/专业写作基础")
+    - subject.contains("专业写作基础")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 习近平新时代中国特色社会主义思想概论
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/习近平新时代中国特色社会主义思想概论")
+    - subject.contains("习近平新时代中国特色社会主义思想概论")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 大学物理
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/大学物理")
+    - file.inFolder("03_Sources/Courses/归档/大学物理")
+    - subject.contains("大学物理")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 实变函数
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/实变函数")
+    - file.inFolder("03_Sources/Courses/归档/实变函数")
+    - subject.contains("实变函数")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 并行与分布式计算
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/并行与分布式计算")
+    - subject.contains("并行与分布式计算")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 控制理论基础
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/归档/控制理论基础")
+    - file.inFolder("03_Sources/Courses/控制理论基础")
+    - subject.contains("控制理论基础")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 控制理论基础 1
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/归档/控制理论基础 1")
+    - file.inFolder("03_Sources/Courses/控制理论基础 1")
+    - subject.contains("控制理论基础 1")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 数值分析
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/归档/数值分析")
+    - file.inFolder("03_Sources/Courses/数值分析")
+    - subject.contains("数值分析")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 数学物理方程
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/数学物理方程")
+    - subject.contains("数学物理方程")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 数理统计
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/数理统计")
+    - subject.contains("数理统计")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 最优化方法
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/归档/最优化方法")
+    - file.inFolder("03_Sources/Courses/最优化方法")
+    - subject.contains("最优化方法")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 概率论
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/概率论")
+    - subject.contains("概率论")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 泛函分析
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/泛函分析")
+    - subject.contains("泛函分析")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 深度学习
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/深度学习")
+    - subject.contains("深度学习")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 英语
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/英语")
+    - subject.contains("英语")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
+  name: 马克思主义原理
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/归档/马克思主义原理")
+    - file.inFolder("03_Sources/Courses/马克思主义原理")
+    - subject.contains("马克思主义原理")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject

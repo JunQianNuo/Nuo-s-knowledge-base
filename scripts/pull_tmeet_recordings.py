@@ -6,7 +6,7 @@
 
 从腾讯会议拉取录制（课堂/讲座录音）的【逐字稿】与【智能纪要】，
 按课表（vault 根目录 课表.md）匹配课程，计算学期第几节，
-归档到 课程/<课程名>/课堂笔记/raw/ ，并在 课堂笔记/ 下生成"待润色"占位笔记。
+归档到 03_Sources/Courses/<课程名>/课堂笔记/raw/ ，并生成 v2 待润色课堂笔记。
 
 润色环节由 Agent（Claude/Codex）手动触发：读取 raw 逐字稿，生成课堂内容梳理。
 
@@ -18,17 +18,20 @@
   python scripts/pull_tmeet_recordings.py --force         # 已存在的记录也重新下载
   python scripts/pull_tmeet_recordings.py --no-archive-unmatched  # 未匹配课表的会议跳过下载
 
-依赖: tmeet CLI（npm i -g @tencentcloud/tmeet）已登录（tmeet auth status 确认）。
+依赖: PyYAML，以及已登录的 tmeet CLI（npm i -g @tencentcloud/tmeet）。
 """
 
 import argparse
 import datetime as dt
 import json
 import os
+from pathlib import Path
 import re
 import shutil
 import subprocess
 import sys
+
+import yaml
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -44,16 +47,18 @@ VAULT = default_vault()
 TIMETABLE_PATH = os.path.join(VAULT, '课表.md')
 NOTEBOOK_DIR = '课堂笔记'   # 每门课程下的课堂笔记目录
 RAW_DIR = 'raw'            # 原始逐字稿/纪要存档子目录
-UNMATCHED_DIR = os.path.join(VAULT, '未命名', '课堂录音')  # 未匹配课表的会议归档处
+COURSES_DIR = os.path.join(VAULT, '03_Sources', 'Courses')
+UNMATCHED_DIR = os.path.join(VAULT, '00_Inbox', '课堂录音')  # 未匹配课表的会议归档处
 LOG_PATH = os.path.join(VAULT, 'tmp', 'tmeet_sync.log')   # 运行日志
 SCHED_TASK_NAME = 'TmeetRecordingSync'                    # Windows 计划任务名
 
 def set_vault(path):
     """--vault 覆盖知识库根目录（连带更新依赖路径）。"""
-    global VAULT, TIMETABLE_PATH, UNMATCHED_DIR, LOG_PATH
+    global VAULT, TIMETABLE_PATH, COURSES_DIR, UNMATCHED_DIR, LOG_PATH
     VAULT = os.path.abspath(path)
     TIMETABLE_PATH = os.path.join(VAULT, '课表.md')
-    UNMATCHED_DIR = os.path.join(VAULT, '未命名', '课堂录音')
+    COURSES_DIR = os.path.join(VAULT, '03_Sources', 'Courses')
+    UNMATCHED_DIR = os.path.join(VAULT, '00_Inbox', '课堂录音')
     LOG_PATH = os.path.join(VAULT, 'tmp', 'tmeet_sync.log')
 
 
@@ -213,9 +218,18 @@ def load_timetable(path=None):
         if not item:
             continue
         try:
-            cancelled.add(dt.date.fromisoformat(item).isoformat())
+            if '~' in item or '～' in item:
+                a, b = re.split(r'[~～]', item)
+                d0 = dt.date.fromisoformat(a.strip())
+                d1 = dt.date.fromisoformat(b.strip())
+                d = d0
+                while d <= d1:
+                    cancelled.add(d.isoformat())
+                    d += dt.timedelta(days=1)
+            else:
+                cancelled.add(dt.date.fromisoformat(item).isoformat())
         except ValueError:
-            print(f'  [警告] 无法解析停课配置: {item!r}（应形如 2026-10-16）')
+            print(f'  [警告] 无法解析停课配置: {item!r}（应形如 2026-10-16 或 2026-10-01~2026-10-07）')
     return {'semester': meta.get('学期', ''), 'semester_start': semester_start,
             'courses': courses, 'excluded_subjects': excluded, 'makeup': makeup,
             'cancelled': cancelled}
@@ -241,21 +255,37 @@ def in_weeks(week, weeks):
 
 
 def class_no_for(course_row, date, timetable):
-    """学期第几节 = 开学以来（含当日）该课程实际排课次数（支持一周多次）。"""
+    """学期第几节 = 开学以来（含当日）该课程实际排课次数（支持一周多次）。
+    停课日不计；调休日（如 10/10 按周三）替代原日期的课次。"""
     semester_start = timetable['semester_start']
     if semester_start is None:
         return None
     rows = [c for c in timetable['courses'] if c['course'] == course_row['course']]
+    cancelled = timetable.get('cancelled') or set()
+    makeup = timetable.get('makeup') or {}
     count = 0
     w_now = week_no(date, semester_start)
     for r in rows:
         for k in range(1, w_now + 1):
             if not in_weeks(k, r['weeks']):
                 continue
-            # 第 k 周中该行星期对应的具体日期
+            # 第 k 周中该行星期对应的原排课日期
             d = semester_start + dt.timedelta(
                 days=(k - 1) * 7 + (r['weekday'] - semester_start.weekday()) % 7)
-            if d <= date and d.isoformat() not in (timetable.get('cancelled') or set()):
+            # 查找本周末列是否有调休日补该 weekday 的课（替代原课次）
+            makeup_d = None
+            for m_str, m_wd in makeup.items():
+                try:
+                    m = dt.date.fromisoformat(m_str)
+                except ValueError:
+                    continue
+                if m_wd == r['weekday'] and week_no(m, semester_start) == k:
+                    makeup_d = m
+                    break
+            if makeup_d is not None:
+                if makeup_d <= date:
+                    count += 1
+            elif d <= date and d.isoformat() not in cancelled:
                 count += 1
     return count
 
@@ -396,19 +426,31 @@ def ensure_dir(p):
     os.makedirs(p, exist_ok=True)
 
 
-def cleanup_unmatched_copy(date_str, subject, rf_suffix):
-    """素材已归位课程目录后，清理"未匹配"区里同一录制的旧副本。"""
-    removed = []
-    for kind in ('逐字稿', '纪要'):
-        stale = raw_md_path(UNMATCHED_DIR, date_str, subject, kind, rf_suffix)
-        if os.path.exists(stale):
-            try:
-                os.remove(stale)
-                removed.append(os.path.basename(stale))
-            except OSError:
-                pass
-    if removed:
-        print(f'    [清理] 已归位课程，删除未匹配区旧副本：{"、".join(removed)}')
+def course_note_dir(course):
+    """复用唯一的现有课程目录，保留归档层级；有歧义时拒绝自动归并。"""
+    relative = course.replace('\\', os.sep).replace('/', os.sep)
+    direct = os.path.abspath(os.path.join(COURSES_DIR, relative))
+    if os.path.commonpath([direct, COURSES_DIR]) != COURSES_DIR:
+        raise ValueError(f'课程路径越界：{course}')
+    if os.path.isdir(direct) or os.sep in relative:
+        return os.path.join(direct, NOTEBOOK_DIR)
+    candidates = []
+    for parent, names, _ in os.walk(COURSES_DIR):
+        names[:] = [name for name in names
+                    if name not in ('.git', RAW_DIR, NOTEBOOK_DIR)
+                    and not os.path.islink(os.path.join(parent, name))
+                    and not os.path.isjunction(os.path.join(parent, name))
+                    and not os.path.exists(os.path.join(parent, name, '.git'))]
+        if relative in names:
+            candidates.append(os.path.join(parent, relative))
+    if len(candidates) > 1:
+        raise ValueError(f'课程目录存在歧义，请在课表中填写完整层级：{course}')
+    return os.path.join(candidates[0] if candidates else direct, NOTEBOOK_DIR)
+
+
+def cleanup_unmatched_copy(date_str, subject, rf_suffix, note_dir=None):
+    """保留旧调用入口；v2 采集不自动删除 Inbox 原始素材及副本。"""
+    return
 
 
 PLACEHOLDER_NAME = re.compile(r'^(\d{4}-\d{2}-\d{2})-第(\d+)节-(.+)\.md$')
@@ -430,58 +472,154 @@ def _list_placeholders(note_dir):
     return out
 
 
+def _frontmatter(text):
+    """只读取属性区，正文中的同名字段不参与管理状态判断。"""
+    match = re.match(r'\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|$)', text, re.DOTALL)
+    if not match:
+        return {}, None
+    node = yaml.compose(match.group(1), Loader=yaml.SafeLoader)
+    if isinstance(node, yaml.MappingNode):
+        keys = [key.value for key, _ in node.value if isinstance(key, yaml.ScalarNode)]
+        if len(keys) != len(set(keys)):
+            raise ValueError('课堂笔记 frontmatter 含重复属性，拒绝自动修改')
+    data = yaml.safe_load(match.group(1)) or {}
+    if not isinstance(data, dict):
+        raise ValueError('课堂笔记 frontmatter 必须为映射')
+    return data, match
+
+
 def _read_status(path):
+    """README/合并仅消费润色状态；历史笔记继续读取旧 status。"""
     try:
-        text = open(path, encoding='utf-8').read()
-    except OSError:
+        with open(path, encoding='utf-8') as f:
+            data, _ = _frontmatter(f.read())
+    except (OSError, ValueError, yaml.YAMLError):
         return ''
-    m = re.search(r'^status:\s*(.+?)\s*$', text, re.MULTILINE)
-    return m.group(1).strip() if m else ''
+    if 'polish_status' in data or data.get('schema_version') == 2:
+        status = data.get('polish_status', 'not done')
+        return {'not done': '待润色', 'done': '已润色'}.get(status, str(status))
+    return str(data.get('status') or '')
+
+
+def _patch_yaml_field(header, key, value):
+    """按 YAML 节点定位一个属性，兼容 flow/unindented 列表及 CRLF。"""
+    newline = '\r\n' if '\r\n' in header else '\n'
+    if isinstance(value, list):
+        block = key + ':' + newline + newline.join(
+            '  - ' + json.dumps(item, ensure_ascii=False) for item in value)
+    else:
+        block = key + ': ' + json.dumps(value, ensure_ascii=False)
+    node = yaml.compose(header, Loader=yaml.SafeLoader)
+    if node:
+        for key_node, value_node in node.value:
+            if key_node.value == key:
+                end = value_node.end_mark.index
+                if isinstance(value_node, yaml.SequenceNode) and not value_node.flow_style and value_node.value:
+                    end = value_node.value[-1].end_mark.index
+                tail = header[end:]
+                if tail and not tail.startswith(('\n', '\r')):
+                    block += newline
+                return header[:key_node.start_mark.index] + block + tail
+    return header + newline + block
+
+
+def _append_metadata(text, fields, reopen=False):
+    """仅替换指定的列表属性；保留其他属性文本及正文，不升级历史笔记。"""
+    data, match = _frontmatter(text)
+    if match is None:
+        raise ValueError('课堂笔记缺少 frontmatter，不能自动追加来源')
+    header = match.group(1)
+    for key, additions in fields.items():
+        if not additions:
+            continue
+        previous = data.get(key)
+        values = list(previous) if isinstance(previous, list) else ([previous] if previous is not None else [])
+        for value in additions:
+            if value not in values:
+                values.append(value)
+        if values == previous:
+            continue
+        header = _patch_yaml_field(header, key, values)
+    if reopen and data.get('schema_version') == 2:
+        for key in ('status', 'polish_status'):
+            header = _patch_yaml_field(header, key, 'not done')
+    return text[:match.start(1)] + header + text[match.end(1):]
+
+
+def _actual_materials(note_dir, transcript_rel, minutes_rel):
+    """来源使用 Vault 路径，且只收录已落盘的 raw 素材。"""
+    materials = []
+    for label, relative in (('原始逐字稿', transcript_rel), ('智能纪要', minutes_rel)):
+        if not relative:
+            continue
+        path = os.path.abspath(os.path.join(note_dir, relative))
+        if os.path.isfile(path) and os.path.commonpath([path, VAULT]) == VAULT:
+            link = '[[' + os.path.relpath(path, VAULT).replace(os.sep, '/') + ']]'
+            materials.append((label, link))
+    return materials
 
 
 def _insert_material(text, add_lines):
     """把素材行插入「课堂内容梳理」小节之前（保持占位笔记结构）。"""
-    marker = '\n## 课堂内容梳理\n'
-    block = ''.join(add_lines)
+    newline = '\r\n' if '\r\n' in text else '\n'
+    marker = newline + '## 课堂内容梳理' + newline
+    block = ''.join(add_lines).replace('\n', newline)
     if not block.endswith('\n'):
-        block += '\n'
+        block += newline
     if marker in text:
         return text.replace(marker, block + marker, 1)
-    return text.rstrip() + '\n\n' + block
+    return text + newline + block
 
 
 def write_placeholder(note_dir, date_str, class_no, course, subject, meeting_code,
-                      transcript_rel, minutes_rel, start_time):
+                      transcript_rel, minutes_rel, start_time, recording=None):
     """生成待润色占位笔记。
     同一节课（同课程同日同节次）已有占位笔记时，只追加素材链接（多段录音合并）。"""
-    # 同节次已有占位 → 追加本段素材（不新建第二份）
+    materials = _actual_materials(note_dir, transcript_rel, minutes_rel)
+    if not materials:
+        raise ValueError('没有实际素材，不能生成课堂笔记')
+    sources = [link for _, link in materials]
+    fields = {'source': sources}
+    if recording:
+        fields['recording_segments'] = [recording]
+        if recording.get('record_file_id'):
+            fields['record_file_ids'] = [recording['record_file_id']]
+    # 同节次已有占位 → 补齐来源；v2 新素材重新待处理，不改创建时间或扩展字段。
     for d, c, subj, path in _list_placeholders(note_dir):
         if d == date_str and c == str(class_no):
-            with open(path, encoding='utf-8') as f:
+            with open(path, encoding='utf-8', newline='') as f:
                 old = f.read()
-            if transcript_rel not in old:
-                add = f'- 补充素材（本课另一段录音「{subj}」）：[[{transcript_rel}]]、[[{minutes_rel}]]\n'
-                with open(path, 'w', encoding='utf-8') as f:
-                    f.write(_insert_material(old, [add]))
+            data, match = _frontmatter(old)
+            previous = data.get('source') or []
+            new_material = any(link not in previous for link in sources)
+            updated = _append_metadata(old, fields, reopen=new_material)
+            body = old[match.end():] if match else old
+            missing = [link for _, link in materials if link not in body]
+            if missing:
+                add = f'- 补充素材（本课另一段录音「{subject}」）：' + '、'.join(missing) + '\n'
+                updated = _insert_material(updated, [add])
+            if updated != old:
+                with open(path, 'w', encoding='utf-8', newline='') as f:
+                    f.write(updated)
             return path
     fname = f'{date_str}-第{class_no}节-{clean_filename(course)}.md'
     if subject and subject != course:
         fname = f'{date_str}-第{class_no}节-{clean_filename(subject)}.md'
     path = os.path.join(note_dir, fname)
+    course_name = course.replace('\\', '/').rstrip('/').split('/')[-1]
+    created = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat()
     content = f'''---
-title: {date_str} 第{class_no}节 {course}
-subject: {course}
+schema_version: 2
+type: lecture
+time: "{created}"
+subject:
+  - {json.dumps(course_name, ensure_ascii=False)}
 class_no: {class_no}
-date: {date_str}
-source:
-  - {json.dumps(f'腾讯会议录制（{subject}）', ensure_ascii=False)}
-  - {json.dumps(f'[[{transcript_rel}]]', ensure_ascii=False)}
-  - {json.dumps(f'[[{minutes_rel}]]', ensure_ascii=False)}
-meeting_code: {meeting_code}
-start_time: {start_time}
-status: 待润色
-topics:
-  - （待整理）
+lecture_date: "{date_str}"
+meeting_code: {json.dumps(str(meeting_code), ensure_ascii=False)}
+start_time: {json.dumps(start_time, ensure_ascii=False)}
+status: not done
+polish_status: not done
 ---
 
 # {date_str} 第{class_no}节 {course}
@@ -490,14 +628,14 @@ topics:
 > 本节课录音已自动归档，原始素材见下方链接。请由 Agent 读取逐字稿与纪要后，
 > 润色生成本次课堂内容梳理（按 [[规范/课程笔记生成规范|课程笔记生成规范]] 组织）。
 
-- 原始逐字稿：[[{transcript_rel}]]
-- 智能纪要：[[{minutes_rel}]]
+{chr(10).join(f'- {label}：{link}' for label, link in materials)}
 - 会议号：{meeting_code}｜开始时间：{start_time}
 
 ## 课堂内容梳理
 
 （待润色）
 '''
+    content = _append_metadata(content, fields)
     with open(path, 'w', encoding='utf-8') as f:
         f.write(content)
     return path
@@ -513,7 +651,7 @@ def _subject_noise(subj):
 
 def consolidate_placeholders(note_dir):
     """合并同节课（同日期同节次）的多份【待润色】占位笔记为一份（素材链接汇总）。
-    主文件优先保留主题最有意义的；任一文件已被人工处理（status 非"待润色"）时不合并。"""
+    主文件优先保留主题最有意义的；已润色或扩展属性不兼容时不合并。"""
     groups = {}
     for d, c, subj, path in _list_placeholders(note_dir):
         groups.setdefault((d, c), []).append((path, subj))
@@ -523,26 +661,46 @@ def consolidate_placeholders(note_dir):
             continue
         if any(_read_status(p) != '待润色' for p, _ in items):
             continue
+        texts = {}
+        metadata = {}
+        for path, _ in items:
+            with open(path, encoding='utf-8', newline='') as f:
+                texts[path] = f.read()
+            metadata[path], _ = _frontmatter(texts[path])
+        merge_fields = ('source', 'record_file_ids', 'recording_segments')
+        comparable = [{k: v for k, v in data.items() if k not in merge_fields}
+                      for data in metadata.values()]
+        # 不删除含独有课程信息、历史字段或用户扩展数据的文件。
+        if any(data != comparable[0] for data in comparable[1:]):
+            continue
+        bodies = []
+        for text in texts.values():
+            _, match = _frontmatter(text)
+            body = text[match.end():] if match else text
+            bodies.append(re.sub(r'(?m)^- (?:原始逐字稿|智能纪要|补充素材|另段录音主题)[^\r\n]*\r?\n?', '', body))
+        if any(body != bodies[0] for body in bodies[1:]):
+            continue
         # 主文件：噪声分低者优先（主题有意义），其次最早创建
         items.sort(key=lambda x: (_subject_noise(x[1]), os.path.getmtime(x[0])))
         main_path, main_subj = items[0]
-        with open(main_path, encoding='utf-8') as f:
-            main_text = f.read()
+        main_text = texts[main_path]
         add_lines = []
+        merged_paths = []
         for other_path, other_subj in items[1:]:
-            try:
-                with open(other_path, encoding='utf-8') as f:
-                    text = f.read()
-            except OSError:
-                continue
+            text = texts[other_path]
+            main_text = _append_metadata(main_text, {
+                key: metadata[other_path][key] if isinstance(metadata[other_path].get(key), list)
+                else [metadata[other_path][key]] for key in merge_fields if key in metadata[other_path]})
             for line in re.findall(r'(?m)^- (?:原始逐字稿|智能纪要|补充素材).*$', text):
                 if line not in main_text and line not in add_lines:
-                    add_lines.append(line + '\n')
+                    add_lines.append(line.rstrip('\r') + '\n')
             add_lines.append(f'- 另段录音主题：{other_subj}\n')
-            os.remove(other_path)
+            merged_paths.append(other_path)
         if add_lines:
-            with open(main_path, 'w', encoding='utf-8') as f:
+            with open(main_path, 'w', encoding='utf-8', newline='') as f:
                 f.write(_insert_material(main_text, add_lines))
+            for other_path in merged_paths:
+                os.remove(other_path)
         merged_any = True
         print(f'    [合并] {d} 第{int(c)}节：{len(items)} 段录音占位已合并 → {os.path.basename(main_path)}')
     return merged_any
@@ -557,11 +715,39 @@ def rebuild_readme(note_dir, course):
     entries = sorted(set(entries), key=lambda e: (e[0], int(e[1].strip('第节'))))
     header = (f'# {course} 课堂笔记\n\n'
               f'> 由 `scripts/pull_tmeet_recordings.py` 自动维护：每节课的逐字稿/纪要归档在 '
-              f'`raw/`，梳理笔记以 `YYYY-MM-DD-第N节-*.md` 命名（status: 待润色 表示尚未润色）。\n\n'
-              f'## 课程记录\n\n| 日期 | 节次 | 主题 | 状态 |\n|:--|:--|:--|:--|\n')
-    with open(os.path.join(note_dir, 'README.md'), 'w', encoding='utf-8') as f:
-        f.write(header + ''.join(f'| {d} | {c} | {subj} | {st} |\n'
-                                 for d, c, subj, st in entries))
+              f'`raw/`，梳理笔记以 `YYYY-MM-DD-第N节-*.md` 命名。'
+              f'v2 的 polish_status 表示润色进度，status 表示知识提炼进度；历史笔记兼容旧状态。\n\n'
+              f'## 课程记录\n\n| 日期 | 节次 | 主题 | 润色状态 |\n|:--|:--|:--|:--|\n')
+    readme = os.path.join(note_dir, 'README.md')
+    existing = Path(readme).read_text(encoding='utf-8') if os.path.exists(readme) else ''
+    table = re.search(r'(?m)^\| 日期 \| 节次 \| 主题 \| (?:润色状态|状态) \|\r?\n\|[^\r\n]+\|\r?\n(?:\|[^\r\n]*\|(?:\r?\n|$))*', existing)
+    rows = list(entries)
+    if table:
+        previous = {}
+        for line in table.group().splitlines()[2:]:
+            cells = [cell.strip() for cell in re.split(r'(?<!\\)\|', line)[1:-1]]
+            if len(cells) == 4:
+                previous[tuple(cells[:2])] = cells
+        known_statuses = {'待润色', '已润色', '已完成', '缺少逐字稿', 'done', 'not done'}
+        rows = []
+        for d, c, subj, st in entries:
+            old = previous.pop((d, c), None)
+            if old:
+                subj = old[2]  # Retain manual aliases, links and annotations.
+                if old[3] not in known_statuses:
+                    st = old[3]
+            rows.append((d, c, subj, st))
+        rows.extend(tuple(cells) for cells in previous.values())
+        rendered = '| 日期 | 节次 | 主题 | 润色状态 |\n|:--|:--|:--|:--|\n' + ''.join(
+            f'| {d} | {c} | {subj} | {st} |\n' for d, c, subj, st in rows)
+        content = existing[:table.start()] + rendered + existing[table.end():]
+        content = content.replace('命名（status: 待润色 表示尚未润色）。',
+                                  '命名。v2 的 polish_status 表示润色进度，status 表示知识提炼进度；历史笔记兼容旧状态。')
+    else:
+        generated = header + ''.join(f'| {d} | {c} | {subj} | {st} |\n' for d, c, subj, st in rows)
+        content = existing + ('\n\n' if existing else '') + generated
+    with open(readme, 'w', encoding='utf-8') as f:
+        f.write(content)
     return entries
 
 
@@ -634,7 +820,7 @@ def main():
     ap.add_argument('--dry-run', action='store_true', help='只列出待处理项，不下载')
     ap.add_argument('--force', action='store_true', help='已存在的记录也重新下载')
     ap.add_argument('--no-archive-unmatched', action='store_true',
-                    help='未匹配课表的会议跳过（默认归档到 未命名/课堂录音/）')
+                    help='未匹配课表的会议跳过（默认归档到 00_Inbox/课堂录音/）')
     ap.add_argument('--vault', help='知识库根目录（默认：exe 所在目录或脚本上级目录）')
     ap.add_argument('--install-schedule', nargs='?', const='19:30', metavar='HH:MM',
                     help='注册每日定时拉取计划任务（默认 19:30）')
@@ -759,7 +945,7 @@ def main():
             course, class_no = match_course(meeting_dt, timetable)
 
         if course:
-            note_dir = os.path.join(VAULT, '课程', course, NOTEBOOK_DIR)
+            note_dir = course_note_dir(course)
             label = f'{course}（第{class_no}节）'
         else:
             note_dir = UNMATCHED_DIR
@@ -781,8 +967,6 @@ def main():
         exists = os.path.exists(tpath) and os.path.exists(mpath)
         if exists and not args.force:
             print(f'  [已存在] {date_str} {label} {subject}（{t["record_file_id"]}）')
-            if course:
-                cleanup_unmatched_copy(date_str, subject, rf_suffix)
             continue
 
         # 2. 拉取纪要
@@ -829,16 +1013,14 @@ def main():
                 t['meeting_code'],
                 f'{RAW_DIR}/{os.path.basename(tpath)}',
                 f'{RAW_DIR}/{os.path.basename(mpath)}',
-                start_dt)
+                start_dt, recording=t)
             print(f'    [占位] {os.path.relpath(placeholder, VAULT)}')
             processed.append((course, date_str, f'第{class_no}节', subject, '待润色'))
-            # 素材已归位课程目录：清理"未匹配"区里同一录制的旧副本
-            cleanup_unmatched_copy(date_str, subject, rf_suffix)
 
     if not args.dry_run:
         # 收尾：合并同节课多段录音的占位笔记 + 按文件实际状态重建 README（全部课程）
         for course in {x['course'] for x in (timetable['courses'] if timetable else [])}:
-            note_dir = os.path.join(VAULT, '课程', course, NOTEBOOK_DIR)
+            note_dir = course_note_dir(course)
             if not os.path.isdir(note_dir):
                 continue
             consolidate_placeholders(note_dir)

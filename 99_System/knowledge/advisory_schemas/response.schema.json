@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:knowledge:advisory:response:1",
+  "type": "object",
+  "properties": {
+    "protocol_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "origin": {
+      "enum": [
+        "synthetic_fixture",
+        "external_response"
+      ]
+    },
+    "suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "kind": {
+            "enum": [
+              "classification",
+              "relation",
+              "split_review",
+              "new_entity_review",
+              "abstain"
+            ]
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "source_evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:knowledge:advisory:request:1#/$defs/evidence"
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "form": {
+            "enum": [
+              "atomic",
+              "mixed",
+              "non_atomic",
+              "undetermined"
+            ]
+          },
+          "primary_type": {
+            "enum": [
+              "concept",
+              "proposition",
+              "method",
+              null
+            ]
+          },
+          "field": {
+            "enum": [
+              "topics",
+              "prerequisites",
+              "about",
+              "uses",
+              "related",
+              null
+            ]
+          },
+          "resolution": {
+            "enum": [
+              "not_applicable",
+              "unique",
+              "multiple",
+              "not_found",
+              "propose_new",
+              "selected"
+            ]
+          },
+          "candidates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:knowledge:advisory:request:1#/$defs/evidence"
+                  },
+                  "minItems": 1,
+                  "maxItems": 20
+                }
+              },
+              "required": [
+                "target_id",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 20
+          },
+          "selected_target": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "new_entity": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8192
+                  }
+                },
+                "required": [
+                  "title",
+                  "reason"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8192
+                },
+                "proposed_type": {
+                  "enum": [
+                    "concept",
+                    "proposition",
+                    "method"
+                  ]
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:knowledge:advisory:request:1#/$defs/evidence"
+                  },
+                  "minItems": 1,
+                  "maxItems": 20
+                }
+              },
+              "required": [
+                "label",
+                "proposed_type",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 10
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192
+          },
+          "confidence": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "calibrated": {
+                "const": false
+              },
+              "uncertainties": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8192
+                },
+                "minItems": 1,
+                "maxItems": 20
+              }
+            },
+            "required": [
+              "level",
+              "calibrated",
+              "uncertainties"
+            ],
+            "additionalProperties": false
+          },
+          "requires_human_review": {
+            "const": true
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "source_id",
+          "source_evidence",
+          "form",
+          "primary_type",
+          "field",
+          "resolution",
+          "candidates",
+          "selected_target",
+          "new_entity",
+          "segments",
+          "rationale",
+          "confidence",
+          "requires_human_review"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 100
+    }
+  },
+  "required": [
+    "protocol_version",
+    "request_id",
+    "origin",
+    "suggestions"
+  ],
+  "additionalProperties": false
+}

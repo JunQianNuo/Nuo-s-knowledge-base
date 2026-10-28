@@ -1,5 +1,19 @@
 # 知识体系决策记录
 
+## 2026-10-28 topics 目标规则
+
+topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/KNOWLEDGE_ARCHITECTURE]]、[[docs/KNOWLEDGE_DAILY_GUIDE]] 及 [[docs/TOPICS_MOC_ACCEPTANCE_2026-10-28]]。
+
+## 2026-10-28 最终实施决策
+
+- 保留物理目录，依内容显式赋予 type，不自动把知识点映射为命题。
+- 核心旧 topics 原值放入 legacy_topics；不从旧主题自动补 tags，不删除扩展字段。
+- 新属性边须真实定位并有来源证据；目标存在、语义成立和数学正确性分层审查。
+- AI 输入的 explicit_scope 必须附绑定清单/根/阶段的本地授权；pending 默认继续禁止真实导出。selected 仅声明候选身份已定位，不声明语义唯一。
+- Advisory 维持无写入、无 provider；独立变更工具提供计划、diff、备份、哈希批准、冲突跳过和恢复。
+- 本轮不做 gold 或模型成绩实验；不增加凭据、外部 API 或付费依赖。无法验证隔离的自动运行器不启用。
+- 原始备份和恢复计划保留在 Vault 外，不因技能的临时目录或提交默认流程清理。新文件恢复时保留，不自动删除。
+
 日期：2026-10-27。状态“已接受”仅表示用户批准的设计，不等于旧数据已迁移。后续替代决策保留旧记录，并注明替代编号。
 
 | 编号 | 状态 | 决定与理由 | 影响与复审条件 |

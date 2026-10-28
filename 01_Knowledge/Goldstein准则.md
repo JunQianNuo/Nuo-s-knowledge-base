@@ -1,0 +1,61 @@
+---
+schema_version: 2
+type: concept
+source:
+- '[[03_Sources/Reviews/归档/最优化方法/知识点解析梳理/07-一维搜索方法-知识梳理]]'
+legacy_topics:
+- Goldstein准则
+- 非精确步长
+- 线搜索
+tags:
+- Goldstein准则
+- 非精确步长
+- 线搜索
+topics:
+- '[[02_Maps/MOC-最优化]]'
+legacy_topic_links:
+- '[[01_Knowledge/非精确步长]]'
+- '[[01_Knowledge/线搜索]]'
+time: "2026-08-31T11:44:20+08:00"
+aliases: []
+legacy_status: 已整理
+---
+
+# Goldstein 准则
+
+## 一句话
+
+Goldstein 准则同时限制函数值下降不足和下降过多，是比 Armijo 准则更"双向约束"的非精确步长准则。
+
+## 严格定义
+
+给定 $c\in(0,\frac12)$，步长 $\alpha$ 满足 **Goldstein 条件**，若
+
+$$
+\boxed{f(x_k)+(1-c)\alpha\nabla f(x_k)^T p_k\leq f(x_k+\alpha p_k)\leq f(x_k)+c\alpha\nabla f(x_k)^T p_k}
+$$
+
+> [!important] 上界（右侧）：同 Armijo，防止下降太少。下界（左侧）：防止步长太大导致下降"过多"——实际函数值不能低于保守的线性预测值。两条不等式一起保证了步长不会太小也不会太大。
+
+## 由来与作用
+
+Goldstein 准则解决了 Armijo 准则的一个关键缺陷：步长可以任意小。它的作用：
+
+- **步长的双向约束**：既防止太小（下界），也防止太大（上界），使步长落入一个"合理区间"
+- **理论收敛性**：满足 Goldstein 准则的步长序列通常能保证收敛
+- **实用局限**：$c\in(0,\frac12)$ 的限制比 Armijo 更紧；在实践中 Wolfe 准则更常用，因为曲率条件更自然地排除小步长
+
+## 与 [[01_Knowledge/Armijo准则]] 的区别
+
+| 准则 | 约束方向 | $c$ 范围 |
+|------|----------|----------|
+| [[01_Knowledge/Armijo准则]] | 仅上限（防下降不足） | $(0,1)$ |
+| [[01_Knowledge/Goldstein准则]] | 上限 + 下限（防下降不足和过多） | $(0,\frac12)$ |
+| [[01_Knowledge/Wolfe准则]] | 上限 + 曲率条件（防步长过小） | $0<c_1<c_2<1$ |
+
+## 相关概念
+
+- [[01_Knowledge/非精确步长]]
+- [[01_Knowledge/线搜索]]
+- [[01_Knowledge/Armijo准则]]
+- [[01_Knowledge/Wolfe准则]]

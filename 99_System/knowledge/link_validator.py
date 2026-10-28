@@ -151,10 +151,11 @@ class Index:
     files: dict
     excluded: list
     errors: list
+    namespace_only: bool = False
 
     @property
     def scope(self):
-        return {"root": str(self.root), "target_namespace": "visible_files_except_exclusions", "excluded": self.excluded, "index_errors": self.errors}
+        return {"root": str(self.root), "target_namespace": "visible_files_except_exclusions", "namespace_only": self.namespace_only, "excluded": self.excluded, "index_errors": self.errors}
 
 
 def protected_reason(root, path):
@@ -171,7 +172,7 @@ def protected_reason(root, path):
     return None
 
 
-def build_index(root, system):
+def build_index(root, system, *, namespace_only=False):
     root = Path(root).resolve()
     if not root.is_dir():
         raise v.ConfigurationError("Index root must be an existing directory")
@@ -195,13 +196,13 @@ def build_index(root, system):
             if name.startswith(".") or reason:
                 excluded.append({"path": relative, "reason": reason or "hidden_file"}); continue
             record = {"text_available": False, "headings": {}, "blocks": {}, "aliases": []}
-            if path.suffix.lower() == ".md":
+            if path.suffix.lower() == ".md" and not namespace_only:
                 try:
                     record = _record(path.read_bytes())
                 except (OSError, UnicodeError, ValueError, v.yaml.YAMLError, RecursionError) as error:
                     errors.append({"path": relative, "error_type": type(error).__name__})
             files[relative] = record
-    return Index(root, files, excluded, errors)
+    return Index(root, files, excluded, errors, namespace_only)
 
 
 def _new_link(source, syntax, raw, target, embed=False, field=None, line=None, column=None):

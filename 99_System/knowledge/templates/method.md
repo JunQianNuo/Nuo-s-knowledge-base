@@ -4,6 +4,8 @@ type: method
 topics: []
 ---
 
+%% topics 只链接已存在、合法且显式 role: moc 的导航；普通原子间的关系使用 prerequisites/about/uses/related。 %%
+
 # {{title}}
 
 %% 系统模板，不计入知识实体。YAML title 可省略。uses 按需链接直接使用的知识；关系字段采用带引号的整篇笔记 Wiki-link 列表。不从 topics 自动补 tags。 %%

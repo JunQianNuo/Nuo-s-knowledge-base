@@ -1,4 +1,18 @@
+# 当前入口：知识库 v2
+
+新内容和迁移后的知识使用 [[99_System/knowledge/v2/README]] 与 `knowledge.py v2`。下文为 v1 历史实现说明，不覆盖 v2 已确认规则。
+
+---
+
 # 知识体系验证与维护审计（Phase 1 + Phase 2A）
+
+## 2026-10-28 topics 目标规则
+
+topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/KNOWLEDGE_ARCHITECTURE]]、[[docs/KNOWLEDGE_DAILY_GUIDE]] 及 [[docs/TOPICS_MOC_ACCEPTANCE_2026-10-28]]。
+
+## 2026-10-28 当前系统
+
+最终实施授权已覆盖核心整理与长期维护；下方 Phase 1/2A 清单和未授权文字仅为历史记录，不构成当前阶段边界。日常入口为 knowledge.py；新建使用 Registry 模板并只生成计划，审查、apply/restore 由独立 change_control 完成，Maintenance 继续只读。当前范围与命令以 [[docs/KNOWLEDGE_DAILY_GUIDE]]、综合验收报告为准。Formatter 仍未定位、未集成。
 
 这是独立的属性验证和只读维护审计工具。Maintenance 不迁移笔记、不写属性、标签、附件或插件，不运行 Formatter，不默认扫描 Vault。用户已批准 Phase 2A；Formatter 仍未定位、专项审计未完成、没有集成，Phase 2B 与 Phase 3–6 未授权。
 
