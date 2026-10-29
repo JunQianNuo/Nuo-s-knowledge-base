@@ -348,7 +348,7 @@
   },
   "savedProviderEffort": {
     "claude": "high",
-    "codex": "high",
+    "codex": "xhigh",
     "deepseek": "low"
   },
   "savedProviderServiceTier": {},

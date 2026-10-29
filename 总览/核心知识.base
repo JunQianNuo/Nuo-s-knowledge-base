@@ -1,0 +1,159 @@
+filters:
+  and:
+    - file.ext == "md"
+    - schema_version == 1
+    - or:
+        - type == "concept"
+        - type == "proposition"
+        - type == "method"
+    - or:
+        - file.inFolder("概念")
+        - file.inFolder("知识点")
+        - file.inFolder("方法")
+    - "!/(^|\\/)\\./.matches(file.path)"
+    - "!/(^|\\/)(AGENTS|CLAUDE)\\.md$/.matches(file.path)"
+    - not:
+        - file.inFolder("99_System")
+        - file.inFolder("docs")
+        - file.inFolder("scripts")
+        - file.inFolder("模板")
+        - file.inFolder("规范")
+        - file.inFolder("总览/标签库")
+        - file.inFolder("总览/属性库")
+properties:
+  type:
+    displayName: 实体类型
+  topics:
+    displayName: 主题
+  prerequisites:
+    displayName: 先修
+  about:
+    displayName: 讨论对象
+  uses:
+    displayName: 直接使用
+  related:
+    displayName: 其他关联
+views:
+  - type: table
+    name: 全部原子
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - topics
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 概念
+    filters: type == "concept"
+    order:
+      - file.name
+      - topics
+      - prerequisites
+      - related
+  - type: table
+    name: 命题
+    filters: type == "proposition"
+    order:
+      - file.name
+      - topics
+      - prerequisites
+      - about
+      - uses
+  - type: table
+    name: 方法
+    filters: type == "method"
+    order:
+      - file.name
+      - topics
+      - prerequisites
+      - uses
+      - related
+  - type: table
+    name: 尚无主题
+    filters: list(topics).length == 0
+    order:
+      - file.name
+      - type
+  - type: table
+    name: 收敛性与积分理论
+    filters: list(topics).contains(link("总览/收敛性与积分理论-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 集合与空间
+    filters: list(topics).contains(link("总览/集合与空间-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 概率与随机结构
+    filters: list(topics).contains(link("总览/概率与随机结构-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 数值计算
+    filters: list(topics).contains(link("总览/数值计算-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 最优化
+    filters: list(topics).contains(link("总览/最优化-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
+  - type: table
+    name: 热学与量子
+    filters: list(topics).contains(link("总览/热学与量子-MOC"))
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - prerequisites
+      - about
+      - uses
+      - related
