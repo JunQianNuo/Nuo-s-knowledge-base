@@ -8630,7 +8630,7 @@ $$
 
 设 $\lambda_0 + h, \lambda_0 + g$ 都在 $R_0$ 内，则由
 
-![](../../../../04_Assets/Images/Courses/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90%28%E7%AC%AC2%E7%89%88%29%20%28%E6%B1%9F%E6%B3%BD%E5%9D%9A%2C%20%E5%AD%99%E5%96%84%E5%88%A9%29%20%28z-library.sk%2C%201lib.sk%2C%20z-li/images/batch_0001/67bbeca094da183d23d7198c4d91893f30ca1d5dc6ae0c118008c95ba0943703.jpg)  
+![](images/batch_0001/67bbeca094da183d23d7198c4d91893f30ca1d5dc6ae0c118008c95ba0943703.jpg)  
 图4.1
 
 $$
@@ -9121,7 +9121,7 @@ $$
 
 设 $T \in L(X)$ , 其谱 $\sigma(T)$ 被可求长的、简单的、光滑的正向的闭曲线 $C$ 分成 $\sigma_1$ 与 $\sigma_2$ 两部分, 其中 $\sigma_1$ 在 $C$ 之内, 而 $\sigma_2$ 在 $C$ 之外 (如图4.2). 则下面的 Riesz 空间分解定理告诉我们 $T$ 必有非平凡的约化子空间.
 
-![](../../../../04_Assets/Images/Courses/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90%28%E7%AC%AC2%E7%89%88%29%20%28%E6%B1%9F%E6%B3%BD%E5%9D%9A%2C%20%E5%AD%99%E5%96%84%E5%88%A9%29%20%28z-library.sk%2C%201lib.sk%2C%20z-li/images/batch_0001/41869c63c87613f42519aeec2ee768cecb7f6fa1d260d0b351d10524049046fb.jpg)  
+![](images/batch_0001/41869c63c87613f42519aeec2ee768cecb7f6fa1d260d0b351d10524049046fb.jpg)  
 图4.2
 
 定理 2.5(F. Riesz, 1913) 设 $T \in L(X)$ ，其谱如上所述，则有 T 的约化子空间 $M_{1}$ 与 $M_{2}$ ，使
@@ -9144,7 +9144,7 @@ $$
 
 注意 $R(\xi)$ 是 $\rho(T)$ 上的解析函数，设 $C'$ 是 $\rho(T)$ 内另一条可求长的、简单的、光滑的正向的闭曲线，使 $C$ 及 $\sigma_1$ 在 $C'$ 之内， $\sigma_2$ 在 $C'$ 之外（如图4.3）.
 
-![](../../../../04_Assets/Images/Courses/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90%28%E7%AC%AC2%E7%89%88%29%20%28%E6%B1%9F%E6%B3%BD%E5%9D%9A%2C%20%E5%AD%99%E5%96%84%E5%88%A9%29%20%28z-library.sk%2C%201lib.sk%2C%20z-li/images/batch_0001/985f1d768f38a07c9562858ed76f2355c6aef4f45cc47f43306d68da62773130.jpg)  
+![](images/batch_0001/985f1d768f38a07c9562858ed76f2355c6aef4f45cc47f43306d68da62773130.jpg)  
 图4.3
 
 由抽象解析函数的 Cauchy 积分定理，
@@ -13371,4 +13371,4 @@ x⊥y II.1
 
 <table><tr><td> $\partial^{l}f$ </td><td>I.8</td></tr><tr><td> $\frac{\partial f}{\partial y}(x,y)$ </td><td>I.9</td></tr><tr><td> $\partial\Omega$ </td><td>I.6</td></tr><tr><td> $\lambda A+\mu B$ </td><td>III.3</td></tr><tr><td> $\emptyset$ </td><td>空集</td></tr><tr><td> $\oplus$ </td><td>直接和</td></tr><tr><td> $\prec$ </td><td>I.1</td></tr><tr><td> $\cong$ </td><td>保范同构</td></tr><tr><td> $\stackrel{d}{=}$ </td><td>表示左端由右端定义</td></tr><tr><td> $\Rightarrow$ </td><td>表示左端蕴含右端</td></tr><tr><td> $\Leftarrow$ </td><td>表示右端蕴含左端</td></tr><tr><td> $\Leftrightarrow$ </td><td>表示左,右两端等价</td></tr><tr><td> $V_{\alpha\in\mathcal{A}}M_{\alpha}$ </td><td>IV.1</td></tr></table>
 
-![](../../../../04_Assets/Images/Courses/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90%28%E7%AC%AC2%E7%89%88%29%20%28%E6%B1%9F%E6%B3%BD%E5%9D%9A%2C%20%E5%AD%99%E5%96%84%E5%88%A9%29%20%28z-library.sk%2C%201lib.sk%2C%20z-li/images/batch_0001/30dd6bc3aa30189a3e2e12d75cc119f9052ed94548e9e5ee0164226d775aacce.jpg)
+![](images/batch_0001/30dd6bc3aa30189a3e2e12d75cc119f9052ed94548e9e5ee0164226d775aacce.jpg)

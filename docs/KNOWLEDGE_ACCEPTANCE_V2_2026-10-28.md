@@ -48,3 +48,8 @@ time 优先保留已有创建字段；可追溯的历史条目使用跨 Git 重�
 [备份及恢复说明](C:/Users/Nuo/.codex/backups/knowledge-v2-20261028/README.md)
 
 完整机器证据位于同目录：`final-byte-verification.json`、`final-moved-link-verification.json`、`real-extraction-verification.json`、`migration-001/migration-report.json`、`time-history-details.json`、`concurrent-generated-updates.json`、目录清理计划与结果。恢复按批次逆序执行，遇到之后的用户编辑必须停下核对，不覆盖；PDF 临时复制批次不能再次恢复。详见备份说明。
+
+
+## 2026-11-01 用户修正
+
+课程源资料附件集中迁移已撤回，8,910 份配套图片回到源资料相对目录；原日期的验收记录保留，当前附件规则和实际还原证据见 [[docs/COURSE_ASSET_RESTORE_2026-11-01]]。

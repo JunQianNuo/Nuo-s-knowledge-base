@@ -53,7 +53,7 @@ $\left(\bigcup_{i=1}^{n}C_{i}\right)\bigcap_{}^{}\left(\bigcup_{i=1}^{n}D_{i}\ri
 
 - 例： $A=\left[\begin{matrix}4-i&2&i\\-1&2i&2\\1&-1&-5\end{matrix}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/b773e74af223f9e406ec70276eaa586ecc5e2ab164364cad46d1869ec66ee6cf.jpg)
+![](images/b773e74af223f9e406ec70276eaa586ecc5e2ab164364cad46d1869ec66ee6cf.jpg)
 
 Gershgorin圆盘
 
@@ -71,7 +71,7 @@ Jacobi迭代： $G=-D^{-1}\left(L+U\right)$
 
 1. 帮助判定某些矩阵的可逆性与正定性
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/dfa5338d87302a364b228f969296e26b2a5ec0d75b3c9eb10895f83fb6dfb016.png)
+![](images/dfa5338d87302a364b228f969296e26b2a5ec0d75b3c9eb10895f83fb6dfb016.png)
 
 例：
 
@@ -267,9 +267,9 @@ $k$
 
 $逆$ 幂迭代
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/d0a467b544b482cf449f788c65191d4940b21b79bdf24bbe12e21a9579c8f4c3.jpg)
+![](images/d0a467b544b482cf449f788c65191d4940b21b79bdf24bbe12e21a9579c8f4c3.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/e82b53ee4a3a83cc9e65768cbb2474c65522c24ba8b59354f45ff0e1380abda4.jpg)
+![](images/e82b53ee4a3a83cc9e65768cbb2474c65522c24ba8b59354f45ff0e1380abda4.jpg)
 
 ## Rayleigh商迭代
 
@@ -313,9 +313,9 @@ $幂迭代$
 
 $Rayleigh$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/7f60e345ba39934ce2e5ae733e2f8530563cfa26d1ab7ac5998199bdc89fedb1.jpg)
+![](images/7f60e345ba39934ce2e5ae733e2f8530563cfa26d1ab7ac5998199bdc89fedb1.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/1d28d4c2fdc38542bcbbcc988553ad19005ba7d705df7e76db48b5562aafe7d4.jpg)
+![](images/1d28d4c2fdc38542bcbbcc988553ad19005ba7d705df7e76db48b5562aafe7d4.jpg)
 
 ## Rayleigh商迭代
 
@@ -329,9 +329,9 @@ $Rayleigh$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/320c70274937586f24d5c90282fb4ec097bccfefdf6118b9038fb82e5ff5b3f3.jpg)
+![](images/320c70274937586f24d5c90282fb4ec097bccfefdf6118b9038fb82e5ff5b3f3.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/16a0950bf7a29a65593a40ec1b1783c7e1eb3be6b36ae2d10f383c00c4fe043c.jpg)
+![](images/16a0950bf7a29a65593a40ec1b1783c7e1eb3be6b36ae2d10f383c00c4fe043c.jpg)
 
 ## QR分解
 
@@ -943,9 +943,9 @@ $A=\left[\begin{matrix}-4&14&0\\-5&13&0\\-1&0&2\end{matrix}\right], \lambda =6,3
 
 QR迭代 $(TOL=10^{-6})$ 的收敛过程
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/e7f5a6ec99dcc524fd667b5fbd663210ca77c4d314d548a2ec2b70e8ac966d31.jpg)
+![](images/e7f5a6ec99dcc524fd667b5fbd663210ca77c4d314d548a2ec2b70e8ac966d31.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/0c9f026435cba38c8dcfe34f7ce5f410420ec6d1ea0f54199bd37379e99246ec.jpg)
+![](images/0c9f026435cba38c8dcfe34f7ce5f410420ec6d1ea0f54199bd37379e99246ec.jpg)
 
 ## QR算法
 
@@ -957,9 +957,9 @@ $A=\left[\begin{matrix}1&2&1\\2&3&1\\1&1&3\end{matrix}\right]$
 
 QR迭代 $(TOL=10^{-6})$ 的收敛过程
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/c8665406261fcfeb2e5e1f850c5b322c386c9cce4c8bab020888d3566481fe1f.jpg)
+![](images/c8665406261fcfeb2e5e1f850c5b322c386c9cce4c8bab020888d3566481fe1f.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9006Eigenvalues/images/a4d041e6492d57d7c3b804062cb7aee261756e1aece1d070251d8972f18e1d74.jpg)
+![](images/a4d041e6492d57d7c3b804062cb7aee261756e1aece1d070251d8972f18e1d74.jpg)
 
 ## 思考与练习
 

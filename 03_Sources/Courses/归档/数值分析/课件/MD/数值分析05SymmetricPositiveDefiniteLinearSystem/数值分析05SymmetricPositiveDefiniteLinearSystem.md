@@ -108,7 +108,7 @@ $L=\left[\begin{matrix}2&0&0\\-1&1&0\\1&-3&1\end{matrix}\right]$
 
 ## Cholesky分解直接Cholesky分解的伪代码
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/2fab8ca0fedd86747dcb51f1540c6c438d1ee6f20e0d695096ce83a114f96a33.jpg)
+![](images/2fab8ca0fedd86747dcb51f1540c6c438d1ee6f20e0d695096ce83a114f96a33.jpg)
 
 $k-1次$ 乘法， $k-1次$ 减法，1次开方
 
@@ -228,9 +228,9 @@ $u$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/105fcb91a1e9cb5424746f85ad94c0fc4751e044a1bb0c53608635f0ac1feae3.jpg)
+![](images/105fcb91a1e9cb5424746f85ad94c0fc4751e044a1bb0c53608635f0ac1feae3.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/105fcb91a1e9cb5424746f85ad94c0fc4751e044a1bb0c53608635f0ac1feae3.jpg)
+![](images/105fcb91a1e9cb5424746f85ad94c0fc4751e044a1bb0c53608635f0ac1feae3.jpg)
 
 梯度下降法
 
@@ -240,7 +240,7 @@ $u$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/798056ee896fccd091fb7d87b3620196eef9e69a71e1e29492f0dbb1f113e9a0.jpg)
+![](images/798056ee896fccd091fb7d87b3620196eef9e69a71e1e29492f0dbb1f113e9a0.jpg)
 
 Gauss-Seidel
 
@@ -248,9 +248,9 @@ Gauss-Seidel
 
 $v$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
+![](images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/691b58b63f005821adb6024eaf4b100e101e42b14020f052de0faef2f7d5907e.jpg)
+![](images/691b58b63f005821adb6024eaf4b100e101e42b14020f052de0faef2f7d5907e.jpg)
 
 $u$
 
@@ -320,9 +320,9 @@ $v$
 
 $v$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
+![](images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/535332b0c21c1bf2ed4b73b645c1e36471a7fd505357e70070803e061f1a0fb5.jpg)
+![](images/535332b0c21c1bf2ed4b73b645c1e36471a7fd505357e70070803e061f1a0fb5.jpg)
 
 $u$
 
@@ -450,11 +450,11 @@ $v$
 
 $v$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/3ddb47eecf8b63f796023b16cb59e5cd88aeca9081d91e8d00b6981062d1c935.jpg)
+![](images/3ddb47eecf8b63f796023b16cb59e5cd88aeca9081d91e8d00b6981062d1c935.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
+![](images/e4683bd6988a1fb9150e644bb2e778b58b6e26c0e97c105e1c9b2677b5279894.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/535332b0c21c1bf2ed4b73b645c1e36471a7fd505357e70070803e061f1a0fb5.jpg)
+![](images/535332b0c21c1bf2ed4b73b645c1e36471a7fd505357e70070803e061f1a0fb5.jpg)
 
 $u$
 
@@ -468,7 +468,7 @@ $u$
 
 - 稀疏矩阵求解，精确解为 $\left[0,1,2,\ldots ,n-1\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9005SymmetricPositiveDefiniteLinearSystem/images/faf05224e42714e9595f2cce15b8dd6427dacc78c3b0ed352dd7feafd06de9b9.jpg)
+![](images/faf05224e42714e9595f2cce15b8dd6427dacc78c3b0ed352dd7feafd06de9b9.jpg)
 
 ## 共轭梯度法
 

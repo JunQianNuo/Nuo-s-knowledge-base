@@ -22,7 +22,7 @@ $$
 
 ### 3. 用随机点估计 $\pi$
 
-![单位正方形中随机采样与四分之一圆](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/06-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/slide-02-image-01.png)
+![单位正方形中随机采样与四分之一圆](assets/06-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/slide-02-image-01.png)
 
 在单位正方形 $[0,1]\times[0,1]$ 内均匀采样。满足
 
@@ -185,7 +185,7 @@ end procedure
 
 ### 5. 测试系数矩阵
 
-![高斯消元与 Jacobi 迭代共同使用的 12 阶系数矩阵](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/06-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/slide-06-image-01.png)
+![高斯消元与 Jacobi 迭代共同使用的 12 阶系数矩阵](assets/06-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/slide-06-image-01.png)
 
 测试矩阵是一个 $12\times12$ 的对称矩阵：
 

@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 ## 课程主要内容
 
@@ -142,22 +142,22 @@ Deep Learning, by Ian Goodfellow, Yoshua Bengio and Aaron Courville, MIT Press, 
 
 ## 人工智能(AI)在近年来发展迅猛
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/2268975fef9a3fd0c3693c3db0e2f91a369a8df497f96a404aa866372f2ab763.jpg)
+![](images/2268975fef9a3fd0c3693c3db0e2f91a369a8df497f96a404aa866372f2ab763.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/e94febac2b1216d18b44b465182258fb873599d718e06e0a021dc5361ecfe565.jpg)  
+![](images/e94febac2b1216d18b44b465182258fb873599d718e06e0a021dc5361ecfe565.jpg)  
 (a) AI 科技巨头（算力、云与模型平台）  
 (b) AI 原生私营公司 Top 10（最新私募估值）
 
 年，全球企业投资较上一年增长一倍以上；其中私人投资增长 ，新获融资的AI企业数量增长71%，十亿美元级融资事件接近翻倍。产业版图也在快速重排：算力与云平台巨头继续扩张， 原生公司迅速进入全球高估值企业前列。数据更新至2026年8月。来源：Stanford HAI, AI Index Report 2026; Caplight, Top AI Companies.
 
 ## AI 的能力与应用规模仍在快速增长能力边界：多项任务在短时间内逼近或跨越人类基线  
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/9cd214c0a0dbf63dd0c05daac59d186fd4a9be1cd453707b56b52dfda2ca36e7.jpg)
+![](images/9cd214c0a0dbf63dd0c05daac59d186fd4a9be1cd453707b56b52dfda2ca36e7.jpg)
 
 应用规模：全球组织的 AI 使用率由 2023 年的 55% 升至 2025 年的 88%  
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/a19b44f90c99836434d6afd67d97a25a666b0a72505f831e22e090fecf4313b1.jpg)  
+![](images/a19b44f90c99836434d6afd67d97a25a666b0a72505f831e22e090fecf4313b1.jpg)  
 图像、语言、科学、数学和软件工程等方向的模型能力持续提升，AI 也正快速进入组织的日常业务流程。 年， % 的受访组织已在至少一个业务环节使用生成式 。数据主要截至 2025 年。来源：Stanford HAI, AI Index Report 2026.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/3fecc0dd013a10a76e70b9056ce114aee6d6f51b6339a77679518fed1607739d.jpg)  
+![](images/3fecc0dd013a10a76e70b9056ce114aee6d6f51b6339a77679518fed1607739d.jpg)  
 图中国人工智能产业政策的前三阶段（截至年）
 
 ## 高校教育与AI结合
@@ -166,51 +166,51 @@ Deep Learning, by Ian Goodfellow, Yoshua Bengio and Aaron Courville, MIT Press, 
 
 ## AI的应用
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/0bab03f0a7b0bc15e64c6e5cda43fd64040cf642bb8036fbb4ddafb42cd7d70b.jpg)
+![](images/0bab03f0a7b0bc15e64c6e5cda43fd64040cf642bb8036fbb4ddafb42cd7d70b.jpg)
 
 ## AI生成图片(1/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/a10d25a568d3d1c4b59dafe8907f561691256400042253a4549b485e4874ba55.jpg)  
+![](images/a10d25a568d3d1c4b59dafe8907f561691256400042253a4549b485e4874ba55.jpg)  
 提示词 1：夜晚，纽约帝国大厦的LED 塔灯系统显示 UESTC MATH 的文字
 
 ## AI生成图片(2/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/4745595eaf77ac9708a4acfa1e57dcf84f4fac02c7f1c2255291d975ad6e6be6.jpg)  
+![](images/4745595eaf77ac9708a4acfa1e57dcf84f4fac02c7f1c2255291d975ad6e6be6.jpg)  
 提示词 2：中国空天战机群保护着中国空天母舰在超高空航行，有多种机型，气势磅礴
 
 ## AI生成图片(3/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/1c8debe89372c509119672cec75191e84d3f297a1e2fb4ba3e435eedd0833ff3.jpg)
+![](images/1c8debe89372c509119672cec75191e84d3f297a1e2fb4ba3e435eedd0833ff3.jpg)
 
 提示词 3：远景照片：高科技实验室里，“Bruce Lee” 仿生人诞生，身穿他的经典橙黑制服。实验员们集体鼓掌。照片写实，真实，非漫画。色彩明亮。
 
 ## AI生成视频(1/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/11539041551b4930580f2de5fa6e5b7ab45e9eeffd9876f87cb329ff5368d567.jpg)  
+![](images/11539041551b4930580f2de5fa6e5b7ab45e9eeffd9876f87cb329ff5368d567.jpg)  
 点击画面播放
 
 ## AI生成视频(2/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/2a1449332fa738ae657fcc1291a6a9773e759d2cedd3bdd917fffa046258c597.jpg)  
+![](images/2a1449332fa738ae657fcc1291a6a9773e759d2cedd3bdd917fffa046258c597.jpg)  
 点击画面播放
 
 ## AI生成视频(3/3)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/2ade9252adb8ba585081ae2be369be18f5073c4bf44b56c8fb52c8ad580eaf4c.jpg)  
+![](images/2ade9252adb8ba585081ae2be369be18f5073c4bf44b56c8fb52c8ad580eaf4c.jpg)  
 点击画面播放
 
 ## 深度学习的发展历史:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/5bce2dae1cb12190ff1c0b560fd499d1f2669199463587505d59da13510cc3a2.jpg)
+![](images/5bce2dae1cb12190ff1c0b560fd499d1f2669199463587505d59da13510cc3a2.jpg)
 
 thdr erngoge in Iasks thdt ane cumeniu mose
 
 ## 不同类型的AI任务:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/ae7102f3f04c1b4009c883af3ea3cacc79c4f32b436b2d5ea498f56dad545daf.jpg)  
+![](images/ae7102f3f04c1b4009c883af3ea3cacc79c4f32b436b2d5ea498f56dad545daf.jpg)  
 (a) abstract and formal tasks
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/fa4721bd18e3aaec7efbabe6d1df521ad05f77e298a7c7b73f8bbb29645452fc.jpg)  
+![](images/fa4721bd18e3aaec7efbabe6d1df521ad05f77e298a7c7b73f8bbb29645452fc.jpg)  
 (b) subjective and intuitive tasks
 
 相比于人类, 传统AI往往更擅长处理规则化或公式化的任务(棋类游戏、数据分类……)而不擅长处理大量依靠主观和直觉的任务(识别图片、理解自然语言……).
@@ -257,7 +257,7 @@ Machine
 
 Learning
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/be2c1a750ac94c27250180f9d2941199cafdb3f69db4c884496542c880d21dcf.jpg)
+![](images/be2c1a750ac94c27250180f9d2941199cafdb3f69db4c884496542c880d21dcf.jpg)
 
 Deep Learning
 
@@ -405,13 +405,13 @@ $$
 
 生成数据集: $\begin{array} { r } { \pmb { x } _ { n } \sim \mathcal { U } ( [ 0 , 1 ] ) ; y _ { n } = e ^ { \pmb { x } _ { n } } + \delta } \end{array}$ , 其中 $\delta \sim \mathcal { N } ( 0 , 0 . 1 ^ { 2 } )$ 是噪声; $n = 1 , \ldots , 1 0$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/a1b7fb8a3f473145e42f3dd77357debc316c0d60e261289c26a9718b5631bb20.jpg)  
+![](images/a1b7fb8a3f473145e42f3dd77357debc316c0d60e261289c26a9718b5631bb20.jpg)  
 (a)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/9867dc3f260323225918a55d3d06714c10997cade0ecea3384237e0fdc1ae6f8.jpg)  
+![](images/9867dc3f260323225918a55d3d06714c10997cade0ecea3384237e0fdc1ae6f8.jpg)  
 (b)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/89d8c02bd528fcc0e993cfed97180c3c6cdb44b5985c9176acc5f7141e596594.jpg)  
+![](images/89d8c02bd528fcc0e993cfed97180c3c6cdb44b5985c9176acc5f7141e596594.jpg)  
 (c)
 
 (a) 线性回归. $\mathsf { M S E } = 0 . 0 0 7 8 9$
@@ -442,25 +442,25 @@ ChatGPT 5.6 的回答如下(限制400字):
 
 ▶ AI帮你安装. 提示词：帮我安装整套 Python + PyTorch + CUDA + CUDNN, 用于深度学习本科课程安装Anaconda后, 运行“spyder”命令以打开Spyder图形用户界面编辑器, 即可编写Python程序.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/7adb5baedc45e49ba983172a06d9ca08c026b58753e01f6eb74a31bb535df5b7.jpg)
+![](images/7adb5baedc45e49ba983172a06d9ca08c026b58753e01f6eb74a31bb535df5b7.jpg)
 
 PyTorch安装完成后, 在Spyder中查看当前的PyTorch版本:  
 安装PyTorch库 https://pytorch.org/get-started/locally/  
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/a9706ac18499161cfcd87aafc008b42f396379235e3318a2b7436e19b30b08aa.jpg)
+![](images/a9706ac18499161cfcd87aafc008b42f396379235e3318a2b7436e19b30b08aa.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/02f02372516486501a6c73fe53de594a88f2bdecd4792dd49065c04849bf9511.jpg)
+![](images/02f02372516486501a6c73fe53de594a88f2bdecd4792dd49065c04849bf9511.jpg)
 
 ## CUDA+cuDNN的安装(Windows系统)
 
 ## 如果设备安装了支持CUDA的Nvidia显卡(GPU), 可以考虑安装CUDA Toolkit以开启PyTorch中的GPU加速 https://developer.nvidia.com/cuda-downloads
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/1820cb48d5e7839ef586928b621b583d1a8bfdc630330e73be8cc8daa025a8ab.jpg)
+![](images/1820cb48d5e7839ef586928b621b583d1a8bfdc630330e73be8cc8daa025a8ab.jpg)
 
 Download Installer for Windows 11 x86\_64
 
 The base installer is available for download belov
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter1/images/8f7c404ffd2f897d8593e13efad030df8bc51d6fb058ed914bcc647a07118697.jpg)
+![](images/8f7c404ffd2f897d8593e13efad030df8bc51d6fb058ed914bcc647a07118697.jpg)
 
 ## 安装后, 在Spyder中查看当前的CUDA版本:
 

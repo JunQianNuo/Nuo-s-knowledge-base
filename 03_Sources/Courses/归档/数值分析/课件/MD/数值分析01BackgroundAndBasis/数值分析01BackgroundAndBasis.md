@@ -37,9 +37,9 @@ parser: mineru
 
 - 教材与参考书
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/16d3b8377e3b7fa5c90c58a3c1b238dd5a384bd0c65fb7c716d5eaa2ea4f7402.png)
+![](images/16d3b8377e3b7fa5c90c58a3c1b238dd5a384bd0c65fb7c716d5eaa2ea4f7402.png)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/4a6360a58b9ba06a5c28294864bc35e3d8e72122c49f1cbb5d3b7e8d7cfb0a52.jpg)
+![](images/4a6360a58b9ba06a5c28294864bc35e3d8e72122c49f1cbb5d3b7e8d7cfb0a52.jpg)
 
 ## 课程概况
 
@@ -78,13 +78,13 @@ parser: mineru
 - 《九章算术注》，割圆术：割之弥细，所失弥少，割之又割，以至于不可割，则与圆周合体而无所失矣。
 - 刘徽计算的圆周率：3.14（徽率，96边形），3.1416（3072边形）。
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/88617fb86c0ef86e007411ff54aef3a9c644ff3a45c8fbcc9f26f3a152637b88.jpg)
+![](images/88617fb86c0ef86e007411ff54aef3a9c644ff3a45c8fbcc9f26f3a152637b88.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/ed1e29e7a032fde999248a6e81456b41b04d057813feec31a275e83f2c093ba8.jpg)
+![](images/ed1e29e7a032fde999248a6e81456b41b04d057813feec31a275e83f2c093ba8.jpg)
 
 刘徽（约225年—约295年，魏晋）
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d3f422ab1238ac8b6e729f8a89e3e096dc38fc37cfcfc35e998b2c7d5b2e41f6.jpg)
+![](images/d3f422ab1238ac8b6e729f8a89e3e096dc38fc37cfcfc35e998b2c7d5b2e41f6.jpg)
 
 九章算术成书于约公元前150年，
 
@@ -94,23 +94,23 @@ parser: mineru
 
 - 巴比伦人（3500年前），求平方根
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/95775aa98108cf3591928504bb9dc47e16548fe0edb5b9ced9831b849eb697ce.jpg)
+![](images/95775aa98108cf3591928504bb9dc47e16548fe0edb5b9ced9831b849eb697ce.jpg)
 
 ## 一些历史
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/e9b7dc974cbc007b9cb513ecafb821cd4d479a16a6223269131cd931c3f5ba80.jpg)
+![](images/e9b7dc974cbc007b9cb513ecafb821cd4d479a16a6223269131cd931c3f5ba80.jpg)
 
 (570BC\~490BC)
 
 ## 一些历史
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2b226fce6f02b620796d80003676947adb225e6cb7550f6cacfd9fc4bccb88fe.jpg)
+![](images/2b226fce6f02b620796d80003676947adb225e6cb7550f6cacfd9fc4bccb88fe.jpg)
 
 Pierre-Simon marquis de Laplace
 
 (1749-1827)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/610b534cbec9f5513167948dbc4ef83ce3abe815f7227e9fe0f83c465869b278.jpg)
+![](images/610b534cbec9f5513167948dbc4ef83ce3abe815f7227e9fe0f83c465869b278.jpg)
 
 “拉普拉斯妖”：一个知道宇宙过去和未来所有事情的恶魔
 
@@ -118,21 +118,21 @@ Pierre-Simon marquis de Laplace
 
 - 1910年Lewis Fry Richardson 提出一种数值方法来求解偏微分方程第一次尝试预报未来天气。（耗时三个月预测未来24小时天气，估计需要6万人才能提前预报24小时天气）
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/b856371ae445b2455f771f81839ef062d84908df12eee68b725e5dbe17fceb65.jpg)
+![](images/b856371ae445b2455f771f81839ef062d84908df12eee68b725e5dbe17fceb65.jpg)
 
 手摇计算机
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/8d866c901a5fc05c8527732b51b931ffbc67a27591357936e39c24c15586b91b.jpg)
+![](images/8d866c901a5fc05c8527732b51b931ffbc67a27591357936e39c24c15586b91b.jpg)
 
 ## 一些历史
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/002c29efa817e9b069a7fec075e0826cb7a56d50998655659d8b0281b7602a89.jpg)
+![](images/002c29efa817e9b069a7fec075e0826cb7a56d50998655659d8b0281b7602a89.jpg)
 
 世界首台电子计算机ENIAC(1946年)：18000个电子管，占地170平方米，重达30吨，耗电功率约150千瓦，每秒钟可进行5000次运算
 
 ## 一些历史
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/053189e22e5f883f0d6da92c50b6fbde3fa30a9491756fca4347c4445592cf6b.png)
+![](images/053189e22e5f883f0d6da92c50b6fbde3fa30a9491756fca4347c4445592cf6b.png)
 
 Moore’s law: the number of transistors in a dense integrated circuit (IC) doubles about every two years.
 
@@ -142,39 +142,39 @@ Moore’s law: the number of transistors in a dense integrated circuit (IC) doub
 - FORTRAN (FORmulaTRANslator, 1950s由IBM开发) :世界上最早的计算机高级程序设计语言，广泛应用于科学和工程计算领域
 - MATLAB (MATrix LABoratory):源于数学家Cleve Moler 1960s的博士论文
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/35976f3764f12ff1231bf5fe674a95a24dd7f4ed11a3dd46dc231fc730d308d7.jpg)
+![](images/35976f3764f12ff1231bf5fe674a95a24dd7f4ed11a3dd46dc231fc730d308d7.jpg)
 
 ## 科学计算的一些发展现状
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/618c589ed040195ce4068201e3af59c136b8abcb8c77a9d539aebc03915ef257.jpg)
+![](images/618c589ed040195ce4068201e3af59c136b8abcb8c77a9d539aebc03915ef257.jpg)
 
 - 硬件性能快速提升
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/81e030255e0de5c8c11c30cca24c2b973e998078b49bd276f91a1b0d2de00de7.jpg)
+![](images/81e030255e0de5c8c11c30cca24c2b973e998078b49bd276f91a1b0d2de00de7.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/133aa826e8641d7b3c86e33fcd8bf9ff1551a977d02a896d56448e8c0ef92310.jpg)
+![](images/133aa826e8641d7b3c86e33fcd8bf9ff1551a977d02a896d56448e8c0ef92310.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2855321ee2c4e4e082708fb3da0569f6a7b50e76892a1b2b3bc4e597e0b72a9a.jpg)
+![](images/2855321ee2c4e4e082708fb3da0569f6a7b50e76892a1b2b3bc4e597e0b72a9a.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/ae9f8b52a339a36a10b219495f28e25e620d094a9b023d62da8d3aa8fbd447ef.png)
+![](images/ae9f8b52a339a36a10b219495f28e25e620d094a9b023d62da8d3aa8fbd447ef.png)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/c653eaf52d628f5f416110f66a84c2cdd7e6fd043f94f48e094aa711110c2e3a.jpg)
+![](images/c653eaf52d628f5f416110f66a84c2cdd7e6fd043f94f48e094aa711110c2e3a.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/6c6a17877503fb909fc2a7f34eaad72de5e6013cce5f94387a244fc060cc87ba.jpg)
+![](images/6c6a17877503fb909fc2a7f34eaad72de5e6013cce5f94387a244fc060cc87ba.jpg)
 
 - 计算能力是国家综合实力的重要指标
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/0b82a3a730dc7b68c61cd4ebe0a95ec418b7df2e177e3e26629b31376f96263c.jpg)
+![](images/0b82a3a730dc7b68c61cd4ebe0a95ec418b7df2e177e3e26629b31376f96263c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/1775cb7a25d6610feb3fd9842500720327e15554566f03db32b41fb9630eb113.jpg)
+![](images/1775cb7a25d6610feb3fd9842500720327e15554566f03db32b41fb9630eb113.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/4e2a5e91a5b13155d08c4a2cc71a6f4d4dcee24d6784b3772de6c207b0ba3f0f.jpg)
+![](images/4e2a5e91a5b13155d08c4a2cc71a6f4d4dcee24d6784b3772de6c207b0ba3f0f.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f6b2e1c2f9f526bde838ec7582a8642aae43f77100c69261e1ddd357f4ab3d54.jpg)
+![](images/f6b2e1c2f9f526bde838ec7582a8642aae43f77100c69261e1ddd357f4ab3d54.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/221e07ec9c42be05fec4900e3578514f22c3c6e91453c7fbb0006fd27cd3d2d2.jpg)
+![](images/221e07ec9c42be05fec4900e3578514f22c3c6e91453c7fbb0006fd27cd3d2d2.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/7479205f7af8f44f2177749fb4da9ea5ddef05f322746d72d64703035e0a597d.png)
+![](images/7479205f7af8f44f2177749fb4da9ea5ddef05f322746d72d64703035e0a597d.png)
 
 2016年6月-2017年11月，排名第1
 
@@ -192,57 +192,57 @@ Moore’s law: the number of transistors in a dense integrated circuit (IC) doub
 
 2022年11月/2023年6月（TOP500 List)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/a673220bbac227e61b0d3bcb546fabc9410c5f345fa9879ec035b2c1ac23c0d5.jpg)
+![](images/a673220bbac227e61b0d3bcb546fabc9410c5f345fa9879ec035b2c1ac23c0d5.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d004062735273f28bf456b3e90c137ffbe89e6bedf49a3e5b6231687a68094d3.jpg)
+![](images/d004062735273f28bf456b3e90c137ffbe89e6bedf49a3e5b6231687a68094d3.jpg)
 
 AIAA CFD Vision 2030
 
 计算规模越来越大
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2fdff6797a7631e15d1a246e0235f6994badb11e625051e47b27e806349738be.jpg)
+![](images/2fdff6797a7631e15d1a246e0235f6994badb11e625051e47b27e806349738be.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/66a345a20151e175e36e4cd612a672c0ac421e54a3e8d59cd47658094d86b3dd.jpg)
+![](images/66a345a20151e175e36e4cd612a672c0ac421e54a3e8d59cd47658094d86b3dd.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/750245d5eb0cc3031b9ff7088e32c024b7ad71b9173f05efd609da6625c5c7ca.jpg)
+![](images/750245d5eb0cc3031b9ff7088e32c024b7ad71b9173f05efd609da6625c5c7ca.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/51c8c061ed00a14459fd0c87602aeed499ed6188b7bee06afb8faacf033478b5.jpg)
+![](images/51c8c061ed00a14459fd0c87602aeed499ed6188b7bee06afb8faacf033478b5.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/67802befbd544ec1cdd14e0d78c7a4bfffdd104f08e95f773f9f423927a0c5d9.jpg)
+![](images/67802befbd544ec1cdd14e0d78c7a4bfffdd104f08e95f773f9f423927a0c5d9.jpg)
 
 - 科学计算的发展和工业发展的需求产生了大量的大型商业软件、开源代码
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/ca1002624e692595a96e037e9008f5dda9ab8b10e8ef7f08fceab5297bd093fa.jpg)
+![](images/ca1002624e692595a96e037e9008f5dda9ab8b10e8ef7f08fceab5297bd093fa.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/8f37065e3a3f799670cf7f4df4fea2d076940f8784dc229e739a94fc093dbaea.jpg)
+![](images/8f37065e3a3f799670cf7f4df4fea2d076940f8784dc229e739a94fc093dbaea.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d21f483a7ceb4f8e9600d1142efbb7b3d833974e982bbfdb6fcd4002cbc96836.jpg)
+![](images/d21f483a7ceb4f8e9600d1142efbb7b3d833974e982bbfdb6fcd4002cbc96836.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/a2199f532a89915f3b86a1132f981e4426d63cf2165c8f750b61e85ad0533857.jpg)
+![](images/a2199f532a89915f3b86a1132f981e4426d63cf2165c8f750b61e85ad0533857.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2324d100242cf43ba0c8e9d36e3d1c7dc9c625f7ec1280edd33f371dc62bfeb0.jpg)
+![](images/2324d100242cf43ba0c8e9d36e3d1c7dc9c625f7ec1280edd33f371dc62bfeb0.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f838fde40aa5eb96ceb6e68c4491049a48b2c02fa2dca93adc74399f7d33cdb0.jpg)
+![](images/f838fde40aa5eb96ceb6e68c4491049a48b2c02fa2dca93adc74399f7d33cdb0.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/017a4849bfe085b7f5e15dc54c6bfd4b180a15c32c08a5828a36062f37e180d6.jpg)
+![](images/017a4849bfe085b7f5e15dc54c6bfd4b180a15c32c08a5828a36062f37e180d6.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/e10f2e457a6cef6c2c046b0f201c270864ae56cb34041b7e07b31eee6be52a62.jpg)
+![](images/e10f2e457a6cef6c2c046b0f201c270864ae56cb34041b7e07b31eee6be52a62.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2d4722b58990484500063b1c0be19c94287027885112d3eae74e32f2366fe413.jpg)
+![](images/2d4722b58990484500063b1c0be19c94287027885112d3eae74e32f2366fe413.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/09431fc635dc1d6772e454965cb4bf5a85b0a7a30a6df51f4b2f5005bc2739b5.jpg)
+![](images/09431fc635dc1d6772e454965cb4bf5a85b0a7a30a6df51f4b2f5005bc2739b5.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/a9ae79636f18f8b73060f731fef52fcaf51df20065e7540f6bd49c45ea0d9381.jpg)
+![](images/a9ae79636f18f8b73060f731fef52fcaf51df20065e7540f6bd49c45ea0d9381.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/8f1e9b50e12cfca5973b34c7d54e5d569ca0032055404129afb3bdda5aa525b1.jpg)
+![](images/8f1e9b50e12cfca5973b34c7d54e5d569ca0032055404129afb3bdda5aa525b1.jpg)
 
 - 科学计算的重要成果具有很大的学术和商业价值
 
 - 第一届ICIAM工业奖授予Math Works公司创始人兼首席数学家Cleve Mole：MATLAB (MATrix LABoratory)源于他1960s的博士论文
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/4a99de93dd126b47ba64fbd7a6fa5d1010779ff46d9c98885e78b4404ca392da.jpg)
+![](images/4a99de93dd126b47ba64fbd7a6fa5d1010779ff46d9c98885e78b4404ca392da.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/253dd4aeff2cd172da0c2081a5204a70dee23bd80f6b4edc14e9d6a6d9d18517.jpg)
+![](images/253dd4aeff2cd172da0c2081a5204a70dee23bd80f6b4edc14e9d6a6d9d18517.jpg)
 
 - 美国当地时间2024年1月16日，全球电子设计自动化软件领军企业Synopsys以350亿美元的巨资收购了全球最大的HPC仿真软件公司Ansys。
 
@@ -251,25 +251,25 @@ AIAA CFD Vision 2030
 
 - 国产替代：通用科学计算软件https://www.baltamatica.com/
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2888f138037423b6739ed90c8254624973add45f461d7b47e68c7087825c7b08.jpg)
+![](images/2888f138037423b6739ed90c8254624973add45f461d7b47e68c7087825c7b08.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/c17fb1ced255ca2cdf0d510833223c3f9a6d14bcb83f62b73badf147f79aaad6.jpg)
+![](images/c17fb1ced255ca2cdf0d510833223c3f9a6d14bcb83f62b73badf147f79aaad6.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/3cec4904ab6be31d3c726f8c2b01b821dd9a775603f0f328cd10a24a74ba79a1.jpg)
+![](images/3cec4904ab6be31d3c726f8c2b01b821dd9a775603f0f328cd10a24a74ba79a1.jpg)
 
 - 国家数值风洞http://www.cardc.cn/nnw/
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/e82e27ed36f840d87b2bac45bc9b3b6d27ab7f359186e53e012a06d60f8ab4b3.jpg)
+![](images/e82e27ed36f840d87b2bac45bc9b3b6d27ab7f359186e53e012a06d60f8ab4b3.jpg)
 
 - 人工智能正在给科学计算带来深刻的变革
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/fcc983f39a22e16438035a7599c301e24302321758fe8a4664deae02f06552df.jpg)
+![](images/fcc983f39a22e16438035a7599c301e24302321758fe8a4664deae02f06552df.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/5274c139e0b467a35cb4bb0879d4e732c25adbcdce696a81eca11e5236e6422c.jpg)
+![](images/5274c139e0b467a35cb4bb0879d4e732c25adbcdce696a81eca11e5236e6422c.jpg)
 
 Google, Deep Mind
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/6083aa8e60cd04a0bce2f1692db645f8f7acb953a5dd37069d1c6344509af840.jpg)
+![](images/6083aa8e60cd04a0bce2f1692db645f8f7acb953a5dd37069d1c6344509af840.jpg)
 
 OpenAI, 2022年11月发布GPT
 
@@ -277,31 +277,31 @@ OpenAI, 2022年11月发布GPT
 
 2016年3月,AlphaGo 4:1 李世石
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/6e043a6e4d83e63883de16fb8a5ce929bf7096c202518356a323d189945a4fe2.jpg)
+![](images/6e043a6e4d83e63883de16fb8a5ce929bf7096c202518356a323d189945a4fe2.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2a1c768eb40f80a20b0b880bc4f797f78e178c9b394851f91174b93ed887a8e3.jpg)
+![](images/2a1c768eb40f80a20b0b880bc4f797f78e178c9b394851f91174b93ed887a8e3.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f86f9ef18946256bdaf8acfe34fbfa4800672103c040e9a82ba8c5c982854a24.jpg)
+![](images/f86f9ef18946256bdaf8acfe34fbfa4800672103c040e9a82ba8c5c982854a24.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/e99d6693581ef074bedc805a8616bcaf6687ab87001554b08c61fd633d335fcd.jpg)
+![](images/e99d6693581ef074bedc805a8616bcaf6687ab87001554b08c61fd633d335fcd.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/e50c23881eb2046563a6a3b9957f382b5b55c5ed907115c2c534fedc045c3987.jpg)
+![](images/e50c23881eb2046563a6a3b9957f382b5b55c5ed907115c2c534fedc045c3987.jpg)
 
 - 未来的科学计算还可能发生变革九章
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d35a9122d0ec50b3e6bfa5622a50f91547170b6f18d4b4e6ac5bfe1d15437feb.jpg)
+![](images/d35a9122d0ec50b3e6bfa5622a50f91547170b6f18d4b4e6ac5bfe1d15437feb.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/ed041db69621e772606a62e4752ae6389fa727b7c3b2b0e656a9e1d7bc58456d.jpg)
+![](images/ed041db69621e772606a62e4752ae6389fa727b7c3b2b0e656a9e1d7bc58456d.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f57dc1afa85d604863ee7ea488859db90a3d1bb0665b196039939adbb366bdbb.jpg)
+![](images/f57dc1afa85d604863ee7ea488859db90a3d1bb0665b196039939adbb366bdbb.jpg)
 
 - 量子计算机
 
 - 光子计算机
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/c26ef631d2ac501e5a1df95b9fa8e1548d76c8d7965eb448c68ae5add4b3e67c.jpg)
+![](images/c26ef631d2ac501e5a1df95b9fa8e1548d76c8d7965eb448c68ae5add4b3e67c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d7470a8d9c38187eaef00f3124f7cd29174215724d9fc8eef50dd16ccde0d4eb.jpg)
+![](images/d7470a8d9c38187eaef00f3124f7cd29174215724d9fc8eef50dd16ccde0d4eb.jpg)
 
 - 分子计算机
 
@@ -341,27 +341,27 @@ OpenAI, 2022年11月发布GPT
 
 - Without understanding gained from CFD there would not have been a 737-300 program! (Walt Gillete, Manager 737 Aerodynamics, Vice President, 787 Engineering)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/454a9f969b5a9e1bd5ea69cca3cb0a23443b6ffaef48f6307c050e952920ae1e.png)
+![](images/454a9f969b5a9e1bd5ea69cca3cb0a23443b6ffaef48f6307c050e952920ae1e.png)
 
 CFD在波音787设计中的贡献
 
 ## 科学计算的重要性
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2ebc1ce3d20c6d6c4fbe1691da300efe02c760af5baad335baeb27497b7f316c.jpg)
+![](images/2ebc1ce3d20c6d6c4fbe1691da300efe02c760af5baad335baeb27497b7f316c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/d64a87cd9bd8fd92735eed12b9fed3ea801cf06f20e00e292a5010febdc95307.jpg)
+![](images/d64a87cd9bd8fd92735eed12b9fed3ea801cf06f20e00e292a5010febdc95307.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/5a14848c1ae23c6832eecb99f8f67d49f1121e9a0f508f002f12e7c003c3f7bd.png)
+![](images/5a14848c1ae23c6832eecb99f8f67d49f1121e9a0f508f002f12e7c003c3f7bd.png)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/fbe9fa1079cbccfceaaeda588c9883a8073f671c132b7edfb82b2c5c14d150bc.jpg)
+![](images/fbe9fa1079cbccfceaaeda588c9883a8073f671c132b7edfb82b2c5c14d150bc.jpg)
 
 心脏模拟动画特效汽车设计爆炸模拟
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/795a7dcf681bc37e963a61018a2ed75a5fc6d8a8ce9400e0e89b55ba208014fe.jpg)
+![](images/795a7dcf681bc37e963a61018a2ed75a5fc6d8a8ce9400e0e89b55ba208014fe.jpg)
 
 城市设计
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/c2316724777e791c92546605056d1553bdb09eec1ecb5cb8929fcd0586c2f81c.jpg)
+![](images/c2316724777e791c92546605056d1553bdb09eec1ecb5cb8929fcd0586c2f81c.jpg)
 
 油藏模拟发动机模拟
 
@@ -374,15 +374,15 @@ CFD在波音787设计中的贡献
     - 计算效率？
     - 是否能大规模化（充分利用计算设备算力）？
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/86bb23fd872db354acd4dbb45f8356b5924e554ea07a66d3ca82897d28636f05.jpg)
+![](images/86bb23fd872db354acd4dbb45f8356b5924e554ea07a66d3ca82897d28636f05.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/df8dc1f74f2216f1252aebfd915f46d9ffe053011343e512ede8f61d06da2400.jpg)
+![](images/df8dc1f74f2216f1252aebfd915f46d9ffe053011343e512ede8f61d06da2400.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/19b0dcd2cc9d2ec52a834a740d10c4088ba1d170e5640eafd7901a8f57534090.jpg)
+![](images/19b0dcd2cc9d2ec52a834a740d10c4088ba1d170e5640eafd7901a8f57534090.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/3b72572b3e0feb53023734ae4a1ddfb4168426df21b233e5f98a67ca39b96740.jpg)
+![](images/3b72572b3e0feb53023734ae4a1ddfb4168426df21b233e5f98a67ca39b96740.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/164b5be0b42d16e2d05ab0558d71c91f8988b7909e6eecf01e7574a860fdf624.jpg)
+![](images/164b5be0b42d16e2d05ab0558d71c91f8988b7909e6eecf01e7574a860fdf624.jpg)
 
 <table>
   <tr>
@@ -415,15 +415,15 @@ CFD在波音787设计中的贡献
   </tr>
 </table>
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/a6e315e6f7e4de13e2ee02f14ce0e8a9f63ad81630f665c0ac2d1c3744b7d923.jpg)
+![](images/a6e315e6f7e4de13e2ee02f14ce0e8a9f63ad81630f665c0ac2d1c3744b7d923.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/6a3a0bb4cd8fb64019fb6a29a2af813d6eb833eed253ab7cb289bb88a476131f.png)
+![](images/6a3a0bb4cd8fb64019fb6a29a2af813d6eb833eed253ab7cb289bb88a476131f.png)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/61604ea20c981faa8e3f96cabebe7743f96c72934e53ff0727426e2cedac0566.jpg)
+![](images/61604ea20c981faa8e3f96cabebe7743f96c72934e53ff0727426e2cedac0566.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/56620f27ed7d1df445dacb6b1ddeb678b5ed04e9128394d2e8bef0301119a84e.jpg)
+![](images/56620f27ed7d1df445dacb6b1ddeb678b5ed04e9128394d2e8bef0301119a84e.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f017185795532bc53bab781d4e19b9dd7611749b3d2c153fc1a0fa66176dad28.jpg)
+![](images/f017185795532bc53bab781d4e19b9dd7611749b3d2c153fc1a0fa66176dad28.jpg)
 
 ## 误差定义
 
@@ -639,9 +639,9 @@ $fl\left(9.4\right)-fl\left(9\right)-fl\left(0.4\right)=0.2\times 2^{-49}-0.1\ti
 
 - 计算机实验（C语言）
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/4b7ebaf74589e7ec418cda1b850e5c2be9a8a779cb3cf5ec9c8a3b2fb59afc25.jpg)
+![](images/4b7ebaf74589e7ec418cda1b850e5c2be9a8a779cb3cf5ec9c8a3b2fb59afc25.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2c435f8e8207ad0b6d2f4c508c71a20c5860bf508dfcab14743304212431c5e3.jpg)
+![](images/2c435f8e8207ad0b6d2f4c508c71a20c5860bf508dfcab14743304212431c5e3.jpg)
 
 ## 数值计算的基本原则
 
@@ -671,9 +671,9 @@ $P\left(x\right)=1+x(2+x(3$  $+x(4+5x)))$
 
 - 计算机实验（C语言）
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/1d31ca6fbe85baf0f66d08f32fc885707e89609298c5c3a6ed44fbff7ad66e3e.jpg)
+![](images/1d31ca6fbe85baf0f66d08f32fc885707e89609298c5c3a6ed44fbff7ad66e3e.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/374b74fab85d4afb5e839eb43269e5976feee2b9c0aa41e9e0ac95feef1d5323.jpg)
+![](images/374b74fab85d4afb5e839eb43269e5976feee2b9c0aa41e9e0ac95feef1d5323.jpg)
 
 ## 数值计算的基本原则
 
@@ -691,7 +691,7 @@ n
 
 误差
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/8fe4cddec7fea7b54181bc712e86d306763556fbbf92fedb69933832d700bc96.jpg)
+![](images/8fe4cddec7fea7b54181bc712e86d306763556fbbf92fedb69933832d700bc96.jpg)
 
 外推法
 
@@ -699,9 +699,9 @@ $\hat{\pi }_{2n}=\frac{4\pi _{2n}-\pi _{n}}{3}$
 
 ## 数值稳定性
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/f9098b732ea89e2f92043eb37975ff8f7c678f2d9ddc5f4d8d1e8677bceb8d1a.jpg)
+![](images/f9098b732ea89e2f92043eb37975ff8f7c678f2d9ddc5f4d8d1e8677bceb8d1a.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/a6d5568edca5ff3d1ff0170264f316fbbdf61609a5325205d65d0407d5679042.jpg)
+![](images/a6d5568edca5ff3d1ff0170264f316fbbdf61609a5325205d65d0407d5679042.jpg)
 
 - 计算 $I_{n}=\int_{0}^{1}\frac{x^{n}}{x+5}dx$
 
@@ -715,9 +715,9 @@ $e(I_{n})=\left(-5\right)^{n}e\left(I_{0}\right)$
 
 ## 数值稳定性
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/14778ea1bf090d3322e511851e2b77d75ec1fbf1916461bd47ece30a87fd5c72.jpg)
+![](images/14778ea1bf090d3322e511851e2b77d75ec1fbf1916461bd47ece30a87fd5c72.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/2e08f6fb4d13edd6679be9d12f7d6f87c87ab5e1648bd2e1b81700b30f1239a0.jpg)
+![](images/2e08f6fb4d13edd6679be9d12f7d6f87c87ab5e1648bd2e1b81700b30f1239a0.jpg)
 
 $I_{n-1}=\frac{1}{5}(\frac{1}{n}$  - $I_{n})$
 
@@ -731,9 +731,9 @@ $e(I_{0})=\left(-\frac{1}{5}\right)^{n}e\left(I_{n}\right)$
 
 $I_{40}=100$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/71482259d7a8b1741a11e6fc709d3b4a60d4c2bb45d559d5da6cdadade31e16e.jpg)
+![](images/71482259d7a8b1741a11e6fc709d3b4a60d4c2bb45d559d5da6cdadade31e16e.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/b9bb0053c88edd854183a186e2289d15699775e0970fd9fc4382778fb38b48c0.jpg)
+![](images/b9bb0053c88edd854183a186e2289d15699775e0970fd9fc4382778fb38b48c0.jpg)
 
 ## 病态问题
 
@@ -754,6 +754,6 @@ $a=0.991    x=55.81$
 
 ## 助教：王子毅
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9001BackgroundAndBasis/images/ea3ba8f33a49630d70adb821c55645aa9ad7d982bc834db43c39e1abdb786ce6.png)
+![](images/ea3ba8f33a49630d70adb821c55645aa9ad7d982bc834db43c39e1abdb786ce6.png)
 
 群号：138911823

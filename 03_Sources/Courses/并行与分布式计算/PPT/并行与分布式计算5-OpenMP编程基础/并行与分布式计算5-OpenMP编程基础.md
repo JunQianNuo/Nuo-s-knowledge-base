@@ -22,11 +22,11 @@ parser: mineru
 
 Linux内核与GNU工具链结合形成完整系统，依托开源社区协作持续迭代。如今衍生出Ubuntu、CentOS、RedHat等丰富发行版，广泛应用于服务器、云计算、嵌入式设备及超级计算机领域。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/cf76f6b4fd245e3fca622c4ad119c305139903618ad7779c23792ff6d15308b3.jpg)
+![](images/cf76f6b4fd245e3fca622c4ad119c305139903618ad7779c23792ff6d15308b3.jpg)
 
 Linux 创始人：Linus Torvalds
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/5b02977b1d481b12b6cdc3eff51b8309a1e25d37a4a94da144e284deacfe5d89.jpg)
+![](images/5b02977b1d481b12b6cdc3eff51b8309a1e25d37a4a94da144e284deacfe5d89.jpg)
 
 早期 Linux 系统启动界面
 
@@ -62,7 +62,7 @@ Linux 创始人：Linus Torvalds
 
 遵循“一切皆文件”的设计哲学，将硬件设备、进程数据等统一抽象为文件进行管理。采用树形目录结构，以根目录“/”为起点，层次分明，便于数据的组织、存储与访问。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/67f12202cb3ee1d6395753a4651904970c55c1325b893cef75e61c3b081ac5ca.jpg)
+![](images/67f12202cb3ee1d6395753a4651904970c55c1325b893cef75e61c3b081ac5ca.jpg)
 
 ## **Linux 系统 vs Windows 系统**
 
@@ -70,9 +70,9 @@ Linux 创始人：Linus Torvalds
 
 ### **Linux 系统**
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/ec7d99e1bdf9ab0010b1b140a60c19271e2bc05c4ea5de872ed4e09123d60fc4.jpg)
+![](images/ec7d99e1bdf9ab0010b1b140a60c19271e2bc05c4ea5de872ed4e09123d60fc4.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/83d2ebe01d9b032d8e0c44f91f5c9ca48edef48816869adb47a69fac46769eb7.jpg)
+![](images/83d2ebe01d9b032d8e0c44f91f5c9ca48edef48816869adb47a69fac46769eb7.jpg)
 
 **01 开源与自由**
 
@@ -100,9 +100,9 @@ Linux 创始人：Linus Torvalds
 
 ### **Windows 系统**
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/6b858e76c13c22fab898466148ccc0ed66eae85546e52a31fee5729d97df5030.jpg)
+![](images/6b858e76c13c22fab898466148ccc0ed66eae85546e52a31fee5729d97df5030.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/4ee8bc69e73f8fcb3a85413c4863c259b982ba0f00fe5a59a92c1ca7479da5c0.jpg)
+![](images/4ee8bc69e73f8fcb3a85413c4863c259b982ba0f00fe5a59a92c1ca7479da5c0.jpg)
 
 **01 商业闭源**
 
@@ -130,7 +130,7 @@ Linux 创始人：Linus Torvalds
 
 ## **Linux的主要应用领域**
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/5671b463d6c64099c5a619538b9d4897ae9978067bd8c20e6dcbdf2172a5616a.jpg)
+![](images/5671b463d6c64099c5a619538b9d4897ae9978067bd8c20e6dcbdf2172a5616a.jpg)
 
 ### **01 服务器领域**
 
@@ -138,7 +138,7 @@ Linux 创始人：Linus Torvalds
 
 支撑全球绝大多数互联网后台业务，拥有强大的并发处理能力和安全防护机制。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/4346f2b8b52dd116d392192ab1788f21b1b7e542b10371dee8556387544ece9d.jpg)
+![](images/4346f2b8b52dd116d392192ab1788f21b1b7e542b10371dee8556387544ece9d.jpg)
 
 ### **02 嵌入式与IoT**
 
@@ -146,7 +146,7 @@ Linux 创始人：Linus Torvalds
 
 适配各类硬件平台，功耗低、响应快，是物联网设备操作系统的核心选择。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/597e1ac8241653f0c89d3b90b422e4474357ac9015498df60f0a12ceba17460d.jpg)
+![](images/597e1ac8241653f0c89d3b90b422e4474357ac9015498df60f0a12ceba17460d.jpg)
 
 ### **03 云计算基石**
 
@@ -154,7 +154,7 @@ Docker、K8s的原生载体，为微服务架构提供高效运行环境。
 
 支持快速部署与弹性伸缩，是构建现代化云原生基础设施的底层技术。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/7a326c5e2d15d306866c13310e4e908d901b4185c8559a5e693be378537ba028.jpg)
+![](images/7a326c5e2d15d306866c13310e4e908d901b4185c8559a5e693be378537ba028.jpg)
 
 ### **04 移动智能终端**
 
@@ -162,7 +162,7 @@ Android系统基于Linux内核，覆盖全球超70%的智能手机。
 
 为移动互联网生态提供稳定的底层支持，是全球移动设备的核心操作系统之一。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/ac221cffe608248ddfebfa9834d9501aa9b8f8c659417a7f42b3a8e86b50f97f.jpg)
+![](images/ac221cffe608248ddfebfa9834d9501aa9b8f8c659417a7f42b3a8e86b50f97f.jpg)
 
 ### **05 开发者桌面**
 
@@ -184,7 +184,7 @@ Ubuntu、Fedora等发行版功能强大，是编程开发、系统管理的理�
 
 Linux 不是一门“看会”的技术，而是一门“练会”的技术。不要畏惧命令行的黑窗口，每一次输入指令都是对系统底层逻辑的探索。从简单的文件管理开始，逐步尝试编写脚本、搭建服务，在不断的实践中积累经验，才能真正打通 Linux 的任督二脉。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/8c4ab47424756854b5abe1ec63b6dbc2a68b702413085a678d38fcaac93dddf8.png)
+![](images/8c4ab47424756854b5abe1ec63b6dbc2a68b702413085a678d38fcaac93dddf8.png)
 
 课堂练习：测试常用Linux命令的实际效果。
 
@@ -280,11 +280,11 @@ touch newfile
 
 ## OpenMP存储模型
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/5e383d1d45b7de4b9fa9143e4e9ea41713e055a9d72ac00614059c40393f341c.jpg)
+![](images/5e383d1d45b7de4b9fa9143e4e9ea41713e055a9d72ac00614059c40393f341c.jpg)
 
 ## OpenMP编译器
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/31eb2fe37ce54c70f4068bbd39e83d24cff4852bd8ad658b1858a4e95daa28ae.png)
+![](images/31eb2fe37ce54c70f4068bbd39e83d24cff4852bd8ad658b1858a4e95daa28ae.png)
 
 ## OpenMP条件编译
 
@@ -387,7 +387,7 @@ BLOCK
 
 ## 并行域结构
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/8bf6d3e00cac2da37d6d04167b710fc8098a8389657a24554d89528451cc62a3.jpg)
+![](images/8bf6d3e00cac2da37d6d04167b710fc8098a8389657a24554d89528451cc62a3.jpg)
 
 Master thread
 
@@ -631,7 +631,7 @@ min		求最小值该类型可表示的最大值寻找最小值
 
 - critical、atomic、reduction的对比
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/b3d8f2eedc8b4a7e2c8f33b96432335714c7da11401a1801971e106e2e08d047.jpg)
+![](images/b3d8f2eedc8b4a7e2c8f33b96432335714c7da11401a1801971e106e2e08d047.jpg)
 
 课堂练习：对比以上三种操作在累加、连乘、求最值中的效率。
 
@@ -663,7 +663,7 @@ for (int i = 0; i < n; i++)
 
 - threadprivate 用于指定一个变量是线程私有，用于让全局/静态变量在每个线程中拥有独立且可跨并行区域持久的副本。它适合维护线程级的长期状态（如线程私有缓冲区、累积计数器）。与 private 的核心区别在于作用对象、生命周期和主线程语义。
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%975-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/images/e1445d96b6b86c86565ce746dfbe67957aaa141122fa5afe80751bdb6c904219.jpg)
+![](images/e1445d96b6b86c86565ce746dfbe67957aaa141122fa5afe80751bdb6c904219.jpg)
 
 课堂练习：编译threadprivate示例程序，测试threadprivate的作用。
 

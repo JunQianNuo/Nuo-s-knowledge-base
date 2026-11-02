@@ -18,9 +18,9 @@ tags:
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
 about:
-- '[[00_Inbox/待核实核心/概念/Fourier变换]]'
+- '[[01_Knowledge/Fourier变换]]'
 legacy_topic_links:
-- '[[00_Inbox/待核实核心/概念/Fourier变换]]'
+- '[[01_Knowledge/Fourier变换]]'
 time: "2026-08-31T11:44:20+08:00"
 aliases: []
 legacy_status: 已整理
@@ -111,7 +111,7 @@ $$
 
 ## 相关概念
 
-- [[00_Inbox/待核实核心/概念/Fourier变换]]
+- [[01_Knowledge/Fourier变换]]
 - [[01_Knowledge/L^p空间]]
 - [[01_Knowledge/Lebesgue积分]]
 - [[01_Knowledge/卷积]]

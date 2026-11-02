@@ -65,7 +65,7 @@ $\left[\begin{array}{c}u_{2}\\v_{2}\end{array}\right]=\left[\begin{matrix}-2&-1\
 
 $\left[\begin{array}{c}u_{3}\\v_{3}\end{array}\right]=\left[\begin{matrix}-2&-1\\-1&-1\end{matrix}\right]\left[\begin{array}{c}-10\\-5\end{array}\right]+\left[\begin{array}{c}5\\5\end{array}\right]=\left[\begin{array}{c}30\\20\end{array}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/9706d4f64ee0e5a514dcda3ed8e953f17d4bd81b1fa352ac23fbd637b958e326.png)
+![](images/9706d4f64ee0e5a514dcda3ed8e953f17d4bd81b1fa352ac23fbd637b958e326.png)
 
 ## Jacobi迭代
 
@@ -111,7 +111,7 @@ $\left[\begin{array}{c}u_{2}\\v_{2}\end{array}\right]=\left[\begin{array}{c}(5-v
 
 $\left[\begin{array}{c}u_{3}\\v_{3}\end{array}\right]=\left[\begin{array}{c}(5-v_{2})/3\\(5-u_{2})/2\end{array}\right]=\left[\begin{array}{c}10/9\\25/12\end{array}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/9215a9f34efe6902bd3b5070dad3da6cb83ec0a471b4336c139ee0aed6969f29.jpg)
+![](images/9215a9f34efe6902bd3b5070dad3da6cb83ec0a471b4336c139ee0aed6969f29.jpg)
 
 ## Gauss-Seidel迭代
 
@@ -159,7 +159,7 @@ $\left[\begin{array}{c}u_{1}\\v_{1}\end{array}\right]=\left[\begin{array}{c}\fra
 
 $\left[\begin{array}{c}u_{2}\\v_{2}\end{array}\right]=\left[\begin{array}{c}\frac{5-v_{1}}{3}\\\frac{5-u_{2}}{2}\end{array}\right]=\left[\begin{array}{c}\frac{10}{9}\\\frac{35}{18}\end{array}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/73552f46c50a1371f5cdff2cf555eba3e866a4482a1e586cf8b3662225dc3fcc.jpg)
+![](images/73552f46c50a1371f5cdff2cf555eba3e866a4482a1e586cf8b3662225dc3fcc.jpg)
 
 Gauss-Seidel迭代通常收敛比Jacobi迭代快
 
@@ -215,7 +215,7 @@ $v$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/28254b543e97c1acabd6ee48fe1b523b713989c6bb2e2a5d40536b58cbebf317.jpg)
+![](images/28254b543e97c1acabd6ee48fe1b523b713989c6bb2e2a5d40536b58cbebf317.jpg)
 
 $u$
 
@@ -223,7 +223,7 @@ $v$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/73552f46c50a1371f5cdff2cf555eba3e866a4482a1e586cf8b3662225dc3fcc.jpg)
+![](images/73552f46c50a1371f5cdff2cf555eba3e866a4482a1e586cf8b3662225dc3fcc.jpg)
 
 $u$
 
@@ -231,7 +231,7 @@ $v$
 
 $k$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/8a9ca6311ea397c2900f74f84d0ab262a9e34f217848af9cf1a5225390d52cfb.jpg)
+![](images/8a9ca6311ea397c2900f74f84d0ab262a9e34f217848af9cf1a5225390d52cfb.jpg)
 
 ## 连续超松弛（SOR）迭代
 
@@ -282,9 +282,9 @@ $x_{0}=\left[0,0,0,0,0,0\right]^{T}$
 
 $\left\|x_{k}-x_{k-1}\right\|_{\infty }$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/6cbd1464e2aa1c39cc07c48215069603de416784adb30b3a825174763b7563af.jpg)
+![](images/6cbd1464e2aa1c39cc07c48215069603de416784adb30b3a825174763b7563af.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/7e953d0357ba76aa7727a3c2570fbecfba1fe69c76d245da4c70f16f298da6c1.jpg)
+![](images/7e953d0357ba76aa7727a3c2570fbecfba1fe69c76d245da4c70f16f298da6c1.jpg)
 
 $\left[\begin{array}{c}u_{1}\\u_{2}\\u_{3}\\u_{4}\\u_{5}\\u_{6}\end{array}\right]$
 
@@ -298,17 +298,17 @@ $\omega$
 
 - 伪代码
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/eaae5a06af4ce9be4626dae12daa689b68e4d0c895f439feaf1003cccb45657c.png)
+![](images/eaae5a06af4ce9be4626dae12daa689b68e4d0c895f439feaf1003cccb45657c.png)
 
 迭代法则 $Qx_{k+1}=\left(Q-A\right)x_{k}+b$
 
 收敛判别
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/e04f737098fe133e42534f50df1cf27ca4494f28a49a02209b829f8bcee81d02.jpg)
+![](images/e04f737098fe133e42534f50df1cf27ca4494f28a49a02209b829f8bcee81d02.jpg)
 
 ## 迭代法的代码求解 $\left(D+L\right)x=c$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/f350b515f52ab3ff02519b4662a378e7add29cfe0ab32ba5fc780f1483e40382.jpg)
+![](images/f350b515f52ab3ff02519b4662a378e7add29cfe0ab32ba5fc780f1483e40382.jpg)
 
 Gauss-Seidel C Code示例向量加法问题定义向量减法向量复制计算 $\left(D+L-A\right)x$
 
@@ -435,9 +435,9 @@ $\left\|A\right\|^{*}\leq \rho \left(A\right)+\varepsilon , \varepsilon$ 为任�
 - Gauss消元/LU分解复杂度 $O(n^{3})$ , 矩阵乘向量 $O(n^{2})，$ 迭代法复杂度 $O(kn^{2}) ，k$ 为迭代步数。
 - 对于稀疏矩阵,非零元个数为 $O(n) ，$ 迭代法优势明显：更少的内存更快的速度！
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/e91068cfa4f623fedc85bb0661b349a3f90d49d1116eec8548b3bac4cd5ff5a8.jpg)
+![](images/e91068cfa4f623fedc85bb0661b349a3f90d49d1116eec8548b3bac4cd5ff5a8.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9004LinearSystemIterationMethods/images/faf05224e42714e9595f2cce15b8dd6427dacc78c3b0ed352dd7feafd06de9b9.jpg)
+![](images/faf05224e42714e9595f2cce15b8dd6427dacc78c3b0ed352dd7feafd06de9b9.jpg)
 
 消元
 

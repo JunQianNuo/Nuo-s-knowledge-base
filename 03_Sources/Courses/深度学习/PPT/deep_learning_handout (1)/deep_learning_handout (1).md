@@ -382,10 +382,10 @@ $$
 
 where $c > 0$ is a constant. In the special case $c = 1$ , (1.1) is the identity function.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/37797fa42d6a3e0efea49bcec0a56cc61b75bfa260d2e98e4b000c9ec71e34c1.jpg)  
+![](images/37797fa42d6a3e0efea49bcec0a56cc61b75bfa260d2e98e4b000c9ec71e34c1.jpg)  
 (a) Heaviside function
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/0b7420ad61abb9a7e777aef10a9695d20e4e963b0c334314e3158774b3d28220.jpg)  
+![](images/0b7420ad61abb9a7e777aef10a9695d20e4e963b0c334314e3158774b3d28220.jpg)  
 (b) bipolar step function  
 Figure 1.1: Step functions.
 
@@ -487,22 +487,22 @@ $$
 \lg \mathrm{s} ^ {- 1} (x) = \ln (\frac {x}{1 - x}),
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/8115abd5ee22147ab82dad59cda45554e5ddbaa113b82211c0759800cc435e60.jpg)  
+![](images/8115abd5ee22147ab82dad59cda45554e5ddbaa113b82211c0759800cc435e60.jpg)  
 (a) ReLU
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/356e4e3f6ad627f760c65f2cee09d9748d0e37042d0b6bf83413e8e7c8a20785.jpg)  
+![](images/356e4e3f6ad627f760c65f2cee09d9748d0e37042d0b6bf83413e8e7c8a20785.jpg)  
 (b) PReLU with α = 0.5
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/956ad9f02db2b0e8213325bf80ac5469ab7b8f7acdf5a5018a655f9b60be8bfa.jpg)  
+![](images/956ad9f02db2b0e8213325bf80ac5469ab7b8f7acdf5a5018a655f9b60be8bfa.jpg)  
 (c) ELU with α = 0.5
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/dccec7bdc06350279f6a6d8e68c0828b64400865e69737c563322b732f3213ef.jpg)  
+![](images/dccec7bdc06350279f6a6d8e68c0828b64400865e69737c563322b732f3213ef.jpg)  
 (d) SELU with α = 0.5 and λ = 1.5
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/993e2a271b9bd9c62353f4a528ef5b8da0e8383d408a4e199a060c16fbeaf21e.jpg)  
+![](images/993e2a271b9bd9c62353f4a528ef5b8da0e8383d408a4e199a060c16fbeaf21e.jpg)  
 (e) SLU
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/2c3a9028988ebd6010327410cba5efb5b4f6b6c6bc0ea116c4303a846e9a198f.jpg)  
+![](images/2c3a9028988ebd6010327410cba5efb5b4f6b6c6bc0ea116c4303a846e9a198f.jpg)  
 (f) softplus  
 Figure 1.2: Hockey-stick functions.
 
@@ -566,29 +566,29 @@ And as $\alpha  0 , f _ { \alpha } ( x )$ converges to $S ( x )$ pointwise for a
 
 These types of sigmoid functions are shown in Figure 1.3.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/3db375c1187f0f3bdc3358510e0236fbbc3507010ff49f8ec1320ca0c90e31c3.jpg)  
+![](images/3db375c1187f0f3bdc3358510e0236fbbc3507010ff49f8ec1320ca0c90e31c3.jpg)  
 (a) logistic function
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/c89de4d443a547f506b0e244fd3b87118e7d1911e1b6566938f5ff82ac818aae.jpg)  
+![](images/c89de4d443a547f506b0e244fd3b87118e7d1911e1b6566938f5ff82ac818aae.jpg)  
 (b) logistic function with $c = 2$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/bf039921c133fa9c8917af466362453e37a5259eaf3ac2c014c2676990976e03.jpg)  
+![](images/bf039921c133fa9c8917af466362453e37a5259eaf3ac2c014c2676990976e03.jpg)  
 (c) hyperbolic tangent function
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/6c23eb4b745e10c88b5a2f471311a384604eed0f8aaea81217fcfaafcfb5789a.jpg)  
+![](images/6c23eb4b745e10c88b5a2f471311a384604eed0f8aaea81217fcfaafcfb5789a.jpg)  
 (d) arctangent function
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/79213accc9a692740060cf948b13d6ba9863b7dda068f0ea16892dfbe46af3bb.jpg)  
+![](images/79213accc9a692740060cf948b13d6ba9863b7dda068f0ea16892dfbe46af3bb.jpg)  
 (e) softsign function  
 Figure 1.3: Sigmoid functions.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/640cb92324ad740b9f5f57a8403566019c7158efd758ccbe9244fcd892edf608.jpg)  
+![](images/640cb92324ad740b9f5f57a8403566019c7158efd758ccbe9244fcd892edf608.jpg)  
 (f) piecewise linear sigmoid function with $\alpha = 1$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/8bf6dda950a97faaab9c363700442ec582061dd166a55cc464a868ea114bf1f2.jpg)  
+![](images/8bf6dda950a97faaab9c363700442ec582061dd166a55cc464a868ea114bf1f2.jpg)  
 (a) Gaussian function
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/a9841cc0ec273666aff867df8af2c11e51c01a2c43c6c7757c1b3552dea82192.jpg)  
+![](images/a9841cc0ec273666aff867df8af2c11e51c01a2c43c6c7757c1b3552dea82192.jpg)  
 (b) double exponential function  
 Figure 1.4: Bumped-type functions.
 
@@ -788,7 +788,7 @@ Corollary 1.1 Any infinite sequence of squashing functions $( \varphi _ { n } ) 
 
 However, the limit function $f$ is not necessarily a squashing function. More precisely, despite that $\scriptstyle \operatorname* { l i m } _ { x \to \pm \infty } f ( x )$ exists, it may not be 0 or 1.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/4242ccc7e646a31d4181f18679461d1508032fa9b2a522a133593bd67589d7a4.jpg)  
+![](images/4242ccc7e646a31d4181f18679461d1508032fa9b2a522a133593bd67589d7a4.jpg)  
 Figure 1.5: Abstract neuron $y = \sigma ( w ^ { \top } x + b )$
 
 ## 1.2 Feedforward Neural Networks
@@ -867,7 +867,7 @@ $$
 y = w ^ {\top} x + b
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/e163a20f07686003e0ad769cb1e96c8075b7f522c88df78e835695f936f5a0a2.jpg)  
+![](images/e163a20f07686003e0ad769cb1e96c8075b7f522c88df78e835695f936f5a0a2.jpg)  
 Figure 1.6: Madaline with two Adaline units.
 
 is a linear function lifted by b. So the regression using linear neurons as the approximator is basically the linear regression. It is well known that linear regression enjoys many advantages. For example, linear regression with $L ^ { 2 }$ loss function is a convex optimization whose global optima can be found by solving a symmetric positive definite linear system.
@@ -896,7 +896,7 @@ As shown in Figure 1.5, an abstract neuron receives several scalars $x _ { 1 } ,
 
 For example, the graph in Figure 1.7 represents a network consisting of 5 neurons. The first and second neurons have common inputs $x _ { 2 }$ and $x _ { 3 }$ , but the second neuron has an extra input $x _ { 1 }$ . The outputs of the first and second neurons form the inputs of the third neuron. Moreover. the output of the first neuron is also received by the fourth neuron, which also takes $x _ { 1 }$ as another input. Finally, the outputs of the third and fourth neurons go to the fifth neuron, which produces the final output. We can formulate the above process as
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/95bd8c1400d38a7c1afddc7ca18d222c0fb174a0899f151a5a686aa05af5ee4b.jpg)  
+![](images/95bd8c1400d38a7c1afddc7ca18d222c0fb174a0899f151a5a686aa05af5ee4b.jpg)  
 Figure 1.7: A general neural network with 3 scalar inputs, 5 neurons and 1 scalar output.
 
 $$
@@ -913,7 +913,7 @@ Generally, a directed graph formed by connecting abstract neurons is called a ne
 
 For practical purposes, we do not expect rambling or disordered neural networks. So we usually consider the neural networks with regular architectures, in which the neurons are connected layer by layer, see Figure 1.8. In this graph, the most front layer consisting of inputs is called the input layer; the end layer consisting of two output neurons is called the output layer; all the other layers between the input and output layers are called the hidden layers. We note in Figure 1.8 that every neuron in one hidden layer is connected to all the neurons (or inputs) in the last layer and all the neurons in the next layer; namely, all neurons are $f u l l y$ connected. A fully-connected feedforward neural network (also called a multilayer perceptron) with d inputs, L hidden layers and $d ^ { \prime }$ outputs can be formulated as follows:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/29e7f1d0a0f1759f25fef137eaac5d3384f34dc64488682d801d14a20d512519.jpg)  
+![](images/29e7f1d0a0f1759f25fef137eaac5d3384f34dc64488682d801d14a20d512519.jpg)  
 Figure 1.8: A fully-connected feedforward neural network with 5 scalar inputs, $\it 4$ hidden layers and 2 scalar outputs.
 
 $$
@@ -1108,19 +1108,19 @@ $$
 
 for $j = 1 , \ldots , M _ { \ell }$ and $\ell = 2 , \ldots , L$ . Figure 1.9 visualizes the procedure of back propagation on a 4-layer neural network with width 3 in every layer.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/f35976df35210751bc11e14b1a4ef21e7f58c9cff1deef7753d57b02f7bff482.jpg)  
+![](images/f35976df35210751bc11e14b1a4ef21e7f58c9cff1deef7753d57b02f7bff482.jpg)  
 (a) computation in the output layer
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/b7880d4ec59584c2a99c12136fc9d6cfdd1f4132878f3ab21fba6785b3b05c5c.jpg)  
+![](images/b7880d4ec59584c2a99c12136fc9d6cfdd1f4132878f3ab21fba6785b3b05c5c.jpg)  
 (b) from the output layer to the 3rd layer
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/aa8f9f5e8884486837bf656ffe2e792b7e7da91d80728183c7abfcdfeb7b7bd0.jpg)  
+![](images/aa8f9f5e8884486837bf656ffe2e792b7e7da91d80728183c7abfcdfeb7b7bd0.jpg)  
 (c) from the 3rd layer to the 2nd layer
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/6f5f4314949eebbfb346c17130751ee4bf23e34d9c3c9f4e77fb7c59d0a0a3ab.jpg)  
+![](images/6f5f4314949eebbfb346c17130751ee4bf23e34d9c3c9f4e77fb7c59d0a0a3ab.jpg)  
 (d) from the 2nd layer to the 1st layer
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/2e20b1563f2dae08ea78fe13ae7e53b91c66c84635f30ae71e7f8f9dad89a515.jpg)  
+![](images/2e20b1563f2dae08ea78fe13ae7e53b91c66c84635f30ae71e7f8f9dad89a515.jpg)  
 (e) from the 1st layer to input layer  
 Figure 1.9: Back propagation to compute derivatives with respect to weights. Here $N _ { i } ^ { \ell }$ means the ith neuron in the ℓth layer; $\tilde { y } ^ { 4 } : = ( \sigma ^ { 4 } ) ^ { \prime } ( q ^ { 4 } )$ and $\tilde { y } _ { i } ^ { \ell } : = ( \sigma _ { i } ^ { \ell } ) ^ { \prime } ( q _ { i } ^ { \ell } )$ for $\ell = 1 , 2 , 3$ . (The red variables are currently computed using the blue variables that are computed previously.)
 
@@ -1164,7 +1164,7 @@ In Algorithm 2, Line 1-5 is the forward propagation with $O ( ( L - 1 ) M ^ { 2 
 
 Note that the complexity increases linearly with $d ^ { \prime } .$ One may worry that when the output dimension $d ^ { \prime }$ is large, the complexity of back propagation becomes significantly large and dominates the complexity of forward propagation. In practice, for $d ^ { \prime } > 1$ , we do not compute the gradient of the neural network with respect to the parameters; instead, we directly compute the gradient of the loss function with respect to the parameters using back propagation. Specifically, let $f : \mathbb { R } ^ { d }  \mathbb { R } ^ { d ^ { \prime } }$ $( x _ { 1 } , \ldots , x _ { d } )  ( y _ { 1 } , \ldots , y _ { d ^ { \prime } } )$ be a vector-valued neural network, and let $\mathcal { L } ( \cdot ) : \mathbb { R }  \mathbb { R }$ be some scalarvalued loss function. The learning task is to solve min<sub>θ</sub> $\mathcal { L } ( f ( x _ { 1 } , \dots , x _ { d } ; \theta ) )$ over some dataset. In this case, we only need to regard $g ( x ; \theta ) : = \mathcal { L } ( f ( x _ { 1 } , \dots , x _ { d } ; \theta ) )$ as an “augmented” neural network from $\mathbb { R } ^ { d }$ to $\mathbb { R } ,$ and compute the gradient $\nabla _ { \boldsymbol { \theta } } g$ by the preceding back propagation scenario. The complexity is usually much less than $O \left( d ^ { \prime } ( ( L - 1 ) M ^ { 2 } + d M ) \right)$ . (See Exercises)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/2df3f431b7f09ddf2f3ab590c95198739812281586a0b70415f3b7163369734f.jpg)  
+![](images/2df3f431b7f09ddf2f3ab590c95198739812281586a0b70415f3b7163369734f.jpg)  
 Figure 1.10: A general deep neural network.
 
 ## 1.2.4 Diferentiation of general deep neural networks
@@ -1515,7 +1515,7 @@ where $x _ { \mathrm { T } }$ and x<sub>B</sub> can be chosen as
 
 • pad periodically: $x _ { \mathrm { T } } = x _ { d } , x _ { \mathrm { B } } = x _ { 1 }$ ;
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/ff2956517710abc71b9f129ecb3debfdca5a1b990b89e156f1f4ed631cf6cf5b.jpg)  
+![](images/ff2956517710abc71b9f129ecb3debfdca5a1b990b89e156f1f4ed631cf6cf5b.jpg)  
 Figure 1.11: Cross correlation operation applied to vectors.
 
 After padding, x is lengthened by a few elements, then the cross-correlation applied to the padded $x _ { \mathrm { p a d } }$ may preserve the length of x. The padding operation can also be formulated as matrix-vector product. For example, the two-end periodic padding can be written as
@@ -1654,7 +1654,7 @@ Since the architecture of CNNs is very flexible in practical use, here we only d
 
 Considering the convolutional layer (1.65) in d dimensions, we suppose that the size of the kernel k is $n _ { 1 } \times \cdots \times n _ { d }$ , the stride for every dimension is $s _ { i } ~ ( i = 1 , \ldots , d )$ , and the size of the input x is $( s _ { 1 } t _ { 1 } + n _ { 1 } ) \times \cdots \times ( s _ { d } t _ { d } + n _ { d } )$ (so that the kernel can slide on x for $t _ { i } + 1$ steps in the i-th dimension). Then the kernel will slide on x for totally $\Pi _ { i = 1 } ^ { d } ( t _ { i } + 1 )$ steps, each of which costs $\Pi _ { i = 1 } ^ { d } n _ { i }$ times of multiplication and $\Pi _ { i = 1 } ^ { d } n _ { i } - 1$ times of addition. Moreover, we assume that $\sigma ( t )$ costs $O ( 1 )$ operations for any scalar t. Then the complexity of (1.65) is about
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/9789b0c5ee085d4a0fad0d74979efa39e8b819e8e9c2781432198aa0cf124126.jpg)  
+![](images/9789b0c5ee085d4a0fad0d74979efa39e8b819e8e9c2781432198aa0cf124126.jpg)  
 Figure 1.12: A neural network forward passing through one convolution layer and one fullyconnected layer.
 
 $$
@@ -2227,17 +2227,17 @@ $$
 \begin{array}{r l} & {\phi_ {\alpha} (x) = \int_ {- \infty} ^ {\infty} \psi (y) \sigma_ {\alpha} ^ {\prime} (x - y) \mathrm{d} y = - \int_ {- \infty} ^ {\infty} \psi (y) \partial_ {y} (\sigma_ {\alpha} (x - y)) \mathrm{d} y} \\ & {\qquad = \int_ {- \infty} ^ {\infty} \psi^ {\prime} (y) \sigma_ {\alpha} (x - y) \mathrm{d} y - \psi (y) \sigma_ {\alpha} (x - y) \Big | _ {- \infty} ^ {\infty}} \\ & {\qquad = \int_ {- \infty} ^ {\infty} \psi^ {\prime} (y) \sigma_ {\alpha} (x - y) \mathrm{d} y - (\psi (\infty) \sigma_ {\alpha} (- \infty) - \psi (- \infty) \sigma_ {\alpha} (\infty))} \\ & {\qquad = \int_ {- \infty} ^ {\infty} \left(\sum_ {m = 1} ^ {M} a _ {m} H ^ {\prime} (y - x _ {m})\right) \sigma_ {\alpha} (x - y) \mathrm{d} y - \left(\lambda \sum_ {m = 0} ^ {M} a _ {m} - a _ {0} (\lambda + 1)\right)} \\ & {\qquad = \sum_ {m = 1} ^ {M} a _ {m} \int_ {- \infty} ^ {\infty} \delta (y - x _ {m}) \sigma_ {\alpha} (x - y) \mathrm{d} y - \left(\lambda \sum_ {m = 1} ^ {M} a _ {m} - a _ {0}\right)} \\ & {\qquad = \sum_ {m = 1} ^ {M} a _ {m} \sigma_ {\alpha} (x - x _ {m}) + a _ {0} - \lambda \sum_ {m = 1} ^ {M} a _ {m},} \end{array}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/5967bf928f453187263e1ff0bad3b359f6374c862452639584e8eb50850e6d21.jpg)  
+![](images/5967bf928f453187263e1ff0bad3b359f6374c862452639584e8eb50850e6d21.jpg)  
 (a) $\sigma _ { \alpha } ( x )$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/deafbb43f77ac079e25d03f8d0e0536a0e12d7f4ef37e5111895605315668688.jpg)  
+![](images/deafbb43f77ac079e25d03f8d0e0536a0e12d7f4ef37e5111895605315668688.jpg)  
 (b) $\sigma _ { \alpha } ^ { \prime } ( x )$
 
 Figure 2.1: Logistic sigmoidal function $\begin{array} { r } { \sigma _ { \alpha } ( x ) = \frac { 1 } { 1 + e ^ { - x / \alpha } } } \end{array}$ and its derivative.  
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/13f47d84447338aaf9ac7817d4cad330370c34ae7a8dda6d673de1011e82edf8.jpg)  
+![](images/13f47d84447338aaf9ac7817d4cad330370c34ae7a8dda6d673de1011e82edf8.jpg)  
 (a) $\alpha = 0 . 1$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/a747ce0ebfe3eb5f4d00bb3630b02186406a1795834177295f99fabb1f1f96e7.jpg)  
+![](images/a747ce0ebfe3eb5f4d00bb3630b02186406a1795834177295f99fabb1f1f96e7.jpg)  
 (b) $\alpha = 0 . 0 2$  
 Figure 2.2: A step function $\psi ( x )$ and its smoother $\phi _ { \alpha } ( x )$
 
@@ -2257,7 +2257,7 @@ $$
 
 Note that for fixed $y , \psi ( x - y )$ is a function obtained from the graph of $\psi ( x )$ by a horizontal shift y. Let $\epsilon ^ { \prime } > 0$ be small enough such that there is only one bump of the diference $\psi ( x ) -$ $\psi ( x - y ) { \mathrm { ~ i f ~ } } | y | < \epsilon ^ { \prime }$ . For example, we can choose $\begin{array} { r } { \epsilon ^ { \prime } = \frac { 1 } { 2 } \operatorname* { m i n } _ { 1 \leq m \leq M - 1 } | x _ { m } - x _ { m + 1 } | } \end{array}$ . In this case, $\begin{array} { r } { | \psi ( x ) - \psi ( x - y ) | \leq \operatorname* { m a x } _ { 1 \leq m \leq M } | a _ { m } | < \frac { \epsilon } { 4 } } \end{array}$ , because the height of every bump is equal to one of the coeficients $a _ { m } ,$ see Figure 2.3.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/ce8bcbf9cd824742f811c9595f6a28d74170470ca6e72ef7a9a743c6e8f5907d.jpg)  
+![](images/ce8bcbf9cd824742f811c9595f6a28d74170470ca6e72ef7a9a743c6e8f5907d.jpg)  
 Figure 2.3: (a) The step functions $\psi ( x )$ and $\psi ( x - y )$ for $| y | < \epsilon ^ { \prime } ;$ (b) The diference $\psi ( x ) - \psi ( x - y )$
 
 On the other hand, note that
@@ -2336,7 +2336,7 @@ $$
 \begin{array}{r l} & {| \phi (x) - f (x) | \leq | \phi (x) - f (x _ {k}) | + | f (x _ {k}) - f (x) |} \\ & {\quad = | \phi (x) - \phi (x _ {k}) | + | f (x _ {k}) - f (x) |} \\ & {\quad \leq | \phi (x _ {k + 1}) - \phi (x _ {k}) | + | f (x _ {k}) - f (x) |} \\ & {\quad = | f (x _ {k + 1}) - f (x _ {k}) | + | f (x _ {k}) - f (x) | <   \frac {\epsilon}{2} + \frac {\epsilon}{2} = \epsilon .} \end{array}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/9f2af32a611b4f0d6f12d861bc54cb4b43ab60a5ef83a054b67acd016502d0bd.jpg)  
+![](images/9f2af32a611b4f0d6f12d861bc54cb4b43ab60a5ef83a054b67acd016502d0bd.jpg)  
 Figure 2.4: The continuous function f(x) and the interpolating piecewise linear function $\phi ( x )$
 
 ## 2.1.6 Approximation with softplus activation
@@ -3965,7 +3965,7 @@ which can be represented by the graph in Figure 2.5.
 
 Sprecher refined Kolmogorov’s result to the following version, where the outer functions $\chi _ { j }$ are replaced by a single function $\chi$ and the inner functions $\psi _ { i j }$ are of a special type and shifted by a translation:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/8c5b65917e95fb1225c1e3e9e0f4b5dcb447bca11a55535ea216546a888b5cdd.jpg)  
+![](images/8c5b65917e95fb1225c1e3e9e0f4b5dcb447bca11a55535ea216546a888b5cdd.jpg)  
 Figure 2.5: Two-hidden layer exact representation of a continuous function f in the case $d = 2$ (the weights of all edges are equal to $1 )$
 
 Theorem 2.23 (Sprecher, 1964) Let $d \geq 2$ be an integer. There exists a monotone increasing function of one variable $\psi ( \cdot )$ , with $\psi ( [ 0 , 1 ] ) = [ 0 , 1 ]$ , dependent on d and having the following property: for any $\delta > 0$ , there is a rational number $\epsilon ,$ with $0 < \epsilon < \delta$ , and a constant $\rho$ such that for any $f ( x _ { 1 } , \dots , x _ { d } ) \in C ( I _ { d } )$ , it can be written in the form
@@ -4018,7 +4018,7 @@ $$
 \sigma_ {1} (t) = \left\{ \begin{array}{l l} | t |, & t \in [ - 1, 1 ], \\ \sigma_ {1} (t \pm 2), & t \in (- \infty , \infty). \end{array} \right.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/62b0d32f8ca6d7813a7f4f445c380ce8835c313e310b8405cc4da382ff7896b3.jpg)  
+![](images/62b0d32f8ca6d7813a7f4f445c380ce8835c313e310b8405cc4da382ff7896b3.jpg)  
 Figure 2.6: The graph of σ on [−10, 10].
 
 And let $\sigma _ { 2 }$ be the softsign activation function, i.e.
@@ -4355,7 +4355,7 @@ $$
 
 In practice, taking the K-L divergence as the loss function is more helpful because it has a known minimum value of zero, so that one can estimate the extent of the optimization progress.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/72fb10eb393855d6e0dd4524ea7ee6dc9891f86be0ddf88554f36cd0cd2392db.jpg)  
+![](images/72fb10eb393855d6e0dd4524ea7ee6dc9891f86be0ddf88554f36cd0cd2392db.jpg)  
 Figure 3.1: All points in $\mathbb { R } ^ { 2 }$ are classified into $\mathcal { B }$ categories: Solid circles are in Category ${ \mathcal { B } } ;$ Blank circles are in Category 2; Solid squares are in Category 1.
 
 ## 3.1.4 Empirical computation in classification
@@ -4458,10 +4458,10 @@ $$
 x ^ {(k + 1)} = x ^ {(k)} - \eta \nabla f (x ^ {(k)}).\tag{3.18}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/2fb0192ac8ae70c08802dbd3cf623b12c35d1fe8c535a628f9da009b36cc6f4d.jpg)  
+![](images/2fb0192ac8ae70c08802dbd3cf623b12c35d1fe8c535a628f9da009b36cc6f4d.jpg)  
 (a) Case 0 < η < 1/8.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/876500de5277539ee7c18f85e4169d5cac255f4c7b54be1ffd532ffe8b385386.jpg)  
+![](images/876500de5277539ee7c18f85e4169d5cac255f4c7b54be1ffd532ffe8b385386.jpg)  
 (b) Case 1/8 < η < 1/4.  
 Figure 3.2: Gradient descent iterations.
 
@@ -4627,7 +4627,7 @@ $$
 f (x) = \frac {1}{M} \sum_ {m = 1} ^ {M} f _ {m} (x),\tag{3.26}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/d451800f1d46a1217dbe16bf3d96be8ba28b0402286bf8151113cbd86699e070.jpg)  
+![](images/d451800f1d46a1217dbe16bf3d96be8ba28b0402286bf8151113cbd86699e070.jpg)  
 Figure 3.3: Choosing disjoint subsets sequentially from the entire dataset with batch size $M ^ { \prime } .$
 
 where each summand function $f _ { m } ( x )$ is associated with the m-th data sample in the dataset.
@@ -4754,7 +4754,7 @@ Note that $H ^ { ( 0 ) }$ can be seen as random variables since it is a function
 
 Lemma 3.1 Suppose that $M \geq { \frac { 3 2 N ^ { 2 } \ln \left( { \frac { 2 N ^ { 2 } } { \delta } } \right) } { \lambda _ { 0 } ^ { 2 } } }$ . For any $\delta \in ( 0 , 1 )$ , with probability at least $1 - \delta$ over the random variables $\{ w _ { m } ^ { ( 0 ) } \}$ , it holds that $\begin{array} { r } { \| H ^ { ( 0 ) } - H ^ { \infty } \| _ { 2 } \leq \frac { \lambda _ { 0 } } { 4 } } \end{array}$ and $\begin{array} { r } { \lambda _ { \operatorname* { m i n } } ( H ^ { ( 0 ) } ) \ge \frac { 3 } { 4 } \lambda _ { 0 } } \end{array}$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/deep_learning_handout%20%281%29/images/6b94b1a3c0fd989c4f389d9bdc4ce084f7873b2213275b7e0c21edcede88244f.jpg)  
+![](images/6b94b1a3c0fd989c4f389d9bdc4ce084f7873b2213275b7e0c21edcede88244f.jpg)  
 Figure 3.4: We set $\{ x _ { n } \} _ { n = 1 } ^ { N }$ as 2D equispaced points on the $1 / \%$ unit ball (with angles from 0 to $\textstyle { \frac { \pi } { 2 } } \int$ The $\lambda _ { 0 }$ are numerically computed for $N = 2 , 4 , 8 , \dots , 1 0 2 4$ . We show the loglog plot of λ<sub>0</sub> versus N in this figure, which behaves almost as a straight line. Specifically, $\begin{array} { r } { \lambda _ { 0 } \approx \frac { 1 } { N ^ { 1 . 0 7 } } } \end{array}$
 
 Proof: The diference of the (i, j)-th entry is

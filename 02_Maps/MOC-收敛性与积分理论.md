@@ -37,7 +37,7 @@ tags: []
 
 ## 函数空间与积分变换
 
-沿 [[01_Knowledge/L^p空间]] → [[01_Knowledge/Riesz-Fisher定理]]、[[01_Knowledge/对偶性定理]] 阅读函数空间，再比较 [[01_Knowledge/卷积]]、[[00_Inbox/待核实核心/概念/Fourier变换]] 与 [[00_Inbox/待核实核心/方法/Fourier变换求解法]]。集合及空间语言见 [[02_Maps/MOC-集合与空间]]；这里的路线不把积分收敛定理的假设扩展到所有变换问题。
+沿 [[01_Knowledge/L^p空间]] → [[01_Knowledge/Riesz-Fisher定理]]、[[01_Knowledge/对偶性定理]] 阅读函数空间，再比较 [[01_Knowledge/卷积]]、[[01_Knowledge/Fourier变换]] 与 [[01_Knowledge/Fourier变换与Plancherel积分计算法]]。集合及空间语言见 [[02_Maps/MOC-集合与空间]]；这里的路线不把积分收敛定理的假设扩展到所有变换问题。
 
 ## 动态主题视图
 

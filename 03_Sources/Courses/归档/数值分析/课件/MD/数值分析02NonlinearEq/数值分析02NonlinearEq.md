@@ -27,7 +27,7 @@ parser: mineru
 
 - **定理**： 如果 $f\left(x\right)\in C[a,b]$ ，并满足 $f(a)f(b)<0$ ，则 $\exists r\in (a,b)$ 使得 $f(r)=0$ .
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/e779a435e45d115010feafdb7558d087b82b120e855c17303fb9b2c9175a8222.jpg)
+![](images/e779a435e45d115010feafdb7558d087b82b120e855c17303fb9b2c9175a8222.jpg)
 
 $f\left(x\right)=x^{3}+x-1$ 的函数图像
 
@@ -35,7 +35,7 @@ $f\left(x\right)=x^{3}+x-1$ 的函数图像
 
 - **二分法伪代码(pseudo-code)**
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/fea563b1ca3a452b60f2e1e4b69436a3c3736437d9e14bc17d91aae3148ad5d2.jpg)
+![](images/fea563b1ca3a452b60f2e1e4b69436a3c3736437d9e14bc17d91aae3148ad5d2.jpg)
 
 - 误差？计算量？
 
@@ -49,7 +49,7 @@ $\epsilon _{n}=\frac{1}{2^{n+1}}<0.5\times 10^{-6}$
 
 $\rightarrow n>\frac{6}{log_{10}2}\approx 19.9$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/bb3dcce2af6efd1ba677ae78d6f2ccac0b7d55c46cf35b2c89e0216658185c84.jpg)
+![](images/bb3dcce2af6efd1ba677ae78d6f2ccac0b7d55c46cf35b2c89e0216658185c84.jpg)
 
 ## 不动点迭代
 
@@ -59,13 +59,13 @@ $x_{0}=0$
 
 $x_{0}=1234$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/fcaed9cc44f9f6175bbad80a8bdd5226d433d00edb2564c607af700d303acc2c.jpg)
+![](images/fcaed9cc44f9f6175bbad80a8bdd5226d433d00edb2564c607af700d303acc2c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/3ad73608a47446435ff393b9ba6011372d85eeb6ae578b080e135e093df396c8.jpg)
+![](images/3ad73608a47446435ff393b9ba6011372d85eeb6ae578b080e135e093df396c8.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/4574168bde48077541c4135197e2c86c5316a33df540f714e77901178debe652.jpg)
+![](images/4574168bde48077541c4135197e2c86c5316a33df540f714e77901178debe652.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/67257c90a82bdb047a33a3b3c25fdd115a68266d7d23d5b1d45ebe106f06faa5.jpg)
+![](images/67257c90a82bdb047a33a3b3c25fdd115a68266d7d23d5b1d45ebe106f06faa5.jpg)
 
 ## 不动点迭代
 
@@ -75,7 +75,7 @@ $x_{0}=1234$
 
 - 例：地图
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/9d3ec4e0f6a4d12110fc112904bb4556b85f9e3db916b113371dc9913fd2c8af.jpg)
+![](images/9d3ec4e0f6a4d12110fc112904bb4556b85f9e3db916b113371dc9913fd2c8af.jpg)
 
 ## 不动点迭代
 
@@ -88,9 +88,9 @@ $x_{0}=1234$
 
 - 不动点迭代
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c1b440fe763785a5965c05567e08c7764c16722062dd16189157b60e18a5810a.jpg)
+![](images/c1b440fe763785a5965c05567e08c7764c16722062dd16189157b60e18a5810a.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c1b440fe763785a5965c05567e08c7764c16722062dd16189157b60e18a5810a.jpg)
+![](images/c1b440fe763785a5965c05567e08c7764c16722062dd16189157b60e18a5810a.jpg)
 
 - 如果 $g(x)$ 连续且 $\lim_{i\to \infty }x_{i}=r$ （收敛）：
 
@@ -115,13 +115,13 @@ $g\left(x\right)=\sqrt[3]{1-x}$
 
 $g\left(x\right)=1-x^{3}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0bf8f31b83ddc4e6265a30bc3ad055e80e8c052384a6888e16b2da24e269f9ec.jpg)
+![](images/0bf8f31b83ddc4e6265a30bc3ad055e80e8c052384a6888e16b2da24e269f9ec.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
+![](images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
 
 ## 不动点迭代
 
@@ -215,15 +215,15 @@ $L_{2}=\left|g\left(x_{1}\right)-g\left(x_{0}\right)\right|<L_{0}=L_{1}=\left|x_
 
 - 不同不动点迭代的蛛网图(cobweb)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/d342a515cdace1c3b25bc7376c2aa24b05da6af891c442fb5bee6f60d2a00650.jpg)
+![](images/d342a515cdace1c3b25bc7376c2aa24b05da6af891c442fb5bee6f60d2a00650.jpg)
 
 $g\left(x\right)=1-x^{3}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/4da8502aac579160d4c5a2d2b547f563b943a2ef9ba8c95890222829e90325b9.jpg)
+![](images/4da8502aac579160d4c5a2d2b547f563b943a2ef9ba8c95890222829e90325b9.jpg)
 
 $g\left(x\right)=\sqrt[3]{1-x}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/7c7d2e6beb23d406ea978433c00c4583d248eaf9695a4ccc6a9d74a43ce37eb7.jpg)
+![](images/7c7d2e6beb23d406ea978433c00c4583d248eaf9695a4ccc6a9d74a43ce37eb7.jpg)
 
 $g\left(x\right)=\frac{1+2x^{3}}{1+3x^{2}}$
 
@@ -274,9 +274,9 @@ $\left|g^{'}\left(x\right)\right|\leq L, \forall x\in \left(a,b\right)$
 
 - 例：迭代寻找 $g(x)=2.8x-x^{2}$ 的不动点
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/b9fbf91e8fa4033dcbba543bb5882c3cd514c04b6418a8dd323775545022bc8e.jpg)
+![](images/b9fbf91e8fa4033dcbba543bb5882c3cd514c04b6418a8dd323775545022bc8e.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/cb872e3f83d361302f4c6ef4fc7059d7015a6527645c251b4c9d4fd90847441a.jpg)
+![](images/cb872e3f83d361302f4c6ef4fc7059d7015a6527645c251b4c9d4fd90847441a.jpg)
 
 迭代过程的蛛网图
 
@@ -317,13 +317,13 @@ $\frac{\left|x_{i+1}-x_{i}\right|}{\max((\theta ,\left|x_{i}\right|))}<TOL, \the
 
 - 例：二分法求根 $f\left(x\right)=x^{3}-2x^{2}+\frac{4}{3}x-\frac{8}{27}=\left(x-\frac{2}{3}\right)^{3}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/74b880228f017795eca3f87c2b3bb0845354e41ff573278cedc05bda9f650d16.jpg)
+![](images/74b880228f017795eca3f87c2b3bb0845354e41ff573278cedc05bda9f650d16.jpg)
 
 ## 精度的极限
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c0faf84c66feff968bff99b58e2cb18819730fdf3543a3f9f5c1dbcbb537d5d7.jpg)
+![](images/c0faf84c66feff968bff99b58e2cb18819730fdf3543a3f9f5c1dbcbb537d5d7.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c0faf84c66feff968bff99b58e2cb18819730fdf3543a3f9f5c1dbcbb537d5d7.jpg)
+![](images/c0faf84c66feff968bff99b58e2cb18819730fdf3543a3f9f5c1dbcbb537d5d7.jpg)
 
 $f\left(x\right)=\left(x-\frac{2}{3}\right)^{3}$ 的函数图像放大的双精度函数图像
 
@@ -345,11 +345,11 @@ $f\left(x\right)=\left(x-\frac{2}{3}\right)^{3}$ 的函数图像放大的双精�
 
 - 例：Wilkinson多项式 $W\left(x\right)=\left(x-1\right)\left(x-2\right)\ldots \left(x-20\right)$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/ae3aa391ee3b59a7b5498e0b305bf6d4a5bbda12f334bb1427c8cba0576591cc.jpg)
+![](images/ae3aa391ee3b59a7b5498e0b305bf6d4a5bbda12f334bb1427c8cba0576591cc.jpg)
 
 - 用Matlab求根，初始估计为 $r=16$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c4f512a804f697db60c9b694c232fa887ce096f2da3a396acc6429672996c818.jpg)
+![](images/c4f512a804f697db60c9b694c232fa887ce096f2da3a396acc6429672996c818.jpg)
 
 ## 根搜索的敏感度
 
@@ -392,11 +392,11 @@ $误差放大因子=\left|\frac{g(r)}{rW^{'}\left(r\right)}\right|\approx 3.8\ti
 
 - 不动点迭代遗留的问题：收敛速度？
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/d342a515cdace1c3b25bc7376c2aa24b05da6af891c442fb5bee6f60d2a00650.jpg)
+![](images/d342a515cdace1c3b25bc7376c2aa24b05da6af891c442fb5bee6f60d2a00650.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/4da8502aac579160d4c5a2d2b547f563b943a2ef9ba8c95890222829e90325b9.jpg)
+![](images/4da8502aac579160d4c5a2d2b547f563b943a2ef9ba8c95890222829e90325b9.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/7c7d2e6beb23d406ea978433c00c4583d248eaf9695a4ccc6a9d74a43ce37eb7.jpg)
+![](images/7c7d2e6beb23d406ea978433c00c4583d248eaf9695a4ccc6a9d74a43ce37eb7.jpg)
 
 $g\left(x\right)=\frac{1+2x^{3}}{1+3x^{2}}$
 
@@ -465,11 +465,11 @@ $x_{i+1}=\frac{1+2x_{i}^{3}}{1+3x_{i}^{2}}$
 
 牛顿迭代？
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
+![](images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
 
 ## 牛顿迭代法
 
@@ -518,13 +518,13 @@ $n>\frac{log_{10}0.5-6}{log_{10}\left(\frac{2}{3}\right)}\approx 35.78$
 
 ## 牛顿迭代法
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/c6f7e745b7b6543dc9db4cd9a3dae36b7bf88c2f0613bd021cd7527590a0eaa7.jpg)
+![](images/c6f7e745b7b6543dc9db4cd9a3dae36b7bf88c2f0613bd021cd7527590a0eaa7.jpg)
 
 - 标准的牛顿迭代
 
 - 改进的牛顿迭代
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/78972ca3f818252a1c6f1f30ffa9b43f109912815da635670f49486eb003abce.png)
+![](images/78972ca3f818252a1c6f1f30ffa9b43f109912815da635670f49486eb003abce.png)
 
 ## 牛顿迭代法
 
@@ -540,7 +540,7 @@ $x_{i+1}=\frac{12x_{i}^{4}-6x_{i}^{2}+\frac{11}{4}}{16x_{i}^{3}-12x_{i}}$
 
 $x_{1}=-\frac{1}{2},x_{2}=\frac{1}{2},\ldots$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/6fa432ec14c385c973be331817792467b1ba43eb26feb70ca1e35937099cc38d.jpg)
+![](images/6fa432ec14c385c973be331817792467b1ba43eb26feb70ca1e35937099cc38d.jpg)
 
 ## 牛顿迭代法
 
@@ -592,13 +592,13 @@ $牛顿$ 迭代
 
 $割线法$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
+![](images/0937646a009c8b0f76127e4cc1b062d74757feb2ee5b3bece9bf6041ae6a8b1c.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
+![](images/0543001925002c7838c7b4494b19dc0886b745c0e9c3214e192d8def5ae76c18.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/1cd6a137599711762abcc8272f5c26d7a37c352cee0a36a71fd9e6d24be3ae14.jpg)
+![](images/1cd6a137599711762abcc8272f5c26d7a37c352cee0a36a71fd9e6d24be3ae14.jpg)
 
 ## 割线法
 
@@ -684,11 +684,11 @@ $\mathbf{e}\mathbf{n}\mathbf{d} \mathbf{f}\mathbf{o}\mathbf{r}$
 
 割线法
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/d2725cae2b608368e7a89d2f1f8606d127d1856500ca7b6ddc5b2cc84d3bd62c.jpg)
+![](images/d2725cae2b608368e7a89d2f1f8606d127d1856500ca7b6ddc5b2cc84d3bd62c.jpg)
 
 试位法
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/f6f5671159b24de81a4c3c8a417de4b39f24c49ef0216fa2cb71c9f99c400cdd.jpg)
+![](images/f6f5671159b24de81a4c3c8a417de4b39f24c49ef0216fa2cb71c9f99c400cdd.jpg)
 
 ## 抛物线法
 
@@ -726,7 +726,7 @@ $x_{i+3}=x_{i+2}-\frac{r\left(r-q\right)\left(x_{i+2}-x_{i+1}\right)+\left(1-r\r
 
 - Muller方法与IQI方法的不同
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/8c6458b9f91c930711aa3d3e531e90cc25a1568a88220a43a1140ca12761cbb5.jpg)
+![](images/8c6458b9f91c930711aa3d3e531e90cc25a1568a88220a43a1140ca12761cbb5.jpg)
 
 IQI
 
@@ -781,11 +781,11 @@ $\left[\begin{matrix}-3&1\\2&4\end{matrix}\right]\left[\begin{array}{c}u_{i+1}-u
 
 ## 非线性方程组的牛顿迭代
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/1b8d44918556127bd47da8f8decc98177f91f315e7c73c73c157bbf78ab8881f.jpg)
+![](images/1b8d44918556127bd47da8f8decc98177f91f315e7c73c73c157bbf78ab8881f.jpg)
 
 计算机迭代过程
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9002NonlinearEq/images/8fa6ea3cc68b919c6514442cc36be2ad4f40ad52181d0df1b0b3484d492e1a77.jpg)
+![](images/8fa6ea3cc68b919c6514442cc36be2ad4f40ad52181d0df1b0b3484d492e1a77.jpg)
 
 迭代过程的图像
 

@@ -191,6 +191,8 @@ def rewrite_links(text, old_name, new_name, mapping, shortnames):
             if new_target is None:
                 continue
             relative = posixpath.relpath(new_target,posixpath.dirname(new_name) or '.')
+            if relative == decoded:
+                continue  # Preserve unchanged relative attachment URIs verbatim.
             changed = quote(relative,safe='/._-~')
             if split.query:
                 changed += '?' + split.query
@@ -313,7 +315,7 @@ def build(root: Path, decisions=None):
             raw_tree=any(part.casefold() in {'raw','ppt','ppt课件','课件','pdf','md','板书','未处理项'} for part in tail[:-1])
             kind=data.get('type')
             if path.suffix.lower() in IMAGE_EXTS:
-                target='04_Assets/Images/Courses/'+branch+'/'+('/'.join(tail))
+                target='03_Sources/Courses/'+branch+'/'+('/'.join(tail))
             else:
                 note_kind=None if raw_tree or kind in RESOURCES else ('lecture' if kind in ('课堂笔记','lecture') else 'homework' if kind in HOMEWORK else 'review' if kind in REVIEWS else None)
                 record['kind']=note_kind

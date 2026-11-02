@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/cd1c48829bd29288a9b28622d6036575abad20a2a807911bec5d63cdf0f025b2.jpg)
+![](images/cd1c48829bd29288a9b28622d6036575abad20a2a807911bec5d63cdf0f025b2.jpg)
 
 ## 三、前馈神经网络
 
@@ -50,7 +50,7 @@ $$
 
 通常, 可以用下图表示一个神经元:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/9ac5cc8a34039e27f5df72fdcf81e50883258af04a2f85021c89637caa2bf411.jpg)  
+![](images/9ac5cc8a34039e27f5df72fdcf81e50883258af04a2f85021c89637caa2bf411.jpg)  
 图: 神经元的图示法有时, 神经元的定义域也可以限定为 $\mathbb { R } ^ { n }$ 的一个子集, 例如:
 
 ▶ 二元逻辑输入 $x _ { i } \in \{ 0 , 1 \} , i = 1 , \ldots , n ;$
@@ -129,10 +129,10 @@ $$
 
 它满足 $S ( x ) = 2 H ( x ) - 1$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/d2cdbafe47995ad5a27ad56486ca635a94feefed2366c55028df807a8c734e66.jpg)  
+![](images/d2cdbafe47995ad5a27ad56486ca635a94feefed2366c55028df807a8c734e66.jpg)  
 (i) Heaviside 函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/52e95e89b71ca16ae32388bacdc2ea65731b198e26f8ea1c21027ee165c58881.jpg)  
+![](images/52e95e89b71ca16ae32388bacdc2ea65731b198e26f8ea1c21027ee165c58881.jpg)  
 (j) 符号函数
 
 ## 2. L型函数
@@ -223,23 +223,23 @@ $$
 
 它满足 $\operatorname { s p } ( x ) - \operatorname { s p } ( - x ) = x$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/815e1f7e7b94b8978449412429ff4f0c8f90694e99159071d16a9c24b818cdcf.jpg)  
+![](images/815e1f7e7b94b8978449412429ff4f0c8f90694e99159071d16a9c24b818cdcf.jpg)  
 (a) ReLU
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/0c3e897609bc9dd88aedb37a600f73eec191f72c736dab1a9dc969b9fb800668.jpg)  
+![](images/0c3e897609bc9dd88aedb37a600f73eec191f72c736dab1a9dc969b9fb800668.jpg)  
 (b) PReLU (α = 0.5)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/a52a7810eb1cb9cdb0a62ae5f6f60b12b845b63567ca46ec9367a8f38ce052c5.jpg)  
+![](images/a52a7810eb1cb9cdb0a62ae5f6f60b12b845b63567ca46ec9367a8f38ce052c5.jpg)  
 (d) SELU  
 (α = 0.5, λ = 1.5)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/f4e10702fed5531e98b0bf1ff81d8eb33ea31f97130ca6f60cae344c5ee579a0.jpg)  
+![](images/f4e10702fed5531e98b0bf1ff81d8eb33ea31f97130ca6f60cae344c5ee579a0.jpg)  
 (e) SLU
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/5665f4fa8dc0860018c20e5d4db372331af33d9aca192fb963f9d8a75db8b581.jpg)  
+![](images/5665f4fa8dc0860018c20e5d4db372331af33d9aca192fb963f9d8a75db8b581.jpg)  
 (c) ELU (α = 0.5)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/6d7aa7dbbfbd864c5fb91dbd386ed0d9e08c756caeaaaf20c1da2d35a5925a09.jpg)  
+![](images/6d7aa7dbbfbd864c5fb91dbd386ed0d9e08c756caeaaaf20c1da2d35a5925a09.jpg)  
 (f) softplus函数
 
 3. S型函数
@@ -346,22 +346,22 @@ $$
 
 其中常数 $\alpha > 0$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/93ef61274f64afe6a7759fbb74e90ce65a3375998205e27687845022f3afbb2b.jpg)  
+![](images/93ef61274f64afe6a7759fbb74e90ce65a3375998205e27687845022f3afbb2b.jpg)  
 (a) logistic sigmoid 函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/704b7d86f4b3d62bd020ada29847bb6c14dc489e257acece6aeb0f965ae08e94.jpg)  
+![](images/704b7d86f4b3d62bd020ada29847bb6c14dc489e257acece6aeb0f965ae08e94.jpg)  
 (b) 参数化 logisticsigmoid 函数 (c = 2)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/1b45011ea80511abd25d40cd413879853ae1812657f278940d7ee335ea8c7f08.jpg)  
+![](images/1b45011ea80511abd25d40cd413879853ae1812657f278940d7ee335ea8c7f08.jpg)  
 (d) arctangent 函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/149932964ba495e305717f30028ac9f811ed8321b14f04288076e71eb91993dd.jpg)  
+![](images/149932964ba495e305717f30028ac9f811ed8321b14f04288076e71eb91993dd.jpg)  
 (e) softsign 函数
 
 (c) 双曲正切函数  
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/cae5aba91d8497e84d3eb350f5f25333a0c01759e44dcef1ba6d725d8d877a93.jpg)
+![](images/cae5aba91d8497e84d3eb350f5f25333a0c01759e44dcef1ba6d725d8d877a93.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/db14f01756ce0bc59cfda1185420be6a9c85d592d80b460957b5cd62e8d40470.jpg)  
+![](images/db14f01756ce0bc59cfda1185420be6a9c85d592d80b460957b5cd62e8d40470.jpg)  
 (f) 分段线性函数(α = 1)
 
 上述阶梯型、L型和S型激活函数, 通常都是以”逐元素”的方式作用于标量、向量或矩阵上, 即它接收一个标量、向量或矩阵作为输入, 然后将运算法则作用在每一个元素(标量)上. 因此, 激活函数最终的输出结果与它的输入的尺寸规模是相同的. 例如:
@@ -569,13 +569,13 @@ $$
 
 ## 向前传播的神经网络一种简单的组合神经元的方式, 就是将多个神经元首尾相连, 前一个神经元的输出作为后一个神经元的输入. 例如:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/5c07ca9decb826b10bb9cbc5e5b525c704317f18c16da70ed4343924235761b2.jpg)
+![](images/5c07ca9decb826b10bb9cbc5e5b525c704317f18c16da70ed4343924235761b2.jpg)
 
 图: 三个神经元首尾依次连接. 第一个神经元 $\mathbb { R } ^ { 2 } \to$ R, 第二、三个神经元 R → R.
 
 ## 向前传播的神经网络一种简单的组合神经元的方式, 就是将多个神经元首尾相连, 前一个神经元的输出作为后一个神经元的输入. 例如:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/d833bd98dce0902178ffa0c0645498c1aa6f578646e80cce3caf037d7fd1603d.jpg)  
+![](images/d833bd98dce0902178ffa0c0645498c1aa6f578646e80cce3caf037d7fd1603d.jpg)  
 图: 三个神经元首尾依次连接. 第一个神经元 $\mathbb { R } ^ { 2 } \to$ R, 第二、三个神经元 R → R.
 
 上图中神经元依次连接所形成的函数可以用复合函数的数学表达式来描述即
@@ -588,10 +588,10 @@ $$
 
 一个更复杂的例子如下图所示:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/12447a704533b4f1d51c9c3179ee5ef82aed4f4a93e974438a16b870a790be9c.jpg)  
+![](images/12447a704533b4f1d51c9c3179ee5ef82aed4f4a93e974438a16b870a790be9c.jpg)  
 图五个神经元的连接图将 $x _ { 1 } , x _ { 2 } , x _ { 3 }$ 三个输入标量从左向右传递最终以标量 $_ y$ 形式输出一个更复杂的例子如下图所示:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/2b64197a7dc19ab357872a0a96ced7d585b4b560d8bf044f7860e39ddf50255b.jpg)
+![](images/2b64197a7dc19ab357872a0a96ced7d585b4b560d8bf044f7860e39ddf50255b.jpg)
 
 图: 五个神经元的连接图, 将 $x _ { 1 } , x _ { 2 } , x _ { 3 }$ 三个输入标量从左向右传递, 最终以标量 $_ y$ 形式输出上图中的五个神经元其表达式分别如下
 
@@ -609,7 +609,7 @@ $$
 
 一个更复杂的例子如下图所示:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/33afa840534d42571d5798bce1122dc52af823a50f6e426b2418eb80ba8f2ec7.jpg)
+![](images/33afa840534d42571d5798bce1122dc52af823a50f6e426b2418eb80ba8f2ec7.jpg)
 
 图: 五个神经元的连接图, 将 $x _ { 1 } , x _ { 2 } , x _ { 3 }$ 三个输入标量从左向右传递, 最终以标量 $_ y$ 形式输出上图中的五个神经元其表达式分别如下
 
@@ -637,13 +637,13 @@ $$
 
 ## 例如:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/5b4bcc940edb7076680da6d54e256784fe0c0077b84da0c220d2afb622fbcb13.jpg)
+![](images/5b4bcc940edb7076680da6d54e256784fe0c0077b84da0c220d2afb622fbcb13.jpg)
 
 该全连接神经网络一共包括6层. 从左往右第一层是全体输入标量, 称为输入层(inputlayer); 最后一层由一组神经元形成, 它们的输出即为整个神经网络的输出, 因此称为输出层(output layer); 而其它各层也由一组神经元形成, 它们位于输入层和输出层之间, 称为隐藏层(hidden layer).
 
 ## 例如:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/cd13679354d8a726cd596bc7688356950308c5268dac7420fa7ed2259c5bee9a.jpg)
+![](images/cd13679354d8a726cd596bc7688356950308c5268dac7420fa7ed2259c5bee9a.jpg)
 
 该全连接神经网络一共包括6层. 从左往右第一层是全体输入标量, 称为输入层(inputlayer); 最后一层由一组神经元形成, 它们的输出即为整个神经网络的输出, 因此称为输出层(output layer); 而其它各层也由一组神经元形成, 它们位于输入层和输出层之间, 称为隐藏层(hidden layer).
 
@@ -927,7 +927,7 @@ $$
 
 ## 一、前向传播，依次计算 qj, yj,qj,yj ., qj,yj $a ^ { n - 1 } - b ^ { n - 1 }$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter3%281%29/images/de914ff1c1882bad39714938470099b7fd48a377579d711a05b6a3dda00a21b9.jpg)
+![](images/de914ff1c1882bad39714938470099b7fd48a377579d711a05b6a3dda00a21b9.jpg)
 
 ## $\frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } \times \frac { 1 } { 2 } = \frac { 1 } { 2 }$
 

@@ -6,7 +6,7 @@ status: mineru解析
 parser: mineru
 ---
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/76b1f2b6eff6d17fa9d47ade281627e75ea2e2d09718c2ededf69f903eb1820b.jpg)
+![](images/76b1f2b6eff6d17fa9d47ade281627e75ea2e2d09718c2ededf69f903eb1820b.jpg)
 
 ## 大学物理II ∙ 统计物理初步
 
@@ -18,13 +18,13 @@ parser: mineru
 
 恩格斯
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/c18f3c59ee625dc741ff56ca1525f1676870d34a2ec2b2047156463d458b452c.jpg)
+![](images/c18f3c59ee625dc741ff56ca1525f1676870d34a2ec2b2047156463d458b452c.jpg)
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/585fe6153899375d94896c3bd0188d6c72b1305c1f4943276e4de3c221f8cdbb.jpg)
+![](images/585fe6153899375d94896c3bd0188d6c72b1305c1f4943276e4de3c221f8cdbb.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/4970277a1c612cb103170c4ed9ad563c01bf98ff70729f85603ff819990d15fa.jpg)
+![](images/4970277a1c612cb103170c4ed9ad563c01bf98ff70729f85603ff819990d15fa.jpg)
 
 ## 1593 伽利略 空气温度计
 
@@ -32,11 +32,11 @@ parser: mineru
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9486fac3d1025388ae47e48ba4c23e1a3a9b5152ec7c5a2fe6790c23229d94d5.jpg)
+![](images/9486fac3d1025388ae47e48ba4c23e1a3a9b5152ec7c5a2fe6790c23229d94d5.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3e25082d9a123ec75ec27a586fd8187607c8811a691de17cabcf79ae79bf18ad.jpg)
+![](images/3e25082d9a123ec75ec27a586fd8187607c8811a691de17cabcf79ae79bf18ad.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/8fe1aa0ca75ad11897b4b8ca978318e2786a4342550f42dbe38be9133f51364a.jpg)
+![](images/8fe1aa0ca75ad11897b4b8ca978318e2786a4342550f42dbe38be9133f51364a.jpg)
 
 ## 经典力学研究对象: 质点和质点系的机械运动
 
@@ -44,9 +44,9 @@ parser: mineru
 
 热运动：组成宏观物体的大量微观粒子的一种永不停息的无规运动。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cdd0740ee5d4575ccd454e3ad44daa28d6f42de2de06d94b91dbaf439dc1487f.jpg)
+![](images/cdd0740ee5d4575ccd454e3ad44daa28d6f42de2de06d94b91dbaf439dc1487f.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6e281c8d15ab073ca31bbbdcc07ec1c8392904bcc1da38159ba22c1402867be0.jpg)  
+![](images/6e281c8d15ab073ca31bbbdcc07ec1c8392904bcc1da38159ba22c1402867be0.jpg)  
 热运动间接证据-布朗运动
 
 热运动特点：大量微观粒子中每个粒子的运动是无规则和随机的，但在总体上，在一定宏观条件下却遵循确定的规律，即统计规律。
@@ -63,11 +63,11 @@ parser: mineru
 
 ## 热 力 学
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/4a6e971cea76aeae6f079d407b6dc6c2bc796dc9fdbe53a5411db95825fa50cc.jpg)
+![](images/4a6e971cea76aeae6f079d407b6dc6c2bc796dc9fdbe53a5411db95825fa50cc.jpg)
 
 ## 统 计 物 理
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/663e6247a8cf6a1b14727aeac9905df96d20a5410e5e3468434ef29fa895d28e.jpg)
+![](images/663e6247a8cf6a1b14727aeac9905df96d20a5410e5e3468434ef29fa895d28e.jpg)
 
 ## 统计物理初步
 
@@ -103,7 +103,7 @@ parser: mineru
 
 系统与外界要根据实际情况进行分析。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cad89bbde7e7dd0a629753e93bff44f686bc5c0c359845455142644b48c78cde.jpg)
+![](images/cad89bbde7e7dd0a629753e93bff44f686bc5c0c359845455142644b48c78cde.jpg)
 
 ## 统计物理初步
 
@@ -113,13 +113,13 @@ parser: mineru
 
 与外界既有质量交换又有能量交换的系统,称为开放系统。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a7d4a16612ef494485d28984a59b93d4808022106dbd413c458ef93cf1e6b19d.jpg)
+![](images/a7d4a16612ef494485d28984a59b93d4808022106dbd413c458ef93cf1e6b19d.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/2e6ba6fe3e60b380aa6051f195ee9ceb119bbef88dd1c8c40a3017699f5df68b.jpg)
+![](images/2e6ba6fe3e60b380aa6051f195ee9ceb119bbef88dd1c8c40a3017699f5df68b.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/392bf92faf3e1793afbb473f53568d6aef8f56f16ad6c5ae70b5419262adb6a7.jpg)
+![](images/392bf92faf3e1793afbb473f53568d6aef8f56f16ad6c5ae70b5419262adb6a7.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3f61a13088a3d75a440e0efa6159c2a044464cf74667d2c38d90f0151c426655.jpg)
+![](images/3f61a13088a3d75a440e0efa6159c2a044464cf74667d2c38d90f0151c426655.jpg)
 
 ## 统计物理初步
 
@@ -133,7 +133,7 @@ parser: mineru
 
 平衡态一定是定态，定态不一定是平衡态。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/548033ea42e406db8788d7dfe90a34af57726e1ab4b6b393a0ef86659c062254.jpg)  
+![](images/548033ea42e406db8788d7dfe90a34af57726e1ab4b6b393a0ef86659c062254.jpg)  
 热管导热
 
 ## 讨论-对平衡态的理解：
@@ -148,7 +148,7 @@ parser: mineru
 
 5.受到外界影响状态发生改变
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/197bf3c354736265d60e876f9154315cbb908bfcac5d0564bfda2e7e8788d20d.jpg)
+![](images/197bf3c354736265d60e876f9154315cbb908bfcac5d0564bfda2e7e8788d20d.jpg)
 
 ## 统计物理初步
 
@@ -202,13 +202,13 @@ parser: mineru
 
 如果两个系统分别与处于确定状态的第三个系统达到热平衡，则这两个系统彼此也将处于热平衡。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d9ef4a643dd07bba6bea6d77a4c6a66964c01c5526edd311cd26114842b60d0b.jpg)
+![](images/d9ef4a643dd07bba6bea6d77a4c6a66964c01c5526edd311cd26114842b60d0b.jpg)
 
 热力学第零定律给出温度测量的依据，是热力学的基础。
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/67d1b4d30b0d12c37d6e55ba5e530ae24ab66efcb5b34f0800c1771fa5d9d161.jpg)
+![](images/67d1b4d30b0d12c37d6e55ba5e530ae24ab66efcb5b34f0800c1771fa5d9d161.jpg)
 
 温度：互为热平衡的几个热力学系统必然具有某种共同的宏观性质，我们将这种决定系统热平衡的宏观性质定义为温度。
 
@@ -234,7 +234,7 @@ parser: mineru
 
 概括：将气体分子理想化为极小的、无相互作用的弹性小球。气体越稀薄越接近。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/ee24b0d2d419d2d2f38ba16f7c04e84b85df09ab9d201994714c9a5b4815240a.jpg)
+![](images/ee24b0d2d419d2d2f38ba16f7c04e84b85df09ab9d201994714c9a5b4815240a.jpg)
 
 ## 7.2.2 理想气体状态方程
 
@@ -270,7 +270,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/df23f6a98a3c937cb8228acbe037282f0ba9b06e7d76df08e05d351abe755ebb.jpg)
+![](images/df23f6a98a3c937cb8228acbe037282f0ba9b06e7d76df08e05d351abe755ebb.jpg)
 
 ## 理想气体状态方程的变形
 
@@ -302,7 +302,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f7d76b8fea214750fa77a1da8cf09de36d8500f571089f928d860e93dfe683c5.jpg)
+![](images/f7d76b8fea214750fa77a1da8cf09de36d8500f571089f928d860e93dfe683c5.jpg)
 
 ## 例题7-1 估算在标准状态下，每立方厘米的空气中有多少个气体分子。
 
@@ -346,9 +346,9 @@ $$
 p _ {x} d V = \frac {d M}{M _ {m o l}} R T
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3473c8512cceac0cd3b097b697f8412a4265fe8b55a8b785a64747536ab6c715.jpg)
+![](images/3473c8512cceac0cd3b097b697f8412a4265fe8b55a8b785a64747536ab6c715.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9257f04ebef7b16bd7e23deeca3ababf75470d92390749bd301b761883c56427.jpg)
+![](images/9257f04ebef7b16bd7e23deeca3ababf75470d92390749bd301b761883c56427.jpg)
 
 $$
 T = T _ {2} + \frac {T _ {1} - T _ {2}}{L} x p _ {x} d V = \frac {d M}{M _ {m o l}} R T
@@ -372,7 +372,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/0502a88e43a97b00dd52fe1e38996d0d4932006fc0d0ea6ef99a584830c1497c.jpg)
+![](images/0502a88e43a97b00dd52fe1e38996d0d4932006fc0d0ea6ef99a584830c1497c.jpg)
 
 ## 统计物理初步
 
@@ -402,7 +402,7 @@ $$
 
 设容器内气体分子质量为m, 分子数密度为n, 而单位体积中速度为 $\mathbf { \delta } _ { \mathbf { \vec { v } _ { i } } }$ 的分子数为 $\mathbf { n _ { i } }$ 。现沿速度 $\mathbf { \delta _ { v _ { i } } }$ 方向取一底面为单位面积、高为 $\mathbf { \delta } _ { \mathbf { { i x } } }$ 的斜柱体。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/51db9759ac2723623f914106049e6e93368c67f0b330747e5063939947dc8287.jpg)
+![](images/51db9759ac2723623f914106049e6e93368c67f0b330747e5063939947dc8287.jpg)
 
 单位时间内与器壁A上单位面积碰撞的分子数,显然就是在此斜柱体中的分子数的：
 
@@ -426,7 +426,7 @@ $$
 
 对所有可能的速度求和，就得单位时间内给予器壁A单位面积上的总冲量：
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/79577678500a1f32e50dcb1bdd3d3a804543d02648994d999eac77ad68c3ffd1.jpg)
+![](images/79577678500a1f32e50dcb1bdd3d3a804543d02648994d999eac77ad68c3ffd1.jpg)
 
 $$
 \sum_ {i (v _ {i x} > 0)} 2 m n _ {i} v _ {i x} ^ {2}
@@ -448,13 +448,13 @@ $$
 \overline {{v _ {x} ^ {2}}} = \frac {\sum_ {i} n _ {i} v _ {i x} ^ {2}}{n}, \quad \overline {{v _ {x} ^ {2}}} = \overline {{v _ {y} ^ {2}}} = \overline {{v _ {z} ^ {2}}} = \frac {1}{3} \overline {{v ^ {2}}}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cbdf6f81f504efe3318744b51105982a29a9b4ae74c75c597726aabe1e46ddc9.jpg)
+![](images/cbdf6f81f504efe3318744b51105982a29a9b4ae74c75c597726aabe1e46ddc9.jpg)
 
 所以压强： $p = n m { \overline { { { \upsilon _ { x } } ^ { 2 } } } } = { \frac { 1 } { 3 } } n m { \overline { { { \upsilon ^ { 2 } } } } } = { \frac { 2 } { 3 } } n ( { \frac { 1 } { 2 } } m { \overline { { { \upsilon ^ { 2 } } } } } )$ $\bar { E } _ { t } = \frac 1 2 m \upsilon ^ { 2 }$ -气体分子的平均平动动能2理想气体的压强公式： ?? = <sub>3</sub> ????<sup>ሜ</sup><sub>??</sub> (7-3)
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/b861ae6d76abe4c82048b2463002c12cf4739125b6273ad5137eb212ee6bbb31.jpg)
+![](images/b861ae6d76abe4c82048b2463002c12cf4739125b6273ad5137eb212ee6bbb31.jpg)
 
 ## 7.2.3 温度的统计意义
 
@@ -514,7 +514,7 @@ $$
 
 双（多）原子 分子： 要根据原子间化学键是否可以伸缩加以区分。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/2fda3860e4b3e535447558ec2e916db0818a2c8a9d850d174594fea821b42741.jpg)
+![](images/2fda3860e4b3e535447558ec2e916db0818a2c8a9d850d174594fea821b42741.jpg)
 
 刚性双原子气体分子：两原子之间近似呈哑铃结构。
 
@@ -526,11 +526,11 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cbeb25d465f1bdbdf42a7cf07e82b8691351b62233de26b6430f1d81456a83af.jpg)
+![](images/cbeb25d465f1bdbdf42a7cf07e82b8691351b62233de26b6430f1d81456a83af.jpg)
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1dd1ce98c1cbfa5cbcaf91e1983f3d1c276af4552268cdd01fa704bcbe98e9ca.jpg)
+![](images/1dd1ce98c1cbfa5cbcaf91e1983f3d1c276af4552268cdd01fa704bcbe98e9ca.jpg)
 
 ## 多原子气体分子(原子数n3)：
 
@@ -552,7 +552,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1f8109eb5e1fc19d661d32bc7fd2fb5856801f447df477c0b2b93233056687eb.jpg)
+![](images/1f8109eb5e1fc19d661d32bc7fd2fb5856801f447df477c0b2b93233056687eb.jpg)
 
 ## 判断自由度更为简洁的方法：
 
@@ -570,7 +570,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d7786a659934e73e389135aae29d07b1c5850a7d7a2b61df29330572ed7c3407.jpg)
+![](images/d7786a659934e73e389135aae29d07b1c5850a7d7a2b61df29330572ed7c3407.jpg)
 
 ## 7.3.2 能量按自由度均分定理
 
@@ -586,7 +586,7 @@ $$
 
 可见，分子的平均平动动能是均匀地分配在3个自由度上的，即每个平动自由度上的平均平动动能都相等，都为 $\frac { 1 } { 2 } k T$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/73b562daa88ca5c611e1ea286a1be97f0ea12d58e4aea6b936dba2f5339904b5.jpg)
+![](images/73b562daa88ca5c611e1ea286a1be97f0ea12d58e4aea6b936dba2f5339904b5.jpg)
 
 ## 统计物理初步
 
@@ -610,7 +610,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f088b59844398c01e25c8d1df9de1526ffd941d12935b40ddfc339452c689ebc.jpg)
+![](images/f088b59844398c01e25c8d1df9de1526ffd941d12935b40ddfc339452c689ebc.jpg)
 
 由于振动过程平均势能和平均动能相等，对每个振动自由度分子不仅有 $\frac { 1 } { 2 } k T$ 的平均振动动能,还应有 $\frac { 1 } { 2 } k T$ 的平均振动势能。因此，
 
@@ -656,7 +656,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/274bacbe59c88f5d43e2ae5e53f55362a1ed1605119366077e42a47a8993696a.jpg)
+![](images/274bacbe59c88f5d43e2ae5e53f55362a1ed1605119366077e42a47a8993696a.jpg)
 
 例7-6 容器内盛有单原子理想气体， 测得压强为p，那么单位体积中的内能为多少？
 
@@ -666,7 +666,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6a02e6a977710d067b418741efe352be17fa7b910f191c24cfa5be3913bea4a2.jpg)
+![](images/6a02e6a977710d067b418741efe352be17fa7b910f191c24cfa5be3913bea4a2.jpg)
 
 例7-7 容器内有 $\mathbf { { \dot { C } O } } _ { 2 }$ 和 $\mathbf { { \mathbf { O } } } _ { 2 }$ 两种混合气体，混合气体的热力学温度 $\mathbf { T } { = } 2 9  \mathbf { 0 } \mathbf { K }$ , 总的内能 $\mathrm { E } { = } 9 . 6 4 \times 1 0 ^ { 5 } \mathrm { J }$ , 总质量 $\mathbf { M } { = } 5 . 4 \mathbf { k g }$ ，求两种气体的质量。
 
@@ -686,7 +686,7 @@ $$
 
 解得： $\mathbf { M } _ { 1 } { = } 2 . 2 \mathbf { k g }$ 9 $\mathbf { M } _ { 2 } { = } 3 . 2 \mathbf { k g }$ 9
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/7218913144a778510294843bd306dc7ff3dfdc91d2c9f1439a603feed010c46a.jpg)
+![](images/7218913144a778510294843bd306dc7ff3dfdc91d2c9f1439a603feed010c46a.jpg)
 
 ## 统计物理初步
 
@@ -722,7 +722,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/fddb85b16c01d18fa462be958e57fb5f6b7348803fe963412133b759c4a96f74.jpg)
+![](images/fddb85b16c01d18fa462be958e57fb5f6b7348803fe963412133b759c4a96f74.jpg)
 
 ## 概念分析：分布函数
 
@@ -736,7 +736,7 @@ $\frac { N _ { i } } { N }$ : 成绩为 $\mathbf { X _ { i } }$ 分的同学人�
 
 只需使用待统计函数与分布函数相乘，最后求和或积分，即可获得该函数的统计结果。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/886320406e6772bafbda6eac2f53e370ad3a037ddacbc7c21088ab7412b3bb57.jpg)
+![](images/886320406e6772bafbda6eac2f53e370ad3a037ddacbc7c21088ab7412b3bb57.jpg)
 
 ## 7.4.1 麦克斯韦速率分布定律
 
@@ -760,7 +760,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/60c8a69e6a6ac2221d1b7df5f964c8bd42541e6e6446dbd2382d3751e842b2d8.jpg)
+![](images/60c8a69e6a6ac2221d1b7df5f964c8bd42541e6e6446dbd2382d3751e842b2d8.jpg)
 
 1. 麦克斯韦速率分布函数f()的物理意义
 
@@ -774,21 +774,21 @@ f(v)表示：在速率υ附近的单位速率区间内的分子数占总分子�
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/09277a8704cb4d2ed01fb05b4e5a09de17724eb292d202a96c6c9e83a0c585d8.jpg)
+![](images/09277a8704cb4d2ed01fb05b4e5a09de17724eb292d202a96c6c9e83a0c585d8.jpg)
 
 ## 2.麦克斯韦速率分布曲线
 
 (a)速率分布特征：速率可取0—内的一切值；但速率很小和很大的分子所占的百分比较小，中等速率的分子最多。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9791d731077da8541031d58743695f5150955e9517c73231a15775b408108acb.jpg)
+![](images/9791d731077da8541031d58743695f5150955e9517c73231a15775b408108acb.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/b6c50b6dbd58df91b0fb543a5b77b2f18d28e5ee53969c05ad5fdcad3935e97f.jpg)
+![](images/b6c50b6dbd58df91b0fb543a5b77b2f18d28e5ee53969c05ad5fdcad3935e97f.jpg)
 
 ## (b)曲线下面积的物理意义
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6b1eed16f7700cd19b36ab90dbcd1cd03ee081524b1c401781df0a25c9de949e.jpg)
+![](images/6b1eed16f7700cd19b36ab90dbcd1cd03ee081524b1c401781df0a25c9de949e.jpg)
 
 $$
 \int_ {v _ {1}} ^ {v _ {2}} f (v) d v
@@ -808,7 +808,7 @@ $$
 
 归一化条件的物理意义是：分子速率在0—间的概率是1。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/fccc01ae8202b6c3703cd683c7ca0ba1030fdd85ff8911058dff105cc7a1aa8e.jpg)
+![](images/fccc01ae8202b6c3703cd683c7ca0ba1030fdd85ff8911058dff105cc7a1aa8e.jpg)
 
 ## 3. 三种统计速率
 
@@ -819,13 +819,13 @@ f (v) = 4 \pi (\frac {m}{2 \pi k T}) ^ {\frac {3}{2}} v ^ {2} e ^ {- \frac {m v 
 $$
 
 由极值条件df(v)/dv=0可以得到  
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f90d45b9165b2cf85821a864b167cd89bb35b595d86b8e8cf79a4d1201ef65f0.jpg)
+![](images/f90d45b9165b2cf85821a864b167cd89bb35b595d86b8e8cf79a4d1201ef65f0.jpg)
 
 $$
 v _ {\mathrm{p}} = \sqrt {\frac {2 \mathrm{kT}}{\mathrm{m}}} = \sqrt {\frac {2 R T}{M _ {\mathrm{mol}}}} (7 - 1 2)
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/27c3631c5af9019a2c17a57790919a4b9d3f1e7695629ed6e5c5ace449a4896a.jpg)
+![](images/27c3631c5af9019a2c17a57790919a4b9d3f1e7695629ed6e5c5ace449a4896a.jpg)
 
 ## 2.平均速率
 
@@ -841,7 +841,7 @@ $$
 v _ {\mathrm{p}} = \sqrt {\frac {8 R T}{\pi M _ {\mathrm{mol}}}}\tag{7-13}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/17ec973c56f6dd2626dc04dbe92355b591951ea86651f11852e6aef0d0b7d869.jpg)
+![](images/17ec973c56f6dd2626dc04dbe92355b591951ea86651f11852e6aef0d0b7d869.jpg)
 
 ## 3.方均根速率
 
@@ -865,7 +865,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cb142cd53f255da37e985fb26651ce147793ee0c3f90932800e0032b4c3a3f8b.jpg)
+![](images/cb142cd53f255da37e985fb26651ce147793ee0c3f90932800e0032b4c3a3f8b.jpg)
 
 例7-9 求速率区间 $\mathbf { \boldsymbol { v } _ { 1 } - \boldsymbol { v } _ { 2 } }$ 内分子的平均速率。
 
@@ -885,7 +885,7 @@ $$
 
 ## 统计物理初步
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/c96c3138c56edd0d7ea8d97120b21ff604623064d080868be7a2eb0de9346ef3.jpg)
+![](images/c96c3138c56edd0d7ea8d97120b21ff604623064d080868be7a2eb0de9346ef3.jpg)
 
 ## 主要知识点：
 
@@ -901,4 +901,4 @@ $$
 
 6. 麦克斯韦速率分布定律、速率分布函数的物理意义、三种典型的速率
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a2376f743379eb092bcd1751c2d86bb4c212a033ad50f6a94eec81a836a12a79.jpg)
+![](images/a2376f743379eb092bcd1751c2d86bb4c212a033ad50f6a94eec81a836a12a79.jpg)

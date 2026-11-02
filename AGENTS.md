@@ -10,12 +10,14 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 实际数据根为 `D:/知识库`；Codex worktree 仅用于代码开发，处理课程或知识内容时显式使用真实数据根。验收见 [[docs/KNOWLEDGE_ACCEPTANCE_V2_2026-10-28]]。
 
+2026-11-01 用户修正：课程源资料及其附件作为完整资料包保存：教材/课件转换的 images、assets 等目录保留在源文件原有相对位置，不集中迁入 04_Assets；引用优先保留原有相对路径。04_Assets 仅用于独立或确需共享的附件。
+
 本节覆盖下文旧目录与 v1 示例。依据 [[docs/KNOWLEDGE_ARCHITECTURE]] 和已批准设计，使用 `99_System/knowledge/v2/` 的模板、Schema 和 `knowledge.py v2`。
 
 - 原子 concept/proposition/method 单一职责、单值 type，平铺 `01_Knowledge`；必填 time、非空 topics 和真实 Sources 笔记 source，不填 title/subject。
 - MOC 为 type:moc，放 `02_Maps`，topics 指上层主题，可多父、拒绝环；上层递归汇集原子并去重。主题库自动读取 MOC。
 - 来源类型 lecture/review/homework/book/paper/web；idea 属性由用户手填。习题归 homework，不设知识梳理/答疑独立类型；课件和原始转写是资料。
-- 课程目录在 `03_Sources/Courses`，复习在 `03_Sources/Reviews`；subject 是课程名列表。课程 PDF/PPT 跟课程走，配套图片放 `04_Assets/Images`。
+- 课程目录在 `03_Sources/Courses`，复习在 `03_Sources/Reviews`；subject 是课程名列表。课程 PDF/PPT 及配套图片跟随源资料目录，保留附件的原有相对位置。
 - time 为创建时间；lecture_date/due_date 为上课/截止日期。status 只用 not done/done 表示原子归档；polish_status 独立管理录音笔记润色。
 - 用户发出整理指令后，AI 在指定 Sources 范围自主提炼、检索复用、建立主题与关系、登记标签并应用哈希绑定事务。不增自动提炼调度。
 - 无需提炼的内容必须先经人类明确审查，Agent 不得自行调用批准入口或伪造审批记录；待审则保持 not done。

@@ -73,8 +73,8 @@ class MigrationTests(unittest.TestCase):
         self.put('每日疑惑/问题.md', {}, '[[课程/统计/课堂笔记/课堂]]\n正文保持\n'.encode())
         ops, report = migration.build(self.root)
         by = {op['source']:op for op in ops}
-        self.assertTrue(by['课程/统计/课堂笔记/图.png']['target'].startswith('04_Assets/Images/'))
-        self.assertIn(b'04_Assets',by['课程/统计/课堂笔记/课堂.md']['content'])
+        self.assertEqual(by['课程/统计/课堂笔记/图.png']['target'],'03_Sources/Courses/统计/课堂笔记/图.png')
+        self.assertIn('![图](图.png)',by['课程/统计/课堂笔记/课堂.md']['content'].decode())
         outside = by['每日疑惑/问题.md']['content'].decode()
         self.assertIn('[[03_Sources/Courses/统计/课堂笔记/课堂]]',outside)
         self.assertIn('正文保持',outside)
@@ -137,6 +137,16 @@ class MigrationTests(unittest.TestCase):
         git('commit','-m','rename',stamp='2021-02-03T04:05:06+08:00')
         self.assertEqual(helper(self.root)['概念/对象.md']['time'],'2020-01-02T03:04:05+08:00')
 
+
+    def test_textbook_images_remain_in_original_relative_bundle(self):
+        self.put('课程/统计/课本/书.md', {}, b'![](images/batch_0000/a.jpg)\n')
+        image=self.root/'课程/统计/课本/images/batch_0000/a.jpg'
+        image.parent.mkdir(parents=True)
+        image.write_bytes(b'actual textbook figure')
+        ops,_=migration.build(self.root)
+        by={op['source']:op for op in ops}
+        self.assertEqual(by['课程/统计/课本/images/batch_0000/a.jpg']['target'],'03_Sources/Courses/统计/课本/images/batch_0000/a.jpg')
+        self.assertIsNone(by['课程/统计/课本/书.md']['content'])  # Unchanged URI and body move byte-for-byte.
 
 if __name__ == '__main__':
     unittest.main()

@@ -16,7 +16,7 @@ tags: []
 
 - 先判断可信程度：[[01_Knowledge/误差]] → [[01_Knowledge/范数]] → [[01_Knowledge/条件数]]、[[01_Knowledge/数值稳定性]] → [[01_Knowledge/条件数误差分析流程]]。
 - 线性问题：[[01_Knowledge/Gauss消元法]]、[[01_Knowledge/QR分解求最小二乘]]；大规模问题转入 [[01_Knowledge/Jacobi迭代]]、[[01_Knowledge/共轭梯度法]] 并核对收敛条件。
-- 非线性问题：[[01_Knowledge/不动点]] → [[00_Inbox/待核实核心/方法/不动点迭代判敛流程]] → [[01_Knowledge/牛顿法]]。
+- 非线性问题：[[01_Knowledge/不动点]] → [[01_Knowledge/不动点迭代]] → [[01_Knowledge/牛顿法]]。
 - 连续问题的近似：[[01_Knowledge/插值与拟合]] → [[01_Knowledge/Lagrange插值]]；积分用 [[01_Knowledge/Gauss求积]]，初值问题用 [[01_Knowledge/Runge-Kutta方法]]。
 - 与 [[02_Maps/MOC-最优化]] 对照目标函数下降和方程迭代的不同停止条件。
 

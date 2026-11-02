@@ -6,7 +6,7 @@ status: mineru解析
 parser: mineru
 ---
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/0999ebfe8826fe9c3a53648bdaf86c67cf88f86b6a6ac6c4ce761d88357505cc.jpg)
+![](images/0999ebfe8826fe9c3a53648bdaf86c67cf88f86b6a6ac6c4ce761d88357505cc.jpg)
 
 ## 大学物理II ∙ 热力学基础
 
@@ -32,13 +32,13 @@ parser: mineru
 
 当系统的状态随时间变化时，我们就说系统在经历一个热力学过程，简称过程。如果系统从初态到末态的每一个中间状态都可以近似为平衡态过程，则此过程为准静态过程。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9c3b7dad952f04daba04af4a3576824d7d11f6ce26c9f74e90d3b9d9b8e19c60.jpg)
+![](images/9c3b7dad952f04daba04af4a3576824d7d11f6ce26c9f74e90d3b9d9b8e19c60.jpg)
 
 随着准静态过程的发生，系统由一个平衡状态到平衡受到破坏，再达到一个新的平衡态。从平衡态破坏到新平衡态建立所需的时间称为弛豫时间，用τ表示。
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/e43576ebec3cba52138d11a0d8c16cee7a4b3eac21dfd4c716aeb26dc1a166fc.jpg)
+![](images/e43576ebec3cba52138d11a0d8c16cee7a4b3eac21dfd4c716aeb26dc1a166fc.jpg)
 
 实际发生的过程往往进行的较快，在新的平衡态达到之前系统又继续下一步变化。实际上系统在过程中经历了一系列非平衡态，这种过程为非静态过程。作为中间态的非平衡态通常不能用状态参量来描述。
 
@@ -54,11 +54,11 @@ parser: mineru
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/7e07ea1587abeb55b783589fb8db02031bad2d96758fb4301f5a2e4b32ff1935.jpg)
+![](images/7e07ea1587abeb55b783589fb8db02031bad2d96758fb4301f5a2e4b32ff1935.jpg)
 
 ## 3. 准静态过程中（体积）功的计算
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/5bc875e918f78722efc4f076ea171a4878ee08601534b2d9d51f500219f7eb59.jpg)
+![](images/5bc875e918f78722efc4f076ea171a4878ee08601534b2d9d51f500219f7eb59.jpg)
 
 微小过程气体对外作的元功：
 
@@ -82,19 +82,19 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d6f29f4f0397ab9819cbee40868c87c91ab8fcc87d461b2cd1f906e4fdd94379.jpg)
+![](images/d6f29f4f0397ab9819cbee40868c87c91ab8fcc87d461b2cd1f906e4fdd94379.jpg)
 
 (2) 在p-V图上, 功是曲线下的面积。
 
 曲线下的面积 $= \int _ { V _ { 1 } } ^ { V _ { 2 } } P \mathrm { d } \mathbf { v _ { \alpha } } = \mathbf { A _ { \alpha } }$ (气体对外作的功)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/28940b847e2dbd950f5b5e942e6b8a2fc27b4fb9c258695942497531c384d63a.jpg)
+![](images/28940b847e2dbd950f5b5e942e6b8a2fc27b4fb9c258695942497531c384d63a.jpg)
 
 由图8-4可知，即使初态和末态相同，不同的过程气体对外作的功也是不同的所以功是过程量。
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/e1f5af50063f9652791fcba19820ad3ca1374eab73ac84401ef042a8a3a56320.jpg)
+![](images/e1f5af50063f9652791fcba19820ad3ca1374eab73ac84401ef042a8a3a56320.jpg)
 
 ## 4. 理想气体的内能
 
@@ -110,10 +110,10 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6b2e82876833334f0d94100d563643b1693c3293d7b42c69895065cd8617214f.jpg)  
+![](images/6b2e82876833334f0d94100d563643b1693c3293d7b42c69895065cd8617214f.jpg)  
 第一类永动机，思想源于公元1200左右的印度。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/19aa2a76ff63e19d9b86fa739a78e24e195846273296918db0114db0d2ece299.jpg)
+![](images/19aa2a76ff63e19d9b86fa739a78e24e195846273296918db0114db0d2ece299.jpg)
 
 ## 5. 热力学第一定律
 
@@ -139,7 +139,7 @@ Q ：系统从外界吸收的热量； $\mathbf { E } _ { 2 } \mathbf { - E _ { 
 
 能量守恒定律：能量不会凭空产生或者消失，只能从一种形式转化为另一种形式。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3254538bdffc3e9b238a4e86737c4b5ef05afccd27067b79fcc172bcb1e306af.jpg)
+![](images/3254538bdffc3e9b238a4e86737c4b5ef05afccd27067b79fcc172bcb1e306af.jpg)
 
 ## 热力学基础
 
@@ -149,7 +149,7 @@ Q ：系统从外界吸收的热量； $\mathbf { E } _ { 2 } \mathbf { - E _ { 
 
 第二类永动机从热源吸热，完全用于作功。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/dfadc6356d8796643455b3e4674fb778f9313b197f81bcbc135cefeed70352e3.jpg)
+![](images/dfadc6356d8796643455b3e4674fb778f9313b197f81bcbc135cefeed70352e3.jpg)
 
 ## 热力学基础
 
@@ -161,9 +161,9 @@ Q ：系统从外界吸收的热量； $\mathbf { E } _ { 2 } \mathbf { - E _ { 
 
 过程cda: $\mathrm { Q } { = } \mathrm { E } _ { 2 } { \mathrm { - } } \mathrm { E } _ { 1 } { \mathrm { - } } 3 0 0 { = } 3 0 0 \ { \mathrm { - } } 3 0 0 { = } 0$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/acadbf1bbd577a086d00afa9b886bb9b50a0a8a0faa8c8283b18e153fdf3b307.jpg)
+![](images/acadbf1bbd577a086d00afa9b886bb9b50a0a8a0faa8c8283b18e153fdf3b307.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/dede5409df7f4beee39fd632cacdb0b407c2e02f6c3e74cf9e2cca1af1754737.jpg)
+![](images/dede5409df7f4beee39fd632cacdb0b407c2e02f6c3e74cf9e2cca1af1754737.jpg)
 
 正确的解法是：
 
@@ -189,7 +189,7 @@ $$
 
 = ??<sub>??????</sub> =曲线abc下的面积
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/475a195342ebac4c19b759aeb8359b0f5da38469e1ae2c9aa1db936fab5cbe79.jpg)
+![](images/475a195342ebac4c19b759aeb8359b0f5da38469e1ae2c9aa1db936fab5cbe79.jpg)
 
 过程abcda吸热:
 
@@ -197,13 +197,13 @@ $$
 \begin{array}{r l} & {\mathbf {Q} = \mathbf {E _ {a}} - \mathbf {E _ {a}} + \mathbf {A _ {a b c d a}}} \\ & {\quad = \mathbf {A _ {a b c d a}} = \mathbf {A _ {a b c}} + \mathbf {A _ {d a}}} \\ & {\quad = 7 0 0 - 3 \times 4 \times 1 0 ^ {2} = - 5 0 0 \mathrm{J}} \end{array}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f633c145041969fb662c587a0437dafd70d2199cf4932dcdf07001cc8d3e9fcd.jpg)
+![](images/f633c145041969fb662c587a0437dafd70d2199cf4932dcdf07001cc8d3e9fcd.jpg)
 
 例题8-3 刚性双原子分子经图示过程abca, 求各分过程之A、E和Q及整个过程abca气体对外作的净功。
 
 解 过程ab : ${ \mathrm { : A _ { a b } } } { \bf { \overline { { { \alpha } } } } } \mathrm { { ^ 1 } }  _ { \bf { \overline { { { 2 } } } } } ( p _ { b } + p _ { a } ) ( V _ { b } - V _ { c } ) { \bf { \overline { { { \alpha } } } } } = { \bf { 4 0 } } { { \bf 5 } } { . } { \bf { 2 } } { \bf { J } }$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a6ac0cb1ce82f51a414d4801d059f140ca4adf83a306ff64be4a8fcf5715359c.jpg)
+![](images/a6ac0cb1ce82f51a414d4801d059f140ca4adf83a306ff64be4a8fcf5715359c.jpg)
 
 $$
 \Delta \mathbf {E} _ {\mathbf {a b}} = \frac {5}{2} (p _ {b} V _ {b} - p _ {a} V _ {a}) = - 5 0 6. 5 \mathrm{J}
@@ -227,7 +227,7 @@ $$
 \mathrm{Q} _ {\mathrm{bc}} = \Delta \mathrm{E} _ {\mathrm{bc}} + \mathrm{A} _ {\mathrm{bc}} = - 7 0 9. 1 \mathrm{J}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9c7865323dfa6cfd886544dd6229fc361aed8e6f32b29ff17761b996ab8a0a61.jpg)
+![](images/9c7865323dfa6cfd886544dd6229fc361aed8e6f32b29ff17761b996ab8a0a61.jpg)
 
 ## 热力学基础
 
@@ -253,7 +253,7 @@ $$
 \begin{array}{l} = \frac {1}{2} (4 - 2) (3 - 1) \times 1. 0 1 3 \times 1 0 ^ {2} \\ = 2 0 2. 6 \mathrm{J} \end{array}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/4945b96843b004ba376fc624c0776c3229ee0a8366b7fd3478e934328bbbcca7.jpg)
+![](images/4945b96843b004ba376fc624c0776c3229ee0a8366b7fd3478e934328bbbcca7.jpg)
 
 ## 8.1.2 摩尔热容
 
@@ -279,7 +279,7 @@ $$
 C _ {V} = \frac {i}{2} R\tag{8-6}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/75b1e859341e21d7aba73dc44f00d5fce6d44de9265f28d5972d8074400f7a7e.jpg)
+![](images/75b1e859341e21d7aba73dc44f00d5fce6d44de9265f28d5972d8074400f7a7e.jpg)
 
 2. 定压摩尔热容 $\mathbf { C _ { p } }$
 
@@ -305,7 +305,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/7fb650368f55599fffc1744b2517de20e4ad630a122c839952580382a2ee7a14.jpg)
+![](images/7fb650368f55599fffc1744b2517de20e4ad630a122c839952580382a2ee7a14.jpg)
 
 ## 3. 比热容比(绝热系数)
 
@@ -329,7 +329,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9c1667f4e5eac0cc29470d21b48a8e79e74ab0131cc9002daf1254076dc79d6e.jpg)
+![](images/9c1667f4e5eac0cc29470d21b48a8e79e74ab0131cc9002daf1254076dc79d6e.jpg)
 
 比热容比：
 
@@ -359,7 +359,7 @@ $$
 
 问题： $C _ { T } = ? C = { \frac { d Q } { d T } }$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/693a38c7b8622e20ee399130910a4328805aa9398e628850f13a95284ddf7c40.jpg)
+![](images/693a38c7b8622e20ee399130910a4328805aa9398e628850f13a95284ddf7c40.jpg)
 
 ## 8.1.3 热力学第一定律在几个特殊（准静态）过程中的应用
 
@@ -375,9 +375,9 @@ $$
 
 (5) $C _ { V } = { \frac { i } { 2 } } R$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/ebf4741621f7426d431763d613f6cea0fb6284c2956a608d66a58252e523a933.jpg)
+![](images/ebf4741621f7426d431763d613f6cea0fb6284c2956a608d66a58252e523a933.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1097a41f489e8310ad41c99a7e716371430115272e4f02addcfd5d00484d5225.jpg)
+![](images/1097a41f489e8310ad41c99a7e716371430115272e4f02addcfd5d00484d5225.jpg)
 
 ## 2. 等温过程
 
@@ -395,9 +395,9 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/046f56a7217757242bdc7f33f3a206c35976a4aef21bbc42b55bd3f2f2970362.jpg)
+![](images/046f56a7217757242bdc7f33f3a206c35976a4aef21bbc42b55bd3f2f2970362.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9cc08fadb450d74c8cd5b7882a75f0cf7e52b6b72ef210085813f400bfc410ee.jpg)
+![](images/9cc08fadb450d74c8cd5b7882a75f0cf7e52b6b72ef210085813f400bfc410ee.jpg)
 
 ## 3. 等压过程
 
@@ -417,9 +417,9 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/5d990ef0abb71a266252edfc009ff6c9e09b8e95597d55e05e8d4e4cb2d6d695.jpg)
+![](images/5d990ef0abb71a266252edfc009ff6c9e09b8e95597d55e05e8d4e4cb2d6d695.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3d340c5087d087a679a90b76099291af6eaa4aaa8cc60f711e67b97f79d3d7ff.jpg)
+![](images/3d340c5087d087a679a90b76099291af6eaa4aaa8cc60f711e67b97f79d3d7ff.jpg)
 
 ## 4. 绝热（准静态）过程
 
@@ -447,11 +447,11 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1b6636a9b28a7025266b182285925bc1b4b8656332cc4f0dff734bbcfe371f73.jpg)
+![](images/1b6636a9b28a7025266b182285925bc1b4b8656332cc4f0dff734bbcfe371f73.jpg)
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3a0e8121ee4fb434190eebce7d5bb79881d4597e0c74ec1340f95f687b258b58.jpg)
+![](images/3a0e8121ee4fb434190eebce7d5bb79881d4597e0c74ec1340f95f687b258b58.jpg)
 
 ## 绝热(准静态)过程方程的推导
 
@@ -493,7 +493,7 @@ $$
 \Rightarrow \mathrm{pV} ^ {\gamma} = \text {常数}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f1052939304571d9add7fca9b9dd3e11af86fa5f8422c3599d1b57dad7f8b1a2.jpg)
+![](images/f1052939304571d9add7fca9b9dd3e11af86fa5f8422c3599d1b57dad7f8b1a2.jpg)
 
 将绝热线和等温线对比，我们发现：绝热线比等温线更陡些。
 
@@ -505,7 +505,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d38e85c4362a6839d1c741f614b3410fb36c62df2ae5af884214e49a2a578ebe.jpg)
+![](images/d38e85c4362a6839d1c741f614b3410fb36c62df2ae5af884214e49a2a578ebe.jpg)
 
 等温: $\mathbf { p V } { = } \mathbf { C }$
 
@@ -519,7 +519,7 @@ $$
 \frac {d p}{d V} = - \gamma \frac {p}{V}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/fe44fe4010fc13b56869777e48d93f40f7e6bccada17a761c0e700fc655e45e0.jpg)
+![](images/fe44fe4010fc13b56869777e48d93f40f7e6bccada17a761c0e700fc655e45e0.jpg)
 
 例题8-4 (1)单原子气体分子在等压膨胀过程中，将把吸热的 $40 \%$ 用于对外作功。
 
@@ -553,11 +553,11 @@ $$
 
 于是解得 $\mathbf { C } _ { \mathbf { V } } { = } 2 1 . 1$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/b604a548b8643d0d5eef86ad21b475a41a3a768074b4091c4b3ee95a850222c0.jpg)
+![](images/b604a548b8643d0d5eef86ad21b475a41a3a768074b4091c4b3ee95a850222c0.jpg)
 
 ## 例题8-6 图8-15中p-b是绝热过程, 问: p-a和 $\scriptstyle | { \bf p = c } |$ 是吸热还是放热过程?
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/b853940714c95c7056898bbf408e68e130c6e01da214370099cef57127389942.jpg)
+![](images/b853940714c95c7056898bbf408e68e130c6e01da214370099cef57127389942.jpg)
 
 由 $p V = \nu R T$ 知: $\mathbf { E _ { a } { > } E _ { b } { > } E _ { c } }$ 于是有 $\mathrm { E _ { a } { = } E _ { p } { > } E _ { b } { = } E _ { p } { > } E _ { c } { = } E _ { p } }$ 显然 $\mathrm { \mathbf { A _ { p a } } \mathrm { > } \mathbf { A _ { p b } } \mathrm { > } \mathbf { A _ { p c } } }$ $\begin{array} { r } { \mathbf { E _ { a } } \mathbf { - } \mathbf { E _ { p } } + \mathbf { A _ { p a } } > \mathbf { E _ { b } } \mathbf { - } \mathbf { E _ { p } } + \mathbf { A _ { p b } } > \mathbf { E _ { c } } \mathbf { - } \mathbf { E _ { p } } + \mathbf { A _ { p c } } } \\ { = \mathbf { 0 } } \end{array}$ 亦即 $\mathrm { Q _ { p a } > Q _ { p b } > Q _ { p c } }$ 所以 $\mathbf { p - a }$ 是吸热, $\mathbf { p - c }$ 是放热过程。
 
@@ -592,7 +592,7 @@ $$
 所以 ${ \sf T } = { \sf T } _ { \mathbf { o } }$
 
 热力学基础  
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a1e33c78ec25d62beb3ddfd08e36fa2b6f5ad574cbac5e3c989e947d484eaa5b.jpg)
+![](images/a1e33c78ec25d62beb3ddfd08e36fa2b6f5ad574cbac5e3c989e947d484eaa5b.jpg)
 
 例8-8 如图所示，使1摩尔氧气（1）由a等温地变到b；（2）由a等体地变到c，再由c等压地变到b。试分别计算系统所做的功和吸收的热量。 $\scriptstyle ( \ln 2 = 0 . 6 9 3 )$
 
@@ -616,11 +616,11 @@ $$
 Q = \Delta E + A = A = 3. 1 4 \times 1 0 ^ {3} (\mathrm{J})
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6e057199971e3b0d7b61a758c8c310afb38c0ce1ae07a29a24735c5df223215b.jpg)
+![](images/6e057199971e3b0d7b61a758c8c310afb38c0ce1ae07a29a24735c5df223215b.jpg)
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1f5cadc37ff901b61efbcd0a9202799630eb94ef83f910dfb6d8e47332323c73.jpg)
+![](images/1f5cadc37ff901b61efbcd0a9202799630eb94ef83f910dfb6d8e47332323c73.jpg)
 
 (2) a→c等体过程， $\mathbf { A _ { a c } = 0 }$
 
@@ -646,11 +646,11 @@ $$
 Q _ {a c b} = Q _ {a c} + Q _ {c b} = 2. 2 7 \times 1 0 ^ {3} (\mathrm{J})
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/c50a579edf46d374cefa9c48865b2c8da843e52383ef852a2e845c2430abd598.jpg)
+![](images/c50a579edf46d374cefa9c48865b2c8da843e52383ef852a2e845c2430abd598.jpg)
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/df640b4b1dafbd039e46f5ac6c3578503b8542d30ac39ffea4cbf356f004401b.jpg)
+![](images/df640b4b1dafbd039e46f5ac6c3578503b8542d30ac39ffea4cbf356f004401b.jpg)
 
 例8-9 分别通过下列准静态过程把标准状态下0.014kg氮气压缩到原体积的一半。
 
@@ -672,7 +672,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cf1fe5cb46cfce42f29e9d42daf4dd54350979d0bb2fcdf8896cba39c9a9c24e.jpg)
+![](images/cf1fe5cb46cfce42f29e9d42daf4dd54350979d0bb2fcdf8896cba39c9a9c24e.jpg)
 
 ## 2) 绝热过程
 
@@ -694,7 +694,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1bf34695827ab3b7f3566d8453d238fc459d51a17ace8e6fa4cc650f8d87c456.jpg)
+![](images/1bf34695827ab3b7f3566d8453d238fc459d51a17ace8e6fa4cc650f8d87c456.jpg)
 
 ## 3) 等压过程
 
@@ -720,7 +720,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/0d7aa5550c68db0b676b99b0a021dd8dc7e1742bebc6f28c20c3f6de65817730.jpg)
+![](images/0d7aa5550c68db0b676b99b0a021dd8dc7e1742bebc6f28c20c3f6de65817730.jpg)
 
 例8-10 bca 为理想气体的绝热过程，b1a 和 b2a 是任意过程，分析上述两过程中气体做功是正还是负，过程是吸收还是放热？
 
@@ -736,11 +736,11 @@ $$
 E _ {a} - E _ {b} = - A = A ^ {\prime} > 0
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/ecd910c21adc2557209193b5962633e9396c5523ab251cc916bc102d30df2cda.jpg)
+![](images/ecd910c21adc2557209193b5962633e9396c5523ab251cc916bc102d30df2cda.jpg)
 
 A和A分别为气体对外做功和外界对气体做功，大小为曲边梯形bcade面积
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/683b684ec5c21875ba24f9ff97c8fca641e23ee176101ebad8856113b657cabb.jpg)
+![](images/683b684ec5c21875ba24f9ff97c8fca641e23ee176101ebad8856113b657cabb.jpg)
 
 ## 对b1a过程
 
@@ -758,7 +758,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9bc51d8b87b50a43c48bf57e0538da464406dcb3d1ddc0088cc82a1fa5da1c74.jpg)
+![](images/9bc51d8b87b50a43c48bf57e0538da464406dcb3d1ddc0088cc82a1fa5da1c74.jpg)
 
 ${ \bf A ^ { \prime } } _ { 2 }$ 为 ${ \bf b 2 a }$ 过程外界对气体做的功，大小为曲边梯形b $\bf { \sigma } ) 2 a d e$ 面积。因为 $\mathbf { A ^ { \prime } } _ { 2 } > \mathbf { A ^ { \prime } } , \mathbf { Q } _ { 2 } < \mathbf { 0 }$ ，此过程放热，气体做负功。
 
@@ -772,13 +772,13 @@ ${ \bf A ^ { \prime } } _ { 2 }$ 为 ${ \bf b 2 a }$ 过程外界对气体做的
 
 (1)由准静态过程组成的循环过程，在p-V图上可用一条闭合曲线表示。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/bdaca4059a6e5b7928fc39cdb8221f56a5e504aa6eb2944018924d6b9dcab47b.jpg)  
+![](images/bdaca4059a6e5b7928fc39cdb8221f56a5e504aa6eb2944018924d6b9dcab47b.jpg)  
 用途: 对外作功
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/b018cddd2536b7f0b1d8f62cd1abb7b8a4f1b2c885f6bea7784df33c90ecdd2b.jpg)  
+![](images/b018cddd2536b7f0b1d8f62cd1abb7b8a4f1b2c885f6bea7784df33c90ecdd2b.jpg)  
 用途: 制冷
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/40f997b084e6a0e7ce64a184f61114bcdd84ba796e7205a14d9c9e5b8827a0f6.jpg)
+![](images/40f997b084e6a0e7ce64a184f61114bcdd84ba796e7205a14d9c9e5b8827a0f6.jpg)
 
 (2)经过一正循环气体对外作的净功(或经一逆循环外界对气体作的净功)等于闭合曲线包围的面积。
 
@@ -800,11 +800,11 @@ $$
 \omega = \frac {Q _ {2}}{A} = \frac {Q _ {2}}{Q _ {1} - Q _ {2}}\tag{8-12}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a27a00a4d0b3c177576c7bfc78aae1958fc97a0a5c3a7253a021f966927c0c99.jpg)
+![](images/a27a00a4d0b3c177576c7bfc78aae1958fc97a0a5c3a7253a021f966927c0c99.jpg)
 
 例题8-8 1mol单原子气体，经图9-18所示的循环过程abca，图中ab是等温过程，$\mathbf { V } _ { 2 } { = } 2 \mathbf { V } _ { 1 } ,$ 求循环效率。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/33728c815e8c1b60de768cd69fcaa1cf39cb157aa37e41446847d8e00640a75e.jpg)
+![](images/33728c815e8c1b60de768cd69fcaa1cf39cb157aa37e41446847d8e00640a75e.jpg)
 
 解
 
@@ -848,7 +848,7 @@ $$
 = 13.4 \%
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9f230491b28f5db55851c99a9e169686d42f17ced7fac36967072be226c3c96d.jpg)
+![](images/9f230491b28f5db55851c99a9e169686d42f17ced7fac36967072be226c3c96d.jpg)
 
 热力学基础
 
@@ -856,7 +856,7 @@ $$
 
 解 $\eta = 1 - { \frac { Q _ { 2 } } { Q _ { 1 } } } \ = 1 - { \frac { | Q _ { c d } | } { Q _ { a b } } } \ = 1 - { \frac { v C _ { p } ( T _ { c } - T _ { d } ) } { v C _ { p } ( T _ { b } - T _ { a } ) } }$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/07a73e2b5d8ad1effed4310d8bf2692e3aed49fedf5b695f87fafebe55c16ee5.jpg)
+![](images/07a73e2b5d8ad1effed4310d8bf2692e3aed49fedf5b695f87fafebe55c16ee5.jpg)
 
 $$
 = 1 - \frac {T _ {c}}{T _ {b}} \cdot \frac {(1 - \frac {T _ {d}}{T _ {c}})}{(1 - \frac {T _ {a}}{T _ {b}})} = 1 - \frac {T _ {c}}{T _ {b}} = 25 ‰
@@ -872,7 +872,7 @@ $$
 
 解 (1) $a b : \frac { p _ { o } } { T _ { o } } = \frac { 9 p _ { o } } { T _ { b } } .$ , 得 $\mathrm { T } _ { \mathrm { b } } { = } 9 \mathrm { T } _ { \mathrm { 0 } }$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/26a4821f114bd5843486eafdd92cc0bd1ae3609a2021f1192f452ca5d1aa00c9.jpg)
+![](images/26a4821f114bd5843486eafdd92cc0bd1ae3609a2021f1192f452ca5d1aa00c9.jpg)
 
 ac: $\mathrm { p _ { o } / V _ { o } ^ { \ 2 } { = } } \mathrm { 9 p _ { o } / V _ { c } ^ { \ 2 } , V _ { c } { = } 3 V _ { o } }$
 
@@ -890,7 +890,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/0abdc75a8d8fa6b8cdd48a89ecd31d62be2c83dab2513064840627a21a0820b5.jpg)
+![](images/0abdc75a8d8fa6b8cdd48a89ecd31d62be2c83dab2513064840627a21a0820b5.jpg)
 
 $$
 \mathbf {p} / \mathbf {V} ^ {2} = \mathbf {p _ {o}} / \mathbf {V _ {o}} ^ {2}, \quad \mathbf {V _ {c}} = 3 \mathbf {V _ {o}}, \mathbf {T _ {c}} = 2 7 \mathbf {T _ {o}}
@@ -912,7 +912,7 @@ $$
 Q _ {b c} = C _ {p} (T _ {c} - T _ {b}) = 4 5 R T _ {o}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/22c073b9251cead65232c6d4d0130572b211356b485aa799485ee8bd5e7dae5d.jpg)
+![](images/22c073b9251cead65232c6d4d0130572b211356b485aa799485ee8bd5e7dae5d.jpg)
 
 (2) 循环效率
 
@@ -926,16 +926,16 @@ $$
 
 ## 8.2.2 卡诺循环与卡诺热机效率
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/eb1602cd09db7fa70dcfa977cc334286be114656b9d0aea3fca7e52b0a958a19.jpg)  
+![](images/eb1602cd09db7fa70dcfa977cc334286be114656b9d0aea3fca7e52b0a958a19.jpg)  
 JAMES WATT STEAM ENGINEERING
 
 ## 历史背景
 
 十八世纪，蒸汽机的实用化拉开第一次工业革命的序幕
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/c8e2a490fcd1961523a1449e329e603a2c8acd1abd71e404833d7f114cfdbb20.jpg)
+![](images/c8e2a490fcd1961523a1449e329e603a2c8acd1abd71e404833d7f114cfdbb20.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d885300845893586f118b62091cc430eae92b634a0608be49821234c0b301c69.jpg)
+![](images/d885300845893586f118b62091cc430eae92b634a0608be49821234c0b301c69.jpg)
 
 但仍存在问题：效率不足。
 
@@ -943,14 +943,14 @@ JAMES WATT STEAM ENGINEERING
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/cca7dfd509374634f9fe9f4bd7d1758a070c8465a6803cc9de7cdd8a833e66e9.jpg)  
+![](images/cca7dfd509374634f9fe9f4bd7d1758a070c8465a6803cc9de7cdd8a833e66e9.jpg)  
 L.N. M. CARNOT.
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/f1225653f92167703fb0fbcc8b3eaa00791cd4c6cb45d248fd29477a14fb5dd3.jpg)
+![](images/f1225653f92167703fb0fbcc8b3eaa00791cd4c6cb45d248fd29477a14fb5dd3.jpg)
 
 ## 拉扎尔∙卡诺 法国 1753-1823
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/d2f7ed67ebf59e8c7f3b094c2e34b995bde775703398f9972a579a040c1a1ded.jpg)
+![](images/d2f7ed67ebf59e8c7f3b094c2e34b995bde775703398f9972a579a040c1a1ded.jpg)
 
 水力学中的卡诺定理：
 
@@ -958,7 +958,7 @@ L.N. M. CARNOT.
 
 萨迪∙卡诺 法国 1796-1832
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/4c92fd879ef3912dfabab7b008dff5ec5e9acfade290785b9eec6e6ace38a553.jpg)
+![](images/4c92fd879ef3912dfabab7b008dff5ec5e9acfade290785b9eec6e6ace38a553.jpg)
 
 1824年 提出了一个能体现热机循环基本特征的理想循环。
 
@@ -972,18 +972,18 @@ Step2. 绝热膨胀离开了热源，气体继续膨胀，但温度降低。
 
 卡诺循环的组成要素：一个无摩擦活塞，一个高温热源A,一个低温热源B
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/2a54bbcd9629cb77a2314761441ea16ae5b57f757df3ddceeab11e3f7daffb06.jpg)
+![](images/2a54bbcd9629cb77a2314761441ea16ae5b57f757df3ddceeab11e3f7daffb06.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/5eb6da46ae5e88d54db3849877196e000163b2bd69ebbe694b9b86125e69d161.jpg)
+![](images/5eb6da46ae5e88d54db3849877196e000163b2bd69ebbe694b9b86125e69d161.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/45df9644e126b3c033070079c8ceff337b42c331df5ba1245528c8a81f45d16d.jpg)  
+![](images/45df9644e126b3c033070079c8ceff337b42c331df5ba1245528c8a81f45d16d.jpg)  
 卡诺循环的具体过程
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/751ca0b41c4161496e06ad4eb460f327e3e1b5e79f17b80643ff9f19c03f07c1.jpg)
+![](images/751ca0b41c4161496e06ad4eb460f327e3e1b5e79f17b80643ff9f19c03f07c1.jpg)
 
 ## 卡诺热机效率的定量计算：
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/88f4db2ca3ffdbcfbf2d2443b138070c23506e0dea5ffd167281251876097af5.jpg)  
+![](images/88f4db2ca3ffdbcfbf2d2443b138070c23506e0dea5ffd167281251876097af5.jpg)  
 卡诺循环p-V图
 
 ## 热力学基础
@@ -1022,17 +1022,17 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/4d7c1c17d61ff668bc380e3a20eb14c6329dd3392c0f06887ea2f1b518ae4775.jpg)
+![](images/4d7c1c17d61ff668bc380e3a20eb14c6329dd3392c0f06887ea2f1b518ae4775.jpg)
 
 $\eta = 1 - { \frac { Q _ { 2 } } { Q _ { 1 } } } \ = 1 - { \frac { T _ { 2 } } { T _ { 1 } } } \cdot { \frac { \ln { \frac { V _ { c } } { V _ { d } } } } { \ln { \frac { V _ { b } } { V _ { a } } } } } \ = 1 - { \frac { T _ { 2 } } { T _ { 1 } } }$ 卡诺热机效率 (8-13)
 
 ## 卡诺逆循环制冷系数计算
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/ee50111e9349aadfe47be6525b08596048c8b79e12b41cfe52f9b8b5e958cdfb.jpg)
+![](images/ee50111e9349aadfe47be6525b08596048c8b79e12b41cfe52f9b8b5e958cdfb.jpg)
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3ee3c26ed0fe8194e98428831b5d5638d7b4d339d7549d4b416a5e9ba558fe9b.jpg)  
+![](images/3ee3c26ed0fe8194e98428831b5d5638d7b4d339d7549d4b416a5e9ba558fe9b.jpg)  
 卡诺逆循环p-V图
 
 制冷系数 $\varepsilon = { \frac { Q _ { 2 } } { A } } = { \frac { Q _ { 2 } } { Q _ { 1 } - Q _ { 2 } } } = { \frac { T _ { 2 } } { T _ { 1 } - T _ { 2 } } }$
@@ -1041,11 +1041,11 @@ $\eta = 1 - { \frac { Q _ { 2 } } { Q _ { 1 } } } \ = 1 - { \frac { T _ { 2 } } 
 
 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3a90357d1685c97888059dde255d766044eb73c4f5846ab24bdb6293919d0a27.jpg)
+![](images/3a90357d1685c97888059dde255d766044eb73c4f5846ab24bdb6293919d0a27.jpg)
 
 例题 8-11 卡诺循环中，高温热源温度 $\mathrm { T _ { 1 } { = } 4 0 0 k }$ , 低温热源温度 $\mathbf { T } _ { 2 } { = } 3 0 0 \mathbf { k } $ ,一个循环对外作功800J。现只把高温热源温度提高到 ${ \bf { T } } _ { 1 } ^ { \prime }$ ，其它条件不变，要对外作功$1 0 0 0 \mathbf { J }$ ，求 $\mathbf { T _ { 1 } } ^ { \prime }$ 和此时的效率。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3299c863d13c1444aaae4b0adfc50345fc036aa5c1ef6a1994989e32492c2d05.jpg)
+![](images/3299c863d13c1444aaae4b0adfc50345fc036aa5c1ef6a1994989e32492c2d05.jpg)
 
 解 前后两过程的共同点：放热不变。
 
@@ -1067,7 +1067,7 @@ $$
 
 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1d8b26e15b59a9f261568b6b659a263c08af61d2f565e66685e7346057390904.jpg)
+![](images/1d8b26e15b59a9f261568b6b659a263c08af61d2f565e66685e7346057390904.jpg)
 
 例题 8-13 把电冰箱视为卡诺致冷机，若室温 $\bf t _ { 1 } { = } 1 1 ^ { \circ } C _ { : }$ , 冷冻室温度 $\mathbf { t } _ { 2 } { = }$ $1 0 ~ ^ { \circ } \mathrm { C }$ ,要从冷冻室吸走12500J的热量，需消耗多少电能？
 
@@ -1087,10 +1087,10 @@ $$
 
 ## 典型的可逆和不可逆热力学过程
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/e782f247580af8c6d38c2783d05e25bcd95b5f7dcb731b3ec4160ab1552cb7f8.jpg)  
+![](images/e782f247580af8c6d38c2783d05e25bcd95b5f7dcb731b3ec4160ab1552cb7f8.jpg)  
 绝热自由膨胀
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/e4a0102ed524d8ba896653e37ff9f862fcde4ec1de39eb17e500f4cc6fa963f4.jpg)  
+![](images/e4a0102ed524d8ba896653e37ff9f862fcde4ec1de39eb17e500f4cc6fa963f4.jpg)  
 等温膨胀
 
 ## 热力学基础
@@ -1127,14 +1127,14 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3e1eb01a606489738c1e3207cfc3ce71477b081d4d5c0d8d09f4c161fc54a3a5.jpg)
+![](images/3e1eb01a606489738c1e3207cfc3ce71477b081d4d5c0d8d09f4c161fc54a3a5.jpg)
 
 定理一证明：在相同的高温热源与低温热源之间工作的一切可逆热机,其效率相等, 与工作物质无关。反证法：1. 已知： 1.已知：
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/60ba14601df5d891ffc69567e918ea183830545a3936391ee2effa6c66838e83.jpg)  
+![](images/60ba14601df5d891ffc69567e918ea183830545a3936391ee2effa6c66838e83.jpg)  
 可逆热机1（高效）
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/51b91e6289abf5dfc6c7ba0b2e569b09c9ff51758a2c9ee8ae6cc4a39c2c9938.jpg)  
+![](images/51b91e6289abf5dfc6c7ba0b2e569b09c9ff51758a2c9ee8ae6cc4a39c2c9938.jpg)  
 热机2（低
 
 $\eta _ { 1 } \mathrm { = A } / \mathbf { Q } _ { 1 } \mathrm { , } \ \eta _ { 2 } \mathrm { = A ^ { \prime } / Q _ { 1 } , } \ \eta _ { 1 } \mathrm { > } \ \eta _ { 2 }$ $\mathbf { A } > \mathbf { A } ^ { * } ; \mathbf { Q } _ { 2 } < \mathbf { Q } ^ { * } _ { 2 }$
@@ -1143,14 +1143,14 @@ $\eta _ { 1 } \mathrm { = A } / \mathbf { Q } _ { 1 } \mathrm { , } \ \eta _ { 2
 
 4. 此时联合系统实现效果：对外界无任何影响，热量自动从低温传导到高温。×违反常识，假设不成立！
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/8769e381050604c14de9857e7b6060d9cca7b39e41d1f0b6edf7d2ba3cda42c8.jpg)
+![](images/8769e381050604c14de9857e7b6060d9cca7b39e41d1f0b6edf7d2ba3cda42c8.jpg)
 
 定理二：在相同的高温热源与相同的低温热源之间工作的一切不可逆热机,其效率不可能高于可逆机的效率。反证法： 1. 已知： 1.已知：
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/019922035782f9a12083f7bb48a161d3ddcd14a3c86752fc3ff7495afd4d4a3a.jpg)  
+![](images/019922035782f9a12083f7bb48a161d3ddcd14a3c86752fc3ff7495afd4d4a3a.jpg)  
 不可逆热机(高效)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/ebb1da7ada6233cb365e1108d736d40a883a8c42858b67ade9ec3081aca5c88b.jpg)  
+![](images/ebb1da7ada6233cb365e1108d736d40a883a8c42858b67ade9ec3081aca5c88b.jpg)  
 逆热机(低效
 
 $\eta _ { 1 } \mathrm { = A } / \mathbf { Q } _ { 1 } \mathrm { , } \ \eta _ { 2 } \mathrm { = A ^ { \prime } / Q _ { 1 } , } \ \eta _ { 1 } \mathrm { > } \ \eta _ { 2 }$ $\mathbf { A } > \mathbf { A } ^ { * } ; \mathbf { Q } _ { 2 } < \mathbf { Q } ^ { * } _ { 2 }$
@@ -1161,19 +1161,19 @@ $\eta _ { 1 } \mathrm { = A } / \mathbf { Q } _ { 1 } \mathrm { , } \ \eta _ { 2
 
 4. 此时联合系统实现效果：对外界无任何影响，热量自动从低温传导到高温。×违反常识，假设不成立！
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/a607ddbbe33981729392d3ab801bbee4b851af7b32c6b0874e8855729b41ac45.jpg)
+![](images/a607ddbbe33981729392d3ab801bbee4b851af7b32c6b0874e8855729b41ac45.jpg)
 
 ## 拓展思考：
 
 ## 提高效率的方法：
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/bfee44685354026c8431b1233856fa59d10080c30c5f5f8e0c067e03327aaab6.jpg)
+![](images/bfee44685354026c8431b1233856fa59d10080c30c5f5f8e0c067e03327aaab6.jpg)
 
 喷气发动机：现代航空发动
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9bcdd785f6f6120cf9f5e308b254897ff4ba669b009730939d234ebafcb93bba.jpg)
+![](images/9bcdd785f6f6120cf9f5e308b254897ff4ba669b009730939d234ebafcb93bba.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/bae32313031a98f19cd09d28732e40d4e03f354bafd36d6ba880fdc0ccea2f3c.jpg)  
+![](images/bae32313031a98f19cd09d28732e40d4e03f354bafd36d6ba880fdc0ccea2f3c.jpg)  
 低温热源温度 干式冷却
 
 ## 8-3 热力学第二定律及不可逆过程
@@ -1206,13 +1206,13 @@ b.循环动作的热机至少要有两个热源：一个高温热源，一个低
 
 开尔文描述：热功转化的不可逆性；克劳修斯描述：热传递的单向性
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/2039cbc1c3e975aa806e46e70519f7a20540b8da1f975f830d5b968e66a35daa.jpg)
+![](images/2039cbc1c3e975aa806e46e70519f7a20540b8da1f975f830d5b968e66a35daa.jpg)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/7bfffc452eb52eeb142cbac7fbc77c32f9822dcae538acf02543afec77242000.jpg)
+![](images/7bfffc452eb52eeb142cbac7fbc77c32f9822dcae538acf02543afec77242000.jpg)
 
 自然界中各种不可逆过程都是相互关联的。意即一种宏观过程的不可逆性保证了另一种过程的不可逆性；反之，若一种实际过程的不可逆性消失了，其它实际过程的不可逆性也随之消失。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9a4c58653d6771cbd9f0426c33685943b9ef0fb25186b60c6d91a665f9f8881f.jpg)
+![](images/9a4c58653d6771cbd9f0426c33685943b9ef0fb25186b60c6d91a665f9f8881f.jpg)
 
 ## 热力学基础
 
@@ -1258,7 +1258,7 @@ b.循环动作的热机至少要有两个热源：一个高温热源，一个低
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/e36f5b178c5097c99493c05af6ebecde18730080194b7f7cf72a6f797c266580.jpg)
+![](images/e36f5b178c5097c99493c05af6ebecde18730080194b7f7cf72a6f797c266580.jpg)
 
 由卡诺定理
 
@@ -1280,7 +1280,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/c8cb9eb84d7d630c2aa1e837a73cf2b9d616d42073e3e4a3fb5a9bf4d41c5a54.jpg)
+![](images/c8cb9eb84d7d630c2aa1e837a73cf2b9d616d42073e3e4a3fb5a9bf4d41c5a54.jpg)
 
 对一个任意的循环过程，可视为由无限多个卡诺循环组成，于是有
 
@@ -1292,7 +1292,7 @@ $$
 
 ## 对可逆过程
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3051ee2700c37ebebaa290214473642081ca40fc2261714836f8fc51eb2ea6f4.jpg)
+![](images/3051ee2700c37ebebaa290214473642081ca40fc2261714836f8fc51eb2ea6f4.jpg)
 
 构建一个可逆循环
 
@@ -1314,7 +1314,7 @@ $$
 
 构建一个特殊循环（可以拆分为可逆与不可逆两部分），1a2不可逆，2b1可逆。
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/9e48030de1ebbdd0eb0a6a30d320acb84a7e8b4f236f030e5655e7f4548c15c6.jpg)
+![](images/9e48030de1ebbdd0eb0a6a30d320acb84a7e8b4f236f030e5655e7f4548c15c6.jpg)
 
 $$
 \oint \frac {d Q}{T} = \int_ {1 a 2} \frac {d Q}{T} + \int_ {2 b 1} \frac {d Q}{T} <   0
@@ -1328,7 +1328,7 @@ $$
 
 $S _ { 2 } - S _ { 1 } = \ \int _ { 1 } ^ { 2 } { \frac { d Q } { T } } \ > \int _ { 1 } ^ { 2 } { \frac { d Q } { T } }$ (不可逆)
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/28c9eae9b4bf59f35e51eb8d2325ff1bb8aeb1da3ef4fcff0834c1bbe90fc42a.jpg)
+![](images/28c9eae9b4bf59f35e51eb8d2325ff1bb8aeb1da3ef4fcff0834c1bbe90fc42a.jpg)
 
 将以上讨论小结起来，就是
 
@@ -1362,7 +1362,7 @@ $\mathbf { S } _ { 2 } { > } \mathbf { S } _ { 1 }$ (不可逆过程)
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/65a6e1785f918e2ea0aa0250ec7d5020cbdfee0962a60b5b5bef11df64426f46.jpg)
+![](images/65a6e1785f918e2ea0aa0250ec7d5020cbdfee0962a60b5b5bef11df64426f46.jpg)
 
 ## 8.4.3 熵的计算
 
@@ -1382,7 +1382,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/3bb44f1463624c4b5f6d91b985b7fff9d44825e856a3e383895f6da4ab9b07f7.jpg)
+![](images/3bb44f1463624c4b5f6d91b985b7fff9d44825e856a3e383895f6da4ab9b07f7.jpg)
 
 例题 8-14 1mol单原子理想气体经历一个等压膨胀过程，体积增大一倍，求它的熵变 。
 
@@ -1394,7 +1394,7 @@ $$
 \frac {T _ {1}}{V _ {1}} = \frac {T _ {2}}{V _ {2}} \quad \frac {T _ {2}}{T _ {1}} = \frac {V _ {2}}{V _ {1}}
 $$
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/2546ef9005b1f36c3cb070784ac5b8d8611e8414b0a210ad51c43ead91b37458.jpg)
+![](images/2546ef9005b1f36c3cb070784ac5b8d8611e8414b0a210ad51c43ead91b37458.jpg)
 
 例题8-15 摩尔的理想气体向真空作绝热自由膨胀，体积增大一倍，求它的熵变 。
 
@@ -1409,7 +1409,7 @@ $$
 ## 例题 8-16 在图8-26所示的温熵图中,B点温度是C点温度的n倍,求此循环的效率 。
 
 解 AB是等温过程;BC是绝热过程(熵S不变)。  
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/1534ad15bbbc51b8a2c5fd244f0c7de027718ad23c87965cd3a76e907989f1bb.jpg)
+![](images/1534ad15bbbc51b8a2c5fd244f0c7de027718ad23c87965cd3a76e907989f1bb.jpg)
 
 $$
 T d S = d Q = d E + p d V
@@ -1429,7 +1429,7 @@ $$
 
 例：绝热自由膨胀（Free Expansion）
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/57d4f61ba7effb80ccdb5d8db86f0b7fa6f47f251018097329fd82f697d3e6b9.jpg)
+![](images/57d4f61ba7effb80ccdb5d8db86f0b7fa6f47f251018097329fd82f697d3e6b9.jpg)
 
 ## 思 考
 
@@ -1453,7 +1453,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/0b186be1dcd1daac15b6ca8b2b578423d4f147993aa86ff81c058b1f711ba0a1.jpg)  
+![](images/0b186be1dcd1daac15b6ca8b2b578423d4f147993aa86ff81c058b1f711ba0a1.jpg)  
 玻尔兹曼（L. E. Boltzmann）1844-1906
 
 熵是分子运动无序性的量度
@@ -1462,7 +1462,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6448b161fdbfb3da89781fb0fa1e42f08831d3e348189fd914856c16068a3f36.jpg)
+![](images/6448b161fdbfb3da89781fb0fa1e42f08831d3e348189fd914856c16068a3f36.jpg)
 
 在孤立系统内所发生的一切实际宏观过程(自发过程) ，总是由热力学概率小的宏观态向着热力学概率大的宏观态方向进行。
 
@@ -1474,7 +1474,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/327b9b7e6566babe6f989ab55443113138d333c6c978f6c05cc73e15a93e86ac.jpg)
+![](images/327b9b7e6566babe6f989ab55443113138d333c6c978f6c05cc73e15a93e86ac.jpg)
 
 熵增加原理（热力学第二定律）说的是：孤立系统内，自发过程总是朝着熵增加的方向进行，平衡时熵达到最大值。它只给出了熵的变化量 ΔS 的方向和限度，却从未规定熵的绝对值。
 
@@ -1490,7 +1490,7 @@ $$
 
 ## 热力学基础
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/6a0473c28cb8c991d9f2e265c789694ae31d04924a12e4e848c1b2e2a11ac6ed.jpg)
+![](images/6a0473c28cb8c991d9f2e265c789694ae31d04924a12e4e848c1b2e2a11ac6ed.jpg)
 
 ## 知识点：
 
@@ -1514,4 +1514,4 @@ $$
 
 熵的统计意义
 
-![](../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E8%AF%BE%E4%BB%B6/MD/images/5d13f5e0583e636e47f9ecb09c19c4f68c4772aaacc71c91d71cec23d7726e29.jpg)
+![](images/5d13f5e0583e636e47f9ecb09c19c4f68c4772aaacc71c91d71cec23d7726e29.jpg)

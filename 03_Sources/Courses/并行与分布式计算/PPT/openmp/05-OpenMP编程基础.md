@@ -8,9 +8,9 @@
 
 1991 年，芬兰大学生 Linus Torvalds 开发了 Linux 内核。Linux 内核与 GNU 工具链等软件结合，形成可以实际使用的操作系统。开源社区不断完善内核、工具和应用，并形成 Ubuntu、CentOS、Red Hat 等发行版。
 
-![Linux 创始人 Linus Torvalds](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-02-image-01.jpeg)
+![Linux 创始人 Linus Torvalds](assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-02-image-01.jpeg)
 
-![早期 Linux 系统启动界面](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-02-image-02.jpeg)
+![早期 Linux 系统启动界面](assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-02-image-02.jpeg)
 
 ### 2. Linux 的主要特性
 
@@ -29,7 +29,7 @@
 
 “一切皆文件”概括了类 UNIX 系统中许多资源的统一访问方式。终端是运行 Shell 的常见界面。
 
-![Linux 终端界面](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-04-image-04.png)
+![Linux 终端界面](assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-04-image-04.png)
 
 ### 4. Linux 与 Windows 的对比
 
@@ -110,13 +110,13 @@ OpenMP 的发展与 ANSI X3H5 共享内存并行标准化工作有关。1997 年
 
 线程运行库可能复用工作线程。“Join”不要求每次都销毁工作线程。执行模型详见 [OpenMP 5.2 执行模型](https://www.openmp.org/spec-html/5.2/openmpse3.html)。
 
-![串行部分与并行区域交替执行](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-19-image-01.png)
+![串行部分与并行区域交替执行](assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/slide-19-image-01.png)
 
 图中每组竖线表示一个线程团队，组内包含主线程，并行区域末尾对应一次同步。
 
 ### 3. 共享与私有存储
 
-![OpenMP 共享内存与线程私有数据模型](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/openmp/assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/memory-model.png)
+![OpenMP 共享内存与线程私有数据模型](assets/05-OpenMP%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/memory-model.png)
 
 多个线程可以访问同一份共享数据，也可以分别持有私有变量。共享数据如果受到并发修改，程序必须正确安排同步。把变量声明为 `shared` 仅说明共享属性，并不自动保证访问安全。
 

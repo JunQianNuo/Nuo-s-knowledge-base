@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 ## 五、回归模型
 
@@ -62,12 +62,12 @@ $$
 
 ## 例: 用二层ReLU网络学习连续函数给定二维目标函数 f : $K : = [ - 1 , 1 ] \times [ - 1 , 1 ] \to \mathbb { R } , \ f ( x ) = 1 / ( x _ { 1 } ^ { 2 } + x _ { 2 } ^ { 2 } + 1 )$ . 在 K 上生成 N 个均匀随机分布的点 $\{ x ^ { ( n ) } \}$ 作为训练数据的特征(如下图所示), 并令$y ^ { ( n ) } = f ( x ^ { ( n ) } )$ 作为训练数据的标签.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/ed92b85bb06d2588db633ad0745e6198489b99f6d89bf6eee336fa0368baa496.jpg)  
+![](images/ed92b85bb06d2588db633ad0745e6198489b99f6d89bf6eee336fa0368baa496.jpg)  
 图: 均匀分布的随机点(N = 100)
 
 ## 例: 用二层ReLU网络学习连续函数给定二维目标函数 f : $K : = [ - 1 , 1 ] \times [ - 1 , 1 ] \to \mathbb { R } , \ f ( x ) = 1 / ( x _ { 1 } ^ { 2 } + x _ { 2 } ^ { 2 } + 1 )$ . 在 K 上生成 N 个均匀随机分布的点 $\{ x ^ { ( n ) } \}$ 作为训练数据的特征(如下图所示), 并令$y ^ { ( n ) } = f ( x ^ { ( n ) } )$ 作为训练数据的标签.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/7d5fb117f3b1e027533efd00aad3fedd6f221bb1a1fd1c640412fd8ba8e66161.jpg)  
+![](images/7d5fb117f3b1e027533efd00aad3fedd6f221bb1a1fd1c640412fd8ba8e66161.jpg)  
 图: 均匀分布的随机点(N = 100)
 
 令假设空间为全体深度为2、宽度为M的ReLU全连接神经网络, 即
@@ -202,7 +202,7 @@ $$
 
 以图像识别为例, 假设某个用于识别的神经网络已经在某个数据集下训练完成. 之后, 我们为网络输入一张新的图片(即x˜), 计算网络的输出值(即y˜). 该输出值就是对该图片进行识别的结果.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/47db6b5bd1c53098e116c51d92a9fc2137fe38d820fdfbbaa8ea3bb886c65861.jpg)
+![](images/47db6b5bd1c53098e116c51d92a9fc2137fe38d820fdfbbaa8ea3bb886c65861.jpg)
 
 ## 正则化为防止可能出现的过拟合现象, 在深度学习模型的损失函数中也可以加入正则项记 θ 是神经网络所有可训练的参数形成的集合(可以视为由参数排列而成的一个向量).则正则项就是一个关于 θ 的范数惩罚项, 记作 Ω(θ).
 
@@ -236,7 +236,7 @@ $$
 
 记 $L ( \theta )$ 的全局极小点为 $\theta ^ { * }$ . 而正则项 $\| \theta \| _ { 2 } ^ { 2 }$ 的全局极小点显然为 $\theta = 0$ . 于是, $\tilde { L } ( \theta )$ 的全局极小点 $\tilde { \theta }$ 其实是 $\theta ^ { * }$ 和之间的某个平衡点
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/ee1cea35b642408c5291eabfd52fd27e26514815abb1eda3e0b2afbcf9f5551c.jpg)
+![](images/ee1cea35b642408c5291eabfd52fd27e26514815abb1eda3e0b2afbcf9f5551c.jpg)
 
 图: 以 $\theta = ( \theta _ { 1 } , \theta _ { 2 } )$ 为例. 实线表示 $L ( \theta )$ 的等值线; 虚线表示正则项 $\| \theta \| _ { 2 } ^ { 2 }$ 的等值线. 则 $\tilde { \theta }$ 位于 $\theta ^ { * }$ 和 0 之间.随着 λ 从 0 不断增大, $\tilde { \theta }$ 的位置从 $\theta ^ { * }$ 不断地变化到 0
 
@@ -250,7 +250,7 @@ $L ^ { 2 }$ 正则项 $\| \theta \| _ { 2 } ^ { 2 }$ 对 $\theta$ 的梯度为 $
 
 ## 提前终止
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter5%20%281%29/images/aa65787621f55ad21fb8f29fb00995576544f7d1f2034993d12ebc3fe9452ea9.jpg)  
+![](images/aa65787621f55ad21fb8f29fb00995576544f7d1f2034993d12ebc3fe9452ea9.jpg)  
 图: 随着训练进行训练损失(蓝色)总体呈下降趋势而泛化损失(绿色)总体呈先下降后缓慢上升的趋势因此, 可以在训练前设立一个交叉验证集, 并在训练过程中计算验证集上的泛化损失. 当发现泛化损失开始慢慢增大时, 就可以提前终止训练. 这种正则化的方式称作提前终止(early stopping)
 
 ## 深度学习的隐式正则性近几年研究发现常见的神经网络架构其本身就自带某种正则性当用某个神经网络去学习某些目标函数时, 在基于梯度的优化算法下, 网络会优先学习目标函数的低频率成分, 之后才渐渐学习高频率成分. 这种现象被称为频率原则(F-Principle).

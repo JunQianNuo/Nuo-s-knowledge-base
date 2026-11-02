@@ -14,11 +14,11 @@ SHUXUE WULI FANGCHENG
 
 # 数学物理方程（第二版） SHUXUE WULI FANGCHENG
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/6d2886e8852f16e3e5e54b4caeb16ad21d2913cf3975e097c4e94ae49ba3e4ca.jpg)
+![](images/batch_0000/6d2886e8852f16e3e5e54b4caeb16ad21d2913cf3975e097c4e94ae49ba3e4ca.jpg)
 
 16. 2014. 2014
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/f31460a80fda0434723ebdafa79538159eb5469b76f74e222046d260a1e4aad9.jpg)
+![](images/batch_0000/f31460a80fda0434723ebdafa79538159eb5469b76f74e222046d260a1e4aad9.jpg)
 
 # 数学物理方程（第二版）
 
@@ -913,14 +913,14 @@ $$
 
 上述四个函数的图形如图 1.1 和图 1.2 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/ac32b54e8bd61cd1d919727ff66d5589524d78481b1f9ba867b1829d7732fa02.jpg)
+![](images/batch_0000/ac32b54e8bd61cd1d919727ff66d5589524d78481b1f9ba867b1829d7732fa02.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/bbb4b4dad53a919f8680e2ed6e2b33744751d2b36bd15b27ecdc89dc64b08e9e.jpg)
+![](images/batch_0000/bbb4b4dad53a919f8680e2ed6e2b33744751d2b36bd15b27ecdc89dc64b08e9e.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/2d0a81d1cdb470b7e2609ef4c497101f04c3b905c612152fb8f62cc598b61291.jpg)  
+![](images/batch_0000/2d0a81d1cdb470b7e2609ef4c497101f04c3b905c612152fb8f62cc598b61291.jpg)  
 图1.1 $\Gamma$ 函数、误差函数、余误差函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/a635ca2f7b412641a04c2cd79e7bf800adde4d2dcb73b9ba5ab1d2e606afb4b3.jpg)  
+![](images/batch_0000/a635ca2f7b412641a04c2cd79e7bf800adde4d2dcb73b9ba5ab1d2e606afb4b3.jpg)  
 图1.2 B函数
 
 ## 三、常用结论下面，证明几个在后面章节中要用到的结论.
@@ -1023,7 +1023,7 @@ $$
 
 设有一根均匀柔软的细弦线，一端固定在坐标原点，另一端沿 $x$ 轴拉紧固定在 $x$ 轴上的 $L$ 处。细弦线受到扰动，开始沿 $x$ 轴（平衡位置）上下作微小横向微振动（细弦线上各点运动方向垂直于 $x$ 轴）。试建立细弦线上任意点位移函数 $u(x, t)$ 所满足的规律。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/d716c3b089a672832cc6198543850e1c26fe261bb4bc41e2554e347774c475de.jpg)  
+![](images/batch_0000/d716c3b089a672832cc6198543850e1c26fe261bb4bc41e2554e347774c475de.jpg)  
 图 2.1 细弦线受力分析解: 设细弦线各点线密度为 $\rho$ , 细弦线质点之间相互作用力为张力 $T(x, t)$ . 为了求得细弦线上各点运动规律, 取任意微元段 $[x, x + dx]$ 研究其受力情况, 如图 2.1 所示. 张力分别在 $x$ , $x + dx$ 端点切线方向, 分别为 $T_1$ , $T_2$ . 由 Newton 第二定律, 得水平合力： $\sum F_{x}=0$
 
 铅直合力： $\sum F_{u}=ma$
@@ -1096,7 +1096,7 @@ $$
 
 由中值定理，得
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/a1eef25371b5f1d59ccafc92f0df8e324b578185e91870adcdbdf686a4c04839.jpg)  
+![](images/batch_0000/a1eef25371b5f1d59ccafc92f0df8e324b578185e91870adcdbdf686a4c04839.jpg)  
 图 2.2 细杆受力分析
 
 $$
@@ -1113,7 +1113,7 @@ $$
 
 解: 当频率很高时, 高频传输线上的电流和电压不仅是时间的函数而且是位置的函数. 考虑两条平行的传输线 (沿 $x$ 方向), 可以将一些物理量合并到一根线上. 取 $[x, x + dx]$ 段进行分析, 如图 2.3 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/9e9e7f25b39a962b86f59c1bc042ad73f925dacc2ae014874175bb64d3b0b5ff.jpg)  
+![](images/batch_0000/9e9e7f25b39a962b86f59c1bc042ad73f925dacc2ae014874175bb64d3b0b5ff.jpg)  
 图 2.3 等效电路图在传输线任意微元 dx 上有连续分布的电感 L（H/m）、电阻 R（Ω/m）、两线间具有分布电容 C（F/m）、电导 g（S/m）。等效电路如图 2.3 所示。在 $[x, x + dx]$ 上，设 x 点电压为 $u(x, t)$ ，电流为 $i(x, t)$ ；在 $x + dx$ 点的电压为 $u(x + dx, t)$ ，电流为 $i(x + dx, t)$ 。利用电路定理（Kirchhoff 定理），得
 
 $$
@@ -1174,7 +1174,7 @@ $$
 u \Big | _ {t = 0} = \varphi (x) = \left\{ \begin{array}{l l} \frac {2 h}{L} x, & 0 \leqslant x <   \frac {L}{2} \\ \frac {2 h}{L} (L - x), & \frac {L}{2} \leqslant x \leqslant L \end{array} . \right.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/3b753306dd1fd83f1f389f2e15d01ea33d5a2f6275218f3dcbf3b1f1233db484.jpg)  
+![](images/batch_0000/3b753306dd1fd83f1f389f2e15d01ea33d5a2f6275218f3dcbf3b1f1233db484.jpg)  
 图2.4 初始位移当 $t = 0$ 时，各点的速度为0： $\left.\boldsymbol{u}_{t}\right|_{t = 0} = 0$ ，相应定解问题：
 
 $$
@@ -1273,7 +1273,7 @@ $$
 
 例 1 细杆的横截面积为常数 A，密度为 $\rho$ ，侧面绝热，即热量只能沿长度方向传导。由于细杆很细，在任何时刻，同一横截面上的温度可以近似为相同。试求细杆的温度分布规律。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/b3f9d04d260b63d10297aca0dc9810cf7c37c6513ddbf11f00f9b17bb0e5bb40.jpg)  
+![](images/batch_0000/b3f9d04d260b63d10297aca0dc9810cf7c37c6513ddbf11f00f9b17bb0e5bb40.jpg)  
 图 2.5 细杆热流分析解：如图 2.5 所示，考查时间间隔段 t 到 $t + dt$ 内，细杆 x 到 $x + dx$ 微元段热量流动情况，其余段具有相同特性.
 
 由热平衡方程式知，引起温度上升吸收的热量dQ等于流入的热量dQ'．于是，
@@ -1320,7 +1320,7 @@ $$
 
 解：首先求通过微元曲面 ds 的热量为
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/18f0e00feed501d6c71ae210deb066e92b2c62d21332307e7e9cb3054f0a7a17.jpg)  
+![](images/batch_0000/18f0e00feed501d6c71ae210deb066e92b2c62d21332307e7e9cb3054f0a7a17.jpg)  
 图 2.6 三维热传导
 
 $$
@@ -1363,7 +1363,7 @@ $$
 
 解: 为了研究杂质的扩散规律, 需要引入杂质浓度 $u$ , $u$ 表示单位体积内所含杂质的质量. 材料的杂质浓度 $u$ 随位置和时间变化. 若设同一时间、同一横截面上各点处的浓度相同, 则浓度 $u$ 可以表示为 $u = u(x, t)$ .
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/478ee4e1bd7c4f0361a96140ec2f894209a9045a7ff44423034982e54f42d974.jpg)  
+![](images/batch_0000/478ee4e1bd7c4f0361a96140ec2f894209a9045a7ff44423034982e54f42d974.jpg)  
 图 2.7 半导体材料杂质扩散由扩散实验定律在 dt 时间内杂质沿 ox 轴流向 x 点处，截面的杂质质量 $dM_{1} = -k \frac{\partial u}{\partial n} A dt$ ，k 是扩散系数。在 $x + dx$ 处截面的杂质质量 $dM_{2} = -ku_{x}(x + dx, t) A dt$ 。于是在时间间隔 dt 内，流入微元体的杂质质量为
 
 $$
@@ -1560,7 +1560,7 @@ Laplace 方程和 Poisson 方程不含对时间的导数项，故其定解条件
 
 ## 2. 衔接条件性质 1 在两种介质的分界面 S 上，静电场电势 u 的边值关系为
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/a4273f3d1d27a1c2bb03dfe2933d21c2b7a57b493ebec63f81f2829055afb294.jpg)  
+![](images/batch_0000/a4273f3d1d27a1c2bb03dfe2933d21c2b7a57b493ebec63f81f2829055afb294.jpg)  
 图2.8 介质1与介质2
 
 $$
@@ -1585,7 +1585,7 @@ $$
 
 其中， $D=\varepsilon E$ 为电位移向量； $Q_{S}$ 为 Gauss 面 S 内的自由电荷的总电量。取包含 S 面的一个扁平盒，如图 2.9 所示。盒的上、下底平行于介质 1、介质 2 分界面的小面元 $\Delta S$ ，盒的高为 $\Delta h$ ，且 $\Delta h$ 相对于 $\Delta S$ 是高阶无穷小量。因此，计算通过盒表面的电位移通量时略
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/0e6f804b9a7ddb0b00fd0d645745feccbcf331b076c15bb650d2e5883b678256.jpg)  
+![](images/batch_0000/0e6f804b9a7ddb0b00fd0d645745feccbcf331b076c15bb650d2e5883b678256.jpg)  
 图2.9 包含Gauss面的一个扁平盒去通过侧面的通量. 由此得
 
 $$
@@ -1652,7 +1652,7 @@ $$
 
 1. 半径为 $r_{0}$ 的球面, 在 $0 \leqslant \theta < \frac{\pi}{2}$ 的半球面上电势为 $u_{0}$ , 在 $\frac{\pi}{2} < \theta \leqslant \pi$ 的半球面上电势为 $-u_{0}$ . 求空间各点应满足的泛定方程与定解条件.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/d9936fe8173c9197cc72db9e04f69fcb54e9bbb552a22f9bb32bb0cbb52f77d4.jpg)  
+![](images/batch_0000/d9936fe8173c9197cc72db9e04f69fcb54e9bbb552a22f9bb32bb0cbb52f77d4.jpg)  
 图2.10
 
 2. 在均匀外电场中, 置入半径为 $r_0$ 的导体球, 若导体球接有电池, 使球与地保持电势差 $u_0$ . 试写出电势满足的泛定方程与定解条件.
@@ -2855,7 +2855,7 @@ $$
 
 $u(x,t)/h$ 的三维图形如图 3.1 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/8c19741353656a00993b0ad5daf67f14fb41d2527e8c91de6b43c6ee83b52b60.jpg)  
+![](images/batch_0000/8c19741353656a00993b0ad5daf67f14fb41d2527e8c91de6b43c6ee83b52b60.jpg)  
 图 3.1 u(x, t)/h 的三维图形例 5 $h \geqslant 0$ ，为常数，求定解问题：
 
 $$
@@ -2876,7 +2876,7 @@ $$
 
 函数 $u(x,t)/h$ 的三维图形如图3.2所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/cb48f1b3f1fb7329bfc9620572b6b1ca166f2b2ae1af2da4df5c0a57d812b47d.jpg)  
+![](images/batch_0000/cb48f1b3f1fb7329bfc9620572b6b1ca166f2b2ae1af2da4df5c0a57d812b47d.jpg)  
 图 3.2 $u(x, t)/h$ 的三维图形， $hL^{2}/a^{2}=10$
 
 例 6 求解定解问题:
@@ -3103,7 +3103,7 @@ $$
 
 1. 设弦的两端固定于 $x = 0$ 及 $x = L$ , 弦的初始位移如图3.3所示, 初始速度为零, 且没有外力作用. 求弦作横振动时的位移函数 $u(x, t)$ .
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/b11f102d68b944ab80e1707653eed9de51684420824a490b76fee54b44b34364.jpg)  
+![](images/batch_0000/b11f102d68b944ab80e1707653eed9de51684420824a490b76fee54b44b34364.jpg)  
 图3.3 初位移
 
 2. 求解下列定解问题:
@@ -3461,7 +3461,7 @@ $$
 
 圆柱内部由于圆柱导体接地，故电势为零；圆柱外部没有自由电荷分布，电势遵循 Laplace 方程，均匀电场 $E_{0}$ 的存在，使得无限远处的电势为 $-E_{0}\rho\cos\theta$ ，柱面上的感应电荷在无限远处激发的电势为零。此外，因为 $(\rho,\theta)$ 及 $(\rho,\theta+2\pi)$ 为空间中的同一点，由此得定解问题：
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/3695e1305ae1d0eced5f04c3c41c6a97cf69dbca82af8be0349cce08d856a851.jpg)  
+![](images/batch_0000/3695e1305ae1d0eced5f04c3c41c6a97cf69dbca82af8be0349cce08d856a851.jpg)  
 图 3.4 圆柱形接地导体
 
 $$
@@ -4651,7 +4651,7 @@ $$
 u (t, x) = 2 \sum_ {n = 1} ^ {\infty} \left\{\frac {\mu_ {n} ^ {2} + h ^ {2}}{\mu_ {n} ^ {2} + h ^ {2} + h} \int_ {0} ^ {L} \varphi (x) \cos \mu_ {n} x d x \cdot e ^ {- a ^ {2} \mu_ {n} ^ {2} t} \cos \mu_ {n} x \right\}.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/42b0234a4c2a4db3c309389974c6a7576ac3b103a380b11933fe76915b38a105.jpg)  
+![](images/batch_0000/42b0234a4c2a4db3c309389974c6a7576ac3b103a380b11933fe76915b38a105.jpg)  
 图 3.5 曲线 $y=\tan x$ 与 y=1/x 的交点
 
 ## 习题 3.7
@@ -4728,17 +4728,17 @@ $$
 
 从 d'Alembert 公式还可以看出, 解在 $(x, t)$ 点的数值仅依赖于 x 轴上区间 $[x - at, x + at]$ 内的初始条件, 而与其他点上的初始条件无关.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/c754cd7d2d4ab65cedcce57ad98f256d1709ca28ae0540c179832b51fc6318ed.jpg)
+![](images/batch_0000/c754cd7d2d4ab65cedcce57ad98f256d1709ca28ae0540c179832b51fc6318ed.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/7272ba8a2d62d55c982a0078361a657df15b24e8af87833d2c07223d5a2d6246.jpg)
+![](images/batch_0000/7272ba8a2d62d55c982a0078361a657df15b24e8af87833d2c07223d5a2d6246.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/89109940dbc3c4805bb673e2c7adaee684bf8c5c113c5f8b0a7650321e273f47.jpg)
+![](images/batch_0000/89109940dbc3c4805bb673e2c7adaee684bf8c5c113c5f8b0a7650321e273f47.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/2c4c4da751df021764a8ffbde5b78ece769f69db207ff6ae0125f1d345d5d82c.jpg)
+![](images/batch_0000/2c4c4da751df021764a8ffbde5b78ece769f69db207ff6ae0125f1d345d5d82c.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/8f382dcb90c3715c61a463cb7504a06feb44e2767e28ef2b493182791d383b9c.jpg)
+![](images/batch_0000/8f382dcb90c3715c61a463cb7504a06feb44e2767e28ef2b493182791d383b9c.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/147b7a16d2fd3081602131f11f3d3330e7f4f3e227feb2444727a6b2c075e327.jpg)  
+![](images/batch_0000/147b7a16d2fd3081602131f11f3d3330e7f4f3e227feb2444727a6b2c075e327.jpg)  
 图 4.1 左行波与右行波定义 1 由过 $(x, t)$ 点的两条斜率分别为 $\pm\frac{1}{a}$ 的直线在 x 轴所截得的区间 $[x-at, x+at]$ 称为点 $(x, t)$ 的依赖区间.
 
 点 $(x,t)$ 的依赖区间如图4.2（a）所示。对初始轴t=0上的一个区间 $[x_{1},x_{2}]$ ，过 $x_{1}$ 点作斜率为 $\frac{1}{a}$ 的直线 $x=x_{1}+at$ ，过 $x_{2}$ 点作斜率为 $-\frac{1}{a}$ 的直线 $x=x_{2}-at$ ，它们和区间 $[x_{1},x_{2}]$ 一起构成一个三角形区域，如图4.2（b）所示。此三角形区域中任一点 $(x,t)$ 的依赖区间都落在区间 $[x_{1},x_{2}]$ 的内部，因此解在此三角形区域中的数值完全由区间 $[x_{1},x_{2}]$ 上的初始条件决定，而与此区间外的初始条件无关. 在区间 $[x_1, x_2]$ 上给定初始条件, 就可以决定其在区域中的 $u(x, t)$ 值.
@@ -4749,12 +4749,12 @@ $$
 
 若过点 $x_{1}, x_{2}$ 分别作直线 $x = x_{1} + at, x = x_{2} - at$ ，则经过时间 $t$ 后受到区域 $[x_{1}, x_{2}]$ 上初始扰动影响的区域为 $x_{1} - at \leqslant x \leqslant x_{2} + at, (t > 0)$ ，在此区域之外的波动则不受 $[x_{1}, x_{2}]$ 上初始扰动的影响，称 $x - t$ 平面上由上述不等式确定的区域为 $[x_{1}, x_{2}]$ 影响区域，如图4.2（c）所示。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/003afec9d3443ca1ac322f565c353b017c17291a7c2bc0b5ec51543e99cb1e1e.jpg)  
+![](images/batch_0000/003afec9d3443ca1ac322f565c353b017c17291a7c2bc0b5ec51543e99cb1e1e.jpg)  
 (a)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/5a41914c626ca28d8cac0282cda00827785e9c5ab22975b207c7101efa28caaa.jpg)
+![](images/batch_0000/5a41914c626ca28d8cac0282cda00827785e9c5ab22975b207c7101efa28caaa.jpg)
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/b215f45a5b1ec6510e607dadf9fcecde0f3485b994d36400babe25b2b961593e.jpg)  
+![](images/batch_0000/b215f45a5b1ec6510e607dadf9fcecde0f3485b994d36400babe25b2b961593e.jpg)  
 (b)  
 图 4.2 依赖区间、决定区域、影响区域从上面的讨论可以看到，在 $x - t$ 平面上斜率为 $\pm \frac{1}{a}$ 的两族直线 $x \pm at =$ 常数，对一维波动方程的研究起着重要的作用，称这两族直线为一维波动方程的特征线。因为在特征线 $x - at = c_{2}$ 上，右行波 $u_{2} = f_{2}(x - at)$ 的振幅取常数值 $f_{2}(c_{2})$ ，在特征线 $x + at = c_{1}$ 上，左行波 $u_{1} = f_{1}(x + at)$ 的振幅取常数值 $f_{1}(c_{1})$ ，且这两个数值随特征线的移动（即常数 $c_{i} (i = 1, 2)$ 的改变）而改变。所以，波动实际上是沿特征线传播的。变换称为特征变换，行波法又称为特征线法。
 
@@ -4786,7 +4786,7 @@ $$
 
 波的传播波形如图 4.3 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/108688be7bca1ba0157e3fc932ce71033ef415a3e9db359aff3e69c23f686fa1.jpg)  
+![](images/batch_0000/108688be7bca1ba0157e3fc932ce71033ef415a3e9db359aff3e69c23f686fa1.jpg)  
 图 4.3 不同时刻波的传播波形例 2 求下列 Cauchy 问题的解:
 
 $$
@@ -5335,7 +5335,7 @@ $$
 \begin{array}{r l} u (x, y, t) & = \frac {1}{2 \pi a} \left[ \frac {\partial}{\partial t} \int_ {0} ^ {a t} \int_ {0} ^ {2 \pi} \frac {\varphi (x + r \cos \theta , y + r \sin \theta)}{\sqrt {a ^ {2} t ^ {2} - r ^ {2}}} r d r d \theta \right. \\ & \quad \left. + \int_ {0} ^ {a t} \int_ {0} ^ {2 \pi} \frac {\psi (x + r \cos \theta , y + r \sin \theta)}{\sqrt {a ^ {2} t ^ {2} - r ^ {2}}} r d r d \theta \right]. \end{array}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/b851892377da5f9a68771ec8415c160ca814c340e930687bde3796532d63bb88.jpg)  
+![](images/batch_0000/b851892377da5f9a68771ec8415c160ca814c340e930687bde3796532d63bb88.jpg)  
 图4.4 球面这就是二维波动方程 Cauchy 问题的解，并称为二维 Poisson 公式。这个方法也可用到一维波动方程的 Cauchy 问题，把定解问题及其解函数，当成三维的特殊情形进行处理。这个方法不仅适用于波动方程，也适用于一些其他类型的方程。
 
 ## 四、波动方程 Cauchy 问题一维、二维、三维的比较考查二维和三维波动方程 Cauchy 问题:
@@ -5392,7 +5392,7 @@ $$
 
 同理, 要计算这个解在 $(x, y, t)$ 处的值, 只要以 $M(x, y)$ 为中心, 以 $at$ 为半径作圆域 $C_{at}^{M}$ , 然后将初始扰动代入进行积分. 仍设初始扰动限于区域 $T_{0}$ , 并且 $d, D$ 分别表示点 $M(x, y)$ 与 $T_{0}$ 的最小和最大距离, 则当 $t < \frac{d}{a}$ 时, $u(x, y, t) = 0$ ; 当 $\frac{d}{a} < t < \frac{D}{a}$ 时, $u(x, y, t) \neq 0$ ; 当 $t > \frac{D}{a}$ 时, 由于圆域 $C_{at}^{M}$ 包含了区域 $T_{0}$ , 所以 $u(x, y, t)$ 仍不为零, 这种现象称为有后效, 即在二维情形, 局部范围内的初始扰动, 具有长期的连续的后效特性, 扰动有清晰的“前峰”, 而无“阵尾”, 这一点与球面波不同.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/43e2e028eef5f4947e0cb8efc956e6367d0dc863cd9b658edc9898ba38c27699.jpg)  
+![](images/batch_0000/43e2e028eef5f4947e0cb8efc956e6367d0dc863cd9b658edc9898ba38c27699.jpg)  
 图4.5 初始扰动区域平面上以点 $(\zeta,\eta)$ 为中心的圆周的方程 $(x-\zeta)^{2}+(y-\eta)^{2}=r^{2}$ ，在空间坐标系内表示母线平行于z轴的直圆柱面，所以在过 $(\zeta,\eta)$ 点平行于z轴的无限长直线上的初始扰动，在时间t后的影响是以在该直线为轴，at为半径的圆柱面内。因此，二维波动方程初值问题的解称为柱面波。
 
 ## 习题 4.3
@@ -6157,7 +6157,7 @@ $$
 
 当 $t_1 = 100\mathrm{s}, t_2 = 180\mathrm{s}, t_3 = 1.5 \times 10^6\mathrm{s}$ 时, 杂质浓度 $u(x, t)$ 在硅片中的分布情况如图 5.1 所示. 从图中曲线可以看出, 如果扩散持续下去, 各点的浓度最终将为常数 $u_0$ .
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/26773fddc585844066e46040d9bf7d576504501dfe60aad80811d7bffb4b0df0.jpg)  
+![](images/batch_0000/26773fddc585844066e46040d9bf7d576504501dfe60aad80811d7bffb4b0df0.jpg)  
 图 5.1 杂质浓度 $u(x, t)$ 随 x 的变化规律例5 求解
 
 $$
@@ -6700,7 +6700,7 @@ Jordan 引理中的圆弧 $C_{n}$ 也可以推广到其他的光滑凸曲线族.
 
 则 $g(s)$ 的原像 $f(x)$ 为
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0000/f6fe2677c55a490f54323f2bfe9277b76b4f8a15b6fcdeb53b6523963df70ea5.jpg)
+![](images/batch_0000/f6fe2677c55a490f54323f2bfe9277b76b4f8a15b6fcdeb53b6523963df70ea5.jpg)
 
 $$
 f (x) = \sum_ {k} \operatorname{Res} \left(g (s) \mathrm{e} ^ {s x}, s _ {k}\right).
@@ -7292,7 +7292,7 @@ $$
 u \left(M _ {0}\right) = \frac {1}{4 \pi} \iint_ {S} \left(\frac {1}{r _ {M M _ {0}}} \frac {\partial u}{\partial \boldsymbol {n}} - u \frac {\partial}{\partial \boldsymbol {n}} \left(\frac {1}{r _ {M M _ {0}}}\right)\right) d s - \frac {1}{4 \pi} \iiint_ {V} \left(\frac {1}{r _ {M M _ {0}}} \Delta u\right) d v
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/8a76c0a878a7fbe7e7c47490f40247abf0930fcb4e18fbe6d7d6c61a4db834c2.jpg)
+![](images/batch_0001/8a76c0a878a7fbe7e7c47490f40247abf0930fcb4e18fbe6d7d6c61a4db834c2.jpg)
 
 下面讨论 Green 第三公式. 设 $M_0$ 是 $V$ 内任意一个定点, $v(M) = \frac{1}{r_{MM_0}}$ , $u(x, y, z)$ 满足前述条件. 显然, 当变点 $M(x, y, z)$ 重合于 $M_0$ 时, $v = \infty$ , 不满足第二 Green 公式. 为此, 以 $M_0$ 为中心, $\varepsilon$ 为半径, 作球面 $S_{\varepsilon}$ , 将 $S_{\varepsilon}$ 所围成的球体积从 $V$ 中挖出, 如图 6.1 所示. 对剩下的区域图6.1 空间区域 $V$
 
@@ -7770,7 +7770,7 @@ $$
 \oiint_ {S \cup S _ {1} \cup S _ {2}} \left(u \frac {\partial w}{\partial \boldsymbol {n}} - w \frac {\partial u}{\partial \boldsymbol {n}}\right) d s = \oiint_ {S _ {1} \cup S _ {2}} \left(u \frac {\partial w}{\partial \boldsymbol {n}} - w \frac {\partial u}{\partial \boldsymbol {n}}\right) d s.\tag{6.4.3}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/500aa18eafa3011501739a6a544e0d8f1b7118a7647e337dc9fe853a56254324.jpg)  
+![](images/batch_0001/500aa18eafa3011501739a6a544e0d8f1b7118a7647e337dc9fe853a56254324.jpg)  
 图6.2 空间区域 $V$
 
 从而，
@@ -7891,7 +7891,7 @@ $$
 \begin{array}{r l} \oint_ {L} \boldsymbol {A} \cdot \mathrm{d} \boldsymbol {s} & = \oint_ {L} u \{v _ {x}, v _ {y} \} \cdot \mathrm{d} \boldsymbol {s} = \iint_ {D} \nabla \cdot u \{v _ {x}, v _ {y} \} \mathrm{d} \sigma \\ & = \iint_ {D} (u _ {x} v _ {x} + u _ {y} v _ {y} + u (v _ {x x} + v _ {y y})) \mathrm{d} \sigma \\ & = \iint_ {D} (\nabla u \cdot \nabla v + u \Delta v) \mathrm{d} \sigma . \end{array}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/6d259ec6639cd50142438fb3f6cbc8fad27b21802852faf1a2bff21d7db5466e.jpg)  
+![](images/batch_0001/6d259ec6639cd50142438fb3f6cbc8fad27b21802852faf1a2bff21d7db5466e.jpg)  
 图6.3 平面区域 $D$
 
 即有
@@ -8158,7 +8158,7 @@ $$
 
 ## 一、球和半空间上的 Green 函数在半径为 R 的球面 S 所围的球形域内，Green 函数就是定解问题：
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/121aec91a6ce0f9cf87adbab9622381575afd6df584fa652c4be45624f2e5555.jpg)  
+![](images/batch_0001/121aec91a6ce0f9cf87adbab9622381575afd6df584fa652c4be45624f2e5555.jpg)  
 图6.4 球形域图
 
 $$
@@ -8207,10 +8207,10 @@ $$
 
 点电荷在球内与球外产生的电场如图 6.5 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/4416a0c1c76747a06b6444becfc8abdd2b047bae338314daab0cdf522528b7e1.jpg)  
+![](images/batch_0001/4416a0c1c76747a06b6444becfc8abdd2b047bae338314daab0cdf522528b7e1.jpg)  
 (a) 球域外电场
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/81d5736ab3dc2ea53847de5325b43f56fe79ab2fd55934e5bf9d06a3a6b8d273.jpg)  
+![](images/batch_0001/81d5736ab3dc2ea53847de5325b43f56fe79ab2fd55934e5bf9d06a3a6b8d273.jpg)  
 (b) 球域内电场图 6.5 球内与球外点电荷产生的电场在球面 $S$ 上，有
 
 $$
@@ -8231,7 +8231,7 @@ $$
 
 推论 1 Laplace 方程 Dirichlet 问题:
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/264df1651cc8840d69308de0ef181773430cf912a6844b76109c6e300da59c73.jpg)  
+![](images/batch_0001/264df1651cc8840d69308de0ef181773430cf912a6844b76109c6e300da59c73.jpg)  
 图6.6 上半空间
 
 $$
@@ -8306,7 +8306,7 @@ $$
 v \big | _ {L} = \frac {1}{2 \pi} \ln \frac {r _ {M M _ {1}}}{r _ {M M _ {0}}} \big | _ {L} = \frac {1}{2 \pi} \ln \frac {R}{r _ {0}}.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/55d7b8647e141a51edb35fb07820198c54df2a8941863b7b8897188ce7c70a42.jpg)
+![](images/batch_0001/55d7b8647e141a51edb35fb07820198c54df2a8941863b7b8897188ce7c70a42.jpg)
 
 $V$ 在 $L$ 上的值虽然不是零，却是常数。因此， $\nu$ 还不是 Green 函数，它减去 $\frac{1}{2\pi} \ln(R / r_0)$ 之后就得到圆域上的 Green 函数：
 
@@ -8368,7 +8368,7 @@ $$
 
 其中， $(r_{0},\theta_{0})$ 是点 $M_{0}$ 的坐标； $(R,\theta)$ 是圆周 L 上的点 P 的坐标。该公式称为圆的 Poisson 公式。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/b5730a29c11f6a492c9f0717b13211dd393074423bb6fc49c00bf98a29397a26.jpg)
+![](images/batch_0001/b5730a29c11f6a492c9f0717b13211dd393074423bb6fc49c00bf98a29397a26.jpg)
 
 类似于半空间情况，可以用静电源像法求解平面 $y > 0$ 上Laplace方程的Dirichlet问题.在上半平面取 $M_0(x_0,y_0)$ 点，垂直放置一根每单位长有 $\varepsilon$ 库仑正电荷的无穷长带电细导线；在 $M_0(x_0,y_0)$ 关于 $x$ 轴的对称点 $M_{1}(x_{0}, - y_{0})$ 处垂直放置一根每图6.8 上半平面单位长有 $\varepsilon$ 库仑负电荷的无穷长带电细导线，如图6.8所示．则电位势：
 
@@ -8384,7 +8384,7 @@ $$
 
 于是，得到定理4.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/5b7021ce376aa4eef2a38fc962ca8f007836969314dc1965710cc9b52f45fce9.jpg)  
+![](images/batch_0001/5b7021ce376aa4eef2a38fc962ca8f007836969314dc1965710cc9b52f45fce9.jpg)  
 图 6.9 上半平面线电荷产生的电场定理 4 上半平面 Poisson 方程 Dirichlet 问题:
 
 $$
@@ -8451,10 +8451,10 @@ $$
 \begin{array}{r l} G (M, M _ {0}) & = \frac {1}{2 \pi} \ln \frac {1}{r _ {M M _ {0}}} - \frac {1}{2 \pi} \ln \frac {1}{r _ {M M _ {1}}} - \frac {1}{2 \pi} \ln \frac {1}{r _ {M M _ {2}}} + \frac {1}{2 \pi} \ln \frac {1}{r _ {M M _ {3}}} \\ & = \frac {1}{4 \pi} \ln \frac {\left[ (x + x _ {0}) ^ {2} + (y - y _ {0}) ^ {2} \right] \left[ (x - x _ {0}) ^ {2} + (y + y _ {0}) ^ {2} \right]}{\left[ (x - x _ {0}) ^ {2} + (y - y _ {0}) ^ {2} \right] \left[ (x + x _ {0}) ^ {2} + (y + y _ {0}) ^ {2} \right]}. \end{array}\tag{6.5.5}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/ae63901c1c5eed5b06e020d04f0da502a781ae1a05460d43c5a9a3c73f6d3e73.jpg)  
+![](images/batch_0001/ae63901c1c5eed5b06e020d04f0da502a781ae1a05460d43c5a9a3c73f6d3e73.jpg)  
 图 6.10 平面第一象限线电荷平面第一象限线电荷的电场如图 6.11 所示. 通过以上分析, 给出了球形状域、上半空间、圆域、上半平面、平面第一象限对应的 Green 函数, 并给出了相应区域的 Poisson 方程 Dirichlet 问题的解. 从给出的图形看出, 在边界上电力线与之垂直.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/e3e45120bb8909df7b1a382990e92fe9f600c6cd75518917c070796448a200ed.jpg)  
+![](images/batch_0001/e3e45120bb8909df7b1a382990e92fe9f600c6cd75518917c070796448a200ed.jpg)  
 图 6.11 平面第一象限线电荷的电场
 
 ## 习题 6.5
@@ -8853,7 +8853,7 @@ $$
 
 下面，讨论一维热传导方程的基本解 $U(x, t)$ 所描述的热传导规律。如图6.12所示，对于给定的不同时刻 $t_1 = 1\mathrm{s}, t_2 = 5\mathrm{s}, t_3 = 50\mathrm{s}$ ，把这样的温度分布函数 $U(x, t_i) (i = 1, 2, \cdots)$ 描绘在同一坐标平面上，就得到一系列的温度分布曲线。从图中可以看到，当 $t$ 越小时，在 $x = 0$ 附近曲线耸得越高；当 $t$ 越大时，曲线就越平坦。作为两个极端的情况，当 $t \to +\infty$ 时，各点的温度均趋于零；当 $t \to 0$ 时，温度分布就趋于 $\delta(x)$ 。但是，不论 $t$ 取什么值，曲线下的面积总是 1，即 $\int_{-\infty}^{+\infty} U(x, t) \mathrm{d}x = 1$ 。它表示在杆的热平衡过程中，其总热量总是保持不变的，即保持开始一瞬间给予杆的热量 $Q = c\rho$ 。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/6d047e2c3ce5af189aebce79378a7a9366a9339033395617f3a117743c7e3ecd.jpg)  
+![](images/batch_0001/6d047e2c3ce5af189aebce79378a7a9366a9339033395617f3a117743c7e3ecd.jpg)  
 图 6.12 一维热传导方程的基本解所描述的热传导过程根据基本解的表达式类似于上面关于温度分布曲线的分析，可以看到，对于同一个时刻 $t$ ，当 $a = \sqrt{\frac{k}{c\rho}}$ 越大时，温度分布曲线越平，这表明温度的平衡过程进行得越快。也就是说，当热传导系数 $k$ 越大, 比热 $c$ 和密度 $\rho$ 越小时, 温度的平衡过程越快. 这是符合实际情况的.
 
 从这个基本解还可以看出，在开始一瞬间集中在点 $x = 0$ 传给杆一定的热量后，在以后的任意一个时刻，杆上的各点均受到此初始状态的影响，即热的传导速度等于无穷大。这不符合实际情况，它说明数学模型并不能完全反映客观的传热导过程。但从基本解可以表明，过程的时间进行得越长，杆上各点受到初始状态的影响就越小。
@@ -9352,7 +9352,7 @@ $y_{1}(x)$ ， $y_{2}(x)$ 和 $y_{3}(x)$ 三个函数之间的关系如图 6.13 
 
 3. $y_{3}(x)$ 与 $y(x)$ 一致.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/0f5b742d2497e5ef45aababebf7b370c4f68612855a51ff35328b94d7f6c892a.jpg)  
+![](images/batch_0001/0f5b742d2497e5ef45aababebf7b370c4f68612855a51ff35328b94d7f6c892a.jpg)  
 图 6.13 $y_{1}(x)$ 、 $y_{2}(x)$ 、 $y_{3}(x)$ ( $y_{3}(x)=y(x)$ ) 的图形比较
 
 ## 二、Ritz 法 Dirichlet 定理下面，把 Laplace 方程的第三边值问题化为变分问题。考虑区域 $\Omega$ 内部无热源，边界上具有热交换边界条件的平面稳定温度分布的定解问题：
@@ -9409,7 +9409,7 @@ $$
 
 解：利用变分原理，与方程相应的泛函可取为
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/e7943460f459cb804f7d65c42d3f30286da9319a31d83a8f439ec95a5b5d4472.jpg)  
+![](images/batch_0001/e7943460f459cb804f7d65c42d3f30286da9319a31d83a8f439ec95a5b5d4472.jpg)  
 图6.14 矩形截面
 
 $$
@@ -9826,12 +9826,12 @@ $$
 
 其中， $c=\lim_{n\to\infty}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}-\ln n\right)=0.5772\cdots$ ，称为 Euler 常数.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/d0fa81d739a5b0d6fa3b2752838cfc0504afa43b5a4a61448356fd36a4d8ffc5.jpg)  
+![](images/batch_0001/d0fa81d739a5b0d6fa3b2752838cfc0504afa43b5a4a61448356fd36a4d8ffc5.jpg)  
 图7.1 第一类Bessel函数图当 $x = 0$ 时, $J_{n}(x)$ 为有限值, $Y_{n}(x)$ 为无穷大. 因此, 第二类 Bessel 函数与 $J_{n}(x)$ 线性无关.
 
 整数阶 Bessel 函数比较重要, 特别是函数 $J_{0}(x)$ 、 $J_{1}(x)$ 与 $J_{2}(x)$ 在应用中经常遇到, 其图形如图 7.1 所示. 第二类 Bessel 函数 $Y_{0}(x)$ 、 $Y_{1}(x)$ 与 $Y_{2}(x)$ 的图形的如图 7.2 所示. 其函数值情况已制有详细的函数值表.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/7ea45dec15881cee12e268ad3ba4872dc2b3bc2b7e646f5592f2f5f27abdeb12.jpg)  
+![](images/batch_0001/7ea45dec15881cee12e268ad3ba4872dc2b3bc2b7e646f5592f2f5f27abdeb12.jpg)  
 图7.2 第二类Bessel函数图综上所述，不论 $n$ 是否为整数，Bessel方程的通解都可表示为
 
 $$
@@ -10758,10 +10758,10 @@ $$
 
 图形如图 7.3 (b) 所示. $I_{n}(x)$ 与 $K_{n}(x)$ 不存在实的零点, 所以它们的图形不是振荡型曲线, 这一点与 $J_{n}(x)$ 及 $Y_{n}(x)$ 不同.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/a0b012992e1b9a6bc93fbb1e707dcdaf9a2ea066dd39726f835477bc85c1d900.jpg)  
+![](images/batch_0001/a0b012992e1b9a6bc93fbb1e707dcdaf9a2ea066dd39726f835477bc85c1d900.jpg)  
 (a) 第一类虚宗量 Bessel 函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/b50c3904043d53f6e80643df0ce5b03f13a32e3f3da7d8dcd9ac5a7b5b749930.jpg)  
+![](images/batch_0001/b50c3904043d53f6e80643df0ce5b03f13a32e3f3da7d8dcd9ac5a7b5b749930.jpg)  
 (b) 第二类虚宗量 Bessel 函数图7.3 虚宗量Bessel函数
 
 ## 三、Kelvin 函数（Thomson 函数）
@@ -10834,10 +10834,10 @@ $$
 
 $j_{\nu}(x), n_{\nu}(x)$ 分别称为第一类球 Bessel 函数（也称球 Bessel 函数）和第二类球 Bessel 函数（也称球 Neumann 函数）。 $h_{\nu}^{(1)}(x), h_{\nu}^{(2)}(x)$ 称为第三类球 Bessel 函数（也称球 Hankel 函数）。图形如图 7.4 所示。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/18116efee5dfac96f4cfa309f3d05a4013066089e9ec49c648fc3dc17f57f857.jpg)  
+![](images/batch_0001/18116efee5dfac96f4cfa309f3d05a4013066089e9ec49c648fc3dc17f57f857.jpg)  
 (a) 球 Bessel 函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/c3b83865ad30daff9fedad2066af0ede9c729f0dddea9f2828f52961078e2e2a.jpg)  
+![](images/batch_0001/c3b83865ad30daff9fedad2066af0ede9c729f0dddea9f2828f52961078e2e2a.jpg)  
 (b) 球 Neumann 函数图 7.4 球 Bessel 函数与球 Neumann 函数当 $\nu$ 等于整数时，球Bessel方程也可以用初等函数来表示，例如，
 
 $$
@@ -11190,7 +11190,7 @@ $$
 
 $n = 0,1,2,3$ 时， $P_{n}(x)$ 的图形如图8.1所示． $\{P_n(x):n\in N\}$ 满足Legendre方程系列，而不是同一个方程.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/9c6de5a5e0531312196487b46b9095d5ec613914168e2bf037d8c8457aeaa852.jpg)  
+![](images/batch_0001/9c6de5a5e0531312196487b46b9095d5ec613914168e2bf037d8c8457aeaa852.jpg)  
 图8.1 $n$ 次的Legendre多项式
 
 2. Legendre 多项式的微分表达式——Rodrigues 公式定理1 $P_{n}(x)$ 满足Rodrigues公式
@@ -11285,7 +11285,7 @@ $$
 \frac {1}{r _ {Q P}} = \frac {1}{\sqrt {1 - 2 x \rho + \rho^ {2}}}.\tag{8.2.1}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/a10c621a56532a999686782b13b06d56c17573c8d77231e6499c0dfdd923f9cd.jpg)
+![](images/batch_0001/a10c621a56532a999686782b13b06d56c17573c8d77231e6499c0dfdd923f9cd.jpg)
 
 由函数(8.2.1)令 $x=\cos\theta$ ，构造关于z的复变函数：
 
@@ -11821,7 +11821,7 @@ $$
 \begin{array}{r l} P _ {3} ^ {0} (x) & = P _ {3} (x) = \frac {1}{2} (5 x ^ {3} - 3 x), \quad P _ {3} ^ {1} (x) = \frac {1}{2} \left(1 - x ^ {2}\right) ^ {1 / 2} (1 5 x ^ {2} - 3), \\ & \quad P _ {3} ^ {2} (x) = 1 5 x \left(1 - x ^ {2}\right), \quad P _ {3} ^ {3} (x) = 1 5 \left(1 - x ^ {2}\right) ^ {3 / 2}. \end{array}
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/33452cc14293cb2de9b08bb542f7613ead05c28eb8eedbed5e96167bc3033048.jpg)  
+![](images/batch_0001/33452cc14293cb2de9b08bb542f7613ead05c28eb8eedbed5e96167bc3033048.jpg)  
 图8.3 连带Legendre多项式连带 Legendre 多项式 $P_{n}^{m}(x)$ 有如下性质：
 
 (1) $P_{n}^{m} = 0, m > n$ ;
@@ -12164,7 +12164,7 @@ $$
 
 (2)确定边界的绕向. 把四个点 $b_{1}, b_{2}, b_{3}, b_{4}$ 在 $x$ 轴所处的位置按从左到右排序: $b_{4}, b_{1}, b_{2}, b_{3}$ . 对应的 $\omega$ 平面上的点也顺次变为 $A_{4}, A_{1}, A_{2}, A_{3}$ . 带形区域也在左侧, 两个区域的绕向相同.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/62dc23c81499733e604d789163ee23555151f7afac774b21c1c094dc06a3d16b.jpg)  
+![](images/batch_0001/62dc23c81499733e604d789163ee23555151f7afac774b21c1c094dc06a3d16b.jpg)  
 图9.1 区域变换
 
 （3）于是，所求的变换为：
@@ -12213,7 +12213,7 @@ $$
 
 求平板上温度分布. 如图 9.2 所示.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/882491e2e949e356d272b93d9b4496f15f0571405d88974c90fc0340ee410673.jpg)  
+![](images/batch_0001/882491e2e949e356d272b93d9b4496f15f0571405d88974c90fc0340ee410673.jpg)  
 图9.2 区域变换解：设 $u(x, y)$ 是点 $(x, y)$ 的温度函数。于是，定解问题为
 
 $$
@@ -12296,7 +12296,7 @@ $$
 u = \frac {u _ {2} - u _ {1}}{\pi} \eta + u _ {1}.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/06ca9e372b514eb0d289168d8b12f25fed2b77da7b2386c88a483d97dd85713c.jpg)  
+![](images/batch_0001/06ca9e372b514eb0d289168d8b12f25fed2b77da7b2386c88a483d97dd85713c.jpg)  
 图9.3 区域变换于是，
 
 $$
@@ -12527,7 +12527,7 @@ $$
 u = \frac {Q}{\varepsilon_ {0} 2 \pi} \ln \frac {1}{\rho} = - \frac {Q}{2 \pi \varepsilon_ {0}} \ln \rho = \operatorname{Re} \left(- \frac {Q}{2 \pi \varepsilon_ {0}} \mathrm{Ln} \xi\right).
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/ffd1c32c99147ac99b1e8dc6f1756021e46128560ea7e0ec76ff8af829ca9f12.jpg)  
+![](images/batch_0001/ffd1c32c99147ac99b1e8dc6f1756021e46128560ea7e0ec76ff8af829ca9f12.jpg)  
 图9.4 导线与其横截面回到 $z$ 平面，得所要求的解为
 
 $$
@@ -12650,7 +12650,7 @@ $$
 \frac {\mathrm{d} ^ {3} u}{\mathrm{d} s ^ {3}} - 6 u \frac {\mathrm{d} u}{\mathrm{d} s} - c \frac {\mathrm{d} u}{\mathrm{d} s} = 0.
 $$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/d87dbbad26f1bf1bcd131210e16edefd95bee5f9c3089c2df423314ca7cec780.jpg)  
+![](images/batch_0001/d87dbbad26f1bf1bcd131210e16edefd95bee5f9c3089c2df423314ca7cec780.jpg)  
 图10.1 Burgers方程的行波解解得
 
 $s - s_0 = \pm \int (2u^3 +cu^2 +2au + 2b)^{-1 / 2}\mathrm{d}s$ ， $a,b$ 为任意常数.
@@ -12663,7 +12663,7 @@ $$
 
 这个解的图形如图 10.2 所示. 这个波形与苏格兰海军工程师 J.Scott Russell, 在 1834 年从爱丁堡到格拉斯哥的运河上观察到的一种奇特水波现象相似. 因此, 该解也称为 KdV 方程的孤立波解.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/12e59c6298502de40cc707d5e8241322da85f7bb3b1424e4318c5716c9eeeb6e.jpg)  
+![](images/batch_0001/12e59c6298502de40cc707d5e8241322da85f7bb3b1424e4318c5716c9eeeb6e.jpg)  
 图10.2 KdVd的孤立波
 
 ## 三、Sine-Gordon 方程的行波解设 Sine-Gordon 方程的行波解为 $u = u(s) = u(x - ct)$ ，则
@@ -12869,7 +12869,7 @@ $$
 2. 边界条件： $u\big|_{x=0}=0, u_{x}\big|_{x=L}=0$ （自由端）.
 初始条件： $u\big|_{t=0}=kx=\frac{b}{L}x,u_{t}\big|_{t=0}=0$
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/ecc799bcd74f70401424ae5a3bc10d5cf249a5ddd7e188385ef4525aad7ca774.jpg)
+![](images/batch_0001/ecc799bcd74f70401424ae5a3bc10d5cf249a5ddd7e188385ef4525aad7ca774.jpg)
 
 3. 由 Newton 定律: $YS_{2} u_{x} (x + \mathrm{d} x, t) - Y S_{1} u_{x} (x, t) = \rho S \mathrm{~d} x u _ {t t}$ , 其中 $Y$ 为扬氏模量; $S$ 为锥的横截面积; $u_{x}$ 为相对伸长率:
 
@@ -12881,7 +12881,7 @@ $$
 
 $Y[x^{2}u_{x}]_{x}=\rho x^{2}u_{tt}$ ，其中 $a^{2}=\frac{Y}{\rho}$ 。令V=xu，则 $v_{tt}=a^{2}v_{xx}$ 。
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/e5c63a3841de38b69c7b748648f9ce2e2e7561fa71a0c6c6002cf62fc413c65b.jpg)
+![](images/batch_0001/e5c63a3841de38b69c7b748648f9ce2e2e7561fa71a0c6c6002cf62fc413c65b.jpg)
 
 4. 由 Newton 定律: $YSu_{x}(x + \mathrm{d}x, t) - YSu_{x}(x, t) = \rho S\mathrm{d}xu_{tt}$ , 其中, $Y, S, u_{x}$ 的意义与第 3 题定义一样.
 
@@ -12911,7 +12911,7 @@ $$
 
 其中，k 为进入截面的系数；s 为横截面； $u_{x}$ 为沿 x 轴温度的法向导数； $2\pi r dx$ 为侧面.
 
-![](../../../../../04_Assets/Images/Courses/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/%E8%AF%BE%E6%9C%AC/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B%20%E7%AC%AC2%E7%89%88%20%28%E6%9D%8E%E6%98%8E%E5%A5%87%EF%BC%8C%E7%94%B0%E5%A4%AA%E5%BF%83%E4%B8%BB%E7%BC%96%2C%20%E4%B8%BB%E7%BC%96%E6%9D%8E%E6%98%8E_%20%28z-library.sk%2C%201lib/images/batch_0001/2a8869fc9288e14c3f948ab9558a7c19f03db6dc0af4cad24c79ef72ce5d77e9.jpg)
+![](images/batch_0001/2a8869fc9288e14c3f948ab9558a7c19f03db6dc0af4cad24c79ef72ce5d77e9.jpg)
 
 所以， $u_{t} - a^{2}u_{xx} = -b^{2}(u - u_{1}),a^{2} = \frac{k}{c\rho},b^{2} = \frac{2k_{1}}{c\rho r}.$
 

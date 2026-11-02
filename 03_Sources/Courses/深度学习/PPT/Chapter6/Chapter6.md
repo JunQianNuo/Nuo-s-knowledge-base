@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter6/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 六、分类模型
 

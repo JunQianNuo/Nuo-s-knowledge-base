@@ -18,7 +18,7 @@ parser: mineru
 - 大数定律：当随机样本数量 N足够大时，样本均值会依概率收敛到真实期望。
 - 中心极限定理：估计误差大致服从正态分布，误差量级约为 $O\left(\frac{1}{\sqrt{N}}\right)$
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%976-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/images/9a686834df74790da48020b7673b2313c7987f91f96fac5a6d0c318678d9c2ce.jpg)
+![](images/9a686834df74790da48020b7673b2313c7987f91f96fac5a6d0c318678d9c2ce.jpg)
 
 课堂实践：使用蒙特卡洛算法结合OpenMP并行计算 $\pi$ ，测试并行效率和误差收敛率。
 
@@ -48,7 +48,7 @@ $x_{i}=\left(b_{i}-\sum_{j=i+1}^{n}a_{ij}x_{j}\right)/a_{ii}, i=n-1,n-2,\ldots ,
 
 消元回代
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%976-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/images/d64fc9548573bd4479662f596f35f4cace0794d7a03f4a363ed4242563dc0dcf.jpg)
+![](images/d64fc9548573bd4479662f596f35f4cace0794d7a03f4a363ed4242563dc0dcf.jpg)
 
 $\tilde{a}_{ij}=a_{ij}-\left(\frac{a_{ik}}{a_{kk}}\right)a_{kj}$
 
@@ -58,7 +58,7 @@ $x_{n}=b_{n}/a_{nn}$
 
 $x_{i}=\left(b_{i}-\sum_{j=i+1}^{n}a_{ij}x_{j}\right)/a_{ii}$
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%976-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/images/35daa88b3e5c9a54afdef131296fcac4bcb3db3dcc6a45fea750a52fda93fc92.png)
+![](images/35daa88b3e5c9a54afdef131296fcac4bcb3db3dcc6a45fea750a52fda93fc92.png)
 
 课堂实践：运用OpenMP并行实现高斯消元，使用以上系数矩阵测试并行效率。
 
@@ -72,7 +72,7 @@ $L=\left[\begin{matrix}0&0&\ldots &0\\a_{21}&0&\ddots &0\\\vdots &\ddots &\ddots
 
 - 伪代码
 
-![](../../../../../04_Assets/Images/Courses/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/PPT/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%976-OpenMP%E5%B9%B6%E8%A1%8C%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/images/eaae5a06af4ce9be4626dae12daa689b68e4d0c895f439feaf1003cccb45657c.png)
+![](images/eaae5a06af4ce9be4626dae12daa689b68e4d0c895f439feaf1003cccb45657c.png)
 
 迭代法则 $Qx_{k+1}=\left(Q-A\right)x_{k}+b$
 

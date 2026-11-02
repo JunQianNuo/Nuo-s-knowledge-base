@@ -63,9 +63,9 @@ $A=U^{*}=\left[\begin{matrix}0&0&\ldots &u_{1n}^{*}\\0&0&\adots &u_{2n}^{*}\\\vd
     - 用一个非零数乘一个方程
     - 一个方程加上某个其它方程的倍数
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/71b7a0c72e230b6b8aeac96bb1d4be235fcf56b86b2fe4f489e940d761088384.jpg)
+![](images/71b7a0c72e230b6b8aeac96bb1d4be235fcf56b86b2fe4f489e940d761088384.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/090d36a608d67e3c819543c65975f232950a11680dd695271929fb8c5a3dd43c.png)
+![](images/090d36a608d67e3c819543c65975f232950a11680dd695271929fb8c5a3dd43c.png)
 
 高斯1777-1855
 
@@ -103,7 +103,7 @@ $\left\{\begin{array}{c}x+2y-z=3\\2x+y-2z=3\\-3x+y+z=-6\end{array}\right.$
 
 ## 高斯消元
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/d64fc9548573bd4479662f596f35f4cace0794d7a03f4a363ed4242563dc0dcf.jpg)
+![](images/d64fc9548573bd4479662f596f35f4cace0794d7a03f4a363ed4242563dc0dcf.jpg)
 
 - 伪代码(pseudocode)
 
@@ -237,7 +237,7 @@ $\left[\begin{matrix}1&2&-1\\2&1&-2\\-3&1&1\end{matrix}\right]\left[\begin{array
 
 - Doolittle分解的伪代码
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/d31237b2fd9b31cf42729b85416aed440907675bee3dc936b1eb55ee385f513b.jpg)
+![](images/d31237b2fd9b31cf42729b85416aed440907675bee3dc936b1eb55ee385f513b.jpg)
 
 把 $1$ 赋值给 $L$ 的对角元更新 $U$ 的第 $k$ 行更新 $L$ 的第 $k列$
 
@@ -245,7 +245,7 @@ $\left[\begin{matrix}1&2&-1\\2&1&-2\\-3&1&1\end{matrix}\right]\left[\begin{array
 
 - Doolittle分解计算量？
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/d31237b2fd9b31cf42729b85416aed440907675bee3dc936b1eb55ee385f513b.jpg)
+![](images/d31237b2fd9b31cf42729b85416aed440907675bee3dc936b1eb55ee385f513b.jpg)
 
 $k-1次$ 乘法， $k-1次$ 减法
 
@@ -347,11 +347,11 @@ $A=\left[\begin{matrix}1&1\\1.0001&1\end{matrix}\right], A^{-1}=\left[\begin{mat
 
 $cond\left(A\right)=\left\|A\right\|_{\infty }\left\|A^{-1}\right\|_{\infty }\approx 40000$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/f508433a7435dfa706435cd3f9e8cabcbea431f9dd3a61cb2faac8df40326de8.jpg)
+![](images/f508433a7435dfa706435cd3f9e8cabcbea431f9dd3a61cb2faac8df40326de8.jpg)
 
 问题的几何解释
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/e5da226fa1aac0b35d233ab4d65ea6fc16696f7afb750d0e633801869001dd0d.png)
+![](images/e5da226fa1aac0b35d233ab4d65ea6fc16696f7afb750d0e633801869001dd0d.png)
 
 11位
 
@@ -513,7 +513,7 @@ $\left[\begin{matrix}d_{1}&c_{1}&&&&&&\\0&d_{2}&c_{2}&&&&&\\&0&d_{3}&c_{3}&&&&\\
 
 - 追赶法的伪代码
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9003LinearSystemDirectMethods/images/e066a993cfdc2517053092b9acbd546d8b5656b71e0b8f8dfc08684429b73671.jpg)
+![](images/e066a993cfdc2517053092b9acbd546d8b5656b71e0b8f8dfc08684429b73671.jpg)
 
 消元回代计算量 $O(n)$
 

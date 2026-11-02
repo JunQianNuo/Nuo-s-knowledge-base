@@ -16,7 +16,7 @@ tags: []
 
 - 建立对象：[[01_Knowledge/概率空间]] → [[01_Knowledge/随机变量]] → [[01_Knowledge/分布函数]]、[[01_Knowledge/概率密度]]。
 - 条件与平均：[[01_Knowledge/条件概率与条件期望]] → [[01_Knowledge/全数学期望公式]] → [[01_Knowledge/全期望公式法]]；再比较 [[01_Knowledge/方差分解法]]。
-- 分布计算：[[01_Knowledge/联合分布]] → [[01_Knowledge/边缘分布计算]]、[[01_Knowledge/条件分布计算]] → [[00_Inbox/待核实核心/方法/变量变换法（雅可比）]]。
+- 分布计算：[[01_Knowledge/联合分布]] → [[01_Knowledge/边缘分布计算]]、[[01_Knowledge/条件分布计算]] → [[01_Knowledge/联合概率密度的雅可比变换法]]。
 - 极限与变换：[[01_Knowledge/中心极限定理]] → [[01_Knowledge/正态近似（CLT）]]；[[01_Knowledge/特征函数法]] 可与积分导航中的 Fourier 变换对照。
 
 箭头表示阅读顺序，数学适用条件以原笔记和来源为准；不代表已经完成数学正确性复核或个人已经掌握。

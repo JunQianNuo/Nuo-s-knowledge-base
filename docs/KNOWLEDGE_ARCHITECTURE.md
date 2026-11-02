@@ -10,7 +10,7 @@
 - `03_Sources`：课堂、复习、作业、阅读、论文、网页、自主想法等来源记录；记录完整保留。
 - `03_Sources/Courses/<课程>`：课堂笔记、课件、作业、习题。归档课程保留归档语境。
 - `03_Sources/Reviews/<课程>`：复习与综合整理；跨课程复习使用 subject 列表。
-- `04_Assets`：配套图片和通用附件。课程 PDF/PPT 跟课程走。
+- `04_Assets`：独立、共享附件；课程源资料的配套附件保留在原资料目录。
 - `99_System`：模板、Schema、标签词表、工具、查询、维护报告，不计知识实体。
 - `Home.md`：总入口。
 
@@ -54,3 +54,8 @@ MOC 数据库自动识别 MOC 笔记。标签数据库自动读取 `99_System/kn
 [[Home]] · [[docs/KNOWLEDGE_DAILY_GUIDE]] · [[99_System/knowledge/v2/README]]
 
 v1 工具保留历史兼容，新规则使用 knowledge.py v2 入口。旧 Formatter 仍未定位；新实现仅有明确的属性渲染和定点链接处理，不宣称旧 Formatter 已集成。
+
+
+## 2026-11-01 课程附件位置修正
+
+课程源资料及其附件作为完整资料包保存：教材/课件转换的 images、assets 等目录保留在源文件原有相对位置，不集中迁入 04_Assets；引用优先保留原有相对路径。04_Assets 仅用于独立或确需共享的附件。

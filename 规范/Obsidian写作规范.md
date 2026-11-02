@@ -10,7 +10,7 @@ topics:
 ---
 
 > [!important] 2026-10-28 v2 当前规则
-> v2 新内容属性以 [[docs/KNOWLEDGE_ARCHITECTURE]] 为准：type:moc，不用 role:moc；topics 是 MOC 链接；title 省略；tags 复用 [[99_System/knowledge/v2/generated/标签数据库.base|标准词表]]，不按主题自动补标。图片在 04_Assets/Images；旧根目录附件链接保持兼容直到显式迁移。以下公式、callout、表格、内链格式要求继续适用，旧元数据示例属于历史参考。
+> v2 新内容属性以 [[docs/KNOWLEDGE_ARCHITECTURE]] 为准：type:moc，不用 role:moc；topics 是 MOC 链接；title 省略；tags 复用 [[99_System/knowledge/v2/generated/标签数据库.base|标准词表]]，不按主题自动补标。课程源资料的图片保留在原有相对目录；独立共享附件可放 04_Assets/Images。以下公式、callout、表格、内链格式要求继续适用，旧元数据示例属于历史参考。
 
 
 # Obsidian 写作规范
@@ -121,3 +121,8 @@ Tag 是跨课程/跨章节的概念锚点，默认放在 frontmatter 的 `tags` 
 - 表格是否无裸 `|` 且列数一致？
 - Mermaid 是否避免 `<br/>` 和未加引号的特殊标签？
 - Callout 是否每行都有 `>` 前缀？
+
+
+## 2026-11-01 课程附件位置修正
+
+课程源资料及其附件作为完整资料包保存：教材/课件转换的 images、assets 等目录保留在源文件原有相对位置，不集中迁入 04_Assets；引用优先保留原有相对路径。04_Assets 仅用于独立或确需共享的附件。

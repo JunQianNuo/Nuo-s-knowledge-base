@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 ## 七、卷积神经网络
 
@@ -92,7 +92,7 @@ $$
 
 实际上如果我们用神经网络图示法来表示互相关运算则会发现大部分输入神经元和输出神经元之间并不存在连接. 例如, 例1可以表示成下图:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/61cc35307f0db37467efd4a4a657c6d763105f7bf8a253b75d3bbda36243e990.jpg)  
+![](images/61cc35307f0db37467efd4a4a657c6d763105f7bf8a253b75d3bbda36243e990.jpg)  
 图 2. 互相关运算示意图(红色: 权重为 1; 绿色: 权重为 −2; 黄色: 权重为 −1; 蓝色: 权重为 3).
 
 ## 互相关运算的性质其次, 可以看到 Kˆ 每一行的非零元素都是相同的, 即 K 中的元素 1、−2、−1、3. 这反映了互相关运算的另一个特性: 参数共享(parameter sharing).
@@ -301,12 +301,12 @@ $$
 
 第一步由卷积层块接收原始的多个通道输入矩阵并重复进行若干轮卷积层和池化层的操作. 第二步, 将卷积层块输出的结果(一般仍然是多个通道的矩阵)整体拉长成一个列向量并用若干个全连接层进行操作最终输出一个实数或向量
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/78b3fbae8729316be99dc542a2a9b24aa56150fcf1117f5a03add60da6af18ae.jpg)  
+![](images/78b3fbae8729316be99dc542a2a9b24aa56150fcf1117f5a03add60da6af18ae.jpg)  
 图 4. 1990年由Yann LeCun等人提出的卷积神经网络LeNet-5. 用于识别手写体或打印体的字符
 
 ## 高维推广互相关运算不仅仅局限在矩阵(即二维张量)的计算上, 还可以向更高维的张量计算进行推广. 例如, 三维互相关运算可以按如下示意图进行
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/11d561bda6236588084963056f0c4d3c8e476541cf7420bc045cedac1b995831.jpg)
+![](images/11d561bda6236588084963056f0c4d3c8e476541cf7420bc045cedac1b995831.jpg)
 
 图 5. 三维互相关运算示意图(三维卷积核从输入张量的顶角开始, 从上往下、从左往右、从前往后依次滑动, 每经过一个位置便逐元素相乘后再相加得到一个值作为输出张量的一个元素
 
@@ -316,13 +316,13 @@ $$
 
 表用于卷积网络的不同数据类型实例
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/e38920b2e1a3c14735ab14e0f93c9465019d284908842eb5fc46cf63412458b6.jpg)  
+![](images/e38920b2e1a3c14735ab14e0f93c9465019d284908842eb5fc46cf63412458b6.jpg)  
 图音频波形
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/62060ab8eba80bc1737f0819a86d81a23390af9614dc973f064a989200d85f0a.jpg)  
+![](images/62060ab8eba80bc1737f0819a86d81a23390af9614dc973f064a989200d85f0a.jpg)  
 图 7. 骨架动画
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter7/images/d548837f50828ad3b29edf29958e296d1e8b52c87316e150123c9b54c65afcfd.jpg)  
+![](images/d548837f50828ad3b29edf29958e296d1e8b52c87316e150123c9b54c65afcfd.jpg)  
 图 8. 三维体积图像
 
 ## PyTorch 中的CNN实现

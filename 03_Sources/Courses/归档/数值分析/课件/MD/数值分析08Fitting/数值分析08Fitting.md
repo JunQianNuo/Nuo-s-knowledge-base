@@ -24,9 +24,9 @@ parser: mineru
 
 - 开普勒范式：从大量的观测数据中总结规律（数据驱动）
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/94b363b6ab5c1cf273cdfd46797df1ad26e37b64bfce1bd53d5f40fbbbab88d6.jpg)
+![](images/94b363b6ab5c1cf273cdfd46797df1ad26e37b64bfce1bd53d5f40fbbbab88d6.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/eb13ffb786f884acfee5d58dd063924d1fe37c751ef685b89b7925d93507f48c.jpg)
+![](images/eb13ffb786f884acfee5d58dd063924d1fe37c751ef685b89b7925d93507f48c.jpg)
 
 开普勒(1571-1630)
 
@@ -42,7 +42,7 @@ $P=f\left(r,m,F\right)=?$
 
 $P:$ 行星公转周期， $r:$ 椭圆轨道的半长轴， $m:$ 行星质量， $F:$ 引力。
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/c9394e1cc664f9d6f5863ee9fcc572aba7d6ca573bc0da451d2b425d1563f830.jpg)
+![](images/c9394e1cc664f9d6f5863ee9fcc572aba7d6ca573bc0da451d2b425d1563f830.jpg)
 
 量纲分析： $X=T^{a}L^{b}M^{c}(T:时间，L:长度，M:质量)$
 
@@ -89,7 +89,7 @@ $F=GMmr^{\alpha }, \alpha =?,G=?$
 
 $\left.\begin{array}{c}\left(\frac{P_{1}}{P_{2}}\right)^{2}=\left(\frac{r_{1}}{r_{2}}\right)^{3}\\P=C\left(\frac{mr}{F}\right)^{\frac{1}{2}}\end{array}\right\}\Longrightarrow \left(\frac{P_{1}}{P_{2}}\right)^{2}=\frac{\left(\frac{m_{1}r_{1}}{F_{1}}\right)}{\left(\frac{m_{2}r_{2}}{F_{2}}\right)}=\frac{\left(\frac{m_{1}r_{1}}{GMm_{1}r_{1}^{\alpha }}\right)}{\left(\frac{m_{2}r_{2}}{GMm_{2}r_{2}^{\alpha }}\right)}=\left(\frac{r_{1}}{r_{2}}\right)^{1-\alpha }\Longrightarrow \alpha =-2$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/63dd8f03a7b7a2660ff171278c740f4e6655357c1b5deb1a2f0e5796e3bb3bad.jpg)
+![](images/63dd8f03a7b7a2660ff171278c740f4e6655357c1b5deb1a2f0e5796e3bb3bad.jpg)
 
 卡文迪许(1731-1810)
 
@@ -99,9 +99,9 @@ $\left.\begin{array}{c}\left(\frac{P_{1}}{P_{2}}\right)^{2}=\left(\frac{r_{1}}{r
 
 - 1945年7月16日上午5:30，美国的第一颗原子弹在新墨西哥州的沙漠中试爆成功
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/63ec1dff5dbaac20639d4b877733dbcab4b2edf4e55015d4bcb6103151f42f39.png)
+![](images/63ec1dff5dbaac20639d4b877733dbcab4b2edf4e55015d4bcb6103151f42f39.png)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/0faa7d5e35106d5112c7e9bb49e5aeec8be975e8746853cbe68fae972060f281.jpg)
+![](images/0faa7d5e35106d5112c7e9bb49e5aeec8be975e8746853cbe68fae972060f281.jpg)
 
 G.I. Taylor(1886-1975)
 
@@ -220,7 +220,7 @@ $\left[\begin{matrix}1&1&1\\1&-1&1\end{matrix}\right]\left[\begin{matrix}1&1\\1&
 
 $y=\frac{7}{4}+\frac{3}{4}t$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/dfbca4f6575448941086ab55b51e23eb5860dc021d2dd1db20853c94b9e94c47.jpg)
+![](images/dfbca4f6575448941086ab55b51e23eb5860dc021d2dd1db20853c94b9e94c47.jpg)
 
 $t$
 
@@ -282,7 +282,7 @@ $\left[\begin{matrix}1&1&1&1\\-1&0&1&2\\1&0&1&4\end{matrix}\right]\left[\begin{m
 
 最终模型： $y=0.45-0.65t-0.25t^{2}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/eef32be9d4de70ee3abf64b4829b4877580588d8a5bc367738fbc7092da94101.jpg)
+![](images/eef32be9d4de70ee3abf64b4829b4877580588d8a5bc367738fbc7092da94101.jpg)
 
 $t$
 
@@ -323,7 +323,7 @@ $t$
 
 直线拟合平方误差 $\left\|r\right\|_{2}^{2}=0.7$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/2cd27764dcedec5cfc9e48c6483466d74f2466c98e47062b675f82a6b6220577.jpg)
+![](images/2cd27764dcedec5cfc9e48c6483466d74f2466c98e47062b675f82a6b6220577.jpg)
 
 $t$
 
@@ -389,7 +389,7 @@ $\hat{SE}=\left(k+c_{2}t_{0}-lny_{0}\right)^{2}+\ldots +\left(k+c_{2}t_{m}-lny_{
 
 - 使用模型 $y=c_{1}e^{c_{2}t}$ 拟合Intel CPU单元中的晶体管数量随年份的变化：
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/7de8fedc8a2be16824748d7c0e2c597a043fa741f0a6a361601bec9e138b0137.jpg)
+![](images/7de8fedc8a2be16824748d7c0e2c597a043fa741f0a6a361601bec9e138b0137.jpg)
 
 ## 最小二乘
 
@@ -404,7 +404,7 @@ $\left[\begin{matrix}13&235\\235&5927\end{matrix}\right]\left[\begin{matrix}k\\c
 
 - 解得 $\left[k,c_{2}\right]^{T}=\left[7.197,0.3546\right]^{T}\longrightarrow \left[c_{1},c_{2}\right]^{T}=\left[1335.3,0.3546\right]^{T}.$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/f67f22fddbfc98b757e352ff76c587eeb8a16816dfb996e288e7eca724778f7d.png)
+![](images/f67f22fddbfc98b757e352ff76c587eeb8a16816dfb996e288e7eca724778f7d.png)
 
 ## 最小二乘
 
@@ -413,9 +413,9 @@ $\left[\begin{matrix}13&235\\235&5927\end{matrix}\right]\left[\begin{matrix}k\\c
 
 $\frac{y_{2}}{y_{1}}=e^{0.3546(t_{2}-t_{1})}=2\rightarrow t_{2}-t_{1}=\frac{ln2}{0.3546}\approx 1.95年（Moore定律）$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/2ab89521970573241ed538c18ec41e4ad7032e0952633129706c838b88c3b3e4.jpg)
+![](images/2ab89521970573241ed538c18ec41e4ad7032e0952633129706c838b88c3b3e4.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/d0ebb41461bc4bdc70c9bef04e2d87e8dc6274011a62b928a99b0ba0a5cc3af2.jpg)
+![](images/d0ebb41461bc4bdc70c9bef04e2d87e8dc6274011a62b928a99b0ba0a5cc3af2.jpg)
 
 题中的数据直到近年的数据
 
@@ -426,7 +426,7 @@ $\frac{y_{2}}{y_{1}}=e^{0.3546(t_{2}-t_{1})}=2\rightarrow t_{2}-t_{1}=\frac{ln2}
 
 $\left[\begin{matrix}1&x_{0}&\cdots &x_{0}^{7}\\1&x_{1}&\vdots &x_{1}^{7}\\\vdots &\vdots &\ddots &\vdots \\1&x_{10}&\cdots &x_{10}^{7}\end{matrix}\right]\left[\begin{matrix}c_{0}\\c_{1}\\\vdots \\c_{7}\end{matrix}\right]=\left[\begin{matrix}y_{0}\\y_{1}\\\vdots \\y_{10}\end{matrix}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/a399b0749b8faa47a9e6b4775dba9855643d225dc299d4d7ec4ac53090db7627.png)
+![](images/a399b0749b8faa47a9e6b4775dba9855643d225dc299d4d7ec4ac53090db7627.png)
 
 - 使用MATLAB求解：
 
@@ -501,7 +501,7 @@ $\left[\begin{matrix}3&2\\0&5\\0&0\end{matrix}\right]\left[\begin{array}{c}x_{1}
 
 $\left[\begin{matrix}1&x_{0}&\cdots &x_{0}^{7}\\1&x_{1}&\vdots &x_{1}^{7}\\\vdots &\vdots &\ddots &\vdots \\1&x_{10}&\cdots &x_{10}^{7}\end{matrix}\right]\left[\begin{matrix}c_{0}\\c_{1}\\\vdots \\c_{7}\end{matrix}\right]=\left[\begin{matrix}y_{0}\\y_{1}\\\vdots \\y_{10}\end{matrix}\right]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9008Fitting/images/72aea8708d88d4e3c681ee94ec30d2f8d7f3d0d533e11b0530365da7fa881686.jpg)
+![](images/72aea8708d88d4e3c681ee94ec30d2f8d7f3d0d533e11b0530365da7fa881686.jpg)
 
 $\left[\begin{matrix}c_{0}\\c_{1}\\\vdots \\c_{7}\end{matrix}\right]=$
 

@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 ## 二、机器学习基础
 
@@ -36,7 +36,7 @@ yiqigu@uestc.edu.cn
 
 而更多的函数则以复杂的隐式方式存在, 例如
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/39abd56cb3295893a0a848961aea8991ad58a5cde5a9dde06da53589ff694090.jpg)
+![](images/39abd56cb3295893a0a848961aea8991ad58a5cde5a9dde06da53589ff694090.jpg)
 
 手写数字分类函数将一张手写数字图片映射到中的某个类别
 
@@ -140,7 +140,7 @@ $$
 
 ## 学习器的容量粗略的说, 一个函数类的容量(capacity)是指能被它有效拟合的函数的范围大小. 例如,全体五次多项式比全体三次多项式能够拟合更多的函数, 因此全体五次多项式具有更大的容量. 然而, 数学上对容量的严格定义则比较复杂, 常用的有 Vapnik–Chervonenkis 维数和 Rademacher 复杂度.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/b6fb29949cc761c6c6fbb3329a64029a6b4736d9b593f74d355b6f736f49f86e.jpg)  
+![](images/b6fb29949cc761c6c6fbb3329a64029a6b4736d9b593f74d355b6f736f49f86e.jpg)  
 图函数空间的包含关系其容量也由小到大
 
 ## 1-D 问题设函数 $f : [ a , b ]  \mathbb { R }$ 为一个目标函数. 设 $x _ { n } \in [ a , b ] , y _ { n } = f ( x _ { n } ) , n = 1 , \ldots , N$ , 并形成数据集 $\{ ( \stackrel { \cdot } { x } _ { n } , y _ { n } ) \} _ { n = 1 } ^ { N }$
@@ -251,7 +251,7 @@ $$
 
 给定一元目标函数 $f ( x ) = 1 / ( x ^ { 2 } + x + 1 )$ . 生成9个训练数据点 $\{ ( x _ { n } , f ( x _ { n } ) ) \}$ }, 其中$x _ { 1 } , \ldots , x _ { 9 } = - 0 . 9 2 , - 0 . 7 8 , - 0 . 3 4 , - 0 . 3 3 , - 0 . 1 6 , 0 . 0 6 , 0 . 1 9 , 0 . 6 4 , 0 . 7 9$ 用二次多项式为学习器, $\therefore L \ell ^ { 2 } .$ -损失函数进行拟合(即最小二乘回归).生成个测试数据点 $\{ ( x _ { n } ^ { \prime } , f ( x _ { n } ^ { \prime } ) ) \}$ , 其中 $x _ { 1 } ^ { \prime } , \ldots , x _ { 5 } ^ { \prime } = - 0 . 8 , - 0 . 4 , 0 , 0 . 4 , 0 . 8 .$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/923300c26df4ece8bfb7dc8b96956eb2b59dbd5e965d174e644e86eca2a0f6d7.jpg)
+![](images/923300c26df4ece8bfb7dc8b96956eb2b59dbd5e965d174e644e86eca2a0f6d7.jpg)
 
 (红色实线: 目标函数; 黑色实线: 学习器; 蓝点: 训练集; 红点: 测试集.)
 
@@ -259,25 +259,25 @@ $$
 
 给定一元目标函数 $f ( x ) = 1 / ( x ^ { 2 } + x + 1 )$ . 生成9个训练数据点 $\{ ( x _ { n } , f ( x _ { n } ) ) \}$ }, 其中$x _ { 1 } , \ldots , x _ { 9 } = - 0 . 9 2 , - 0 . 7 8 , - 0 . 3 4 , - 0 . 3 3 , - 0 . 1 6 , 0 . 0 6 , 0 . 1 9 , 0 . 6 4 , 0 . 7 9$ 用二次多项式为学习器, $\therefore L \ell ^ { 2 } .$ -损失函数进行拟合(即最小二乘回归).生成个测试数据点 $\{ ( x _ { n } ^ { \prime } , f ( x _ { n } ^ { \prime } ) ) \}$ , 其中 $x _ { 1 } ^ { \prime } , \ldots , x _ { 5 } ^ { \prime } = - 0 . 8 , - 0 . 4 , 0 , 0 . 4 , 0 . 8 .$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/11fef4da1279abf5de905a33273765e6f9681ce21d3e93487f2df06171ed0826.jpg)
+![](images/11fef4da1279abf5de905a33273765e6f9681ce21d3e93487f2df06171ed0826.jpg)
 
 (红色实线: 目标函数; 黑色实线: 学习器; 蓝点: 训练集; 红点: 测试集.)可计算得到, 训练误差 $\phantom { 0 } { = 7 . 7 8 } \times 1 0 ^ { - 2 }$ , 泛化误差 $= 9 . 0 1 \times 1 0 ^ { - 2 }$ . 因此,泛化差距 $= | 9 . 0 1 \times 1 0 ^ { - 2 } - 7 . 7 8 \times 1 0 ^ { - 2 } | = 1 . 2 3 \times 1 0 ^ { - 2 }$
 
 ## 欠拟合/过拟合在例1中, 用不同次数 P 的多项式进行最小二乘回归. (相应的线性方程组有9个方程和 $P + 1$ 个未知数. 当 $P \geq 9$ 时, 为欠定方程组, 有无穷多个解. 这里只演示其中一个特解)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/839ca23bc94afc5f86236efaac5f06fc3b3aafe01dce51e2970bfcfad5defac2.jpg)  
+![](images/839ca23bc94afc5f86236efaac5f06fc3b3aafe01dce51e2970bfcfad5defac2.jpg)  
 (a) $P = 2$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/ad934cbf9c7836e6fb4c01e9cac47394b20b9b870a3a0f6fef46412c79484881.jpg)  
+![](images/ad934cbf9c7836e6fb4c01e9cac47394b20b9b870a3a0f6fef46412c79484881.jpg)  
 (b) $P = 4$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/6cd11472ca7903b554411e627f76b0d0271d340d6b76d1f8728bb6bb80b3b441.jpg)  
+![](images/6cd11472ca7903b554411e627f76b0d0271d340d6b76d1f8728bb6bb80b3b441.jpg)  
 (c) $P = 6$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/f84235769664904907f2fc1e94bd574508a13b1c1a9917978e05a090ff3113c4.jpg)  
+![](images/f84235769664904907f2fc1e94bd574508a13b1c1a9917978e05a090ff3113c4.jpg)  
 (d) $P = 9$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/52f9e389cb934a200b05b21f2cf0f1f827df2aca0ea07bbd608dfb9d4270fc77.jpg)  
+![](images/52f9e389cb934a200b05b21f2cf0f1f827df2aca0ea07bbd608dfb9d4270fc77.jpg)  
 (e) $P = 1 0$  
 随着 P 增大(即容量的增大), 欠拟合 $( \mathsf { U n d e r f i t t i n g } )$ ⇒ 过拟合(Overfitting)
 
@@ -285,19 +285,19 @@ $$
 
 表训练误差、泛化误差和泛化差距随的变化
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/4dac528718c320b96d3b1e65c67b1ed4512c6dfbdb4dac007c64de5e67831a37.jpg)  
+![](images/4dac528718c320b96d3b1e65c67b1ed4512c6dfbdb4dac007c64de5e67831a37.jpg)  
 图通常随着学习器容量的增大训练误差不断下降泛化误差先降后升学习器参数的个数大于训练数据点的个数时, 问题通常是欠定的, 例如这里 P = 9,10 的情形. 此时, 该学习器被称为是过度参数化的(over-parameterized). 过拟合现象往往发生在学习器过度参数化时.
 
 <table><tr><td>P</td><td>训练误差</td><td>泛化误差</td><td>泛化差距</td></tr><tr><td>P=1</td><td>1.60e-01</td><td>1.29e-01</td><td>3.12e-02</td></tr><tr><td>P=2</td><td>7.78e-02</td><td>9.01e-02</td><td>1.23e-02</td></tr><tr><td>P=3</td><td>1.40e-02</td><td>1.62e-02</td><td>2.15e-03</td></tr><tr><td>P=4</td><td>1.39e-02</td><td>1.52e-02</td><td>1.32e-03</td></tr><tr><td>P=5</td><td>2.93e-03</td><td>6.29e-03</td><td>3.36e-03</td></tr><tr><td>P=6</td><td>1.15e-04</td><td>6.95e-04</td><td>5.80e-04</td></tr><tr><td>P=7</td><td>1.16e-05</td><td>9.97e-04</td><td>9.86e-04</td></tr><tr><td>P=8</td><td>1.11e-16</td><td>8.22e-04</td><td>8.22e-04</td></tr><tr><td>P=9</td><td>3.19e-16</td><td>2.82e-02</td><td>2.82e-02</td></tr><tr><td>P=10</td><td>5.27e-16</td><td>2.20e-02</td><td>2.20e-02</td></tr></table>
 
 表训练误差、泛化误差和泛化差距随的变化
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/fe0981e59d8a579bc9784c305c805a2ebde19fbffd47590b819ba440f2ff45a9.jpg)  
+![](images/fe0981e59d8a579bc9784c305c805a2ebde19fbffd47590b819ba440f2ff45a9.jpg)  
 图通常随着学习器容量的增大训练误差不断下降泛化误差先降后升学习器参数的个数大于训练数据点的个数时, 问题通常是欠定的, 例如这里 P = 9,10 的情形. 此时, 该学习器被称为是过度参数化的(over-parameterized). 过拟合现象往往发生在学习器过度参数化时.
 
 一个学习器在训练后要在实际应用中有好的效果才算是好的学习器而学习器的实际应用, 就是进行泛化 (因为每一次实际应用都可以看作学习器在测试点 $x _ { n } ^ { \prime }$ 上进行取值).因此我们一般认为当某个容量使得学习器的泛化误差达到最小时该容量是最优的最优容量与训练集大小的关系:
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/bc86697bf2db770b28cc45d62b4dedf7b1af5b9cbbde61c5e4c3ec8c3724969e.jpg)
+![](images/bc86697bf2db770b28cc45d62b4dedf7b1af5b9cbbde61c5e4c3ec8c3724969e.jpg)
 
 图: 设目标函数 f(x) 是一个五次多项式. 令学习器是一个 N 次多项式, 对 f 进行拟合. 最优次数 N (即容量) 与训练集大小的关系如图. 蓝色竖线表示 40 次随机重复实验下的 95% 置信区间. 当训练集大小增大时, 最优次数也随之增大而在达到足够捕捉目标函数的复杂度之后就不再增长了
 
@@ -355,10 +355,10 @@ $$
 
 这两个多项式 $\hat { f }$ 的系数随次数增大保持在较小水平.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/4e2cc708a93d657d30915c6ce5c61030bfbf2f88b16475d6efcdb096f9f451a5.jpg)  
+![](images/4e2cc708a93d657d30915c6ce5c61030bfbf2f88b16475d6efcdb096f9f451a5.jpg)  
 (c) $P = 9$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/a0696ec57153bad98a37a7180a83545b70a3df761f07a0fffca6d3df71b95ee9.jpg)  
+![](images/a0696ec57153bad98a37a7180a83545b70a3df761f07a0fffca6d3df71b95ee9.jpg)  
 (d) $P = 1 0$
 
 <table><tr><td>P</td><td>训练误差</td><td>泛化误差</td><td>泛化差距</td></tr><tr><td>P=9</td><td>2.84e-03</td><td>2.64e-03</td><td>2.02e-04</td></tr><tr><td>P=10</td><td>2.81e-03</td><td>1.88e-03</td><td>9.36e-04</td></tr></table>
@@ -367,10 +367,10 @@ $$
 
 ## 验证集很多时候, 我们只拥有一个单纯的数据集, 并没有专门定义成训练集或测试集. 此时, 我们可以手动将数据集分为两部分, 分别作为训练集和测试集, 用于训练和测试学习器. 这里的测试集一般称为验证集(validation set). 验证集的选取应保证”均匀性”, 即验证集与训练集应满足相同的概率分布从而避免偏差例如
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/1352898227666b4e1b021d9e1a53ca9b3bb87d0fc4b6f4fe801df0ccf726eff2.jpg)  
+![](images/1352898227666b4e1b021d9e1a53ca9b3bb87d0fc4b6f4fe801df0ccf726eff2.jpg)  
 (e) 不合适的选取
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/df6823b8cba181aa5fa814f97faed30555c37c7c66b15157f58955ca231cdef2.jpg)  
+![](images/df6823b8cba181aa5fa814f97faed30555c37c7c66b15157f58955ca231cdef2.jpg)  
 (f) 合适的选取
 
 ## 数据集大小对误差的影响一般来说, 随着数据集的增大, 总损失函数 $L [ \hat { f } ]$ 中的项 $l ( \hat { f } ( x _ { n } ) , y _ { n } )$ 随之增多, 对它进行最小化 (即训练) 也会越来越难. 因此, 在同一个优化器下, 训练误差往往随数据集的增大而增大.
@@ -379,7 +379,7 @@ $$
 
 然而随着数据集的增大更多的数据点会分布在整个样本空间即目标函数的定义域上), 使得最终训练而成的学习器具有更好的泛化能力. 因此, 在同一个优化器下, 泛化误差往往随数据集的增大而减小
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter2/images/77534f152537f0f04719891f9d47fed581f4ae041f7562089d60cbedc814bec8.jpg)  
+![](images/77534f152537f0f04719891f9d47fed581f4ae041f7562089d60cbedc814bec8.jpg)  
 图: 设目标函数 f(x) 是一个五次多项式. 将学习器设定为为二次多项式或当前数据集规模下的最优次数多项式. 竖线表示次随机重复实验下的置信区间对每一个学习器当训练集大小增大时训练误差随之增大泛化误差随之减小
 
 ## 本章 Python 实践

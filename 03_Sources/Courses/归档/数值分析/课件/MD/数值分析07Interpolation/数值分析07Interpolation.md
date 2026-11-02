@@ -71,7 +71,7 @@ $f\left(x^{*}\right)\approx g(x^{*})$
 
 - 插值的应用：
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/07e5f38a66d53fcde9845d8e136c3c30aecb1cf7e8d46077d4319a7fd16e7229.png)
+![](images/07e5f38a66d53fcde9845d8e136c3c30aecb1cf7e8d46077d4319a7fd16e7229.png)
 
 数值分析数值分析数值分析数值分析数值分析
 
@@ -91,9 +91,9 @@ Numerical analysis
 
 - 插值的应用：PDF文件中的字体
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/6b0b1577acd0337035e12810fe2776438bf4ad28d89575e4e30fb02d8f36140f.jpg)
+![](images/6b0b1577acd0337035e12810fe2776438bf4ad28d89575e4e30fb02d8f36140f.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/c559138e5192d4ad051eb017daed829932f9048761d31dd92fcef3ac43cc6e46.jpg)
+![](images/c559138e5192d4ad051eb017daed829932f9048761d31dd92fcef3ac43cc6e46.jpg)
 
 16段Bézier曲线
 
@@ -140,7 +140,7 @@ $\left[\begin{matrix}1^{0}&1&1^{2}\\2^{0}&2&2^{2}\\3^{0}&3&3^{2}\end{matrix}\rig
 
 $\left[a_{0},a_{1},a_{2}\right]^{T}=[27,-29,8]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/6881c20a48cd69aa19dd7f4e2e28f0813917a7078bd211e5dc43e19ad0f52366.jpg)
+![](images/6881c20a48cd69aa19dd7f4e2e28f0813917a7078bd211e5dc43e19ad0f52366.jpg)
 
 函数图像
 
@@ -152,11 +152,11 @@ $V=\left[\begin{matrix}1&x_{0}&\ldots &x_{0}^{n}\\1&x_{1}&\ldots &x_{1}^{n}\\\vd
 
 ## 基本的多项式插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/6a0203f30930421956735ca044890947bce763fb4c2bc884c37150d7befa60e5.jpg)
+![](images/6a0203f30930421956735ca044890947bce763fb4c2bc884c37150d7befa60e5.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/c16f96e4ea704e7db48521a84198e9e0e45dfc53f2b9021ff4f85b48957e5db7.jpg)
+![](images/c16f96e4ea704e7db48521a84198e9e0e45dfc53f2b9021ff4f85b48957e5db7.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/cc7c7cb66f63db7a7f5c6b219d900af7d84b0e33d82a38d9cfa611e6659e6d5b.jpg)
+![](images/cc7c7cb66f63db7a7f5c6b219d900af7d84b0e33d82a38d9cfa611e6659e6d5b.jpg)
 
 $a=$
 
@@ -280,7 +280,7 @@ $\sin(\frac{5\pi }{18})\approx P_{2}\left(\frac{5\pi }{18}\right)\approx 0.76543
 
 ## Lagrange插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/89219b57bae411472e31f48de1755a6dbcc2f8a44a693ec16344bff6531c1ab4.jpg)
+![](images/89219b57bae411472e31f48de1755a6dbcc2f8a44a693ec16344bff6531c1ab4.jpg)
 
 $y=\sin(\left(x\right))$
 
@@ -300,13 +300,13 @@ $\sin(x)=\sin(\left(\pi -x\right)),\sin(x)=-\sin(\left(2\pi -x\right))$
 
 ## Lagrange插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/4481110a544d8f7b435d1dbb9d6f355dc8dd248164a5b9dd09daf0b0ee2d8871.jpg)
+![](images/4481110a544d8f7b435d1dbb9d6f355dc8dd248164a5b9dd09daf0b0ee2d8871.jpg)
 
 用3次多项式 $P_{3}\left(x\right)$ 插值近似 $sinx$
 
 插值节点 $\left\{x_{i}\right\}_{i=0}^{3}=\left\{0,\frac{\pi }{6},\frac{\pi }{3},\frac{\pi }{2}\right\}$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/97435edce8515f72f352d122efaa643d09f14c9e08d32b18111cea8e6acf44ed.jpg)
+![](images/97435edce8515f72f352d122efaa643d09f14c9e08d32b18111cea8e6acf44ed.jpg)
 
 $P_{3}(x)$ 在不同点的近似误差
 
@@ -316,7 +316,7 @@ $P_{3}(x)$ 在不同点的近似误差
 
 $S=1+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\ldots =?$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/577a28daa5db7dfb35237fdeeb0f412a3b8a5d95d7c93240c4274d12e79c959e.jpg)
+![](images/577a28daa5db7dfb35237fdeeb0f412a3b8a5d95d7c93240c4274d12e79c959e.jpg)
 
 欧拉(1707-1783)
 
@@ -902,15 +902,15 @@ $f\left(x\right)=\frac{1}{1+25x^{2}}, x\in [-1,1]$
 
 $f\left(x\right)-P_{n}\left(x\right)=\frac{1}{\left(n+1\right)!}f^{\left(n+1\right)}\left(c\right)\prod_{i=0}^{n}\left(x-x_{i}\right), c\in \left(-1,1\right)$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/7c1c671667bbd295a89869eec26405b13a7c6baa5d400938d1128533838b709c.jpg)
+![](images/7c1c671667bbd295a89869eec26405b13a7c6baa5d400938d1128533838b709c.jpg)
 
 $f^{''}(x)$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/f7d67a65278dc6aab35df44e60c188596291a7bd16fa9066290f25b7b7089c9b.jpg)
+![](images/f7d67a65278dc6aab35df44e60c188596291a7bd16fa9066290f25b7b7089c9b.jpg)
 
 $f^{(10)}(x)$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/03f8f37924d67d6a0f7f9f90b0f6ed2e8b220f172e15e28d406e564fb0ce5099.jpg)
+![](images/03f8f37924d67d6a0f7f9f90b0f6ed2e8b220f172e15e28d406e564fb0ce5099.jpg)
 
 $f^{(20)}(x)$
 
@@ -918,7 +918,7 @@ $f^{(20)}(x)$
 
 - 例：等距多项式插值三角形突起函数
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/5df17473041a929198a3e624caa0d47e1be35b6898c44b632fa478e029719e2c.jpg)
+![](images/5df17473041a929198a3e624caa0d47e1be35b6898c44b632fa478e029719e2c.jpg)
 
 插值函数在端点附近产生剧烈振荡
 
@@ -933,7 +933,7 @@ $f\left(x\right)-P_{n}\left(x\right)=\frac{1}{\left(n+1\right)!}f^{\left(n+1\rig
 
 ## Chebyshev多项式
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/89de8747584040ca5c5cb4a6897b35d52b66bd0056af49e5255b595e74a2a707.jpg)
+![](images/89de8747584040ca5c5cb4a6897b35d52b66bd0056af49e5255b595e74a2a707.jpg)
 
 - Chebyshev是俄国现代数学的开创者之一他是优秀的纯粹数学家， 也是名副其实的应用数学家。他创建的彼得堡学派具有鲜明的理论联系实际的特色。著名的Chebyshev多项式就是从连杆设计中升华出来的理论精华 。（科学源流：切比雪夫和切比雪夫多项式的故事）
 - “理论和实践日益相互靠近的观点带来了最有益的结果，绝非只是实践一方所取得；在此影响下，科学正在进步，因为这种靠近会衍生出新的研究对象或者使早已熟知的学科产生新的内容。尽管在过去3个世纪以来，由于伟大数学家们的工作，数学取得了长足的进展，但实践清楚地揭示了其在许多方面并不完备；这就为科学提出了具有本质意义的新课题，让人们去挑战，寻找新的方法。而且，如果在新的应用出现或者旧的方法得到发展之时能够取得很多理论成果，那么当有新的方法诞生时这些理论成果就会更加丰硕；这里，科学在实践中找到了一个可靠指南”。（ Chebyshev，1856）
@@ -955,11 +955,11 @@ Chebyshev
 
 ## Chebyshev多项式
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/055331866a7fe04e5761463fc2e161d1dbde23eba43be99bd0b8bf37e206c26b.png)
+![](images/055331866a7fe04e5761463fc2e161d1dbde23eba43be99bd0b8bf37e206c26b.png)
 
 $T_{n}\left(x\right)=\cos((ncos^{-1}x))$ 的图像
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/d54a8dfc7190084455f09c66017f9947da3aba6cc2222afddb2da0721efc1ca8.jpg)
+![](images/d54a8dfc7190084455f09c66017f9947da3aba6cc2222afddb2da0721efc1ca8.jpg)
 
 $T_{n}\left(x\right)=\cos((ncos^{-1}x))$ 的零点分布 $(n=15)$
 
@@ -979,7 +979,7 @@ $\max_{-1\leq x\leq 1}\left|p(x)\right|\geq 2^{1-n}=\max_{-1\leq x\leq 1}2^{1-n}
 
 $\left|f\left(x\right)-P_{n}\left(x\right)\right|=\frac{1}{\left(n+1\right)!}\left|f^{\left(n+1\right)}\left(c\right)\underbrace{\prod_{i=0}^{n}\left(x-x_{i}\right)}_{T_{n+1}\left(x\right)/2^{n}}\right|\leq \frac{1}{2^{n}\left(n+1\right)!}\left|f^{\left(n+1\right)}\left(c\right)\right|, c\in \left(-1,1\right)$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/d54a8dfc7190084455f09c66017f9947da3aba6cc2222afddb2da0721efc1ca8.jpg)
+![](images/d54a8dfc7190084455f09c66017f9947da3aba6cc2222afddb2da0721efc1ca8.jpg)
 
 $T_{n}\left(x\right)=\cos((ncos^{-1}x))$ 的零点分布 $(n=15)$
 
@@ -1012,7 +1012,7 @@ $\left|f\left(x\right)-P_{n}\left(x\right)\right|=\frac{1}{\left(n+1\right)!}\le
 
 - 9次首一多项式 $\left(x-x_{0}\right)\ldots (x-x_{8})$ 在区间 $[-1,1]$ 的图像
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/3d320d39228c4a5ec33c12e3643dacce9b63e49f69539adcb45c78edb47789d1.jpg)
+![](images/3d320d39228c4a5ec33c12e3643dacce9b63e49f69539adcb45c78edb47789d1.jpg)
 
 $x_{i}$ 均匀分布
 
@@ -1032,7 +1032,7 @@ $\left|\sin(x)-P_{n}(x)\right|=\frac{\left|\left(x-x_{0}\right)\ldots (x-x_{n})\
 
 ## Chebyshev插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/b74080994e88aef0b75829124d818af4e6d5f209d0aa5d073988d00cc2f29869.jpg)
+![](images/b74080994e88aef0b75829124d818af4e6d5f209d0aa5d073988d00cc2f29869.jpg)
 
 $\sin(x)$ 的3次、9次多项式插值误差：实线为均匀插值；虚线为Chebyshev插值
 
@@ -1042,7 +1042,7 @@ $\sin(x)$ 的3次、9次多项式插值误差：实线为均匀插值；虚线�
 
 $f\left(x\right)=\frac{1}{1+25x^{2}}, x\in [-1,1]$
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/11155e324bbfd3c54c0329e6550da22a2ebb7941ab578a9ce7e96f7731551a2a.jpg)
+![](images/11155e324bbfd3c54c0329e6550da22a2ebb7941ab578a9ce7e96f7731551a2a.jpg)
 
 ## 样条插值
 
@@ -1055,7 +1055,7 @@ $f\left(x\right)=\frac{1}{1+25x^{2}}, x\in [-1,1]$
 
 ## 样条插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/8e2e47a061dbd9f8380159236eafad8b937639298f9b1da9f0a75cf737b8e4b0.jpg)
+![](images/8e2e47a061dbd9f8380159236eafad8b937639298f9b1da9f0a75cf737b8e4b0.jpg)
 
 - 0次样条（分段常值函数）
 
@@ -1069,7 +1069,7 @@ $\left|S\left(x\right)-f\left(x\right)\right|=\left|f^{'}\left(c_{i}\right)\left
 
 ## 样条插值
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/126a5658805c5416eb6a255ad6ee3d90ae1c00b4341b421485622a047063938f.jpg)
+![](images/126a5658805c5416eb6a255ad6ee3d90ae1c00b4341b421485622a047063938f.jpg)
 
 11个插值节点
 
@@ -1186,9 +1186,9 @@ $u$
 
 - 例：用自然三次样条插值龙格函数
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/ccbe5c9fc7c40722bdac8e76cec9ac85de862955ba6a4a7952e9d5c190ad83c5.jpg)
+![](images/ccbe5c9fc7c40722bdac8e76cec9ac85de862955ba6a4a7952e9d5c190ad83c5.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/1e914e1738014eb875156234a8dcb1b197aee3c851303ca044f853134abe6c34.jpg)
+![](images/1e914e1738014eb875156234a8dcb1b197aee3c851303ca044f853134abe6c34.jpg)
 
 7个插值节点
 
@@ -1270,15 +1270,15 @@ $\left[\begin{matrix}\delta _{1}+\frac{\delta _{0}}{2}&-\frac{\delta _{1}\left(\
 
 - 例：通过 $\left(0,3\right),\left(1,1\right),\left(2,4\right),\left(3,1\right),\left(4,2\right),(5,0)$ 的三次样条
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/46f6a27269335b408324e3b6ba1158296da4678306d44234d4cee285a16b8df7.jpg)
+![](images/46f6a27269335b408324e3b6ba1158296da4678306d44234d4cee285a16b8df7.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/91a6344c8463d20a9e11c63e52f15f4cb723a54003958acef745993152a6e043.jpg)
+![](images/91a6344c8463d20a9e11c63e52f15f4cb723a54003958acef745993152a6e043.jpg)
 
 非纽结样条自然样条
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/edbba4627f1d3a59b653b5b086428a5a8550eea4359f2ad2e0b1c7929e1d26ca.jpg)
+![](images/edbba4627f1d3a59b653b5b086428a5a8550eea4359f2ad2e0b1c7929e1d26ca.jpg)
 
-![](../../../../../../../04_Assets/Images/Courses/%E5%BD%92%E6%A1%A3/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/%E8%AF%BE%E4%BB%B6/MD/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%9007Interpolation/images/f7420e14fcd4208db2e2a149fbb5b86699baf8bcc74c4ced5f05d2d37b9917a7.jpg)
+![](images/f7420e14fcd4208db2e2a149fbb5b86699baf8bcc74c4ced5f05d2d37b9917a7.jpg)
 
 钳制样条（端点斜率为0）
 

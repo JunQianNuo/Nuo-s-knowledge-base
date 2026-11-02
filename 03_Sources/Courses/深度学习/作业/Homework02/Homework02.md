@@ -54,7 +54,7 @@ Exercise 5 (6pts)
 
 证明: 函数 $f ( x ) = 8 x _ { 1 } + 1 2 x _ { 2 } + x _ { 1 } ^ { 2 } - 2 x _ { 2 } ^ { 2 }$ 只有一个驻点, 且是鞍点.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E4%BD%9C%E4%B8%9A/Homework02/images/fc7e86cef3532a65fe4e4e948c999f523426a9381b96df55f5d5a6384ac9b47d.jpg)
+![](images/fc7e86cef3532a65fe4e4e948c999f523426a9381b96df55f5d5a6384ac9b47d.jpg)
 
 Exercise 6 (6pts)
 

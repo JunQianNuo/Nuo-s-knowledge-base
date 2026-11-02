@@ -14,7 +14,7 @@ yiqigu@uestc.edu.cn
 
 # 电子科技大学数学科学学院
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
+![](images/e771b16d615ba74e74070c52b016098d27a10db54187ae5c8ea199d41299c3f3.jpg)
 
 四、深度学习中的优化
 
@@ -90,7 +90,7 @@ $$
 
 即 $\theta ^ { * }$ 处的损失与全局最小损失比较接近, 那么我们认为 $\theta ^ { * }$ 是一个“好”的局部极小点.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/0f3f7215d9ef37e65573ce546f9ea047a36befcea9969e77649e3e949e580a53.jpg)
+![](images/0f3f7215d9ef37e65573ce546f9ea047a36befcea9969e77649e3e949e580a53.jpg)
 
 在优化 $\mathcal { L } ( \boldsymbol { \theta } )$ 时, 算法常常会找到一个局部极小点并徘徊在该点附近, 而不去寻找真正的全局极小点或者取值更低的其它局部极小点这是机器学习训练中的一个主要困难然而, 并不是所有局部极小点都是“不好”的. 设 $\theta ^ { * }$ 是一个局部极小点, 如果
 
@@ -100,18 +100,18 @@ $$
 
 即 $\theta ^ { * }$ 处的损失与全局最小损失比较接近, 那么我们认为 $\theta ^ { * }$ 是一个“好”的局部极小点.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/4d1007d6b144819ad781a6409eddb38d1e494160578fe44796075b813b76df72.jpg)
+![](images/4d1007d6b144819ad781a6409eddb38d1e494160578fe44796075b813b76df72.jpg)
 
 当使用全连接神经网络作为学习器时损失函数可能存在非常多的局部极小点其主要原因是全连接神经网络对参数的可辨识性较差 (教材P.174). 然而, 最新研究表明, 只要网络的宽度非常大相应损失函数的局部极小点大多数都会是好的当 L(θ) 连续可导时, 它的局部极小/大点处的偏导数一定为零. 但若某点处的偏导数为零, 该点未必是局部极值点, 还有可能是鞍点(saddel point). 对一个连续可导的高维函数, 偏导数为零的点大概率都是鞍点.
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/f402a6f144a77011e9fcb6f22a0c64dfc8ea1eb73c41347a01284078e782fb4a.jpg)  
+![](images/f402a6f144a77011e9fcb6f22a0c64dfc8ea1eb73c41347a01284078e782fb4a.jpg)  
 图维函数的鞍点相对于局部极小点带来的优化困难, 鞍点更加容易被克服, 尤其是沿负梯度方向进行优化时, 优化器总是能逃离鞍点某些损失函数, 可能不存在局部或全局极小点, 例如交叉熵损失函数 −lnf(x;θ), 或形如下图的函数
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/fb0f36a0f095754343a06518df1ba2dea8968e2b6f0b7c43f0526f2e55a952d6.jpg)
+![](images/fb0f36a0f095754343a06518df1ba2dea8968e2b6f0b7c43f0526f2e55a952d6.jpg)
 
 图: 当 L(θ) 的定义域 D 是开集时, 它在 D 上可能不存在全局极小点, 因为使得 L(θ) 取值最小的点趋近于 D 的边界使用优化器对损失函数进行优化时选取合适的初值十分重要在下图中我们试图沿负梯度方向下降搜索全局极小点如果初值选取在橙色点则优化器容易收敛到较差的局部极小点(绿色点).
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/21371c12ae97c88cea6dc4cc48f23d1acadcbb2da03af86bf6618e2143befa9d.jpg)
+![](images/21371c12ae97c88cea6dc4cc48f23d1acadcbb2da03af86bf6618e2143befa9d.jpg)
 
 ## 优化算法: 最速下降法由多元微积分的知识, 一个多元函数的图像, 沿着梯度方向上升最快, 沿着梯度相反方向(负梯度方向)下降最快. 而最速下降法(steepest descent method), 俗称梯度法, 即沿着损失函数的负梯度方向对变量进行迭代更新从而较快地降低损失函数的值
 
@@ -137,10 +137,10 @@ $$
 
 对 $0 < \eta < 1 / 8$ 和 $1 / 8 < \eta < 1 / 4$ 两种情形, 优化行为分别如下图所示
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/95e6cab298a8df1da66f4216dd7e68e2e48df6d39818dd92afe552ba680828cc.jpg)  
+![](images/95e6cab298a8df1da66f4216dd7e68e2e48df6d39818dd92afe552ba680828cc.jpg)  
 (c) $0 < \eta < 1 / 8$
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/2faf6295da1805cf894da3a528588e57b2e5fb3a2b3bddc4fb39ce1f91041cf3.jpg)  
+![](images/2faf6295da1805cf894da3a528588e57b2e5fb3a2b3bddc4fb39ce1f91041cf3.jpg)  
 (d) $1 / 8 < \eta < 1 / 4$
 
 而当 $\eta > 1 / 4$ 时上述迭代格式中的 $x _ { 2 } ^ { ( k ) }$ 是发散的即最速下降法不收敛
@@ -313,7 +313,7 @@ $$
 
 I 的选取可以是随机的, 如每次迭代时在 1,2,...,N 中按均匀分布选取 S 个互不相同的整数; 也可以是确定的, 如每次迭代时依次按先后顺序选取 S 个整数形成 I (如图所示)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/f08c00f724525eabc93b505e070453cdc644f1b657d6d37c4fc9ba573097e959.jpg)
+![](images/f08c00f724525eabc93b505e070453cdc644f1b657d6d37c4fc9ba573097e959.jpg)
 
 图: 将训练集均分为 $N / S$ 批, 每次迭代用其中的一批计算“随机”梯度. 在 N/S 次迭代完毕后, 整个训练集被完整用过一次, 之后可以重复前面步骤继续迭代. 每完整地遍历一次训练集称为一轮(epoch).
 
@@ -321,7 +321,7 @@ I 的选取可以是随机的, 如每次迭代时在 1,2,...,N 中按均匀分�
 
 I 的选取可以是随机的, 如每次迭代时在 1,2,...,N 中按均匀分布选取 S 个互不相同的整数; 也可以是确定的, 如每次迭代时依次按先后顺序选取 S 个整数形成 I (如图所示)
 
-![](../../../../../04_Assets/Images/Courses/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/PPT/Chapter4/images/70aad796f6260e014315ad7fbd7d250eb82e3b2010dede077476932c8b090fe7.jpg)
+![](images/70aad796f6260e014315ad7fbd7d250eb82e3b2010dede077476932c8b090fe7.jpg)
 
 图: 将训练集均分为 $N / S$ 批, 每次迭代用其中的一批计算“随机”梯度. 在 $N / S$ 次迭代完毕后整个训练集被完整用过一次, 之后可以重复前面步骤继续迭代. 每完整地遍历一次训练集称为一轮(epoch).
 
