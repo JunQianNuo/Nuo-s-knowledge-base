@@ -19,7 +19,7 @@ legacy_topics:
 - 惩罚参数
 - 人工变量
 - 两阶段法比较
-status: not done
+status: "done"
 ---
 
 # 考题 03

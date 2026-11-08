@@ -5,8 +5,10 @@ time: '2026-08-31T11:44:20+08:00'
 source:
 - '[[03_Sources/Reviews/归档/实变函数/复习/IV-Lp空间]]'
 - '[[03_Sources/Readings/核对资料/NIST-DLMF-积分变换]]'
+- '[[03_Sources/Courses/数学物理方程/课堂笔记/2026-11-06-第13节-积分变换与傅里叶变换课程]]'
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-数学物理方程]]'
 aliases: []
 tags:
 - 傅里叶变换
@@ -69,3 +71,12 @@ $$\|\hat{f}\|_2 = \|f\|_2 \quad (\text{Plancherel 定理}).$$
 - [[03_Sources/Courses/归档/实变函数/课件/MD/2023-RA-28]]
 
 上述为历史原始资料链接；本轮有效核对来源见 source 属性。
+
+
+## 数学物理方程中的非对称归一化约定（2026-11-08）
+
+本笔记上文采用对称归一化；数学物理方程课堂的一维约定是
+$$\widehat f(\omega)=\int_{\mathbb R}f(s)e^{-i\omega s}\,ds,\qquad f_*(x)=\frac1{2\pi}\int_{\mathbb R}\widehat f(\omega)e^{i\omega x}\,d\omega.$$
+两套定义不能混用常数。一维课堂像函数是上文像函数的 $\sqrt{2\pi}$ 倍；正逆前系数 $A,B$ 必须满足 $AB=1/(2\pi)$。$e^{\pm i\omega x}$ 为模长1的振荡因子，不是实指数衰减。
+
+逐点反演条件和截断解释见 [[01_Knowledge/傅里叶级数与傅里叶积分的中点收敛]]。改变单点值不改变积分变换，在 $L^1$ 中应按几乎处处相等识别，不能声称任意逐点不同的函数必有不同频谱。

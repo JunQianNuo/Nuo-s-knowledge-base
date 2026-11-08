@@ -3,6 +3,7 @@ schema_version: 2
 type: method
 source:
 - '[[03_Sources/Reviews/归档/数值分析/知识点解析梳理/05-对称正定线性方程组-知识梳理]]'
+- '[[03_Sources/Courses/归档/数值分析/作业/05-对称正定线性方程组/习题5.1]]'
 legacy_topics:
 - Cholesky分解
 - SPD
@@ -17,9 +18,10 @@ tags:
 - 直接法
 topics:
 - '[[02_Maps/MOC-数值计算]]'
+- '[[02_Maps/MOC-数值分析]]'
 prerequisites:
 - '[[01_Knowledge/对称正定矩阵]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 legacy_status: 已整理
 ---
 
@@ -172,3 +174,10 @@ flowchart TD
 
 ### 操作补充：链接的习题
 - [[03_Sources/Courses/归档/数值分析/习题库/05-对称正定线性方程组/README|第5章习题库]]
+
+
+## 2026-11-08 来源复核补充
+
+源习题5.1的顺序主子式为4、4、16，Cholesky下三角$L=\left(\begin{smallmatrix}2&0&0\\-1&1&0\\0&-1&2\end{smallmatrix}\right)$，两次三角求解得$x=(1,2,-1)^T$。
+
+对称非正定矩阵可考虑$LDL^T$；无主元且D为纯对角的形式需要相关前主子式非零，一般不定矩阵可能需要对称主元及2×2块D，不能无条件以无主元LDL替代。源补例$A=\left(\begin{smallmatrix}1&2&1\\2&2&0\\1&0&3\end{smallmatrix}\right)$有$D=\mathrm{diag}(1,-2,4)$、单位下三角$L=\left(\begin{smallmatrix}1&0&0\\2&1&0\\1&1&1\end{smallmatrix}\right)$，可用$Lz=b,Dy=z,L^Tx=y$求解。无开方不自动保证比Cholesky更稳定，也不能消除原问题的病态性。

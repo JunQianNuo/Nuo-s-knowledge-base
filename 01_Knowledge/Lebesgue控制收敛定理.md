@@ -3,8 +3,11 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/04-Lebesgue积分-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.16-控制收敛定理-习题]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.20-依测度收敛下的控制收敛定理-习题]]'
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 prerequisites:
 - '[[01_Knowledge/可测函数]]'
 - '[[01_Knowledge/Lebesgue积分]]'
@@ -28,7 +31,7 @@ tags:
 - Fatou引理
 legacy_topic_links:
 - '[[01_Knowledge/Lebesgue积分]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -161,3 +164,12 @@ $$
   - 习题 4.19：经典极限定义 $e$（DCT 应用）
   - 习题 4.20：依测度收敛下的控制收敛定理
   - 习题 4.21：有界收敛定理（BCT）
+
+
+## 本轮习题补充与边界核对
+
+控制条件应理解为对所有n（或删去有限首项后的所有n）成立，每项的a.e.例外可取可数并成为共同零测集；n不是带Lebesgue测度的变量。
+
+可直接以 $h_n=|f_n-f|$、$0\le h_n\le2F$，对 $2F-h_n$ 用Fatou，消去有限的 $2\int F$ 得 $\limsup\int h_n\le0$，从而 $L^1$ 收敛。这避免仅证明积分值收敛而遗漏强结论。
+
+依测度版本也成立：先由Riesz抽a.e.子列，得 $|f|\le F$ a.e.及f可积。若 $\int|f_n-f|$ 不趋0，取误差均大于固定ε的子列，再由Riesz抽a.e.子子列；用上面的DCT得该误差趋0，矛盾。原文“F必须有界”错误，F只需非负可积；无限测度反例可用 $\chi_{[n,n+1]}\to0$、积分恒1，而不是 $\chi_{[0,n]}$（后者积分极限与极限积分同为无穷）。

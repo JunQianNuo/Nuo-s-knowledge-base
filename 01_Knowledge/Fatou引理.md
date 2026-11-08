@@ -3,6 +3,8 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/04-Lebesgue积分-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.14-Fatou引理-习题]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.15-Fatou引理严格不等式示例-习题]]'
 legacy_topics:
 - Fatou引理
 - 下极限
@@ -20,9 +22,10 @@ tags:
 - 控制收敛定理
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 about:
 - '[[01_Knowledge/Lebesgue积分]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -179,3 +182,10 @@ $$
   - **习题 4.15** — Fatou 引理严格不等式示例（正态密度反例）
 - [[03_Sources/Courses/归档/实变函数/习题库/05-重积分与Lp空间/README|第5章习题库]]
   - **习题 5.12** — $L^p$ 空间的完备性（Riesz-Fischer），证明中用 Fatou 引理完成最后估计
+
+
+## 本轮习题补充与边界核对
+
+正态尖峰 $f_n=\sqrt{n/(2\pi)}e^{-nx^2/2}$ 用 $t=\sqrt n x$ 得每项积分1；x≠0时指数压过 $\sqrt n$ 趋0，x=0时趋无穷。极限函数a.e.为0、积分0，故严格不等式 $0<1$。这是质量集中，不是积分质量凭空消失；相应概率测度弱收敛到Dirac质量，密度的a.e.极限无法描述该奇异极限。
+
+对原文末尾“平移一个常数即可用Fatou”需限定该下界可积；无限测度空间上的正常数并不可积，不能随意消去两个无穷积分。

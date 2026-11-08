@@ -3,6 +3,7 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/最优化方法/知识点解析梳理/21-不等式约束优化问题-知识梳理]]'
+- '[[03_Sources/Courses/归档/最优化方法/作业/21-不等式约束优化问题/习题21.1]]'
 legacy_topics:
 - KKT条件
 - 约束优化
@@ -15,7 +16,7 @@ tags:
 - 互补松弛条件
 topics:
 - '[[02_Maps/MOC-最优化]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---

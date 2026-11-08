@@ -3,6 +3,7 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.2-Tonelli定理与Fubini定理的证明-习题]]'
 legacy_topics:
 - Fubini定理
 - Tonelli定理
@@ -18,7 +19,8 @@ tags:
 - 乘积测度
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
-time: "2026-08-31T11:44:20+08:00"
+- '[[02_Maps/MOC-实变函数]]'
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -68,3 +70,10 @@ $$\iint_{\mathbb{R}^{p+q}} f(x,y)\,dxdy = \int_{\mathbb{R}^p} \left[ \int_{\math
 - [[01_Knowledge/卷积]] — 卷积不等式的证明中大量使用 Fubini/Tonelli 交换积分次序。
 - [[01_Knowledge/Young不等式(卷积版)]] — 证明中通过 Tonelli 定理交换积分次序，再经 Hölder 不等式完成估计。
 - [[01_Knowledge/Plancherel定理]] — 证明 $\|\hat{f}\|_2 = \|f\|_2$ 时利用 Fubini 定理交换累次积分。
+
+
+## 本轮习题补充与边界核对
+
+证明的递进为特征函数→非负简单函数→一般非负函数：特征函数正是 [[01_Knowledge/截口]] 的测度公式；简单函数有限线性组合由可加性；一般 $f\ge0$ 取 $φ_k\uparrow f$，先在内积分、再在外积分各用一次Levi，得到Tonelli的扩展实值等式。换两个坐标方向同理。
+
+对有符号可积f，分别对f±用Tonelli，正负部总积分有限保证a.e.截面可积、部分积分可积并可相减，才得到Fubini等式。两定理给的是充分条件，不能声称“非负或绝对可积是所有积分交换情形的充要条件”。原文“L1是必要条件”的断言应撤回；条件收敛情形可能偶然等式成立但不能据此套Fubini。一般乘积σ代数上的Fubini无须先完备化；Lebesgue完备化情形以a.e.截面处理。

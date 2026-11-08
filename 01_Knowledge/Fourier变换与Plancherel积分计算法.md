@@ -5,8 +5,10 @@ time: '2026-08-31T11:44:20+08:00'
 source:
 - '[[03_Sources/Reviews/归档/实变函数/复习/IV-Lp空间]]'
 - '[[03_Sources/Readings/核对资料/NIST-DLMF-积分变换]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/例4.3.3-Gauss函数的Fourier变换-例题]]'
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 aliases:
 - Fourier变换求解法
 tags:
@@ -181,3 +183,14 @@ flowchart TD
 
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/考题-Fourier变换的核心性质]] — 卷积定理证明、Gauss 变换、Plancherel 陈述（考试级综合题）
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/考题-正交基与Fourier展开]] — 正交基、Fourier 展开与 Parseval 等式（离散版本对照）
+
+
+## 本轮习题补充与边界核对
+
+对χ[-1,1]直接积分得 $\hat f(t)=\sqrt{2/π}\sin t/t$，t=0按连续延拓为 $\sqrt{2/π}$。指数的虚部应为−sin(tx)，但此偶函数例中奇函数积分为0，不改结果。
+
+对 $f(x)=\sin x\,χ_{[-π,π]}(x)$，奇偶性消去余弦项，积化和差给
+$$\hat f(t)=\frac{i}{\sqrt{2π}}\left(\frac{\sin((t+1)π)}{t+1}-\frac{\sin((t-1)π)}{t-1}\right).$$
+t=±1处均用sin u/u→1作可去奇点延拓，分别为−iπ/√(2π)、iπ/√(2π)。
+
+对G=e^(−x²/2)，G'=−xG，Schwartz衰减允许积分分部及积分号下求导：$\widehat{G'}=it\hat G$、$\widehat{xG}=i\hat G'$，故 $it\hat G=-i\hat G'$，即 $\hat G'=-t\hat G$。初值 $\hat G(0)=1$ 给 $\hat G=e^{-t²/2}$。所有计算必须先固定指数符号和对称归一化。

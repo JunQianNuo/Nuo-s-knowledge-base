@@ -3,6 +3,7 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/04-Lebesgue积分-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.4-Levi单调收敛定理-习题]]'
 legacy_topics:
 - Levi定理
 - 单调收敛定理
@@ -19,11 +20,12 @@ tags:
 - Levi单调收敛定理
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 about:
 - '[[01_Knowledge/Lebesgue积分]]'
 legacy_topic_links:
 - '[[01_Knowledge/Lebesgue积分]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -138,3 +140,10 @@ $$
 - [[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.12-Lebesgue基本定理（级数逐项积分）-习题|习题4.12]] — 级数逐项积分（Levi 定理推论）
 - [[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.14-Fatou引理-习题|习题4.14]] — Fatou 引理（对比）
 - [[03_Sources/Courses/归档/实变函数/作业/04-Lebesgue积分/习题4.16-控制收敛定理-习题|习题4.16]] — 控制收敛定理（对比三大定理）
+
+
+## 本轮习题补充与边界核对
+
+单调性缺失时，非负移动指标函数χ_[k,k+1]处处趋0而积分恒1，足以说明不可任意删单调条件。α技巧中φ(x)=0的点从一开始就满足f_n≥αφ；φ(x)>0的点才需要用α<1的严格余量。a.e.条件先统一删去零测例外。
+
+原文变体g_n=n/(1+n²x²)在固定x上并不单调；换元后可应用Levi的对象是t↦χ_[0,n](t)/(1+t²)，它随n递增。一般有符号单调列也不能把正部和负部同时按非负递增版直接处理；需合适的可积下界等额外条件。

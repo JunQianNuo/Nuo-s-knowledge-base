@@ -25,7 +25,7 @@ legacy_topics:
 - Fourier展开
 - Parseval等式
 - L^2空间
-status: not done
+status: "done"
 ---
 
 # 考题：正交基与 Fourier 展开

@@ -9,6 +9,7 @@ filters:
     - type == "proposition"
     - type == "method"
   - or:
+    - topics.contains(link("02_Maps/MOC-大学物理"))
     - topics.contains(link("02_Maps/MOC-热学与量子"))
     - topics.contains(link("02_Maps/MOC-物理"))
 views:

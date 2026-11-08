@@ -9,6 +9,7 @@ filters:
     - type == "proposition"
     - type == "method"
   - or:
+    - topics.contains(link("02_Maps/MOC-泛函分析"))
     - topics.contains(link("02_Maps/MOC-集合与空间"))
 views:
 - type: table

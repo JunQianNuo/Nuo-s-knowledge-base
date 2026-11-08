@@ -3,6 +3,7 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.12-L^p空间的完备性（Riesz-Fischer定理）-习题]]'
 legacy_topics:
 - Riesz-Fisher定理
 - L^p空间
@@ -22,12 +23,13 @@ tags:
 - Fatou引理
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 about:
 - '[[01_Knowledge/L^p空间]]'
 legacy_topic_links:
 - '[[01_Knowledge/L^p空间]]'
 - '[[01_Knowledge/依测度收敛]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -231,3 +233,10 @@ $$
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.12-L^p空间的完备性（Riesz-Fischer定理）-习题|习题5.12]] — $L^p$ 空间完备性（Riesz-Fischer）的完整证明
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.10-L^p收敛蕴含依测度收敛（定理4.1.9）-习题|习题5.10]] — $L^p$ 收敛 $\Rightarrow$ 依测度收敛（证明链第一步）
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.18-Riemann可积函数空间在L^1范数下不完备-习题|习题5.18]] — Riemann 可积函数空间不完备（对照 Riesz-Fisher 完备性）
+
+
+## 本轮习题补充与边界核对
+
+对原证明可直接固定大n，对a.e.收敛子列f_{n_j}用Fatou得 $\|f_n-f\|_p^p\le\liminf_j\|f_n-f_{n_j}\|_p^p$；Cauchy性令右端任意小，再由 $|f|^p\le2^{p-1}(|f-f_n|^p+|f_n|^p)$ 确认f∈Lp。p=∞需把所有(n,m)本性界的零测例外统一取可数并，在余下集合一致Cauchy，取极限再取本性界，得到范数收敛及有界性。
+
+原文若干反例叙述应修正：普通打字机指标函数在有限区间已是Lp趋0、从而Cauchy、却处处不收敛，无需另作未定义的“归一化”。有限有理点指标函数的L1等价类全是0，极限也有黎曼可积代表0，故不能证明黎曼可积函数空间在L1下不完备。实际可取 $f_n=\min(n,x^{-1/2})$ 于(0,1]、在0置n，每项连续且L1趋 $x^{-1/2}$；此极限的等价类无有界代表，故无黎曼可积代表。

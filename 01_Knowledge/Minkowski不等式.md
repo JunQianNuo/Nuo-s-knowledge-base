@@ -3,6 +3,7 @@ schema_version: 2
 type: proposition
 source:
 - '[[03_Sources/Reviews/归档/实变函数/知识点解析梳理/05-重积分与Lp空间-知识梳理]]'
+- '[[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.7-Minkowski不等式（L^p三角不等式）-习题]]'
 legacy_topics:
 - Minkowski不等式
 - L^p三角不等式
@@ -20,11 +21,12 @@ tags:
 - 共轭指数
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
+- '[[02_Maps/MOC-实变函数]]'
 about:
 - '[[01_Knowledge/L^p空间]]'
 legacy_topic_links:
 - '[[01_Knowledge/Hölder不等式]]'
-time: "2026-08-31T11:44:20+08:00"
+time: '2026-08-31T11:44:20+08:00'
 aliases: []
 legacy_status: 已整理
 ---
@@ -211,3 +213,10 @@ $$
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.7-Minkowski不等式（L^p三角不等式）-习题|习题5.7]] — Minkowski 不等式（$L^p$ 三角不等式）的完整证明
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.6-Hölder不等式-习题|习题5.6]] — Hölder 不等式（Minkowski 证明的前置工具）
 - [[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/习题5.9-L^p范数的对偶表示（定理4.1.5）-习题|习题5.9]] — $L^p$ 范数的对偶表示（使用 Minkowski 与 Hölder）
+
+
+## 本轮习题补充与边界核对
+
+在约去 $\|f+g\|_p^{p-1}$ 之前，先以 $|f+g|^p\le2^{p-1}(|f|^p+|g|^p)$ 确保f+g∈Lp、范数有限，再区分零范数情形。随后用 $(p-1)q=p$ 的Hölder估计完成除法。齐次性直接由绝对值，正定性依赖“a.e.相等视为同一元素”的商空间约定。
+
+原文0<p<1时“三角不等式反向”的无条件表述不准确：一般有准三角型估计，普通范数三角不等式失败，但不能对任意有符号f,g统一反向；取g=-f即为反例。对1<p<∞，取等还应包括某一函数为零等退化情形。
