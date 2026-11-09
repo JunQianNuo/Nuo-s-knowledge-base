@@ -48,3 +48,8 @@ flowchart LR
 
 ![[99_System/knowledge/v2/generated/topics/44b68912e3fe.base]]
 <!-- v2-generated:end -->
+
+
+## 反馈与学习的概念边界
+
+[[01_Knowledge/反馈控制与强化学习的联系]]说明闭环信息结构的共同点，以及奖励学习与稳定性分析的不同关注点。9月7日课堂已完成归档。

@@ -13,4 +13,14 @@ source:
 ---
 # Softmax概率与交叉熵
 
-每样本logits z的p_j=e^{z_j}/∑e^{z_k}，one-hot真实类y的交叉熵−∑Y_j log p_j=−log p_y。批量(N,J)沿类别轴归一化再沿样本平均，不能跨样本归一化。稳定实现令m=max z，ℓ=−z_y+m+log∑exp(z_j−m)。PyTorch CrossEntropyLoss常直接收logits，整数标签是0起long或使用同形概率标签；不可把已Softmax概率再次当logits。分类并非数学上绝不允许平方损失，不同损失绝对数值不可直接排名。
+## 严格定义与核心内容
+
+每样本logits z的p_j=e^{z_j}/∑e^{z_k}，one-hot真实类y的交叉熵−∑Y_j log p_j=−log p_y。
+
+批量(N,J)沿类别轴归一化再沿样本平均，不能跨样本归一化。
+
+稳定实现令m=max z，ℓ=−z_y+m+log∑exp(z_j−m)。
+
+PyTorch CrossEntropyLoss常直接收logits，整数标签是0起long或使用同形概率标签；不可把已Softmax概率再次当logits。
+
+分类并非数学上绝不允许平方损失，不同损失绝对数值不可直接排名。

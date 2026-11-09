@@ -1,0 +1,56 @@
+{
+  "reference": "D:/知识库/03_Sources/Courses/泛函分析/作业/T3-T11.PDF",
+  "reference_sha256": "6c56a800e77c2542632f2736ba4a73a0796b8ad2e27c1ded71adb98f3d3e374e",
+  "output": "D:/知识库/03_Sources/Courses/泛函分析/作业/T14-T30-仿手写.pdf",
+  "assets": "D:/知识库/03_Sources/Courses/泛函分析/作业/T14-T30-仿手写素材",
+  "mode": "built-in image_gen",
+  "nature": "AI仿手写生成，非本人亲笔；字迹为近似模拟。",
+  "prompt": "Use case: scientific-educational. Create ONE portrait 3:4 full-page scanned handwritten Chinese functional-analysis homework page, ideally 1536x2048 or higher. Input images are STYLE REFERENCES only: imitate this writer's individual black pen Chinese semi-cursive handwriting, elongated slanted mathematical letters, irregular but readable baseline, variable natural stroke widths and spacing. Match the original plain white university letterhead paper, blue UESTC logo, Chinese and English university header and underline at top, with content beginning just below header. Same nearly straight-on scan, white background, no desk or hands. Preserve the reference header visually; do not copy the old homework body. This is a continuation page. Write ONLY the new exact content below in natural handwritten mathematical notation (render LaTeX as mathematical notation, never literal commands), fully correct Chinese characters, subscripts/superscripts, bounds and inequalities. Preserve all logic, do not invent or omit. Use full page width with safe 5% margins and no clipping. No signatures, no added names, no decorative captions, no printed/typeset body. Do not imitate accidental clipped content from reference. Fit about 30-36 lines below header by matching the reference's dense handwriting. ",
+  "pages": [
+    {
+      "page": 1,
+      "path": "C:\\Users\\Nuo\\.codex\\generated_images\\01a1aa56-1fce-7251-8331-9e10d2080c50\\exec-cb1152fe-dc1d-4dd3-907d-76b452eb6b50.png",
+      "content": "T14 证：设 {x_n}⊂E 为任意 Cauchy 列，则它也是 X 中的 Cauchy 列。由 X 完备，存在 x∈X，使 d(x_n,x)→0。又 E 闭，故 x∈E。因此 E 中每个 Cauchy 列均收敛于 E，E 完备。\n\nT15 证：记 R_k x=(0,…,0,ξ_k,ξ_{k+1},…)，则\n‖R_k x‖_p^p=∑_{j=k}^∞|ξ_j|^p，且 ‖R_k(x-y)‖_p≤‖x-y‖_p。\n必要性：设 S 列紧，则 S 完全有界。取有限 1-网 {z¹,…,zᵐ}，对任意 x∈S，有\n‖x‖_p≤1+max_i‖zⁱ‖_p=:C。\n故 ∑_{j=1}^∞|ξ_j|^p≤C^p，条件①成立。\n任给 ε>0，令 δ=ε^{1/p}/3，取有限 δ-网 {y¹,…,yˡ}。各网点属于 ℓ^p，可取同一 N，使 ‖R_N yⁱ‖_p<δ（i=1,…,l）。\n对 x∈S，选 i 使 ‖x-yⁱ‖_p<δ。当 k≥N 时，\n‖R_k x‖_p≤‖x-yⁱ‖_p+‖R_N yⁱ‖_p<2δ<ε^{1/p}。\n故 ∑_{j=k}^∞|ξ_j|^p<ε，条件②成立。\n充分性：设①②成立，任取 {x_m}⊂S，写 x_m=(ξ_j^{(m)})。\n由①，每个坐标满足 |ξ_j^{(m)}|≤M^{1/p}。\n逐坐标抽收敛子列，再取对角线子列 {x_{m_l}}，则每个固定 j 的 ξ_j^{(m_l)} 均收敛。\n任给 η>0，由②选 N，使对所有 x∈S 有 ‖R_N x‖_p≤η/4。\n由前 N−1 个坐标为 Cauchy，可取 L，使 l,h≥L 时，\n(∑_{j=1}^{N−1}|ξ_j^{(m_l)}−ξ_j^{(m_h)}|^p)^{1/p}<η/2。\n所以\n‖x_{m_l}−x_{m_h}‖_p\n≤(∑_{j=1}^{N−1}|ξ_j^{(m_l)}−ξ_j^{(m_h)}|^p)^{1/p}\n  +‖R_N x_{m_l}‖_p+‖R_N x_{m_h}‖_p\n<η/2+η/4+η/4=η。\n故此子列为 Cauchy。由第9题，ℓ^p 完备，故子列在 ℓ^p 中收敛，S 列紧。\n此处列紧指子列在环境空间收敛，不要求极限属于 S。",
+      "asset": "D:\\知识库\\03_Sources\\Courses\\泛函分析\\作业\\T14-T30-仿手写素材\\page-01.png",
+      "sha256": "09bb5fcac84c7ae64b0b24f61f7c24133001827be75c7b562ac65c9285bcab8d",
+      "pixel_size": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "page": 2,
+      "path": "C:\\Users\\Nuo\\.codex\\generated_images\\01a1aa56-1fce-7251-8331-9e10d2080c50\\exec-5ad3c503-8166-4d3a-a44e-09c9575485e9.png",
+      "content": "T16 证：先说明 (s) 中距离收敛必推出逐坐标收敛。固定 j，\n0≤2^{−j} |ξ_j^{(m)}−ξ_j|/(1+|ξ_j^{(m)}−ξ_j|)≤d_s(x_m,x)。\n若右边趋于0，则 ξ_j^{(m)}→ξ_j。\n必要性：设 S 列紧。若第 j 个坐标在 S 上无界，可选 x_m∈S，使 |ξ_j^{(m)}|>m。\n列紧性给出收敛子列 x_{m_l}，其第 j 个坐标应收敛。但 |ξ_j^{(m_l)}|>m_l→∞，矛盾。故各坐标分别有界。\n充分性：任取 {x_m}⊂S，各坐标列均有界。\n依次对第1、2、…个坐标抽子列，取对角线子列 {x_{m_l}}，使每个固定 j 都有 ξ_j^{(m_l)}→ξ_j。\n令 x=(ξ_j)∈(s)。由第3题，逐坐标收敛推出 d_s(x_{m_l},x)→0。故 S 列紧。\n\nT23 证：先设 X 为 Banach 空间，且 ∑_{n=1}^∞‖x_n‖<∞。\n令 s_k=∑_{n=1}^k x_n。m>k 时，\n‖s_m−s_k‖≤∑_{n=k+1}^m‖x_n‖→0（k→∞）。\n故 {s_k} 为 Cauchy 列，由完备性在 X 中收敛，原级数收敛。\n反之，设 X 中每个绝对收敛级数均收敛。任取 Cauchy 列 {u_n}。\n由 Cauchy 性，可选严格递增指标 n_k，使\n‖u_{n_{k+1}}−u_{n_k}‖<2^{−k}，k≥1。\n于是 ∑_{k=1}^∞‖u_{n_{k+1}}−u_{n_k}‖≤∑_{k=1}^∞2^{−k}<∞。\n由假设，∑_{k=1}^∞(u_{n_{k+1}}−u_{n_k}) 收敛于某个 v∈X。\n其第 K 个部分和为 u_{n_{K+1}}−u_{n_1}，故 u_{n_k}→u:=u_{n_1}+v∈X。\n任给 ε>0，选 N，使 n,m≥N 时 ‖u_n−u_m‖<ε/2。\n再固定充分大的 k，使 n_k≥N 且 ‖u_{n_k}−u‖<ε/2。\n则 n≥N 时，‖u_n−u‖≤‖u_n−u_{n_k}‖+‖u_{n_k}−u‖<ε。\n故 u_n→u，X 完备，即 X 是 Banach 空间。",
+      "asset": "D:\\知识库\\03_Sources\\Courses\\泛函分析\\作业\\T14-T30-仿手写素材\\page-02.png",
+      "sha256": "1f0ad199bf0053be267a5498249446ea5fec71f7811b8c5e2b3764626fcd8af4",
+      "pixel_size": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "page": 3,
+      "path": "C:\\Users\\Nuo\\.codex\\generated_images\\01a1aa56-1fce-7251-8331-9e10d2080c50\\exec-28b1842c-8360-4e80-ab3d-4ea35308dc20.png",
+      "content": "T24 证：若 X={0}，结论显然。设 dim X=n≥1，取一组基 e₁,…,e_n。\n由有限维坐标引理，存在 μ>0，使\n∑_{j=1}^n|α_j|≤μ‖∑_{j=1}^n α_j e_j‖_X。\n任取 x=∑_{j=1}^n α_j e_j，由 T 线性得\n‖Tx‖_Y=‖∑_{j=1}^n α_j Te_j‖_Y\n≤∑_{j=1}^n|α_j|‖Te_j‖_Y\n≤μ max_{1≤j≤n}‖Te_j‖_Y ·‖x‖_X。\n故 T 有界。又\nR(T)=span{Te₁,…,Te_n}，\n所以 dim R(T)≤n，值域也有限维。\n\nT25 证：先设 x₁,…,x_n 线性无关。若\n∑_{j=1}^n α_j Tx_j=0，\n则 T(∑_{j=1}^n α_j x_j)=0=T0。\n由 T 单射，∑_{j=1}^n α_j x_j=0。\n再由原向量组线性无关，得 α₁=…=α_n=0。\n所以 Tx₁,…,Tx_n 线性无关。\n反之，设 Tx₁,…,Tx_n 线性无关。若 ∑_{j=1}^n α_j x_j=0，\n两边作用 T，得 ∑_{j=1}^n α_j Tx_j=0，\n故所有 α_j=0。于是 x₁,…,x_n 线性无关。\n\nT27 证：设 TS=ST=I。\n若 Tx=Ty，则作用 S 得 STx=STy，即 x=y，所以 T 单射。\n任取 y∈X，令 x=Sy，则 Tx=TSy=y，所以 T 满射。\n故 T 为双射，且对每个 y，T(Sy)=y，由原像唯一性，\nT⁻¹y=Sy，即 T⁻¹=S。\n因 S 已为有界线性算子，故 T 有界可逆。\n反之，若 T 有界可逆，则对任意 x,y∈X，\nT(T⁻¹y)=y，T⁻¹(Tx)=x，\n所以 TT⁻¹=T⁻¹T=I。",
+      "asset": "D:\\知识库\\03_Sources\\Courses\\泛函分析\\作业\\T14-T30-仿手写素材\\page-03.png",
+      "sha256": "a03da440b9e17d5005bfce9cb01a2851b17fb74794a3b3965febe4e220f4667e",
+      "pixel_size": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "page": 4,
+      "path": "C:\\Users\\Nuo\\.codex\\generated_images\\01a1aa56-1fce-7251-8331-9e10d2080c50\\exec-ae5108e7-d342-4143-8232-3272bd525f82.png",
+      "content": "T30 证：令 C=(∫₀¹∫₀¹|K(t,s)|² ds dt)^{1/2}<∞。\n非负函数由 Tonelli 定理可交换积分次序。\n在 L²[0,1] 上定义 (Ax)(t)=∫₀¹ K(t,s)x(s) ds。\n由 Tonelli 定理，几乎处处的 t 满足 K(t,·)∈L²[0,1]。\n对这些 t，由 Cauchy–Schwarz 不等式，\n|(Ax)(t)|²≤(∫₀¹|K(t,s)|² ds)‖x‖₂²。\n异常零测集上补定义 Ax=0。又在乘积空间用 Schwarz 不等式，\n∫₀¹∫₀¹|K(t,s)x(s)| ds dt\n≤(∫₀¹∫₀¹|K(t,s)|² ds dt)^{1/2}\n ·(∫₀¹∫₀¹|x(s)|² ds dt)^{1/2}\n=C‖x‖₂<∞。\n由 Fubini 定理，Ax 可测。对上述平方估计再关于 t 积分，得\n‖Ax‖₂²≤C²‖x‖₂²，即 ‖Ax‖₂≤C‖x‖₂。\n所以 A 是 L² 到自身的有界线性算子。\n此估计也表明更换 x 的几乎处处相等代表，不改变 Ax 的等价类。\n令 Φx=f+λAx。因 f,Ax∈L²，故 Φ 是 L² 上的自映射。\n任意 x,y∈L²，有\n‖Φx−Φy‖₂=|λ|‖A(x−y)‖₂\n≤|λ|C‖x−y‖₂。\n若 C>0，取 |λ|<1/C，则 q=|λ|C<1，Φ 为压缩映射。\nL²[0,1] 完备，故由压缩映象原理，存在唯一 x∈L²，使\nx=Φx=f+λAx，\n即 x(t)=f(t)+λ∫₀¹ K(t,s)x(s) ds，几乎处处成立。\n所以当 |λ|C<1 时，原方程在 L² 中有唯一解。\n若 C=0，则 K=0 几乎处处，A=0，此时任意 λ 均有唯一解 x=f。\n唯一性均按 L² 等价类理解。",
+      "asset": "D:\\知识库\\03_Sources\\Courses\\泛函分析\\作业\\T14-T30-仿手写素材\\page-04.png",
+      "sha256": "0bd15d8ead35d2af29e5fd5aa949024f0f57f8bb0c5c048c83a671fd9caaa8ff",
+      "pixel_size": [
+        1086,
+        1448
+      ]
+    }
+  ],
+  "output_sha256": "ef0b4ae35031a7ba22a0a0e0898f36f3fd29c63458666e8b8e99ea711e9e6d4c"
+}

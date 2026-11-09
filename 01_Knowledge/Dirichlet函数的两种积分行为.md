@@ -13,9 +13,16 @@ tags:
 - Dirichlet函数
 - Lebesgue积分
 ---
-
 # Dirichlet函数的两种积分行为
 
-在任意非退化有界区间 $I$，$D=\chi_{\mathbb Q\cap I}$ 与 $1-D$ 均处处不连续。任意分割的每个子区间都有有理、无理点，故下Darboux和为0、上和为 $m(I)$，两者都不可黎曼积。
+## 适用条件与结论
 
-有理数可数、零测，所以 $D$ 可测且 a.e. 为0，Lebesgue积分0；$1-D$ 可测且 a.e. 为1，Lebesgue积分 $m(I)$。直接水平集判定中，$0\le t<1$ 时 $\{D>t\}=\mathbb Q\cap I$，其他阈值给全集或空集。在全 $\mathbb R$ 上，$1-\chi_\mathbb Q$ 的积分为无穷，不能称 $L^1(\mathbb R)$ 可积。
+在任意非退化有界区间 $I$，$D=\chi_{\mathbb Q\cap I}$ 与 $1-D$ 均处处不连续。
+
+任意分割的每个子区间都有有理、无理点，故下Darboux和为0、上和为 $m(I)$，两者都不可黎曼积。
+
+有理数可数、零测，所以 $D$ 可测且 a.e. 为0，Lebesgue积分0；$1-D$ 可测且 a.e. 为1，Lebesgue积分 $m(I)$。
+
+直接水平集判定中，$0\le t<1$ 时 $\{D>t\}=\mathbb Q\cap I$，其他阈值给全集或空集。
+
+在全 $\mathbb R$ 上，$1-\chi_\mathbb Q$ 的积分为无穷，不能称 $L^1(\mathbb R)$ 可积。

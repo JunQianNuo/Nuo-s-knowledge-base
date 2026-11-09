@@ -29,7 +29,7 @@ legacy_topics:
 - 条件编译
 - argc
 - argv
-status: not done
+status: "done"
 polish_status: done
 lecture_date: '2026-09-21'
 ---
