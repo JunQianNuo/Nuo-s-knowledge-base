@@ -90,7 +90,10 @@
             "max"
           ]
         }
-      ]
+      ],
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {},
+      "sessionEnvironmentHash": ""
     },
     "codex": {
       "enabled": true,
@@ -110,6 +113,7 @@
       "reasoningSummary": "concise",
       "environmentVariables": "",
       "environmentHash": "runtime-input:v1:dd2c1d1b26c231d67117288c82b0ee4e281a1adb60ceb05f5ebba3aff1834e8b",
+      "sessionEnvironmentHash": "runtime-input:v1:cf4a613a63a895356fbc95544817979656506c93b9fb3fe1c76833522e1c19fc",
       "installationMethodsByHost": {
         "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "native-windows"
       },
@@ -217,9 +221,13 @@
       "preferredThinkingByModel": {},
       "thinkingOptionsByModel": {},
       "visibleModels": [],
-      "selectedModels": []
+      "selectedModels": [],
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {}
     },
     "pi": {
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {},
       "cliPath": "",
       "cliPathsByHost": {},
       "enabled": false,
@@ -227,10 +235,14 @@
       "environmentVariables": "",
       "modelAliases": {},
       "preferredThinkingByModel": {},
+      "sessionEnvironmentHash": "",
       "visibleModels": [],
       "selectedModels": []
     },
     "grok": {
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {},
+      "sessionEnvironmentHash": "",
       "cliPath": "",
       "cliPathsByHost": {},
       "enabled": false,
@@ -335,7 +347,21 @@
           ],
           "available": true
         }
-      ]
+      ],
+      "installationMethodsByHost": {},
+      "wslDistroOverridesByHost": {}
+    },
+    "antigravity": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredReasoningByModel": {},
+      "sessionStoreHash": "",
+      "visibleModels": [],
+      "selectedModelsByHost": {}
     }
   },
   "settingsProvider": "claude",
@@ -343,8 +369,10 @@
     "providerId": "codex",
     "model": "openai-codex/gpt-6.1-sol"
   },
+  "inlineEditModel": null,
   "savedProviderModel": {
-    "claude": "opus"
+    "claude": "opus",
+    "codex": "openai-codex/gpt-6.1-sol"
   },
   "savedProviderEffort": {
     "claude": "high",
@@ -362,6 +390,7 @@
   "enableAutoScroll": true,
   "showMessageTimestamps": false,
   "deferMathRenderingDuringStreaming": true,
+  "pluginRenderedFenceLanguages": [],
   "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
   "enableZenMode": true,

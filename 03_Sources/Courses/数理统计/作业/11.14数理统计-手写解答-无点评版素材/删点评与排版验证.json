@@ -1,0 +1,269 @@
+{
+  "request": "Only necessary solution steps and requested conclusions in handwritten PDF; leave Markdown explanatory notes unchanged.",
+  "inherited_style": {
+    "spacing": "same compact spacing",
+    "vertical_strength": 0.4,
+    "artificial_corrections": 0
+  },
+  "pages": [
+    {
+      "page": 1,
+      "exercises": [
+        1,
+        2
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-01.png",
+      "source_sha256": "13ff15190ba893cdfd6a10e3a9ab2cb22e39cdf8efc964153203341d8341c51d",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            827
+          ],
+          "destination_rows": [
+            220,
+            827
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            877,
+            1370
+          ],
+          "destination_rows": [
+            847,
+            1340
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T1实际配对测量的另行提醒"
+      ],
+      "localized_removals": []
+    },
+    {
+      "page": 2,
+      "exercises": [
+        3,
+        4
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-02.png",
+      "source_sha256": "d2cade22037e362e8dcfd29bcc57bfdcd2e8ae81e150ba79f4383a205304eca8",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            759
+          ],
+          "destination_rows": [
+            220,
+            759
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            875,
+            1280
+          ],
+          "destination_rows": [
+            779,
+            1184
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T3结论后的估参校准点评和分组MLE补充",
+        "T4结论后的分组MLE补充及泊松过程提醒"
+      ],
+      "localized_removals": [
+        {
+          "box": [
+            458,
+            1277,
+            474,
+            1288
+          ],
+          "reason": "isolated hat from removed T4 grouped-MLE line"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "exercises": [
+        5,
+        7
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-03.png",
+      "source_sha256": "b136453a5bfd0060c47ad06f8aee483f60ff1c9868694844e8ab3a625c647a95",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            735
+          ],
+          "destination_rows": [
+            220,
+            735
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            783,
+            1353
+          ],
+          "destination_rows": [
+            755,
+            1325
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T5关于π确定性、独立性和正规性的点评",
+        "T7等样本量与配对设计提醒"
+      ],
+      "localized_removals": []
+    },
+    {
+      "page": 4,
+      "exercises": [
+        8,
+        9
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-04.png",
+      "source_sha256": "ff03560eac452dee7a2d444a055791524e379dd5cefc6e32a898a22d68ae6365",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            770
+          ],
+          "destination_rows": [
+            220,
+            770
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            852,
+            1410
+          ],
+          "destination_rows": [
+            790,
+            1348
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T8不拒绝不等于证明无关及吸烟无害的点评",
+        "T9固定非零均值差的结尾提醒"
+      ],
+      "localized_removals": [
+        {
+          "box": [
+            292,
+            1360,
+            1086,
+            1410
+          ],
+          "reason": "T9 inline final commentary after completed epsilon conclusion"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "exercises": [
+        10,
+        14
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-05.png",
+      "source_sha256": "32eefb7b9f6efcba2aebef1b1fff0c387591a2072380a1e324756319868af5df",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            732
+          ],
+          "destination_rows": [
+            220,
+            732
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            857,
+            1302
+          ],
+          "destination_rows": [
+            752,
+            1197
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T10有限小数不严格相等、交集歧义及功效的额外讨论",
+        "T14充分样本量与实际最小次数的点评"
+      ],
+      "localized_removals": []
+    },
+    {
+      "page": 6,
+      "exercises": [
+        15,
+        18
+      ],
+      "source": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-紧凑无涂改-上下扰动0.4倍素材\\page-06.png",
+      "source_sha256": "4bd41100a35fe7ce6b6dee356ef4604cc60d7f323fbe2690ef00e73e5ca5cc6e",
+      "retained_blocks": [
+        {
+          "source_rows": [
+            220,
+            673
+          ],
+          "destination_rows": [
+            220,
+            673
+          ],
+          "all_retained_pixels_exact": true
+        },
+        {
+          "source_rows": [
+            753,
+            1359
+          ],
+          "destination_rows": [
+            693,
+            1299
+          ],
+          "all_retained_pixels_exact": true
+        }
+      ],
+      "removed_commentary": [
+        "T15全长、整数进位及缺少数值参数的提醒",
+        "T18不得改换显著性水平的结尾提醒"
+      ],
+      "localized_removals": []
+    }
+  ],
+  "checks": {
+    "page_count": 6,
+    "all_12_exercises_present": true,
+    "kept_solution_blocks_pixel_identical": true,
+    "no_strokes_cut_at_section_boundaries": true,
+    "all_source_files_unchanged": true,
+    "markdown_notes_unchanged": true,
+    "pdf_images_lossless": true
+  },
+  "final_sha256": "5c952c21d1797a41533f97782243ed7eb320fa6d98d513da26aff57d82788324",
+  "visual_review": "All six rendered PDF pages inspected. Each assigned answer ends at the calculation/proof and requested conclusion. Commentary, warning tails and grouped-MLE supplements removed; T9 quantitative epsilon conclusion retained without its final caveat. No clipped strokes or formulas. Compact spacing, 0.4 vertical perturbation and no artificial corrections preserved.",
+  "output": "D:\\知识库\\03_Sources\\Courses\\数理统计\\作业\\11.14数理统计-手写解答-无点评版.pdf"
+}
