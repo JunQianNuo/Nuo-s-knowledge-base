@@ -71,6 +71,19 @@ views:
   - polish_status
   - subject
 - type: table
+  name: 字迹参考
+  filters:
+    or:
+    - file.inFolder("03_Sources/Courses/字迹参考")
+    - subject.contains("字迹参考")
+  order:
+  - file.name
+  - file.ext
+  - type
+  - status
+  - polish_status
+  - subject
+- type: table
   name: 实变函数
   filters:
     or:
