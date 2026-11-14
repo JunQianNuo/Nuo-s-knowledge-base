@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+<rect width="1100" height="420" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#506574"/></marker></defs>
+<text x="550" y="35" fill="#112C43" font-size="30" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">幽灵值是邻居拥有值的副本</text>
+<text x="85" y="110" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">rank 0</text>
+<rect x="180" y="75" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="235.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">20</text>
+<rect x="315" y="75" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="370.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">101</text>
+<rect x="450" y="75" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="505.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">102</text>
+<rect x="585" y="75" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="640.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">103</text>
+<rect x="720" y="75" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="775.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">104</text>
+<rect x="855" y="75" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="910.0" y="110.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">105</text>
+<text x="85" y="205" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">rank 1</text>
+<rect x="180" y="170" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="235.0" y="205.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">104</text>
+<rect x="315" y="170" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="370.0" y="205.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">105</text>
+<rect x="450" y="170" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="505.0" y="205.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">106</text>
+<rect x="585" y="170" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="640.0" y="205.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">107</text>
+<rect x="720" y="170" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="775.0" y="205.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">108</text>
+<text x="85" y="300" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">rank 2</text>
+<rect x="180" y="265" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="235.0" y="300.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">107</text>
+<rect x="315" y="265" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="370.0" y="300.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">108</text>
+<rect x="450" y="265" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="505.0" y="300.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">109</text>
+<rect x="585" y="265" width="110" height="55" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="640.0" y="300.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">110</text>
+<rect x="720" y="265" width="110" height="55" rx="8" fill="#F7FAFB" stroke="#D78738" stroke-width="2"/>
+<text x="775.0" y="300.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">20</text>
+<text x="550" y="382" fill="#112C43" font-size="22" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">青色：拥有值　橙色边框：ghost / 物理边界；值 = 100 + 全局 i</text>
+</svg>

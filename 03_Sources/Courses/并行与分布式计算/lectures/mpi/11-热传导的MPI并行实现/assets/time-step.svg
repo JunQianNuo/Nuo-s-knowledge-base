@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300">
+<rect width="1100" height="300" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#506574"/></marker></defs>
+<text x="550" y="40" fill="#112C43" font-size="30" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">每个时间步：先准备旧层邻居，再更新拥有值</text>
+<rect x="35" y="110" width="210" height="65" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="140.0" y="150.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">设置物理边界</text>
+<rect x="290" y="110" width="210" height="65" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="395.0" y="150.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">交换旧层 halo</text>
+<rect x="545" y="110" width="210" height="65" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="650.0" y="150.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">计算 next[1..m]</text>
+<rect x="800" y="110" width="260" height="65" rx="8" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="930.0" y="150.5" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">交换 old / next</text>
+<path d="M249,142 L284,142" stroke="#506574" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M504,142 L539,142" stroke="#506574" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M759,142 L794,142" stroke="#506574" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<text x="550" y="225" fill="#112C43" font-size="24" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">所有更新只读同一旧层；每步不额外加入全局 Barrier</text>
+<text x="550" y="267" fill="#112C43" font-size="22" text-anchor="middle" font-family="Arial, PingFang SC, sans-serif">下一步重复上述顺序；ghost 不作为额外未知量更新</text>
+</svg>

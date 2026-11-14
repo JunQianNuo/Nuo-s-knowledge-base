@@ -1,0 +1,4 @@
+rank first_i count left_ghost right_ghost
+0 1 4 20 105
+1 5 3 104 108
+2 8 3 107 20

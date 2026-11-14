@@ -112,10 +112,10 @@
       "responseVerbosity": "low",
       "reasoningSummary": "concise",
       "environmentVariables": "",
-      "environmentHash": "runtime-input:v1:dd2c1d1b26c231d67117288c82b0ee4e281a1adb60ceb05f5ebba3aff1834e8b",
-      "sessionEnvironmentHash": "runtime-input:v1:cf4a613a63a895356fbc95544817979656506c93b9fb3fe1c76833522e1c19fc",
+      "environmentHash": "runtime-input:v1:9aa0899a345fafb588f4a2f98059834bbb4a13cf32b6c69c0c5eab0a1ac5c348",
+      "sessionEnvironmentHash": "runtime-input:v1:9e0f7108d231cadd38bfd9ad8f50c28b43895bad58cecec8680f299cbfac5316",
       "installationMethodsByHost": {
-        "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "native-windows"
+        "device-1fdd4c6e81c83971efaa7ae0c342db71bf159596da0316580524feb31605e6a5": "wsl"
       },
       "wslDistroOverridesByHost": {},
       "selectedModels": [

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">邻居值复制到本地 ghost 缓冲区</title><desc id="desc">非周期进程链0到3；每rank自己的值分别为10到13，交换后左ghost分别为无邻居10、11、12；右ghost分别11、12、13、无邻居。发送并不改变本地拥有的值。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker></defs>
+<rect width="1200" height="720" fill="white"/>
+<text x="42" y="50" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="start">邻居交换：获得副本，保留自己的值</text>
+<text x="42" y="91" font-size="23" font-weight="400" style="fill:#506574" text-anchor="start">非周期链：rank 0 与 rank 3 不直接相连；local = 10 + rank。</text>
+<text x="170" y="150" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="75" y="172" width="190" height="72" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="170" y="217" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 10</text>
+<path d="M275 208L350 208" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="455" y="150" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="360" y="172" width="190" height="72" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="455" y="217" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 11</text>
+<path d="M560 208L635 208" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="740" y="150" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 2</text>
+<rect x="645" y="172" width="190" height="72" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="740" y="217" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 12</text>
+<path d="M845 208L920 208" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="1025" y="150" font-size="25" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 3</text>
+<rect x="930" y="172" width="190" height="72" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="1025" y="217" font-size="27" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 13</text>
+<text x="600" y="296" font-size="25" font-weight="700" style="fill:#147F85" text-anchor="middle">两次 Sendrecv：向右发／从左收，再向左发／从右收</text>
+<rect x="48" y="334" width="244" height="181" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="170" y="372" font-size="22" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0 的本地内存</text>
+<rect x="60" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="95" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">—</text>
+<text x="95" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">left</text>
+<rect x="135" y="393" width="70" height="65" rx="7" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="170" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">10</text>
+<text x="170" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">local</text>
+<rect x="210" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="245" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">11</text>
+<text x="245" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">right</text>
+<rect x="333" y="334" width="244" height="181" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="455" y="372" font-size="22" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1 的本地内存</text>
+<rect x="345" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="380" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">10</text>
+<text x="380" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">left</text>
+<rect x="420" y="393" width="70" height="65" rx="7" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="455" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">11</text>
+<text x="455" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">local</text>
+<rect x="495" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="530" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">12</text>
+<text x="530" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">right</text>
+<rect x="618" y="334" width="244" height="181" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="740" y="372" font-size="22" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 2 的本地内存</text>
+<rect x="630" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="665" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">11</text>
+<text x="665" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">left</text>
+<rect x="705" y="393" width="70" height="65" rx="7" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="740" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">12</text>
+<text x="740" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">local</text>
+<rect x="780" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="815" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">13</text>
+<text x="815" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">right</text>
+<rect x="903" y="334" width="244" height="181" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="1025" y="372" font-size="22" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 3 的本地内存</text>
+<rect x="915" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="950" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">12</text>
+<text x="950" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">left</text>
+<rect x="990" y="393" width="70" height="65" rx="7" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="1025" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">13</text>
+<text x="1025" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">local</text>
+<rect x="1065" y="393" width="70" height="65" rx="7" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="1100" y="436" font-size="30" font-weight="700" style="fill:#112C43" text-anchor="middle">—</text>
+<text x="1100" y="490" font-size="19" font-weight="400" style="fill:#506574" text-anchor="middle" class="code">right</text>
+<rect x="42" y="556" width="1116" height="112" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="66" y="593" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="start">— 表示没有该方向的真实邻居；对应 source 使用 MPI_PROC_NULL。</text>
+<text x="66" y="635" font-size="23" font-weight="400" style="fill:#112C43" text-anchor="start">接收缓冲区保持原值，程序需先初始化；MPI 不会自动填入物理边界条件。</text>
+</svg>

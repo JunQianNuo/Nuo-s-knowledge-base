@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">排序中的比较交换与网格边界副本</title><desc id="desc">左侧排序将9和3在相邻rank中变为3和9；右侧边界通信中拥有者的local9和3保留，分别接收邻居的3和9作ghost副本。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker></defs>
+<rect width="1200" height="720" fill="white"/>
+<text x="42" y="50" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="start">同样交换数据，交换后的用途由算法决定</text>
+<text x="42" y="91" font-size="23" font-weight="400" style="fill:#506574" text-anchor="start">通信提供邻居值；比较、保留或计算新状态，是应用程序的工作。</text>
+<rect x="42" y="126" width="538" height="496" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<rect x="620" y="126" width="538" height="496" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="311" y="173" font-size="28" font-weight="700" style="fill:#147F85" text-anchor="middle">排序：重新分配数据</text>
+<text x="889" y="173" font-size="28" font-weight="700" style="fill:#147F85" text-anchor="middle">网格：保存邻居副本</text>
+<text x="175" y="220" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="115" y="240" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="175" y="286" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">9</text>
+<text x="445" y="220" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="385" y="240" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="445" y="286" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">3</text>
+<path d="M250 275L370 275" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="753" y="220" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="693" y="240" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="753" y="286" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">9</text>
+<text x="1023" y="220" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="963" y="240" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="1023" y="286" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">3</text>
+<path d="M828 275L948 275" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M175 323L175 380" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)"/>
+<rect x="115" y="395" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="175" y="441" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">3</text>
+<text x="175" y="505" font-size="21" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">保留 min(9, 3)</text>
+<path d="M445 323L445 380" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)"/>
+<rect x="385" y="395" width="120" height="70" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="445" y="441" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="middle">9</text>
+<text x="445" y="505" font-size="21" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">保留 max(9, 3)</text>
+<text x="311" y="555" font-size="23" font-weight="400" style="fill:#112C43" text-anchor="middle">各 rank 仍各持有一个数</text>
+<text x="311" y="591" font-size="23" font-weight="400" style="fill:#506574" text-anchor="middle">数据的归属位置可以改变</text>
+<path d="M753 323L753 380" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)"/>
+<rect x="648" y="395" width="210" height="110" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="753" y="435" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 9</text>
+<text x="753" y="477" font-size="22" font-weight="700" style="fill:#D78738" text-anchor="middle">右 ghost = 3</text>
+<path d="M1023 323L1023 380" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)"/>
+<rect x="918" y="395" width="210" height="110" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="1023" y="435" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle" class="code">local = 3</text>
+<text x="1023" y="477" font-size="22" font-weight="700" style="fill:#D78738" text-anchor="middle">左 ghost = 9</text>
+<text x="889" y="555" font-size="23" font-weight="400" style="fill:#112C43" text-anchor="middle">拥有的 local 值没有被替换</text>
+<text x="889" y="591" font-size="23" font-weight="400" style="fill:#506574" text-anchor="middle">ghost 是本次收到的邻居副本</text>
+<text x="600" y="676" font-size="23" font-weight="700" style="fill:#506574" text-anchor="middle">后续热传导：先建立方程与数值算法，再决定哪些边界数据需要交换。</text>
+</svg>

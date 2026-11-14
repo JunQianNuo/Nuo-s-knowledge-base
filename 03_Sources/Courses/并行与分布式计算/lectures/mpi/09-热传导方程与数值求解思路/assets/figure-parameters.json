@@ -1,0 +1,23 @@
+{
+  "L_m": 1.0,
+  "alpha_m2_per_s": 0.01,
+  "base_C": 20.0,
+  "amplitude_K": 80.0,
+  "time_1d_s": [
+    0.0,
+    5.0,
+    10.0,
+    20.0
+  ],
+  "time_2d_s": [
+    0.0,
+    10.0,
+    20.0
+  ],
+  "tau_1d_s": 10.132118364233778,
+  "tau_2d_s": 5.066059182116889,
+  "centre_1d_10s_C": 49.81662710827503,
+  "centre_2d_10s_C": 31.112890651424017,
+  "kind": "Analytic formula samples, not numerical time stepping",
+  "font": "Hiragino Sans GB"
+}

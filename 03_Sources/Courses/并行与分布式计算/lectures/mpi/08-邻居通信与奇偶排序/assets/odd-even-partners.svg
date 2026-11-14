@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">奇偶阶段的邻居配对</title><desc id="desc">五个rank按phase奇偶交替配对；偶阶段01和23配对，rank4无伙伴；奇阶段12和34配对，rank0无伙伴。rank不移动、伙伴关系改变。</desc>
+<defs><style>text{font-family:"Hiragino Sans GB","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#112C43}.code{font-family:"SFMono-Regular",Consolas,monospace}</style><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#147F85"/></marker></defs>
+<rect width="1200" height="720" fill="white"/>
+<text x="42" y="50" font-size="32" font-weight="700" style="fill:#112C43" text-anchor="start">每个阶段，互不重叠的相邻进程成对交换</text>
+<text x="42" y="91" font-size="23" font-weight="400" style="fill:#506574" text-anchor="start">P = 5；phase 从 0 开始。配对依据 rank 的奇偶，不依据数据值。</text>
+<text x="42" y="160" font-size="27" font-weight="700" style="fill:#147F85" text-anchor="start">偶阶段：phase % 2 = 0</text>
+<rect x="105" y="194" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="170" y="235" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="320" y="194" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="385" y="235" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="535" y="194" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="235" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 2</text>
+<rect x="750" y="194" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="815" y="235" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 3</text>
+<rect x="965" y="194" width="130" height="62" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="1030" y="235" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 4</text>
+<path d="M243 225L312 225" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="277.5" y="300" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">(0, 1)</text>
+<path d="M673 225L742 225" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="707.5" y="300" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">(2, 3)</text>
+<text x="1030" y="300" font-size="22" font-weight="400" style="fill:#506574" text-anchor="middle">无伙伴</text>
+<text x="42" y="400" font-size="27" font-weight="700" style="fill:#147F85" text-anchor="start">奇阶段：phase % 2 = 1</text>
+<rect x="105" y="434" width="130" height="62" rx="10" fill="#F7FAFB" stroke="#D6E3E8" stroke-width="2"/>
+<text x="170" y="475" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 0</text>
+<rect x="320" y="434" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="385" y="475" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 1</text>
+<rect x="535" y="434" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="600" y="475" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 2</text>
+<rect x="750" y="434" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="815" y="475" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 3</text>
+<rect x="965" y="434" width="130" height="62" rx="10" fill="#E9F4F2" stroke="#147F85" stroke-width="2"/>
+<text x="1030" y="475" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">rank 4</text>
+<path d="M458 465L527 465" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="492.5" y="540" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">(1, 2)</text>
+<path d="M888 465L957 465" fill="none" stroke="#147F85" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="922.5" y="540" font-size="24" font-weight="700" style="fill:#147F85" text-anchor="middle">(3, 4)</text>
+<text x="170" y="540" font-size="22" font-weight="400" style="fill:#506574" text-anchor="middle">无伙伴</text>
+<rect x="42" y="600" width="1116" height="72" rx="10" fill="#FFF3E7" stroke="#D78738" stroke-width="2"/>
+<text x="600" y="644" font-size="24" font-weight="700" style="fill:#112C43" text-anchor="middle">无伙伴的 rank 保留本地值，并继续后续阶段；不能永久退出循环。</text>
+</svg>

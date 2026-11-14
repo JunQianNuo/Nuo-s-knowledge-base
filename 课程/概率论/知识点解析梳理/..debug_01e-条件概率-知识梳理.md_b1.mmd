@@ -1,8 +1,0 @@
-flowchart TD
- A[条件概率定义 P(A|B) = P(AB)/P(B)] --> B[乘法公式 P(AB) = P(B)P(A|B)]
- B --> C[推广到n个事件 P(A1A2...An) = P(A1)P(A2|A1)...]
- A --> D[全概率公式 P(A) = Σ P(Bi)P(A|Bi)]
- D --> E[贝叶斯公式 P(Bi|A) = P(Bi)P(A|Bi) / Σ P(Bj)P(A|Bj)]
- E --> F[先验概率 → 后验概率 新信息下的概率修正]
-    D --> G[划分: (Bi)互不相容且覆盖Ω]
-    G --> D

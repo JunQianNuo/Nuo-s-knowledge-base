@@ -1,0 +1,77 @@
+{
+  "environment": "macOS ARM64; Open MPI 5.0.9; Debug build; functional validation, not a scalability benchmark",
+  "runs": [
+    {
+      "P": "1",
+      "N": "20",
+      "steps": "100",
+      "dt": "0.1",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.0850009426409",
+      "serial_diff_K": "0",
+      "loop_max_s": "5e-06",
+      "CHECK": "PASS"
+    },
+    {
+      "P": "2",
+      "N": "20",
+      "steps": "100",
+      "dt": "0.1",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.0850009426409",
+      "serial_diff_K": "0",
+      "loop_max_s": "0.0047",
+      "CHECK": "PASS"
+    },
+    {
+      "P": "3",
+      "N": "20",
+      "steps": "100",
+      "dt": "0.1",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.0850009426409",
+      "serial_diff_K": "0",
+      "loop_max_s": "0.00482",
+      "CHECK": "PASS"
+    },
+    {
+      "P": "4",
+      "N": "20",
+      "steps": "100",
+      "dt": "0.1",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.0850009426409",
+      "serial_diff_K": "0",
+      "loop_max_s": "0.005135",
+      "CHECK": "PASS"
+    },
+    {
+      "P": "3",
+      "N": "40",
+      "steps": "400",
+      "dt": "0.025",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.021195996712",
+      "serial_diff_K": "0",
+      "loop_max_s": "0.005135",
+      "CHECK": "PASS"
+    },
+    {
+      "P": "3",
+      "N": "80",
+      "steps": "1600",
+      "dt": "0.00625",
+      "r": "0.4",
+      "t": "10",
+      "max_error_K": "0.00529562269317",
+      "serial_diff_K": "0",
+      "loop_max_s": "0.005773",
+      "CHECK": "PASS"
+    }
+  ]
+}
