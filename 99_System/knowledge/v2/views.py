@@ -192,7 +192,7 @@ def build(root: Path) -> dict[str, bytes]:
 
 ## 日常维护
 
-[[99_System/knowledge/v2/README|v2 使用与审计入口]] · [[docs/KNOWLEDGE_DAILY_GUIDE|日常提炼指南]]
+[[99_System/knowledge/v2/README|v2 使用与审计入口]] · [[docs/USAGE|日常提炼指南]]
 
 来源 status 记录原子提炼进度；polish_status 单独记录课堂笔记润色进度。提炼由用户指令触发。
 """.encode("utf-8")

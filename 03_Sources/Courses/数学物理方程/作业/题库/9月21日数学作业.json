@@ -1,0 +1,54 @@
+[
+  {
+    "question": "【数学物理方程｜9月21日数学作业｜习题 2.1 第 1 题】\n\n线密度为 $\\rho$ 的均匀柔软细弦在 $x=0$ 端固定，在重力作用下垂直悬挂。横向拉动细弦，使之作微小横振动，导出振动方程。",
+    "question_type": "short_answer",
+    "correct_answer": "$u_{tt}=g[(L-x)u_x]_x=g[(L-x)u_{xx}-u_x]$，并有固定端条件 $u(0,t)=0$。",
+    "explanation": "提示：取 $x$ 轴从固定端竖直向下，弦长记为 $L$。截面 $x$ 处的张力等于其下方长度为 $L-x$ 的弦的重量，因此张力不是常数。\n\n**解**：设弦长为 $L$，$x$ 从上端固定点竖直向下量，$u(x,t)$ 是横向位移。由于 $x$ 以下的弦长为 $L-x$，截面 $x$ 处的张力为\n$$\nT(x)=\\rho g(L-x).\n$$\n\n取微元 $[x,x+\\mathrm dx]$。在小振动条件下，$\\sin\\alpha\\approx\\tan\\alpha=u_x$，故微元两端张力的横向分量之差为\n$$\nT(x+\\mathrm dx)u_x(x+\\mathrm dx,t)-T(x)u_x(x,t).\n$$\n\n微元质量为 $\\rho\\,\\mathrm dx$。由 Newton 第二定律，\n$$\nT(x+\\mathrm dx)u_x(x+\\mathrm dx,t)-T(x)u_x(x,t)\n=\\rho\\,\\mathrm dx\\,u_{tt}(x,t).\n$$\n\n除以 $\\mathrm dx$ 并令 $\\mathrm dx\\to0$，得到\n$$\n\\frac{\\partial}{\\partial x}\\bigl(T(x)u_x\\bigr)=\\rho u_{tt}.\n$$\n\n代入 $T(x)=\\rho g(L-x)$，可得\n$$\n\\boxed{u_{tt}=g\\bigl[(L-x)u_x\\bigr]_x}\n$$\n或展开为\n$$\n\\boxed{u_{tt}=g\\bigl[(L-x)u_{xx}-u_x\\bigr]},\\qquad 0<x<L.\n$$\n\n上端固定，所以\n$$\nu(0,t)=0.\n$$\n下端为自由端，而 $T(L)=0$；其自然边界条件可写为\n$$\n\\left.T(x)u_x(x,t)\\right|_{x=L}=0,\n$$\n在本题中由 $T(L)=0$ 自动满足。\n\n**答案**：$u_{tt}=g[(L-x)u_x]_x=g[(L-x)u_{xx}-u_x]$，并有固定端条件 $u(0,t)=0$。\n\n**点评**：本题与“水平绷紧弦”最大的区别是张力随位置变化，不能把 $T$ 当成常数直接写成 $u_{tt}=a^2u_{xx}$。这正是教材提示中先求 $T(x)=\\rho g(L-x)$ 的原因。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md；定位：习题 2.1 第 1 题。",
+    "tags": [
+      "数学物理方程",
+      "9月21日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜9月21日数学作业｜习题 2.1 第 2 题】\n\n长为 $L$ 的均匀细杆，$x=0$ 端固定，另一端沿杆轴线方向被拉长 $b$，静止后在弹性限度内突然放手。写出细杆自由振动的定解问题。",
+    "question_type": "short_answer",
+    "correct_answer": "**解**：设 $u(x,t)$ 为截面 $x$ 的纵向位移，$Y$ 为杨氏模量，$\\rho$ 为密度。教材用微元法得到\n$$\n\\rho u_{tt}=Y u_{xx}.\n$$\n记\n$$\na^2=\\frac{Y}{\\rho},\n$$\n则泛定方程为\n$$\nu_{tt}=a^2u_{xx},\\qquad 0<x<L, t>0.\n$$\n\n$x=0$ 端固定，因此\n$$\nu(0,t)=0.\n$$\n\n$x=L$ 端放手后不再受外力。杆内正应力为 $Yu_x$，自由端应力为零，所以\n$$\nu_x(L,t)=0,\\qquad t>0.\n$$\n\n放手前杆被拉长 $b$ 且处于静止状态。在均匀拉伸下应变为常数 $b/L$，故初位移为\n$$\nu(x,0)=\\frac{b}{L}x.\n$$\n初速度为\n$$\nu_t(x,0)=0.\n$$\n\n因而定解问题为\n$$\n\\boxed{\n\\begin{cases}\nu_{tt}=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu(0,t)=0,\\quad u_x(L,t)=0, & t>0,\\\\\nu(x,0)=\\dfrac{b}{L}x,\\quad u_t(x,0)=0, & 0\\le x\\le L,\n\\end{cases}\n\\qquad a^2=\\frac{Y}{\\rho}.}\n$$\n\n**答案**：如上所示，固定端使用第一类边界条件，自由端使用第二类边界条件，初位移为 $bx/L$，初速度为零。\n\n**点评**：$u_x(L,0)=b/L\\ne0$，而释放后的自由端条件要求 $u_x(L,t)=0$。这反映了“突然放手”造成的初边值瞬时不相容；教材仍以该理想化定解问题描述释放后的运动。严格讨论角点处的经典解时，需要注意课堂上强调的相容条件。$\\square$",
+    "explanation": "提示：弹性杆纵振动满足 $u_{tt}=a^2u_{xx}$。固定端给位移条件，自由端给应力为零的条件；被均匀拉长 $b$ 时，初位移沿杆长线性分布。\n\n**解**：设 $u(x,t)$ 为截面 $x$ 的纵向位移，$Y$ 为杨氏模量，$\\rho$ 为密度。教材用微元法得到\n$$\n\\rho u_{tt}=Y u_{xx}.\n$$\n记\n$$\na^2=\\frac{Y}{\\rho},\n$$\n则泛定方程为\n$$\nu_{tt}=a^2u_{xx},\\qquad 0<x<L, t>0.\n$$\n\n$x=0$ 端固定，因此\n$$\nu(0,t)=0.\n$$\n\n$x=L$ 端放手后不再受外力。杆内正应力为 $Yu_x$，自由端应力为零，所以\n$$\nu_x(L,t)=0,\\qquad t>0.\n$$\n\n放手前杆被拉长 $b$ 且处于静止状态。在均匀拉伸下应变为常数 $b/L$，故初位移为\n$$\nu(x,0)=\\frac{b}{L}x.\n$$\n初速度为\n$$\nu_t(x,0)=0.\n$$\n\n因而定解问题为\n$$\n\\boxed{\n\\begin{cases}\nu_{tt}=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu(0,t)=0,\\quad u_x(L,t)=0, & t>0,\\\\\nu(x,0)=\\dfrac{b}{L}x,\\quad u_t(x,0)=0, & 0\\le x\\le L,\n\\end{cases}\n\\qquad a^2=\\frac{Y}{\\rho}.}\n$$\n\n**答案**：如上所示，固定端使用第一类边界条件，自由端使用第二类边界条件，初位移为 $bx/L$，初速度为零。\n\n**点评**：$u_x(L,0)=b/L\\ne0$，而释放后的自由端条件要求 $u_x(L,t)=0$。这反映了“突然放手”造成的初边值瞬时不相容；教材仍以该理想化定解问题描述释放后的运动。严格讨论角点处的经典解时，需要注意课堂上强调的相容条件。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md；定位：习题 2.1 第 2 题。",
+    "tags": [
+      "数学物理方程",
+      "9月21日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜9月21日数学作业｜习题 2.1 第 4 题】\n\n一根长为 $L$、截面面积为 $1$ 的均匀细杆，$x=0$ 端固定。用槌水平击打 $x=L$ 端，使其获得冲量 $I$，写出定解问题。",
+    "question_type": "short_answer",
+    "correct_answer": "采用上面的分段初速度定解问题；$\\delta$ 形式是其集中冲量极限。",
+    "explanation": "提示：击打时间很短，可把作用效果转化成初始速度。按教材方法，先设冲量作用于末端长度为 $\\varepsilon$ 的小段，再令 $\\varepsilon\\to0$。\n\n**解**：设 $u(x,t)$ 为纵向位移，$Y$ 为杨氏模量，$\\rho$ 为密度。截面面积虽为 $1$，但在杆的惯性项和弹性力中会同时出现并约去，因此\n$$\nu_{tt}=a^2u_{xx},\\qquad a^2=\\frac{Y}{\\rho}.\n$$\n\n$x=0$ 端固定；击打结束后 $x=L$ 端不再受持续外力，视为自由端：\n$$\nu(0,t)=0,\\qquad u_x(L,t)=0,\\qquad t>0.\n$$\n\n击打前杆没有位移，所以\n$$\nu(x,0)=0.\n$$\n\n按教材的末端小段近似，设冲量 $I$ 使 $L-\\varepsilon<x<L$ 的小段获得均匀初速度 $v_0$。该小段质量为 $\\rho\\varepsilon$，由冲量—动量定理\n$$\nI=\\rho\\varepsilon v_0,\n$$\n因而\n$$\nv_0=\\frac{I}{\\rho\\varepsilon}.\n$$\n初速度写为\n$$\nu_t(x,0)=\n\\begin{cases}\n0, & 0<x<L-\\varepsilon,\\\\\n\\dfrac{I}{\\rho\\varepsilon}, & L-\\varepsilon<x<L.\n\\end{cases}\n$$\n\n所以教材形式的定解问题是\n$$\n\\boxed{\n\\begin{cases}\nu_{tt}=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu(0,t)=0,\\quad u_x(L,t)=0, & t>0,\\\\\nu(x,0)=0, & 0\\le x\\le L,\\\\\nu_t(x,0)=0, & 0<x<L-\\varepsilon,\\\\\nu_t(x,0)=\\dfrac{I}{\\rho\\varepsilon}, & L-\\varepsilon<x<L,\n\\end{cases}\n\\qquad a^2=\\frac{Y}{\\rho}.}\n$$\n\n当 $\\varepsilon\\to0^+$ 时，也可用定义在区间端点的单侧 Dirac 分布简写为\n$$\nu_t(x,0)=\\frac{I}{\\rho}\\delta_L(x),\n$$\n其中规定 $\\int_0^L\\delta_L(x)\\phi(x)\\,\\mathrm dx=\\phi(L)$。\n\n**答案**：采用上面的分段初速度定解问题；$\\delta$ 形式是其集中冲量极限。\n\n**点评**：本题不宜把冲量 $I$ 直接长期写在边界条件中。槌击完成后，冲量已经转化为杆的初始动量，所以教材将它写入初始速度。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md；定位：习题 2.1 第 4 题。",
+    "tags": [
+      "数学物理方程",
+      "9月21日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜9月21日数学作业｜习题 2.2 第 4 题】\n\n一根侧表面绝热的均匀细杆，初始温度为 $\\varphi(x)$。针对题目给出的三组端点条件，分别写出热传导定解问题。\n\n三组端点条件（据同一来源各小问说明补入）：（1）$x=0$ 端绝热，$x=L$ 端保持温度 $u_0$；（2）两端分别有热流密度 $q_1,q_2$ 进入；（3）$x=0$ 端温度为 $u_1(t)$，$x=L$ 端与温度 $\\theta(t)$ 的介质换热，热交换系数为 $k_1>0$。杆长为 $L$，热传导系数为 $k$。",
+    "question_type": "short_answer",
+    "correct_answer": "**解**：设 $u(x,t)$ 为温度，$k$ 为热传导系数，$c$ 为比热，$\\rho$ 为密度。侧面绝热且无内热源时，一维热方程为\n$$\nu_t=a^2u_{xx},\\qquad a^2=\\frac{k}{c\\rho},\\qquad 0<x<L, t>0,\n$$\n三种情形都有初始条件\n$$\nu(x,0)=\\varphi(x).\n$$\n\n**（1）$x=0$ 端绝热，$x=L$ 端保持常温 $u_0$**\n\n绝热表示端面热流为零，即 $u_x(0,t)=0$；右端恒温给出 $u(L,t)=u_0$。因此\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu_x(0,t)=0,\\quad u(L,t)=u_0, & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L.\n\\end{cases}}\n$$\n\n**（2）两端分别有热流密度 $q_1$ 和 $q_2$ 进入**\n\nFourier 定律为 $q_x=-ku_x$。在左端，进入杆内的方向是 $+x$，故\n$$\n-ku_x(0,t)=q_1\n\\quad\\Longrightarrow\\quad\nu_x(0,t)=-\\frac{q_1}{k}.\n$$\n在右端，进入杆内的方向是 $-x$，故\n$$\nku_x(L,t)=q_2\n\\quad\\Longrightarrow\\quad\nu_x(L,t)=\\frac{q_2}{k}.\n$$\n因此\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu_x(0,t)=-\\dfrac{q_1}{k},\\quad u_x(L,t)=\\dfrac{q_2}{k}, & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L.\n\\end{cases}}\n$$\n\n**（3）$x=0$ 端温度为 $u_1(t)$，$x=L$ 端与温度为 $\\theta(t)$ 的介质换热**\n\n左端是第一类边界条件：\n$$\nu(0,t)=u_1(t).\n$$\n设右端与介质的热交换系数为 $k_1>0$。由 Newton 冷却定律和 Fourier 定律，右端向外的热流满足\n$$\n-ku_x(L,t)=k_1\\bigl(u(L,t)-\\theta(t)\\bigr).\n$$\n令 $h=k_1/k$，整理为\n$$\nu_x(L,t)+h u(L,t)=h\\theta(t).\n$$\n因而\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu(0,t)=u_1(t), & t>0,\\\\\nu_x(L,t)+h u(L,t)=h\\theta(t), & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L,\n\\end{cases}\n\\qquad h=\\frac{k_1}{k}.}\n$$\n\n**答案**：三个定解问题分别如上；依次组合了“绝热 + 恒温”“两端给定流入热流”“给定温度 + Newton 换热”边界条件。\n\n**点评**：第（2）问最容易把符号写错。最稳妥的方法不是死记左右端正负号，而是先画出“进入杆内”的方向，再用热流矢量 $-k\\nabla u$ 判断。若要求经典解在 $t=0$ 的角点连续，还应检查第（1）问 $\\varphi(L)=u_0$，第（3）问 $\\varphi(0)=u_1(0)$，以及相应导数条件。$\\square$",
+    "explanation": "提示：三问的泛定方程和初始条件相同，只需逐一翻译端点的物理条件。特别注意“进入杆内”的热流在左右两端对应相反的 $x$ 方向。\n\n**解**：设 $u(x,t)$ 为温度，$k$ 为热传导系数，$c$ 为比热，$\\rho$ 为密度。侧面绝热且无内热源时，一维热方程为\n$$\nu_t=a^2u_{xx},\\qquad a^2=\\frac{k}{c\\rho},\\qquad 0<x<L, t>0,\n$$\n三种情形都有初始条件\n$$\nu(x,0)=\\varphi(x).\n$$\n\n**（1）$x=0$ 端绝热，$x=L$ 端保持常温 $u_0$**\n\n绝热表示端面热流为零，即 $u_x(0,t)=0$；右端恒温给出 $u(L,t)=u_0$。因此\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu_x(0,t)=0,\\quad u(L,t)=u_0, & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L.\n\\end{cases}}\n$$\n\n**（2）两端分别有热流密度 $q_1$ 和 $q_2$ 进入**\n\nFourier 定律为 $q_x=-ku_x$。在左端，进入杆内的方向是 $+x$，故\n$$\n-ku_x(0,t)=q_1\n\\quad\\Longrightarrow\\quad\nu_x(0,t)=-\\frac{q_1}{k}.\n$$\n在右端，进入杆内的方向是 $-x$，故\n$$\nku_x(L,t)=q_2\n\\quad\\Longrightarrow\\quad\nu_x(L,t)=\\frac{q_2}{k}.\n$$\n因此\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu_x(0,t)=-\\dfrac{q_1}{k},\\quad u_x(L,t)=\\dfrac{q_2}{k}, & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L.\n\\end{cases}}\n$$\n\n**（3）$x=0$ 端温度为 $u_1(t)$，$x=L$ 端与温度为 $\\theta(t)$ 的介质换热**\n\n左端是第一类边界条件：\n$$\nu(0,t)=u_1(t).\n$$\n设右端与介质的热交换系数为 $k_1>0$。由 Newton 冷却定律和 Fourier 定律，右端向外的热流满足\n$$\n-ku_x(L,t)=k_1\\bigl(u(L,t)-\\theta(t)\\bigr).\n$$\n令 $h=k_1/k$，整理为\n$$\nu_x(L,t)+h u(L,t)=h\\theta(t).\n$$\n因而\n$$\n\\boxed{\n\\begin{cases}\nu_t=a^2u_{xx}, & 0<x<L, t>0,\\\\\nu(0,t)=u_1(t), & t>0,\\\\\nu_x(L,t)+h u(L,t)=h\\theta(t), & t>0,\\\\\nu(x,0)=\\varphi(x), & 0\\le x\\le L,\n\\end{cases}\n\\qquad h=\\frac{k_1}{k}.}\n$$\n\n**答案**：三个定解问题分别如上；依次组合了“绝热 + 恒温”“两端给定流入热流”“给定温度 + Newton 换热”边界条件。\n\n**点评**：第（2）问最容易把符号写错。最稳妥的方法不是死记左右端正负号，而是先画出“进入杆内”的方向，再用热流矢量 $-k\\nabla u$ 判断。若要求经典解在 $t=0$ 的角点连续，还应检查第（1）问 $\\varphi(L)=u_0$，第（3）问 $\\varphi(0)=u_1(0)$，以及相应导数条件。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md；定位：习题 2.2 第 4 题。",
+    "tags": [
+      "数学物理方程",
+      "9月21日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  }
+]

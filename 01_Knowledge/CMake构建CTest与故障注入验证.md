@@ -9,6 +9,7 @@ source:
 - '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-10-26-第16节-MPI集合通信与CMake编译教学]]'
 - '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-10-19-第14节-MPI通信与并行计算培训]]'
 - '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-10-28-第17节-MPI并行计算与热扩散方程课程]]'
+- '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-11-09-第20节-MPI并行计算技术授课]]'
 ---
 # CMake构建CTest与故障注入验证
 
@@ -93,3 +94,11 @@ GoogleTest的 `TEST(套件名,测试名)` 组织用例；`EXPECT_EQ`用于整数
 死锁演示用外部约3秒超时包装器终止两端先Ssend后Recv的程序。实际 `run_with_timeout.py` 未取得时，不猜工具路径或宣称已运行；超时只能结束演示，不说明协议已修复，也不能单独证明所有超时都是死锁。
 
 官方语义参考：[FindMPI](https://cmake.org/cmake/help/v3.20/module/FindMPI.html)、[target_link_libraries](https://cmake.org/cmake/help/v3.20/command/target_link_libraries.html)、[GoogleTest断言](https://google.github.io/googletest/reference/assertions.html)。上述通用命令和语义解释为整理补充；教师工程与本地实际运行记录须另行核验。
+
+## 构建配置与性能实验的边界
+
+在已有单配置Makefile/Ninja构建目录中，可依次运行`cmake .. -DCMAKE_BUILD_TYPE=Debug`、`cmake --build .`、`ctest --output-on-failure`；切换Release需重新配置和构建。`CMAKE_BUILD_TYPE`针对单配置生成器，多配置生成器另选配置。[CMake官方说明](https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html)。
+
+Debug通常便于调试，Release通常启用更多优化，适合性能测量；具体选项仍以工具链为准。`assert`是否生效取决于`NDEBUG`等设置，Release不等于删除全部检查或禁用C++异常，优化也不保证编译更快。性能对比须使用一致构建配置。CTest可能因迭代量较大而较慢，不能只由等待较久认定失败。
+
+11月9日教师演示了构建、CTest和CSV绘图，但完整热方程第11示例及脚本未取得，本地未执行，不能登记为本次已通过的测试。可确认的运行输入语义为网格数量与最终时间，不能把后者写成时间步长；实际可执行文件与完整选项应查对应工程说明，不拼造启动命令。

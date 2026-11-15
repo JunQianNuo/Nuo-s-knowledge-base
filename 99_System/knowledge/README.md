@@ -8,15 +8,15 @@
 
 ## 2026-10-28 topics 目标规则
 
-topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/KNOWLEDGE_ARCHITECTURE]]、[[docs/KNOWLEDGE_DAILY_GUIDE]] 及 [[docs/TOPICS_MOC_ACCEPTANCE_2026-10-28]]。
+topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/ARCHITECTURE]]、[[docs/USAGE]] 及 [TOPICS_MOC_ACCEPTANCE_2026-10-28](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/TOPICS_MOC_ACCEPTANCE_2026-10-28.md)。
 
 ## 2026-10-28 当前系统
 
-最终实施授权已覆盖核心整理与长期维护；下方 Phase 1/2A 清单和未授权文字仅为历史记录，不构成当前阶段边界。日常入口为 knowledge.py；新建使用 Registry 模板并只生成计划，审查、apply/restore 由独立 change_control 完成，Maintenance 继续只读。当前范围与命令以 [[docs/KNOWLEDGE_DAILY_GUIDE]]、综合验收报告为准。Formatter 仍未定位、未集成。
+最终实施授权已覆盖核心整理与长期维护；下方 Phase 1/2A 清单和未授权文字仅为历史记录，不构成当前阶段边界。日常入口为 knowledge.py；新建使用 Registry 模板并只生成计划，审查、apply/restore 由独立 change_control 完成，Maintenance 继续只读。当前范围与命令以 [[docs/USAGE]]、综合验收报告为准。Formatter 仍未定位、未集成。
 
 这是独立的属性验证和只读维护审计工具。Maintenance 不迁移笔记、不写属性、标签、附件或插件，不运行 Formatter，不默认扫描 Vault。用户已批准 Phase 2A；Formatter 仍未定位、专项审计未完成、没有集成，Phase 2B 与 Phase 3–6 未授权。
 
-架构见 [[docs/KNOWLEDGE_ARCHITECTURE]]，实施和验收记录见 [[docs/REFACTOR_PLAN]]，决策见 [[docs/DECISIONS]]。[[docs/AGENTS_PHASE1_PROPOSAL|根指令建议稿]] 尚未生效。
+架构见 [[docs/ARCHITECTURE]]，实施和验收记录见 [REFACTOR_PLAN](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/REFACTOR_PLAN.md)，决策见 [DECISIONS](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/DECISIONS.md)。[根指令建议稿](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/AGENTS_PHASE1_PROPOSAL.md) 尚未生效。
 
 ## 运行环境
 
@@ -81,14 +81,14 @@ Markdown URI 按源文档所在目录解析相对路径，显式 / 前缀按本�
 
 ## 实际新增文件清单
 
-以下为 Phase 1 当时批准的 20 个新增文件，保留历史清单；Phase 2A 的 21 文件变更范围和逐文件基线对照见 [[docs/REFACTOR_PLAN]]。
+以下为 Phase 1 当时批准的 20 个新增文件，保留历史清单；Phase 2A 的 21 文件变更范围和逐文件基线对照见 [REFACTOR_PLAN](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/REFACTOR_PLAN.md)。
 
 | 绝对路径 | 用途 |
 |---|---|
-| D:/知识库/docs/AGENTS_PHASE1_PROPOSAL.md | 待审根指令建议稿 |
-| D:/知识库/docs/KNOWLEDGE_ARCHITECTURE.md | 架构和隔离规则 |
-| D:/知识库/docs/REFACTOR_PLAN.md | 实施与验收记录 |
-| D:/知识库/docs/DECISIONS.md | 决策及未解决问题 |
+| D:/知识库/D:\KnowledgeBackups\20261114-docs-organization\before\docs\AGENTS_PHASE1_PROPOSAL.md | 待审根指令建议稿 |
+| D:/知识库/docs/ARCHITECTURE.md | 架构和隔离规则 |
+| D:/知识库/D:\KnowledgeBackups\20261114-docs-organization\before\docs\REFACTOR_PLAN.md | 实施与验收记录 |
+| D:/知识库/D:\KnowledgeBackups\20261114-docs-organization\before\docs\DECISIONS.md | 决策及未解决问题 |
 | D:/知识库/99_System/knowledge/README.md | 使用与验收说明 |
 | D:/知识库/99_System/knowledge/requirements.txt | 直接依赖版本 |
 | D:/知识库/99_System/knowledge/registry.yaml | 类型注册表 |
@@ -108,8 +108,11 @@ Markdown URI 按源文档所在目录解析相对路径，显式 / 前缀按本�
 
 ## 验收与限制
 
-Phase 1 的历史验证结果为 18 项 unittest 通过。Phase 2A 的检查点、最终测试数量及逐文件基线结果统一记录于 [[docs/REFACTOR_PLAN]]；配置损坏回归现覆盖非 Schema 引用、无条件环、嵌套资源 ID、公共约束丢失和关闭人工审查标记。约 4 KB 的大整数错误诊断也返回输入错误，不改变 Python 全局限制。
+Phase 1 的历史验证结果为 18 项 unittest 通过。Phase 2A 的检查点、最终测试数量及逐文件基线结果统一记录于 [REFACTOR_PLAN](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/REFACTOR_PLAN.md)；配置损坏回归现覆盖非 Schema 引用、无条件环、嵌套资源 ID、公共约束丢失和关闭人工审查标记。约 4 KB 的大整数错误诊断也返回输入错误，不改变 Python 全局限制。
 
 Phase 1 历史保护核验（本次 Phase 2A 的逐文件结果见实施记录）：Git 当时恰好列出上述 20 个未跟踪新增文件；既有跟踪文件没有新增修改，原有数学建模/2026国赛与数学建模/AutoMM 两个 dirty gitlink 标记保留，HEAD 未变。未执行 add、commit、push、reset 或 stash。既有文件全量摘要在实施期间发生变化，时间窗口复核仅检出被 Git 忽略的 .obsidian/workspace.json 更新；没有写入或回滚该运行时文件，不能将汇总摘要表述为全体既有文件逐字一致的证明。基线口径与复核说明见实施记录。
 
-独立代码审查的最终结论及任何后续修订记录见 [[docs/REFACTOR_PLAN]]。所有结果仅覆盖获准的系统行为，不代表全库链接或数学内容通过。六处治理入口已按批准的最小补丁统一适用范围；旧属性库记录和旧模板保留原状。Formatter 仍未定位，Phase 2B 及真实笔记迁移没有实施。
+独立代码审查的最终结论及任何后续修订记录见 [REFACTOR_PLAN](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/REFACTOR_PLAN.md)。所有结果仅覆盖获准的系统行为，不代表全库链接或数学内容通过。六处治理入口已按批准的最小补丁统一适用范围；旧属性库记录和旧模板保留原状。Formatter 仍未定位，Phase 2B 及真实笔记迁移没有实施。
+
+
+写作与处理规范：[[99_System/rules/README|任务规范入口]]。

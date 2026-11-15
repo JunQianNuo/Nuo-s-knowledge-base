@@ -1,0 +1,197 @@
+[
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 3】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi\\sim N(a,1)$，观察 20 次，只记录是否为负值；事件 $\\{\\xi<0\\}$ 出现了 14 次。按频率估计概率的原理，求 $a$ 的估计值。",
+    "question_type": "short_answer",
+    "correct_answer": "$\\widehat a\\approx-0.5244$；按普通正态表可写约 $-0.52$。$\\square$",
+    "explanation": "提示：$P(\\xi<0)=\\Phi(-a)$。用负值出现的频率替换该概率，再反解 $a$。\n\n**解**：由于 $\\xi-a\\sim N(0,1)$，\n$$\nP_a(\\xi<0)=P(\\xi-a<-a)=\\Phi(-a).\n$$\n用频率 $14/20=0.7$ 估计该概率，令\n$$\n\\Phi(-\\widehat a)=0.7.\n$$\n因此\n$$\n\\boxed{\\widehat a=-\\Phi^{-1}(0.7)\\approx-0.5244.}\n$$\n**答案**：$\\widehat a\\approx-0.5244$；按普通正态表可写约 $-0.52$。$\\square$\n\n**点评**：超过一半的观测为负，估计出的总体均值应为负。这可用于检查符号；只记录正负，不能再用未记录的具体数值求样本均值。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 3。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 4】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n设 $\\xi_1,\\ldots,\\xi_n$ 为密度 $f(x;\\theta)$ 对应总体的简单随机样本，分别求下列模型中 $\\theta$ 的极大似然估计量：\n\n1. $f(x;\\theta)=\\frac12e^{-|x-\\theta|}$，$x,\\theta\\in\\mathbb R$（取值范围按前述说明理解）。\n2. $f(x;\\theta)=\\theta x^{\\theta-1}$，$0<x<1$，$\\theta>0$；其余处为 $0$。\n3. $f(x;\\theta)=1/\\theta$，$0<x\\le\\theta$，$\\theta>0$；其余处为 $0$。\n4. $f(x;\\theta)=\\theta^{-1}e^{-x/\\theta}$，$x>0$，$\\theta>0$；其余处为 $0$。",
+    "question_type": "short_answer",
+    "correct_answer": "(1) 样本中位数，偶数样本时两中间次序统计量之间任一点；(2) $-n/\\sum_i\\ln\\xi_i$；(3) $\\max_i\\xi_i$；(4) $\\bar\\xi$。$\\square$",
+    "explanation": "提示：(1) 最大化似然等价于最小化绝对离差和；(2)(4) 写对数似然后求导；(3) 必须先把样本能出现所要求的参数范围写出来。\n\n**解 (1)：拉普拉斯位置参数。** 对观测值排序为 $x_{(1)}\\le\\cdots\\le x_{(n)}$，有\n$$\nL(\\theta)=2^{-n}\\exp\\left\\{-\\sum_{i=1}^n|x_i-\\theta|\\right\\}.\n$$\n因而只需使 $Q(\\theta)=\\sum_i|x_i-\\theta|$ 最小。若 $\\theta$ 不等于观测值，且恰有 $j$ 个观测小于它，则\n$$\nQ'(\\theta)=j-(n-j)=2j-n.\n$$\n在样本中部左侧，斜率非正；右侧，斜率非负。因此最小值在样本中位数处取得：\n$$\n\\boxed{\n\\begin{cases}\n\\widehat\\theta=\\xi_{(k+1)},&n=2k+1,\\\\\n\\widehat\\theta\\in[\\xi_{(k)},\\xi_{(k+1)}],&n=2k.\n\\end{cases}}\n$$\n偶数情形中，该闭区间内每一点都是极大似然估计，可选两中间次序统计量的平均数。端点同样有效。\n\n**解 (2)：幂密度参数。** 由于 $0<x_i<1$，故 $\\sum_i\\ln x_i<0$。对数似然为\n$$\n\\ell(\\theta)=n\\ln\\theta+(\\theta-1)\\sum_i\\ln x_i.\n$$\n解似然方程\n$$\n\\ell'(\\theta)=\\frac n\\theta+\\sum_i\\ln x_i=0,\n\\qquad \\ell''(\\theta)=-\\frac n{\\theta^2}<0,\n$$\n得唯一最大点\n$$\n\\boxed{\\widehat\\theta=-\\frac{n}{\\sum_{i=1}^n\\ln\\xi_i}.}\n$$\n注意分子是 $n$，不是将 $n$ 放进分母。\n\n**解 (3)：均匀分布上端点。** 记 $M=\\max_i x_i$，则\n$$\nL(\\theta)=\\theta^{-n}\\mathbf1_{\\{\\theta\\ge M\\}}.\n$$\n在可行范围 $[M,\\infty)$ 上，$\\theta^{-n}$ 严格递减，因此\n$$\n\\boxed{\\widehat\\theta=\\max_{1\\le i\\le n}\\xi_i.}\n$$\n\n**解 (4)：指数分布尺度参数。**\n$$\n\\ell(\\theta)=-n\\ln\\theta-\\frac{\\sum_i x_i}{\\theta},\\qquad\n\\ell'(\\theta)=\\frac{\\sum_i x_i-n\\theta}{\\theta^2}.\n$$\n当 $\\theta<\\bar x$ 时导数为正，$\\theta>\\bar x$ 时为负，所以\n$$\n\\boxed{\\widehat\\theta=\\bar\\xi.}\n$$\n**答案**：(1) 样本中位数，偶数样本时两中间次序统计量之间任一点；(2) $-n/\\sum_i\\ln\\xi_i$；(3) $\\max_i\\xi_i$；(4) $\\bar\\xi$。$\\square$\n\n**点评**：MLE 不等于“机械求导”。绝对值模型适合分段斜率分析，支撑依赖参数的均匀模型则先处理可行域。指数分布这里的参数是尺度 $\\theta$，不是率 $1/\\theta$。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 4。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 5】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi\\sim b(N,p)$，其中 $0<p<1$，$N$ 为正整数；$\\xi_1,\\ldots,\\xi_n$ 为其样本，求 $N$、$p$ 的矩法估计量。",
+    "question_type": "short_answer",
+    "correct_answer": "**解**：总体前两阶原点矩满足\n$$\nE\\xi=Np,\\qquad E\\xi^2=Np(1-p)+(Np)^2.\n$$\n用一、二阶样本原点矩替换，等价于令\n$$\n\\bar\\xi=\\widehat N\\widehat p,\\qquad\nS^2=\\widehat N\\widehat p(1-\\widehat p).\n$$\n若 $\\bar\\xi>0$，相除得 $S^2/\\bar\\xi=1-\\widehat p$。因此形式解为\n$$\n\\boxed{\\widehat p=1-\\frac{S^2}{\\bar\\xi},\\qquad\n\\widehat N=\\frac{\\bar\\xi}{\\widehat p}\n=\\frac{\\bar\\xi^2}{\\bar\\xi-S^2}.}\n$$\n**可行性说明**：要使该形式解有 $0<\\widehat p<1$，需 $0<S^2<\\bar\\xi$；此外 $\\widehat N$ 还应是正整数，且不得小于样本最大值。有限样本不一定满足这些条件。\n若全样本为 $0$，或 $S^2\\ge\\bar\\xi$，或解出的 $\\widehat N$ 不合整数/支撑限制，就不能声称得到了原参数空间内的精确矩方程解。直接取整只是额外修正规则，不再严格满足原来的两个矩方程。\n\n**答案**：通常所报矩估计的形式为 $\\widehat p=1-S^2/\\bar\\xi$、$\\widehat N=\\bar\\xi^2/(\\bar\\xi-S^2)$，应同时检查上述可行性。$\\square$\n\n**点评**：矩估计中使用的是样本矩，故这里不能无说明地将 $S^2$ 换成 $S^{*2}$。公式解与参数空间内的合法估计不是一回事。",
+    "explanation": "提示：两个未知参数需要两个矩方程。使用 $E\\xi=Np$、$D\\xi=Np(1-p)$，以 $\\bar\\xi$ 和分母为 $n$ 的 $S^2$ 对应替换。\n\n**解**：总体前两阶原点矩满足\n$$\nE\\xi=Np,\\qquad E\\xi^2=Np(1-p)+(Np)^2.\n$$\n用一、二阶样本原点矩替换，等价于令\n$$\n\\bar\\xi=\\widehat N\\widehat p,\\qquad\nS^2=\\widehat N\\widehat p(1-\\widehat p).\n$$\n若 $\\bar\\xi>0$，相除得 $S^2/\\bar\\xi=1-\\widehat p$。因此形式解为\n$$\n\\boxed{\\widehat p=1-\\frac{S^2}{\\bar\\xi},\\qquad\n\\widehat N=\\frac{\\bar\\xi}{\\widehat p}\n=\\frac{\\bar\\xi^2}{\\bar\\xi-S^2}.}\n$$\n**可行性说明**：要使该形式解有 $0<\\widehat p<1$，需 $0<S^2<\\bar\\xi$；此外 $\\widehat N$ 还应是正整数，且不得小于样本最大值。有限样本不一定满足这些条件。\n若全样本为 $0$，或 $S^2\\ge\\bar\\xi$，或解出的 $\\widehat N$ 不合整数/支撑限制，就不能声称得到了原参数空间内的精确矩方程解。直接取整只是额外修正规则，不再严格满足原来的两个矩方程。\n\n**答案**：通常所报矩估计的形式为 $\\widehat p=1-S^2/\\bar\\xi$、$\\widehat N=\\bar\\xi^2/(\\bar\\xi-S^2)$，应同时检查上述可行性。$\\square$\n\n**点评**：矩估计中使用的是样本矩，故这里不能无说明地将 $S^2$ 换成 $S^{*2}$。公式解与参数空间内的合法估计不是一回事。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 5。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 7】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n电子元件失效时间 $T$ 的密度为\n\n$$\nf(t)=\\begin{cases}\\beta e^{-\\beta(t-t_0)},&t>t_0>0,\\\\0,&t\\le t_0,\\end{cases}\n\\qquad\\beta>0.\n$$\n\n独立观测 $n$ 个元件的失效时间 $T_1,\\ldots,T_n$：\n\n1. 当 $t_0$ 已知时，求 $\\beta$ 的极大似然估计量。\n2. 当 $\\beta$ 已知时，求 $t_0$ 的极大似然估计量。",
+    "question_type": "short_answer",
+    "correct_answer": "(1) $\\widehat\\beta=1/(\\bar T-t_0)$；(2) 教材通常写 $\\widehat t_0=T_{(1)}$，但严格开支撑版本只有上确界、没有取得最大值的参数。$\\square$",
+    "explanation": "提示：写出 $L(\\beta,t_0)=\\beta^n\\exp\\{-\\beta\\sum_i(T_i-t_0)\\}$，不要漏掉 $t_0<\\min_iT_i$ 的支撑限制。\n\n**解 (1)**：$t_0$ 已知，观测值满足 $T_i>t_0$。对数似然为\n$$\n\\ell(\\beta)=n\\ln\\beta-\\beta\\sum_i(T_i-t_0).\n$$\n由 $\\ell'(\\beta)=n/\\beta-\\sum_i(T_i-t_0)=0$，且 $\\ell''(\\beta)=-n/\\beta^2<0$，得到\n$$\n\\boxed{\\widehat\\beta=\\frac{n}{\\sum_i(T_i-t_0)}=\\frac1{\\bar T-t_0}.}\n$$\n\n**解 (2)**：$\\beta$ 已知。记 $m=\\min_iT_i$，则在可行域 $0<t_0<m$ 内，\n$$\nL(t_0)=\\beta^n e^{-\\beta\\sum_iT_i}e^{n\\beta t_0}\n$$\n随 $t_0$ 严格递增。因此似然上确界在 $t_0\\uparrow m$ 时逼近。\n若**严格按题面 $t>t_0$ 的密度版本**，$t_0=m$ 会使至少一个观测点的密度为零，故**最大值不在可行域中取得，严格意义的 MLE 不存在**。\n若采用教材常用的等价闭支撑密度版本 $t\\ge t_0$，则最大值在端点取得，通常作业答案记为\n$$\n\\boxed{\\widehat t_0=\\min_{1\\le i\\le n}T_i\\quad\\text{（闭支撑约定下）}.}\n$$\n**答案**：(1) $\\widehat\\beta=1/(\\bar T-t_0)$；(2) 教材通常写 $\\widehat t_0=T_{(1)}$，但严格开支撑版本只有上确界、没有取得最大值的参数。$\\square$\n\n**点评**：改变一个连续分布密度在端点的取值，不改变其概率分布，却可能改变这种参数依赖支撑模型的逐点似然最大值是否取得。故要明确所用约定，不能把上确界直接当成已取得的最大值。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 7。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 8】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi\\sim N(a,\\sigma)$，$\\xi_1,\\ldots,\\xi_n$ 为其样本：\n\n1. 求 $k$，使 $\\widehat\\sigma=k^{-1}\\sum_{i=1}^n|\\xi_i-a|$ 为 $\\sigma$ 的无偏估计量。\n2. 求 $k$，使 $\\widehat{\\sigma^2}=k^{-1}\\sum_{i=1}^{n-1}(\\xi_{i+1}-\\xi_i)^2$ 为 $\\sigma^2$ 的无偏估计量，设 $n\\ge2$。",
+    "question_type": "short_answer",
+    "correct_answer": "(1) $k=n\\sqrt{2/\\pi}$；(2) $k=2(n-1)$。$\\square$",
+    "explanation": "提示：(1) 标准化后求 $E|Z|$；(2) 每个相邻差的均值为 $0$、方差为 $2\\sigma^2$。求和的期望不要求各项独立。\n\n**解 (1)**：本问须将 $a$ 视为已知，否则题给表达式含未知参数，不能直接作为统计量。令 $Z=(\\xi_i-a)/\\sigma\\sim N(0,1)$，则\n$$\nE|Z|=\\frac2{\\sqrt{2\\pi}}\\int_0^\\infty z e^{-z^2/2}\\,dz\n=\\sqrt{\\frac2\\pi}.\n$$\n所以\n$$\nE\\widehat\\sigma=\\frac{n\\sigma}{k}\\sqrt{\\frac2\\pi}.\n$$\n令其等于 $\\sigma$，得到\n$$\n\\boxed{k=n\\sqrt{\\frac2\\pi}.}\n$$\n\n**解 (2)**：由样本独立性，\n$$\nE(\\xi_{i+1}-\\xi_i)=0,\\qquad\nD(\\xi_{i+1}-\\xi_i)=\\sigma^2+\\sigma^2=2\\sigma^2.\n$$\n因而 $E(\\xi_{i+1}-\\xi_i)^2=2\\sigma^2$，于是\n$$\nE\\widehat{\\sigma^2}=\\frac{2(n-1)}k\\sigma^2.\n$$\n令其等于 $\\sigma^2$，得到\n$$\n\\boxed{k=2(n-1).}\n$$\n**答案**：(1) $k=n\\sqrt{2/\\pi}$；(2) $k=2(n-1)$。$\\square$\n\n**点评**：相邻差 $\\xi_{i+1}-\\xi_i$ 和 $\\xi_{i+2}-\\xi_{i+1}$ 共享观测，通常不独立；本问只求期望，线性性已足够，不能误写“各相邻差独立”。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 8。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 10】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi\\sim N(a,1)$，$a\\in\\mathbb R$，$\\xi_1,\\xi_2,\\xi_3$ 为其样本。证明下列三个估计量均对 $a$ 无偏，计算各自方差并比较：\n\n$$\n\\widehat a_1=\\frac15\\xi_1+\\frac3{10}\\xi_2+\\frac12\\xi_3,\n\\qquad\n\\widehat a_2=\\frac13\\xi_1+\\frac14\\xi_2+\\frac5{12}\\xi_3,\n$$\n$$\n\\widehat a_3=\\frac13\\xi_1+\\frac16\\xi_2+\\frac12\\xi_3.\n$$",
+    "question_type": "short_answer",
+    "correct_answer": "三者均无偏，方差依次为 $19/50$、$25/72$、$7/18$，其中 $\\widehat a_2$ 方差最小。$\\square$",
+    "explanation": "提示：三组系数之和均为 $1$；样本独立且每个方差为 $1$，所以估计量方差就是各系数的平方和。\n\n**证**：三组权重分别满足\n$$\n\\frac15+\\frac3{10}+\\frac12=1,\\qquad\n\\frac13+\\frac14+\\frac5{12}=1,\\qquad\n\\frac13+\\frac16+\\frac12=1.\n$$\n因此 $E\\widehat a_j=a$，$j=1,2,3$，即均无偏。\n再由 $D\\xi_i=1$ 及样本独立性，\n$$\nD\\widehat a_1=\\frac1{25}+\\frac9{100}+\\frac14=\\frac{19}{50}=0.38,\n$$\n$$\nD\\widehat a_2=\\frac19+\\frac1{16}+\\frac{25}{144}=\\frac{25}{72}\\approx0.34722,\n$$\n$$\nD\\widehat a_3=\\frac19+\\frac1{36}+\\frac14=\\frac7{18}\\approx0.38889.\n$$\n所以\n$$\n\\boxed{D\\widehat a_2<D\\widehat a_1<D\\widehat a_3.}\n$$\n**答案**：三者均无偏，方差依次为 $19/50$、$25/72$、$7/18$，其中 $\\widehat a_2$ 方差最小。$\\square$\n\n**点评**：这里只是在给出的三个估计量中比较；全部线性无偏估计中，等权样本均值 $\\bar\\xi$ 的方差 $1/3$ 更小，不能把 $\\widehat a_2$ 称为所有无偏估计中的最优者。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 10。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 11】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n$\\widehat a_1,\\widehat a_2$ 均为参数 $a$ 的无偏估计量，方差分别为 $\\sigma_1^2,\\sigma_2^2$，相关系数为 $\\rho$。确定常数 $c_1>0,c_2>0,c_1+c_2=1$，使 $c_1\\widehat a_1+c_2\\widehat a_2$ 的方差最小。",
+    "question_type": "short_answer",
+    "correct_answer": "**解**：题中相关系数有定义，默认 $\\sigma_1,\\sigma_2>0$。记\n$$\nC=\\rho\\sigma_1\\sigma_2,\\qquad\nD=\\sigma_1^2+\\sigma_2^2-2C=D(\\widehat a_1-\\widehat a_2)\\ge0.\n$$\n因为权重和为 $1$，任意这样的组合都无偏。其方差为\n$$\nV(c)=c^2\\sigma_1^2+(1-c)^2\\sigma_2^2+2c(1-c)C\n=Dc^2+2(C-\\sigma_2^2)c+\\sigma_2^2.\n$$\n**情形一：$D>0$。** 二次函数的顶点为\n$$\nc^*=\\frac{\\sigma_2^2-C}{D},\\qquad\n1-c^*=\\frac{\\sigma_1^2-C}{D}.\n$$\n如果 $C<\\min\\{\\sigma_1^2,\\sigma_2^2\\}$，则顶点在 $(0,1)$ 内，唯一最优权重为\n$$\n\\boxed{c_1=\\frac{\\sigma_2^2-\\rho\\sigma_1\\sigma_2}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2},\\qquad\nc_2=\\frac{\\sigma_1^2-\\rho\\sigma_1\\sigma_2}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2}.}\n$$\n对应的最小方差为\n$$\n\\boxed{V_{\\min}=\\frac{\\sigma_1^2\\sigma_2^2(1-\\rho^2)}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2}.}\n$$\n如果该条件不成立，顶点落在 $(0,1)$ 外或端点上。由于题目要求两个权重**严格大于零**，最小值不被取得，只有\n$$\n\\inf_{0<c<1}V(c)=\\min\\{\\sigma_1^2,\\sigma_2^2\\}.\n$$\n例如 $\\sigma_1=1,\\sigma_2=2,\\rho=0.8$ 时，$C=1.6,D=1.8$，无约束解 $c_1=4/3,c_2=-1/3$ 不合法；正权重只能让 $c_1\\uparrow1,c_2\\downarrow0$，使方差逼近 $1$。\n\n**情形二：$D=0$。** 因两个估计量期望相同，$D(\\widehat a_1-\\widehat a_2)=0$ 蕴含它们几乎处处相等；此时 $\\sigma_1=\\sigma_2$、$\\rho=1$，任意满足题意的正权重都给出同一个估计量，方差不变。\n\n**答案**：当 $D>0$ 且 $\\rho\\sigma_1\\sigma_2<\\min\\{\\sigma_1^2,\\sigma_2^2\\}$ 时，取上述盒中权重；$D=0$ 时任意正权重均最优；其余情形在严格正权重约束下无最小值。$\\square$\n\n**点评**：第一个估计量的最优权重分子涉及“第二个估计量的方差减协方差”。书后答案转换稿中的两个分子与相应权重对不上，不能直接照抄。若题意改成允许 $c_i=0$，则可在边界选方差较小的那个估计量。",
+    "explanation": "提示：令 $c_1=c$、$c_2=1-c$，别漏掉协方差项。算出二次函数的顶点后，检查它是否位于开区间 $(0,1)$。\n\n**解**：题中相关系数有定义，默认 $\\sigma_1,\\sigma_2>0$。记\n$$\nC=\\rho\\sigma_1\\sigma_2,\\qquad\nD=\\sigma_1^2+\\sigma_2^2-2C=D(\\widehat a_1-\\widehat a_2)\\ge0.\n$$\n因为权重和为 $1$，任意这样的组合都无偏。其方差为\n$$\nV(c)=c^2\\sigma_1^2+(1-c)^2\\sigma_2^2+2c(1-c)C\n=Dc^2+2(C-\\sigma_2^2)c+\\sigma_2^2.\n$$\n**情形一：$D>0$。** 二次函数的顶点为\n$$\nc^*=\\frac{\\sigma_2^2-C}{D},\\qquad\n1-c^*=\\frac{\\sigma_1^2-C}{D}.\n$$\n如果 $C<\\min\\{\\sigma_1^2,\\sigma_2^2\\}$，则顶点在 $(0,1)$ 内，唯一最优权重为\n$$\n\\boxed{c_1=\\frac{\\sigma_2^2-\\rho\\sigma_1\\sigma_2}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2},\\qquad\nc_2=\\frac{\\sigma_1^2-\\rho\\sigma_1\\sigma_2}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2}.}\n$$\n对应的最小方差为\n$$\n\\boxed{V_{\\min}=\\frac{\\sigma_1^2\\sigma_2^2(1-\\rho^2)}\n{\\sigma_1^2+\\sigma_2^2-2\\rho\\sigma_1\\sigma_2}.}\n$$\n如果该条件不成立，顶点落在 $(0,1)$ 外或端点上。由于题目要求两个权重**严格大于零**，最小值不被取得，只有\n$$\n\\inf_{0<c<1}V(c)=\\min\\{\\sigma_1^2,\\sigma_2^2\\}.\n$$\n例如 $\\sigma_1=1,\\sigma_2=2,\\rho=0.8$ 时，$C=1.6,D=1.8$，无约束解 $c_1=4/3,c_2=-1/3$ 不合法；正权重只能让 $c_1\\uparrow1,c_2\\downarrow0$，使方差逼近 $1$。\n\n**情形二：$D=0$。** 因两个估计量期望相同，$D(\\widehat a_1-\\widehat a_2)=0$ 蕴含它们几乎处处相等；此时 $\\sigma_1=\\sigma_2$、$\\rho=1$，任意满足题意的正权重都给出同一个估计量，方差不变。\n\n**答案**：当 $D>0$ 且 $\\rho\\sigma_1\\sigma_2<\\min\\{\\sigma_1^2,\\sigma_2^2\\}$ 时，取上述盒中权重；$D=0$ 时任意正权重均最优；其余情形在严格正权重约束下无最小值。$\\square$\n\n**点评**：第一个估计量的最优权重分子涉及“第二个估计量的方差减协方差”。书后答案转换稿中的两个分子与相应权重对不上，不能直接照抄。若题意改成允许 $c_i=0$，则可在边界选方差较小的那个估计量。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 11。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 12】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n$\\xi\\sim N(a_1,1)$、$\\eta\\sim N(a_2,2)$。两组独立样本的容量分别为 $n_1,n_2$：\n\n1. 求 $a=a_1-a_2$ 的无偏估计量 $\\widehat a$。\n2. 若 $n_1+n_2=n$ 固定，怎样配置 $n_1,n_2$，使上述估计量的方差最小？",
+    "question_type": "short_answer",
+    "correct_answer": "(1) $\\widehat a=\\bar\\xi-\\bar\\eta$；(2) 连续最优比例 $1:2$，整数最优配置按上式取值。$\\square$",
+    "explanation": "提示：第二个总体的标准差为 $2$、方差为 $4$。先将 $n_1$ 当作实数优化 $1/n_1+4/(n-n_1)$，最后处理整数限制。\n\n**解 (1)**：取\n$$\n\\boxed{\\widehat a=\\bar\\xi-\\bar\\eta.}\n$$\n因 $E\\bar\\xi=a_1$、$E\\bar\\eta=a_2$，所以 $E\\widehat a=a_1-a_2$。\n\n**解 (2)**：两组样本独立，故\n$$\nD\\widehat a=\\frac1{n_1}+\\frac4{n_2}.\n$$\n连续优化时，令 $x=n_1$、$n_2=n-x$，则\n$$\nV'(x)=-\\frac1{x^2}+\\frac4{(n-x)^2}=0\n\\quad\\Longrightarrow\\quad n-x=2x.\n$$\n又 $V''(x)=2/x^3+8/(n-x)^3>0$，所以连续最优配置为\n$$\n\\boxed{n_1:n_2=1:2,\\qquad n_1=\\frac n3,\\quad n_2=\\frac{2n}3,}\n$$\n连续最小方差为 $9/n$。\n\n**整数配置**：要求 $n_1,n_2\\ge1$，故 $n\\ge2$。由严格凸性，只需比较 $n/3$ 两侧的可行相邻整数。具体为\n$$\n\\boxed{n_1^{\\mathrm{opt}}=\\left\\lfloor\\frac{n+1}{3}\\right\\rfloor,\n\\qquad n_2^{\\mathrm{opt}}=n-n_1^{\\mathrm{opt}}.}\n$$\n即 $n=3k$ 时取 $(k,2k)$；$n=3k+1$ 时取 $(k,2k+1)$；$n=3k+2$ 时取 $(k+1,2k+1)$。\n为验证后两种取整方向，记 $f_n(j)=1/j+4/(n-j)$，则在两候选均可行时\n$$\nf_{3k+1}(k+1)-f_{3k+1}(k)=\\frac1{k(k+1)(2k+1)}>0,\n$$\n$$\nf_{3k+2}(k+1)-f_{3k+2}(k)=-\\frac1{k(k+1)(2k+1)}<0.\n$$\n$n=2$ 时只有配置 $(1,1)$，也符合公式。\n\n**答案**：(1) $\\widehat a=\\bar\\xi-\\bar\\eta$；(2) 连续最优比例 $1:2$，整数最优配置按上式取值。$\\square$\n\n**点评**：波动更大的总体应分配更多观测，比例与标准差成正比，而不是与方差成正比。不能一律取 $n_1=\\lfloor n/3\\rfloor$：例如 $n=5$ 时，$(2,3)$ 的方差 $11/6$ 小于 $(1,4)$ 的方差 $2$。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 12。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 13】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi,\\eta$ 的均值分别为 $a_1,a_2$，方差分别为 $\\sigma_1^2,\\sigma_2^2$。各取容量为 $n$ 的样本，且两样本独立。证明 $\\bar\\xi-\\bar\\eta$ 为 $a_1-a_2$ 的最优线性无偏估计量。",
+    "question_type": "short_answer",
+    "correct_answer": "**证**：任意仿射线性估计可写为\n$$\nT=c+\\sum_{i=1}^n u_i\\xi_i+\\sum_{i=1}^n v_i\\eta_i,\n$$\n其中系数为不依赖未知参数的常数。要求对所有 $a_1,a_2$ 有 $ET=a_1-a_2$，就必须\n$$\nc=0,\\qquad \\sum_i u_i=1,\\qquad \\sum_i v_i=-1.\n$$\n利用样本内部及两样本间的独立性，\n$$\nDT=\\sigma_1^2\\sum_i u_i^2+\\sigma_2^2\\sum_i v_i^2.\n$$\n由柯西不等式，\n$$\n\\sum_i u_i^2\\ge\\frac{(\\sum_i u_i)^2}{n}=\\frac1n,\\qquad\n\\sum_i v_i^2\\ge\\frac{(\\sum_i v_i)^2}{n}=\\frac1n.\n$$\n因而\n$$\nDT\\ge\\frac{\\sigma_1^2+\\sigma_2^2}{n}.\n$$\n当 $u_i=1/n$、$v_i=-1/n$ 时达到下界，此时 $T=\\bar\\xi-\\bar\\eta$，且它确实无偏。因此\n$$\n\\boxed{\\bar\\xi-\\bar\\eta\\text{ 是 }a_1-a_2\\text{ 的最优线性无偏估计量},\\quad\nD(\\bar\\xi-\\bar\\eta)=\\frac{\\sigma_1^2+\\sigma_2^2}{n}.}\n$$\n**答案**：由上述方差下界及其可达性，结论成立。$\\square$\n\n**点评**：证明不依赖正态分布，只用到有限方差和独立性。结论限定在“线性无偏”类，不能据此直接宣称它在所有无偏估计中最优；若两总体方差均为正，等号条件还给出线性权重的唯一性。",
+    "explanation": "提示：写出任意线性估计，利用对所有 $a_1,a_2$ 都无偏得到两组系数和分别为 $1$、$-1$，再用平方和不等式。\n\n**证**：任意仿射线性估计可写为\n$$\nT=c+\\sum_{i=1}^n u_i\\xi_i+\\sum_{i=1}^n v_i\\eta_i,\n$$\n其中系数为不依赖未知参数的常数。要求对所有 $a_1,a_2$ 有 $ET=a_1-a_2$，就必须\n$$\nc=0,\\qquad \\sum_i u_i=1,\\qquad \\sum_i v_i=-1.\n$$\n利用样本内部及两样本间的独立性，\n$$\nDT=\\sigma_1^2\\sum_i u_i^2+\\sigma_2^2\\sum_i v_i^2.\n$$\n由柯西不等式，\n$$\n\\sum_i u_i^2\\ge\\frac{(\\sum_i u_i)^2}{n}=\\frac1n,\\qquad\n\\sum_i v_i^2\\ge\\frac{(\\sum_i v_i)^2}{n}=\\frac1n.\n$$\n因而\n$$\nDT\\ge\\frac{\\sigma_1^2+\\sigma_2^2}{n}.\n$$\n当 $u_i=1/n$、$v_i=-1/n$ 时达到下界，此时 $T=\\bar\\xi-\\bar\\eta$，且它确实无偏。因此\n$$\n\\boxed{\\bar\\xi-\\bar\\eta\\text{ 是 }a_1-a_2\\text{ 的最优线性无偏估计量},\\quad\nD(\\bar\\xi-\\bar\\eta)=\\frac{\\sigma_1^2+\\sigma_2^2}{n}.}\n$$\n**答案**：由上述方差下界及其可达性，结论成立。$\\square$\n\n**点评**：证明不依赖正态分布，只用到有限方差和独立性。结论限定在“线性无偏”类，不能据此直接宣称它在所有无偏估计中最优；若两总体方差均为正，等号条件还给出线性权重的唯一性。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 13。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 14】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体密度为 $f(x;\\theta)=1/\\theta$，$0<x\\le\\theta$，$\\theta>0$；其余处为 $0$。$\\xi_1,\\xi_2,\\xi_3$ 为其样本。证明\n\n$$\n\\widehat\\theta_M=\\frac43\\max_{1\\le i\\le3}\\xi_i,\\qquad\n\\widehat\\theta_m=4\\min_{1\\le i\\le3}\\xi_i\n$$\n\n均为 $\\theta$ 的无偏估计量，并比较有效性。",
+    "question_type": "short_answer",
+    "correct_answer": "两者均为 $\\theta$ 的无偏估计；$\\frac43\\max_i\\xi_i$ 较有效，其方差为另一估计量的 $1/9$。$\\square$",
+    "explanation": "提示：先求最大值、最小值的分布，再计算一、二阶矩。两者都无偏后，比较方差即可。\n\n**证**：记 $M=\\max_i\\xi_i$、$m=\\min_i\\xi_i$。对 $0<x<\\theta$，\n$$\nF_M(x)=\\left(\\frac x\\theta\\right)^3,\\qquad\nF_m(x)=1-\\left(1-\\frac x\\theta\\right)^3,\n$$\n从而\n$$\nf_M(x)=\\frac{3x^2}{\\theta^3},\\qquad\nf_m(x)=\\frac{3(\\theta-x)^2}{\\theta^3}.\n$$\n**最大值的矩**：\n$$\nEM=\\int_0^\\theta x\\frac{3x^2}{\\theta^3}\\,dx=\\frac{3\\theta}4,\n\\qquad EM^2=\\frac{3\\theta^2}5,\n$$\n$$\nDM=\\left(\\frac35-\\frac9{16}\\right)\\theta^2=\\frac{3\\theta^2}{80}.\n$$\n因此\n$$\nE\\widehat\\theta_M=\\frac43EM=\\theta,\\qquad\nD\\widehat\\theta_M=\\frac{16}9DM=\\boxed{\\frac{\\theta^2}{15}}.\n$$\n**最小值的矩**：\n$$\nEm=\\frac3{\\theta^3}\\int_0^\\theta x(\\theta-x)^2\\,dx=\\frac\\theta4,\n$$\n$$\nEm^2=\\frac3{\\theta^3}\\int_0^\\theta x^2(\\theta-x)^2\\,dx=\\frac{\\theta^2}{10},\n$$\n$$\nDm=\\left(\\frac1{10}-\\frac1{16}\\right)\\theta^2=\\frac{3\\theta^2}{80}.\n$$\n所以\n$$\nE\\widehat\\theta_m=4Em=\\theta,\\qquad\nD\\widehat\\theta_m=16Dm=\\boxed{\\frac{3\\theta^2}5}.\n$$\n两者均无偏，而\n$$\n\\frac{D\\widehat\\theta_m}{D\\widehat\\theta_M}=9.\n$$\n**答案**：两者均为 $\\theta$ 的无偏估计；$\\frac43\\max_i\\xi_i$ 较有效，其方差为另一估计量的 $1/9$。$\\square$\n\n**点评**：虽然未经修正的最大值、最小值方差相同，但无偏修正的放大倍数不同。估计上端点时，靠近上端点的最大值能提供更直接的信息。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 14。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 15】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n$\\widehat\\theta_1,\\widehat\\theta_2$ 为 $\\theta$ 的两个独立无偏估计量，且 $D\\widehat\\theta_1=2D\\widehat\\theta_2$。确定 $c_1,c_2$，使 $c_1\\widehat\\theta_1+c_2\\widehat\\theta_2$ 无偏，并在所有这样的线性估计中方差最小。",
+    "question_type": "short_answer",
+    "correct_answer": "取 $c_1=1/3,c_2=2/3$；非退化情形下唯一。$\\square$",
+    "explanation": "提示：无偏性要求权重和为 $1$；独立估计量的最优权重与其方差成反比。\n\n**解**：设 $D\\widehat\\theta_2=v$，则 $D\\widehat\\theta_1=2v$。无偏性要求 $c_1+c_2=1$，令 $c_1=c$、$c_2=1-c$。由独立性，\n$$\nD\\{c\\widehat\\theta_1+(1-c)\\widehat\\theta_2\\}\n=2vc^2+v(1-c)^2\n=3v\\left(c-\\frac13\\right)^2+\\frac{2v}3.\n$$\n当 $v>0$ 时，唯一最小点为 $c=1/3$。故\n$$\n\\boxed{c_1=\\frac13,\\qquad c_2=\\frac23,\\qquad V_{\\min}=\\frac{2v}3.}\n$$\n若 $v=0$，两个估计量均无随机波动，任意满足权重和为 $1$ 的组合都最优，上述权重仍是一个可行选择。\n\n**答案**：取 $c_1=1/3,c_2=2/3$；非退化情形下唯一。$\\square$\n\n**点评**：方差较大的估计量权重更小。独立性使协方差为零，本题是第 11 题 $\\rho=0$ 的特例。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 15。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 16】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n$T_1,T_2$ 分别为 $g_1(\\theta),g_2(\\theta)$ 的最优无偏估计量。证明对常数 $b_1,b_2$，$b_1T_1+b_2T_2$ 是 $b_1g_1(\\theta)+b_2g_2(\\theta)$ 的最优无偏估计量。",
+    "question_type": "short_answer",
+    "correct_answer": "**证**：按最优无偏估计的通常定义，考虑在每个参数值下均有有限二阶矩的估计量。\n\n**第一步：证明正交性质。** 任取统计量 $Z$，满足对所有 $\\theta$ 都有 $E_\\theta Z=0$ 且二阶矩有限。对任意实常数 $t$，$T_j+tZ$ 仍是 $g_j(\\theta)$ 的无偏估计。由 $T_j$ 的最优性，\n$$\nD_\\theta(T_j+tZ)-D_\\theta T_j\n=2t\\operatorname{Cov}_\\theta(T_j,Z)+t^2D_\\theta Z\\ge0\n\\qquad(\\forall t\\in\\mathbb R).\n$$\n该二次式对正负任意 $t$ 均非负，故一次项系数必须为零，即\n$$\n\\operatorname{Cov}_\\theta(T_j,Z)=0,\\qquad j=1,2.\n$$\n\n**第二步：线性组合继承正交性。** 记 $U=b_1T_1+b_2T_2$，则\n$$\nE_\\theta U=b_1g_1(\\theta)+b_2g_2(\\theta),\\qquad\n\\operatorname{Cov}_\\theta(U,Z)=0.\n$$\n\n**第三步：比较任意竞争估计。** 任取同一目标函数的有限方差无偏估计 $W$，令 $Z=W-U$，则对所有 $\\theta$ 均有 $E_\\theta Z=0$。由上面的正交性，\n$$\nD_\\theta W=D_\\theta(U+Z)\n=D_\\theta U+D_\\theta Z+2\\operatorname{Cov}_\\theta(U,Z)\n\\ge D_\\theta U.\n$$\n因而\n$$\n\\boxed{b_1T_1+b_2T_2\\text{ 是 }b_1g_1(\\theta)+b_2g_2(\\theta)\\text{ 的最优无偏估计量}.}\n$$\n**答案**：结论成立，证明如上。$\\square$\n\n**点评**：这里的“最优”是在所有有限方差无偏估计中、对每个参数值都方差最小，不只是在线性估计类内最优。证明不需要独立性，也不需要额外假定存在充分完备统计量。",
+    "explanation": "提示：不能假定 $T_1,T_2$ 独立。使用最优无偏估计的正交判别：它与每个对所有参数都均值为零的统计量协方差为零。\n\n**证**：按最优无偏估计的通常定义，考虑在每个参数值下均有有限二阶矩的估计量。\n\n**第一步：证明正交性质。** 任取统计量 $Z$，满足对所有 $\\theta$ 都有 $E_\\theta Z=0$ 且二阶矩有限。对任意实常数 $t$，$T_j+tZ$ 仍是 $g_j(\\theta)$ 的无偏估计。由 $T_j$ 的最优性，\n$$\nD_\\theta(T_j+tZ)-D_\\theta T_j\n=2t\\operatorname{Cov}_\\theta(T_j,Z)+t^2D_\\theta Z\\ge0\n\\qquad(\\forall t\\in\\mathbb R).\n$$\n该二次式对正负任意 $t$ 均非负，故一次项系数必须为零，即\n$$\n\\operatorname{Cov}_\\theta(T_j,Z)=0,\\qquad j=1,2.\n$$\n\n**第二步：线性组合继承正交性。** 记 $U=b_1T_1+b_2T_2$，则\n$$\nE_\\theta U=b_1g_1(\\theta)+b_2g_2(\\theta),\\qquad\n\\operatorname{Cov}_\\theta(U,Z)=0.\n$$\n\n**第三步：比较任意竞争估计。** 任取同一目标函数的有限方差无偏估计 $W$，令 $Z=W-U$，则对所有 $\\theta$ 均有 $E_\\theta Z=0$。由上面的正交性，\n$$\nD_\\theta W=D_\\theta(U+Z)\n=D_\\theta U+D_\\theta Z+2\\operatorname{Cov}_\\theta(U,Z)\n\\ge D_\\theta U.\n$$\n因而\n$$\n\\boxed{b_1T_1+b_2T_2\\text{ 是 }b_1g_1(\\theta)+b_2g_2(\\theta)\\text{ 的最优无偏估计量}.}\n$$\n**答案**：结论成立，证明如上。$\\square$\n\n**点评**：这里的“最优”是在所有有限方差无偏估计中、对每个参数值都方差最小，不只是在线性估计类内最优。证明不需要独立性，也不需要额外假定存在充分完备统计量。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 16。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 17】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n两个总体分别为 $\\xi\\sim N(a_1,\\sigma_1)$、$\\eta\\sim N(a_2,\\sigma_2)$。容量为 $n_1,n_2$ 的两组样本相互独立：\n\n1. 建立 $\\sigma_1^2/\\sigma_2^2$ 的置信水平为 $1-\\alpha$ 的区间估计。\n2. 假定 $\\sigma_1=\\sigma_2$，建立 $a_1-a_2$ 的置信水平为 $1-\\alpha$ 的区间估计。\n\n以下按均值、方差未另行给定，且 $n_1,n_2\\ge2$ 处理。",
+    "question_type": "short_answer",
+    "correct_answer": "**解 (1)：方差比区间。** 记 $\\nu_1=n_1-1$、$\\nu_2=n_2-1$，并令\n$$\nS_1^{*2}=\\frac{\\sum_i(\\xi_i-\\bar\\xi)^2}{\\nu_1},\\qquad\nS_2^{*2}=\\frac{\\sum_j(\\eta_j-\\bar\\eta)^2}{\\nu_2}.\n$$\n由正态总体抽样定理，$\\nu_1S_1^{*2}/\\sigma_1^2\\sim\\chi^2_{\\nu_1}$，$\\nu_2S_2^{*2}/\\sigma_2^2\\sim\\chi^2_{\\nu_2}$，且两者独立。于是\n$$\nF=\\frac{S_1^{*2}/\\sigma_1^2}{S_2^{*2}/\\sigma_2^2}\n=\\frac{S_1^{*2}/S_2^{*2}}{\\sigma_1^2/\\sigma_2^2}\n\\sim F_{\\nu_1,\\nu_2}.\n$$\n设 $R=S_1^{*2}/S_2^{*2}$、$r=\\sigma_1^2/\\sigma_2^2$，则\n$$\nP\\left\\{F_{1-\\alpha/2}(\\nu_1,\\nu_2)\\le\\frac Rr\n\\le F_{\\alpha/2}(\\nu_1,\\nu_2)\\right\\}=1-\\alpha.\n$$\n因所有量均为正，反解得到\n$$\n\\boxed{\\left[\n\\frac{R}{F_{\\alpha/2}(\\nu_1,\\nu_2)},\\quad\n\\frac{R}{F_{1-\\alpha/2}(\\nu_1,\\nu_2)}\n\\right].}\n$$\n若使用教材分母为样本量的方差，则\n$$\nR=\\frac{n_1S_1^2/(n_1-1)}{n_2S_2^2/(n_2-1)}.\n$$\n\n**解 (2)：等方差的均值差区间。** 设公共标准差为未知的 $\\sigma$，令 $\\delta=a_1-a_2$、$\\nu=n_1+n_2-2$，合并修正方差为\n$$\nS_p^2=\\frac{(n_1-1)S_1^{*2}+(n_2-1)S_2^{*2}}{\\nu}\n=\\frac{n_1S_1^2+n_2S_2^2}{\\nu}.\n$$\n由于两组样本独立，\n$$\nZ=\\frac{(\\bar\\xi-\\bar\\eta)-\\delta}{\\sigma\\sqrt{1/n_1+1/n_2}}\\sim N(0,1),\n\\qquad\\frac{\\nu S_p^2}{\\sigma^2}\\sim\\chi^2_\\nu.\n$$\n每组样本均值独立于本组方差，再结合两样本间独立性，可知 $Z$ 与 $S_p^2$ 独立。因此\n$$\nT=\\frac{(\\bar\\xi-\\bar\\eta)-\\delta}{S_p\\sqrt{1/n_1+1/n_2}}\\sim t_\\nu.\n$$\n由 $P\\{|T|\\le t_{\\alpha/2}(\\nu)\\}=1-\\alpha$，得到\n$$\n\\boxed{\\left[\n\\bar\\xi-\\bar\\eta-t_{\\alpha/2}(\\nu)S_p\\sqrt{\\frac1{n_1}+\\frac1{n_2}},\\quad\n\\bar\\xi-\\bar\\eta+t_{\\alpha/2}(\\nu)S_p\\sqrt{\\frac1{n_1}+\\frac1{n_2}}\n\\right].}\n$$\n若公共 $\\sigma$ **已知**，则直接将半宽换成 $u_{\\alpha/2}\\sigma\\sqrt{1/n_1+1/n_2}$，使用标准正态分位数。\n\n**答案**：(1) 上述 $F$ 区间；(2) 公共方差未知时取上述合并方差 $t$ 区间，自由度为 $n_1+n_2-2$。$\\square$\n\n**点评**：上侧分位数的小下标对应较大的临界值；方差比区间下限应除以较大的 $F$ 分位数。两组方差相等但未知，不等于方差已知，不能直接使用 $Z$ 区间。",
+    "explanation": "提示：(1) 两个独立修正方差标准化后的比值服从 $F$ 分布；(2) 公共方差未知时，合并离差平方和估计它，使用自由度 $n_1+n_2-2$ 的 $t$ 分布。\n\n**解 (1)：方差比区间。** 记 $\\nu_1=n_1-1$、$\\nu_2=n_2-1$，并令\n$$\nS_1^{*2}=\\frac{\\sum_i(\\xi_i-\\bar\\xi)^2}{\\nu_1},\\qquad\nS_2^{*2}=\\frac{\\sum_j(\\eta_j-\\bar\\eta)^2}{\\nu_2}.\n$$\n由正态总体抽样定理，$\\nu_1S_1^{*2}/\\sigma_1^2\\sim\\chi^2_{\\nu_1}$，$\\nu_2S_2^{*2}/\\sigma_2^2\\sim\\chi^2_{\\nu_2}$，且两者独立。于是\n$$\nF=\\frac{S_1^{*2}/\\sigma_1^2}{S_2^{*2}/\\sigma_2^2}\n=\\frac{S_1^{*2}/S_2^{*2}}{\\sigma_1^2/\\sigma_2^2}\n\\sim F_{\\nu_1,\\nu_2}.\n$$\n设 $R=S_1^{*2}/S_2^{*2}$、$r=\\sigma_1^2/\\sigma_2^2$，则\n$$\nP\\left\\{F_{1-\\alpha/2}(\\nu_1,\\nu_2)\\le\\frac Rr\n\\le F_{\\alpha/2}(\\nu_1,\\nu_2)\\right\\}=1-\\alpha.\n$$\n因所有量均为正，反解得到\n$$\n\\boxed{\\left[\n\\frac{R}{F_{\\alpha/2}(\\nu_1,\\nu_2)},\\quad\n\\frac{R}{F_{1-\\alpha/2}(\\nu_1,\\nu_2)}\n\\right].}\n$$\n若使用教材分母为样本量的方差，则\n$$\nR=\\frac{n_1S_1^2/(n_1-1)}{n_2S_2^2/(n_2-1)}.\n$$\n\n**解 (2)：等方差的均值差区间。** 设公共标准差为未知的 $\\sigma$，令 $\\delta=a_1-a_2$、$\\nu=n_1+n_2-2$，合并修正方差为\n$$\nS_p^2=\\frac{(n_1-1)S_1^{*2}+(n_2-1)S_2^{*2}}{\\nu}\n=\\frac{n_1S_1^2+n_2S_2^2}{\\nu}.\n$$\n由于两组样本独立，\n$$\nZ=\\frac{(\\bar\\xi-\\bar\\eta)-\\delta}{\\sigma\\sqrt{1/n_1+1/n_2}}\\sim N(0,1),\n\\qquad\\frac{\\nu S_p^2}{\\sigma^2}\\sim\\chi^2_\\nu.\n$$\n每组样本均值独立于本组方差，再结合两样本间独立性，可知 $Z$ 与 $S_p^2$ 独立。因此\n$$\nT=\\frac{(\\bar\\xi-\\bar\\eta)-\\delta}{S_p\\sqrt{1/n_1+1/n_2}}\\sim t_\\nu.\n$$\n由 $P\\{|T|\\le t_{\\alpha/2}(\\nu)\\}=1-\\alpha$，得到\n$$\n\\boxed{\\left[\n\\bar\\xi-\\bar\\eta-t_{\\alpha/2}(\\nu)S_p\\sqrt{\\frac1{n_1}+\\frac1{n_2}},\\quad\n\\bar\\xi-\\bar\\eta+t_{\\alpha/2}(\\nu)S_p\\sqrt{\\frac1{n_1}+\\frac1{n_2}}\n\\right].}\n$$\n若公共 $\\sigma$ **已知**，则直接将半宽换成 $u_{\\alpha/2}\\sigma\\sqrt{1/n_1+1/n_2}$，使用标准正态分位数。\n\n**答案**：(1) 上述 $F$ 区间；(2) 公共方差未知时取上述合并方差 $t$ 区间，自由度为 $n_1+n_2-2$。$\\square$\n\n**点评**：上侧分位数的小下标对应较大的临界值；方差比区间下限应除以较大的 $F$ 分位数。两组方差相等但未知，不等于方差已知，不能直接使用 $Z$ 区间。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 17。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 18】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n$\\xi\\sim N(a_1,\\sigma)$、$\\eta\\sim N(a_2,\\sigma)$，其中 $\\sigma$ 未知。两组容量均为 $n$ 的样本相互独立，求 $a_1-a_2$ 的置信水平为 $0.95$ 的区间估计，设 $n\\ge2$。",
+    "question_type": "short_answer",
+    "correct_answer": "采用独立等方差两样本的合并方差 $t$ 区间，主答案如盒中所示，自由度为 $2n-2$。$\\square$",
+    "explanation": "提示：这是第 17(2) 题 $n_1=n_2=n$、$\\alpha=0.05$ 的特例。独立样本的合并方差方法用 $2n-2$ 个自由度。\n\n**解**：记两组分母为 $n$ 的样本方差为 $S_1^2,S_2^2$。合并修正方差为\n$$\nS_p^2=\\frac{nS_1^2+nS_2^2}{2n-2}.\n$$\n由第 17(2) 题，\n$$\n\\frac{(\\bar\\xi-\\bar\\eta)-(a_1-a_2)}{S_p\\sqrt{2/n}}\\sim t_{2n-2}.\n$$\n因此所求区间为\n$$\n\\boxed{\\left[\n\\bar\\xi-\\bar\\eta-t_{0.025}(2n-2)S_p\\sqrt{\\frac2n},\\quad\n\\bar\\xi-\\bar\\eta+t_{0.025}(2n-2)S_p\\sqrt{\\frac2n}\n\\right].}\n$$\n由于 $S_p\\sqrt{2/n}=\\sqrt{(S_1^2+S_2^2)/(n-1)}$，也可将半宽写为\n$$\nt_{0.025}(2n-2)\\sqrt{\\frac{S_1^2+S_2^2}{n-1}}.\n$$\n\n**关于书后转换稿中 $n-1$ 自由度的说明**：也可另设 $D_i=\\xi_i-\\eta_i$，这时 $D_i$ 独立同分布于 $N(a_1-a_2,\\sqrt2\\sigma)$。令\n$$\nS_D^{*2}=\\frac1{n-1}\\sum_i(D_i-\\bar D)^2,\n$$\n则 $\\bar D\\pm t_{0.025}(n-1)S_D^*/\\sqrt n$ 也是一个覆盖率为 $0.95$ 的有效区间。但它是**改用差值样本的另一种构造**，不是上面合并方差区间的等价写法；不能把合并方差与 $n-1$ 自由度混用。\n若用分母为 $n$ 的样本协方差 $S_{12}=n^{-1}\\sum_i(\\xi_i-\\bar\\xi)(\\eta_i-\\bar\\eta)$，则\n$$\n\\frac1n\\sum_i(D_i-\\bar D)^2=S_1^2+S_2^2-2S_{12},\n$$\n注意差值对应**负号**，两样本独立也不意味着观测得到的样本协方差恰好为零。\n\n**答案**：采用独立等方差两样本的合并方差 $t$ 区间，主答案如盒中所示，自由度为 $2n-2$。$\\square$\n\n**点评**：相同样本量并不意味着数据是配对设计。题设明确两样本独立，优先使用两组各自的离差平方和；若另选差值法，必须连同方差估计、自由度一起一致地更换。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 18。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数理统计｜10月15日数理统计作业｜习题 19】\n\n课程第二章对应教材第七章《参数估计》。$N(a,\\sigma)$ 第二参数为标准差；$S^2=n^{-1}\\sum(\\xi_i-\\bar\\xi)^2$，$S^{*2}=(n-1)^{-1}\\sum(\\xi_i-\\bar\\xi)^2$。分位数均为上侧分位数。第4(1)题按标准拉普拉斯位置模型理解，尚未核对原版扫描页；具体边界解释见解析。\n\n总体 $\\xi\\sim N(a,\\sigma)$，已知容量为 $15$ 的样本满足\n\n$$\n\\sum_{i=1}^{15}x_i=8.7,\\qquad \\sum_{i=1}^{15}x_i^2=25.05.\n$$\n\n分别求置信水平为 $0.95$ 的 $a$、$\\sigma^2$ 的区间估计。",
+    "question_type": "short_answer",
+    "correct_answer": "$a$ 的区间约为 $[-0.082,1.242]$；$\\sigma^2$ 的区间约为 $[0.766,3.554]$，各自置信水平为 $0.95$。$\\square$",
+    "explanation": "提示：先由两项和求 $\\bar x$ 与离差平方和 $Q=\\sum_i x_i^2-(\\sum_i x_i)^2/n$。均值用 $t_{14}$，方差用 $\\chi^2_{14}$。\n\n**解：先求样本数字特征。**\n$$\nn=15,\\qquad \\bar x=\\frac{8.7}{15}=0.58,\n$$\n$$\nQ=25.05-\\frac{8.7^2}{15}=25.05-5.046=20.004.\n$$\n因此\n$$\ns^2=\\frac Q{15}=1.3336,\\qquad\ns^{*2}=\\frac Q{14}\\approx1.428857,\n\\qquad \\frac{s^*}{\\sqrt{15}}=\\sqrt{\\frac{20.004}{14\\times15}}\\approx0.308638.\n$$\n\n**(1) 均值 $a$ 的区间。** $\\sigma$ 未知，使用\n$$\n\\frac{\\bar\\xi-a}{S^*/\\sqrt{15}}\\sim t_{14},\\qquad\nt_{0.025}(14)\\approx2.144787.\n$$\n代入观测值，区间为\n$$\n\\left[0.58-2.144787\\sqrt{\\frac{20.004}{210}},\\quad\n0.58+2.144787\\sqrt{\\frac{20.004}{210}}\\right],\n$$\n即\n$$\n\\boxed{a\\text{ 的 }95\\%\\text{ 置信区间为 }[-0.08196,\\ 1.24196].}\n$$\n\n**(2) 方差 $\\sigma^2$ 的区间。** 由\n$$\n\\frac{\\sum_i(\\xi_i-\\bar\\xi)^2}{\\sigma^2}\\sim\\chi^2_{14},\n$$\n得到\n$$\n\\left[\\frac{Q}{\\chi^2_{0.025}(14)},\\quad\n\\frac{Q}{\\chi^2_{0.975}(14)}\\right].\n$$\n查得上侧分位数\n$$\n\\chi^2_{0.025}(14)\\approx26.118948,\\qquad\n\\chi^2_{0.975}(14)\\approx5.628726.\n$$\n所以\n$$\n\\boxed{\\sigma^2\\text{ 的 }95\\%\\text{ 置信区间为 }\n\\left[\\frac{20.004}{26.118948},\\frac{20.004}{5.628726}\\right]\n\\approx[0.76588,\\ 3.55391].}\n$$\n**答案**：$a$ 的区间约为 $[-0.082,1.242]$；$\\sigma^2$ 的区间约为 $[0.766,3.554]$，各自置信水平为 $0.95$。$\\square$\n\n**点评**：书后答案转换稿给出的区间与这里题给汇总数据不一致，以上使用 $n=15$、和 $8.7$、平方和 $25.05$ 重新计算。两个区间各有 $95\\%$ 覆盖率，不等于它们联合覆盖 $(a,\\sigma^2)$ 的概率也自动为 $95\\%$。\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md；定位：习题 19。",
+    "tags": [
+      "数理统计",
+      "10月15日数理统计作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  }
+]

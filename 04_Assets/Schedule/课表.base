@@ -1,0 +1,56 @@
+filters:
+  and:
+    - file.inFolder("04_Assets/Schedule/课程")
+    - file.ext == "md"
+views:
+  - type: table
+    name: 2026-2027-第一学期
+    filters: 学期 == "2026-2027-第一学期"
+    order:
+      - 排序
+      - 课程
+      - 星期
+      - 节次
+      - 时间段
+      - 周次
+      - 会议号
+      - 教师
+    sort:
+      - property: 排序
+        direction: ASC
+  - type: table
+    name: 全部学期
+    groupBy:
+      property: 学期
+      direction: DESC
+    order:
+      - 学期
+      - 排序
+      - 课程
+      - 星期
+      - 节次
+      - 时间段
+      - 周次
+      - 会议号
+      - 教师
+    sort:
+      - property: 排序
+        direction: ASC
+  - type: table
+    name: 2026-2027-第一学期 · 按星期
+    filters: 学期 == "2026-2027-第一学期"
+    groupBy:
+      property: 星期
+      direction: ASC
+    order:
+      - 排序
+      - 课程
+      - 星期
+      - 节次
+      - 时间段
+      - 周次
+      - 会议号
+      - 教师
+    sort:
+      - property: 排序
+        direction: ASC

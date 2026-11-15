@@ -6,6 +6,7 @@ source:
 - '[[03_Sources/Reviews/归档/实变函数/复习/IV-Lp空间]]'
 - '[[03_Sources/Readings/核对资料/NIST-DLMF-积分变换]]'
 - '[[03_Sources/Courses/归档/实变函数/作业/05-重积分与Lp空间/例4.3.3-Gauss函数的Fourier变换-例题]]'
+- '[[03_Sources/Courses/数学物理方程/课堂笔记/2026-11-11-第14节-傅里叶变换与偏微分方程求解讲座]]'
 topics:
 - '[[02_Maps/MOC-收敛性与积分理论]]'
 - '[[02_Maps/MOC-实变函数]]'
@@ -194,3 +195,50 @@ $$\hat f(t)=\frac{i}{\sqrt{2π}}\left(\frac{\sin((t+1)π)}{t+1}-\frac{\sin((t-1)
 t=±1处均用sin u/u→1作可去奇点延拓，分别为−iπ/√(2π)、iπ/√(2π)。
 
 对G=e^(−x²/2)，G'=−xG，Schwartz衰减允许积分分部及积分号下求导：$\widehat{G'}=it\hat G$、$\widehat{xG}=i\hat G'$，故 $it\hat G=-i\hat G'$，即 $\hat G'=-t\hat G$。初值 $\hat G(0)=1$ 给 $\hat G=e^{-t²/2}$。所有计算必须先固定指数符号和对称归一化。
+
+## 非对称归一化下的性质、依据与核查例
+
+本节专用 $\widehat f=\int f(x)e^{-i\omega x}dx$，逆变换系数 $1/(2\pi)$；与上文对称归一化的像函数差 $\sqrt{2\pi}$，不可混用。多数公式可先取Schwartz函数；放宽条件时逐项核对。
+
+| 运算 | 本节公式 |
+|---|---|
+| 线性 | $\mathcal F[\alpha f+\beta g]=\alpha\hat f+\beta\hat g$ |
+| 导数 | $\mathcal F[f^{(n)}]=(i\omega)^n\hat f$ |
+| 频率导数 | $\partial_\omega\hat f=\mathcal F[-ixf]$ |
+| 平移 | $\mathcal F[f(x-b)]=e^{-i\omega b}\hat f$ |
+| 调制 | $\mathcal F[e^{i\omega_0x}f]=\hat f(\omega-\omega_0)$ |
+| 缩放 | $\mathcal F[f(bx)]=|b|^{-1}\hat f(\omega/b)$，$b\ne0$ |
+| 能量 | $\int|f|^2dx=(2\pi)^{-1}\int|\hat f|^2d\omega$ |
+
+导数公式用分部积分：$\int f'e^{-i\omega x}=[fe^{-i\omega x}]_{-\infty}^{\infty}+i\omega\hat f$。例如 $f$ 局部绝对连续且 $f,f'\in L^1$ 时边界项消失；高阶还须相应低阶边界项与可积条件。于是二阶乘子为 $-\omega^2$，四阶为 $\omega^4$。若 $xf\in L^1$，积分下对频率求导给频率导数公式。平移令 $s=x-b$ 得负相位；调制直接合并指数得频率平移；缩放 $s=bx$ 时 $b<0$ 必须交换积分限，所以出现绝对值。
+
+### 原函数积分不能忽略零频
+
+若 $q(x)=\int_{-\infty}^xf(s)ds$，还须 $q$ 有可用变换且导数公式成立，才能由 $q'=f$ 得
+$$\widehat q(\omega)=\widehat f(\omega)/(i\omega),\qquad\omega\ne0.$$
+经典 $L^1$ 情形可要求 $q,f\in L^1$ 及相应正则性，尤其 $\int f=0$；总积分为零仍不足以自动保证 $q\in L^1$。零频由原定义或极限确定。总积分非零时原函数通常一端趋于非零常数，须采用分布及零频项，不能照搬普通函数除法。
+
+### 高斯与平移自测
+
+对 $A>0$，设 $I(x)=\int e^{-A\omega^2}e^{i\omega x}d\omega$。高斯衰减允许求导及分部积分，给 $I'=-xI/(2A)$、$I(0)=\sqrt{\pi/A}$，故
+$$\mathcal F^{-1}[e^{-A\omega^2}]=\frac{e^{-x^2/(4A)}}{\sqrt{4\pi A}}.$$
+配方涉及复平移时，不能直接当成实正态概率积分。平移高斯的变换为 $e^{-i\omega b}e^{-A\omega^2}$；改 $b$ 为 $-b$，相位改正号。零频为1检查空间积分归一化。
+
+### 分段奇函数的参数化计算
+
+设 $h_c(x)=cx$ 当 $|x|<2$，其余为零；$c$ 为实参数。奇偶性去掉余弦，分部积分得
+$$
+\widehat h_c(\omega)=-2ic\int_0^2x\sin(\omega x)dx
+=\frac{4ic\cos(2\omega)}\omega-\frac{2ic\sin(2\omega)}{\omega^2}.
+$$
+$\omega=0$ 按可去奇点取0；小频率为 $-(16/3)ic\omega+O(\omega^3)$，与 $\hat h_c'(0)=-i\int xh_c(x)dx$ 相符。11月11日原课堂精确系数缺失，本式只说明参数族，未恢复原题 $c$。
+
+### §5.1习题的公式与适用边界
+
+按同一约定，$\mathcal F[e^{-|x|}]=2/(1+\omega^2)$（拆正负轴直接积分），$\mathcal F[e^{-\pi x^2}]=e^{-\omega^2/(4\pi)}$（用高斯缩放）。对 $y>0$，
+$$
+\mathcal F^{-1}[e^{-y|\omega|}](x)=\frac1\pi\int_0^\infty e^{-y\omega}\cos(x\omega)d\omega=\frac{y}{\pi(x^2+y^2)}.
+$$
+$\cos(ax^2)$ 不绝对可积；可先乘 $e^{-\varepsilon x^2}$、$\varepsilon>0$，计算复高斯后令 $\varepsilon\downarrow0$，按振荡积分或分布理解，不把题目的存在性误判为必须指数衰减。原课堂仅列其题面，没有已讲完整解的证据。
+
+卷积方程的除法条件另见 [[01_Knowledge/卷积积分方程的频域求解]]；热高斯自测见 [[01_Knowledge/全线热方程的高斯核与反应因子]]。

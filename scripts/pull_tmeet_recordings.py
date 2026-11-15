@@ -5,7 +5,7 @@
 ====================================
 
 从腾讯会议拉取录制（课堂/讲座录音）的【逐字稿】与【智能纪要】，
-按课表（vault 根目录 课表.md）匹配课程，计算学期第几节，
+按课表（04_Assets/Schedule 中的课表数据库）匹配课程，计算学期第几节，
 归档到 03_Sources/Courses/<课程名>/课堂笔记/raw/ ，并生成 v2 待润色课堂笔记。
 
 润色环节由 Agent（Claude/Codex）手动触发：读取 raw 逐字稿，生成课堂内容梳理。
@@ -44,7 +44,7 @@ def default_vault():
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 VAULT = default_vault()
-TIMETABLE_PATH = os.path.join(VAULT, '课表.md')
+TIMETABLE_PATH = os.path.join(VAULT, '04_Assets', 'Schedule', '学期设置.md')
 NOTEBOOK_DIR = '课堂笔记'   # 每门课程下的课堂笔记目录
 RAW_DIR = 'raw'            # 原始逐字稿/纪要存档子目录
 COURSES_DIR = os.path.join(VAULT, '03_Sources', 'Courses')
@@ -56,7 +56,7 @@ def set_vault(path):
     """--vault 覆盖知识库根目录（连带更新依赖路径）。"""
     global VAULT, TIMETABLE_PATH, COURSES_DIR, UNMATCHED_DIR, LOG_PATH
     VAULT = os.path.abspath(path)
-    TIMETABLE_PATH = os.path.join(VAULT, '课表.md')
+    TIMETABLE_PATH = os.path.join(VAULT, '04_Assets', 'Schedule', '学期设置.md')
     COURSES_DIR = os.path.join(VAULT, '03_Sources', 'Courses')
     UNMATCHED_DIR = os.path.join(VAULT, '00_Inbox', '课堂录音')
     LOG_PATH = os.path.join(VAULT, 'tmp', 'tmeet_sync.log')
@@ -146,13 +146,51 @@ def parse_time_range(text):
         return None
 
 
+def timetable_locations(path):
+    """Resolve the active semester, keeping legacy fixture tables readable."""
+    path = Path(path)
+    text = path.read_text(encoding='utf-8')
+    if path.name == '学期设置.md':
+        meta = yaml.safe_load(text.split('---', 2)[1]) or {}
+        if '当前学期' in meta:
+            semester = str(meta['当前学期'])
+            if not re.fullmatch(r'\d{4}-\d{4}-第[一二三]学期', semester):
+                raise ValueError(f'学期名称无效：{semester}')
+            return path.parent / '学期设置' / (semester + '.md'), path.parent / '课程' / semester
+    if path.parent.name == '学期设置':
+        return path, path.parent.parent / '课程' / path.stem
+    return path, path.parent / '课程'
+
+
+def timetable_text(path):
+    """Read legacy tables or render the editable Bases records for the parser."""
+    original = Path(path)
+    path, courses_folder = timetable_locations(original)
+    text = path.read_text(encoding='utf-8')
+    if original.name != '学期设置.md' and path.parent.name != '学期设置':
+        return text
+    if not courses_folder.is_dir():
+        raise FileNotFoundError(f'学期课程目录不存在：{courses_folder}')
+    columns = ['课程', '星期', '节次', '时间段', '周次', '会议号', '教师']
+    records = []
+    for note in courses_folder.glob('*.md'):
+        record = yaml.safe_load(note.read_text(encoding='utf-8').split('---', 2)[1])
+        records.append(record)
+    records.sort(key=lambda row: (int(row.get('排序', 0)), str(row.get('课程', ''))))
+    lines = ['| ' + ' | '.join(columns) + ' |', '|---|---|---|---|---|---|---|']
+    for row in records:
+        lines.append('| ' + ' | '.join(str(row.get(k, '') or '') for k in columns) + ' |')
+    # Quoted YAML scalars must be unwrapped for the legacy metadata parser.
+    meta = yaml.safe_load(text.split('---', 2)[1]) or {}
+    return '---\n' + '\n'.join(f'{k}: {v}' for k, v in meta.items()) + '\n---\n\n' + '\n'.join(lines)
+
+
 def load_timetable(path=None):
     """解析 课表.md → {courses: [...], semester_start: date, semester: str}。"""
     path = path or TIMETABLE_PATH
     if not os.path.isfile(path):
         return None
-    with open(path, encoding='utf-8') as f:
-        text = f.read()
+    text = timetable_text(path)
 
     fm = re.search(r'^---\s*\n(.*?)\n---', text, re.DOTALL)
     meta = {}
@@ -626,7 +664,7 @@ polish_status: not done
 
 > [!info] 待润色
 > 本节课录音已自动归档，原始素材见下方链接。请由 Agent 读取逐字稿与纪要后，
-> 润色生成本次课堂内容梳理（按 [[规范/课程笔记生成规范|课程笔记生成规范]] 组织）。
+> 润色生成本次课堂内容梳理（按 [[99_System/rules/课程笔记生成规范|课程笔记生成规范]] 组织）。
 
 {chr(10).join(f'- {label}：{link}' for label, link in materials)}
 - 会议号：{meeting_code}｜开始时间：{start_time}
@@ -888,7 +926,7 @@ def main():
         print(f'   课表已加载：{timetable["semester"]}（开学 {timetable["semester_start"]}，'
               f'{len(timetable["courses"])} 门课）')
     else:
-        print('   [提示] 未找到 课表.md（vault 根目录），全部会议将按"未匹配课表"处理')
+        print('   [提示] 未找到 04_Assets/Schedule/学期设置.md，全部会议将按"未匹配课表"处理')
 
     # 1. 拉取录制列表（分页）
     meetings = []

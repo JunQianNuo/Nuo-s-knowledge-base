@@ -7,6 +7,7 @@ topics:
 source:
 - '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-10-26-第16节-MPI集合通信与CMake编译教学]]'
 - '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-10-28-第17节-MPI并行计算与热扩散方程课程]]'
+- '[[03_Sources/Courses/并行与分布式计算/课堂笔记/2026-11-09-第20节-MPI并行计算技术授课]]'
 ---
 # MPI集合通信的数据效果与参与顺序
 
@@ -58,3 +59,7 @@ if (rank==root) {
 逻辑数据流不规定内部一定由root逐个直连，也不是性能实测；换成集合接口不能直接断言必然加速。
 
 语义核对：[MPI集合通信](https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node116.htm)、[MPI_Bcast](https://docs.open-mpi.org/en/v5.0.10/man-openmpi/man3/MPI_Bcast.3.html)、[MPI_Reduce](https://docs.open-mpi.org/en/v5.0.10/man-openmpi/man3/MPI_Reduce.3.html)。
+
+## 热方程中的输入分发与不同汇总目的
+
+11月9日课堂让root统一读取参数，再广播整数状态/参数和数值参数，得到每rank的本地副本。分块最终解须按空间次序拼接，可用[[01_Knowledge/MPI不等长数组的Gatherv拼接]]；局部迭代耗时则用`MPI_Reduce`与`MPI_MAX`取最大值，见[[01_Knowledge/并行程序性能测量与可扩展性]]。拼接数组、复制输入和取最大耗时解决不同问题，不能混为求和。

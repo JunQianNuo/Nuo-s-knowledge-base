@@ -1,6 +1,6 @@
 # Knowledge v2 维护入口
 
-从 [[Home]] 进入学科主题、课程资料、来源提炼状态与待处理视图。属性与目录规则见 [[docs/KNOWLEDGE_ARCHITECTURE]]。
+从 [[Home]] 进入学科主题、课程资料、来源提炼状态与待处理视图。属性与目录规则见 [[docs/ARCHITECTURE]]。
 
 ## 给 Agent 的日常指令
 
@@ -47,3 +47,6 @@ python -B "D:/知识库/99_System/knowledge/knowledge.py" v2 restore --plan "批
 ## 2026-11-01 课程附件位置修正
 
 课程源资料及其附件作为完整资料包保存：教材/课件转换的 images、assets 等目录保留在源文件原有相对位置，不集中迁入 04_Assets；引用优先保留原有相对路径。04_Assets 仅用于独立或确需共享的附件。
+
+
+写作与处理规范：[[99_System/rules/README|任务规范入口]]。

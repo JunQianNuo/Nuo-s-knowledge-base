@@ -1,0 +1,41 @@
+[
+  {
+    "question": "【数学物理方程｜9月28日数学作业｜习题 2.4 第 2 题（1）】\n\n求方程\n\n$$\nu_{xx}+10u_{xy}+9u_{yy}=0\n$$\n\n的通解。",
+    "question_type": "short_answer",
+    "correct_answer": "$\\boxed{u(x,y)=F(y-x)+G(y-9x)}$，其中 $F,G$ 为任意二次可微函数。",
+    "explanation": "提示：注意混合偏导项的系数是 $2a_{12}$。先把微分算子分解为两个一阶算子的乘积，再分别求这两个方向的特征不变量。\n\n**解**：这里\n$$\na_{11}=1,\\qquad a_{12}=5,\\qquad a_{22}=9.\n$$\n因而\n$$\nD=a_{12}^{2}-a_{11}a_{22}=25-9=16>0,\n$$\n所以方程是双曲型。\n\n特征方程为\n$$\n\\left(\\frac{\\mathrm dy}{\\mathrm dx}\\right)^2\n-10\\frac{\\mathrm dy}{\\mathrm dx}+9=0,\n$$\n即\n$$\n\\left(\\frac{\\mathrm dy}{\\mathrm dx}-1\\right)\n\\left(\\frac{\\mathrm dy}{\\mathrm dx}-9\\right)=0.\n$$\n两族特征线分别为\n$$\ny-x=C_1,\\qquad y-9x=C_2.\n$$\n取特征坐标\n$$\n\\xi=y-x,\\qquad \\eta=y-9x.\n$$\n其 Jacobi 行列式为\n$$\n\\frac{\\partial(\\xi,\\eta)}{\\partial(x,y)}\n=\\begin{vmatrix}-1&1\\\\-9&1\\end{vmatrix}=8\\ne0,\n$$\n故该变换可逆。\n\n原微分算子可分解为\n$$\n\\partial_x^2+10\\partial_x\\partial_y+9\\partial_y^2\n=(\\partial_x+\\partial_y)(\\partial_x+9\\partial_y).\n$$\n在新坐标下，\n$$\n\\partial_x+\\partial_y=-8\\partial_\\eta,\n\\qquad\n\\partial_x+9\\partial_y=8\\partial_\\xi.\n$$\n因此原方程化为\n$$\n-64U_{\\xi\\eta}=0,\n$$\n即 $U_{\\xi\\eta}=0$。连续积分两次，得\n$$\nU(\\xi,\\eta)=F(\\xi)+G(\\eta).\n$$\n换回原变量：\n$$\n\\boxed{u(x,y)=F(y-x)+G(y-9x)}.\n$$\n\n**答案**：$\\boxed{u(x,y)=F(y-x)+G(y-9x)}$，其中 $F,G$ 为任意二次可微函数。\n\n**点评**：因式分解不仅能快速验证特征方向，也能直接看出两个一阶方向导数。两个任意函数分别沿一族特征线传播。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md；定位：习题 2.4 第 2 题（1）。",
+    "tags": [
+      "数学物理方程",
+      "9月28日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜9月28日数学作业｜习题 2.4 第 2 题（3）】\n\n求方程\n\n$$\n4u_{xx}+8u_{xy}+3u_{yy}=0\n$$\n\n的通解。",
+    "question_type": "short_answer",
+    "correct_answer": "$\\boxed{u(x,y)=F(2y-x)+G(2y-3x)}$，其中 $F,G$ 为任意二次可微函数。",
+    "explanation": "提示：可将主部算子分解为 $(2\\partial_x+\\partial_y)(2\\partial_x+3\\partial_y)$。对应的两族特征线斜率分别为 $1/2$ 和 $3/2$。\n\n**解**：这里\n$$\na_{11}=4,\\qquad a_{12}=4,\\qquad a_{22}=3.\n$$\n因而\n$$\nD=a_{12}^{2}-a_{11}a_{22}=16-12=4>0,\n$$\n所以方程是双曲型。\n\n特征方程为\n$$\n4\\left(\\frac{\\mathrm dy}{\\mathrm dx}\\right)^2\n-8\\frac{\\mathrm dy}{\\mathrm dx}+3=0,\n$$\n解得\n$$\n\\frac{\\mathrm dy}{\\mathrm dx}=\\frac12\n\\quad\\text{或}\\quad\n\\frac{\\mathrm dy}{\\mathrm dx}=\\frac32.\n$$\n两族特征线可写为\n$$\n2y-x=C_1,\\qquad 2y-3x=C_2.\n$$\n取\n$$\n\\xi=2y-x,\\qquad \\eta=2y-3x.\n$$\n此时\n$$\n\\frac{\\partial(\\xi,\\eta)}{\\partial(x,y)}\n=\\begin{vmatrix}-1&2\\\\-3&2\\end{vmatrix}=4\\ne0.\n$$\n\n原微分算子分解为\n$$\n4\\partial_x^2+8\\partial_x\\partial_y+3\\partial_y^2\n=(2\\partial_x+\\partial_y)(2\\partial_x+3\\partial_y).\n$$\n在新坐标下，\n$$\n2\\partial_x+\\partial_y=-4\\partial_\\eta,\n\\qquad\n2\\partial_x+3\\partial_y=4\\partial_\\xi.\n$$\n因此原方程化为\n$$\n-16U_{\\xi\\eta}=0,\n$$\n即 $U_{\\xi\\eta}=0$。所以\n$$\nU(\\xi,\\eta)=F(\\xi)+G(\\eta).\n$$\n换回原变量，得到\n$$\n\\boxed{u(x,y)=F(2y-x)+G(2y-3x)}.\n$$\n\n**答案**：$\\boxed{u(x,y)=F(2y-x)+G(2y-3x)}$，其中 $F,G$ 为任意二次可微函数。\n\n**点评**：特征不变量可以乘任意非零常数，因此写成 $y-x/2$、$y-3x/2$ 也完全等价。选择整数系数只是为了计算更简洁。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md；定位：习题 2.4 第 2 题（3）。",
+    "tags": [
+      "数学物理方程",
+      "9月28日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜9月28日数学作业｜习题 2.4 第 2 题（5）】\n\n求方程\n\n$$\n16u_{xx}+16u_{xy}+3u_{yy}=0\n$$\n\n的通解。",
+    "question_type": "short_answer",
+    "correct_answer": "$\\boxed{u(x,y)=F(4y-x)+G(4y-3x)}$，其中 $F,G$ 为任意二次可微函数。",
+    "explanation": "提示：将主部算子分解为 $(4\\partial_x+\\partial_y)(4\\partial_x+3\\partial_y)$，再由两个一阶方向分别写出特征不变量。\n\n**解**：这里\n$$\na_{11}=16,\\qquad a_{12}=8,\\qquad a_{22}=3.\n$$\n因而\n$$\nD=a_{12}^{2}-a_{11}a_{22}=64-48=16>0,\n$$\n所以方程是双曲型。\n\n特征方程为\n$$\n16\\left(\\frac{\\mathrm dy}{\\mathrm dx}\\right)^2\n-16\\frac{\\mathrm dy}{\\mathrm dx}+3=0,\n$$\n解得\n$$\n\\frac{\\mathrm dy}{\\mathrm dx}=\\frac14\n\\quad\\text{或}\\quad\n\\frac{\\mathrm dy}{\\mathrm dx}=\\frac34.\n$$\n两族特征线为\n$$\n4y-x=C_1,\\qquad 4y-3x=C_2.\n$$\n取\n$$\n\\xi=4y-x,\\qquad \\eta=4y-3x.\n$$\n其 Jacobi 行列式为\n$$\n\\frac{\\partial(\\xi,\\eta)}{\\partial(x,y)}\n=\\begin{vmatrix}-1&4\\\\-3&4\\end{vmatrix}=8\\ne0.\n$$\n\n原微分算子分解为\n$$\n16\\partial_x^2+16\\partial_x\\partial_y+3\\partial_y^2\n=(4\\partial_x+\\partial_y)(4\\partial_x+3\\partial_y).\n$$\n在新坐标下，\n$$\n4\\partial_x+\\partial_y=-8\\partial_\\eta,\n\\qquad\n4\\partial_x+3\\partial_y=8\\partial_\\xi.\n$$\n因而原方程化为\n$$\n-64U_{\\xi\\eta}=0,\n$$\n即 $U_{\\xi\\eta}=0$。积分得\n$$\nU(\\xi,\\eta)=F(\\xi)+G(\\eta).\n$$\n换回原变量：\n$$\n\\boxed{u(x,y)=F(4y-x)+G(4y-3x)}.\n$$\n\n**答案**：$\\boxed{u(x,y)=F(4y-x)+G(4y-3x)}$，其中 $F,G$ 为任意二次可微函数。\n\n**点评**：本题与第（3）题的算子结构相同，只是 $x$ 方向系数由 $2$ 变为 $4$，因此特征斜率相应缩小一半。$\\square$\n\n整理说明：沿用已有作业解析；本次只进行格式与上下文适配。\n来源：03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md；定位：习题 2.4 第 2 题（5）。",
+    "tags": [
+      "数学物理方程",
+      "9月28日数学作业"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  }
+]

@@ -7,6 +7,7 @@ source:
 - '[[03_Sources/Courses/数学物理方程/课堂笔记/2026-10-23-第9节-偏微分方程初值问题授课]]'
 - '[[03_Sources/Courses/数学物理方程/作业/10月9日作业]]'
 - '[[03_Sources/Courses/数学物理方程/作业/9月21日数学作业]]'
+- '[[03_Sources/Courses/数学物理方程/课堂笔记/2026-11-11-第14节-傅里叶变换与偏微分方程求解讲座]]'
 schema_version: 2
 time: '2026-11-08T09:10:48+08:00'
 aliases: []
@@ -37,3 +38,20 @@ Dirac 分布 $\delta_{x_0}$ 由 $\langle\delta_{x_0},\phi\rangle=\phi(x_0)$ 定�
 整线冲量的达朗贝尔解为 $I[H(x-x_0+at)-H(x-x_0-at)]/(2a\rho)$。
 
 以上按分布/弱解理解，不满足普通光滑初速度假设。
+
+## 冲激的频谱
+
+按 $\mathcal F[f](\omega)=\int f(x)e^{-i\omega x}dx$，抽样性质在分布意义下给
+$$\mathcal F[\delta]=1,\qquad\mathcal F[\delta_{x_0}]=e^{-i\omega x_0}.$$
+此处核是测试所需的平面波（可通过温和分布的变换定义严谨解释），不是说 $\delta$ 成为普通 $L^1$ 函数。位移对应频域相位，与 [[01_Knowledge/Fourier变换与Plancherel积分计算法]] 的符号一致。
+
+
+## 固定弦与末端小段的系数和数据检查
+
+两端固定、长度 $L$、波速 $a$、线密度 $\rho$，点冲量 $I$ 位于 $0<x_0<L$。初位移0，初速度 $(I/\rho)\delta_{x_0}$。投影速度再除时间频率，得到
+$$u(x,t)=\frac{2I}{\pi a\rho}\sum_{n\ge1}\frac1n\sin\frac{n\pi x_0}L\sin\frac{n\pi at}L\sin\frac{n\pi x}L.$$
+须按分布/弱解解释。节点因子为0时相应模态不被激发，不把点冲量改成初位移。
+
+截面积1的杆末端冲击，可先取初速度 $I/(\rho\varepsilon)$ 在 $(L-\varepsilon,L)$ 上、其余为0；总动量积分等于 $I$，极限给本卡单侧 $\delta_L$。击打结束后的端点为自由端 $u_x(L,t)=0$，左固定端 $u(0,t)=0$，波速平方为 $Y/\rho$。这不是持续端力问题。
+
+10月23日课堂整线点冲量例仅确认 $a=2$ 和 $1/4$ 前因子，冲量强度未完整转写。本卡一般强度公式可供核算；只有另取 $I/\rho=1$ 才得平台高度 $1/4$，不将单位强度误写成已确认原题。

@@ -10,6 +10,8 @@ source:
 - '[[03_Sources/Courses/深度学习/课堂笔记/2026-10-14-第12节-神经网络分类模型代码编写]]'
 - '[[03_Sources/Courses/深度学习/课堂笔记/2026-10-19-第13节-神经网络与卷积网络课程宣讲]]'
 - '[[03_Sources/Courses/深度学习/课堂笔记/2026-11-02-第18节-深度学习理论与RNN原理授课]]'
+- '[[03_Sources/Courses/深度学习/课堂笔记/2026-08-31-第1节-转写_电子科大王君豪的快速会议]]'
+- '[[03_Sources/Courses/深度学习/课堂笔记/2026-09-02-第2节-机器学习基础概念与模型构建教学]]'
 ---
 # Softmax概率与交叉熵
 
@@ -24,3 +26,12 @@ source:
 PyTorch CrossEntropyLoss常直接收logits，整数标签是0起long或使用同形概率标签；不可把已Softmax概率再次当logits。
 
 分类并非数学上绝不允许平方损失，不同损失绝对数值不可直接排名。
+
+
+## 稳定数值和批次聚合的手算检查
+
+两个logits为1000、999、真实类为第一类时，减最大值得损失$\log(1+e^{-1})\approx.3133$，不直接计算$e^{1000}$；共同平移logits不改变概率。
+
+两样本真实类为1、3，概率$(.7,.1,.1,.1)$和$(.1,.2,.6,.1)$，one-hot矩阵和概率矩阵均为$2\times4$，逐元素乘积同形，沿类别轴求和为$(2,)$，再平均为零维标量；$L=-(\log .7+\log .6)/2\approx.4338$。它衡量真实类置信度，而非只看argmax。
+
+手写`-(Y*log(P)).sum(dim=1).mean()`在one-hot和概率匹配时对应公式，但极端P可下溢到0，甚至出现零乘负无穷；稳定实现应基于logits/log-softmax。库CrossEntropyLoss整数目标为0起long；概率目标需与logits同形并满足有效分布，不因接口接收浮点就自动验证标签。网络先Softmax后再把概率误作logits会改变优化目标。[官方接口](https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html)。

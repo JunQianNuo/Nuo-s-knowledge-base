@@ -36,7 +36,7 @@ DEFAULT_PORT = 8766
 
 def read_timetable():
     """读取 课表.md → {meta: {...}, rows: [...]}（原始单元格文本，供 UI 编辑）。"""
-    text = open(core.TIMETABLE_PATH, encoding='utf-8').read()
+    text = core.timetable_text(core.TIMETABLE_PATH)
     fm = re.search(r'^---\s*\n(.*?)\n---', text, re.DOTALL)
     meta = {}
     if fm:
@@ -68,6 +68,46 @@ def read_timetable():
 
 def save_timetable(meta, rows):
     """写回 课表.md。meta: {学期, 开学日期, 排除主题}；rows: 课程行 dict 列表。"""
+    if core.TIMETABLE_PATH.endswith('学期设置.md'):
+        from pathlib import Path
+        import yaml
+        target, folder = core.timetable_locations(core.TIMETABLE_PATH)
+        # Preserve unknown settings and note bodies when updating known fields.
+        previous = target.read_text(encoding='utf-8').split('---', 2)
+        settings = yaml.safe_load(previous[1]) or {}
+        settings.update(meta or {})
+        def frontmatter(data, body=''):
+            return '---\n' + yaml.safe_dump(data, allow_unicode=True, sort_keys=False) + '---' + body
+        pending = {target: frontmatter(settings, previous[2])}
+        if target.parent.name == '学期设置' and str(settings.get('学期')) != target.stem:
+            raise ValueError('请新建学期目录及配置后，通过当前学期设置切换；不能直接改名覆盖旧学期。')
+        existing = {}
+        for note in folder.glob('*.md'):
+            parts = note.read_text(encoding='utf-8').split('---', 2)
+            record = yaml.safe_load(parts[1]) or {}
+            existing[int(record.get('排序', 0))] = (note, record, parts[2])
+        names = ['课程', '星期', '节次', '时间段', '周次', '会议号', '教师']
+        keys = ['course', 'weekday', 'slots', 'time_range', 'weeks', 'meeting_code', 'teacher']
+        for i, row in enumerate(rows, 1):
+            note, data, body = existing.get(i, (folder / f'{i:02d}-课程.md', {}, '\n'))
+            data.update({name: str(row.get(key, '') or '') for name, key in zip(names, keys)})
+            data['排序'] = i
+            if target.parent.name == '学期设置':
+                data['学期'] = target.stem
+            pending[note] = frontmatter(data, body)
+        # Archive removed rows outside the Base filter, retaining their note bodies.
+        for i, (note, _, _) in existing.items():
+            if i > len(rows):
+                archive = folder.parent.parent / '历史课程' / folder.name
+                archive.mkdir(parents=True, exist_ok=True)
+                destination = archive / note.name
+                if destination.exists():
+                    raise FileExistsError(destination)
+                note.rename(destination)
+        for note, content in pending.items():
+            note.parent.mkdir(parents=True, exist_ok=True)
+            note.write_text(content, encoding='utf-8')
+        return core.TIMETABLE_PATH
     semester = (meta or {}).get('学期') or '本学期'
     lines = ['---']
     for k, v in (meta or {}).items():
@@ -221,7 +261,7 @@ PAGE = """<!DOCTYPE html>
   <pre id="log" style="margin-top:10px"></pre>
 </div>
 
-<div class="footer">脚本：scripts/pull_tmeet_recordings.py ｜ 课表：课表.md ｜ 日志：tmp/tmeet_sync.log</div>
+<div class="footer">脚本：scripts/pull_tmeet_recordings.py ｜ 课表：04_Assets/Schedule/课表.base ｜ 日志：tmp/tmeet_sync.log</div>
 
 <script>
 let state = null;
@@ -393,7 +433,7 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == '/api/timetable':
             try:
                 save_timetable(body.get('meta'), body.get('rows') or [])
-                self._send(200, {'ok': True, 'message': f"课表已保存（{len(body.get('rows') or [])} 门课）→ 课表.md"})
+                self._send(200, {'ok': True, 'message': f"课表已保存（{len(body.get('rows') or [])} 门课）→ 04_Assets/Schedule"})
             except Exception as e:
                 self._send(200, {'ok': False, 'message': f'保存失败: {e}'})
         elif self.path == '/api/schedule':

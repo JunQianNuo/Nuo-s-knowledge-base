@@ -1,0 +1,30 @@
+filters:
+  and:
+    - file.inFolder("04_Assets/Schedule/作息")
+    - file.ext == "md"
+views:
+  - type: table
+    name: 2026-2027-第一学期
+    filters: 学期 == "2026-2027-第一学期"
+    order:
+      - 节次
+      - 时段
+      - 开始
+      - 结束
+    sort:
+      - property: 节次
+        direction: ASC
+  - type: table
+    name: 全部学期
+    groupBy:
+      property: 学期
+      direction: DESC
+    order:
+      - 学期
+      - 节次
+      - 时段
+      - 开始
+      - 结束
+    sort:
+      - property: 节次
+        direction: ASC

@@ -7,6 +7,7 @@ topics:
 source:
 - '[[03_Sources/Courses/深度学习/作业/第1-6章-课件与课堂提问汇编作业]]'
 - '[[03_Sources/Courses/深度学习/课堂笔记/2026-09-16-第6节-深度学习优化理论讲座]]'
+- '[[03_Sources/Courses/深度学习/课堂笔记/2026-09-21-第7节-随机优化算法讲解]]'
 ---
 # AdaGrad与RMSProp坐标缩放
 
@@ -19,3 +20,10 @@ g为列梯度，ggᵀ是半正定外积矩阵，gᵀg是标量，g⊙g是逐元�
 RMSProp以v←γv+(1−γ)g⊙g跟踪近期尺度，θ←θ−ηg/(√v+ε)，平方开方除法逐元素。
 
 小常数稳定分母，效果仍需按目标与超参数验证。
+
+
+## 历史梯度矩阵的形状与奇异处理
+
+列梯度$g\in\mathbb R^p$的外积$gg^{\mathsf T}$为$p\times p$，秩至多1；对任意$v$有$v^{\mathsf T}gg^{\mathsf T}v=(g^{\mathsf T}v)^2\ge0$。内积$g^{\mathsf T}g=\|g\|_2^2$是标量，$g\odot g$则为$p$维坐标平方，三者不同。
+
+矩阵AdaGrad中$G_k=\sum_{t=0}^kg_tg_t^{\mathsf T}$，更新$\theta_{k+1}=\theta_k-\eta G_k^{-1/2}g_k$；奇异时按谱只对正特征值取逆平方根、零方向置零，或采用明确正则化策略。它不同于直接计算$G_k^+$，但同用广义逆思想，见[[01_Knowledge/Moore-Penrose伪逆与最小范数解]]。RMSProp采用坐标平方的指数平均，不能把外积矩阵直接塞入逐元素分母。

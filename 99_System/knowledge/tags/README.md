@@ -60,4 +60,4 @@ python scripts/tag_maintenance.py --apply --report tmp/tag-applied.json
 
 本轮验证发现，运行中的 Obsidian 偶尔没有收齐外部文件更新。遇到磁盘已有 `tags` 而搜索仍漏项时，先保存当前编辑、重载知识库，再核对实际搜索结果；不要继续改名或重复补标。
 
-依据：[Obsidian 官方标签文档](https://obsidian.md/zh/help/tags)、[[规范/Obsidian写作规范#Tag]]、[[规范/知识库元数据规范]]。
+依据：[Obsidian 官方标签文档](https://obsidian.md/zh/help/tags)、[[99_System/rules/Obsidian写作规范#Tag]]、[[99_System/rules/知识库元数据规范]]。

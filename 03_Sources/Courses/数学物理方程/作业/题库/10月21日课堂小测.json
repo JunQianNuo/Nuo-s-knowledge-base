@@ -1,0 +1,41 @@
+[
+  {
+    "question": "【数学物理方程｜10月21日课堂小测｜题1】\n\n求解\n$$\\begin{cases}u_t=u_{xx}+e^{-t},&0<x<1,t>0,\\\\u(x,0)=x,\\\\u(0,t)=2,\\quad u(1,t)=4e^{-t}.\\end{cases}$$\n端点初边值不相容，初值取内部或 $L^2$ 意义；不要求角点连续。",
+    "question_type": "short_answer",
+    "correct_answer": "令 $k_n=n\\pi$，$w=2+x(4e^{-t}-2)$。则\n$$u=w+\\sum_{n=1}^\\infty\\left[b_ne^{-k_n^2t}+c_n\\frac{e^{-t}-e^{-k_n^2t}}{k_n^2-1}\\right]\\sin(k_nx),$$\n$$b_n=\\frac{-4+6(-1)^n}{k_n},\\qquad c_n=\\frac{2[1-5(-1)^n]}{k_n}.$$",
+    "explanation": "令 $k_n=n\\pi$，$w=2+x(4e^{-t}-2)$。则\n$$u=w+\\sum_{n=1}^\\infty\\left[b_ne^{-k_n^2t}+c_n\\frac{e^{-t}-e^{-k_n^2t}}{k_n^2-1}\\right]\\sin(k_nx),$$\n$$b_n=\\frac{-4+6(-1)^n}{k_n},\\qquad c_n=\\frac{2[1-5(-1)^n]}{k_n}.$$\n\n推导：$v=u-w$ 满足 $v_t=v_{xx}+(1+4x)e^{-t}$、零边界及 $v(x,0)=-2-x$。用 $2\\int_0^1(\\cdot)\\sin(k_nx)\\,dx$ 得 $b_n,c_n$，模态满足 $T_n'+k_n^2T_n=c_ne^{-t}$、$T_n(0)=b_n$，积分即得上式。$k_n^2>1$，无共振分母为零的问题。每项满足齐次边界；内部初值还原为 $x$。原记录多出的 $1/k_n^2$ 项不成立。\n\n边界在 $t=0$ 给出2与4，而初值端点为0与1，故不存在闭域角点连续解；上述为内部满足初值的级数解。\n\n整理说明：重新投影并解模态方程；纠正原记录的两个Fourier系数，原记录未修改。\n来源：03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md；定位：题1。",
+    "tags": [
+      "数学物理方程",
+      "10月21日课堂小测"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜10月21日课堂小测｜题2】\n\n求解\n$$\\begin{cases}u_{tt}=u_{xx},&0<x<1,t>0,\\\\u(x,0)=0,\\quad u_t(x,0)=0,\\\\u(0,t)=t,\\quad u(1,t)=\\sin t.\\end{cases}$$",
+    "question_type": "short_answer",
+    "correct_answer": "取 $w=(1-x)t+x\\sin t$，$k_n=n\\pi$。则\n$$u=w+\\sum_{n=1}^\\infty\\left[-\\frac{2[1-(-1)^n]\\sin(k_nt)}{k_n^2}-\\frac{2(-1)^n}{k_n^2}\\int_0^t\\sin\\tau\\,\\sin(k_n(t-\\tau))\\,d\\tau\\right]\\sin(k_nx).$$",
+    "explanation": "取 $w=(1-x)t+x\\sin t$，$k_n=n\\pi$。则\n$$u=w+\\sum_{n=1}^\\infty\\left[-\\frac{2[1-(-1)^n]\\sin(k_nt)}{k_n^2}-\\frac{2(-1)^n}{k_n^2}\\int_0^t\\sin\\tau\\,\\sin(k_n(t-\\tau))\\,d\\tau\\right]\\sin(k_nx).$$\n\n边界提升满足 $w(0,t)=t,w(1,t)=\\sin t$；原记录的提升函数不满足这两个边界。$v=u-w$ 满足 $v_{tt}=v_{xx}+x\\sin t$、零边界、$v(x,0)=0,v_t(x,0)=-1$。正弦投影给出\n$$T_n''+k_n^2T_n=-\\frac{2(-1)^n}{k_n}\\sin t,\\quad T_n(0)=0,\\quad T_n'(0)=-\\frac{2[1-(-1)^n]}{k_n}.$$\n由初速度和源项分别得到\n$$T_n(t)=-\\frac{2[1-(-1)^n]}{k_n^2}\\sin(k_nt)-\\frac{2(-1)^n}{k_n^2}\\int_0^t\\sin\\tau\\sin(k_n(t-\\tau))\\,d\\tau.$$\n注意常数 $-1$ 的正弦系数为 $-2[1-(-1)^n]/k_n$，偶数项为零。初始速度与边界时间导数在角点不相容，按广义解理解。\n\n整理说明：重新构造边界提升函数，并由非零的齐次化后初速度解模态方程；原记录未修改。\n来源：03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md；定位：题2。",
+    "tags": [
+      "数学物理方程",
+      "10月21日课堂小测"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  },
+  {
+    "question": "【数学物理方程｜10月21日课堂小测｜题3】\n\n求解\n$$\\begin{cases}u_t=u_{xx}+4+e^{-xt},&0<x<1,t>0,\\\\u(x,0)=0,\\\\u_x(0,t)=e^{-t},\\quad u_x(1,t)=0.\\end{cases}$$",
+    "question_type": "short_answer",
+    "correct_answer": "设 $h(x)=x-x^2/2$，$w=e^{-t}h(x)$，$F(x,t)=4+e^{-xt}+e^{-t}[h(x)-1]$。定义\n$$b_0=-\\int_0^1h(x)dx=-\\frac13,\\quad F_0(t)=\\int_0^1F(x,t)dx,$$\n$$b_n=-2\\int_0^1h(x)\\cos(n\\pi x)dx,\\quad F_n(t)=2\\int_0^1F(x,t)\\cos(n\\pi x)dx\\quad(n\\ge1).$$\n则\n$$u=w+b_0+\\int_0^tF_0(\\tau)d\\tau+\\sum_{n=1}^\\infty\\left[b_ne^{-n^2\\pi^2t}+\\int_0^tF_n(\\tau)e^{-n^2\\pi^2(t-\\tau)}d\\tau\\right]\\cos(n\\pi x).$$",
+    "explanation": "设 $h(x)=x-x^2/2$，$w=e^{-t}h(x)$，$F(x,t)=4+e^{-xt}+e^{-t}[h(x)-1]$。定义\n$$b_0=-\\int_0^1h(x)dx=-\\frac13,\\quad F_0(t)=\\int_0^1F(x,t)dx,$$\n$$b_n=-2\\int_0^1h(x)\\cos(n\\pi x)dx,\\quad F_n(t)=2\\int_0^1F(x,t)\\cos(n\\pi x)dx\\quad(n\\ge1).$$\n则\n$$u=w+b_0+\\int_0^tF_0(\\tau)d\\tau+\\sum_{n=1}^\\infty\\left[b_ne^{-n^2\\pi^2t}+\\int_0^tF_n(\\tau)e^{-n^2\\pi^2(t-\\tau)}d\\tau\\right]\\cos(n\\pi x).$$\n\n推导：$w_x=e^{-t}(1-x)$ 满足给定导数边界。$v=u-w$ 满足 $v_t=v_{xx}+F$、齐次Neumann边界及 $v(x,0)=-h(x)$，所以不能将其初值误设为零。余弦基的零模态范数为1，其余范数为1/2，因此零模态投影没有系数2。对 $n\\ge1$ 解 $T_n'+n^2\\pi^2T_n=F_n$，零模态解 $T_0'=F_0$，得上述公式。按 $L^2$ 展开 $-h$ 可检验初值；$u_x(0,0)$ 的初边值不相容，不要求角点导数连续。\n\n整理说明：保留边界提升；补回非零初值项，并纠正Neumann零模态归一化；原记录未修改。\n来源：03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md；定位：题3。",
+    "tags": [
+      "数学物理方程",
+      "10月21日课堂小测"
+    ],
+    "difficulty": "",
+    "user_answer": "",
+    "options": {}
+  }
+]

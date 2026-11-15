@@ -1,8 +1,0 @@
-{
-  "dry_run": true,
-  "plan": "C:\\Users\\Nuo\\.codex\\backups\\knowledge-v2-20261028\\migration-001\\plan.json",
-  "plan_sha256": "2cedbe834869b1028095fc9d444a14d91fe4cb7e4a8da71a207aec5d658f09ec",
-  "planned": 12290,
-  "diffs": "C:\\Users\\Nuo\\.codex\\backups\\knowledge-v2-20261028\\migration-001\\diffs",
-  "conflicts": 0
-}

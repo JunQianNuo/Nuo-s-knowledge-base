@@ -2,11 +2,11 @@
 
 ## 2026-10-28 topics 目标规则
 
-topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/KNOWLEDGE_ARCHITECTURE]]、[[docs/KNOWLEDGE_DAILY_GUIDE]] 及 [[docs/TOPICS_MOC_ACCEPTANCE_2026-10-28]]。
+topics 只表示主题归属，目标必须显式声明 role: moc，并通过本地属性与目标解析检查；普通原子和仅有历史 type: MOC 的文件均不能充当新主题锚点。原子之间使用 prerequisites/about/uses/related。旧值保留，不自动转成其他关系。Maintenance 报告 topic_policy；新建、plan/apply 与 Advisory 均检查此规则。详见 [[docs/ARCHITECTURE]]、[[docs/USAGE]] 及 [TOPICS_MOC_ACCEPTANCE_2026-10-28](file:///D:/KnowledgeBackups/20261114-docs-organization/before/docs/TOPICS_MOC_ACCEPTANCE_2026-10-28.md)。
 
 ## 2026-10-28 当前只读建议接口
 
-本文件下方为 Phase 4A-1 历史说明。当前新增 manifest、authorize 与 prepare --view inference；真实正文只接受绑定清单、根目录、阶段及文件哈希的授权，CLI 还需授权文件摘要。selected 区分候选身份定位与检索唯一，原 unique 保持严格拒绝规则；旧 30 候选仍为空可见且不运行评测。使用 [[docs/KNOWLEDGE_DAILY_GUIDE]] 与 prompts/advisory_v1_2.md，不向模型提供 bundle 的 audit。没有网络、provider、自动推理或写入操作；不新增独立 API。
+本文件下方为 Phase 4A-1 历史说明。当前新增 manifest、authorize 与 prepare --view inference；真实正文只接受绑定清单、根目录、阶段及文件哈希的授权，CLI 还需授权文件摘要。selected 区分候选身份定位与检索唯一，原 unique 保持严格拒绝规则；旧 30 候选仍为空可见且不运行评测。使用 [[docs/USAGE]] 与 prompts/advisory_v1_2.md，不向模型提供 bundle 的 audit。没有网络、provider、自动推理或写入操作；不新增独立 API。
 
 这是只读、离线的建议协议与机械检查工具，不是 AI 分类器或 Formatter。没有 provider、API、凭据读取、模型子进程或联网代码，没有 apply、fix、migrate、split 写入命令。Phase 4A-2 真实模型测试未授权。
 
@@ -78,4 +78,4 @@ JSON 输入限制 4 MiB，重复键与非有限数拒收；读取前检查大小
 
 真实语义能力、置信校准、全库召回、数学正确性、模型提示注入抵抗效果均未测。正文中的数学错误、历史断链、归档四处方括号链接问题不在本阶段修复。Formatter Phase 2B 未定位、未集成。
 
-完整设计、实施记录和最终机械验收见 docs/AI_ADVISORY_DESIGN.md；真实模型与正文范围须按其中 Phase 4A-2 清单另行审批。
+完整设计、实施记录和最终机械验收见 D:\KnowledgeBackups\20261114-docs-organization\before\docs\AI_ADVISORY_DESIGN.md；真实模型与正文范围须按其中 Phase 4A-2 清单另行审批。

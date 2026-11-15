@@ -6,6 +6,7 @@ topics:
 - '[[02_Maps/MOC-深度学习]]'
 source:
 - '[[03_Sources/Courses/深度学习/课堂笔记/2026-11-02-第18节-深度学习理论与RNN原理授课]]'
+- '[[03_Sources/Courses/深度学习/课堂笔记/2026-09-16-第6节-深度学习优化理论讲座]]'
 ---
 # 实Stone-Weierstrass定理的应用检查
 

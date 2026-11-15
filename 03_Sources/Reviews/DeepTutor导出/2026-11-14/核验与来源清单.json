@@ -1,0 +1,717 @@
+{
+  "date": "2026-11-14",
+  "official_commit": "60fb3bdfddb30b7740c7ce3bd9b28d908f2af6db",
+  "official_parser_sha256": "9ee4dd1abfa150fd81c3e3e31e2321761bab05509f6e4a5fca555ede2bbfd260",
+  "sources": [
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月10日课堂小测.md",
+      "sha256": "a9fc5258a1db9fe321f10c4a72ba13800868557c041665f148da33c7080c4f65"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "sha256": "2f340225124641b0beb6b1d8f65ece746a7357574d2b0774e48070e4e05e3548"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md",
+      "sha256": "5cd2801281d8a0a3c6662252d8c3bd87d9762a07cefc74a1ab6b786a65dea1bd"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "sha256": "9456ecdd22725a8be97d31935cab469bdec02342f419c1830d39c94347636759"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月23日课堂测试.md",
+      "sha256": "70217a1471e1c18df2d25496079b985abc6b2e2070170a60373b96ffd528f953"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月30日课堂检测.md",
+      "sha256": "f7361fd2959dc4b5bdc0eb653bb39e0938ad852f248dc012c986ecc9921cf426"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/10月9日作业.md",
+      "sha256": "6b2309d906de1ed2db12c1e39de9d3c7463e295cd2c6251f7ad3d7372416dc70"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/11月2日作业.md",
+      "sha256": "3bd601defbf24e1e392f1d85848df208b5e1d19529134e0869f04c8b1e1a6995"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/11月6日课堂小测.md",
+      "sha256": "32057956f19c8c222d80442f7bb354466c167d3406d6bd8db3e9ea81ea06b9f3"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/11月9日作业.md",
+      "sha256": "8121f45c17bccd2c11b9ddf0b1d1d1c444f421b5216a38b8577798287ff3fe88"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md",
+      "sha256": "28f9425016f3ea8db842f2fe534457a0cac718885060eeefe975c373d09c2a0a"
+    },
+    {
+      "path": "03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md",
+      "sha256": "30c91f7b189221ea8108dfff73f877a347319f0dcbb54a45b1204fdf8295520f"
+    },
+    {
+      "path": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "sha256": "03e7d83d7963ce83098e730d7d74eda4354f8e33a10cca5e086867ba668537e5"
+    },
+    {
+      "path": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "sha256": "b4f80a537790733e21cc5dda2614e21aff37a62c48f387d02df0cd6c049e2082"
+    },
+    {
+      "path": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "sha256": "c1ed4929dac2fb977f6bad723d07c4e9a577b4096116235ca70fc2d74297eb9c"
+    },
+    {
+      "path": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "sha256": "6e5cb14cf7967e05cdfafbcd09121b5b65b098e73d6401644659c85f639ca832"
+    },
+    {
+      "path": "03_Sources/Courses/数理统计/作业/数理统计期中测试/数理统计期中测试.md",
+      "sha256": "ceae66bfcef0e49a12472c422a3db7c8a9a4ca58bce64973c8e648f5d73647e1"
+    }
+  ],
+  "items": [
+    {
+      "row": 1,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月10日课堂小测.md",
+      "heading": "题目",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 2,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "heading": "习题 3.2 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 3,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "heading": "习题 3.2 第 4 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 4,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "heading": "习题 3.5 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 5,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "heading": "习题 3.5 第 3 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 6,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月14日数学作业.md",
+      "heading": "习题 3.5 第 6 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 7,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 3.6 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 8,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 3.6 第 2 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 9,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 3.6 第 3 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 10,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 4.1 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 11,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 4.1 第 2 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 12,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日作业.md",
+      "heading": "习题 4.1 第 6 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 13,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月23日课堂测试.md",
+      "heading": "题目",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 14,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月30日课堂检测.md",
+      "heading": "题目",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 15,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月9日作业.md",
+      "heading": "习题 3.1 第 2 题（1）",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 16,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月9日作业.md",
+      "heading": "习题 3.1 第 3 题（4）",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 17,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月9日作业.md",
+      "heading": "习题 3.1 第 6 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 18,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月2日作业.md",
+      "heading": "二、习题 4.2 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 19,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月2日作业.md",
+      "heading": "三、习题 4.2 第 2 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 20,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月6日课堂小测.md",
+      "heading": "题目",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 21,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月9日作业.md",
+      "heading": "二、习题4.3第1题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 22,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月9日作业.md",
+      "heading": "三、习题4.4第1题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 23,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月9日作业.md",
+      "heading": "四、习题4.4第4题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 24,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/11月9日作业.md",
+      "heading": "五、习题4.4第5题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 25,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md",
+      "heading": "习题 2.1 第 1 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 26,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md",
+      "heading": "习题 2.1 第 2 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 27,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md",
+      "heading": "习题 2.1 第 4 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 28,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月21日数学作业.md",
+      "heading": "习题 2.2 第 4 题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 29,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md",
+      "heading": "习题 2.4 第 2 题（1）",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 30,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md",
+      "heading": "习题 2.4 第 2 题（3）",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 31,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/9月28日数学作业.md",
+      "heading": "习题 2.4 第 2 题（5）",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 32,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第3题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 33,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第4题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 34,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第5题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 35,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第6题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 36,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第9题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 37,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第11题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 38,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第14题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 39,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第15题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 40,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第16题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 41,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第23题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 42,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第24题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 43,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第25题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 44,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第27题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 45,
+      "course": "泛函分析",
+      "source": "03_Sources/Courses/泛函分析/作业/10.27.md",
+      "heading": "第30题",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 46,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 3",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 47,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 4",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 48,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 5",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 49,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 7",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 50,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 8",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 51,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 10",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 52,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 11",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 53,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 12",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 54,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 13",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 55,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 14",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 56,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 15",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 57,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 16",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 58,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 17",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 59,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 18",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 60,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/10月15日数理统计作业.md",
+      "heading": "习题 19",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 61,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 1",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 62,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 2",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 63,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 3",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 64,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 4",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 65,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 5",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 66,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 7",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 67,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 8",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 68,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 9",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 69,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 10",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 70,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 14",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 71,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 15",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 72,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/11.14数理统计.md",
+      "heading": "习题 18",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 73,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 1",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 74,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 2",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 75,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 3",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 76,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 4",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 77,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 5",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 78,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 6",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 79,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 7",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 80,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 8",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 81,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 9",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 82,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 10",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 83,
+      "course": "数理统计",
+      "source": "03_Sources/Courses/数理统计/作业/9月15日数理统计作业.md",
+      "heading": "习题 14",
+      "note": "沿用已有作业解析；本次只进行格式与上下文适配。"
+    },
+    {
+      "row": 84,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md",
+      "heading": "题1",
+      "note": "重新投影并解模态方程；纠正原记录的两个Fourier系数，原记录未修改。"
+    },
+    {
+      "row": 85,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md",
+      "heading": "题2",
+      "note": "重新构造边界提升函数，并由非零的齐次化后初速度解模态方程；原记录未修改。"
+    },
+    {
+      "row": 86,
+      "course": "数学物理方程",
+      "source": "03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md",
+      "heading": "题3",
+      "note": "保留边界提升；补回非零初值项，并纠正Neumann零模态归一化；原记录未修改。"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "03_Sources/Courses/数理统计/作业/数理统计期中测试/数理统计期中测试.md",
+      "item": "整份往期期中试卷",
+      "reason": "该文件是2026年5月往期试卷OCR资料，不属于当前三科已布置作业；未混入本次作业导出。"
+    },
+    {
+      "source": "03_Sources/Courses/数学物理方程/作业/10月21日课堂小测.md",
+      "item": "题4（Duhamel辅助问题）",
+      "reason": "原记录在 f(x,0) 的初值中仍写 e^{-t}，且后文混用演化时间与激励时间；缺少足以区分两个时间的原题。不能将猜测重写为原题，暂不纳入可导入文件。原文保留。"
+    }
+  ],
+  "validation": {
+    "三科作业-DeepTutor.json": {
+      "questions": 86,
+      "bytes": 325536,
+      "errors": [],
+      "sha256": "d2fbc448b4e3333688c67086aa2f58d7f84e85911f8a941da57724ed80bd69be"
+    },
+    "数学物理方程-DeepTutor.json": {
+      "questions": 34,
+      "bytes": 140188,
+      "errors": [],
+      "sha256": "6d47279eaeb1abc7b7a86c17dce87e29e1a3901a74917dffe35a9e6b926be3d8"
+    },
+    "泛函分析-DeepTutor.json": {
+      "questions": 14,
+      "bytes": 53347,
+      "errors": [],
+      "sha256": "708b52f6f0f9d1fca679f33b6405c70c7d582be8ea1e29517721b1ccc87948b7"
+    },
+    "数理统计-DeepTutor.json": {
+      "questions": 38,
+      "bytes": 132007,
+      "errors": [],
+      "sha256": "e406fd22c6f107868f45cd56fab3ec3a343a75f9e03f62111b1d58e9df9e72c6"
+    }
+  }
+}

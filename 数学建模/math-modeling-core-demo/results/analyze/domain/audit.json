@@ -1,9 +1,0 @@
-{
-  "business_rule_count": 0,
-  "domain_context_ready": true,
-  "mechanism_count": 0,
-  "reasons": [],
-  "solver_executed": false,
-  "status": "PASS",
-  "variable_count": 1
-}
