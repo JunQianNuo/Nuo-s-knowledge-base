@@ -40,6 +40,7 @@
       "discoveredOutputStyles": [
         "default",
         "Proactive",
+        "Concise",
         "Explanatory",
         "Learning"
       ],
@@ -55,6 +56,21 @@
           "value": "opus",
           "label": "deepseek-flash",
           "description": "Custom Opus model",
+          "resolvedModel": "deepseek-flash",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "fable",
+          "label": "Fable",
+          "description": "Fable 5.2 · Most capable for your hardest and longest-running tasks · $8/$40 per Mtok",
+          "resolvedModel": "claude-fable-5-2",
           "reasoningMetadataResolved": true,
           "supportedEffortLevels": [
             "low",
@@ -68,6 +84,7 @@
           "value": "sonnet",
           "label": "deepseek-flash",
           "description": "Custom Sonnet model",
+          "resolvedModel": "deepseek-flash",
           "reasoningMetadataResolved": true,
           "supportedEffortLevels": [
             "low",
@@ -81,6 +98,7 @@
           "value": "haiku",
           "label": "deepseek-flash",
           "description": "Custom Haiku model",
+          "resolvedModel": "deepseek-flash",
           "reasoningMetadataResolved": true,
           "supportedEffortLevels": [
             "low",
@@ -104,8 +122,8 @@
       },
       "modelAliases": {},
       "visibleModels": [
-        "gpt-6.1-sol",
-        "gpt-6-astra"
+        "gpt-6.2-sol",
+        "gpt-6.2-astra"
       ],
       "enableUltraEffort": true,
       "responseStyle": "friendly",
@@ -120,9 +138,9 @@
       "wslDistroOverridesByHost": {},
       "selectedModels": [
         {
-          "model": "gpt-6.1-sol",
-          "displayName": "GPT-6.1 Sol",
-          "description": "Latest workhorse model for coding and everyday work.",
+          "model": "gpt-6.2-sol",
+          "displayName": "GPT-6.2 Sol",
+          "description": "Fast, go-to model for coding and everyday work.",
           "supportedReasoningEfforts": [
             {
               "value": "low",
@@ -165,9 +183,9 @@
           "isDefault": true
         },
         {
-          "model": "gpt-6-astra",
-          "displayName": "GPT-6 Astra",
-          "description": "Frontier intelligence for the most demanding work.",
+          "model": "gpt-6.2-astra",
+          "displayName": "GPT-6.2 Astra",
+          "description": "Our most capable model for complex coding and professional work.",
           "supportedReasoningEfforts": [
             {
               "value": "low",
@@ -367,21 +385,17 @@
   "settingsProvider": "claude",
   "lastSelectedChatModel": {
     "providerId": "codex",
-    "model": "openai-codex/gpt-6.1-sol"
+    "model": "openai-codex/gpt-6.2-sol"
   },
   "inlineEditModel": null,
   "savedProviderModel": {
-    "claude": "opus",
-    "codex": "openai-codex/gpt-6.1-sol"
+    "claude": "opus"
   },
   "savedProviderEffort": {
     "claude": "high",
-    "codex": "high",
     "deepseek": "low"
   },
-  "savedProviderServiceTier": {
-    "codex": "priority"
-  },
+  "savedProviderServiceTier": {},
   "savedProviderPermissionMode": {
     "claude": "yolo",
     "codex": "yolo"
